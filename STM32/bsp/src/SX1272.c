@@ -1,7 +1,7 @@
 /*
  * SX1272.c
  *
- *  Created on: 24 août 2020
+ *  Created on: 24 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -4602,6 +4602,7 @@ uint8_t BSP_SX1272_getTemp()
 uint8_t BSP_SX1272_cadDetected()
 {
 	uint8_t val = 0;
+	uint8_t state = 2;
 
 	// get actual time
 	unsigned long time = millis();
@@ -4614,7 +4615,7 @@ uint8_t BSP_SX1272_cadDetected()
 
 	#if (SX1272_debug_mode > 1)
 		my_printf("Inside CAD DETECTION -> RSSI: ");
-		my_printf("%d",currentstate._RSSI);
+		my_printf("%d\n\r",currentstate._RSSI);
 	#endif
 
 	if( currentstate._modem == LORA )
@@ -4629,25 +4630,28 @@ uint8_t BSP_SX1272_cadDetected()
 
 	// Wait for IRQ CadDone
     val = BSP_SX1272_Read(REG_IRQ_FLAGS);
-    while((bitRead(val,2) == 0) && (millis()-time)<10000 )
+    while((bitRead(val,7) == 0) && (millis()-time)<10 )
     {
       val = BSP_SX1272_Read(REG_IRQ_FLAGS);
     }
-
+//0001 1011
 	// After waiting or detecting CadDone
 	// check 'CadDetected' bit in 'RegIrqFlags' register
     if(bitRead(val,0) == 1)
     {
+    	state = 1;
 		#if (SX1272_debug_mode > 1)
-			my_printf("CAD 1\r\n");
+			my_printf("CAD 1 : %d\r\n", val);
 		#endif
-		return 1;
 	}
-
-	#if (SX1272_debug_mode > 1)
-		my_printf("CAD 0\r\n");
-	#endif
-	return 0;
+    else
+    {
+    	state = 0;
+		#if (SX1272_debug_mode > 1)
+			my_printf("CAD 0 : %d\r\n", val);
+		#endif
+    }
+	return state;
 
 }
 

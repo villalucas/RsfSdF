@@ -1,7 +1,7 @@
 /*
  * appSX1272.c
  *
- *  Created on: 25 août 2020
+ *  Created on: 25 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -15,7 +15,7 @@
 extern SX1272status currentstate;
 
 ///////////////////////////////////////////////////////////////
-// Déclaration variables globales
+// Dï¿½claration variables globales
 ///////////////////////////////////////////////////////////////
 static char LgMsg = 0;
 static char Message[] = "Salut Francis, comment vas-tu ?";
@@ -24,6 +24,7 @@ static int cp = 0;  //compteur de paquets transmis
 static int type_modulation=TypeModulation;
 static uint16_t RegBitRate = BitRate;
 static uint16_t RegFdev = Fdev;
+static uint8_t nbr_ch = 3;
 
 // status variables
 static int8_t e;
@@ -75,7 +76,7 @@ void APP_SX1272_setup()
   if (ConfigOK == 1)
   {
 	//////////////////////////////////////////////////////////////////////
-  //config supplémentaire mode LORA
+  //config supplï¿½mentaire mode LORA
 	//////////////////////////////////////////////////////////////////////
     if(type_modulation==0)
     {
@@ -95,7 +96,7 @@ void APP_SX1272_setup()
       currentstate._maxRetries = MaxNbRetries;
     }
 	//////////////////////////////////////////////////////////////////////
-	//config supplémentaire mode FSK
+	//config supplï¿½mentaire mode FSK
 	//////////////////////////////////////////////////////////////////////
     else
     {
@@ -131,6 +132,28 @@ void APP_SX1272_setup()
 
   BSP_DELAY_ms(1000);
 }
+
+uint8_t APP_SX1272_setFreq(uint32_t freq)
+{
+    BSP_SX1272_Write(REG_OP_MODE, FSK_STANDBY_MODE); // FSK standby mode to switch off the RF field
+    // Select frequency channel
+    e = BSP_SX1272_setChannel(freq);
+    my_printf("Frequency channel ");
+    my_printf("%d",freq);
+    if (e == 0)
+    {
+      my_printf(" has been successfully set.\r\n");
+      return 1;
+    }
+    else
+    {
+      my_printf(" has not been set !\r\n");
+      ConfigOK = 0;
+      return 0;
+    }
+	return -1;
+}
+
 
 void APP_SX1272_runTransmit()
 {
@@ -173,14 +196,14 @@ void APP_SX1272_runReceive()
   // Receive packets continuously
   if (ConfigOK == 1)
   {
-	    //affichage entête
+	    //affichage entï¿½te
 	    //statut (correct = 1 or bad = 0 or non received = 2)
 	  my_printf("\n \r\n");
 	  my_printf("Packet status ; Packet number ; Received Lg ; Received data ; RSSI packet (dBm) ; source address; PER (%); BER (%)\r\n");
 	  my_printf("\n \r\n");
 
     e = BSP_SX1272_receivePacketTimeout(WaitRxMax);
-    //paquet reçu, correct ou non
+    //paquet reï¿½u, correct ou non
     if (e == 0)
     {
       StatusRXMessage = '0';
@@ -236,3 +259,20 @@ void APP_SX1272_runReceive()
   }
   BSP_DELAY_ms(1000);
 }
+
+uint8_t APP_SX1272_pollingCAD(uint32_t freq)
+{
+	APP_SX1272_setFreq(freq); //set specific channel frequency before CAD
+
+	if (BSP_SX1272_cadDetected()) {
+		  my_printf("CAD detected\r\n");
+		  return 1;
+	}
+	else
+	{
+		  my_printf("CAD not detected\r\n");
+		  return 0;
+	}
+	return 0xFF;
+}
+

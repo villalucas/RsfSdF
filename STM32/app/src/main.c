@@ -1,7 +1,7 @@
 /*
  * main.c
  *
- *  Created on: 23 août 2020
+ *  Created on: 23 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -17,8 +17,8 @@ static void SystemClock_Config();
 int main()
 {
 	uint32_t curtime=0;
-	uint32_t i=0;
-
+	uint8_t i=0;
+	uint8_t state=0;
 	// Initialize System clock to 48MHz from external clock
 	SystemClock_Config();
 	// Initialize timebase
@@ -39,13 +39,38 @@ int main()
 	while(1)
 	{
 		curtime=BSP_millis();
+//		state=i%3;
+//		PP_SX1272_pollingCAD(freq_centrale1);
+//		switch(state){
+//		case 0 :
+//			my_printf("CH0\r\n");
+//			if(APP_SX1272_pollingCAD(freq_centrale1)) {
+//				APP_SX1272_runReceive();
+//			}
+//			break;
+//		case 1 :
+//			my_printf("CH1\r\n");
+//			if(APP_SX1272_pollingCAD(freq_centrale)) {
+//				APP_SX1272_runReceive();
+//			}
+//			break;
+//		case 2 :
+//			my_printf("CH2\r\n");
+//			if(APP_SX1272_pollingCAD(freq_centrale5)) {
+//				APP_SX1272_runReceive();
+//			}
+//			break;
+//		default :
+//			return 0;
+//			break;
+//		}
 
 		if((curtime%1000)==0)//send every 1000ms
 		{
-			APP_SX1272_runTransmit();
-			//APP_SX1272_runReceive();
-			i++;
+//			APP_SX1272_runTransmit();
+			BSP_SX1272_cadDetected();
 		}
+		i++;
 	}
 }
 

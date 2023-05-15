@@ -1,7 +1,7 @@
 /*
  * appSX1272.h
  *
- *  Created on: 25 août 2020
+ *  Created on: 25 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -33,13 +33,18 @@
 
 //Other common parameters (do not change!!)
 #define PreambLong 12//12
-#define freq_centrale CH_868v3
+#define freq_centrale CH_868v3 //CH_868v1 ; CH_868v5
+#define freq_centrale1 CH_868v1
+#define freq_centrale5 CH_868v5
+
 #define MaxNbRetries 3
 #define WaitTxMax 5000 //en ms
 #define WaitRxMax 10000 //en ms
 
 void APP_SX1272_setup();
+uint8_t APP_SX1272_pollingCAD(uint32_t freq); //setup with specific frequency
 void APP_SX1272_runTransmit();
 void APP_SX1272_runReceive();
+uint8_t APP_SX1272_pollingCAD(uint32_t freq);
 
 #endif /* APP_INC_APPSX1272_H_ */
