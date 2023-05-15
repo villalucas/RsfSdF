@@ -1,0 +1,6 @@
+
+STM32/.settings/language.settings.xml
+*.o
+STM32/Debug
+*.log
+STM32/Release
