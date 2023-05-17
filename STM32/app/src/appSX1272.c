@@ -14,6 +14,8 @@
 
 extern SX1272status currentstate;
 
+#define appSX1272_debug_mode 2 //define debug_mode = 2 for debug
+
 ///////////////////////////////////////////////////////////////
 // D�claration variables globales
 ///////////////////////////////////////////////////////////////
@@ -24,7 +26,6 @@ static int cp = 0;  //compteur de paquets transmis
 static int type_modulation=TypeModulation;
 static uint16_t RegBitRate = BitRate;
 static uint16_t RegFdev = Fdev;
-static uint8_t nbr_ch = 3;
 
 // status variables
 static int8_t e;
@@ -134,25 +135,39 @@ void APP_SX1272_setup()
   BSP_DELAY_ms(1000);
 }
 
+
+/*
+ Function: It set the SW1272 module on the frequence pass as argument of the function
+   return = 2  --> The command has not been executed
+   return = 1  --> There has been an error while executing the command
+   return = 0  --> The command has been executed with no errors
+*/
 uint8_t APP_SX1272_setFreq(uint32_t freq)
 {
-    BSP_SX1272_Write(REG_OP_MODE, FSK_STANDBY_MODE); // FSK standby mode to switch off the RF field
+    BSP_SX1272_Write(REG_OP_MODE, LORA_STANDBY_MODE); // LORA standby mode to switch off the RF field
     // Select frequency channel
     e = BSP_SX1272_setChannel(freq);
-    my_printf("Frequency channel ");
-    my_printf("%d",freq);
+	#if (appSX1272_debug_mode > 1)
+		my_printf("Frequency channel ");
+		my_printf("%d",freq);
+    #endif
     if (e == 0)
     {
-      my_printf(" has been successfully set.\r\n");
-      return 1;
+		#if (appSX1272_debug_mode > 1)
+        	my_printf(" has been successfully set.\r\n");
+		#endif
+
+      return 0;
     }
     else
     {
-      my_printf(" has not been set !\r\n");
-      ConfigOK = 0;
-      return 0;
+		#if (appSX1272_debug_mode > 1)
+			my_printf(" has not been set !\r\n");
+		#endif
+		ConfigOK = 0;
+      return 1;
     }
-	return -1;
+	return 2;
 }
 
 
@@ -255,22 +270,64 @@ void APP_SX1272_runReceive()
       //my_printf("%d\r\n",currentstate._RSSI);
     }
   }
+  currentstate._irqFlags = 0;
   //BSP_DELAY_ms(1000);
 }
 
-uint8_t APP_SX1272_pollingCAD(uint32_t freq)
-{
-	APP_SX1272_setFreq(freq); //set specific channel frequency before CAD
 
-	if (BSP_SX1272_cadDetected(1000)) {
-		  my_printf("CAD detected\r\n");
-		  return 1;
-	}
-	else
+
+uint8_t APP_SX1272_pollingCAD(unsigned long timeoutCH1, unsigned long timeoutCH3, unsigned long timeoutCH5)
+{
+	uint8_t state=0;
+
+	do
 	{
-		  my_printf("CAD not detected\r\n");
-		  return 0;
-	}
-	return 0xFF;
+		switch(state){
+			case 0 :
+				#if (appSX1272_debug_mode > 1)
+					my_printf("CH3 !\r\n");
+				#endif
+				if(APP_SX1272_setFreq(freq_centrale) == 0) //set specific channel frequency before CAD
+				{
+					if (BSP_SX1272_cadDetected(timeoutCH1) == 1)
+					{
+						APP_SX1272_runReceive();
+					}
+				}
+				state=1;
+				break;
+			case 1 :
+				#if (appSX1272_debug_mode > 1)
+					my_printf("CH1 !\r\n");
+				#endif
+				if(APP_SX1272_setFreq(freq_centrale1) == 0) //set specific channel frequency before CAD
+				{
+					if (BSP_SX1272_cadDetected(timeoutCH3) == 1)
+					{
+						APP_SX1272_runReceive();
+					}
+				}
+				state=2;
+				break;
+			case 2 :
+				#if (appSX1272_debug_mode > 1)
+					my_printf("CH5 !\r\n");
+				#endif
+				if(APP_SX1272_setFreq(freq_centrale5) == 0) //set specific channel frequency before CAD
+				{
+					if (BSP_SX1272_cadDetected(timeoutCH5) == 1)
+					{
+						APP_SX1272_runReceive();
+					}
+				}
+				state=3;
+				break;
+			default :
+				return 1;
+				break;
+		}
+	}while(state != 3);
+
+	return 0;
 }
 
