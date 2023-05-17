@@ -3097,7 +3097,7 @@ uint8_t	BSP_SX1272_availableData(uint32_t wait)
 		if( bitRead(value, 4) == 1 )
 		{
 			#if (SX1272_debug_mode > 0)
-				my_printf("## Valid Header received in LoRa mode ##\r\n");
+				my_printf("## Valid Header received in LoRa mode val : %d ##\r\n", value);
 			#endif
 			currentstate._hreceived = 1;
 			while( (header == 0) && (millis()-previous < (unsigned long)wait) )
@@ -4599,7 +4599,7 @@ uint8_t BSP_SX1272_getTemp()
    state = 1   --> Channel Activity Detected
    state = 0  --> Channel Activity NOT Detected
 */
-uint8_t BSP_SX1272_cadDetected()
+uint8_t BSP_SX1272_cadDetected(unsigned long timeout)
 {
 	uint8_t val = 0;
 	uint8_t state = 2;
@@ -4629,12 +4629,17 @@ uint8_t BSP_SX1272_cadDetected()
 	}
 
 	// Wait for IRQ CadDone
-    val = BSP_SX1272_Read(REG_IRQ_FLAGS);
-    while((bitRead(val,7) == 0) && (millis()-time)<10 )
+    do
     {
-      val = BSP_SX1272_Read(REG_IRQ_FLAGS);
-    }
-//0001 1011
+    	val = BSP_SX1272_Read(REG_IRQ_FLAGS);
+    }while((bitRead(val,2) == 0) && ((millis()-time) < timeout));
+
+//    val = BSP_SX1272_Read(REG_IRQ_FLAGS);
+//    while((bitRead(val,7) == 0) && (millis()-time)<10000 )
+//    {
+//      val = BSP_SX1272_Read(REG_IRQ_FLAGS);
+//    }
+
 	// After waiting or detecting CadDone
 	// check 'CadDetected' bit in 'RegIrqFlags' register
     if(bitRead(val,0) == 1)

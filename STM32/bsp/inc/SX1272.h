@@ -21,7 +21,7 @@
  * Definitions & Declarations
  *****************************************************************************/
 
-#define SX1272_debug_mode 2 //define debug_mode = 2 for debug
+#define SX1272_debug_mode 0 //define debug_mode = 2 for debug
 
 // pins used for SS and Reset signals of Arduino MEGA 2560 board (reset signal is optional)
 #define SX1272_RST  A0
@@ -957,6 +957,6 @@ Function: It sets the CAD mode to search Channel Activity Detection
 Returns: Integer that determines if there has been any error
 state = true   --> Channel Activity Detected
 state = false  --> Channel Activity NOT Detected*/
-uint8_t BSP_SX1272_cadDetected();
+uint8_t BSP_SX1272_cadDetected(unsigned long timeout);
 
 #endif /* BSP_INC_SX1272_H_ */

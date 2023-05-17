@@ -35,10 +35,16 @@ int main()
 	///////////////////////////////////////////
 	//setup SX1272
 	APP_SX1272_setup();
+	//set SX1272 in LORA
 
 	while(1)
 	{
 		curtime=BSP_millis();
+
+		if (BSP_SX1272_cadDetected(10000) == 1)
+		{
+			APP_SX1272_runReceive();
+		}
 //		state=i%3;
 //		PP_SX1272_pollingCAD(freq_centrale1);
 //		switch(state){
@@ -65,12 +71,15 @@ int main()
 //			break;
 //		}
 
-		if((curtime%1000)==0)//send every 1000ms
-		{
-//			APP_SX1272_runTransmit();
-			BSP_SX1272_cadDetected();
-		}
-		i++;
+//		if((curtime%1000)==0)//send every 1000ms
+//		{
+//			//APP_SX1272_runTransmit();
+////			APP_SX1272_runReceive();
+//
+//
+//		}
+
+//		i++;
 	}
 }
 

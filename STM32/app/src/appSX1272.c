@@ -59,6 +59,7 @@ void APP_SX1272_setup()
     my_printf(" has not been set !\r\n");
     ConfigOK = 0;
   }
+
   // Select output power
   e = BSP_SX1272_setPower(OutPower);
   my_printf("Output power ");
@@ -196,41 +197,38 @@ void APP_SX1272_runReceive()
   // Receive packets continuously
   if (ConfigOK == 1)
   {
-	    //affichage ent�te
-	    //statut (correct = 1 or bad = 0 or non received = 2)
+//	  affichage ent�te
+//	  statut (correct = 1 or bad = 0 or non received = 2)
 	  my_printf("\n \r\n");
-	  my_printf("Packet status ; Packet number ; Received Lg ; Received data ; RSSI packet (dBm) ; source address; PER (%); BER (%)\r\n");
+	  my_printf("Packet status ; Packet number ; Received Lg ; Received data ; RSSI packet (dBm) ; source address; PER ; BER\r\n");
 	  my_printf("\n \r\n");
 
-    e = BSP_SX1272_receivePacketTimeout(WaitRxMax);
+	  e = BSP_SX1272_receivePacketTimeout(WaitRxMax);
     //paquet re�u, correct ou non
-    if (e == 0)
-    {
-      StatusRXMessage = '0';
-      if (currentstate._reception == CORRECT_PACKET)
-      {
-       // Check if the received packet is correct
-       // The length and the content of the packet is checked
-       // if it is valid, the cpok counter is incremented
-       LgMsg=strlen(Message);
-       if(currentstate.packet_received.length>=LgMsg)//check the length
-       {
-        if(memcmp(Message,currentstate.packet_received.data,LgMsg)==0)//check the content
-        {
-          StatusRXMessage = '1';
-        }
-       }
-      }
+	 if (e == 0)
+	 {
+		 StatusRXMessage = '0';
+		 if (currentstate._reception == CORRECT_PACKET)
+		 {
+			 // Check if the received packet is correct
+			 // The length and the content of the packet is checked
+			 // if it is valid, the cpok counter is incremented
+			 LgMsg=strlen(Message);
+		     if(currentstate.packet_received.length>=LgMsg)//check the length
+		     {
+		    	 StatusRXMessage = '1';
+		     }
+		 }
     }
-    // RX Timeout !! No packet received
-    else
+    else  // RX Timeout !! No packet received
+
     {
       StatusRXMessage = '2';
     }
 
     //////////////////////////////////////////////////////////////////////////////////
     // Plot receive packets in the serial monitor
-    my_printf("%d",StatusRXMessage);
+    my_printf("%c",StatusRXMessage);
     my_printf(" ; ");
     my_printf("%d",currentstate.packet_received.packnum);
     my_printf(" ; ");
@@ -257,14 +255,14 @@ void APP_SX1272_runReceive()
       //my_printf("%d\r\n",currentstate._RSSI);
     }
   }
-  BSP_DELAY_ms(1000);
+  //BSP_DELAY_ms(1000);
 }
 
 uint8_t APP_SX1272_pollingCAD(uint32_t freq)
 {
 	APP_SX1272_setFreq(freq); //set specific channel frequency before CAD
 
-	if (BSP_SX1272_cadDetected()) {
+	if (BSP_SX1272_cadDetected(1000)) {
 		  my_printf("CAD detected\r\n");
 		  return 1;
 	}
