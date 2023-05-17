@@ -1,7 +1,7 @@
 /*
  * main.c
  *
- *  Created on: 23 août 2020
+ *  Created on: 23 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -40,7 +40,7 @@ int main()
 	{
 		curtime=BSP_millis();
 
-		if((curtime%1000)==0)//send every 1000ms
+		if((curtime%8000)==0)//send every 8000ms
 		{
 			APP_SX1272_runTransmit();
 			//APP_SX1272_runReceive();
