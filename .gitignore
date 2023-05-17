@@ -4,3 +4,4 @@ STM32/.settings/language.settings.xml
 STM32/Debug
 *.log
 STM32/Release
+STM32/.cproject
