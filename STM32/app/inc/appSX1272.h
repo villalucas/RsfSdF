@@ -1,7 +1,7 @@
 /*
  * appSX1272.h
  *
- *  Created on: 25 août 2020
+ *  Created on: 25 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -19,7 +19,7 @@
 #define RX_Addr 8 //address of the node
 
 #define OutPower POW_14 //min -1, max 14
-#define TypeModulation 1 //0: LORA, 1:FSK
+#define TypeModulation 0 //0: LORA, 1:FSK
 #define PeriodTransmission 5000 //en ms
 
 //LORA configuration (to be changed)
