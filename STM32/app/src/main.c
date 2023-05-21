@@ -12,7 +12,10 @@
 #include "SX1272.h"
 #include "appSX1272.h"
 
+#define main_debug_mode 2 //define debug_mode = 2 for debug
+
 static void SystemClock_Config();
+
 
 int main()
 {
@@ -28,25 +31,26 @@ int main()
 	// Initialize Debug Console
 	BSP_Console_Init();
 
-	my_printf("Console ready!\r\n");
+	#if (main_debug_mode > 1)
+		my_printf("Console ready!\r\n");
+	#endif
 
-	///////////////////////////////////////////
-	//setup SX1272
 	APP_SX1272_setup();
-	//set SX1272 in LORA
 
 	while(1)
 	{
 		curtime=BSP_millis();
-		if((curtime%5000)==0)//send every 1000ms
+		if((curtime%5000)==0)//send every 5000ms
 		{
-			my_printf("!pollingCAD start\r\n");
+			#if (main_debug_mode > 1)
+				my_printf("!pollingCAD start\r\n");
+			#endif
 			if(APP_SX1272_pollingCAD(1000,1000,1000) == 0)
 			{
-				my_printf("!pollingCAD end\r\n");
+				#if (main_debug_mode > 1)
+					my_printf("!pollingCAD end\r\n");
+				#endif
 			}
-//			APP_SX1272_runTransmit();
-//			APP_SX1272_runReceive();
 		}
 
 	}
