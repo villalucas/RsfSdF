@@ -14,6 +14,10 @@
 #define SOF_ACK_SYMBOL 'A'
 #define EOF_SYMBOL	   'E'
 
+#define CHANNEL_SHIFT 6
+#define CHANNEL_MASK 0x03
+#define ADDRESS_MASK 0x3F
+
 // Structure ID:
 typedef struct
 {
@@ -22,8 +26,7 @@ typedef struct
 
 }ID_frame;
 
-
-// Structure msg_frame :
+// Structure message msg_frame_t :
 typedef struct
 {
 	uint8_t SOF = SOF_MSG_SYMBOL ;
@@ -33,9 +36,9 @@ typedef struct
 	uint8_t msg[SIZE_MSG_MAX];
 	uint16_t CRC;
 	uint8_t EOF = EOF_SYMBOL;
-}msg_frame;
+}msg_frame_t;
 
-// Structure Acquittement ack_frame :
+// Structure acquittement ack_frame_t :
 typedef struct
 {
 	uint8_t SOF = SOF_ACK_SYMBOL;
@@ -43,7 +46,7 @@ typedef struct
 	ID_frame dest;
 	uint16_t CRC;
 	uint8_t EOF = EOF_SYMBOL;
-}ack_frame;
+}ack_frame_t;
 
 
 #endif /* APP_INC_FRAMES_H_ */
