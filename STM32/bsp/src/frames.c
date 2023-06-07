@@ -129,7 +129,7 @@ void encode_msg_frame(msg_frame_t msg_to_encode, uint8_t *frame_encoded){
 	frame_encoded[3] = msg_to_encode.size;
 
 	uint8_t i = 0;
-	for(i = 0; i < output_frame->size; i++){
+	for(i = 0; i < msg_to_encode.size; i++){
 		frame_encoded[i+4] = msg_to_encode.msg[i];
 	}
 	uint16_t CRC = 0;
