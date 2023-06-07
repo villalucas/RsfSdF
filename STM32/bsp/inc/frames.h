@@ -60,7 +60,7 @@ typedef struct
 	ID_frame dest;
 	uint8_t size;
 	uint8_t msg[SIZE_MSG_MAX];
-	uint16_t CRC;
+	uint16_t crc;
 	uint8_t EOF;//
 }msg_frame_t;
 
@@ -82,7 +82,7 @@ typedef struct
 	uint8_t SOF;
 	ID_frame src;
 	ID_frame dest;
-	uint16_t CRC;
+	uint16_t crc;
 	uint8_t EOF;
 }ack_frame_t;
 

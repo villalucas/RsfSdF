@@ -24,7 +24,7 @@ uint16_t compute_crc(uint16_t crc, uint8_t data, uint16_t polynomial){
 	for(i = 0; i < 8; i++){
 
 		if( ( ( (crc & 0x8000) >> 8 ) ^ (data & 0x80) ) != 0 ){
-			crc << 1;			// décalage à gauche de 1
+			crc <<= 1;			// décalage à gauche de 1
 			crc ^= polynomial;	// XOR avec le polynome
 		}
 		else
@@ -85,10 +85,10 @@ void decode_frame(uint8_t *payload, msg_frame_t *output_frame){
 	for(i = 0; i < output_frame->size; i++){
 		output_frame->msg[i] = payload[i+4];
 	}
-	output_frame->CRC = (uint16_t)payload[output_frame->size+4];
-	output_frame->CRC = (output_frame->CRC << CRC_SHIFT ) | (uint16_t)payload[output_frame->size+5]; // frist Byte MSB second Byte LSB
+	output_frame->crc = (uint16_t)payload[output_frame->size+4];
+	output_frame->crc = (output_frame->crc << CRC_SHIFT ) | (uint16_t)payload[output_frame->size+5]; // frist Byte MSB second Byte LSB
 	output_frame->EOF = payload[output_frame->size+6];
-	uint16_t CRC = 0; //TODO : add CRC calculation
+	uint16_t crc = 0; //TODO : add CRC calculation
 }
 
 
@@ -105,10 +105,10 @@ void encode_ack_frame(ack_frame_t ack_to_encode, uint8_t *frame_encoded){
 					| (ack_to_encode.src.address & ADDRESS_MASK);
 	frame_encoded[2]= (ack_to_encode.dest.channel << CHANNEL_SHIFT)
 					| (ack_to_encode.dest.address & ADDRESS_MASK);
-	uint16_t CRC = 0;
-	CRC = packet_compute_crc(frame_encoded, 3);
-	frame_encoded[3]= (uint8_t)(CRC  >> CRC_SHIFT); 	// fisrt Byte MSB
-	frame_encoded[4]= (uint8_t)(CRC & CRC_MASK); 		// second Byte LSB
+	uint16_t crc = 0;
+	crc = packet_compute_crc(frame_encoded, 3);
+	frame_encoded[3]= (uint8_t)(crc  >> CRC_SHIFT); 	// fisrt Byte MSB
+	frame_encoded[4]= (uint8_t)(crc & CRC_MASK); 		// second Byte LSB
 	frame_encoded[5]= EOF_SYMBOL;
 }
 
@@ -132,10 +132,10 @@ void encode_msg_frame(msg_frame_t msg_to_encode, uint8_t *frame_encoded){
 	for(i = 0; i < msg_to_encode.size; i++){
 		frame_encoded[i+4] = msg_to_encode.msg[i];
 	}
-	uint16_t CRC = 0;
-	CRC = packet_compute_crc(frame_encoded, msg_to_encode.size+4);
-	frame_encoded[msg_to_encode.size+4]= (uint8_t)(CRC >> CRC_SHIFT); 	// fisrt Byte MSB
-	frame_encoded[msg_to_encode.size+5]= (uint8_t)(CRC & CRC_MASK); 	// second Byte LSB
+	uint16_t crc = 0;
+	crc = packet_compute_crc(frame_encoded, msg_to_encode.size+4);
+	frame_encoded[msg_to_encode.size+4]= (uint8_t)(crc >> CRC_SHIFT); 	// fisrt Byte MSB
+	frame_encoded[msg_to_encode.size+5]= (uint8_t)(crc & CRC_MASK); 	// second Byte LSB
 	frame_encoded[msg_to_encode.size+6]= EOF_SYMBOL;
 }
 

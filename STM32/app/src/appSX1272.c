@@ -11,6 +11,7 @@
 #include "comSX1272.h"
 #include "string.h"
 #include "delay.h"
+#include "frames.h"
 
 extern SX1272status currentstate;
 
@@ -142,7 +143,20 @@ void APP_SX1272_runTransmit()
   {
 
     LgMsg=strlen(Message);
-    e = BSP_SX1272_sendPacketTimeout(dest_address,Message,WaitTxMax);
+    msg_frame_t message;
+    message.src.channel = 1;
+    message.src.address = 4;
+    message.dest.channel = 1;
+    message.dest.address = 2;
+    message.size = 4;
+    message.msg[0] = 'T';
+    message.msg[1] = 'E';
+    message.msg[2] = 'S';
+    message.msg[3] = 'T';
+    uint8_t message_encoded[SIZE_MSG_MAX+7];
+    encode_msg_frame(message, message_encoded);
+
+    e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)message_encoded,WaitTxMax);
 
     if(type_modulation)
     {
