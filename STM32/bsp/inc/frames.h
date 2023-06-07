@@ -20,7 +20,7 @@
 #define CHANNEL_MASK 		0x03
 #define ADDRESS_MASK 		0x3F
 #define CRC_SHIFT 			8
-#define CRC_MASK 			0x0F
+#define CRC_MASK 			0xFF
 
 // polynomial = X^16 + X^12 + X^5 + 1
 #define POLYNOMIAL_CCITT 	0x1021
