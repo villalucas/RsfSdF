@@ -8,6 +8,8 @@
  */
 #include <stdint.h>
 #include "frames.h"
+#include "main.h"
+
 
 /*
  * \fn compute_crc(uint16_t crc, uint8_t data, uint16_t polynomial)
@@ -85,10 +87,23 @@ void decode_frame(uint8_t *payload, msg_frame_t *output_frame){
 	for(i = 0; i < output_frame->size; i++){
 		output_frame->msg[i] = payload[i+4];
 	}
-	output_frame->crc = (uint16_t)payload[output_frame->size+4];
+	output_frame->crc = (uint16_t)payload[(output_frame->size)+4];
 	output_frame->crc = (output_frame->crc << CRC_SHIFT ) | (uint16_t)payload[output_frame->size+5]; // frist Byte MSB second Byte LSB
 	output_frame->EOF = payload[output_frame->size+6];
+	// crc
+
 	uint16_t crc = 0; //TODO : add CRC calculation
+	crc = packet_compute_crc(payload, (output_frame->size) +4);
+
+	if (crc == output_frame->crc)
+	{
+		my_printf("LE crc est good !");
+	}else
+	{
+		my_printf(" Probleme de CRC ");
+	}
+	my_printf("\n\r");
+
 }
 
 

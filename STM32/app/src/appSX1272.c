@@ -220,6 +220,11 @@ void APP_SX1272_runReceive()
     }
 
     //////////////////////////////////////////////////////////////////////////////////
+    msg_frame_t message_decode;
+    decode_frame(currentstate.packet_received.data, &message_decode);
+
+    //////////////////////////////////////////////////////////////////////////////////
+
     // Plot receive packets in the serial monitor
     my_printf("%d",StatusRXMessage);
     my_printf(" ; ");
@@ -229,7 +234,8 @@ void APP_SX1272_runReceive()
     my_printf(" ; ");
     for (uint8_t i =0; i < currentstate.packet_received.length-OFFSET_PAYLOADLENGTH; i++)
     {
-      my_printf("%c",currentstate.packet_received.data[i]);
+
+    	my_printf("%c",currentstate.packet_received.data[i]);
       my_printf(" ");
     }
     ///////////////////////////////////////////////////////////////////////////////////
