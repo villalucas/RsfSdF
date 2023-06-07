@@ -12,7 +12,7 @@
 
 
 /*
- * \fn compute_crc(uint16_t crc, uint8_t data, uint16_t polynomial)
+ * \fn BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial)
  * \brief Fonction de calcul du CRC.
  *
  * \param crc octet du crc pour un octet de la donnée.
@@ -20,7 +20,7 @@
  * \param polynomial 2 octets pour le polynome utilisé par le calcul du CRC.
  *
 */
-uint16_t compute_crc(uint16_t crc, uint8_t data, uint16_t polynomial){
+uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial){
 	uint8_t i;
 
 	for(i = 0; i < 8; i++){
@@ -46,7 +46,7 @@ uint16_t compute_crc(uint16_t crc, uint8_t data, uint16_t polynomial){
  * \param datalength taille du tableau.
  *
 */
-uint16_t packet_compute_crc(uint8_t *data, uint8_t datalength){
+uint16_t BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength){
 	uint8_t i;
 	uint16_t crc;
 	uint16_t polynomial;
@@ -55,7 +55,7 @@ uint16_t packet_compute_crc(uint8_t *data, uint8_t datalength){
 	crc = CRC_CCITT_SEED;
 
 	for(i = 0; i < datalength; i++){
-		crc = compute_crc(crc, data[i], polynomial);
+		crc = BSP_FRAMES_computeCrc(crc, data[i], polynomial);
 	}
 
 	return (uint16_t)(~crc);
@@ -71,9 +71,9 @@ uint16_t packet_compute_crc(uint8_t *data, uint8_t datalength){
  *
  *
 */
-uint8_t decode_frame(uint8_t *payload, msg_frame_t *output_frame){
+uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame){
 
-	output_frame->SOF = payload[0];
+	output_frame->sof = payload[0];
 
 	output_frame->src.channel = (payload[1]>>CHANNEL_SHIFT) & CHANNEL_MASK;
 	output_frame->src.address = payload[1] & ADDRESS_MASK;
@@ -89,11 +89,10 @@ uint8_t decode_frame(uint8_t *payload, msg_frame_t *output_frame){
 	}
 	output_frame->crc = (uint16_t)payload[(output_frame->size)+4];
 	output_frame->crc = (output_frame->crc << CRC_SHIFT ) | (uint16_t)payload[output_frame->size+5]; // frist Byte MSB second Byte LSB
-	output_frame->EOF = payload[output_frame->size+6];
-	// crc
+	output_frame->eof = payload[output_frame->size+6];
 
-	uint16_t crc = 0; //TODO : add CRC calculation
-	crc = packet_compute_crc(payload, (output_frame->size) +4);
+	uint16_t crc = 0;
+	crc = BSP_FRAMES_packetComputeCrc(payload, (output_frame->size) +4);
 
 	if (crc == output_frame->crc)
 	{
@@ -105,9 +104,45 @@ uint8_t decode_frame(uint8_t *payload, msg_frame_t *output_frame){
 		return 1;
 	}
 	my_printf("\n\r");
-
 }
 
+/*
+ * \fn void decode_frame(uint8_t *payload, msg_frame_t *output_frame)
+ * \brief Fonction de décodage des messages receptionner dans la payload.
+ *
+ * \param payload Pointeur d'octets sur la base de la payload.
+ * \param output_frame Pointeur de la structure d'objet msg_frame_t qui est définie par le protocole.
+ *
+ *
+*/
+uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame){
+
+	output_frame->sof = payload[0];
+
+	output_frame->src.channel = (payload[1]>>CHANNEL_SHIFT) & CHANNEL_MASK;
+	output_frame->src.address = payload[1] & ADDRESS_MASK;
+
+	output_frame->dest.channel = (payload[2]>>CHANNEL_SHIFT) & CHANNEL_MASK;
+	output_frame->dest.address = payload[2] & ADDRESS_MASK;
+
+	output_frame->crc = (uint16_t)payload[3];
+	output_frame->crc = (output_frame->crc << CRC_SHIFT ) | (uint16_t)payload[4]; // frist Byte MSB second Byte LSB
+	output_frame->eof = payload[5];
+
+	uint16_t crc = 0;
+	crc = BSP_FRAMES_packetComputeCrc(payload, SIZEOF_ACK);
+
+	if (crc == output_frame->crc)
+	{
+		my_printf("LE crc est good !\n\r");
+		return 0;
+	}else
+	{
+		my_printf(" Probleme de CRC \n\r");
+		return 1;
+	}
+	my_printf("\n\r");
+}
 
 /*
  * \fn encode_ack_frame(ack_frame_t ack_to_encode, uint8_t *frame_encoded)
@@ -116,18 +151,19 @@ uint8_t decode_frame(uint8_t *payload, msg_frame_t *output_frame){
  * \param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.
  *
 */
-void encode_ack_frame(ack_frame_t ack_to_encode, uint8_t *frame_encoded){
+void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded){
 	frame_encoded[0]= SOF_ACK_SYMBOL;
 	frame_encoded[1]= (ack_to_encode.src.channel << CHANNEL_SHIFT)
 					| (ack_to_encode.src.address & ADDRESS_MASK);
 	frame_encoded[2]= (ack_to_encode.dest.channel << CHANNEL_SHIFT)
 					| (ack_to_encode.dest.address & ADDRESS_MASK);
 	uint16_t crc = 0;
-	crc = packet_compute_crc(frame_encoded, 3);
+	crc = BSP_FRAMES_packetComputeCrc(frame_encoded, 3);
 	frame_encoded[3]= (uint8_t)(crc  >> CRC_SHIFT); 	// fisrt Byte MSB
 	frame_encoded[4]= (uint8_t)(crc & CRC_MASK); 		// second Byte LSB
 	frame_encoded[5]= EOF_SYMBOL;
 }
+
 
 /*
  * \fn encode_msg_frame(msg_frame_t msg_to_encode, uint8_t *frame_encoded)
@@ -136,7 +172,7 @@ void encode_ack_frame(ack_frame_t ack_to_encode, uint8_t *frame_encoded){
  * \param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.
  *
 */
-void encode_msg_frame(msg_frame_t msg_to_encode, uint8_t *frame_encoded){
+void BSP_FRAMES_encodeMsgFrame(msg_frame_t msg_to_encode, uint8_t *frame_encoded){
 	frame_encoded[0]= SOF_MSG_SYMBOL;
 	frame_encoded[1]= (msg_to_encode.src.channel << CHANNEL_SHIFT)
 					| (msg_to_encode.src.address & ADDRESS_MASK);
@@ -150,7 +186,7 @@ void encode_msg_frame(msg_frame_t msg_to_encode, uint8_t *frame_encoded){
 		frame_encoded[i+4] = msg_to_encode.msg[i];
 	}
 	uint16_t crc = 0;
-	crc = packet_compute_crc(frame_encoded, msg_to_encode.size+4);
+	crc = BSP_FRAMES_packetComputeCrc(frame_encoded, msg_to_encode.size+4);
 	frame_encoded[msg_to_encode.size+4]= (uint8_t)(crc >> CRC_SHIFT); 	// fisrt Byte MSB
 	frame_encoded[msg_to_encode.size+5]= (uint8_t)(crc & CRC_MASK); 	// second Byte LSB
 	frame_encoded[msg_to_encode.size+6]= EOF_SYMBOL;

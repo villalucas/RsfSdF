@@ -30,6 +30,9 @@ static uint16_t RegFdev = Fdev;
 static int8_t e;
 static uint8_t ConfigOK = 1;
 
+#define SEND_MSG_ENCODED_FLAG 0
+#define SEND_ACK_ENCODED_FLAG 1
+
 ///////////////////////////////////////////////////////////////
 // Setup function
 ///////////////////////////////////////////////////////////////
@@ -141,23 +144,37 @@ void APP_SX1272_runTransmit()
   // Transmit a packet continuously with a pause of "waitPeriod"
   if (ConfigOK == 1)
   {
+	#ifdef SEND_MSG_ENCODED_FLAG
 
-    LgMsg=strlen(Message);
-    msg_frame_t message;
-    message.src.channel = 1;
-    message.src.address = 4;
-    message.dest.channel = 1;
-    message.dest.address = 2;
-    message.size = 4;
-    message.msg[0] = 'T';
-    message.msg[1] = 'E';
-    message.msg[2] = 'S';
-    message.msg[3] = 'T';
-    uint8_t message_encoded[SIZE_MSG_MAX+7];
-    encode_msg_frame(message, message_encoded);
+		LgMsg=strlen(Message);
+		msg_frame_t message;
+		message.src.channel = 1;
+		message.src.address = 4;
+		message.dest.channel = 1;
+		message.dest.address = 2;
+		message.size = 4;
+		message.msg[0] = 'T';
+		message.msg[1] = 'E';
+		message.msg[2] = 'S';
+		message.msg[3] = 'T';
+		uint8_t message_encoded[SIZE_MSG_MAX+7];
+		BSP_FRAMES_encodeMsgFrame(message, message_encoded);
 
-    e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)message_encoded,WaitTxMax);
+		e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)message_encoded,WaitTxMax);
+	#endif
 
+	#ifdef SEND_ACK_ENCODED_FLAG
+
+		ack_frame_t message_ack;
+		message_ack.src.channel = 1;
+		message_ack.src.address = 4;
+		message_ack.dest.channel = 1;
+		message_ack.dest.address = 2;
+		uint8_t ack_encoded[SIZEOF_ACK];
+		BSP_FRAMES_encodeAckFrame(message_ack, ack_encoded);
+
+		e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)ack_encoded,WaitTxMax);
+	#endif
     if(type_modulation)
     {
       BSP_SX1272_Write(REG_OP_MODE, FSK_STANDBY_MODE); // FSK standby mode to switch off the RF field
@@ -218,11 +235,17 @@ void APP_SX1272_runReceive()
     {
       StatusRXMessage = '2';
     }
-
+    uint8_t crc_check;
     //////////////////////////////////////////////////////////////////////////////////
-    msg_frame_t message_decode;
-    uint8_t crc_check = decode_frame(currentstate.packet_received.data, &message_decode);
+	#ifdef SEND_MSG_ENCODED_FLAG
+		msg_frame_t message_decode;
+		crc_check = BSP_FRAMES_decodeMsgFrame(currentstate.packet_received.data, &message_decode);
+	#endif
 
+	#ifdef SEND_ACK_ENCODED_FLAG
+		ack_frame_t ack_decode;
+		crc_check = BSP_FRAMES_decodeAckFrame(currentstate.packet_received.data, &ack_decode);
+	#endif
     //////////////////////////////////////////////////////////////////////////////////
 
     // Plot receive packets in the serial monitor
@@ -235,9 +258,8 @@ void APP_SX1272_runReceive()
     my_printf("DATA : ");
     for (uint8_t i =0; i < currentstate.packet_received.length-OFFSET_PAYLOADLENGTH; i++)
     {
-
     	my_printf("%c",currentstate.packet_received.data[i]);
-      my_printf(" ");
+    	my_printf(" ");
     }
     ///////////////////////////////////////////////////////////////////////////////////
     //CRC CHECK

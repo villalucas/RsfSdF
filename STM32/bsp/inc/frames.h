@@ -11,6 +11,7 @@
 #define APP_INC_FRAMES_H_
 
 #define SIZE_MSG_MAX		15
+#define SIZEOF_ACK			6
 
 #define SOF_MSG_SYMBOL		'S'
 #define SOF_ACK_SYMBOL		'A'
@@ -37,7 +38,7 @@ typedef struct
 	uint8_t channel;
 	uint8_t address;
 
-}ID_frame;
+}id_frame_t;
 
 /**
  * \struct msg_frame_t
@@ -55,13 +56,13 @@ typedef struct
  */
 typedef struct
 {
-	uint8_t SOF;
-	ID_frame src;
-	ID_frame dest;
+	uint8_t sof;
+	id_frame_t src;
+	id_frame_t dest;
 	uint8_t size;
 	uint8_t msg[SIZE_MSG_MAX];
 	uint16_t crc;
-	uint8_t EOF;//
+	uint8_t eof;//
 }msg_frame_t;
 
 
@@ -79,20 +80,21 @@ typedef struct
  */
 typedef struct
 {
-	uint8_t SOF;
-	ID_frame src;
-	ID_frame dest;
+	uint8_t sof;
+	id_frame_t src;
+	id_frame_t dest;
 	uint16_t crc;
-	uint8_t EOF;
+	uint8_t eof;
 }ack_frame_t;
 
 
 /* Function */
-uint16_t compute_crc(uint16_t crc, uint8_t data, uint16_t polynomial);
-uint16_t packet_compute_crc(uint8_t *data, uint8_t datalength);
-uint8_t decode_frame(uint8_t *payload, msg_frame_t *output_frame);
-void encode_ack_frame(ack_frame_t ack_to_encode, uint8_t *frame_encoded);
-void encode_msg_frame(msg_frame_t msg_to_encode, uint8_t *frame_encoded);
+uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial);
+uint16_t BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength);
+uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame);
+uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame);
+void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded);
+void BSP_FRAMES_encodeMsgFrame(msg_frame_t msg_to_encode, uint8_t *frame_encoded);
 
 
 #endif /* APP_INC_FRAMES_H_ */
