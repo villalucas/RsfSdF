@@ -71,7 +71,7 @@ uint16_t packet_compute_crc(uint8_t *data, uint8_t datalength){
  *
  *
 */
-void decode_frame(uint8_t *payload, msg_frame_t *output_frame){
+uint8_t decode_frame(uint8_t *payload, msg_frame_t *output_frame){
 
 	output_frame->SOF = payload[0];
 
@@ -97,10 +97,12 @@ void decode_frame(uint8_t *payload, msg_frame_t *output_frame){
 
 	if (crc == output_frame->crc)
 	{
-		my_printf("LE crc est good !");
+		my_printf("LE crc est good !\n\r");
+		return 0;
 	}else
 	{
-		my_printf(" Probleme de CRC ");
+		my_printf(" Probleme de CRC \n\r");
+		return 1;
 	}
 	my_printf("\n\r");
 

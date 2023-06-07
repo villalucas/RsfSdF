@@ -90,7 +90,7 @@ typedef struct
 /* Function */
 uint16_t compute_crc(uint16_t crc, uint8_t data, uint16_t polynomial);
 uint16_t packet_compute_crc(uint8_t *data, uint8_t datalength);
-void decode_frame(uint8_t *payload, msg_frame_t *output_frame);
+uint8_t decode_frame(uint8_t *payload, msg_frame_t *output_frame);
 void encode_ack_frame(ack_frame_t ack_to_encode, uint8_t *frame_encoded);
 void encode_msg_frame(msg_frame_t msg_to_encode, uint8_t *frame_encoded);
 

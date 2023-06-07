@@ -221,7 +221,7 @@ void APP_SX1272_runReceive()
 
     //////////////////////////////////////////////////////////////////////////////////
     msg_frame_t message_decode;
-    decode_frame(currentstate.packet_received.data, &message_decode);
+    uint8_t crc_check = decode_frame(currentstate.packet_received.data, &message_decode);
 
     //////////////////////////////////////////////////////////////////////////////////
 
@@ -231,7 +231,8 @@ void APP_SX1272_runReceive()
     my_printf("%d",currentstate.packet_received.packnum);
     my_printf(" ; ");
     my_printf("%d",currentstate.packet_received.length);
-    my_printf(" ; ");
+    my_printf(" ;\n\r");
+    my_printf("DATA : ");
     for (uint8_t i =0; i < currentstate.packet_received.length-OFFSET_PAYLOADLENGTH; i++)
     {
 
@@ -239,14 +240,19 @@ void APP_SX1272_runReceive()
       my_printf(" ");
     }
     ///////////////////////////////////////////////////////////////////////////////////
+    //CRC CHECK
+    my_printf(" \n\r");
+    my_printf("CRC Check : %d\n\r", crc_check);
+
     // Plot RSSI
-    my_printf(" ; ");
     // LORA mode
     if(TypeModulation == 0)
     {
       e = BSP_SX1272_getRSSIpacket();
-      my_printf("%d\r\n",currentstate._RSSIpacket);
+
+      my_printf("RSSI :%d\r\n",currentstate._RSSIpacket);
     }
+
     // FSK mode
     else
     {
