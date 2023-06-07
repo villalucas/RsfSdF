@@ -144,7 +144,7 @@ void APP_SX1272_runTransmit()
   // Transmit a packet continuously with a pause of "waitPeriod"
   if (ConfigOK == 1)
   {
-	#ifdef SEND_MSG_ENCODED_FLAG
+	#if SEND_MSG_ENCODED_FLAG
 
 		LgMsg=strlen(Message);
 		msg_frame_t message;
@@ -163,7 +163,7 @@ void APP_SX1272_runTransmit()
 		e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)message_encoded,WaitTxMax);
 	#endif
 
-	#ifdef SEND_ACK_ENCODED_FLAG
+	#if SEND_ACK_ENCODED_FLAG
 
 		ack_frame_t message_ack;
 		message_ack.src.channel = 1;
@@ -237,12 +237,12 @@ void APP_SX1272_runReceive()
     }
     uint8_t crc_check;
     //////////////////////////////////////////////////////////////////////////////////
-	#ifdef SEND_MSG_ENCODED_FLAG
+	#if SEND_MSG_ENCODED_FLAG
 		msg_frame_t message_decode;
 		crc_check = BSP_FRAMES_decodeMsgFrame(currentstate.packet_received.data, &message_decode);
 	#endif
 
-	#ifdef SEND_ACK_ENCODED_FLAG
+	#if SEND_ACK_ENCODED_FLAG
 		ack_frame_t ack_decode;
 		crc_check = BSP_FRAMES_decodeAckFrame(currentstate.packet_received.data, &ack_decode);
 	#endif
