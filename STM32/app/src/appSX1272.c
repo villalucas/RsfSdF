@@ -31,7 +31,7 @@ static uint16_t RegFdev = Fdev;
 static int8_t e;
 static uint8_t ConfigOK = 1;
 
-#define DEBIG_FLAG 2
+#define DEBUG_FLAG 2
 #define SEND_MSG_ENCODED_FLAG 0
 #define SEND_ACK_ENCODED_FLAG 1
 
@@ -173,9 +173,9 @@ void APP_SX1272_runTransmit(id_frame_t device) {
 
 			LgMsg=strlen(Message);
 			msg_frame_t message;
-			message.src.channel = 1;
-			message.src.address = 4;
-			message.dest.channel = 1;
+			message.src.channel = device.channel;
+			message.src.address = device.adress;
+			message.dest.channel = device.channel;
 			message.dest.address = 2;
 			message.size = 4;
 			message.msg[0] = 'T';
@@ -193,8 +193,8 @@ void APP_SX1272_runTransmit(id_frame_t device) {
 		ack_frame_t message_ack;
 		message_ack.src.channel = device.channel;
 		message_ack.src.address = device.address;
-		message_ack.dest.channel = 1;
-		message_ack.dest.address = 1;
+		message_ack.dest.channel = device.channel;
+		message_ack.dest.address = 2;
 
 		uint8_t ack_encoded[SIZEOF_ACK];
 		BSP_FRAMES_encodeAckFrame(message_ack, ack_encoded);
@@ -319,4 +319,52 @@ void APP_SX1272_runReceive(id_frame_t device) {
 	}
 	BSP_DELAY_ms(1000);
 	LedOff(LED_RX);
+}
+
+/*
+ Function: It set the SW1272 module on the frequence pass as argument of the function
+   return = 2  --> The command has not been executed
+   return = 1  --> There has been an error while executing the command
+   return = 0  --> The command has been executed with no errors
+*/
+uint8_t APP_SX1272_setFreq(id_frame_t device)
+{
+    BSP_SX1272_Write(REG_OP_MODE, LORA_STANDBY_MODE); // LORA standby mode to switch off the RF field
+    uint32_t freq;
+    switch (device.channel) {
+	case 0:
+		freq = CH_868v1;
+		break;
+	case 1:
+		freq = CH_868v3;
+		break;
+	case 2:
+		freq = CH_868v5;
+		break;
+	default:
+		break;
+	}
+    // Select frequency channel
+    e = BSP_SX1272_setChannel(freq);
+	#if (DEBUG_FLAG > 0)
+		my_printf("Frequency channel ");
+		my_printf("%d",freq);
+    #endif
+    if (e == 0)
+    {
+		#if (DEBUG_FLAG > 0)
+        	my_printf(" has been successfully set.\r\n");
+		#endif
+
+      return 0;
+    }
+    else
+    {
+		#if (DEBUG_FLAG > 0)
+			my_printf(" has not been set !\r\n");
+		#endif
+		ConfigOK = 0;
+      return 1;
+    }
+	return 2;
 }

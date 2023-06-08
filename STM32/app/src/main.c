@@ -47,8 +47,17 @@ int main()
 	///////////////////////////////////////////
 	//setup SX1272 on channel 1
 	id_frame_t device;
+
+
+#ifdef TRANSMITTER
 	device.address = 1;
-	device.channel = 1; //channel 0, 1 or 2
+#endif
+#ifdef RECEIVER
+	device.address = 2;
+#endif
+
+	device.channel = 0;
+
 
 	APP_SX1272_setup(device);
 
