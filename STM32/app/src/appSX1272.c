@@ -32,8 +32,8 @@ static int8_t e;
 static uint8_t ConfigOK = 1;
 
 #define DEBUG_FLAG 2
-#define SEND_MSG_ENCODED_FLAG 0
-#define SEND_ACK_ENCODED_FLAG 1
+#define SEND_MSG_ENCODED_FLAG 1
+#define SEND_ACK_ENCODED_FLAG 0
 
 ///////////////////////////////////////////////////////////////
 // Setup function
@@ -163,43 +163,14 @@ void APP_SX1272_setup(id_frame_t device) {
 	BSP_DELAY_ms(1000);
 }
 
-void APP_SX1272_runTransmit(id_frame_t device) {
+uint8_t APP_SX1272_runTransmitMsg(id_frame_t device, msg_frame_t *message) {
 	uint8_t dest_address = TX_Addr;
 
 	// Transmit a packet continuously with a pause of "waitPeriod"
 	if (ConfigOK == 1) {
-#if SEND_MSG_ENCODED_FLAG
-
-			LgMsg=strlen(Message);
-			msg_frame_t message;
-			message.src.channel = device.channel;
-			message.src.address = device.adress;
-			message.dest.channel = device.channel;
-			message.dest.address = 2;
-			message.size = 4;
-			message.msg[0] = 'T';
-			message.msg[1] = 'E';
-			message.msg[2] = 'S';
-			message.msg[3] = 'T';
 			uint8_t message_encoded[SIZE_MSG_MAX+7];
 			BSP_FRAMES_encodeMsgFrame(message, message_encoded);
-
 			e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)message_encoded,WaitTxMax);
-		#endif
-
-#if SEND_ACK_ENCODED_FLAG
-
-		ack_frame_t message_ack;
-		message_ack.src.channel = device.channel;
-		message_ack.src.address = device.address;
-		message_ack.dest.channel = device.channel;
-		message_ack.dest.address = 2;
-
-		uint8_t ack_encoded[SIZEOF_ACK];
-		BSP_FRAMES_encodeAckFrame(message_ack, ack_encoded);
-
-		e = BSP_SX1272_sendPacketTimeout(dest_address, (char*) ack_encoded, WaitTxMax);
-#endif
 
 		if (type_modulation) {
 			BSP_SX1272_Write(REG_OP_MODE, FSK_STANDBY_MODE); // FSK standby mode to switch off the RF field
@@ -213,18 +184,68 @@ void APP_SX1272_runTransmit(id_frame_t device) {
 				my_printf("%d\r\n",dest_address);
 				cp++;
 			#endif
+			return TRANSMIT_NO_ERROR;
 		} else {
 #if DEBUG_FLAG > 0
 				my_printf("\n Trasmission problem !\r\n");
 			#endif
+			if (e == 2){
+				return TRANSMIT_TIMEOUT_ERROR;
+			}
+			else{
+				return TRANSMIT_ERROR;
+			}
 		}
-		BSP_DELAY_ms(waitPeriod); //delay to send packet every PeriodTransmission
+	}
+	else{
+		return TRANSMIT_ERROR_CONFIG;
 	}
 }
 
-void APP_SX1272_runReceive(id_frame_t device) {
-	char StatusRXMessage = '0';
 
+uint8_t APP_SX1272_runTransmitAck(id_frame_t device, ack_frame_t *ack) {
+	uint8_t dest_address = TX_Addr;
+
+	// Transmit a packet continuously with a pause of "waitPeriod"
+	if (ConfigOK == 1) {
+			uint8_t ack_encoded[SIZE_MSG_MAX+7];
+			BSP_FRAMES_encodeAckFrame(ack, ack_encoded);
+			e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)ack_encoded,WaitTxMax);
+
+		if (type_modulation) {
+			BSP_SX1272_Write(REG_OP_MODE, FSK_STANDBY_MODE); // FSK standby mode to switch off the RF field
+		}
+
+		if (e == 0) {
+#if DEBUG_FLAG > 0
+				my_printf("\n Packet number ");
+				my_printf("%d",cp);
+				my_printf(" ;Rx node address ");
+				my_printf("%d\r\n",dest_address);
+				cp++;
+			#endif
+			return TRANSMIT_NO_ERROR;
+		} else {
+#if DEBUG_FLAG > 0
+				my_printf("\n Trasmission problem !\r\n");
+			#endif
+			if (e == 2){
+				return TRANSMIT_TIMEOUT_ERROR;
+			}
+			else{
+				return TRANSMIT_ERROR;
+			}
+		}
+	}
+	else{
+		return TRANSMIT_ERROR_CONFIG;
+	}
+}
+
+uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ack_frame_t *ack_decode) {
+	char StatusRXMessage = '0';
+	uint8_t frame_type = 0;
+	uint8_t crc_check;
 	//////////////////////////////////////////////////////////////////////////////////
 	// Receive packets continuously
 	if (ConfigOK == 1) {
@@ -257,26 +278,7 @@ void APP_SX1272_runReceive(id_frame_t device) {
 		else {
 			StatusRXMessage = '2';
 		}
-		uint8_t crc_check;
-		//////////////////////////////////////////////////////////////////////////////////
-#if SEND_MSG_ENCODED_FLAG
-		msg_frame_t message_decode;
-		crc_check = BSP_FRAMES_decodeMsgFrame(currentstate.packet_received.data, &message_decode);
-	#endif
 
-#if SEND_ACK_ENCODED_FLAG
-		ack_frame_t ack_decode;
-		crc_check = BSP_FRAMES_decodeAckFrame(currentstate.packet_received.data, &ack_decode);
-		if(ack_decode.dest.address == device.address)
-		{
-#if DEBUG_FLAG > 0
-			my_printf("Bon destinataire\r\n");
-			#endif
-		}
-		#endif
-		//////////////////////////////////////////////////////////////////////////////////
-
-		// Plot receive packets in the serial monitor
 #if DEBUG_FLAG > 0
 		my_printf("%d", StatusRXMessage);
 		my_printf(" ; ");
@@ -285,20 +287,57 @@ void APP_SX1272_runReceive(id_frame_t device) {
 		my_printf("%d", currentstate.packet_received.length);
 		my_printf(" ;\n\r");
 		my_printf("DATA : ");
-		#endif
 		for (uint8_t i = 0;
 				i < currentstate.packet_received.length - OFFSET_PAYLOADLENGTH;
 				i++) {
 			my_printf("%c", currentstate.packet_received.data[i]);
 			my_printf(" ");
 		}
-		///////////////////////////////////////////////////////////////////////////////////
-		//CRC CHECK
+#endif
+
+		//Check if payload is an ack or a message
+		switch(currentstate.packet_received.data[0])
+		{
+		case SOF_MSG_SYMBOL :
+			frame_type = SOF_MSG_SYMBOL;
+			crc_check = BSP_FRAMES_decodeMsgFrame(currentstate.packet_received.data, message_decode);
+			break;
+		case SOF_ACK_SYMBOL :
+			frame_type = SOF_ACK_SYMBOL;
+			crc_check = BSP_FRAMES_decodeAckFrame(currentstate.packet_received.data, ack_decode);
+			break;
+		default :
+			return RECEIVE_SOF_ERROR;
+			break;
+		}
+
+
 #if DEBUG_FLAG > 0
 		my_printf(" \n\r");
 		my_printf("CRC Check : %d\n\r", crc_check);
-		#endif
+#endif
+		//Check for good CRC reception
+		if(crc_check != CRC_NO_ERROR){
+			return RECEIVE_CRC_ERROR;
+		}
 
+		//Check if payload is meant for this device
+		if(frame_type == SOF_ACK_SYMBOL){
+			if(ack_decode->dest.address == device.address && ack_decode->dest.channel == device.channel ){
+				return RECEIVE_ACK_RECEIVED;
+			}
+			//The message wasn't for this device, abort and return WRONG_DESTINARY
+			else return RECEIVE_WRONG_DESTINARY;
+		}
+		if(frame_type == SOF_MSG_SYMBOL){
+			if(message_decode->dest.address == device.address && message_decode->dest.channel == device.channel ){
+				return RECEIVE_MSG_RECEIVED;
+			}
+			//The message wasn't for this device, abort. Not an error as everything is normal
+			else return RECEIVE_WRONG_DESTINARY;
+		}
+
+#if DEBUG_FLAG > 0
 		// Plot RSSI
 		// LORA mode
 		if (TypeModulation == 0) {
@@ -313,7 +352,8 @@ void APP_SX1272_runReceive(id_frame_t device) {
 			//my_printf("%d\r\n",currentstate._RSSI);
 		}
 	}
-	BSP_DELAY_ms(1000);
+#endif
+	return RECEIVE_ERROR_UNKNOWN_CASE;
 }
 
 /*

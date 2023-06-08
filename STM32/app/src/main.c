@@ -26,6 +26,10 @@ int main()
 	uint32_t curtime=0;
 	uint32_t i=0;
 
+	uint8_t		receive_status;
+	msg_frame_t received_msg;
+	ack_frame_t received_ack;
+
 	// Initialize System clock to 48MHz from external clock
 	SystemClock_Config();
 	// Initialize timebase
@@ -52,7 +56,7 @@ int main()
 	device.address = 2;
 #endif
 
-	device.channel = 0;
+	device.channel = 1;
 
 	APP_SX1272_setup(device);
 
@@ -63,10 +67,13 @@ int main()
 		if((curtime%8000)==0)//send every 8000ms
 		{
 #ifdef TRANSMITTER
-			APP_SX1272_runTransmit(device);
+			APP_SX1272_runTransmitMsg(device, &received_msg);
 #endif
 #ifdef RECEIVER
-			APP_SX1272_runReceive(device);
+			receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
+			if(receive_status == RECEIVE_MSG_RECEIVED){
+
+			}
 #endif
 			i++;
 		}
