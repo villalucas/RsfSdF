@@ -1,7 +1,7 @@
 /*
  * SX1272.h
  *
- *  Created on: 24 août 2020
+ *  Created on: 24 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -9,6 +9,7 @@
 #define BSP_INC_SX1272_H_
 
 #include "stm32f0xx.h"
+#include "frames.h"
 #include <stdlib.h>
 #include <stdint.h>
 

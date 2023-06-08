@@ -11,6 +11,12 @@
 #include "comSX1272.h"
 #include "SX1272.h"
 #include "appSX1272.h"
+#include "LED_control.h"
+
+
+
+
+#include "frames.h"
 
 static void SystemClock_Config();
 
@@ -29,12 +35,18 @@ int main()
 	BSP_SPI1_Init();
 	// Initialize Debug Console
 	BSP_Console_Init();
+	// Intialize LEDs
+	Led_Init();
 
 	my_printf("Console ready!\r\n");
 
 	///////////////////////////////////////////
 	//setup SX1272
-	APP_SX1272_setup();
+	id_frame_t device;
+	device.address = 1;
+	device.channel = 1; //channel 0, 1 or 2
+
+	APP_SX1272_setup(device);
 
 	while(1)
 	{
@@ -43,10 +55,10 @@ int main()
 		if((curtime%8000)==0)//send every 8000ms
 		{
 #ifdef TRANSMITTER
-			APP_SX1272_runTransmit();
+			APP_SX1272_runTransmit(device);
 #endif
 #ifdef RECEIVER
-			APP_SX1272_runReceive();
+			APP_SX1272_runReceive(device);
 #endif
 			i++;
 		}
@@ -61,7 +73,6 @@ int main()
  *
  *  Laurent Latorre - 05/08/2017
  */
-
 static void SystemClock_Config()
 {
 	uint32_t	HSE_Status;
