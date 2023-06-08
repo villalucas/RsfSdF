@@ -8,3 +8,8 @@ STM32/prog1Proj Debug.launch
 STM32/.settings/com.st.stm32cube.ide.mcu.sfrview.prefs
 STM32/prog1Proj Debug.launch
 STM32/prog1Proj Debug.launch
+*.elf
+*.list
+*.map
+*.d
+*.su

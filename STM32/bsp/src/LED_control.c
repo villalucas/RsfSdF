@@ -22,7 +22,7 @@
  *  Blue LED PC8 	->		TX
  */
 
-void Led_Init()
+void LedInit()
 {
 	// Enable GPIOB clock
 	RCC->AHBENR |= RCC_AHBENR_GPIOBEN;
@@ -127,6 +127,7 @@ void Led_Init()
 	GPIOC->BSRR = GPIO_BSRR_BR_6;	// RX LED Off
 	GPIOC->BSRR = GPIO_BSRR_BR_8;	// TX LED Off
 
+	BSP_DELAY_ms(500);
 }
 
 void LedOn(uint8_t led)
