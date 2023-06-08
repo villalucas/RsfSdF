@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (10.3-2021.10)
+# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
 ################################################################################
 
 -include ../makefile.init
@@ -43,14 +43,14 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 EXECUTABLES += \
 prog1Proj.elf \
 
-MAP_FILES += \
-prog1Proj.map \
-
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
 prog1Proj.list \
+
+OBJCOPY_BIN += \
+prog1Proj.bin \
 
 
 # All Target
@@ -60,8 +60,8 @@ all: main-build
 main-build: prog1Proj.elf secondary-outputs
 
 # Tool invocations
-prog1Proj.elf prog1Proj.map: $(OBJS) $(USER_OBJS) D:/OneDrive_UM/Polytech/SE/Semestre\ 10/SDF/Projet/Code/git_repos/RsfSdF/STM32\Debug_STM32F072RB_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "prog1Proj.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"D:/OneDrive_UM/Polytech/SE/Semestre 10/SDF/Projet/Code/git_repos/RsfSdF/STM32\Debug_STM32F072RB_FLASH.ld" --specs=nosys.specs -Wl,-Map="prog1Proj.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+prog1Proj.elf: $(OBJS) $(USER_OBJS) C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32\Debug_STM32F072RB_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "prog1Proj.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32\Debug_STM32F072RB_FLASH.ld" --specs=nosys.specs -Wl,-Map="prog1Proj.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -75,12 +75,17 @@ prog1Proj.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+prog1Proj.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "prog1Proj.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) default.size.stdout prog1Proj.elf prog1Proj.list prog1Proj.map
+	-$(RM) default.size.stdout prog1Proj.bin prog1Proj.elf prog1Proj.list
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

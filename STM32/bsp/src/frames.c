@@ -1,25 +1,24 @@
 /**
- * \file frame.c
- * \brief Fonctions frame pour l'encodage et le décodage.
- * \author Nicolas, Evan
- * \version 0.1
- * \date 17 mai 2023
- *
+ * @file frame.c
+ * @brief Fonctions frame pour l'encodage et le décodage.
+ * @author Nicolas, Evan
+ * @version 0.1
+ * @date 17 mai 2023
  */
 #include <stdint.h>
 #include "frames.h"
 #include "main.h"
 
 
-/*
- * \fn BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial)
- * \brief Fonction de calcul du CRC.
+/**
+ * @fn uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial)
+ * @brief Fonction de calcul du CRC.
  *
- * \param crc octet du crc pour un octet de la donnée.
- * \param data octet de la donnée.
- * \param polynomial 2 octets pour le polynome utilisé par le calcul du CRC.
- *
-*/
+ * @param crc Octet du CRC pour un octet de la donnée.
+ * @param data Octet de la donnée.
+ * @param polynomial Deux octets pour le polynôme utilisé par le calcul du CRC.
+ * @return uint16_t Valeur du CRC calculé.
+ */
 uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial){
 	uint8_t i;
 
@@ -38,14 +37,13 @@ uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial){
 	return crc;
 }
 
-/*
- * \fn BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength)
- * \brief Fonction de calcul du CRC pour l'ensemble de la frame..
+/**
+ * @brief Fonction de calcul du CRC pour l'ensemble de la frame.
  *
- * \param data Pointeur sur le tableau d'octet qui est la frame.
- * \param datalength taille du tableau.
- *
-*/
+ * @param data Pointeur sur le tableau d'octets qui est la frame.
+ * @param datalength Taille du tableau.
+ * @return uint16_t Valeur du CRC calculé.
+ */
 uint16_t BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength){
 	uint8_t i;
 	uint16_t crc;
@@ -62,15 +60,13 @@ uint16_t BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength){
 }
 
 
-/*
- * \fn BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame)
- * \brief Fonction de décodage des messages receptionner dans la payload.
+/**
+ * @brief Fonction de décodage des messages reçus dans la payload.
  *
- * \param payload Pointeur d'octets sur la base de la payload.
- * \param output_frame Pointeur de la structure d'objet msg_frame_t qui est définie par le protocole.
- *
- *
-*/
+ * @param payload Pointeur d'octets sur la base de la payload.
+ * @param output_frame Pointeur de la structure d'objet msg_frame_t qui est définie par le protocole.
+ * @return uint8_t 0 si le CRC est identique, 1 sinon.
+ */
 uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame){
 
 	output_frame->sof = payload[0];
@@ -106,15 +102,13 @@ uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame){
 	my_printf("\n\r");
 }
 
-/*
- * \fn BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame)
- * \brief Fonction de décodage des messages receptionner dans la payload.
+/**
+ * @brief Fonction de décodage des messages reçus dans la payload (acknowledgment).
  *
- * \param payload Pointeur d'octets sur la base de la payload.
- * \param output_frame Pointeur de la structure d'objet msg_frame_t qui est définie par le protocole.
- *
- *
-*/
+ * @param payload Pointeur d'octets sur la base de la payload.
+ * @param output_frame Pointeur de la structure d'objet msg_frame_t qui est définie par le protocole.
+ * @return uint8_t 0 si le CRC est identique, 1 sinon.
+ */
 uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame){
 
 	output_frame->sof = payload[0];
@@ -144,13 +138,13 @@ uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame){
 	my_printf("\n\r");
 }
 
-/*
- * \fn BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded)
- * \brief Fonction d'encodage des messages d'acquittement.
+/**
+ * @fn void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded)
+ * @brief Fonction d'encodage des messages d'acquittement.
  *
- * \param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.
- *
-*/
+ * @param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.
+ * @param frame_encoded Pointeur vers le tableau d'octets dans lequel le frame encodé sera stocké.
+ */
 void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded){
 	frame_encoded[0]= SOF_ACK_SYMBOL;
 	frame_encoded[1]= (ack_to_encode.src.channel << CHANNEL_SHIFT)
@@ -165,13 +159,13 @@ void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded
 }
 
 
-/*
- * \fn BSP_FRAMES_encodeMsgFrame(msg_frame_t msg_to_encode, uint8_t *frame_encoded)
- * \brief Fonction d'encodage des messages .
+/**
+ * @fn void BSP_FRAMES_encodeMsgFrame(msg_frame_t msg_to_encode, uint8_t *frame_encoded)
+ * @brief Fonction d'encodage des messages.
  *
- * \param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.
- *
-*/
+ * @param msg_to_encode Pointeur de la structure d'objet msg_frame_t qui est définie par le protocole.
+ * @param frame_encoded Pointeur vers le tableau d'octets dans lequel le frame encodé sera stocké.
+ */
 void BSP_FRAMES_encodeMsgFrame(msg_frame_t msg_to_encode, uint8_t *frame_encoded){
 	frame_encoded[0]= SOF_MSG_SYMBOL;
 	frame_encoded[1]= (msg_to_encode.src.channel << CHANNEL_SHIFT)

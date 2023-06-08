@@ -1,0 +1,968 @@
+\doxysection{SX1272.\+h}
+\hypertarget{_s_x1272_8h_source}{}\label{_s_x1272_8h_source}\index{STM32/bsp/inc/SX1272.h@{STM32/bsp/inc/SX1272.h}}
+\mbox{\hyperlink{_s_x1272_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ SX1272.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ 24\ ao{\ucr}t\ 2020}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Arnaud}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ BSP\_INC\_SX1272\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ BSP\_INC\_SX1272\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f0xx_8h}{stm32f0xx.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{frames_8h}{frames.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ inttypes\_h}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \#include\ <inttypes.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ Definitions\ \&\ Declarations}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ SX1272\_debug\_mode\ 0}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ pins\ used\ for\ SS\ and\ Reset\ signals\ of\ Arduino\ MEGA\ 2560\ board\ (reset\ signal\ is\ optional)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SX1272\_RST\ \ A0}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ SX1272\_SS\ 10}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ MACROS\ //}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ bitRead(value,\ bit)\ (((value)\ >>\ (bit))\ \&\ 0x01)\ \ }\textcolor{comment}{//\ read\ a\ bit}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ bitSet(value,\ bit)\ ((value)\ |=\ (1UL\ <<\ (bit)))\ \ \ \ }\textcolor{comment}{//\ set\ bit\ to\ '1'}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ bitClear(value,\ bit)\ ((value)\ \&=\ \string~(1UL\ <<\ (bit)))\ }\textcolor{comment}{//\ set\ bit\ to\ '0'}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ REGISTERS\ //}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FIFO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_OP\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_BITRATE\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_BITRATE\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x03}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FDEV\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FDEV\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x05}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FRF\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x06}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FRF\_MID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FRF\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PA\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x09}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PA\_RAMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_OCP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_LNA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0C}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0D}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FIFO\_ADDR\_PTR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0D}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RSSI\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0E}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FIFO\_TX\_BASE\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ 0x0E}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RSSI\_COLLISION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0F}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FIFO\_RX\_BASE\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ 0x0F}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RSSI\_THRESH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FIFO\_RX\_CURRENT\_ADDR\ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RSSI\_VALUE\_FSK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_IRQ\_FLAGS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_BW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_IRQ\_FLAGS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_AFC\_BW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x13}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_NB\_uint8\_tS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x13}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_OOK\_PEAK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x14}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_HEADER\_CNT\_VALUE\_MSB\ \ \ \ \ \ 0x14}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_OOK\_FIX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x15}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_HEADER\_CNT\_VALUE\_LSB\ \ \ \ \ \ 0x15}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_OOK\_AVG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x16}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_PACKET\_CNT\_VALUE\_MSB\ \ \ \ \ \ 0x16}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_PACKET\_CNT\_VALUE\_LSB\ \ \ \ \ \ 0x17}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_MODEM\_STAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x18}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PKT\_SNR\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x19}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_AFC\_FEI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1A}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PKT\_RSSI\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1A}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_AFC\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1B}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RSSI\_VALUE\_LORA\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1B}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_AFC\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_HOP\_CHANNEL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FEI\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1D}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_MODEM\_CONFIG1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1D}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FEI\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1E}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_MODEM\_CONFIG2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1E}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PREAMBLE\_DETECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1F}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYMB\_TIMEOUT\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ 0x1F}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_TIMEOUT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PREAMBLE\_MSB\_LORA\ \ \ \ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_TIMEOUT2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x21}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PREAMBLE\_LSB\_LORA\ \ \ \ \ \ \ \ \ \ \ \ 0x21}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_TIMEOUT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PAYLOAD\_LENGTH\_LORA\ \ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_RX\_DELAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x23}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_MAX\_PAYLOAD\_LENGTH\ \ \ \ \ \ \ \ \ \ \ 0x23}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_OSC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x24}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_HOP\_PERIOD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x24}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PREAMBLE\_MSB\_FSK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x25}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FIFO\_RX\_uint8\_t\_ADDR\ \ \ \ \ \ \ \ \ 0x25}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PREAMBLE\_LSB\_FSK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x26}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x27}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_VALUE1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x28}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_VALUE2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x29}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_VALUE3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2A}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_VALUE4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2B}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_VALUE5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2C}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_VALUE6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2D}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_VALUE7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2E}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SYNC\_VALUE8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2F}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PACKET\_CONFIG1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PACKET\_CONFIG2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x31}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_DETECT\_OPTIMIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x31}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PAYLOAD\_LENGTH\_FSK\ \ \ \ \ \ \ \ \ \ \ 0x32}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_NODE\_ADRS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x33}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_BROADCAST\_ADRS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x34}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FIFO\_THRESH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x35}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SEQ\_CONFIG1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x36}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_SEQ\_CONFIG2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x37}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_DETECTION\_THRESHOLD\ \ \ \ \ \ \ \ \ \ 0x37}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_TIMER\_RESOL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x38}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_TIMER1\_COEF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x39}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_TIMER2\_COEF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3A}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_IMAGE\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3B}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_TEMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3C}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_LOW\_BAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3D}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_IRQ\_FLAGS1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3E}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_IRQ\_FLAGS2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3F}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_DIO\_MAPPING1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_DIO\_MAPPING2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x41}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_VERSION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x42}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_AGC\_REF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x43}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_AGC\_THRESH1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x44}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_AGC\_THRESH2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x45}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_AGC\_THRESH3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x46}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PLL\_HOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4B}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_TCXO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x58}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PA\_DAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x5A}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PLL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x5C}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_PLL\_LOW\_PN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x5E}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_FORMER\_TEMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6C}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ REG\_BIT\_RATE\_FRAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{comment}{//FREQUENCY\ CHANNELS:}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//the\ frequency\ frf\ depends\ on\ the\ 32\ bit\ register\ FRF\ according\ to\ the\ relation:}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//frf\ =\ 32e6*FRF/2\string^19}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ CH\_868v1\ \ 0xD90666\ }\textcolor{comment}{//\ central\ freq\ \ 868.10MHz}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ CH\_868v3\ \ 0xD91333\ }\textcolor{comment}{//\ central\ freq\ \ 868.30MHz}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ CH\_868v5\ \ 0xD92000\ }\textcolor{comment}{//\ central\ freq\ \ 868.50MHz}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ Other\ channels:}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ CH\_10\_868\ \ 0xD84CCC\ }\textcolor{comment}{//\ channel\ 10,\ central\ freq\ \ 865.20MHz}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ CH\_11\_868\ \ 0xD86000\ }\textcolor{comment}{//\ channel\ 11,\ central\ freq\ \ 865.50MHz}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ CH\_12\_868\ \ 0xD87333\ }\textcolor{comment}{//\ channel\ 12,\ central\ freq\ \ 865.80MHz}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ CH\_13\_868\ \ 0xD88666\ }\textcolor{comment}{//\ channel\ 13,\ central\ freq\ \ 866.10MHz}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ CH\_14\_868\ \ 0xD89999\ }\textcolor{comment}{//\ channel\ 14,\ central\ freq\ \ 866.40MHz}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ CH\_15\_868\ \ 0xD8ACCC\ }\textcolor{comment}{//\ channel\ 15,\ central\ freq\ \ 866.70MHz}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ CH\_16\_868\ \ 0xD8C000\ }\textcolor{comment}{//\ channel\ 16,\ central\ freq\ \ 867.00MHz}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ CH\_17\_868\ \ 0xD90000\ }\textcolor{comment}{//\ channel\ 17,\ central\ freq\ \ 868.00MHz}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ CH\_00\_900\ \ 0xE1C51E\ }\textcolor{comment}{//\ channel\ 00,\ central\ freq\ \ 903.08MHz}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ CH\_01\_900\ \ 0xE24F5C\ }\textcolor{comment}{//\ channel\ 01,\ central\ freq\ \ 905.24MHz}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ CH\_02\_900\ \ 0xE2D999\ }\textcolor{comment}{//\ channel\ 02,\ central\ freq\ \ 907.40MHz}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ CH\_03\_900\ \ 0xE363D7\ }\textcolor{comment}{//\ channel\ 03,\ central\ freq\ \ 909.56MHz}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ CH\_04\_900\ \ 0xE3EE14\ }\textcolor{comment}{//\ channel\ 04,\ central\ freq\ \ 911.72MHz}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ CH\_05\_900\ \ 0xE47851\ }\textcolor{comment}{//\ channel\ 05,\ central\ freq\ \ 913.88MHz}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ CH\_06\_900\ \ 0xE5028F\ }\textcolor{comment}{//\ channel\ 06,\ central\ freq\ \ 916.04MHz}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ CH\_07\_900\ \ 0xE58CCC\ }\textcolor{comment}{//\ channel\ 07,\ central\ freq\ \ 918.20MHz}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ CH\_08\_900\ \ 0xE6170A\ }\textcolor{comment}{//\ channel\ 08,\ central\ freq\ \ 920.36MHz}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ CH\_09\_900\ \ 0xE6A147\ }\textcolor{comment}{//\ channel\ 09,\ central\ freq\ \ 922.52MHz}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ CH\_10\_900\ \ 0xE72B85\ }\textcolor{comment}{//\ channel\ 10,\ central\ freq\ \ 924.68MHz}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ CH\_11\_900\ \ 0xE7B5C2\ }\textcolor{comment}{//\ channel\ 11,\ central\ freq\ \ 926.84MHz}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ CH\_12\_900\ \ 0xE4C000\ }\textcolor{comment}{//\ default\ channel\ 915MHz}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{comment}{//LORA\ BANDWIDTH:}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ BW\_125\ \ 0x00}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ BW\_250\ \ 0x01}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ BW\_500\ \ 0x02}}
+\DoxyCodeLine{00176\ \textcolor{comment}{/*double\ SignalBwLog[]\ =}}
+\DoxyCodeLine{00177\ \textcolor{comment}{\{}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ \ \ \ 5.0969100130080564143587833158265,}}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ \ \ \ 5.397940008672037609572522210551,}}
+\DoxyCodeLine{00180\ \textcolor{comment}{\ \ \ \ 5.6989700043360188047862611052755}}
+\DoxyCodeLine{00181\ \textcolor{comment}{\};*/}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{comment}{//LORA\ CODING\ RATE:}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ CR\_5\ \ 0x01\ \ }\textcolor{comment}{//\ CR\ \ 4/5}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ CR\_6\ \ 0x02\ \ }\textcolor{comment}{//\ CR\ \ 4/6}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ CR\_7\ \ 0x03\ \ }\textcolor{comment}{//\ CR\ \ 4/7}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ CR\_8\ \ 0x04\ \ }\textcolor{comment}{//\ CR\ \ 4/8}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{//LORA\ SPREADING\ FACTOR:}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ SF\_6\ \ 0x06}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ SF\_7\ \ 0x07}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ SF\_8\ \ 0x08}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ SF\_9\ \ 0x09}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ SF\_10\ \ 0x0A}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ SF\_11\ \ 0x0B}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ SF\_12\ \ 0x0C}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{comment}{//OUTPUT\ POWER\ (from\ -\/1\ dBm\ up\ to\ +14\ dBm,\ step\ \ +\ 1\ dB)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ POW\_m1\ \ 0x0}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ POW\_0\ \ 0x1}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ POW\_1\ \ 0x2}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ POW\_2\ \ 0x3}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ POW\_3\ \ 0x4}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ POW\_4\ \ 0x5}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ POW\_5\ \ 0x6}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ POW\_6\ \ 0x7}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ POW\_7\ \ 0x8}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ POW\_8\ \ 0x9}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ POW\_9\ \ 0xA}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ POW\_10\ \ 0xB}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ POW\_11\ \ 0xC}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ POW\_12\ \ 0xD}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ POW\_13\ \ 0xE}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ POW\_14\ \ 0xF}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{comment}{//LORA\ MODES:}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ LORA\_SLEEP\_MODE\ \ 0x80}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ LORA\_STANDBY\_MODE\ \ 0x81}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ LORA\_TX\_MODE\ \ 0x83}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ LORA\_RX\_MODE\ \ 0x85}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ LORA\_STANDBY\_FSK\_REGS\_MODE\ \ 0xC1}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{comment}{//FSK\ MODES:}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ FSK\_SLEEP\_MODE\ \ 0x00}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ FSK\_STANDBY\_MODE\ \ 0x01}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ FSK\_TX\_MODE\ \ 0x03}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ FSK\_RX\_MODE\ \ 0x05}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \textcolor{comment}{//OTHER\ CONSTANTS:}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ st\_SD\_ON\ \ 1}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ st\_SD\_OFF\ \ 0}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ HEADER\_ON\ \ 0}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ HEADER\_OFF\ \ 1}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ CRC\_ON\ \ 1}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ CRC\_OFF\ \ 0}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ LORA\ \ 1}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ FSK\ \ 0}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ BROADCAST\_0\ \ 0x00}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ MAX\_LENGTH\ \ 255}}
+\DoxyCodeLine{00241\ \textcolor{comment}{//\#define\ MAX\_PAYLOAD\ \ 251}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ MAX\_PAYLOAD\ 251}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ MAX\_LENGTH\_FSK\ \ 64}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ MAX\_PAYLOAD\_FSK\ \ 60}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ ACK\_LENGTH\ \ 5}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ OFFSET\_PAYLOADLENGTH\ \ 5}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ OFFSET\_RSSI\ \ 137}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ NOISE\_FIGURE\ \ 6.0}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ NOISE\_ABSOLUTE\_ZERO\ \ 174.0}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ MAX\_TIMEOUT\ \ 10000\ \ \ \ \ \ }\textcolor{comment}{//10000\ msec\ \ 10.0\ sec}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ MAX\_WAIT\ \ 12000\ \ \ \ \ }\textcolor{comment}{//12000\ msec\ \ 12.0\ sec}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ MESH\_TIMEOUT\ \ 3600000\ \ }\textcolor{comment}{//3600000\ msec\ \ 3600\ sec\ \ 1\ hour}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ MAX\_RETRIES\ \ 5}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ CORRECT\_PACKET\ \ 0}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ INCORRECT\_PACKET\ \ 1}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ BROADCAST\_ADDR\ \ 0}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \textcolor{comment}{//AJOUT:}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ FDA5kHz\ \ 0x52}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ FDA40kHz\ \ 0x28F}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ FDA125kHz\ \ 0x7FF}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ BR1200bauds\ \ 0x682B}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ BR4800bauds\ \ 0x1A0B}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ BR38p4kbauds\ \ 0x30D}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ BR62p5kbauds\ \ 0x200}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{comment}{//\ Structure\ pack\ :}}
+\DoxyCodeLine{00269\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00270\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{comment}{//\ Structure\ Variable\ :\ Packet\ destination}}
+\DoxyCodeLine{00272\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structpack_a3766953a3532a16001702a4fe8065394}{dst}};}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{comment}{//\ Structure\ Variable\ :\ Packet\ source}}
+\DoxyCodeLine{00274\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structpack_a08411fca7038fcde60283b245cd650ae}{src}};}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{comment}{//\ Structure\ Variable\ :\ Packet\ number}}
+\DoxyCodeLine{00276\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structpack_a912fb3ac63a155abae46b08b2c471c93}{packnum}};}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{comment}{//\ Structure\ Variable\ :\ Packet\ length}}
+\DoxyCodeLine{00278\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structpack_a5f62b8525c8b817954479aae72aecb87}{length}};}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{comment}{//\ Structure\ Variable\ :\ Packet\ payload}}
+\DoxyCodeLine{00280\ \ \ \ \ uint8\_t\ data[\mbox{\hyperlink{_s_x1272_8h_aa7a7521abb3a3664218d8dc0e3759f0f}{MAX\_PAYLOAD}}];}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{comment}{//\ Structure\ Variable\ :\ Retry\ number}}
+\DoxyCodeLine{00282\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structpack_aed82d185b6c884f043d89594bdcb5dd4}{retry}};}
+\DoxyCodeLine{00283\ \}\mbox{\hyperlink{structpack}{pack}};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \textcolor{comment}{//\ Structure\ SX1272status\ :}}
+\DoxyCodeLine{00286\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00287\ \{}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{comment}{//\ Variable\ :\ SD\ state.}}
+\DoxyCodeLine{00291\ \textcolor{comment}{//\ \ \ \ st\_SD\ =\ 00\ \ -\/-\/>\ SD\_OFF}}
+\DoxyCodeLine{00292\ \textcolor{comment}{//\ \ \ \ st\_SD\ =\ 01\ \ -\/-\/>\ SD\_ON}}
+\DoxyCodeLine{00293\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_aab9384c09d955bd1dab3133e48fb981a}{st\_SD}};}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{comment}{//\ Variable\ :\ bandwidth\ configured\ in\ LoRa\ mode.}}
+\DoxyCodeLine{00296\ \textcolor{comment}{//\ \ \ \ bandwidth\ =\ 00\ \ -\/-\/>\ BW\ =\ 125KHz}}
+\DoxyCodeLine{00297\ \textcolor{comment}{//\ \ \ \ bandwidth\ =\ 01\ \ -\/-\/>\ BW\ =\ 250KHz}}
+\DoxyCodeLine{00298\ \textcolor{comment}{//\ \ \ \ bandwidth\ =\ 10\ \ -\/-\/>\ BW\ =\ 500KHz}}
+\DoxyCodeLine{00299\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a49ca319529b07e8a5d36dd099c0d5510}{\_bandwidth}};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \textcolor{comment}{//\ Variable\ :\ coding\ rate\ configured\ in\ LoRa\ mode.}}
+\DoxyCodeLine{00302\ \textcolor{comment}{//\ \ \ \ codingRate\ =\ 001\ \ -\/-\/>\ CR\ =\ 4/5}}
+\DoxyCodeLine{00303\ \textcolor{comment}{//\ \ \ \ codingRate\ =\ 010\ \ -\/-\/>\ CR\ =\ 4/6}}
+\DoxyCodeLine{00304\ \textcolor{comment}{//\ \ \ \ codingRate\ =\ 011\ \ -\/-\/>\ CR\ =\ 4/7}}
+\DoxyCodeLine{00305\ \textcolor{comment}{//\ \ \ \ codingRate\ =\ 100\ \ -\/-\/>\ CR\ =\ 4/8}}
+\DoxyCodeLine{00306\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a7232cab0d9cbd7a467564d72c1876f93}{\_codingRate}};}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \textcolor{comment}{//\ Variable\ :\ spreading\ factor\ configured\ in\ LoRa\ mode.}}
+\DoxyCodeLine{00309\ \textcolor{comment}{//\ \ \ \ spreadingFactor\ =\ 6\ \ \ -\/-\/>\ SF\ =\ 6,\ 64\ chips/symbol}}
+\DoxyCodeLine{00310\ \textcolor{comment}{//\ \ \ \ spreadingFactor\ =\ 7\ \ \ -\/-\/>\ SF\ =\ 7,\ 128\ chips/symbol}}
+\DoxyCodeLine{00311\ \textcolor{comment}{//\ \ \ \ spreadingFactor\ =\ 8\ \ \ -\/-\/>\ SF\ =\ 8,\ 256\ chips/symbol}}
+\DoxyCodeLine{00312\ \textcolor{comment}{//\ \ \ \ spreadingFactor\ =\ 9\ \ \ -\/-\/>\ SF\ =\ 9,\ 512\ chips/symbol}}
+\DoxyCodeLine{00313\ \textcolor{comment}{//\ \ \ \ spreadingFactor\ =\ 10\ \ -\/-\/>\ SF\ =\ 10,\ 1024\ chips/symbol}}
+\DoxyCodeLine{00314\ \textcolor{comment}{//\ \ \ \ spreadingFactor\ =\ 11\ \ -\/-\/>\ SF\ =\ 11,\ 2048\ chips/symbol}}
+\DoxyCodeLine{00315\ \textcolor{comment}{//\ \ \ \ spreadingFactor\ =\ 12\ \ -\/-\/>\ SF\ =\ 12,\ 4096\ chips/symbol}}
+\DoxyCodeLine{00316\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a56c11e345c76d6cafed2940f364e11cb}{\_spreadingFactor}};}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \textcolor{comment}{//\ Variable\ :\ frequency\ channel.}}
+\DoxyCodeLine{00319\ \textcolor{comment}{//\ \ \ \ \ \ channel=\ 0xD90666\ \ -\/-\/>\ CH\ =\ 868.10MHz}}
+\DoxyCodeLine{00320\ \textcolor{comment}{//\ \ \ \ \ \ channel=\ 0xD91333\ \ -\/-\/>\ CH\ =\ 868.30MHz}}
+\DoxyCodeLine{00321\ \textcolor{comment}{//\ \ \ \ \ \ channel=\ 0xD92000\ \ -\/-\/>\ CH\ =\ 868.50MHz}}
+\DoxyCodeLine{00322\ \textcolor{comment}{//\ Other\ channels:}}
+\DoxyCodeLine{00323\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xD84CCC\ \ -\/-\/>\ CH\ =\ 10\_868,\ 865.20MHz}}
+\DoxyCodeLine{00324\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xD86000\ \ -\/-\/>\ CH\ =\ 11\_868,\ 865.50MHz}}
+\DoxyCodeLine{00325\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xD87333\ \ -\/-\/>\ CH\ =\ 12\_868,\ 865.80MHz}}
+\DoxyCodeLine{00326\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xD88666\ \ -\/-\/>\ CH\ =\ 13\_868,\ 866.10MHz}}
+\DoxyCodeLine{00327\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xD89999\ \ -\/-\/>\ CH\ =\ 14\_868,\ 866.40MHz}}
+\DoxyCodeLine{00328\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xD8ACCC\ \ -\/-\/>\ CH\ =\ 15\_868,\ 866.70MHz}}
+\DoxyCodeLine{00329\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xD8C000\ \ -\/-\/>\ CH\ =\ 16\_868,\ 867.00MHz}}
+\DoxyCodeLine{00330\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE1C51E\ \ -\/-\/>\ CH\ =\ 00\_900,\ 903.08MHz}}
+\DoxyCodeLine{00331\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE24F5C\ \ -\/-\/>\ CH\ =\ 01\_900,\ 905.24MHz}}
+\DoxyCodeLine{00332\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE2D999\ \ -\/-\/>\ CH\ =\ 02\_900,\ 907.40MHz}}
+\DoxyCodeLine{00333\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE363D7\ \ -\/-\/>\ CH\ =\ 03\_900,\ 909.56MHz}}
+\DoxyCodeLine{00334\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE3EE14\ \ -\/-\/>\ CH\ =\ 04\_900,\ 911.72MHz}}
+\DoxyCodeLine{00335\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE47851\ \ -\/-\/>\ CH\ =\ 05\_900,\ 913.88MHz}}
+\DoxyCodeLine{00336\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE5028F\ \ -\/-\/>\ CH\ =\ 06\_900,\ 916.04MHz}}
+\DoxyCodeLine{00337\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE58CCC\ \ -\/-\/>\ CH\ =\ 07\_900,\ 918.20MHz}}
+\DoxyCodeLine{00338\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE6170A\ \ -\/-\/>\ CH\ =\ 08\_900,\ 920.36MHz}}
+\DoxyCodeLine{00339\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE6A147\ \ -\/-\/>\ CH\ =\ 09\_900,\ 922.52MHz}}
+\DoxyCodeLine{00340\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE72B85\ \ -\/-\/>\ CH\ =\ 10\_900,\ 924.68MHz}}
+\DoxyCodeLine{00341\ \textcolor{comment}{//\ \ \ \ channel\ =\ 0xE7B5C2\ \ -\/-\/>\ CH\ =\ 11\_900,\ 926.84MHz}}
+\DoxyCodeLine{00342\ uint32\_t\ \mbox{\hyperlink{struct_s_x1272status_ae28c3380e984a63a75aa2b6a61df4c30}{\_channel}};}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \textcolor{comment}{//\ Variable\ :\ output\ power.}}
+\DoxyCodeLine{00345\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a4f543b27da75c7a7ab82fd071dd9d984}{\_power}};}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \textcolor{comment}{//\ Variable\ :\ SNR\ from\ the\ last\ packet\ received\ in\ LoRa\ mode.}}
+\DoxyCodeLine{00348\ int8\_t\ \mbox{\hyperlink{struct_s_x1272status_a3798f69a106c618b8e08c61c6364ee73}{\_SNR}};}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \textcolor{comment}{//\ Variable\ :\ RSSI\ current\ value.}}
+\DoxyCodeLine{00351\ int8\_t\ \mbox{\hyperlink{struct_s_x1272status_ae6d76f340a2b227f6e49fb7566012ab8}{\_RSSI}};}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \textcolor{comment}{//\ Variable\ :\ RSSI\ from\ the\ last\ packet\ received\ in\ LoRa\ mode.}}
+\DoxyCodeLine{00354\ int16\_t\ \mbox{\hyperlink{struct_s_x1272status_a3632564a1d1a8475f4786298010326b4}{\_RSSIpacket}};}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \textcolor{comment}{//\ Variable\ :\ preamble\ length\ sent/received.}}
+\DoxyCodeLine{00357\ uint16\_t\ \mbox{\hyperlink{struct_s_x1272status_ae3ac2c777a77a23ce0cd7280773fc862}{\_preamblelength}};}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \textcolor{comment}{//\ Variable\ :\ payload\ length\ sent/received.}}
+\DoxyCodeLine{00360\ uint16\_t\ \mbox{\hyperlink{struct_s_x1272status_af90e06b8bc9502d7843a761388dbb606}{\_payloadlength}};}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \textcolor{comment}{//\ Variable\ :\ node\ address.}}
+\DoxyCodeLine{00363\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a1e1502acefff41d1dbac39862d398963}{\_nodeAddress}};}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \textcolor{comment}{//\ Variable\ :\ implicit\ or\ explicit\ header\ in\ LoRa\ mode.}}
+\DoxyCodeLine{00366\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_af445eddae8dc3203902a96ca6feafbc1}{\_header}};}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \textcolor{comment}{//\ Variable\ :\ header\ received\ while\ waiting\ a\ packet\ to\ arrive.}}
+\DoxyCodeLine{00369\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a67b79044df21ef2147a4687ecbcd32d8}{\_hreceived}};}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \textcolor{comment}{//\ Variable\ :\ presence\ or\ absence\ of\ CRC\ calculation.}}
+\DoxyCodeLine{00372\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a0c446bae5b595d33f99984b2d588f9f7}{\_CRC}};}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \textcolor{comment}{//\ Variable\ :\ packet\ destination.}}
+\DoxyCodeLine{00375\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a7d2d44462149c0ec3ada742680b39f9a}{\_destination}};}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{comment}{//\ Variable\ :\ packet\ number.}}
+\DoxyCodeLine{00378\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a1b796d774e5e52cf517b5b2df74371fe}{\_packetNumber}};}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \textcolor{comment}{//\ Variable\ :\ indicates\ if\ received\ packet\ is\ correct\ or\ incorrect.}}
+\DoxyCodeLine{00381\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_aa495b7bdb3ba326eb2decf28b0a8a33c}{\_reception}};}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{comment}{//\ Variable\ :\ number\ of\ current\ retry.}}
+\DoxyCodeLine{00384\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a2dc046a9c3d5bfedf5c006a2707cfcd4}{\_retries}};}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \textcolor{comment}{//\ Variable\ :\ maximum\ number\ of\ retries.}}
+\DoxyCodeLine{00387\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a5b5d91b310ccd2d1de7a4088b6304fa5}{\_maxRetries}};}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \textcolor{comment}{//\ Variable\ :\ maximum\ current\ supply.}}
+\DoxyCodeLine{00390\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_a25d5d6ea252036989b415fa0ab6e0337}{\_maxCurrent}};}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \textcolor{comment}{//\ Variable\ :\ indicates\ FSK\ or\ LoRa\ modem.}}
+\DoxyCodeLine{00393\ uint8\_t\ \mbox{\hyperlink{struct_s_x1272status_acbb48d490fcbf5e6a4cebbb017ec243e}{\_modem}};}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \textcolor{comment}{//\ Variable\ :\ array\ with\ all\ the\ information\ about\ a\ sent\ packet.}}
+\DoxyCodeLine{00396\ \mbox{\hyperlink{structpack}{pack}}\ \mbox{\hyperlink{struct_s_x1272status_a38136b4b80a6a45bfc8979d5083e7297}{packet\_sent}};}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \textcolor{comment}{//\ Variable\ :\ array\ with\ all\ the\ information\ about\ a\ received\ packet.}}
+\DoxyCodeLine{00399\ \mbox{\hyperlink{structpack}{pack}}\ \mbox{\hyperlink{struct_s_x1272status_a8d9429efb0edda8a19a0428215ff8d6b}{packet\_received}};}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \textcolor{comment}{//\ Variable\ :\ array\ with\ all\ the\ information\ about\ a\ sent/received\ ack.}}
+\DoxyCodeLine{00402\ \mbox{\hyperlink{structpack}{pack}}\ \mbox{\hyperlink{struct_s_x1272status_a0a6a5188c708473f9781ec6a0e167bca}{ACK}};}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \textcolor{comment}{//\ Variable\ :\ temperature\ module.}}
+\DoxyCodeLine{00405\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_s_x1272status_a6b910999bb304cab521fdb36d5c0926d}{\_temp}};}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \textcolor{comment}{//\ Variable\ :\ current\ timeout\ to\ send\ a\ packet.}}
+\DoxyCodeLine{00408\ uint16\_t\ \mbox{\hyperlink{struct_s_x1272status_a044b4f9149903cfe069a6e0fe12ed125}{\_sendTime}};}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \}\mbox{\hyperlink{struct_s_x1272status}{SX1272status}};}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \textcolor{comment}{//\ It\ puts\ the\ module\ ON}}
+\DoxyCodeLine{00415\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a9d7faebf99dac4cfbb31d2681770373d}{BSP\_SX1272\_ON}}(\textcolor{keywordtype}{int}\ type\_mod);}
+\DoxyCodeLine{00416\ \textcolor{comment}{//\ It\ puts\ the\ module\ OFF}}
+\DoxyCodeLine{00417\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_x1272_8h_a6d5d1889f6ae377b5a230f2d9443f13c}{BSP\_SX1272\_OFF}}(\textcolor{keywordtype}{int}\ type\_mod);}
+\DoxyCodeLine{00418\ \textcolor{comment}{//\ It\ clears\ the\ interruption\ flags.}}
+\DoxyCodeLine{00419\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_x1272_8h_a83ace0a080a4d7c8a76e6a9877b919b1}{BSP\_SX1272\_clearFlags}}();}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \textcolor{comment}{//\ It\ sets\ the\ LoRa\ mode\ on.}}
+\DoxyCodeLine{00422\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_LORA'\ variable\ '1'\ when\ success}}
+\DoxyCodeLine{00423\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00424\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a842904846734cb7ba7ca312f50dbe962}{BSP\_SX1272\_setLORA}}();}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \textcolor{comment}{//\ It\ sets\ the\ FSK\ mode\ on.}}
+\DoxyCodeLine{00427\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_FSK'\ variable\ '1'\ when\ success}}
+\DoxyCodeLine{00428\ \textcolor{comment}{\ *\ \(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00429\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_aae304aeaa85480a39c3f8e20e5f9b09e}{BSP\_SX1272\_setFSK}}();}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \textcolor{comment}{//\ It\ gets\ the\ BW,\ SF\ and\ CR\ of\ the\ module.}}
+\DoxyCodeLine{00432\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_bandwidth'\ variable\ the\ BW}}
+\DoxyCodeLine{00433\ \textcolor{comment}{It\ stores\ in\ global\ '\_codingRate'\ variable\ the\ CR}}
+\DoxyCodeLine{00434\ \textcolor{comment}{It\ stores\ in\ global\ '\_spreadingFactor'\ variable\ the\ SF}}
+\DoxyCodeLine{00435\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00436\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a547aa32b39ad3d33de177364e6d99f4b}{BSP\_SX1272\_getMode}}();}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \textcolor{comment}{//\ It\ sets\ the\ BW,\ SF\ and\ CR\ of\ the\ module.}}
+\DoxyCodeLine{00439\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_bandwidth'\ variable\ the\ BW}}
+\DoxyCodeLine{00440\ \textcolor{comment}{It\ stores\ in\ global\ '\_codingRate'\ variable\ the\ CR}}
+\DoxyCodeLine{00441\ \textcolor{comment}{It\ stores\ in\ global\ '\_spreadingFactor'\ variable\ the\ SF}}
+\DoxyCodeLine{00442\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ mode\ :\ there\ is\ a\ mode\ number\ to\ different\ values\ of}}
+\DoxyCodeLine{00443\ \textcolor{comment}{the\ configured\ parameters\ with\ this\ function.}}
+\DoxyCodeLine{00444\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00445\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_a1cd5da9228870a8136f5b630f1ea3de7}{BSP\_SX1272\_setMode}}(uint8\_t\ mode);}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \textcolor{comment}{//\ It\ gets\ the\ header\ mode\ configured.}}
+\DoxyCodeLine{00448\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_header'\ variable\ '0'\ when\ header\ is\ sent}}
+\DoxyCodeLine{00449\ \textcolor{comment}{(explicit\ header\ mode)\ or\ '1'\ when\ is\ not\ sent\ (implicit\ header}}
+\DoxyCodeLine{00450\ \textcolor{comment}{mode).}}
+\DoxyCodeLine{00451\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00452\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_ae8a601b57791635b3417ffea72ee47c5}{BSP\_SX1272\_getHeader}}();}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \textcolor{comment}{//\ It\ sets\ explicit\ header\ mode.}}
+\DoxyCodeLine{00455\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_header'\ variable\ '1'\ when\ success}}
+\DoxyCodeLine{00456\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00457\ int8\_t\ \ \mbox{\hyperlink{_s_x1272_8h_a772a707eed75deec1aabacb35a917eee}{BSP\_SX1272\_setHeaderON}}();}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00459\ \textcolor{comment}{//\ It\ sets\ implicit\ header\ mode.}}
+\DoxyCodeLine{00460\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_header'\ variable\ '0'\ when\ success}}
+\DoxyCodeLine{00461\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00462\ int8\_t\ \ \mbox{\hyperlink{_s_x1272_8h_a56dbd355a1ffaca74216f41b24b03589}{BSP\_SX1272\_setHeaderOFF}}();}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \textcolor{comment}{//\ It\ gets\ the\ CRC\ configured.}}
+\DoxyCodeLine{00465\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_CRC'\ variable\ '1'\ enabling\ CRC\ generation\ on}}
+\DoxyCodeLine{00466\ \textcolor{comment}{payload,\ or\ '0'\ disabling\ the\ CRC.}}
+\DoxyCodeLine{00467\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00468\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a8fa565b989224342464c22c77f8c6e7d}{BSP\_SX1272\_getCRC}}();}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \textcolor{comment}{//\ It\ sets\ CRC\ on.}}
+\DoxyCodeLine{00471\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_CRC'\ variable\ '1'\ when\ success}}
+\DoxyCodeLine{00472\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00473\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_aa583c8c3ab80c8a2c3a71ed878695d7b}{BSP\_SX1272\_setCRC\_ON}}();}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \textcolor{comment}{//\ It\ sets\ CRC\ off.}}
+\DoxyCodeLine{00476\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_CRC'\ variable\ '0'\ when\ success}}
+\DoxyCodeLine{00477\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00478\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a55bc531484f486ec00f39fe193de345e}{BSP\_SX1272\_setCRC\_OFF}}();}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \textcolor{comment}{//\ It\ is\ true\ if\ the\ SF\ selected\ exists.}}
+\DoxyCodeLine{00481\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ spr\ :\ spreading\ factor\ value\ to\ check.}}
+\DoxyCodeLine{00482\ \textcolor{comment}{\(\backslash\)return\ 'true'\ on\ success,\ 'false'\ otherwise*/}}
+\DoxyCodeLine{00483\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a0ba271766fea69ce3ae6582abc467945}{BSP\_SX1272\_isSF}}(uint8\_t\ spr);}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \textcolor{comment}{//\ It\ gets\ the\ SF\ configured.}}
+\DoxyCodeLine{00486\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_spreadingFactor'\ variable\ the\ current\ value\ of\ SF}}
+\DoxyCodeLine{00487\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00488\ int8\_t\ \ \mbox{\hyperlink{_s_x1272_8h_a6751a3479b78944fe7effc446663dc8c}{BSP\_SX1272\_getSF}}();}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \textcolor{comment}{//\ It\ sets\ the\ SF.}}
+\DoxyCodeLine{00491\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_spreadingFactor'\ variable\ the\ current\ value\ of\ SF}}
+\DoxyCodeLine{00492\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ spr\ :\ spreading\ factor\ value\ to\ set\ in\ the\ configuration.}}
+\DoxyCodeLine{00493\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00494\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a1df24c596c26847f4bf1056c97b27a7b}{BSP\_SX1272\_setSF}}(uint8\_t\ spr);}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \textcolor{comment}{//\ It\ is\ true\ if\ the\ BW\ selected\ exists.}}
+\DoxyCodeLine{00497\ \textcolor{comment}{/*\ \(\backslash\)param\ uint16\_t\ band\ :\ bandwidth\ value\ to\ check.}}
+\DoxyCodeLine{00498\ \textcolor{comment}{\(\backslash\)return\ 'true'\ on\ success,\ 'false'\ otherwise\ */}}
+\DoxyCodeLine{00499\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a5901e53acaf3b4e01eef390fd865931a}{BSP\_SX1272\_isBW}}(uint16\_t\ band);}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00501\ \textcolor{comment}{//\ It\ gets\ the\ BW\ configured.}}
+\DoxyCodeLine{00502\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_bandwidth'\ variable\ the\ BW\ selected}}
+\DoxyCodeLine{00503\ \textcolor{comment}{in\ the\ configuration}}
+\DoxyCodeLine{00504\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00505\ int8\_t\ \ \mbox{\hyperlink{_s_x1272_8h_a7aa32db83358df833ff68ddd5d619d4a}{BSP\_SX1272\_getBW}}();}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \textcolor{comment}{//\ It\ sets\ the\ BW.}}
+\DoxyCodeLine{00508\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_bandwidth'\ variable\ the\ BW\ selected}}
+\DoxyCodeLine{00509\ \textcolor{comment}{in\ the\ configuration}}
+\DoxyCodeLine{00510\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ band\ :\ bandwidth\ value\ to\ set\ in\ the\ configuration.}}
+\DoxyCodeLine{00511\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00512\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_ae95979ddf558956d68a10d0d052c99a4}{BSP\_SX1272\_setBW}}(uint16\_t\ band);}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \textcolor{comment}{//\ It\ is\ true\ if\ the\ CR\ selected\ exists.}}
+\DoxyCodeLine{00515\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ cod\ :\ the\ coding\ rate\ value\ to\ check.}}
+\DoxyCodeLine{00516\ \textcolor{comment}{\(\backslash\)return\ 'true'\ on\ success,\ 'false'\ otherwise\ \ */}}
+\DoxyCodeLine{00517\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a95101467cb905ca8ad86a3e27b7ab790}{BSP\_SX1272\_isCR}}(uint8\_t\ cod);}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \textcolor{comment}{//\ It\ gets\ the\ CR\ configured.}}
+\DoxyCodeLine{00520\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_codingRate'\ variable\ the\ CR\ selected}}
+\DoxyCodeLine{00521\ \textcolor{comment}{in\ the\ configuration}}
+\DoxyCodeLine{00522\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00523\ int8\_t\ \ \mbox{\hyperlink{_s_x1272_8h_a075ed4d128a5686a3e7160e1ef703c07}{BSP\_SX1272\_getCR}}();}
+\DoxyCodeLine{00524\ }
+\DoxyCodeLine{00525\ \textcolor{comment}{//\ It\ sets\ the\ CR.}}
+\DoxyCodeLine{00526\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_codingRate'\ variable\ the\ CR\ selected}}
+\DoxyCodeLine{00527\ \textcolor{comment}{in\ the\ configuration}}
+\DoxyCodeLine{00528\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ cod\ :\ coding\ rate\ value\ to\ set\ in\ the\ configuration.}}
+\DoxyCodeLine{00529\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00530\ int8\_t\ \ \mbox{\hyperlink{_s_x1272_8h_ac32a335af980f971d3acc103634723bc}{BSP\_SX1272\_setCR}}(uint8\_t\ cod);}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \textcolor{comment}{//\ It\ is\ true\ if\ the\ channel\ selected\ exists.}}
+\DoxyCodeLine{00533\ \textcolor{comment}{/*\ \(\backslash\)param\ uint32\_t\ ch\ :\ frequency\ channel\ value\ to\ check.}}
+\DoxyCodeLine{00534\ \textcolor{comment}{\(\backslash\)return\ 'true'\ on\ success,\ 'false'\ otherwise\ \ */}}
+\DoxyCodeLine{00535\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a256c77c623060387b0115ec9af433df9}{BSP\_SX1272\_isChannel}}(uint32\_t\ ch);}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \textcolor{comment}{//\ It\ gets\ frequency\ channel\ the\ module\ is\ using.}}
+\DoxyCodeLine{00538\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_channel'\ variable\ the\ frequency\ channel}}
+\DoxyCodeLine{00539\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00540\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a386b0526cd1a0f4809e1dcb4ea4f5253}{BSP\_SX1272\_getChannel}}();}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{comment}{//\ It\ sets\ frequency\ channel\ the\ module\ is\ using.}}
+\DoxyCodeLine{00543\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_channel'\ variable\ the\ frequency\ channel}}
+\DoxyCodeLine{00544\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ ch\ :\ frequency\ channel\ value\ to\ set\ in\ the\ configuration.}}
+\DoxyCodeLine{00545\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00546\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_af34d08b531e6f35f0b961e676b17800d}{BSP\_SX1272\_setChannel}}(uint32\_t\ ch);}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ \textcolor{comment}{//\ It\ gets\ the\ output\ power\ of\ the\ signal.}}
+\DoxyCodeLine{00549\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_power'\ variable\ the\ output\ power\ of\ the\ signal}}
+\DoxyCodeLine{00550\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00551\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_aeea4ea276d7069714603905479f67727}{BSP\_SX1272\_getPower}}();}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \textcolor{comment}{//\ It\ sets\ the\ output\ power\ of\ the\ signal.}}
+\DoxyCodeLine{00554\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_power'\ variable\ the\ output\ power\ of\ the\ signal}}
+\DoxyCodeLine{00555\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ pow\ :\ value\ to\ set\ as\ output\ power.}}
+\DoxyCodeLine{00556\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00557\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_a5134902998e6100ba14add58d32dafab}{BSP\_SX1272\_setPower}}(uint8\_t\ pow);}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \textcolor{comment}{//\ It\ gets\ the\ preamble\ length\ configured.}}
+\DoxyCodeLine{00560\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_preamblelength'\ variable\ the\ preamble\ length}}
+\DoxyCodeLine{00561\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00562\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_aa2d7333888bb79615493daa0b202e97e}{BSP\_SX1272\_getPreambleLength}}();}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \textcolor{comment}{//\ It\ sets\ the\ preamble\ length.}}
+\DoxyCodeLine{00565\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_preamblelength'\ variable\ the\ preamble\ length}}
+\DoxyCodeLine{00566\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ l\ :\ preamble\ length\ to\ set\ in\ the\ configuration.}}
+\DoxyCodeLine{00567\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00568\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a1130a38eed7d8451a2993ab3b197f06a}{BSP\_SX1272\_setPreambleLength}}(uint16\_t\ l);}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \textcolor{comment}{//\ It\ gets\ the\ payload\ length\ of\ the\ last\ packet\ to\ send/receive.}}
+\DoxyCodeLine{00571\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_payloadlength'\ variable\ the\ payload\ length\ of}}
+\DoxyCodeLine{00572\ \textcolor{comment}{the\ last\ packet\ to\ send/receive.}}
+\DoxyCodeLine{00573\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00574\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a70e3dd40d4c27d71611ac4c46f77d231}{BSP\_SX1272\_getPayloadLength}}();}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \textcolor{comment}{//\ It\ sets\ the\ packet\ length\ to\ send/receive.}}
+\DoxyCodeLine{00577\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_payloadlength'\ variable\ the\ payload\ length\ of}}
+\DoxyCodeLine{00578\ \textcolor{comment}{the\ last\ packet\ to\ send/receive.}}
+\DoxyCodeLine{00579\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ l\ :\ payload\ length\ to\ set\ in\ the\ configuration.}}
+\DoxyCodeLine{00580\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00581\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_ac5b9a439bfcdced9233e9eb8aff7304c}{BSP\_SX1272\_setPacketLength}}(uint8\_t\ l);}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \textcolor{comment}{//\ It\ gets\ the\ node\ address\ of\ the\ mote.}}
+\DoxyCodeLine{00584\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_nodeAddress'\ variable\ the\ node\ address}}
+\DoxyCodeLine{00585\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00586\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_acd6b0c964badc990e57d88d54a73e795}{BSP\_SX1272\_getNodeAddress}}();}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00588\ \textcolor{comment}{//\ It\ sets\ the\ node\ address\ of\ the\ mote.}}
+\DoxyCodeLine{00589\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00590\ \textcolor{comment}{It\ stores\ in\ global\ '\_nodeAddress'\ variable\ the\ node\ address}}
+\DoxyCodeLine{00591\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ addr\ :\ address\ value\ to\ set\ as\ node\ address.}}
+\DoxyCodeLine{00592\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00593\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_a6515cd7aa4584753aa2c66a6252a98cb}{BSP\_SX1272\_setNodeAddress}}(uint8\_t\ addr);}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ \textcolor{comment}{//\ It\ gets\ the\ SNR\ of\ the\ latest\ received\ packet.}}
+\DoxyCodeLine{00596\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_SNR'\ variable\ the\ SNR}}
+\DoxyCodeLine{00597\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00598\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_afbcf844f00bdeaefdf767239089bb7d0}{BSP\_SX1272\_getSNR}}();}
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00600\ \textcolor{comment}{//\ It\ gets\ the\ current\ value\ of\ RSSI.}}
+\DoxyCodeLine{00601\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_RSSI'\ variable\ the\ current\ value\ of\ RSSI}}
+\DoxyCodeLine{00602\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00603\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_afbc662bca448dcf0f7182b2ae7e77f6e}{BSP\_SX1272\_getRSSI}}();}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \textcolor{comment}{//\ It\ gets\ the\ RSSI\ of\ the\ latest\ received\ packet.}}
+\DoxyCodeLine{00606\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_RSSIpacket'\ variable\ the\ RSSI\ of\ the\ latest}}
+\DoxyCodeLine{00607\ \textcolor{comment}{packet\ received.}}
+\DoxyCodeLine{00608\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00609\ int16\_t\ \mbox{\hyperlink{_s_x1272_8h_a3b371f35a383ffb1d822c8e33085f1c6}{BSP\_SX1272\_getRSSIpacket}}();}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ \textcolor{comment}{//\ It\ sets\ the\ total\ of\ retries\ when\ a\ packet\ is\ not\ correctly\ received.}}
+\DoxyCodeLine{00612\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_maxRetries'\ variable\ the\ number\ of\ retries.}}
+\DoxyCodeLine{00613\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ ret\ :\ number\ of\ retries.}}
+\DoxyCodeLine{00614\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00615\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_ab42e954f6a0cb2c9106ee686487ca7b2}{BSP\_SX1272\_setRetries}}(uint8\_t\ ret);}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00617\ \textcolor{comment}{//\ It\ gets\ the\ maximum\ current\ supply\ by\ the\ module.}}
+\DoxyCodeLine{00618\ \textcolor{comment}{/*\ *}}
+\DoxyCodeLine{00619\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00620\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_aa57086bba959d11b6c028aca5e8e04eb}{BSP\_SX1272\_getMaxCurrent}}();}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ \textcolor{comment}{//\ It\ sets\ the\ maximum\ current\ supply\ by\ the\ module.}}
+\DoxyCodeLine{00623\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_maxCurrent'\ variable\ the\ maximum\ current\ supply.}}
+\DoxyCodeLine{00624\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ rate\ :\ maximum\ current\ supply.}}
+\DoxyCodeLine{00625\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00626\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_acd285f2b7da34b9e7d8c9a7ccc12b841}{BSP\_SX1272\_setMaxCurrent}}(uint8\_t\ rate);}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \textcolor{comment}{//\ It\ gets\ the\ content\ of\ the\ main\ configuration\ registers.}}
+\DoxyCodeLine{00629\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_bandwidth'\ variable\ the\ BW.}}
+\DoxyCodeLine{00630\ \textcolor{comment}{It\ stores\ in\ global\ '\_codingRate'\ variable\ the\ CR.}}
+\DoxyCodeLine{00631\ \textcolor{comment}{It\ stores\ in\ global\ '\_spreadingFactor'\ variable\ the\ SF.}}
+\DoxyCodeLine{00632\ \textcolor{comment}{It\ stores\ in\ global\ '\_power'\ variable\ the\ output\ power\ of\ the\ signal.}}
+\DoxyCodeLine{00633\ \textcolor{comment}{It\ stores\ in\ global\ '\_channel'\ variable\ the\ frequency\ channel.}}
+\DoxyCodeLine{00634\ \textcolor{comment}{It\ stores\ in\ global\ '\_CRC'\ variable\ '1'\ enabling\ CRC\ generation\ on}}
+\DoxyCodeLine{00635\ \textcolor{comment}{payload,\ or\ '0'\ disabling\ the\ CRC.}}
+\DoxyCodeLine{00636\ \textcolor{comment}{It\ stores\ in\ global\ '\_header'\ variable\ '0'\ when\ header\ is\ sent}}
+\DoxyCodeLine{00637\ \textcolor{comment}{(explicit\ header\ mode)\ or\ '1'\ when\ is\ not\ sent\ (implicit\ header}}
+\DoxyCodeLine{00638\ \textcolor{comment}{mode).}}
+\DoxyCodeLine{00639\ \textcolor{comment}{It\ stores\ in\ global\ '\_preamblelength'\ variable\ the\ preamble\ length.}}
+\DoxyCodeLine{00640\ \textcolor{comment}{It\ stores\ in\ global\ '\_payloadlength'\ variable\ the\ payload\ length\ of}}
+\DoxyCodeLine{00641\ \textcolor{comment}{the\ last\ packet\ to\ send/receive.}}
+\DoxyCodeLine{00642\ \textcolor{comment}{It\ stores\ in\ global\ '\_nodeAddress'\ variable\ the\ node\ address.}}
+\DoxyCodeLine{00643\ \textcolor{comment}{It\ stores\ in\ global\ '\_temp'\ variable\ the\ module\ temperature.}}
+\DoxyCodeLine{00644\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00645\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a99544940866d0b8e841f6f04de0614fc}{BSP\_SX1272\_getRegs}}();}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \textcolor{comment}{//\ It\ sets\ the\ maximum\ number\ of\ uint8\_ts\ from\ a\ frame\ that\ fit\ in\ a\ packet}}
+\DoxyCodeLine{00648\ \textcolor{comment}{//\ structure.}}
+\DoxyCodeLine{00649\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_payloadlength'\ variable\ the\ maximum\ number\ of\ uint8\_ts.}}
+\DoxyCodeLine{00650\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length16\ :\ total\ frame\ length.}}
+\DoxyCodeLine{00651\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00652\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a4268a6255ab4637f78205e4b9b51ae30}{BSP\_SX1272\_truncPayload}}(uint16\_t\ length16);}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ \textcolor{comment}{//\ It\ writes\ an\ ACK\ in\ FIFO\ to\ send\ it.}}
+\DoxyCodeLine{00655\ \textcolor{comment}{/*\ *}}
+\DoxyCodeLine{00656\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00657\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a65d9807602541b563d6d4035665cec73}{BSP\_SX1272\_setACK}}();}
+\DoxyCodeLine{00658\ }
+\DoxyCodeLine{00659\ \textcolor{comment}{//\ It\ puts\ the\ module\ in\ reception\ mode.}}
+\DoxyCodeLine{00660\ \textcolor{comment}{/*\ *}}
+\DoxyCodeLine{00661\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00662\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a3ad7f7b23c57eb6cc7e692e40cf83d32}{BSP\_SX1272\_receive}}();}
+\DoxyCodeLine{00663\ }
+\DoxyCodeLine{00664\ \textcolor{comment}{//\ It\ receives\ a\ packet\ before\ MAX\_TIMEOUT.}}
+\DoxyCodeLine{00665\ \textcolor{comment}{/*\ \ *}}
+\DoxyCodeLine{00666\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00667\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_acff4ba7e35caadf9bdb8483f10dfedbf}{BSP\_SX1272\_receivePacketMAXTimeout}}();}
+\DoxyCodeLine{00668\ }
+\DoxyCodeLine{00669\ \textcolor{comment}{//\ It\ receives\ a\ packet\ before\ a\ timeout.}}
+\DoxyCodeLine{00670\ \textcolor{comment}{/*\ \(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ to\ receive\ something.}}
+\DoxyCodeLine{00671\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00672\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_afb10b837208ffe656413c55fb9b06647}{BSP\_SX1272\_receivePacketTimeout}}(uint32\_t\ wait);}
+\DoxyCodeLine{00673\ }
+\DoxyCodeLine{00674\ \textcolor{comment}{//\ It\ receives\ a\ packet\ before\ MAX\_TIMEOUT\ and\ reply\ with\ an\ ACK.}}
+\DoxyCodeLine{00675\ \textcolor{comment}{/*\ *}}
+\DoxyCodeLine{00676\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00677\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_afef8f31780646daf8aadabf5c9fc8788}{BSP\_SX1272\_receivePacketMAXTimeoutACK}}();}
+\DoxyCodeLine{00678\ }
+\DoxyCodeLine{00679\ \textcolor{comment}{//\ It\ receives\ a\ packet\ before\ a\ timeout\ and\ reply\ with\ an\ ACK.}}
+\DoxyCodeLine{00680\ \textcolor{comment}{/*\ \(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ to\ receive\ something.}}
+\DoxyCodeLine{00681\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00682\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a3a2ced710eeb055f6acce9ab2041e0b0}{BSP\_SX1272\_receivePacketTimeoutACK}}(uint32\_t\ wait);}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ \textcolor{comment}{//\ It\ puts\ the\ module\ in\ 'promiscuous'\ reception\ mode\ with\ a\ timeout.}}
+\DoxyCodeLine{00685\ \textcolor{comment}{/*\ \(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ to\ receive\ something.}}
+\DoxyCodeLine{00686\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ \ */}}
+\DoxyCodeLine{00687\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_adaf6a9e0c64c1614e0aa1a1bc93bace6}{BSP\_SX1272\_receiveAll}}(uint32\_t\ wait);}
+\DoxyCodeLine{00688\ }
+\DoxyCodeLine{00689\ \textcolor{comment}{//\ It\ checks\ if\ there\ is\ an\ available\ packet\ and\ its\ destination\ before\ a}}
+\DoxyCodeLine{00690\ \textcolor{comment}{//\ timeout.}}
+\DoxyCodeLine{00691\ \textcolor{comment}{/*\ *}}
+\DoxyCodeLine{00692\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ while\ there\ is\ no\ a\ valid\ header}}
+\DoxyCodeLine{00693\ \textcolor{comment}{received.}}
+\DoxyCodeLine{00694\ \textcolor{comment}{\(\backslash\)return\ 'true'\ on\ success,\ 'false'\ otherwise\ \ */}}
+\DoxyCodeLine{00695\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_ab345c772a3f5a75b78c16760a8b6a028}{BSP\_SX1272\_availableData}}(uint32\_t\ wait);}
+\DoxyCodeLine{00696\ }
+\DoxyCodeLine{00697\ \textcolor{comment}{//\ It\ writes\ a\ packet\ in\ FIFO\ in\ order\ to\ send\ it.}}
+\DoxyCodeLine{00698\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00699\ \textcolor{comment}{\(\backslash\)param\ char\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00700\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00701\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a75fdce4e584eaae30fe80f0f748450cc}{BSP\_SX1272\_setPacket}}(uint8\_t\ dest,\ \textcolor{keywordtype}{char}\ *payload);}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00703\ \textcolor{comment}{//\ It\ writes\ a\ packet\ in\ FIFO\ in\ order\ to\ send\ it.}}
+\DoxyCodeLine{00704\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00705\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ *payload:\ packet\ payload.}}
+\DoxyCodeLine{00706\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00707\ \textcolor{comment}{//uint8\_t\ BSP\_SX1272\_setPacket(uint8\_t\ dest,\ uint8\_t\ *payload);}}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \textcolor{comment}{//\ It\ reads\ a\ received\ packet\ from\ the\ FIFO,\ if\ it\ arrives\ before\ ending}}
+\DoxyCodeLine{00710\ \textcolor{comment}{//\ MAX\_TIMEOUT\ time.}}
+\DoxyCodeLine{00711\ \textcolor{comment}{/*\ \ *}}
+\DoxyCodeLine{00712\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00713\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_afb461e5a9bf35ff9c819cfdb157e3ae0}{BSP\_SX1272\_getPacketMAXTimeout}}();}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \textcolor{comment}{//\ It\ receives\ and\ gets\ a\ packet\ from\ FIFO,\ if\ it\ arrives\ before\ ending}}
+\DoxyCodeLine{00716\ \textcolor{comment}{//\ 'wait'\ time.}}
+\DoxyCodeLine{00717\ \textcolor{comment}{/*\ \ *}}
+\DoxyCodeLine{00718\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ while\ there\ is\ not\ a\ complete\ packet}}
+\DoxyCodeLine{00719\ \textcolor{comment}{received.}}
+\DoxyCodeLine{00720\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00721\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_adc205f8a5e76a8f8036191c8ba4f218f}{BSP\_SX1272\_getPacket}}(uint32\_t\ wait);}
+\DoxyCodeLine{00722\ }
+\DoxyCodeLine{00723\ \textcolor{comment}{//\ It\ sends\ the\ packet\ stored\ in\ FIFO\ before\ ending\ MAX\_TIMEOUT.}}
+\DoxyCodeLine{00724\ \textcolor{comment}{/*\ *}}
+\DoxyCodeLine{00725\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00726\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_ab692c6542ea5675500df5be6d31596de}{BSP\_SX1272\_sendWithMAXTimeout}}();}
+\DoxyCodeLine{00727\ }
+\DoxyCodeLine{00728\ \textcolor{comment}{//\ It\ tries\ to\ send\ the\ packet\ stored\ in\ FIFO\ before\ ending\ 'wait'\ time.}}
+\DoxyCodeLine{00729\ \textcolor{comment}{/*\ \(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ to\ send\ the\ packet.}}
+\DoxyCodeLine{00730\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00731\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a85e68d224c715300295151e3eb25d818}{BSP\_SX1272\_sendWithTimeout}}(uint32\_t\ wait);}
+\DoxyCodeLine{00732\ }
+\DoxyCodeLine{00733\ \textcolor{comment}{//\ It\ tries\ to\ send\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ ending}}
+\DoxyCodeLine{00734\ \textcolor{comment}{//\ MAX\_TIMEOUT.}}
+\DoxyCodeLine{00735\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00736\ \textcolor{comment}{\(\backslash\)param\ char\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00737\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00738\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_aebc852eb4ab8a0a954961311432a1ede}{BSP\_SX1272\_sendPacketMAXTimeout}}(\ uint8\_t\ dest,\textcolor{keywordtype}{char}\ *payload);}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00740\ \textcolor{comment}{//\ It\ tries\ to\ send\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ ending}}
+\DoxyCodeLine{00741\ \textcolor{comment}{//\ MAX\_TIMEOUT.}}
+\DoxyCodeLine{00742\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00743\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00744\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length\ :\ payload\ buffer\ length.}}
+\DoxyCodeLine{00745\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00746\ \textcolor{comment}{//uint8\_t\ sendPacketMAXTimeout(\ uint8\_t\ dest,}}
+\DoxyCodeLine{00747\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *payload,}}
+\DoxyCodeLine{00748\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ length);}}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \textcolor{comment}{//\ It\ sends\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ ending}}
+\DoxyCodeLine{00751\ \textcolor{comment}{//\ MAX\_TIMEOUT.}}
+\DoxyCodeLine{00752\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00753\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ *payload:\ packet\ payload.}}
+\DoxyCodeLine{00754\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length\ :\ payload\ buffer\ length.}}
+\DoxyCodeLine{00755\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00756\ \textcolor{comment}{//uint8\_t\ sendPacketTimeout(\ \ \ \ uint8\_t\ dest,}}
+\DoxyCodeLine{00757\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *payload,}}
+\DoxyCodeLine{00758\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ length);}}
+\DoxyCodeLine{00759\ }
+\DoxyCodeLine{00760\ \textcolor{comment}{//\ It\ sends\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ ending\ 'wait'}}
+\DoxyCodeLine{00761\ \textcolor{comment}{//\ time.}}
+\DoxyCodeLine{00762\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00763\ \textcolor{comment}{\(\backslash\)param\ char\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00764\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait.}}
+\DoxyCodeLine{00765\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00766\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a729b1cfbd077be21b68a98da7734d352}{BSP\_SX1272\_sendPacketTimeout}}(\ \ \ uint8\_t\ dest,}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *payload,}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ wait);}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00770\ \textcolor{comment}{//\ It\ sends\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ ending\ 'wait'}}
+\DoxyCodeLine{00771\ \textcolor{comment}{//\ time.}}
+\DoxyCodeLine{00772\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00773\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00774\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length\ :\ payload\ buffer\ length.}}
+\DoxyCodeLine{00775\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait.}}
+\DoxyCodeLine{00776\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00777\ \textcolor{comment}{//uint8\_t\ sendPacketTimeout(\ \ \ \ uint8\_t\ dest,}}
+\DoxyCodeLine{00778\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *payload,}}
+\DoxyCodeLine{00779\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ length,}}
+\DoxyCodeLine{00780\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ wait);}}
+\DoxyCodeLine{00781\ }
+\DoxyCodeLine{00782\ \textcolor{comment}{//\ It\ sends\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ MAX\_TIMEOUT,}}
+\DoxyCodeLine{00783\ \textcolor{comment}{//\ and\ replies\ with\ ACK.}}
+\DoxyCodeLine{00784\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00785\ \textcolor{comment}{\(\backslash\)param\ char\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00786\ \textcolor{comment}{\(\backslash\)return\ '9'\ \ -\/-\/>\ The\ ACK\ lost\ (no\ data\ available)}}
+\DoxyCodeLine{00787\ \textcolor{comment}{\ \ \ \ \ \ \ \ '8'\ \ -\/-\/>\ The\ ACK\ lost}}
+\DoxyCodeLine{00788\ \textcolor{comment}{\ \ \ \ \ \ \ \ '7'\ \ -\/-\/>\ The\ ACK\ destination\ incorrectly\ received}}
+\DoxyCodeLine{00789\ \textcolor{comment}{\ \ \ \ \ \ \ \ '6'\ \ -\/-\/>\ The\ ACK\ source\ incorrectly\ received}}
+\DoxyCodeLine{00790\ \textcolor{comment}{\ \ \ \ \ \ \ \ '5'\ \ -\/-\/>\ The\ ACK\ number\ incorrectly\ received}}
+\DoxyCodeLine{00791\ \textcolor{comment}{\ \ \ \ \ \ \ \ '4'\ \ -\/-\/>\ The\ ACK\ length\ incorrectly\ received}}
+\DoxyCodeLine{00792\ \textcolor{comment}{\ \ \ \ \ \ \ \ '3'\ \ -\/-\/>\ N-\/ACK\ received}}
+\DoxyCodeLine{00793\ \textcolor{comment}{\ \ \ \ \ \ \ \ '2'\ \ -\/-\/>\ The\ ACK\ has\ not\ been\ received}}
+\DoxyCodeLine{00794\ \textcolor{comment}{\ \ \ \ \ \ \ \ '1'\ \ -\/-\/>\ not\ used\ (reserved)}}
+\DoxyCodeLine{00795\ \textcolor{comment}{\ \ \ \ \ \ \ \ '0'\ \ -\/-\/>\ The\ ACK\ has\ been\ received\ with\ no\ errors\ */}}
+\DoxyCodeLine{00796\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a0db874b9dd485e6db343eaba3277fbe1}{sendPacketMAXTimeoutACK}}(uint8\_t\ dest,}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *payload);}
+\DoxyCodeLine{00798\ }
+\DoxyCodeLine{00799\ \textcolor{comment}{//\ It\ sends\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ MAX\_TIMEOUT,}}
+\DoxyCodeLine{00800\ \textcolor{comment}{//\ and\ replies\ with\ ACK.}}
+\DoxyCodeLine{00801\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00802\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ payload:\ packet\ payload.}}
+\DoxyCodeLine{00803\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length\ :\ payload\ buffer\ length.}}
+\DoxyCodeLine{00804\ \textcolor{comment}{\(\backslash\)return\ '9'\ \ -\/-\/>\ The\ ACK\ lost\ (no\ data\ available)}}
+\DoxyCodeLine{00805\ \textcolor{comment}{\ \ \ \ \ \ \ \ '8'\ \ -\/-\/>\ The\ ACK\ lost}}
+\DoxyCodeLine{00806\ \textcolor{comment}{\ \ \ \ \ \ \ \ '7'\ \ -\/-\/>\ The\ ACK\ destination\ incorrectly\ received}}
+\DoxyCodeLine{00807\ \textcolor{comment}{\ \ \ \ \ \ \ \ '6'\ \ -\/-\/>\ The\ ACK\ source\ incorrectly\ received}}
+\DoxyCodeLine{00808\ \textcolor{comment}{\ \ \ \ \ \ \ \ '5'\ \ -\/-\/>\ The\ ACK\ number\ incorrectly\ received}}
+\DoxyCodeLine{00809\ \textcolor{comment}{\ \ \ \ \ \ \ \ '4'\ \ -\/-\/>\ The\ ACK\ length\ incorrectly\ received}}
+\DoxyCodeLine{00810\ \textcolor{comment}{\ \ \ \ \ \ \ \ '3'\ \ -\/-\/>\ N-\/ACK\ received}}
+\DoxyCodeLine{00811\ \textcolor{comment}{\ \ \ \ \ \ \ \ '2'\ \ -\/-\/>\ The\ ACK\ has\ not\ been\ received}}
+\DoxyCodeLine{00812\ \textcolor{comment}{\ \ \ \ \ \ \ \ '1'\ \ -\/-\/>\ not\ used\ (reserved)}}
+\DoxyCodeLine{00813\ \textcolor{comment}{\ \ \ \ \ \ \ \ '0'\ \ -\/-\/>\ The\ ACK\ has\ been\ received\ with\ no\ errors\ */}}
+\DoxyCodeLine{00814\ \textcolor{comment}{//uint8\_t\ BSP\_SX1272\_sendPacketMAXTimeoutACK(uint8\_t\ dest,}}
+\DoxyCodeLine{00815\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *payload,}}
+\DoxyCodeLine{00816\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ length);}}
+\DoxyCodeLine{00817\ }
+\DoxyCodeLine{00818\ \textcolor{comment}{//\ It\ sends\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ a\ timeout,}}
+\DoxyCodeLine{00819\ \textcolor{comment}{//\ and\ replies\ with\ ACK.}}
+\DoxyCodeLine{00820\ \textcolor{comment}{/*\(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00821\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ payload:\ packet\ payload.}}
+\DoxyCodeLine{00822\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length\ :\ payload\ buffer\ length.}}
+\DoxyCodeLine{00823\ \textcolor{comment}{\(\backslash\)return\ '9'\ \ -\/-\/>\ The\ ACK\ lost\ (no\ data\ available)}}
+\DoxyCodeLine{00824\ \textcolor{comment}{\ \ \ \ \ \ \ \ '8'\ \ -\/-\/>\ The\ ACK\ lost}}
+\DoxyCodeLine{00825\ \textcolor{comment}{\ \ \ \ \ \ \ \ '7'\ \ -\/-\/>\ The\ ACK\ destination\ incorrectly\ received}}
+\DoxyCodeLine{00826\ \textcolor{comment}{\ \ \ \ \ \ \ \ '6'\ \ -\/-\/>\ The\ ACK\ source\ incorrectly\ received}}
+\DoxyCodeLine{00827\ \textcolor{comment}{\ \ \ \ \ \ \ \ '5'\ \ -\/-\/>\ The\ ACK\ number\ incorrectly\ received}}
+\DoxyCodeLine{00828\ \textcolor{comment}{\ \ \ \ \ \ \ \ '4'\ \ -\/-\/>\ The\ ACK\ length\ incorrectly\ received}}
+\DoxyCodeLine{00829\ \textcolor{comment}{\ \ \ \ \ \ \ \ '3'\ \ -\/-\/>\ N-\/ACK\ received}}
+\DoxyCodeLine{00830\ \textcolor{comment}{\ \ \ \ \ \ \ \ '2'\ \ -\/-\/>\ The\ ACK\ has\ not\ been\ received}}
+\DoxyCodeLine{00831\ \textcolor{comment}{\ \ \ \ \ \ \ \ '1'\ \ -\/-\/>\ not\ used\ (reserved)}}
+\DoxyCodeLine{00832\ \textcolor{comment}{\ \ \ \ \ \ \ \ '0'\ \ -\/-\/>\ The\ ACK\ has\ been\ received\ with\ no\ errors*/}}
+\DoxyCodeLine{00833\ \textcolor{comment}{//uint8\_t\ sendPacketTimeoutACK(\ uint8\_t\ dest,}}
+\DoxyCodeLine{00834\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *payload,}}
+\DoxyCodeLine{00835\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ length);}}
+\DoxyCodeLine{00836\ }
+\DoxyCodeLine{00837\ \textcolor{comment}{//\ It\ sends\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ 'wait'\ time,}}
+\DoxyCodeLine{00838\ \textcolor{comment}{//\ and\ replies\ with\ ACK.}}
+\DoxyCodeLine{00839\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00840\ \textcolor{comment}{\(\backslash\)param\ char\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00841\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ to\ send\ the\ packet.}}
+\DoxyCodeLine{00842\ \textcolor{comment}{\(\backslash\)return\ '9'\ \ -\/-\/>\ The\ ACK\ lost\ (no\ data\ available)}}
+\DoxyCodeLine{00843\ \textcolor{comment}{\ \ \ \ \ \ \ \ '8'\ \ -\/-\/>\ The\ ACK\ lost}}
+\DoxyCodeLine{00844\ \textcolor{comment}{\ \ \ \ \ \ \ \ '7'\ \ -\/-\/>\ The\ ACK\ destination\ incorrectly\ received}}
+\DoxyCodeLine{00845\ \textcolor{comment}{\ \ \ \ \ \ \ \ '6'\ \ -\/-\/>\ The\ ACK\ source\ incorrectly\ received}}
+\DoxyCodeLine{00846\ \textcolor{comment}{\ \ \ \ \ \ \ \ '5'\ \ -\/-\/>\ The\ ACK\ number\ incorrectly\ received}}
+\DoxyCodeLine{00847\ \textcolor{comment}{\ \ \ \ \ \ \ \ '4'\ \ -\/-\/>\ The\ ACK\ length\ incorrectly\ received}}
+\DoxyCodeLine{00848\ \textcolor{comment}{\ \ \ \ \ \ \ \ '3'\ \ -\/-\/>\ N-\/ACK\ received}}
+\DoxyCodeLine{00849\ \textcolor{comment}{\ \ \ \ \ \ \ \ '2'\ \ -\/-\/>\ The\ ACK\ has\ not\ been\ received}}
+\DoxyCodeLine{00850\ \textcolor{comment}{\ \ \ \ \ \ \ \ '1'\ \ -\/-\/>\ not\ used\ (reserved)}}
+\DoxyCodeLine{00851\ \textcolor{comment}{\ \ \ \ \ \ \ \ '0'\ \ -\/-\/>\ The\ ACK\ has\ been\ received\ with\ no\ errors\ */}}
+\DoxyCodeLine{00852\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_abb6cb6942968fde251bf85806d596e70}{BSP\_SX1272\_sendPacketTimeoutACK}}(\ uint8\_t\ dest,}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *payload,}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ wait);}
+\DoxyCodeLine{00855\ }
+\DoxyCodeLine{00856\ \textcolor{comment}{//\ It\ sends\ the\ packet\ which\ payload\ is\ a\ parameter\ before\ 'wait'\ time,}}
+\DoxyCodeLine{00857\ \textcolor{comment}{//\ and\ replies\ with\ ACK.}}
+\DoxyCodeLine{00858\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00859\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ payload:\ packet\ payload.}}
+\DoxyCodeLine{00860\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length\ :\ payload\ buffer\ length.}}
+\DoxyCodeLine{00861\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ to\ send\ the\ packet.}}
+\DoxyCodeLine{00862\ \textcolor{comment}{\(\backslash\)return\ '9'\ \ -\/-\/>\ The\ ACK\ lost\ (no\ data\ available)}}
+\DoxyCodeLine{00863\ \textcolor{comment}{\ \ \ \ \ \ \ \ '8'\ \ -\/-\/>\ The\ ACK\ lost}}
+\DoxyCodeLine{00864\ \textcolor{comment}{\ \ \ \ \ \ \ \ '7'\ \ -\/-\/>\ The\ ACK\ destination\ incorrectly\ received}}
+\DoxyCodeLine{00865\ \textcolor{comment}{\ \ \ \ \ \ \ \ '6'\ \ -\/-\/>\ The\ ACK\ source\ incorrectly\ received}}
+\DoxyCodeLine{00866\ \textcolor{comment}{\ \ \ \ \ \ \ \ '5'\ \ -\/-\/>\ The\ ACK\ number\ incorrectly\ received}}
+\DoxyCodeLine{00867\ \textcolor{comment}{\ \ \ \ \ \ \ \ '4'\ \ -\/-\/>\ The\ ACK\ length\ incorrectly\ received}}
+\DoxyCodeLine{00868\ \textcolor{comment}{\ \ \ \ \ \ \ \ '3'\ \ -\/-\/>\ N-\/ACK\ received}}
+\DoxyCodeLine{00869\ \textcolor{comment}{\ \ \ \ \ \ \ \ '2'\ \ -\/-\/>\ The\ ACK\ has\ not\ been\ received}}
+\DoxyCodeLine{00870\ \textcolor{comment}{\ \ \ \ \ \ \ \ '1'\ \ -\/-\/>\ not\ used\ (reserved)}}
+\DoxyCodeLine{00871\ \textcolor{comment}{\ \ \ \ \ \ \ \ '0'\ \ -\/-\/>\ The\ ACK\ has\ been\ received\ with\ no\ errors\ */}}
+\DoxyCodeLine{00872\ \textcolor{comment}{/*uint8\_t\ BSP\_SX1272\_sendPacketTimeoutACK(uint8\_t\ dest,}}
+\DoxyCodeLine{00873\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *payload,}}
+\DoxyCodeLine{00874\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ length,}}
+\DoxyCodeLine{00875\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ wait);*/}}
+\DoxyCodeLine{00876\ }
+\DoxyCodeLine{00877\ \textcolor{comment}{//\ It\ sets\ the\ destination\ of\ a\ packet.}}
+\DoxyCodeLine{00878\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ value\ to\ set\ as\ destination\ address.}}
+\DoxyCodeLine{00879\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00880\ int8\_t\ \mbox{\hyperlink{_s_x1272_8h_add2605afcabf2ba92cf3089de31b61ff}{BSP\_SX1272\_setDestination}}(uint8\_t\ dest);}
+\DoxyCodeLine{00881\ }
+\DoxyCodeLine{00882\ \textcolor{comment}{//\ It\ sets\ the\ waiting\ time\ to\ send\ a\ packet.}}
+\DoxyCodeLine{00883\ \textcolor{comment}{/*It\ stores\ in\ global\ '\_sendTime'\ variable\ the\ time\ for\ each\ mode.}}
+\DoxyCodeLine{00884\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00885\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a6d032d3d080e5622e8b76405eaecf7fb}{BSP\_SX1272\_setTimeout}}();}
+\DoxyCodeLine{00886\ }
+\DoxyCodeLine{00887\ \textcolor{comment}{//\ It\ gets\ the\ theoretical\ value\ of\ the\ time-\/on-\/air\ of\ the\ packet}}
+\DoxyCodeLine{00888\ \textcolor{comment}{/*\ \(\backslash\)remarks\ http://www.semtech.com/images/datasheet/sx1272.pdf}}
+\DoxyCodeLine{00889\ \textcolor{comment}{It\ stores\ in\ global\ '\_sendTime'\ variable\ the\ time\ for\ each\ mode.}}
+\DoxyCodeLine{00890\ \textcolor{comment}{\(\backslash\)return\ float:\ time\ on\ air\ depending\ on\ module\ settings\ and\ packet\ length\ */}}
+\DoxyCodeLine{00891\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_s_x1272_8h_a41fb8596538c1f8e32fdc582e0cda788}{BSP\_SX1272\_timeOnAir}}(\ uint16\_t\ payloadlength\ );}
+\DoxyCodeLine{00892\ }
+\DoxyCodeLine{00893\ \textcolor{comment}{//\ It\ sets\ the\ payload\ of\ the\ packet\ that\ is\ going\ to\ be\ sent.}}
+\DoxyCodeLine{00894\ \textcolor{comment}{/*\ \(\backslash\)param\ char\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00895\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00896\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_aa0cbfcbc7b594579e5d0905d108801a3}{BSP\_SX1272\_setPayload}}(\textcolor{keywordtype}{char}\ *payload);}
+\DoxyCodeLine{00897\ }
+\DoxyCodeLine{00898\ \textcolor{comment}{//\ It\ sets\ the\ payload\ of\ the\ packet\ that\ is\ going\ to\ be\ sent.}}
+\DoxyCodeLine{00899\ \textcolor{comment}{/*\(\backslash\)param\ uint8\_t\ payload:\ packet\ payload.}}
+\DoxyCodeLine{00900\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00901\ \textcolor{comment}{//uint8\_t\ BSP\_SX1272\_setPayload(uint8\_t\ *payload);}}
+\DoxyCodeLine{00902\ }
+\DoxyCodeLine{00903\ \textcolor{comment}{//\ It\ receives\ and\ gets\ an\ ACK\ from\ FIFO,\ if\ it\ arrives\ before\ ending}}
+\DoxyCodeLine{00904\ \textcolor{comment}{//\ 'wait'\ time.}}
+\DoxyCodeLine{00905\ \textcolor{comment}{/*\ *}}
+\DoxyCodeLine{00906\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ while\ there\ is\ no\ an\ ACK\ received.}}
+\DoxyCodeLine{00907\ \textcolor{comment}{\(\backslash\)return\ '8'\ \ -\/-\/>\ The\ ACK\ lost}}
+\DoxyCodeLine{00908\ \textcolor{comment}{\ \ \ \ \ \ \ \ '7'\ \ -\/-\/>\ The\ ACK\ destination\ incorrectly\ received}}
+\DoxyCodeLine{00909\ \textcolor{comment}{\ \ \ \ \ \ \ \ '6'\ \ -\/-\/>\ The\ ACK\ source\ incorrectly\ received}}
+\DoxyCodeLine{00910\ \textcolor{comment}{\ \ \ \ \ \ \ \ '5'\ \ -\/-\/>\ The\ ACK\ number\ incorrectly\ received}}
+\DoxyCodeLine{00911\ \textcolor{comment}{\ \ \ \ \ \ \ \ '4'\ \ -\/-\/>\ The\ ACK\ length\ incorrectly\ received}}
+\DoxyCodeLine{00912\ \textcolor{comment}{\ \ \ \ \ \ \ \ '3'\ \ -\/-\/>\ N-\/ACK\ received}}
+\DoxyCodeLine{00913\ \textcolor{comment}{\ \ \ \ \ \ \ \ '2'\ \ -\/-\/>\ The\ ACK\ has\ not\ been\ received}}
+\DoxyCodeLine{00914\ \textcolor{comment}{\ \ \ \ \ \ \ \ '1'\ \ -\/-\/>\ not\ used\ (reserved)}}
+\DoxyCodeLine{00915\ \textcolor{comment}{\ \ \ \ \ \ \ \ '0'\ \ -\/-\/>\ The\ ACK\ has\ been\ received\ with\ no\ errors\ */}}
+\DoxyCodeLine{00916\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a5e10c3563cf5e2302058745c8208f5d1}{BSP\_SX1272\_getACK}}(uint32\_t\ wait);}
+\DoxyCodeLine{00917\ }
+\DoxyCodeLine{00918\ \textcolor{comment}{//\ It\ sends\ a\ packet,\ waits\ to\ receive\ an\ ACK\ and\ updates\ the\ \_retries}}
+\DoxyCodeLine{00919\ \textcolor{comment}{//\ value,\ before\ ending\ MAX\_TIMEOUT\ time.}}
+\DoxyCodeLine{00920\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00921\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00922\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length\ :\ payload\ buffer\ length.}}
+\DoxyCodeLine{00923\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00924\ \textcolor{comment}{//uint8\_t\ BSP\_SX1272\_sendPacketMAXTimeoutACKRetries(\ \ \ \ uint8\_t\ dest,}}
+\DoxyCodeLine{00925\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *payload,}}
+\DoxyCodeLine{00926\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ length);}}
+\DoxyCodeLine{00927\ }
+\DoxyCodeLine{00928\ \textcolor{comment}{//\ It\ sends\ a\ packet,\ waits\ to\ receive\ an\ ACK\ and\ updates\ the\ \_retries}}
+\DoxyCodeLine{00929\ \textcolor{comment}{//\ value,\ before\ ending\ 'wait'\ time.}}
+\DoxyCodeLine{00930\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00931\ \textcolor{comment}{\(\backslash\)param\ char\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00932\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ while\ trying\ to\ send\ the\ packet.}}
+\DoxyCodeLine{00933\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00934\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a8431e866f89dd99e9956b370d1fbf4f4}{BSP\_SX1272\_sendPacketTimeoutACKRetries}}(uint8\_t\ dest,}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *payload,}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ wait);}
+\DoxyCodeLine{00937\ }
+\DoxyCodeLine{00938\ \textcolor{comment}{//\ It\ sends\ a\ packet,\ waits\ to\ receive\ an\ ACK\ and\ updates\ the\ \_retries}}
+\DoxyCodeLine{00939\ \textcolor{comment}{//\ value,\ before\ ending\ 'wait'\ time.}}
+\DoxyCodeLine{00940\ \textcolor{comment}{/*\ \(\backslash\)param\ uint8\_t\ dest\ :\ packet\ destination.}}
+\DoxyCodeLine{00941\ \textcolor{comment}{\(\backslash\)param\ uint8\_t\ *payload\ :\ packet\ payload.}}
+\DoxyCodeLine{00942\ \textcolor{comment}{\(\backslash\)param\ uint16\_t\ length\ :\ payload\ buffer\ length.}}
+\DoxyCodeLine{00943\ \textcolor{comment}{\(\backslash\)param\ uint32\_t\ wait\ :\ time\ to\ wait\ while\ trying\ to\ send\ the\ packet.}}
+\DoxyCodeLine{00944\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise*/}}
+\DoxyCodeLine{00945\ \textcolor{comment}{//uint8\_t\ BSP\_SX1272\_sendPacketTimeoutACKRetries(uint8\_t\ dest,}}
+\DoxyCodeLine{00946\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *payload,}}
+\DoxyCodeLine{00947\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ length,}}
+\DoxyCodeLine{00948\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ wait);}}
+\DoxyCodeLine{00949\ }
+\DoxyCodeLine{00950\ \textcolor{comment}{//\ It\ gets\ the\ internal\ temperature\ of\ the\ module.}}
+\DoxyCodeLine{00951\ \textcolor{comment}{/*\ It\ stores\ in\ global\ '\_temp'\ variable\ the\ module\ temperature.}}
+\DoxyCodeLine{00952\ \textcolor{comment}{\(\backslash\)return\ '0'\ on\ success,\ '1'\ otherwise\ */}}
+\DoxyCodeLine{00953\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_a0c9ab298ced3d1d7ae2d14bd01bf1166}{BSP\_SX1272\_getTemp}}();}
+\DoxyCodeLine{00954\ }
+\DoxyCodeLine{00955\ }
+\DoxyCodeLine{00956\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00957\ \textcolor{comment}{Function:\ It\ sets\ the\ CAD\ mode\ to\ search\ Channel\ Activity\ Detection}}
+\DoxyCodeLine{00958\ \textcolor{comment}{Returns:\ Integer\ that\ determines\ if\ there\ has\ been\ any\ error}}
+\DoxyCodeLine{00959\ \textcolor{comment}{state\ =\ true\ \ \ -\/-\/>\ Channel\ Activity\ Detected}}
+\DoxyCodeLine{00960\ \textcolor{comment}{state\ =\ false\ \ -\/-\/>\ Channel\ Activity\ NOT\ Detected*/}}
+\DoxyCodeLine{00961\ uint8\_t\ \mbox{\hyperlink{_s_x1272_8h_aa7177092cff951f46ff6afee93e98e69}{BSP\_SX1272\_cadDetected}}();}
+\DoxyCodeLine{00962\ }
+\DoxyCodeLine{00963\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ BSP\_INC\_SX1272\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

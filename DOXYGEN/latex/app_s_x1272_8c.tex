@@ -1,0 +1,91 @@
+\doxysection{STM32/app/src/app\+SX1272.c File Reference}
+\hypertarget{app_s_x1272_8c}{}\label{app_s_x1272_8c}\index{STM32/app/src/appSX1272.c@{STM32/app/src/appSX1272.c}}
+{\ttfamily \#include \"{}main.\+h\"{}}\newline
+{\ttfamily \#include \"{}app\+SX1272.\+h\"{}}\newline
+{\ttfamily \#include \"{}SX1272.\+h\"{}}\newline
+{\ttfamily \#include \"{}com\+SX1272.\+h\"{}}\newline
+{\ttfamily \#include \"{}string.\+h\"{}}\newline
+{\ttfamily \#include \"{}delay.\+h\"{}}\newline
+{\ttfamily \#include \"{}LED\+\_\+control.\+h\"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8c_a05d1af42442c934b555896d3fe55c79e}{DEBUG\+\_\+\+FLAG}}~2
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8c_ab8ccd7253423a2e1863e5312aa633b4e}{SEND\+\_\+\+MSG\+\_\+\+ENCODED\+\_\+\+FLAG}}~0
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8c_a0937510bc1cb132b8d44f887c5421505}{SEND\+\_\+\+ACK\+\_\+\+ENCODED\+\_\+\+FLAG}}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_s_x1272_8c_a5b7bec9d57e966f8115a9529ab0457ea}{APP\+\_\+\+SX1272\+\_\+setup}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\item 
+void \mbox{\hyperlink{app_s_x1272_8c_a1070573467908e8dcaa9ec60f6f1c947}{APP\+\_\+\+SX1272\+\_\+run\+Transmit}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\item 
+void \mbox{\hyperlink{app_s_x1272_8c_a0239db6fd6d4c7b7dec055cacaced725}{APP\+\_\+\+SX1272\+\_\+run\+Receive}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8c_a9a620ebeba05a011d6c66dfc411f3e3c}{APP\+\_\+\+SX1272\+\_\+set\+Freq}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_x1272status}{SX1272status}} \mbox{\hyperlink{app_s_x1272_8c_a1b23897a68158398f893c2a5768bc522}{currentstate}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{app_s_x1272_8c_a05d1af42442c934b555896d3fe55c79e}\label{app_s_x1272_8c_a05d1af42442c934b555896d3fe55c79e} 
+\index{appSX1272.c@{appSX1272.c}!DEBUG\_FLAG@{DEBUG\_FLAG}}
+\index{DEBUG\_FLAG@{DEBUG\_FLAG}!appSX1272.c@{appSX1272.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_FLAG}{DEBUG\_FLAG}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+FLAG~2}
+
+\Hypertarget{app_s_x1272_8c_a0937510bc1cb132b8d44f887c5421505}\label{app_s_x1272_8c_a0937510bc1cb132b8d44f887c5421505} 
+\index{appSX1272.c@{appSX1272.c}!SEND\_ACK\_ENCODED\_FLAG@{SEND\_ACK\_ENCODED\_FLAG}}
+\index{SEND\_ACK\_ENCODED\_FLAG@{SEND\_ACK\_ENCODED\_FLAG}!appSX1272.c@{appSX1272.c}}
+\doxysubsubsection{\texorpdfstring{SEND\_ACK\_ENCODED\_FLAG}{SEND\_ACK\_ENCODED\_FLAG}}
+{\footnotesize\ttfamily \#define SEND\+\_\+\+ACK\+\_\+\+ENCODED\+\_\+\+FLAG~1}
+
+\Hypertarget{app_s_x1272_8c_ab8ccd7253423a2e1863e5312aa633b4e}\label{app_s_x1272_8c_ab8ccd7253423a2e1863e5312aa633b4e} 
+\index{appSX1272.c@{appSX1272.c}!SEND\_MSG\_ENCODED\_FLAG@{SEND\_MSG\_ENCODED\_FLAG}}
+\index{SEND\_MSG\_ENCODED\_FLAG@{SEND\_MSG\_ENCODED\_FLAG}!appSX1272.c@{appSX1272.c}}
+\doxysubsubsection{\texorpdfstring{SEND\_MSG\_ENCODED\_FLAG}{SEND\_MSG\_ENCODED\_FLAG}}
+{\footnotesize\ttfamily \#define SEND\+\_\+\+MSG\+\_\+\+ENCODED\+\_\+\+FLAG~0}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_s_x1272_8c_a0239db6fd6d4c7b7dec055cacaced725}\label{app_s_x1272_8c_a0239db6fd6d4c7b7dec055cacaced725} 
+\index{appSX1272.c@{appSX1272.c}!APP\_SX1272\_runReceive@{APP\_SX1272\_runReceive}}
+\index{APP\_SX1272\_runReceive@{APP\_SX1272\_runReceive}!appSX1272.c@{appSX1272.c}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_runReceive()}{APP\_SX1272\_runReceive()}}
+{\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+run\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{app_s_x1272_8c_a1070573467908e8dcaa9ec60f6f1c947}\label{app_s_x1272_8c_a1070573467908e8dcaa9ec60f6f1c947} 
+\index{appSX1272.c@{appSX1272.c}!APP\_SX1272\_runTransmit@{APP\_SX1272\_runTransmit}}
+\index{APP\_SX1272\_runTransmit@{APP\_SX1272\_runTransmit}!appSX1272.c@{appSX1272.c}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_runTransmit()}{APP\_SX1272\_runTransmit()}}
+{\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+run\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{app_s_x1272_8c_a9a620ebeba05a011d6c66dfc411f3e3c}\label{app_s_x1272_8c_a9a620ebeba05a011d6c66dfc411f3e3c} 
+\index{appSX1272.c@{appSX1272.c}!APP\_SX1272\_setFreq@{APP\_SX1272\_setFreq}}
+\index{APP\_SX1272\_setFreq@{APP\_SX1272\_setFreq}!appSX1272.c@{appSX1272.c}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_setFreq()}{APP\_SX1272\_setFreq()}}
+{\footnotesize\ttfamily uint8\+\_\+t APP\+\_\+\+SX1272\+\_\+set\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{app_s_x1272_8c_a5b7bec9d57e966f8115a9529ab0457ea}\label{app_s_x1272_8c_a5b7bec9d57e966f8115a9529ab0457ea} 
+\index{appSX1272.c@{appSX1272.c}!APP\_SX1272\_setup@{APP\_SX1272\_setup}}
+\index{APP\_SX1272\_setup@{APP\_SX1272\_setup}!appSX1272.c@{appSX1272.c}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_setup()}{APP\_SX1272\_setup()}}
+{\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{app_s_x1272_8c_a1b23897a68158398f893c2a5768bc522}\label{app_s_x1272_8c_a1b23897a68158398f893c2a5768bc522} 
+\index{appSX1272.c@{appSX1272.c}!currentstate@{currentstate}}
+\index{currentstate@{currentstate}!appSX1272.c@{appSX1272.c}}
+\doxysubsubsection{\texorpdfstring{currentstate}{currentstate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_x1272status}{SX1272status}} currentstate\hspace{0.3cm}{\ttfamily [extern]}}
+

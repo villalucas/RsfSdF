@@ -1,0 +1,89 @@
+\doxysection{STM32/bsp/inc/bsp.h File Reference}
+\hypertarget{bsp_8h}{}\label{bsp_8h}\index{STM32/bsp/inc/bsp.h@{STM32/bsp/inc/bsp.h}}
+{\ttfamily \#include \"{}stm32f0xx.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp_8h_aacf5c2ba7f6873db627a6cf3f541511e}{BSP\+\_\+\+LED\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{bsp_8h_a1911daf80ad1c5d939dcfeadb2fe71c8}{BSP\+\_\+\+LED\+\_\+\+On}} (void)
+\item 
+void \mbox{\hyperlink{bsp_8h_aa6bbeb58e7323c105a5ed608d5c98945}{BSP\+\_\+\+LED\+\_\+\+Off}} (void)
+\item 
+void \mbox{\hyperlink{bsp_8h_a17bffa4b23fef0f49f57fd1f92bc33d8}{BSP\+\_\+\+LED\+\_\+\+Toggle}} (void)
+\item 
+void \mbox{\hyperlink{bsp_8h_ab530db67e76337b1c0d2bc165077d7c9}{BSP\+\_\+\+PB\+\_\+\+Init}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{bsp_8h_afbaf052e8171e4372ce9f6c12cb801f3}{BSP\+\_\+\+PB\+\_\+\+Get\+State}} (void)
+\item 
+void \mbox{\hyperlink{bsp_8h_a2dd8224f037a571a3fcdcfa4f49029f3}{BSP\+\_\+\+TIMER\+\_\+\+Timebase\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{bsp_8h_acf961cc06645c98cd1a045f0e641b096}{BSP\+\_\+\+NVIC\+\_\+\+Init}} ()
+\item 
+int \mbox{\hyperlink{bsp_8h_a4447a1e5485a99baa54491833508091d}{BSP\+\_\+millis}} ()
+\item 
+void \mbox{\hyperlink{bsp_8h_ad46e589bff8e96a397291816b8142784}{BSP\+\_\+\+Console\+\_\+\+Init}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp_8h_ad46e589bff8e96a397291816b8142784}\label{bsp_8h_ad46e589bff8e96a397291816b8142784} 
+\index{bsp.h@{bsp.h}!BSP\_Console\_Init@{BSP\_Console\_Init}}
+\index{BSP\_Console\_Init@{BSP\_Console\_Init}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_Console\_Init()}{BSP\_Console\_Init()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+Console\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_aacf5c2ba7f6873db627a6cf3f541511e}\label{bsp_8h_aacf5c2ba7f6873db627a6cf3f541511e} 
+\index{bsp.h@{bsp.h}!BSP\_LED\_Init@{BSP\_LED\_Init}}
+\index{BSP\_LED\_Init@{BSP\_LED\_Init}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_LED\_Init()}{BSP\_LED\_Init()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+LED\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_aa6bbeb58e7323c105a5ed608d5c98945}\label{bsp_8h_aa6bbeb58e7323c105a5ed608d5c98945} 
+\index{bsp.h@{bsp.h}!BSP\_LED\_Off@{BSP\_LED\_Off}}
+\index{BSP\_LED\_Off@{BSP\_LED\_Off}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_LED\_Off()}{BSP\_LED\_Off()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+LED\+\_\+\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_a1911daf80ad1c5d939dcfeadb2fe71c8}\label{bsp_8h_a1911daf80ad1c5d939dcfeadb2fe71c8} 
+\index{bsp.h@{bsp.h}!BSP\_LED\_On@{BSP\_LED\_On}}
+\index{BSP\_LED\_On@{BSP\_LED\_On}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_LED\_On()}{BSP\_LED\_On()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+LED\+\_\+\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_a17bffa4b23fef0f49f57fd1f92bc33d8}\label{bsp_8h_a17bffa4b23fef0f49f57fd1f92bc33d8} 
+\index{bsp.h@{bsp.h}!BSP\_LED\_Toggle@{BSP\_LED\_Toggle}}
+\index{BSP\_LED\_Toggle@{BSP\_LED\_Toggle}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_LED\_Toggle()}{BSP\_LED\_Toggle()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+LED\+\_\+\+Toggle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_a4447a1e5485a99baa54491833508091d}\label{bsp_8h_a4447a1e5485a99baa54491833508091d} 
+\index{bsp.h@{bsp.h}!BSP\_millis@{BSP\_millis}}
+\index{BSP\_millis@{BSP\_millis}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_millis()}{BSP\_millis()}}
+{\footnotesize\ttfamily int BSP\+\_\+millis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_acf961cc06645c98cd1a045f0e641b096}\label{bsp_8h_acf961cc06645c98cd1a045f0e641b096} 
+\index{bsp.h@{bsp.h}!BSP\_NVIC\_Init@{BSP\_NVIC\_Init}}
+\index{BSP\_NVIC\_Init@{BSP\_NVIC\_Init}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_NVIC\_Init()}{BSP\_NVIC\_Init()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+NVIC\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_afbaf052e8171e4372ce9f6c12cb801f3}\label{bsp_8h_afbaf052e8171e4372ce9f6c12cb801f3} 
+\index{bsp.h@{bsp.h}!BSP\_PB\_GetState@{BSP\_PB\_GetState}}
+\index{BSP\_PB\_GetState@{BSP\_PB\_GetState}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_PB\_GetState()}{BSP\_PB\_GetState()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+PB\+\_\+\+Get\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_ab530db67e76337b1c0d2bc165077d7c9}\label{bsp_8h_ab530db67e76337b1c0d2bc165077d7c9} 
+\index{bsp.h@{bsp.h}!BSP\_PB\_Init@{BSP\_PB\_Init}}
+\index{BSP\_PB\_Init@{BSP\_PB\_Init}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_PB\_Init()}{BSP\_PB\_Init()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+PB\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp_8h_a2dd8224f037a571a3fcdcfa4f49029f3}\label{bsp_8h_a2dd8224f037a571a3fcdcfa4f49029f3} 
+\index{bsp.h@{bsp.h}!BSP\_TIMER\_Timebase\_Init@{BSP\_TIMER\_Timebase\_Init}}
+\index{BSP\_TIMER\_Timebase\_Init@{BSP\_TIMER\_Timebase\_Init}!bsp.h@{bsp.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_TIMER\_Timebase\_Init()}{BSP\_TIMER\_Timebase\_Init()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+TIMER\+\_\+\+Timebase\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

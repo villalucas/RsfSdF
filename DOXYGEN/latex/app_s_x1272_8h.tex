@@ -1,0 +1,159 @@
+\doxysection{STM32/app/inc/app\+SX1272.h File Reference}
+\hypertarget{app_s_x1272_8h}{}\label{app_s_x1272_8h}\index{STM32/app/inc/appSX1272.h@{STM32/app/inc/appSX1272.h}}
+{\ttfamily \#include \"{}SX1272.\+h\"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_af2faf70a2a9bb902999155bd6efc5a31}{TX\+\_\+\+Addr}}~\mbox{\hyperlink{_s_x1272_8h_a8450d5398907cd2b9ab0466daf027d73}{BROADCAST\+\_\+\+ADDR}}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_af18ec3b2a4ab573d584ee95f6c6dd251}{RX\+\_\+\+Addr}}~8
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a9bc8cbbc3a8ad9394c89b65011921e13}{Out\+Power}}~\mbox{\hyperlink{_s_x1272_8h_a39c05c560d9952fc50dd02d0f6467af4}{POW\+\_\+14}}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a3cf6c2b00cb6e0220f50dd1568b0af94}{Type\+Modulation}}~0
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a70af4275cfb9a567714fd399fe17072a}{Period\+Transmission}}~5000
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a358d214ab11dbef669919b8747c1b695}{param\+BW}}~\mbox{\hyperlink{_s_x1272_8h_a9c7018c2c66c9127856162c2738f1b9a}{BW\+\_\+125}}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_abf07cc63a17b1db11b8813bd6e3fb015}{param\+CR}}~\mbox{\hyperlink{_s_x1272_8h_a8ae86f77eb3811fc661b47fea8489fa6}{CR\+\_\+5}}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_adb065ad7c8e22ada409eae12587e03b4}{param\+SF}}~\mbox{\hyperlink{_s_x1272_8h_a433d4989c423e022a95f6d0dd7b6432b}{SF\+\_\+12}}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_acfdf692e14e66e22bdbfd08a021b4358}{Bit\+Rate}}~\mbox{\hyperlink{_s_x1272_8h_ac67b43d173806824f20e40e464eaba8f}{BR1200bauds}}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a7f43c852d3736774f13b610dc3c130b0}{Fdev}}~\mbox{\hyperlink{_s_x1272_8h_a46a0519c8e0423893eca66b1bde2ec26}{FDA5k\+Hz}}
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_acb749eaaae454760c440dd9d757c0791}{Preamb\+Long}}~12
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a79c549c26377d60d4bc1bb6e806815af}{Max\+Nb\+Retries}}~3
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a2e8c88641a4a66b129a79d68a40dc850}{Wait\+Tx\+Max}}~5000
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a1b3f08ee8da4ccaf97529bf89e1fd5df}{Wait\+Rx\+Max}}~10000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_s_x1272_8h_a5b7bec9d57e966f8115a9529ab0457ea}{APP\+\_\+\+SX1272\+\_\+setup}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\item 
+void \mbox{\hyperlink{app_s_x1272_8h_a1070573467908e8dcaa9ec60f6f1c947}{APP\+\_\+\+SX1272\+\_\+run\+Transmit}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\item 
+void \mbox{\hyperlink{app_s_x1272_8h_a0239db6fd6d4c7b7dec055cacaced725}{APP\+\_\+\+SX1272\+\_\+run\+Receive}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}{APP\+\_\+\+SX1272\+\_\+set\+Freq}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{app_s_x1272_8h_acfdf692e14e66e22bdbfd08a021b4358}\label{app_s_x1272_8h_acfdf692e14e66e22bdbfd08a021b4358} 
+\index{appSX1272.h@{appSX1272.h}!BitRate@{BitRate}}
+\index{BitRate@{BitRate}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{BitRate}{BitRate}}
+{\footnotesize\ttfamily \#define Bit\+Rate~\mbox{\hyperlink{_s_x1272_8h_ac67b43d173806824f20e40e464eaba8f}{BR1200bauds}}}
+
+\Hypertarget{app_s_x1272_8h_a7f43c852d3736774f13b610dc3c130b0}\label{app_s_x1272_8h_a7f43c852d3736774f13b610dc3c130b0} 
+\index{appSX1272.h@{appSX1272.h}!Fdev@{Fdev}}
+\index{Fdev@{Fdev}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{Fdev}{Fdev}}
+{\footnotesize\ttfamily \#define Fdev~\mbox{\hyperlink{_s_x1272_8h_a46a0519c8e0423893eca66b1bde2ec26}{FDA5k\+Hz}}}
+
+\Hypertarget{app_s_x1272_8h_a79c549c26377d60d4bc1bb6e806815af}\label{app_s_x1272_8h_a79c549c26377d60d4bc1bb6e806815af} 
+\index{appSX1272.h@{appSX1272.h}!MaxNbRetries@{MaxNbRetries}}
+\index{MaxNbRetries@{MaxNbRetries}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{MaxNbRetries}{MaxNbRetries}}
+{\footnotesize\ttfamily \#define Max\+Nb\+Retries~3}
+
+\Hypertarget{app_s_x1272_8h_a9bc8cbbc3a8ad9394c89b65011921e13}\label{app_s_x1272_8h_a9bc8cbbc3a8ad9394c89b65011921e13} 
+\index{appSX1272.h@{appSX1272.h}!OutPower@{OutPower}}
+\index{OutPower@{OutPower}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{OutPower}{OutPower}}
+{\footnotesize\ttfamily \#define Out\+Power~\mbox{\hyperlink{_s_x1272_8h_a39c05c560d9952fc50dd02d0f6467af4}{POW\+\_\+14}}}
+
+\Hypertarget{app_s_x1272_8h_a358d214ab11dbef669919b8747c1b695}\label{app_s_x1272_8h_a358d214ab11dbef669919b8747c1b695} 
+\index{appSX1272.h@{appSX1272.h}!paramBW@{paramBW}}
+\index{paramBW@{paramBW}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{paramBW}{paramBW}}
+{\footnotesize\ttfamily \#define param\+BW~\mbox{\hyperlink{_s_x1272_8h_a9c7018c2c66c9127856162c2738f1b9a}{BW\+\_\+125}}}
+
+\Hypertarget{app_s_x1272_8h_abf07cc63a17b1db11b8813bd6e3fb015}\label{app_s_x1272_8h_abf07cc63a17b1db11b8813bd6e3fb015} 
+\index{appSX1272.h@{appSX1272.h}!paramCR@{paramCR}}
+\index{paramCR@{paramCR}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{paramCR}{paramCR}}
+{\footnotesize\ttfamily \#define param\+CR~\mbox{\hyperlink{_s_x1272_8h_a8ae86f77eb3811fc661b47fea8489fa6}{CR\+\_\+5}}}
+
+\Hypertarget{app_s_x1272_8h_adb065ad7c8e22ada409eae12587e03b4}\label{app_s_x1272_8h_adb065ad7c8e22ada409eae12587e03b4} 
+\index{appSX1272.h@{appSX1272.h}!paramSF@{paramSF}}
+\index{paramSF@{paramSF}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{paramSF}{paramSF}}
+{\footnotesize\ttfamily \#define param\+SF~\mbox{\hyperlink{_s_x1272_8h_a433d4989c423e022a95f6d0dd7b6432b}{SF\+\_\+12}}}
+
+\Hypertarget{app_s_x1272_8h_a70af4275cfb9a567714fd399fe17072a}\label{app_s_x1272_8h_a70af4275cfb9a567714fd399fe17072a} 
+\index{appSX1272.h@{appSX1272.h}!PeriodTransmission@{PeriodTransmission}}
+\index{PeriodTransmission@{PeriodTransmission}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{PeriodTransmission}{PeriodTransmission}}
+{\footnotesize\ttfamily \#define Period\+Transmission~5000}
+
+\Hypertarget{app_s_x1272_8h_acb749eaaae454760c440dd9d757c0791}\label{app_s_x1272_8h_acb749eaaae454760c440dd9d757c0791} 
+\index{appSX1272.h@{appSX1272.h}!PreambLong@{PreambLong}}
+\index{PreambLong@{PreambLong}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{PreambLong}{PreambLong}}
+{\footnotesize\ttfamily \#define Preamb\+Long~12}
+
+\Hypertarget{app_s_x1272_8h_af18ec3b2a4ab573d584ee95f6c6dd251}\label{app_s_x1272_8h_af18ec3b2a4ab573d584ee95f6c6dd251} 
+\index{appSX1272.h@{appSX1272.h}!RX\_Addr@{RX\_Addr}}
+\index{RX\_Addr@{RX\_Addr}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{RX\_Addr}{RX\_Addr}}
+{\footnotesize\ttfamily \#define RX\+\_\+\+Addr~8}
+
+\Hypertarget{app_s_x1272_8h_af2faf70a2a9bb902999155bd6efc5a31}\label{app_s_x1272_8h_af2faf70a2a9bb902999155bd6efc5a31} 
+\index{appSX1272.h@{appSX1272.h}!TX\_Addr@{TX\_Addr}}
+\index{TX\_Addr@{TX\_Addr}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{TX\_Addr}{TX\_Addr}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+Addr~\mbox{\hyperlink{_s_x1272_8h_a8450d5398907cd2b9ab0466daf027d73}{BROADCAST\+\_\+\+ADDR}}}
+
+\Hypertarget{app_s_x1272_8h_a3cf6c2b00cb6e0220f50dd1568b0af94}\label{app_s_x1272_8h_a3cf6c2b00cb6e0220f50dd1568b0af94} 
+\index{appSX1272.h@{appSX1272.h}!TypeModulation@{TypeModulation}}
+\index{TypeModulation@{TypeModulation}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{TypeModulation}{TypeModulation}}
+{\footnotesize\ttfamily \#define Type\+Modulation~0}
+
+\Hypertarget{app_s_x1272_8h_a1b3f08ee8da4ccaf97529bf89e1fd5df}\label{app_s_x1272_8h_a1b3f08ee8da4ccaf97529bf89e1fd5df} 
+\index{appSX1272.h@{appSX1272.h}!WaitRxMax@{WaitRxMax}}
+\index{WaitRxMax@{WaitRxMax}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{WaitRxMax}{WaitRxMax}}
+{\footnotesize\ttfamily \#define Wait\+Rx\+Max~10000}
+
+\Hypertarget{app_s_x1272_8h_a2e8c88641a4a66b129a79d68a40dc850}\label{app_s_x1272_8h_a2e8c88641a4a66b129a79d68a40dc850} 
+\index{appSX1272.h@{appSX1272.h}!WaitTxMax@{WaitTxMax}}
+\index{WaitTxMax@{WaitTxMax}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{WaitTxMax}{WaitTxMax}}
+{\footnotesize\ttfamily \#define Wait\+Tx\+Max~5000}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_s_x1272_8h_a0239db6fd6d4c7b7dec055cacaced725}\label{app_s_x1272_8h_a0239db6fd6d4c7b7dec055cacaced725} 
+\index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_runReceive@{APP\_SX1272\_runReceive}}
+\index{APP\_SX1272\_runReceive@{APP\_SX1272\_runReceive}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_runReceive()}{APP\_SX1272\_runReceive()}}
+{\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+run\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{app_s_x1272_8h_a1070573467908e8dcaa9ec60f6f1c947}\label{app_s_x1272_8h_a1070573467908e8dcaa9ec60f6f1c947} 
+\index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_runTransmit@{APP\_SX1272\_runTransmit}}
+\index{APP\_SX1272\_runTransmit@{APP\_SX1272\_runTransmit}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_runTransmit()}{APP\_SX1272\_runTransmit()}}
+{\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+run\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}\label{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c} 
+\index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_setFreq@{APP\_SX1272\_setFreq}}
+\index{APP\_SX1272\_setFreq@{APP\_SX1272\_setFreq}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_setFreq()}{APP\_SX1272\_setFreq()}}
+{\footnotesize\ttfamily uint8\+\_\+t APP\+\_\+\+SX1272\+\_\+set\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{app_s_x1272_8h_a5b7bec9d57e966f8115a9529ab0457ea}\label{app_s_x1272_8h_a5b7bec9d57e966f8115a9529ab0457ea} 
+\index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_setup@{APP\_SX1272\_setup}}
+\index{APP\_SX1272\_setup@{APP\_SX1272\_setup}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_setup()}{APP\_SX1272\_setup()}}
+{\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+

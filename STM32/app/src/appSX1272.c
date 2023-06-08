@@ -1,8 +1,9 @@
-/*
- * appSX1272.c
+/**
+ * @file appSX1272.c
+ * @brief Contient les fonctions pour la gestion de l'application SX1272.
  *
- *  Created on: 25 ao�t 2020
- *      Author: Arnaud
+ * Le fichier appSX1272.c contient les définitions des fonctions pour la
+ * configuration et l'exécution de l'application SX1272.
  */
 
 #include "main.h"
@@ -12,6 +13,13 @@
 #include "string.h"
 #include "delay.h"
 #include "LED_control.h"
+
+/**
+ * @brief État actuel du module SX1272.
+ *
+ * Cette variable globale externe est déclarée dans le fichier SX1272.h.
+ * Elle est utilisée pour suivre l'état actuel du module SX1272.
+ */
 
 extern SX1272status currentstate;
 
@@ -31,6 +39,7 @@ static uint16_t RegFdev = Fdev;
 static int8_t e;
 static uint8_t ConfigOK = 1;
 
+// Debug Constants
 #define DEBUG_FLAG 2
 #define SEND_MSG_ENCODED_FLAG 0
 #define SEND_ACK_ENCODED_FLAG 1
@@ -38,6 +47,16 @@ static uint8_t ConfigOK = 1;
 ///////////////////////////////////////////////////////////////
 // Setup function
 ///////////////////////////////////////////////////////////////
+
+/**
+ * @brief Fonction de configuration de l'application SX1272.
+ *
+ * Cette fonction configure le module SX1272 en spécifiant la modulation,
+ * la fréquence, la puissance de sortie, etc.
+ *
+ * @param[in] device Structure d'identification du périphérique.
+ */
+
 void APP_SX1272_setup(id_frame_t device) {
 	// Power ON the module
 	e = BSP_SX1272_ON(type_modulation);
@@ -163,6 +182,11 @@ void APP_SX1272_setup(id_frame_t device) {
 	BSP_DELAY_ms(1000);
 }
 
+/**
+ * @brief Fonction pour exécuter la transmission de paquets SX1272
+ * @param device Structure contenant les informations du périphérique
+ */
+
 void APP_SX1272_runTransmit(id_frame_t device) {
 	uint8_t dest_address = TX_Addr;
 
@@ -221,6 +245,11 @@ void APP_SX1272_runTransmit(id_frame_t device) {
 		BSP_DELAY_ms(waitPeriod); //delay to send packet every PeriodTransmission
 	}
 }
+
+/**
+ * @brief Fonction pour exécuter la réception de paquets SX1272
+ * @param device Structure contenant les informations du périphérique
+ */
 
 void APP_SX1272_runReceive(id_frame_t device) {
 	char StatusRXMessage = '0';
@@ -317,10 +346,12 @@ void APP_SX1272_runReceive(id_frame_t device) {
 }
 
 /*
- Function: It set the SW1272 module on the frequence pass as argument of the function
-   return = 2  --> The command has not been executed
-   return = 1  --> There has been an error while executing the command
-   return = 0  --> The command has been executed with no errors
+   Fonction : Configure le module SX1272 avec la fréquence passée en argument
+
+   Retour :
+   - 2 : La commande n'a pas été exécutée
+   - 1 : Une erreur s'est produite lors de l'exécution de la commande
+   - 0 : La commande a été exécutée sans erreur
 */
 uint8_t APP_SX1272_setFreq(id_frame_t device)
 {

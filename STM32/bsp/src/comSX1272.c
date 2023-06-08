@@ -1,15 +1,41 @@
-/*
- * comSX1272.c
+/**
+ * @file comSX1272.c
+ * @brief Fonctions de communication avec le module SX1272.
  *
- *  Created on: 24 ao�t 2020
- *      Author: Arnaud
+ * Ce fichier contient les définitions des fonctions permettant la communication avec le module SX1272.
+ * Ces fonctions sont spécifiques à l'application et peuvent varier en fonction des besoins.
+ *
+ * @date 24 août 2020
+ * @author Arnaud
  */
 
 
 #include "comSX1272.h"
 
+/**
+ * @brief Fonction interne pour envoyer et recevoir des octets via l'interface SPI.
+ *
+ * Cette fonction envoie un octet via l'interface SPI et retourne l'octet reçu en réponse.
+ *
+ * @param tx_byte L'octet à envoyer.
+ * @return L'octet reçu en réponse.
+ */
 static uint8_t BSP_SPI_SendReceive(uint8_t tx_byte);
 
+
+/**
+ * @brief Initialise la configuration de l'interface SPI1.
+ *
+ * Cette fonction configure l'interface SPI1 ainsi que les broches associées pour l'utilisation du module SPI.
+ * Elle initialise les registres de configuration pour établir les paramètres suivants :
+ * - Utilisation de PB6 comme broche de sélection du périphérique (CS).
+ * - Utilisation de PA5, PA6 et PA7 comme broches d'interface SPI1.
+ * - Configuration des broches en mode alternatif (AF) pour l'utilisation de l'interface SPI.
+ * - Configuration du SPI1 en mode maître avec une vitesse de transmission de 6 MHz.
+ *
+ * @note Cette fonction suppose que les registres RCC, GPIOB, et GPIOA ont déjà été initialisés correctement.
+ * @note Les détails spécifiques concernant les registres sont documentés dans le code source.
+ */
 void BSP_SPI1_Init()
 {
 	// SPI_SCK  -> PA5 (AF0)
@@ -77,6 +103,21 @@ void BSP_SPI1_Init()
 	SPI1->CR1 |= SPI_CR1_SPE;
 }
 
+
+/**
+ * @brief Lit une valeur à partir d'un registre spécifié du module SX1272.
+ *
+ * Cette fonction lit la valeur d'un registre spécifié du module SX1272 via l'interface SPI1.
+ * Elle configure le seuil FIFO sur 1 octet, sélectionne l'esclave en mettant la broche de sélection (CS) à l'état bas,
+ * envoie l'adresse du registre à lire, reçoit la valeur du registre via l'interface SPI, puis libère l'esclave en mettant
+ * la broche CS à l'état haut.
+ *
+ * @param register_address L'adresse du registre à lire.
+ * @return La valeur lue à partir du registre spécifié.
+ *
+ * @note Cette fonction suppose que les registres SPI1, GPIOB et GPIOA ont déjà été initialisés correctement.
+ * @note Les détails spécifiques concernant les registres sont documentés dans le code source.
+ */
 uint8_t BSP_SX1272_Read(uint8_t register_address)
 {
 	uint8_t data=0;
@@ -97,6 +138,21 @@ uint8_t BSP_SX1272_Read(uint8_t register_address)
 	return data;
 }
 
+
+/**
+ * @brief Écrit une valeur dans un registre spécifié du module SX1272.
+ *
+ * Cette fonction écrit une valeur spécifiée dans un registre spécifié du module SX1272 via l'interface SPI1.
+ * Elle configure le seuil FIFO sur 1 octet, sélectionne l'esclave en mettant la broche de sélection (CS) à l'état bas,
+ * envoie l'adresse du registre à écrire en lui ajoutant le bit d'écriture (0x80), envoie la donnée à écrire,
+ * puis libère l'esclave en mettant la broche CS à l'état haut.
+ *
+ * @param register_address L'adresse du registre dans lequel écrire.
+ * @param data La valeur à écrire dans le registre spécifié.
+ *
+ * @note Cette fonction suppose que les registres SPI1, GPIOB et GPIOA ont déjà été initialisés correctement.
+ * @note Les détails spécifiques concernant les registres sont documentés dans le code source.
+ */
 void BSP_SX1272_Write(uint8_t register_address, uint8_t data)
 {
 	// Set FIFO threshold to 1-byte
@@ -115,6 +171,21 @@ void BSP_SX1272_Write(uint8_t register_address, uint8_t data)
 	GPIOB->BSRR = GPIO_BSRR_BS_6;
 }
 
+/**
+ * @brief Envoie un octet via l'interface SPI1 et retourne l'octet reçu.
+ *
+ * Cette fonction envoie un octet spécifié via l'interface SPI1 et attend la réception d'un octet en retour.
+ * Elle s'assure que le drapeau de transmission (TXE) est positionné avant d'envoyer les données,
+ * envoie l'octet spécifié, attend que les données entrantes arrivent et lit l'octet reçu.
+ * L'octet reçu est ensuite retourné par la fonction.
+ *
+ * @param tx_byte L'octet à envoyer via l'interface SPI1.
+ *
+ * @return L'octet reçu via l'interface SPI1.
+ *
+ * @note Cette fonction suppose que le registre SPI1 a déjà été initialisé correctement.
+ * @note Les détails spécifiques concernant les registres sont documentés dans le code source.
+ */
 static uint8_t BSP_SPI_SendReceive(uint8_t tx_byte)
 {
 	uint8_t	rx_byte;

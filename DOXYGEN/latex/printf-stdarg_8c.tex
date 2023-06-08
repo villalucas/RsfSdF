@@ -1,0 +1,56 @@
+\doxysection{STM32/app/src/printf-\/stdarg.c File Reference}
+\hypertarget{printf-stdarg_8c}{}\label{printf-stdarg_8c}\index{STM32/app/src/printf-\/stdarg.c@{STM32/app/src/printf-\/stdarg.c}}
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \"{}stm32f0xx.\+h\"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{printf-stdarg_8c_a6fd5dddc97219412ab1c4483ce144aef}{PAD\+\_\+\+RIGHT}}~1
+\item 
+\#define \mbox{\hyperlink{printf-stdarg_8c_a0b08e2c1689b9348d321cdc8846950af}{PAD\+\_\+\+ZERO}}~2
+\item 
+\#define \mbox{\hyperlink{printf-stdarg_8c_a5bf270eda1fe4ed63535e31fab16433e}{PRINT\+\_\+\+BUF\+\_\+\+LEN}}~12
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{printf-stdarg_8c_a8ed3cc79947555e7d13c91bbba84c558}{my\+\_\+printf}} (const char \texorpdfstring{$\ast$}{*}format,...)
+\item 
+int \mbox{\hyperlink{printf-stdarg_8c_aff21ef856f03068caae30647225956ac}{my\+\_\+sprintf}} (char \texorpdfstring{$\ast$}{*}out, const char \texorpdfstring{$\ast$}{*}format,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{printf-stdarg_8c_a6fd5dddc97219412ab1c4483ce144aef}\label{printf-stdarg_8c_a6fd5dddc97219412ab1c4483ce144aef} 
+\index{printf-\/stdarg.c@{printf-\/stdarg.c}!PAD\_RIGHT@{PAD\_RIGHT}}
+\index{PAD\_RIGHT@{PAD\_RIGHT}!printf-\/stdarg.c@{printf-\/stdarg.c}}
+\doxysubsubsection{\texorpdfstring{PAD\_RIGHT}{PAD\_RIGHT}}
+{\footnotesize\ttfamily \#define PAD\+\_\+\+RIGHT~1}
+
+\Hypertarget{printf-stdarg_8c_a0b08e2c1689b9348d321cdc8846950af}\label{printf-stdarg_8c_a0b08e2c1689b9348d321cdc8846950af} 
+\index{printf-\/stdarg.c@{printf-\/stdarg.c}!PAD\_ZERO@{PAD\_ZERO}}
+\index{PAD\_ZERO@{PAD\_ZERO}!printf-\/stdarg.c@{printf-\/stdarg.c}}
+\doxysubsubsection{\texorpdfstring{PAD\_ZERO}{PAD\_ZERO}}
+{\footnotesize\ttfamily \#define PAD\+\_\+\+ZERO~2}
+
+\Hypertarget{printf-stdarg_8c_a5bf270eda1fe4ed63535e31fab16433e}\label{printf-stdarg_8c_a5bf270eda1fe4ed63535e31fab16433e} 
+\index{printf-\/stdarg.c@{printf-\/stdarg.c}!PRINT\_BUF\_LEN@{PRINT\_BUF\_LEN}}
+\index{PRINT\_BUF\_LEN@{PRINT\_BUF\_LEN}!printf-\/stdarg.c@{printf-\/stdarg.c}}
+\doxysubsubsection{\texorpdfstring{PRINT\_BUF\_LEN}{PRINT\_BUF\_LEN}}
+{\footnotesize\ttfamily \#define PRINT\+\_\+\+BUF\+\_\+\+LEN~12}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{printf-stdarg_8c_a8ed3cc79947555e7d13c91bbba84c558}\label{printf-stdarg_8c_a8ed3cc79947555e7d13c91bbba84c558} 
+\index{printf-\/stdarg.c@{printf-\/stdarg.c}!my\_printf@{my\_printf}}
+\index{my\_printf@{my\_printf}!printf-\/stdarg.c@{printf-\/stdarg.c}}
+\doxysubsubsection{\texorpdfstring{my\_printf()}{my\_printf()}}
+{\footnotesize\ttfamily int my\+\_\+printf (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\Hypertarget{printf-stdarg_8c_aff21ef856f03068caae30647225956ac}\label{printf-stdarg_8c_aff21ef856f03068caae30647225956ac} 
+\index{printf-\/stdarg.c@{printf-\/stdarg.c}!my\_sprintf@{my\_sprintf}}
+\index{my\_sprintf@{my\_sprintf}!printf-\/stdarg.c@{printf-\/stdarg.c}}
+\doxysubsubsection{\texorpdfstring{my\_sprintf()}{my\_sprintf()}}
+{\footnotesize\ttfamily int my\+\_\+sprintf (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{out,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+

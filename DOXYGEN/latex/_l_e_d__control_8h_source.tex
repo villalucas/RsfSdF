@@ -1,0 +1,39 @@
+\doxysection{LED\+\_\+control.\+h}
+\hypertarget{_l_e_d__control_8h_source}{}\label{_l_e_d__control_8h_source}\index{STM32/bsp/inc/LED\_control.h@{STM32/bsp/inc/LED\_control.h}}
+\mbox{\hyperlink{_l_e_d__control_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ LED\_control.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ 17\ mai\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ rolla}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ BSP\_INC\_LED\_CONTROL\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ BSP\_INC\_LED\_CONTROL\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f0xx_8h}{stm32f0xx.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ LED\ driver\ functions}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_e_d__control_8h_a1d5b4eaf7f01ae9557ba620158ebdfd9}{LedInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_e_d__control_8h_ab7fdb42f90bb92ccfc9813861736ba78}{LedOn}}(uint8\_t\ led);}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_e_d__control_8h_a23a403ca044f9a4b1c788639e9184f3c}{LedOff}}(uint8\_t\ led);}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_e_d__control_8h_a465eefce4de8c2a730fa00d7ff4dba23}{LedToggle}}(uint8\_t\ led);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ LED\ defines}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ LED\_CH0\ \ \ \ \ 0x00\ \ \ \ }\textcolor{comment}{//\ Blue\ LED\ for\ Channel\ 0}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ LED\_CH1\ \ \ \ \ 0x01\ \ \ \ }\textcolor{comment}{//\ Green\ LED\ for\ Channel\ 1}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ LED\_CH2\ \ \ \ \ 0x02\ \ \ \ }\textcolor{comment}{//\ Red\ LED\ for\ Channel\ 2}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ LED\_RX\ \ \ \ \ \ 0x03\ \ \ \ }\textcolor{comment}{//\ Green\ LED\ for\ RX}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ LED\_TX\ \ \ \ \ \ 0x04\ \ \ \ }\textcolor{comment}{//\ Blue\ LED\ for\ TX}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ LED\_ALL\ \ \ \ \ 0x05\ \ \ \ }\textcolor{comment}{//\ All\ LEDs\ control}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ BSP\_INC\_LED\_CONTROL\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
