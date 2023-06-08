@@ -165,6 +165,7 @@ void APP_SX1272_setup(id_frame_t device) {
 
 uint8_t APP_SX1272_runTransmitMsg(id_frame_t device, msg_frame_t *message) {
 	uint8_t dest_address = TX_Addr;
+	LedOn(LED_TX);	// TX LED On state for transmission
 
 	// Transmit a packet continuously with a pause of "waitPeriod"
 	if (ConfigOK == 1) {
@@ -200,6 +201,7 @@ uint8_t APP_SX1272_runTransmitMsg(id_frame_t device, msg_frame_t *message) {
 	else{
 		return TRANSMIT_ERROR_CONFIG;
 	}
+	LedOff(LED_TX);
 }
 
 
@@ -246,6 +248,7 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 	char StatusRXMessage = '0';
 	uint8_t frame_type = 0;
 	uint8_t crc_check;
+	LedOn(LED_RX);	// TX LED On state for transmission
 	//////////////////////////////////////////////////////////////////////////////////
 	// Receive packets continuously
 	if (ConfigOK == 1) {
@@ -294,7 +297,7 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 			my_printf(" ");
 		}
 #endif
-
+		LedOff(LED_RX);
 		//Check if payload is an ack or a message
 		switch(currentstate.packet_received.data[0])
 		{
@@ -308,6 +311,7 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 			break;
 		default :
 			return RECEIVE_SOF_ERROR;
+			
 			break;
 		}
 
@@ -352,8 +356,10 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 			//my_printf("%d\r\n",currentstate._RSSI);
 		}
 	}
+
 #endif
 	return RECEIVE_ERROR_UNKNOWN_CASE;
+
 }
 
 /*

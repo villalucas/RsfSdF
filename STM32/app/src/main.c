@@ -43,11 +43,15 @@ int main()
 	// Initialize LEDs
 	LedInit();
 
+	// Channels LED test
+	LedChannelTest();
+
 	my_printf("Console ready!\r\n");
 
 	///////////////////////////////////////////
-	//setup SX1272 on channel 0
+	//setup SX1272 on channel 1
 	id_frame_t device;
+
 
 #ifdef TRANSMITTER
 	device.address = 1;
@@ -57,6 +61,7 @@ int main()
 #endif
 
 	device.channel = 1;
+
 
 	APP_SX1272_setup(device);
 
