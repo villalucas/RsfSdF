@@ -82,8 +82,12 @@ int main()
 
 		if((curtime%8000)==0)//send every 8000ms
 		{
+#ifdef TRANSMITTER
 			APP_SX1272_runTransmit(device);
-			//APP_SX1272_runReceive();
+#endif
+#ifdef RECEIVER
+			APP_SX1272_runReceive(device);
+#endif
 			i++;
 		}
 	}
