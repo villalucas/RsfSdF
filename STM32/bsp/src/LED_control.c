@@ -6,6 +6,7 @@
  */
 
 #include "LED_control.h"
+#include "delay.h"
 
 /*
  * Led_Init()
@@ -105,6 +106,27 @@ void Led_Init()
 	GPIOB->BSRR |= GPIO_BSRR_BR_2;
 	GPIOC->BSRR |= GPIO_BSRR_BR_6;
 	GPIOC->BSRR |= GPIO_BSRR_BR_8;
+
+	/*
+	 * 	LED Test Routine
+	 * 	All LEDs On for 500ms
+	 * 	All LEDs Off
+	 */
+
+	GPIOB->BSRR = GPIO_BSRR_BS_0;	// Channel 0 LED On
+	GPIOB->BSRR = GPIO_BSRR_BS_1;	// Channel 1 LED On
+	GPIOB->BSRR = GPIO_BSRR_BS_2;	// Channel 2 LED On
+	GPIOC->BSRR = GPIO_BSRR_BS_6;	// RX LED On
+	GPIOC->BSRR = GPIO_BSRR_BS_8;	// TX LED On
+
+	BSP_DELAY_ms(500);
+
+	GPIOB->BSRR = GPIO_BSRR_BR_0;	// Channel 0 LED Off
+	GPIOB->BSRR = GPIO_BSRR_BR_1;	// Channel 1 LED Off
+	GPIOB->BSRR = GPIO_BSRR_BR_2;	// Channel 2 LED Off
+	GPIOC->BSRR = GPIO_BSRR_BR_6;	// RX LED Off
+	GPIOC->BSRR = GPIO_BSRR_BR_8;	// TX LED Off
+
 }
 
 void LedOn(uint8_t led)

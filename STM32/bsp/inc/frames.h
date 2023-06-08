@@ -37,7 +37,6 @@ typedef struct
 {
 	uint8_t channel;
 	uint8_t address;
-
 }id_frame_t;
 
 /**
