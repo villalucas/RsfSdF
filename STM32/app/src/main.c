@@ -12,6 +12,7 @@
 #include "SX1272.h"
 #include "appSX1272.h"
 #include "LED_control.h"
+#include "delay.h"
 
 
 
@@ -35,14 +36,41 @@ int main()
 	BSP_SPI1_Init();
 	// Initialize Debug Console
 	BSP_Console_Init();
-	// Intialize LEDs
-	Led_Init();
+	// Initialize LEDs
+	LedInit();
 
 	my_printf("Console ready!\r\n");
 
 	///////////////////////////////////////////
-	//setup SX1272
+	//setup SX1272 on channel 0
 	id_frame_t device;
+	device.address = 0;
+	device.channel = 0; //channel 0, 1 or 2
+
+	APP_SX1272_setup(device);
+
+	BSP_DELAY_ms(1000);
+
+	///////////////////////////////////////////
+	//setup SX1272 on channel 1
+	device.address = 1;
+	device.channel = 1; //channel 0, 1 or 2
+
+	APP_SX1272_setup(device);
+
+	BSP_DELAY_ms(1000);
+
+	///////////////////////////////////////////
+	//setup SX1272 on channel 2
+	device.address = 2;
+	device.channel = 2; //channel 0, 1 or 2
+
+	APP_SX1272_setup(device);
+
+	BSP_DELAY_ms(1000);
+
+	///////////////////////////////////////////
+	//setup SX1272 on channel 1
 	device.address = 1;
 	device.channel = 1; //channel 0, 1 or 2
 

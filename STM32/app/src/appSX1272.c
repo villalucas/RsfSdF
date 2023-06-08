@@ -11,6 +11,7 @@
 #include "comSX1272.h"
 #include "string.h"
 #include "delay.h"
+#include "LED_control.h"
 
 extern SX1272status currentstate;
 
@@ -52,12 +53,21 @@ void APP_SX1272_setup(id_frame_t device) {
 	switch (device.channel) {
 	case 0:
 		e = BSP_SX1272_setChannel(CH_868v1);
+		LedOn(LED_CH0);
+		LedOff(LED_CH1);
+		LedOff(LED_CH2);
 		break;
 	case 1:
 		e = BSP_SX1272_setChannel(CH_868v3);
+		LedOn(LED_CH1);
+		LedOff(LED_CH0);
+		LedOff(LED_CH2);
 		break;
 	case 2:
 		e = BSP_SX1272_setChannel(CH_868v5);
+		LedOn(LED_CH2);
+		LedOff(LED_CH0);
+		LedOff(LED_CH1);
 		break;
 	default:
 		break;
