@@ -96,11 +96,11 @@ uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame){
 
 	if (crc == output_frame->crc)
 	{
-		my_printf("Le crc est good !\n\r");
+		my_printf("CRC identiques !\n\r");
 		return 0;
 	}else
 	{
-		my_printf(" Probleme de CRC \n\r");
+		my_printf(" Probleme de CRC... \n\r");
 		return 1;
 	}
 	my_printf("\n\r");
@@ -134,11 +134,11 @@ uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame){
 
 	if (crc == output_frame->crc)
 	{
-		my_printf("Le crc est good !\n\r");
+		my_printf("CRC identiques !\n\r");
 		return 0;
 	}else
 	{
-		my_printf(" Probleme de CRC \n\r");
+		my_printf(" Probleme de CRC... \n\r");
 		return 1;
 	}
 	my_printf("\n\r");
