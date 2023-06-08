@@ -9,15 +9,19 @@
 #define BSP_INC_LED_CONTROL_H_
 
 #include "stm32f0xx.h"
+#include "delay.h"
+#include "appSX1272.h"
 
 /*
  * LED driver functions
  */
 
 void LedInit(void);
+void LedChannelTest(void);
 void LedOn(uint8_t led);
 void LedOff(uint8_t led);
 void LedToggle(uint8_t led);
+
 
 /*
  * LED defines

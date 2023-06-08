@@ -27,6 +27,10 @@
 #define POLYNOMIAL_CCITT 	0x1021
 #define CRC_CCITT_SEED		0x1D0F
 
+//Error Defines
+#define CRC_NO_ERROR		0
+#define CRC_ERROR			1
+
 /**
  * \struct ID_frame
  * \brief Structure d'identifiant définie par le protocole.
@@ -92,8 +96,8 @@ uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial);
 uint16_t BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength);
 uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame);
 uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame);
-void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded);
-void BSP_FRAMES_encodeMsgFrame(msg_frame_t msg_to_encode, uint8_t *frame_encoded);
+void BSP_FRAMES_encodeAckFrame(ack_frame_t *ack_to_encode, uint8_t *frame_encoded);
+void BSP_FRAMES_encodeMsgFrame(msg_frame_t *msg_to_encode, uint8_t *frame_encoded);
 
 
 #endif /* APP_INC_FRAMES_H_ */

@@ -92,14 +92,11 @@ uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame){
 
 	if (crc == output_frame->crc)
 	{
-		my_printf("CRC identiques !\n\r");
-		return 0;
+		return CRC_NO_ERROR;
 	}else
 	{
-		my_printf(" Probleme de CRC... \n\r");
-		return 1;
+		return CRC_ERROR;
 	}
-	my_printf("\n\r");
 }
 
 /**
@@ -128,14 +125,11 @@ uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame){
 
 	if (crc == output_frame->crc)
 	{
-		my_printf("CRC identiques !\n\r");
-		return 0;
+		return CRC_NO_ERROR;
 	}else
 	{
-		my_printf("Probleme de CRC \n\r");
-		return 1;
+		return CRC_ERROR;
 	}
-	my_printf("\n\r");
 }
 
 /**
@@ -145,12 +139,14 @@ uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame){
  * @param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.
  * @param frame_encoded Pointeur vers le tableau d'octets dans lequel le frame encodé sera stocké.
  */
-void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded){
+
+void BSP_FRAMES_encodeAckFrame(ack_frame_t *ack_to_encode, uint8_t *frame_encoded){
+
 	frame_encoded[0]= SOF_ACK_SYMBOL;
-	frame_encoded[1]= (ack_to_encode.src.channel << CHANNEL_SHIFT)
-					| (ack_to_encode.src.address & ADDRESS_MASK);
-	frame_encoded[2]= (ack_to_encode.dest.channel << CHANNEL_SHIFT)
-					| (ack_to_encode.dest.address & ADDRESS_MASK);
+	frame_encoded[1]= (ack_to_encode->src.channel << CHANNEL_SHIFT)
+					| (ack_to_encode->src.address & ADDRESS_MASK);
+	frame_encoded[2]= (ack_to_encode->dest.channel << CHANNEL_SHIFT)
+					| (ack_to_encode->dest.address & ADDRESS_MASK);
 	uint16_t crc = 0;
 	crc = BSP_FRAMES_packetComputeCrc(frame_encoded, 3);
 	frame_encoded[3]= (uint8_t)(crc  >> CRC_SHIFT); 	// fisrt Byte MSB
@@ -166,23 +162,24 @@ void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded
  * @param msg_to_encode Pointeur de la structure d'objet msg_frame_t qui est définie par le protocole.
  * @param frame_encoded Pointeur vers le tableau d'octets dans lequel le frame encodé sera stocké.
  */
-void BSP_FRAMES_encodeMsgFrame(msg_frame_t msg_to_encode, uint8_t *frame_encoded){
-	frame_encoded[0]= SOF_MSG_SYMBOL;
-	frame_encoded[1]= (msg_to_encode.src.channel << CHANNEL_SHIFT)
-					| (msg_to_encode.src.address & ADDRESS_MASK);
-	frame_encoded[2]= (msg_to_encode.dest.channel << CHANNEL_SHIFT)
-					| (msg_to_encode.dest.address & ADDRESS_MASK);
 
-	frame_encoded[3] = msg_to_encode.size;
+void BSP_FRAMES_encodeMsgFrame(msg_frame_t* msg_to_encode, uint8_t *frame_encoded){
+	frame_encoded[0]= SOF_MSG_SYMBOL;
+	frame_encoded[1]= (msg_to_encode->src.channel << CHANNEL_SHIFT)
+					| (msg_to_encode->src.address & ADDRESS_MASK);
+	frame_encoded[2]= (msg_to_encode->dest.channel << CHANNEL_SHIFT)
+					| (msg_to_encode->dest.address & ADDRESS_MASK);
+
+	frame_encoded[3] = msg_to_encode->size;
 
 	uint8_t i = 0;
-	for(i = 0; i < msg_to_encode.size; i++){
-		frame_encoded[i+4] = msg_to_encode.msg[i];
+	for(i = 0; i < msg_to_encode->size; i++){
+		frame_encoded[i+4] = msg_to_encode->msg[i];
 	}
 	uint16_t crc = 0;
-	crc = BSP_FRAMES_packetComputeCrc(frame_encoded, msg_to_encode.size+4);
-	frame_encoded[msg_to_encode.size+4]= (uint8_t)(crc >> CRC_SHIFT); 	// fisrt Byte MSB
-	frame_encoded[msg_to_encode.size+5]= (uint8_t)(crc & CRC_MASK); 	// second Byte LSB
-	frame_encoded[msg_to_encode.size+6]= EOF_SYMBOL;
+	crc = BSP_FRAMES_packetComputeCrc(frame_encoded, msg_to_encode->size+4);
+	frame_encoded[msg_to_encode->size+4]= (uint8_t)(crc >> CRC_SHIFT); 	// fisrt Byte MSB
+	frame_encoded[msg_to_encode->size+5]= (uint8_t)(crc & CRC_MASK); 	// second Byte LSB
+	frame_encoded[msg_to_encode->size+6]= EOF_SYMBOL;
 }
 
