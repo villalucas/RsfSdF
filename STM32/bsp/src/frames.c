@@ -39,7 +39,7 @@ uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial){
 }
 
 /*
- * \fn packet_compute_crc(uint8_t *data, uint8_t datalength)
+ * \fn BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength)
  * \brief Fonction de calcul du CRC pour l'ensemble de la frame..
  *
  * \param data Pointeur sur le tableau d'octet qui est la frame.
@@ -63,7 +63,7 @@ uint16_t BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength){
 
 
 /*
- * \fn void decode_frame(uint8_t *payload, msg_frame_t *output_frame)
+ * \fn BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame)
  * \brief Fonction de décodage des messages receptionner dans la payload.
  *
  * \param payload Pointeur d'octets sur la base de la payload.
@@ -107,7 +107,7 @@ uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame){
 }
 
 /*
- * \fn void decode_frame(uint8_t *payload, msg_frame_t *output_frame)
+ * \fn BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame)
  * \brief Fonction de décodage des messages receptionner dans la payload.
  *
  * \param payload Pointeur d'octets sur la base de la payload.
@@ -138,14 +138,14 @@ uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame){
 		return 0;
 	}else
 	{
-		my_printf(" Probleme de CRC \n\r");
+		my_printf("Probleme de CRC \n\r");
 		return 1;
 	}
 	my_printf("\n\r");
 }
 
 /*
- * \fn encode_ack_frame(ack_frame_t ack_to_encode, uint8_t *frame_encoded)
+ * \fn BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded)
  * \brief Fonction d'encodage des messages d'acquittement.
  *
  * \param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.
@@ -166,7 +166,7 @@ void BSP_FRAMES_encodeAckFrame(ack_frame_t ack_to_encode, uint8_t *frame_encoded
 
 
 /*
- * \fn encode_msg_frame(msg_frame_t msg_to_encode, uint8_t *frame_encoded)
+ * \fn BSP_FRAMES_encodeMsgFrame(msg_frame_t msg_to_encode, uint8_t *frame_encoded)
  * \brief Fonction d'encodage des messages .
  *
  * \param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.

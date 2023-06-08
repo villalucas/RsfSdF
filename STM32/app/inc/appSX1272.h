@@ -33,13 +33,13 @@
 
 //Other common parameters (do not change!!)
 #define PreambLong 12//12
-#define freq_centrale CH_868v3
+
 #define MaxNbRetries 3
 #define WaitTxMax 5000 //en ms
 #define WaitRxMax 10000 //en ms
 
-void APP_SX1272_setup();
-void APP_SX1272_runTransmit();
-void APP_SX1272_runReceive();
+void APP_SX1272_setup(id_frame_t device);
+void APP_SX1272_runTransmit(id_frame_t device);
+void APP_SX1272_runReceive(id_frame_t device);
 
 #endif /* APP_INC_APPSX1272_H_ */
