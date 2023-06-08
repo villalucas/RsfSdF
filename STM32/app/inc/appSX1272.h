@@ -41,5 +41,6 @@
 void APP_SX1272_setup(id_frame_t device);
 void APP_SX1272_runTransmit(id_frame_t device);
 void APP_SX1272_runReceive(id_frame_t device);
+uint8_t APP_SX1272_setFreq(id_frame_t device);
 
 #endif /* APP_INC_APPSX1272_H_ */

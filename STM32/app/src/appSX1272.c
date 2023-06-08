@@ -30,7 +30,7 @@ static uint16_t RegFdev = Fdev;
 static int8_t e;
 static uint8_t ConfigOK = 1;
 
-#define DEBIG_FLAG 2
+#define DEBUG_FLAG 2
 #define SEND_MSG_ENCODED_FLAG 0
 #define SEND_ACK_ENCODED_FLAG 1
 
@@ -304,4 +304,52 @@ void APP_SX1272_runReceive(id_frame_t device) {
 		}
 	}
 	BSP_DELAY_ms(1000);
+}
+
+/*
+ Function: It set the SW1272 module on the frequence pass as argument of the function
+   return = 2  --> The command has not been executed
+   return = 1  --> There has been an error while executing the command
+   return = 0  --> The command has been executed with no errors
+*/
+uint8_t APP_SX1272_setFreq(id_frame_t device)
+{
+    BSP_SX1272_Write(REG_OP_MODE, LORA_STANDBY_MODE); // LORA standby mode to switch off the RF field
+    uint32_t freq;
+    switch (device.channel) {
+	case 0:
+		freq = CH_868v1;
+		break;
+	case 1:
+		freq = CH_868v3;
+		break;
+	case 2:
+		freq = CH_868v5;
+		break;
+	default:
+		break;
+	}
+    // Select frequency channel
+    e = BSP_SX1272_setChannel(freq);
+	#if (DEBUG_FLAG > 0)
+		my_printf("Frequency channel ");
+		my_printf("%d",freq);
+    #endif
+    if (e == 0)
+    {
+		#if (DEBUG_FLAG > 0)
+        	my_printf(" has been successfully set.\r\n");
+		#endif
+
+      return 0;
+    }
+    else
+    {
+		#if (DEBUG_FLAG > 0)
+			my_printf(" has not been set !\r\n");
+		#endif
+		ConfigOK = 0;
+      return 1;
+    }
+	return 2;
 }
