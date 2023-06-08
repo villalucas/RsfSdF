@@ -172,9 +172,9 @@ void APP_SX1272_runTransmit(id_frame_t device) {
 
 			LgMsg=strlen(Message);
 			msg_frame_t message;
-			message.src.channel = 1;
-			message.src.address = 4;
-			message.dest.channel = 1;
+			message.src.channel = device.channel;
+			message.src.address = device.adress;
+			message.dest.channel = device.channel;
 			message.dest.address = 2;
 			message.size = 4;
 			message.msg[0] = 'T';
@@ -192,8 +192,8 @@ void APP_SX1272_runTransmit(id_frame_t device) {
 		ack_frame_t message_ack;
 		message_ack.src.channel = device.channel;
 		message_ack.src.address = device.address;
-		message_ack.dest.channel = 1;
-		message_ack.dest.address = 1;
+		message_ack.dest.channel = device.channel;
+		message_ack.dest.address = 2;
 
 		uint8_t ack_encoded[SIZEOF_ACK];
 		BSP_FRAMES_encodeAckFrame(message_ack, ack_encoded);
