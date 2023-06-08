@@ -11,6 +11,11 @@
 #include "comSX1272.h"
 #include "SX1272.h"
 #include "appSX1272.h"
+#include "LED_control.h"
+
+
+
+
 #include "frames.h"
 
 static void SystemClock_Config();
@@ -30,6 +35,8 @@ int main()
 	BSP_SPI1_Init();
 	// Initialize Debug Console
 	BSP_Console_Init();
+	// Intialize LEDs
+	Led_Init();
 
 	my_printf("Console ready!\r\n");
 
