@@ -39,38 +39,14 @@ int main()
 	// Initialize LEDs
 	LedInit();
 
+	// Channels LED test
+	LedChannelTest();
+
 	my_printf("Console ready!\r\n");
 
 	///////////////////////////////////////////
-	//setup SX1272 on channel 0
+	//setup SX1272 on channel 1
 	id_frame_t device;
-	device.address = 0;
-	device.channel = 0; //channel 0, 1 or 2
-
-	APP_SX1272_setup(device);
-
-	BSP_DELAY_ms(1000);
-
-	///////////////////////////////////////////
-	//setup SX1272 on channel 1
-	device.address = 1;
-	device.channel = 1; //channel 0, 1 or 2
-
-	APP_SX1272_setup(device);
-
-	BSP_DELAY_ms(1000);
-
-	///////////////////////////////////////////
-	//setup SX1272 on channel 2
-	device.address = 2;
-	device.channel = 2; //channel 0, 1 or 2
-
-	APP_SX1272_setup(device);
-
-	BSP_DELAY_ms(1000);
-
-	///////////////////////////////////////////
-	//setup SX1272 on channel 1
 	device.address = 1;
 	device.channel = 1; //channel 0, 1 or 2
 

@@ -165,6 +165,7 @@ void APP_SX1272_setup(id_frame_t device) {
 
 void APP_SX1272_runTransmit(id_frame_t device) {
 	uint8_t dest_address = TX_Addr;
+	LedOn(LED_TX);	// TX LED On state for transmission
 
 	// Transmit a packet continuously with a pause of "waitPeriod"
 	if (ConfigOK == 1) {
@@ -220,10 +221,13 @@ void APP_SX1272_runTransmit(id_frame_t device) {
 		}
 		BSP_DELAY_ms(waitPeriod); //delay to send packet every PeriodTransmission
 	}
+	LedOff(LED_TX);
 }
 
 void APP_SX1272_runReceive(id_frame_t device) {
 	char StatusRXMessage = '0';
+
+	LedOn(LED_RX);	// TX LED On state for transmission
 
 	//////////////////////////////////////////////////////////////////////////////////
 	// Receive packets continuously
@@ -314,4 +318,5 @@ void APP_SX1272_runReceive(id_frame_t device) {
 		}
 	}
 	BSP_DELAY_ms(1000);
+	LedOff(LED_RX);
 }

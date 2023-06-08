@@ -6,7 +6,6 @@
  */
 
 #include "LED_control.h"
-#include "delay.h"
 
 /*
  * Led_Init()
@@ -215,4 +214,41 @@ void LedToggle(uint8_t led)
 		GPIOC->ODR ^= GPIO_ODR_8;		// TX LED Toggle
 		break;
 	}
+}
+
+/*
+ * LedChannelTest()
+ * Test of all the channels LEDs by switching of frequency
+ */
+
+void LedChannelTest()
+{
+	///////////////////////////////////////////
+	//setup SX1272 on channel 0
+	id_frame_t device;
+	device.address = 0;
+	device.channel = 0; //channel 0, 1 or 2
+
+	APP_SX1272_setup(device);
+
+	BSP_DELAY_ms(500);
+
+	///////////////////////////////////////////
+	//setup SX1272 on channel 1
+	device.address = 1;
+	device.channel = 1; //channel 0, 1 or 2
+
+	APP_SX1272_setup(device);
+
+	BSP_DELAY_ms(500);
+
+	///////////////////////////////////////////
+	//setup SX1272 on channel 2
+	device.address = 2;
+	device.channel = 2; //channel 0, 1 or 2
+
+	APP_SX1272_setup(device);
+
+	BSP_DELAY_ms(500);
+	LedOff(LED_ALL);
 }
