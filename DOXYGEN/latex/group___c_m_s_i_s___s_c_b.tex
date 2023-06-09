@@ -5,6 +5,13 @@
 Type definitions for the System Control Block Registers.  
 
 
+Collaboration diagram for System Control Block (SCB)\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___c_m_s_i_s___s_c_b}
+\end{center}
+\end{figure}
 \doxysubsubsubsubsubsection*{Modules}
 \begin{DoxyCompactItemize}
 \item 
@@ -220,41 +227,59 @@ struct \mbox{\hyperlink{struct_s_c_b___type}{SCB\+\_\+\+Type}}
 \item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga5e5ed94cac1139165af161c008881805}{Core\+Debug\+\_\+\+DSCSR\+\_\+\+SBRSELEN\+\_\+\+Msk}}~(1UL /\texorpdfstring{$\ast$}{*}$<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3eb88e444b678057db1b59272eebb1ad}{Core\+Debug\+\_\+\+DSCSR\+\_\+\+SBRSELEN\+\_\+\+Pos}}\texorpdfstring{$\ast$}{*}/)
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}{FNC\+\_\+\+RETURN}}~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}\label{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab} 
+\#define {\bfseries FNC\+\_\+\+RETURN}~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}{EXC\+\_\+\+RETURN\+\_\+\+PREFIX}}~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}\label{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+PREFIX}~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}{EXC\+\_\+\+RETURN\+\_\+S}}~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}\label{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+S}~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}{EXC\+\_\+\+RETURN\+\_\+\+DCRS}}~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}\label{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+DCRS}~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}{EXC\+\_\+\+RETURN\+\_\+\+FTYPE}}~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}\label{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+FTYPE}~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}{EXC\+\_\+\+RETURN\+\_\+\+MODE}}~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}\label{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+MODE}~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}{EXC\+\_\+\+RETURN\+\_\+\+SPSEL}}~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}\label{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+SPSEL}~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}{EXC\+\_\+\+RETURN\+\_\+\+ES}}~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}\label{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+ES}~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}{EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE}}~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}\label{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155} 
+\#define {\bfseries EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE}~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}{FNC\+\_\+\+RETURN}}~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}\label{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab} 
+\#define {\bfseries FNC\+\_\+\+RETURN}~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}{EXC\+\_\+\+RETURN\+\_\+\+PREFIX}}~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}\label{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+PREFIX}~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}{EXC\+\_\+\+RETURN\+\_\+S}}~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}\label{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+S}~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}{EXC\+\_\+\+RETURN\+\_\+\+DCRS}}~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}\label{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+DCRS}~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}{EXC\+\_\+\+RETURN\+\_\+\+FTYPE}}~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}\label{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+FTYPE}~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}{EXC\+\_\+\+RETURN\+\_\+\+MODE}}~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}\label{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+MODE}~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}{EXC\+\_\+\+RETURN\+\_\+\+SPSEL}}~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}\label{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+SPSEL}~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}{EXC\+\_\+\+RETURN\+\_\+\+ES}}~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}\label{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+ES}~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}{EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE}}~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}\label{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155} 
+\#define {\bfseries EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE}~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/
 \end{DoxyCompactItemize}
 \begin{DoxyCompactItemize}
 \item 
@@ -2952,23 +2977,32 @@ struct \mbox{\hyperlink{struct_s_c_b___type}{SCB\+\_\+\+Type}}
 \item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga5e5ed94cac1139165af161c008881805}{Core\+Debug\+\_\+\+DSCSR\+\_\+\+SBRSELEN\+\_\+\+Msk}}~(1UL /\texorpdfstring{$\ast$}{*}$<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3eb88e444b678057db1b59272eebb1ad}{Core\+Debug\+\_\+\+DSCSR\+\_\+\+SBRSELEN\+\_\+\+Pos}}\texorpdfstring{$\ast$}{*}/)
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}{FNC\+\_\+\+RETURN}}~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}\label{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab} 
+\#define {\bfseries FNC\+\_\+\+RETURN}~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}{EXC\+\_\+\+RETURN\+\_\+\+PREFIX}}~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}\label{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+PREFIX}~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}{EXC\+\_\+\+RETURN\+\_\+S}}~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}\label{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+S}~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}{EXC\+\_\+\+RETURN\+\_\+\+DCRS}}~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}\label{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+DCRS}~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}{EXC\+\_\+\+RETURN\+\_\+\+FTYPE}}~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}\label{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+FTYPE}~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}{EXC\+\_\+\+RETURN\+\_\+\+MODE}}~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}\label{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+MODE}~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}{EXC\+\_\+\+RETURN\+\_\+\+SPSEL}}~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}\label{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+SPSEL}~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}{EXC\+\_\+\+RETURN\+\_\+\+ES}}~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}\label{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+ES}~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}{EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE}}~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}\label{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155} 
+\#define {\bfseries EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE}~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/
 \item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gae5dfe4049c2291e413f8713d7bd2bb1b}{DWT\+\_\+\+FUNCTION\+\_\+\+ID\+\_\+\+Pos}}~27U
 \item 
@@ -3110,23 +3144,32 @@ struct \mbox{\hyperlink{struct_s_c_b___type}{SCB\+\_\+\+Type}}
 \item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga5e5ed94cac1139165af161c008881805}{Core\+Debug\+\_\+\+DSCSR\+\_\+\+SBRSELEN\+\_\+\+Msk}}~(1UL /\texorpdfstring{$\ast$}{*}$<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3eb88e444b678057db1b59272eebb1ad}{Core\+Debug\+\_\+\+DSCSR\+\_\+\+SBRSELEN\+\_\+\+Pos}}\texorpdfstring{$\ast$}{*}/)
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}{FNC\+\_\+\+RETURN}}~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}\label{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab} 
+\#define {\bfseries FNC\+\_\+\+RETURN}~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}{EXC\+\_\+\+RETURN\+\_\+\+PREFIX}}~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}\label{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+PREFIX}~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}{EXC\+\_\+\+RETURN\+\_\+S}}~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}\label{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+S}~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}{EXC\+\_\+\+RETURN\+\_\+\+DCRS}}~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}\label{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+DCRS}~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}{EXC\+\_\+\+RETURN\+\_\+\+FTYPE}}~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}\label{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+FTYPE}~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}{EXC\+\_\+\+RETURN\+\_\+\+MODE}}~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}\label{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+MODE}~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}{EXC\+\_\+\+RETURN\+\_\+\+SPSEL}}~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}\label{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+SPSEL}~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}{EXC\+\_\+\+RETURN\+\_\+\+ES}}~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}\label{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7} 
+\#define {\bfseries EXC\+\_\+\+RETURN\+\_\+\+ES}~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}{EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE}}~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/
+\Hypertarget{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}\label{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155} 
+\#define {\bfseries EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE}~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/
 \end{DoxyCompactItemize}
 \begin{DoxyCompactItemize}
 \item 
@@ -4322,223 +4365,7 @@ DWT FUNCTION\+: MATCH Position \Hypertarget{group___c_m_s_i_s___s_c_b_ga4108994a
 \doxysubsubsubsubsubsection{\texorpdfstring{DWT\_FUNCTION\_MATCH\_Pos}{DWT\_FUNCTION\_MATCH\_Pos}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily \#define DWT\+\_\+\+FUNCTION\+\_\+\+MATCH\+\_\+\+Pos~0U}
 
-DWT FUNCTION\+: MATCH Position \Hypertarget{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}\label{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_INTEGRITY\_SIGNATURE@{EXC\_INTEGRITY\_SIGNATURE}}
-\index{EXC\_INTEGRITY\_SIGNATURE@{EXC\_INTEGRITY\_SIGNATURE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_INTEGRITY\_SIGNATURE}{EXC\_INTEGRITY\_SIGNATURE}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}\label{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_INTEGRITY\_SIGNATURE@{EXC\_INTEGRITY\_SIGNATURE}}
-\index{EXC\_INTEGRITY\_SIGNATURE@{EXC\_INTEGRITY\_SIGNATURE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_INTEGRITY\_SIGNATURE}{EXC\_INTEGRITY\_SIGNATURE}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}\label{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_INTEGRITY\_SIGNATURE@{EXC\_INTEGRITY\_SIGNATURE}}
-\index{EXC\_INTEGRITY\_SIGNATURE@{EXC\_INTEGRITY\_SIGNATURE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_INTEGRITY\_SIGNATURE}{EXC\_INTEGRITY\_SIGNATURE}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155}\label{group___c_m_s_i_s___s_c_b_ga7d1b21b2d863ccd9e23a3295b3173155} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_INTEGRITY\_SIGNATURE@{EXC\_INTEGRITY\_SIGNATURE}}
-\index{EXC\_INTEGRITY\_SIGNATURE@{EXC\_INTEGRITY\_SIGNATURE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_INTEGRITY\_SIGNATURE}{EXC\_INTEGRITY\_SIGNATURE}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+INTEGRITY\+\_\+\+SIGNATURE~(0x\+FEFA125\+BUL)     /\texorpdfstring{$\ast$}{*} Value for processors without floating-\/point extension                \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}\label{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_DCRS@{EXC\_RETURN\_DCRS}}
-\index{EXC\_RETURN\_DCRS@{EXC\_RETURN\_DCRS}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_DCRS}{EXC\_RETURN\_DCRS}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+DCRS~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}\label{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_DCRS@{EXC\_RETURN\_DCRS}}
-\index{EXC\_RETURN\_DCRS@{EXC\_RETURN\_DCRS}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_DCRS}{EXC\_RETURN\_DCRS}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+DCRS~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}\label{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_DCRS@{EXC\_RETURN\_DCRS}}
-\index{EXC\_RETURN\_DCRS@{EXC\_RETURN\_DCRS}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_DCRS}{EXC\_RETURN\_DCRS}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+DCRS~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b}\label{group___c_m_s_i_s___s_c_b_ga0a0f2c03b4aef2c02bdae044bda1324b} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_DCRS@{EXC\_RETURN\_DCRS}}
-\index{EXC\_RETURN\_DCRS@{EXC\_RETURN\_DCRS}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_DCRS}{EXC\_RETURN\_DCRS}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+DCRS~(0x00000020\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}5\mbox{]} stacking rules for called registers\+: 0=skipped 1=saved       \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}\label{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_ES@{EXC\_RETURN\_ES}}
-\index{EXC\_RETURN\_ES@{EXC\_RETURN\_ES}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_ES}{EXC\_RETURN\_ES}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+ES~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}\label{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_ES@{EXC\_RETURN\_ES}}
-\index{EXC\_RETURN\_ES@{EXC\_RETURN\_ES}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_ES}{EXC\_RETURN\_ES}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+ES~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}\label{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_ES@{EXC\_RETURN\_ES}}
-\index{EXC\_RETURN\_ES@{EXC\_RETURN\_ES}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_ES}{EXC\_RETURN\_ES}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+ES~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7}\label{group___c_m_s_i_s___s_c_b_gac939dbf69d3063c76a28516a4ae84db7} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_ES@{EXC\_RETURN\_ES}}
-\index{EXC\_RETURN\_ES@{EXC\_RETURN\_ES}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_ES}{EXC\_RETURN\_ES}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+ES~(0x00000001\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} security state exception was taken to\+: 0=Non-\/secure 1=Secure \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}\label{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_FTYPE@{EXC\_RETURN\_FTYPE}}
-\index{EXC\_RETURN\_FTYPE@{EXC\_RETURN\_FTYPE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_FTYPE}{EXC\_RETURN\_FTYPE}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+FTYPE~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}\label{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_FTYPE@{EXC\_RETURN\_FTYPE}}
-\index{EXC\_RETURN\_FTYPE@{EXC\_RETURN\_FTYPE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_FTYPE}{EXC\_RETURN\_FTYPE}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+FTYPE~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}\label{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_FTYPE@{EXC\_RETURN\_FTYPE}}
-\index{EXC\_RETURN\_FTYPE@{EXC\_RETURN\_FTYPE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_FTYPE}{EXC\_RETURN\_FTYPE}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+FTYPE~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e}\label{group___c_m_s_i_s___s_c_b_ga342b51c3eec59822bf206e24ef881a9e} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_FTYPE@{EXC\_RETURN\_FTYPE}}
-\index{EXC\_RETURN\_FTYPE@{EXC\_RETURN\_FTYPE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_FTYPE}{EXC\_RETURN\_FTYPE}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+FTYPE~(0x00000010\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}4\mbox{]} allocate stack for floating-\/point context\+: 0=done 1=skipped  \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}\label{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_MODE@{EXC\_RETURN\_MODE}}
-\index{EXC\_RETURN\_MODE@{EXC\_RETURN\_MODE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_MODE}{EXC\_RETURN\_MODE}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+MODE~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}\label{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_MODE@{EXC\_RETURN\_MODE}}
-\index{EXC\_RETURN\_MODE@{EXC\_RETURN\_MODE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_MODE}{EXC\_RETURN\_MODE}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+MODE~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}\label{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_MODE@{EXC\_RETURN\_MODE}}
-\index{EXC\_RETURN\_MODE@{EXC\_RETURN\_MODE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_MODE}{EXC\_RETURN\_MODE}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+MODE~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0}\label{group___c_m_s_i_s___s_c_b_gabb65f847769a7807395b2739cc9702d0} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_MODE@{EXC\_RETURN\_MODE}}
-\index{EXC\_RETURN\_MODE@{EXC\_RETURN\_MODE}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_MODE}{EXC\_RETURN\_MODE}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+MODE~(0x00000008\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}3\mbox{]} processor mode for return\+: 0=Handler mode 1=Thread mode      \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}\label{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_PREFIX@{EXC\_RETURN\_PREFIX}}
-\index{EXC\_RETURN\_PREFIX@{EXC\_RETURN\_PREFIX}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_PREFIX}{EXC\_RETURN\_PREFIX}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+PREFIX~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}\label{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_PREFIX@{EXC\_RETURN\_PREFIX}}
-\index{EXC\_RETURN\_PREFIX@{EXC\_RETURN\_PREFIX}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_PREFIX}{EXC\_RETURN\_PREFIX}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+PREFIX~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}\label{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_PREFIX@{EXC\_RETURN\_PREFIX}}
-\index{EXC\_RETURN\_PREFIX@{EXC\_RETURN\_PREFIX}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_PREFIX}{EXC\_RETURN\_PREFIX}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+PREFIX~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec}\label{group___c_m_s_i_s___s_c_b_ga99e0c1c19f050880a8bd827a7f420bec} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_PREFIX@{EXC\_RETURN\_PREFIX}}
-\index{EXC\_RETURN\_PREFIX@{EXC\_RETURN\_PREFIX}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_PREFIX}{EXC\_RETURN\_PREFIX}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+PREFIX~(0x\+FF000000\+UL)     /\texorpdfstring{$\ast$}{*} bits \mbox{[}31\+:24\mbox{]} set to indicate an EXC\+\_\+\+RETURN value                     \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}\label{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_S@{EXC\_RETURN\_S}}
-\index{EXC\_RETURN\_S@{EXC\_RETURN\_S}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_S}{EXC\_RETURN\_S}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+S~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}\label{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_S@{EXC\_RETURN\_S}}
-\index{EXC\_RETURN\_S@{EXC\_RETURN\_S}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_S}{EXC\_RETURN\_S}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+S~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}\label{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_S@{EXC\_RETURN\_S}}
-\index{EXC\_RETURN\_S@{EXC\_RETURN\_S}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_S}{EXC\_RETURN\_S}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+S~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360}\label{group___c_m_s_i_s___s_c_b_ga88711355d0196b1ffeb18c33e2c95360} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_S@{EXC\_RETURN\_S}}
-\index{EXC\_RETURN\_S@{EXC\_RETURN\_S}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_S}{EXC\_RETURN\_S}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+S~(0x00000040\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}6\mbox{]} stack used to push registers\+: 0=Non-\/secure 1=Secure          \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}\label{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_SPSEL@{EXC\_RETURN\_SPSEL}}
-\index{EXC\_RETURN\_SPSEL@{EXC\_RETURN\_SPSEL}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_SPSEL}{EXC\_RETURN\_SPSEL}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+SPSEL~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}\label{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_SPSEL@{EXC\_RETURN\_SPSEL}}
-\index{EXC\_RETURN\_SPSEL@{EXC\_RETURN\_SPSEL}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_SPSEL}{EXC\_RETURN\_SPSEL}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+SPSEL~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}\label{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_SPSEL@{EXC\_RETURN\_SPSEL}}
-\index{EXC\_RETURN\_SPSEL@{EXC\_RETURN\_SPSEL}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_SPSEL}{EXC\_RETURN\_SPSEL}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+SPSEL~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466}\label{group___c_m_s_i_s___s_c_b_ga686922b26c29eac540f53a6213627466} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!EXC\_RETURN\_SPSEL@{EXC\_RETURN\_SPSEL}}
-\index{EXC\_RETURN\_SPSEL@{EXC\_RETURN\_SPSEL}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{EXC\_RETURN\_SPSEL}{EXC\_RETURN\_SPSEL}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define EXC\+\_\+\+RETURN\+\_\+\+SPSEL~(0x00000002\+UL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}1\mbox{]} stack pointer used to restore context\+: 0=MSP 1=PSP           \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}\label{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!FNC\_RETURN@{FNC\_RETURN}}
-\index{FNC\_RETURN@{FNC\_RETURN}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{FNC\_RETURN}{FNC\_RETURN}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \#define FNC\+\_\+\+RETURN~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}\label{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!FNC\_RETURN@{FNC\_RETURN}}
-\index{FNC\_RETURN@{FNC\_RETURN}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{FNC\_RETURN}{FNC\_RETURN}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \#define FNC\+\_\+\+RETURN~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}\label{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!FNC\_RETURN@{FNC\_RETURN}}
-\index{FNC\_RETURN@{FNC\_RETURN}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{FNC\_RETURN}{FNC\_RETURN}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \#define FNC\+\_\+\+RETURN~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab}\label{group___c_m_s_i_s___s_c_b_gabaa62910bf89acc186ae998c611e64ab} 
-\index{System Control Block (SCB)@{System Control Block (SCB)}!FNC\_RETURN@{FNC\_RETURN}}
-\index{FNC\_RETURN@{FNC\_RETURN}!System Control Block (SCB)@{System Control Block (SCB)}}
-\doxysubsubsubsubsubsection{\texorpdfstring{FNC\_RETURN}{FNC\_RETURN}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \#define FNC\+\_\+\+RETURN~(0x\+FEFFFFFFUL)     /\texorpdfstring{$\ast$}{*} bit \mbox{[}0\mbox{]} ignored when processing a branch                             \texorpdfstring{$\ast$}{*}/}
-
-\Hypertarget{group___c_m_s_i_s___s_c_b_gabfc67aa93bca5ddd4b0f0a47b372383e}\label{group___c_m_s_i_s___s_c_b_gabfc67aa93bca5ddd4b0f0a47b372383e} 
+DWT FUNCTION\+: MATCH Position \Hypertarget{group___c_m_s_i_s___s_c_b_gabfc67aa93bca5ddd4b0f0a47b372383e}\label{group___c_m_s_i_s___s_c_b_gabfc67aa93bca5ddd4b0f0a47b372383e} 
 \index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ABFSR\_AHBP\_Msk@{SCB\_ABFSR\_AHBP\_Msk}}
 \index{SCB\_ABFSR\_AHBP\_Msk@{SCB\_ABFSR\_AHBP\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
 \doxysubsubsubsubsubsection{\texorpdfstring{SCB\_ABFSR\_AHBP\_Msk}{SCB\_ABFSR\_AHBP\_Msk}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}

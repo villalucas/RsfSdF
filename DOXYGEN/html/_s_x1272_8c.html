@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lora: STM32/bsp/src/SX1272.c File Reference</title>
+<title>Réseau par competition: C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/bsp/src/SX1272.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="09_SE (1).jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Lora
+   <div id="projectname">Réseau par competition
    </div>
+   <div id="projectbrief">Projet étudiant visant à développer un réseau par compétition utilisant des communications Lora</div>
   </td>
  </tr>
  </tbody>
@@ -82,18 +84,55 @@ $(function() {
 
 <p>Fichier source pour le module SX1272.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_s_x1272_8h_source.html">SX1272.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="com_s_x1272_8h_source.html">comSX1272.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="delay_8h_source.html">delay.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;SX1272.h&quot;</code><br />
+<code>#include &quot;comSX1272.h&quot;</code><br />
+<code>#include &quot;delay.h&quot;</code><br />
 <code>#include &quot;stdlib.h&quot;</code><br />
 <code>#include &quot;string.h&quot;</code><br />
 <code>#include &quot;math.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="bsp_8h_source.html">bsp.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<code>#include &quot;bsp.h&quot;</code><br />
+<code>#include &quot;main.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for SX1272.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c__incl.png" border="0" usemap="#a_c_1_2_users_2lucas_2_one_drive_2_documents_2_git_hub_2_rsf_sd_f_2_s_t_m32_2bsp_2src_2_s_x1272_8c" alt=""/></div>
+<map name="a_c_1_2_users_2lucas_2_one_drive_2_documents_2_git_hub_2_rsf_sd_f_2_s_t_m32_2bsp_2src_2_s_x1272_8c" id="a_c_1_2_users_2lucas_2_one_drive_2_documents_2_git_hub_2_rsf_sd_f_2_s_t_m32_2bsp_2src_2_s_x1272_8c">
+<area shape="rect" title="Fichier source pour le module SX1272." alt="" coords="281,5,463,64"/>
+<area shape="rect" href="_s_x1272_8h_source.html" title=" " alt="" coords="297,112,373,139"/>
+<area shape="poly" title=" " alt="" coords="362,65,348,99,343,97,358,63"/>
+<area shape="rect" title=" " alt="" coords="494,187,557,213"/>
+<area shape="poly" title=" " alt="" coords="388,63,409,100,438,137,463,159,490,177,487,181,460,163,434,141,405,103,383,66"/>
+<area shape="rect" href="com_s_x1272_8h_source.html" title=" " alt="" coords="5,112,107,139"/>
+<area shape="poly" title=" " alt="" coords="281,64,116,110,115,105,279,59"/>
+<area shape="rect" href="delay_8h_source.html" title=" " alt="" coords="131,112,194,139"/>
+<area shape="poly" title=" " alt="" coords="305,67,207,108,205,103,303,62"/>
+<area shape="rect" title=" " alt="" coords="448,112,512,139"/>
+<area shape="poly" title=" " alt="" coords="408,62,455,100,452,104,405,66"/>
+<area shape="rect" title=" " alt="" coords="536,112,597,139"/>
+<area shape="poly" title=" " alt="" coords="436,62,527,103,525,108,434,67"/>
+<area shape="rect" href="bsp_8h_source.html" title=" " alt="" coords="219,112,272,139"/>
+<area shape="poly" title=" " alt="" coords="332,67,277,106,274,101,329,62"/>
+<area shape="rect" href="main_8h_source.html" title=" " alt="" coords="622,112,682,139"/>
+<area shape="poly" title=" " alt="" coords="464,62,608,107,607,113,462,67"/>
+<area shape="rect" href="stm32f0xx_8h.html" title="CMSIS STM32F0xx Device Peripheral Access Layer Header File." alt="" coords="91,187,184,213"/>
+<area shape="poly" title=" " alt="" coords="301,142,186,184,185,179,299,137"/>
+<area shape="rect" href="frames_8h_source.html" title=" " alt="" coords="207,187,278,213"/>
+<area shape="poly" title=" " alt="" coords="320,141,271,180,268,175,317,137"/>
+<area shape="poly" title=" " alt="" coords="369,137,481,179,479,184,367,142"/>
+<area shape="rect" title=" " alt="" coords="303,187,367,213"/>
+<area shape="poly" title=" " alt="" coords="337,139,337,172,332,172,332,139"/>
+<area shape="rect" title=" " alt="" coords="392,187,470,213"/>
+<area shape="poly" title=" " alt="" coords="353,137,404,176,401,180,350,141"/>
+<area shape="poly" title=" " alt="" coords="72,137,114,175,111,179,68,141"/>
+<area shape="poly" title=" " alt="" coords="161,140,149,173,144,172,156,138"/>
+<area shape="poly" title=" " alt="" coords="228,141,170,180,167,176,225,137"/>
+</map>
+</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a940b7d59de47e1432c355fca01620ac3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a940b7d59de47e1432c355fca01620ac3">millis</a> ()</td></tr>
+<tr class="memitem:a940b7d59de47e1432c355fca01620ac3"><td class="memItemLeft" align="right" valign="top"><a id="a940b7d59de47e1432c355fca01620ac3" name="a940b7d59de47e1432c355fca01620ac3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>millis</b> ()</td></tr>
 <tr class="separator:a940b7d59de47e1432c355fca01620ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a814c87b3e5aaafaa7a1b680b9fcb8ca7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a> (float num1, float num2)</td></tr>
 <tr class="separator:a814c87b3e5aaafaa7a1b680b9fcb8ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,93 +202,131 @@ Functions</h2></td></tr>
 <tr class="memitem:ac32a335af980f971d3acc103634723bc"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#ac32a335af980f971d3acc103634723bc">BSP_SX1272_setCR</a> (uint8_t cod)</td></tr>
 <tr class="memdesc:ac32a335af980f971d3acc103634723bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the coding rate parameter for the SX1272 module.  <br /></td></tr>
 <tr class="separator:ac32a335af980f971d3acc103634723bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a256c77c623060387b0115ec9af433df9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a256c77c623060387b0115ec9af433df9">BSP_SX1272_isChannel</a> (uint32_t ch)</td></tr>
+<tr class="memitem:a256c77c623060387b0115ec9af433df9"><td class="memItemLeft" align="right" valign="top"><a id="a256c77c623060387b0115ec9af433df9" name="a256c77c623060387b0115ec9af433df9"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_isChannel</b> (uint32_t ch)</td></tr>
 <tr class="separator:a256c77c623060387b0115ec9af433df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a386b0526cd1a0f4809e1dcb4ea4f5253"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a386b0526cd1a0f4809e1dcb4ea4f5253">BSP_SX1272_getChannel</a> ()</td></tr>
+<tr class="memitem:a386b0526cd1a0f4809e1dcb4ea4f5253"><td class="memItemLeft" align="right" valign="top"><a id="a386b0526cd1a0f4809e1dcb4ea4f5253" name="a386b0526cd1a0f4809e1dcb4ea4f5253"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getChannel</b> ()</td></tr>
 <tr class="separator:a386b0526cd1a0f4809e1dcb4ea4f5253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af34d08b531e6f35f0b961e676b17800d"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#af34d08b531e6f35f0b961e676b17800d">BSP_SX1272_setChannel</a> (uint32_t ch)</td></tr>
+<tr class="memitem:af34d08b531e6f35f0b961e676b17800d"><td class="memItemLeft" align="right" valign="top"><a id="af34d08b531e6f35f0b961e676b17800d" name="af34d08b531e6f35f0b961e676b17800d"></a>
+int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setChannel</b> (uint32_t ch)</td></tr>
 <tr class="separator:af34d08b531e6f35f0b961e676b17800d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeea4ea276d7069714603905479f67727"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#aeea4ea276d7069714603905479f67727">BSP_SX1272_getPower</a> ()</td></tr>
+<tr class="memitem:aeea4ea276d7069714603905479f67727"><td class="memItemLeft" align="right" valign="top"><a id="aeea4ea276d7069714603905479f67727" name="aeea4ea276d7069714603905479f67727"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getPower</b> ()</td></tr>
 <tr class="separator:aeea4ea276d7069714603905479f67727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5134902998e6100ba14add58d32dafab"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a5134902998e6100ba14add58d32dafab">BSP_SX1272_setPower</a> (uint8_t pow)</td></tr>
+<tr class="memitem:a5134902998e6100ba14add58d32dafab"><td class="memItemLeft" align="right" valign="top"><a id="a5134902998e6100ba14add58d32dafab" name="a5134902998e6100ba14add58d32dafab"></a>
+int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setPower</b> (uint8_t pow)</td></tr>
 <tr class="separator:a5134902998e6100ba14add58d32dafab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2d7333888bb79615493daa0b202e97e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#aa2d7333888bb79615493daa0b202e97e">BSP_SX1272_getPreambleLength</a> ()</td></tr>
+<tr class="memitem:aa2d7333888bb79615493daa0b202e97e"><td class="memItemLeft" align="right" valign="top"><a id="aa2d7333888bb79615493daa0b202e97e" name="aa2d7333888bb79615493daa0b202e97e"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getPreambleLength</b> ()</td></tr>
 <tr class="separator:aa2d7333888bb79615493daa0b202e97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1130a38eed7d8451a2993ab3b197f06a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a1130a38eed7d8451a2993ab3b197f06a">BSP_SX1272_setPreambleLength</a> (uint16_t l)</td></tr>
+<tr class="memitem:a1130a38eed7d8451a2993ab3b197f06a"><td class="memItemLeft" align="right" valign="top"><a id="a1130a38eed7d8451a2993ab3b197f06a" name="a1130a38eed7d8451a2993ab3b197f06a"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setPreambleLength</b> (uint16_t l)</td></tr>
 <tr class="separator:a1130a38eed7d8451a2993ab3b197f06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70e3dd40d4c27d71611ac4c46f77d231"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a70e3dd40d4c27d71611ac4c46f77d231">BSP_SX1272_getPayloadLength</a> ()</td></tr>
+<tr class="memitem:a70e3dd40d4c27d71611ac4c46f77d231"><td class="memItemLeft" align="right" valign="top"><a id="a70e3dd40d4c27d71611ac4c46f77d231" name="a70e3dd40d4c27d71611ac4c46f77d231"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getPayloadLength</b> ()</td></tr>
 <tr class="separator:a70e3dd40d4c27d71611ac4c46f77d231"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5b9a439bfcdced9233e9eb8aff7304c"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#ac5b9a439bfcdced9233e9eb8aff7304c">BSP_SX1272_setPacketLength</a> (uint8_t l)</td></tr>
+<tr class="memitem:ac5b9a439bfcdced9233e9eb8aff7304c"><td class="memItemLeft" align="right" valign="top"><a id="ac5b9a439bfcdced9233e9eb8aff7304c" name="ac5b9a439bfcdced9233e9eb8aff7304c"></a>
+int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setPacketLength</b> (uint8_t l)</td></tr>
 <tr class="separator:ac5b9a439bfcdced9233e9eb8aff7304c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd6b0c964badc990e57d88d54a73e795"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#acd6b0c964badc990e57d88d54a73e795">BSP_SX1272_getNodeAddress</a> ()</td></tr>
+<tr class="memitem:acd6b0c964badc990e57d88d54a73e795"><td class="memItemLeft" align="right" valign="top"><a id="acd6b0c964badc990e57d88d54a73e795" name="acd6b0c964badc990e57d88d54a73e795"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getNodeAddress</b> ()</td></tr>
 <tr class="separator:acd6b0c964badc990e57d88d54a73e795"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6515cd7aa4584753aa2c66a6252a98cb"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a6515cd7aa4584753aa2c66a6252a98cb">BSP_SX1272_setNodeAddress</a> (uint8_t addr)</td></tr>
+<tr class="memitem:a6515cd7aa4584753aa2c66a6252a98cb"><td class="memItemLeft" align="right" valign="top"><a id="a6515cd7aa4584753aa2c66a6252a98cb" name="a6515cd7aa4584753aa2c66a6252a98cb"></a>
+int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setNodeAddress</b> (uint8_t addr)</td></tr>
 <tr class="separator:a6515cd7aa4584753aa2c66a6252a98cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbcf844f00bdeaefdf767239089bb7d0"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#afbcf844f00bdeaefdf767239089bb7d0">BSP_SX1272_getSNR</a> ()</td></tr>
+<tr class="memitem:afbcf844f00bdeaefdf767239089bb7d0"><td class="memItemLeft" align="right" valign="top"><a id="afbcf844f00bdeaefdf767239089bb7d0" name="afbcf844f00bdeaefdf767239089bb7d0"></a>
+int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getSNR</b> ()</td></tr>
 <tr class="separator:afbcf844f00bdeaefdf767239089bb7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbc662bca448dcf0f7182b2ae7e77f6e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#afbc662bca448dcf0f7182b2ae7e77f6e">BSP_SX1272_getRSSI</a> ()</td></tr>
 <tr class="separator:afbc662bca448dcf0f7182b2ae7e77f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b371f35a383ffb1d822c8e33085f1c6"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a3b371f35a383ffb1d822c8e33085f1c6">BSP_SX1272_getRSSIpacket</a> ()</td></tr>
+<tr class="memitem:a3b371f35a383ffb1d822c8e33085f1c6"><td class="memItemLeft" align="right" valign="top"><a id="a3b371f35a383ffb1d822c8e33085f1c6" name="a3b371f35a383ffb1d822c8e33085f1c6"></a>
+int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getRSSIpacket</b> ()</td></tr>
 <tr class="separator:a3b371f35a383ffb1d822c8e33085f1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab42e954f6a0cb2c9106ee686487ca7b2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#ab42e954f6a0cb2c9106ee686487ca7b2">BSP_SX1272_setRetries</a> (uint8_t ret)</td></tr>
+<tr class="memitem:ab42e954f6a0cb2c9106ee686487ca7b2"><td class="memItemLeft" align="right" valign="top"><a id="ab42e954f6a0cb2c9106ee686487ca7b2" name="ab42e954f6a0cb2c9106ee686487ca7b2"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setRetries</b> (uint8_t ret)</td></tr>
 <tr class="separator:ab42e954f6a0cb2c9106ee686487ca7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa57086bba959d11b6c028aca5e8e04eb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#aa57086bba959d11b6c028aca5e8e04eb">BSP_SX1272_getMaxCurrent</a> ()</td></tr>
+<tr class="memitem:aa57086bba959d11b6c028aca5e8e04eb"><td class="memItemLeft" align="right" valign="top"><a id="aa57086bba959d11b6c028aca5e8e04eb" name="aa57086bba959d11b6c028aca5e8e04eb"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getMaxCurrent</b> ()</td></tr>
 <tr class="separator:aa57086bba959d11b6c028aca5e8e04eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd285f2b7da34b9e7d8c9a7ccc12b841"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#acd285f2b7da34b9e7d8c9a7ccc12b841">BSP_SX1272_setMaxCurrent</a> (uint8_t rate)</td></tr>
+<tr class="memitem:acd285f2b7da34b9e7d8c9a7ccc12b841"><td class="memItemLeft" align="right" valign="top"><a id="acd285f2b7da34b9e7d8c9a7ccc12b841" name="acd285f2b7da34b9e7d8c9a7ccc12b841"></a>
+int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setMaxCurrent</b> (uint8_t rate)</td></tr>
 <tr class="separator:acd285f2b7da34b9e7d8c9a7ccc12b841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99544940866d0b8e841f6f04de0614fc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a99544940866d0b8e841f6f04de0614fc">BSP_SX1272_getRegs</a> ()</td></tr>
+<tr class="memitem:a99544940866d0b8e841f6f04de0614fc"><td class="memItemLeft" align="right" valign="top"><a id="a99544940866d0b8e841f6f04de0614fc" name="a99544940866d0b8e841f6f04de0614fc"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getRegs</b> ()</td></tr>
 <tr class="separator:a99544940866d0b8e841f6f04de0614fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4268a6255ab4637f78205e4b9b51ae30"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a4268a6255ab4637f78205e4b9b51ae30">BSP_SX1272_truncPayload</a> (uint16_t length16)</td></tr>
+<tr class="memitem:a4268a6255ab4637f78205e4b9b51ae30"><td class="memItemLeft" align="right" valign="top"><a id="a4268a6255ab4637f78205e4b9b51ae30" name="a4268a6255ab4637f78205e4b9b51ae30"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_truncPayload</b> (uint16_t length16)</td></tr>
 <tr class="separator:a4268a6255ab4637f78205e4b9b51ae30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d9807602541b563d6d4035665cec73"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a65d9807602541b563d6d4035665cec73">BSP_SX1272_setACK</a> ()</td></tr>
+<tr class="memitem:a65d9807602541b563d6d4035665cec73"><td class="memItemLeft" align="right" valign="top"><a id="a65d9807602541b563d6d4035665cec73" name="a65d9807602541b563d6d4035665cec73"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setACK</b> ()</td></tr>
 <tr class="separator:a65d9807602541b563d6d4035665cec73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ad7f7b23c57eb6cc7e692e40cf83d32"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a3ad7f7b23c57eb6cc7e692e40cf83d32">BSP_SX1272_receive</a> ()</td></tr>
 <tr class="separator:a3ad7f7b23c57eb6cc7e692e40cf83d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acff4ba7e35caadf9bdb8483f10dfedbf"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#acff4ba7e35caadf9bdb8483f10dfedbf">BSP_SX1272_receivePacketMAXTimeout</a> ()</td></tr>
+<tr class="memitem:acff4ba7e35caadf9bdb8483f10dfedbf"><td class="memItemLeft" align="right" valign="top"><a id="acff4ba7e35caadf9bdb8483f10dfedbf" name="acff4ba7e35caadf9bdb8483f10dfedbf"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_receivePacketMAXTimeout</b> ()</td></tr>
 <tr class="separator:acff4ba7e35caadf9bdb8483f10dfedbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb10b837208ffe656413c55fb9b06647"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#afb10b837208ffe656413c55fb9b06647">BSP_SX1272_receivePacketTimeout</a> (uint32_t wait)</td></tr>
+<tr class="memitem:afb10b837208ffe656413c55fb9b06647"><td class="memItemLeft" align="right" valign="top"><a id="afb10b837208ffe656413c55fb9b06647" name="afb10b837208ffe656413c55fb9b06647"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_receivePacketTimeout</b> (uint32_t wait)</td></tr>
 <tr class="separator:afb10b837208ffe656413c55fb9b06647"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace4b3356e9eec858d8a20e4e9bc9ccde"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#ace4b3356e9eec858d8a20e4e9bc9ccde">BSP_SX1272_receivePacketTimeouACK</a> (uint32_t wait)</td></tr>
+<tr class="memitem:ace4b3356e9eec858d8a20e4e9bc9ccde"><td class="memItemLeft" align="right" valign="top"><a id="ace4b3356e9eec858d8a20e4e9bc9ccde" name="ace4b3356e9eec858d8a20e4e9bc9ccde"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_receivePacketTimeouACK</b> (uint32_t wait)</td></tr>
 <tr class="separator:ace4b3356e9eec858d8a20e4e9bc9ccde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaf6a9e0c64c1614e0aa1a1bc93bace6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#adaf6a9e0c64c1614e0aa1a1bc93bace6">BSP_SX1272_receiveAll</a> (uint32_t wait)</td></tr>
 <tr class="separator:adaf6a9e0c64c1614e0aa1a1bc93bace6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab345c772a3f5a75b78c16760a8b6a028"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#ab345c772a3f5a75b78c16760a8b6a028">BSP_SX1272_availableData</a> (uint32_t wait)</td></tr>
 <tr class="separator:ab345c772a3f5a75b78c16760a8b6a028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb461e5a9bf35ff9c819cfdb157e3ae0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#afb461e5a9bf35ff9c819cfdb157e3ae0">BSP_SX1272_getPacketMAXTimeout</a> ()</td></tr>
+<tr class="memitem:afb461e5a9bf35ff9c819cfdb157e3ae0"><td class="memItemLeft" align="right" valign="top"><a id="afb461e5a9bf35ff9c819cfdb157e3ae0" name="afb461e5a9bf35ff9c819cfdb157e3ae0"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getPacketMAXTimeout</b> ()</td></tr>
 <tr class="separator:afb461e5a9bf35ff9c819cfdb157e3ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc205f8a5e76a8f8036191c8ba4f218f"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#adc205f8a5e76a8f8036191c8ba4f218f">BSP_SX1272_getPacket</a> (uint32_t wait)</td></tr>
 <tr class="separator:adc205f8a5e76a8f8036191c8ba4f218f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add2605afcabf2ba92cf3089de31b61ff"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#add2605afcabf2ba92cf3089de31b61ff">BSP_SX1272_setDestination</a> (uint8_t dest)</td></tr>
+<tr class="memitem:add2605afcabf2ba92cf3089de31b61ff"><td class="memItemLeft" align="right" valign="top"><a id="add2605afcabf2ba92cf3089de31b61ff" name="add2605afcabf2ba92cf3089de31b61ff"></a>
+int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setDestination</b> (uint8_t dest)</td></tr>
 <tr class="separator:add2605afcabf2ba92cf3089de31b61ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d032d3d080e5622e8b76405eaecf7fb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a6d032d3d080e5622e8b76405eaecf7fb">BSP_SX1272_setTimeout</a> ()</td></tr>
+<tr class="memitem:a6d032d3d080e5622e8b76405eaecf7fb"><td class="memItemLeft" align="right" valign="top"><a id="a6d032d3d080e5622e8b76405eaecf7fb" name="a6d032d3d080e5622e8b76405eaecf7fb"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setTimeout</b> ()</td></tr>
 <tr class="separator:a6d032d3d080e5622e8b76405eaecf7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41fb8596538c1f8e32fdc582e0cda788"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a41fb8596538c1f8e32fdc582e0cda788">BSP_SX1272_timeOnAir</a> (uint16_t payloadlength)</td></tr>
+<tr class="memitem:a41fb8596538c1f8e32fdc582e0cda788"><td class="memItemLeft" align="right" valign="top"><a id="a41fb8596538c1f8e32fdc582e0cda788" name="a41fb8596538c1f8e32fdc582e0cda788"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_timeOnAir</b> (uint16_t payloadlength)</td></tr>
 <tr class="separator:a41fb8596538c1f8e32fdc582e0cda788"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0cbfcbc7b594579e5d0905d108801a3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#aa0cbfcbc7b594579e5d0905d108801a3">BSP_SX1272_setPayload</a> (char *payload)</td></tr>
+<tr class="memitem:aa0cbfcbc7b594579e5d0905d108801a3"><td class="memItemLeft" align="right" valign="top"><a id="aa0cbfcbc7b594579e5d0905d108801a3" name="aa0cbfcbc7b594579e5d0905d108801a3"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setPayload</b> (char *payload)</td></tr>
 <tr class="separator:aa0cbfcbc7b594579e5d0905d108801a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75fdce4e584eaae30fe80f0f748450cc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a75fdce4e584eaae30fe80f0f748450cc">BSP_SX1272_setPacket</a> (uint8_t dest, char *payload)</td></tr>
+<tr class="memitem:a75fdce4e584eaae30fe80f0f748450cc"><td class="memItemLeft" align="right" valign="top"><a id="a75fdce4e584eaae30fe80f0f748450cc" name="a75fdce4e584eaae30fe80f0f748450cc"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_setPacket</b> (uint8_t dest, char *payload)</td></tr>
 <tr class="separator:a75fdce4e584eaae30fe80f0f748450cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab692c6542ea5675500df5be6d31596de"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#ab692c6542ea5675500df5be6d31596de">BSP_SX1272_sendWithMAXTimeout</a> ()</td></tr>
+<tr class="memitem:ab692c6542ea5675500df5be6d31596de"><td class="memItemLeft" align="right" valign="top"><a id="ab692c6542ea5675500df5be6d31596de" name="ab692c6542ea5675500df5be6d31596de"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_sendWithMAXTimeout</b> ()</td></tr>
 <tr class="separator:ab692c6542ea5675500df5be6d31596de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e68d224c715300295151e3eb25d818"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a85e68d224c715300295151e3eb25d818">BSP_SX1272_sendWithTimeout</a> (uint32_t wait)</td></tr>
 <tr class="separator:a85e68d224c715300295151e3eb25d818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebc852eb4ab8a0a954961311432a1ede"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#aebc852eb4ab8a0a954961311432a1ede">BSP_SX1272_sendPacketMAXTimeout</a> (uint8_t dest, char *payload)</td></tr>
+<tr class="memitem:aebc852eb4ab8a0a954961311432a1ede"><td class="memItemLeft" align="right" valign="top"><a id="aebc852eb4ab8a0a954961311432a1ede" name="aebc852eb4ab8a0a954961311432a1ede"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_sendPacketMAXTimeout</b> (uint8_t dest, char *payload)</td></tr>
 <tr class="separator:aebc852eb4ab8a0a954961311432a1ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729b1cfbd077be21b68a98da7734d352"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a729b1cfbd077be21b68a98da7734d352">BSP_SX1272_sendPacketTimeout</a> (uint8_t dest, char *payload, uint32_t wait)</td></tr>
+<tr class="memitem:a729b1cfbd077be21b68a98da7734d352"><td class="memItemLeft" align="right" valign="top"><a id="a729b1cfbd077be21b68a98da7734d352" name="a729b1cfbd077be21b68a98da7734d352"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_sendPacketTimeout</b> (uint8_t dest, char *payload, uint32_t wait)</td></tr>
 <tr class="separator:a729b1cfbd077be21b68a98da7734d352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff734df26dabf9e31c44645ac68df798"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#aff734df26dabf9e31c44645ac68df798">BSP_SX1272_sendPacketMAXTimeoutACK</a> (uint8_t dest, char *payload)</td></tr>
+<tr class="memitem:aff734df26dabf9e31c44645ac68df798"><td class="memItemLeft" align="right" valign="top"><a id="aff734df26dabf9e31c44645ac68df798" name="aff734df26dabf9e31c44645ac68df798"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_sendPacketMAXTimeoutACK</b> (uint8_t dest, char *payload)</td></tr>
 <tr class="separator:aff734df26dabf9e31c44645ac68df798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb6cb6942968fde251bf85806d596e70"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#abb6cb6942968fde251bf85806d596e70">BSP_SX1272_sendPacketTimeoutACK</a> (uint8_t dest, char *payload, uint32_t wait)</td></tr>
+<tr class="memitem:abb6cb6942968fde251bf85806d596e70"><td class="memItemLeft" align="right" valign="top"><a id="abb6cb6942968fde251bf85806d596e70" name="abb6cb6942968fde251bf85806d596e70"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_sendPacketTimeoutACK</b> (uint8_t dest, char *payload, uint32_t wait)</td></tr>
 <tr class="separator:abb6cb6942968fde251bf85806d596e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e10c3563cf5e2302058745c8208f5d1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a5e10c3563cf5e2302058745c8208f5d1">BSP_SX1272_getACK</a> (uint32_t wait)</td></tr>
+<tr class="memitem:a5e10c3563cf5e2302058745c8208f5d1"><td class="memItemLeft" align="right" valign="top"><a id="a5e10c3563cf5e2302058745c8208f5d1" name="a5e10c3563cf5e2302058745c8208f5d1"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getACK</b> (uint32_t wait)</td></tr>
 <tr class="separator:a5e10c3563cf5e2302058745c8208f5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8c06d342955ebc83597338dda59ffba"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#aa8c06d342955ebc83597338dda59ffba">BSP_SX1272_sendPacketMAXTimeoutACKRetries</a> (uint8_t dest, char *payload)</td></tr>
+<tr class="memitem:aa8c06d342955ebc83597338dda59ffba"><td class="memItemLeft" align="right" valign="top"><a id="aa8c06d342955ebc83597338dda59ffba" name="aa8c06d342955ebc83597338dda59ffba"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_sendPacketMAXTimeoutACKRetries</b> (uint8_t dest, char *payload)</td></tr>
 <tr class="separator:aa8c06d342955ebc83597338dda59ffba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8431e866f89dd99e9956b370d1fbf4f4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a8431e866f89dd99e9956b370d1fbf4f4">BSP_SX1272_sendPacketTimeoutACKRetries</a> (uint8_t dest, char *payload, uint32_t wait)</td></tr>
+<tr class="memitem:a8431e866f89dd99e9956b370d1fbf4f4"><td class="memItemLeft" align="right" valign="top"><a id="a8431e866f89dd99e9956b370d1fbf4f4" name="a8431e866f89dd99e9956b370d1fbf4f4"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_sendPacketTimeoutACKRetries</b> (uint8_t dest, char *payload, uint32_t wait)</td></tr>
 <tr class="separator:a8431e866f89dd99e9956b370d1fbf4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c9ab298ced3d1d7ae2d14bd01bf1166"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#a0c9ab298ced3d1d7ae2d14bd01bf1166">BSP_SX1272_getTemp</a> ()</td></tr>
+<tr class="memitem:a0c9ab298ced3d1d7ae2d14bd01bf1166"><td class="memItemLeft" align="right" valign="top"><a id="a0c9ab298ced3d1d7ae2d14bd01bf1166" name="a0c9ab298ced3d1d7ae2d14bd01bf1166"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_getTemp</b> ()</td></tr>
 <tr class="separator:a0c9ab298ced3d1d7ae2d14bd01bf1166"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7177092cff951f46ff6afee93e98e69"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_x1272_8c.html#aa7177092cff951f46ff6afee93e98e69">BSP_SX1272_cadDetected</a> ()</td></tr>
+<tr class="memitem:aa7177092cff951f46ff6afee93e98e69"><td class="memItemLeft" align="right" valign="top"><a id="aa7177092cff951f46ff6afee93e98e69" name="aa7177092cff951f46ff6afee93e98e69"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>BSP_SX1272_cadDetected</b> ()</td></tr>
 <tr class="separator:aa7177092cff951f46ff6afee93e98e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -286,23 +363,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa7177092cff951f46ff6afee93e98e69" name="aa7177092cff951f46ff6afee93e98e69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7177092cff951f46ff6afee93e98e69">&#9670;&#160;</a></span>BSP_SX1272_cadDetected()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_cadDetected </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a83ace0a080a4d7c8a76e6a9877b919b1" name="a83ace0a080a4d7c8a76e6a9877b919b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83ace0a080a4d7c8a76e6a9877b919b1">&#9670;&#160;</a></span>BSP_SX1272_clearFlags()</h2>
 
@@ -320,27 +380,23 @@ Variables</h2></td></tr>
 
 <p>Efface les indicateurs de drapeaux du module SX1272. </p>
 <p>Cette fonction efface les indicateurs de drapeaux du module SX1272. Les drapeaux sont effacés en mettant le module en mode veille, en écrivant dans les registres appropriés, puis en restaurant le mode précédent.</p>
-<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que les fonctions <a class="el" href="com_s_x1272_8h.html#acb6882118570a3b39f905f6b5739e006" title="Lit une valeur à partir d&#39;un registre spécifié du module SX1272.">BSP_SX1272_Read()</a> et <a class="el" href="com_s_x1272_8h.html#a4757fe52dcee2269d4f4635416c70881" title="Écrit une valeur dans un registre spécifié du module SX1272.">BSP_SX1272_Write()</a> sont disponibles pour lire et écrire dans les registres du module SX1272. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que les fonctions BSP_SX1272_Read() et BSP_SX1272_Write() sont disponibles pour lire et écrire dans les registres du module SX1272. </dd></dl>
 <p>LoRa mode</p>
 <p>FSK mode</p>
-
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1_icgraph.png" border="0" usemap="#a_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1_icgraph" id="a_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1_icgraph">
+<area shape="rect" title="Efface les indicateurs de drapeaux du module SX1272." alt="" coords="470,31,636,57"/>
+<area shape="rect" href="_s_x1272_8c.html#adc205f8a5e76a8f8036191c8ba4f218f" title=" " alt="" coords="236,5,401,32"/>
+<area shape="poly" title=" " alt="" coords="455,36,401,30,402,25,456,31"/>
+<area shape="rect" href="_s_x1272_8c.html#a85e68d224c715300295151e3eb25d818" title=" " alt="" coords="215,56,422,83"/>
+<area shape="poly" title=" " alt="" coords="456,57,423,61,422,55,455,52"/>
+<area shape="rect" href="_s_x1272_8c.html#adaf6a9e0c64c1614e0aa1a1bc93bace6" title=" " alt="" coords="5,5,167,32"/>
+<area shape="poly" title=" " alt="" coords="221,21,167,21,167,16,221,16"/>
+</map>
 </div>
-</div>
-<a id="a5e10c3563cf5e2302058745c8208f5d1" name="a5e10c3563cf5e2302058745c8208f5d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e10c3563cf5e2302058745c8208f5d1">&#9670;&#160;</a></span>BSP_SX1272_getACK()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getACK </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>wait</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -362,23 +418,28 @@ Variables</h2></td></tr>
 <p>Get the current bandwidth setting. </p>
 <p>This function retrieves the current bandwidth setting from the SX1272 module.</p>
 <dl class="section return"><dt>Returns</dt><dd>0 if the bandwidth value was successfully retrieved, 1 if there was an error, or -1 if the bandwidth is not available in FSK mode. </dd></dl>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_cgraph.png" border="0" usemap="#a_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_cgraph" id="a_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_cgraph">
+<area shape="rect" title="Get the current bandwidth setting." alt="" coords="5,5,152,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a5901e53acaf3b4e01eef390fd865931a" title="Check if the specified bandwidth value is valid." alt="" coords="200,5,338,32"/>
+<area shape="poly" title=" " alt="" coords="152,16,184,16,184,21,152,21"/>
+</map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_icgraph.png" border="0" usemap="#a_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_icgraph" id="a_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_icgraph">
+<area shape="rect" title="Get the current bandwidth setting." alt="" coords="399,5,545,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a1df24c596c26847f4bf1056c97b27a7b" title="Set the spreading factor (SF) for LoRa mode." alt="" coords="210,5,351,32"/>
+<area shape="poly" title=" " alt="" coords="384,21,352,21,352,16,384,16"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,5,162,32"/>
+<area shape="poly" title=" " alt="" coords="195,21,162,21,162,16,195,16"/>
+</map>
 </div>
-<a id="a386b0526cd1a0f4809e1dcb4ea4f5253" name="a386b0526cd1a0f4809e1dcb4ea4f5253"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a386b0526cd1a0f4809e1dcb4ea4f5253">&#9670;&#160;</a></span>BSP_SX1272_getChannel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getChannel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -400,6 +461,16 @@ Variables</h2></td></tr>
 <p>Get the current coding rate value. </p>
 <p>This function retrieves the current coding rate value from the SX1272 module.</p>
 <dl class="section return"><dt>Returns</dt><dd>The current coding rate value. -1 if the module is in FSK mode (FSK mode doesn't have a coding rate). 0 if the coding rate value is successfully retrieved. 1 if there was an error while getting the coding rate value. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07_cgraph.png" border="0" usemap="#a_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07_cgraph" id="a_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07_cgraph">
+<area shape="rect" title="Get the current coding rate value." alt="" coords="5,5,148,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a95101467cb905ca8ad86a3e27b7ab790" title="Check if the coding rate value is valid." alt="" coords="196,5,330,32"/>
+<area shape="poly" title=" " alt="" coords="148,16,181,16,181,21,148,21"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -426,7 +497,7 @@ Variables</h2></td></tr>
 <li>2 if an error occurred.</li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">int8_t state = <a class="code hl_function" href="_s_x1272_8h.html#a8fa565b989224342464c22c77f8c6e7d">BSP_SX1272_getCRC</a>();</div>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">int8_t state = BSP_SX1272_getCRC();</div>
 <div class="line"><span class="keywordflow">if</span> (state == 0) {</div>
 <div class="line">    <span class="comment">// CRC is deactivated</span></div>
 <div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span> (state == 1) {</div>
@@ -434,7 +505,6 @@ Variables</h2></td></tr>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">    <span class="comment">// Error occurred while getting the CRC configuration</span></div>
 <div class="line">}</div>
-<div class="ttc" id="a_s_x1272_8h_html_a8fa565b989224342464c22c77f8c6e7d"><div class="ttname"><a href="_s_x1272_8h.html#a8fa565b989224342464c22c77f8c6e7d">BSP_SX1272_getCRC</a></div><div class="ttdeci">uint8_t BSP_SX1272_getCRC()</div><div class="ttdoc">Get the CRC configuration on the SX1272 module.</div><div class="ttdef"><b>Definition</b> SX1272.c:874</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -458,31 +528,13 @@ Variables</h2></td></tr>
 <p>This function retrieves the header mode of the SX1272 module, which indicates whether the module operates in explicit header mode or implicit header mode.</p>
 <dl class="section return"><dt>Returns</dt><dd>The state of the operation. 0 if successful, -1 if there was an error.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>In FSK mode, the header is not available.</dd></dl>
-<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">uint8_t state = <a class="code hl_function" href="_s_x1272_8h.html#ae8a601b57791635b3417ffea72ee47c5">BSP_SX1272_getHeader</a>();</div>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">uint8_t state = BSP_SX1272_getHeader();</div>
 <div class="line"><span class="keywordflow">if</span> (state == 0) {</div>
 <div class="line">    <span class="comment">// Header mode retrieved successfully</span></div>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">    <span class="comment">// Error occurred while retrieving header mode</span></div>
 <div class="line">}</div>
-<div class="ttc" id="a_s_x1272_8h_html_ae8a601b57791635b3417ffea72ee47c5"><div class="ttname"><a href="_s_x1272_8h.html#ae8a601b57791635b3417ffea72ee47c5">BSP_SX1272_getHeader</a></div><div class="ttdeci">uint8_t BSP_SX1272_getHeader()</div><div class="ttdoc">Get the header mode of the SX1272 module.</div><div class="ttdef"><b>Definition</b> SX1272.c:650</div></div>
 </div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="aa57086bba959d11b6c028aca5e8e04eb" name="aa57086bba959d11b6c028aca5e8e04eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa57086bba959d11b6c028aca5e8e04eb">&#9670;&#160;</a></span>BSP_SX1272_getMaxCurrent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getMaxCurrent </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -509,24 +561,23 @@ Variables</h2></td></tr>
 <li>2 : Erreur (échec de récupération du mode)</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que les fonctions <a class="el" href="com_s_x1272_8h.html#acb6882118570a3b39f905f6b5739e006" title="Lit une valeur à partir d&#39;un registre spécifié du module SX1272.">BSP_SX1272_Read()</a> et <a class="el" href="com_s_x1272_8h.html#a4757fe52dcee2269d4f4635416c70881" title="Écrit une valeur dans un registre spécifié du module SX1272.">BSP_SX1272_Write()</a> sont disponibles pour lire et écrire dans les registres du module SX1272. </dd></dl>
-
+<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que les fonctions BSP_SX1272_Read() et BSP_SX1272_Write() sont disponibles pour lire et écrire dans les registres du module SX1272. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a547aa32b39ad3d33de177364e6d99f4b_cgraph.png" border="0" usemap="#a_s_x1272_8c_a547aa32b39ad3d33de177364e6d99f4b_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a547aa32b39ad3d33de177364e6d99f4b_cgraph" id="a_s_x1272_8c_a547aa32b39ad3d33de177364e6d99f4b_cgraph">
+<area shape="rect" title="Récupère le mode actuel du module SX1272." alt="" coords="5,81,162,108"/>
+<area shape="rect" href="_s_x1272_8c.html#a5901e53acaf3b4e01eef390fd865931a" title="Check if the specified bandwidth value is valid." alt="" coords="220,5,359,32"/>
+<area shape="poly" title=" " alt="" coords="116,78,209,42,229,35,230,40,211,46,118,83"/>
+<area shape="rect" href="_s_x1272_8c.html#a95101467cb905ca8ad86a3e27b7ab790" title="Check if the coding rate value is valid." alt="" coords="222,56,357,83"/>
+<area shape="poly" title=" " alt="" coords="162,82,208,77,208,82,163,88"/>
+<area shape="rect" href="_s_x1272_8c.html#a0ba271766fea69ce3ae6582abc467945" title="Check if the given spreading factor (SF) is valid." alt="" coords="223,107,356,133"/>
+<area shape="poly" title=" " alt="" coords="163,102,208,107,208,113,162,107"/>
+<area shape="rect" href="_s_x1272_8c.html#a842904846734cb7ba7ca312f50dbe962" title="Configure le module SX1272 en mode LoRa." alt="" coords="210,157,369,184"/>
+<area shape="poly" title=" " alt="" coords="118,106,211,143,230,150,229,155,209,148,116,111"/>
+</map>
 </div>
-</div>
-<a id="acd6b0c964badc990e57d88d54a73e795" name="acd6b0c964badc990e57d88d54a73e795"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd6b0c964badc990e57d88d54a73e795">&#9670;&#160;</a></span>BSP_SX1272_getNodeAddress()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getNodeAddress </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -549,91 +600,28 @@ Variables</h2></td></tr>
 <p>FSK mode</p>
 <p>LoRa</p>
 <p>FSK</p>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_cgraph.png" border="0" usemap="#a_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_cgraph" id="a_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,171,57"/>
+<area shape="rect" href="_s_x1272_8c.html#a83ace0a080a4d7c8a76e6a9877b919b1" title="Efface les indicateurs de drapeaux du module SX1272." alt="" coords="219,5,385,32"/>
+<area shape="poly" title=" " alt="" coords="171,32,203,28,204,33,171,37"/>
+<area shape="rect" href="_s_x1272_8c.html#afbc662bca448dcf0f7182b2ae7e77f6e" title=" " alt="" coords="225,56,379,83"/>
+<area shape="poly" title=" " alt="" coords="171,51,210,56,210,61,171,56"/>
+</map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_icgraph.png" border="0" usemap="#a_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_icgraph" id="a_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_icgraph">
+<area shape="rect" title=" " alt="" coords="215,5,380,32"/>
+<area shape="rect" href="_s_x1272_8c.html#adaf6a9e0c64c1614e0aa1a1bc93bace6" title=" " alt="" coords="5,5,167,32"/>
+<area shape="poly" title=" " alt="" coords="200,21,167,21,167,16,200,16"/>
+</map>
 </div>
-<a id="afb461e5a9bf35ff9c819cfdb157e3ae0" name="afb461e5a9bf35ff9c819cfdb157e3ae0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb461e5a9bf35ff9c819cfdb157e3ae0">&#9670;&#160;</a></span>BSP_SX1272_getPacketMAXTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getPacketMAXTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a70e3dd40d4c27d71611ac4c46f77d231" name="a70e3dd40d4c27d71611ac4c46f77d231"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70e3dd40d4c27d71611ac4c46f77d231">&#9670;&#160;</a></span>BSP_SX1272_getPayloadLength()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getPayloadLength </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aeea4ea276d7069714603905479f67727" name="aeea4ea276d7069714603905479f67727"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeea4ea276d7069714603905479f67727">&#9670;&#160;</a></span>BSP_SX1272_getPower()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getPower </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa2d7333888bb79615493daa0b202e97e" name="aa2d7333888bb79615493daa0b202e97e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2d7333888bb79615493daa0b202e97e">&#9670;&#160;</a></span>BSP_SX1272_getPreambleLength()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getPreambleLength </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a99544940866d0b8e841f6f04de0614fc" name="a99544940866d0b8e841f6f04de0614fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99544940866d0b8e841f6f04de0614fc">&#9670;&#160;</a></span>BSP_SX1272_getRegs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getRegs </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -653,23 +641,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>LoRa mode</p>
 <p>FSK mode</p>
-
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_afbc662bca448dcf0f7182b2ae7e77f6e_icgraph.png" border="0" usemap="#a_s_x1272_8c_afbc662bca448dcf0f7182b2ae7e77f6e_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_afbc662bca448dcf0f7182b2ae7e77f6e_icgraph" id="a_s_x1272_8c_afbc662bca448dcf0f7182b2ae7e77f6e_icgraph">
+<area shape="rect" title=" " alt="" coords="428,5,582,32"/>
+<area shape="rect" href="_s_x1272_8c.html#adc205f8a5e76a8f8036191c8ba4f218f" title=" " alt="" coords="215,5,380,32"/>
+<area shape="poly" title=" " alt="" coords="413,21,381,21,381,16,413,16"/>
+<area shape="rect" href="_s_x1272_8c.html#adaf6a9e0c64c1614e0aa1a1bc93bace6" title=" " alt="" coords="5,5,167,32"/>
+<area shape="poly" title=" " alt="" coords="200,21,167,21,167,16,200,16"/>
+</map>
 </div>
-</div>
-<a id="a3b371f35a383ffb1d822c8e33085f1c6" name="a3b371f35a383ffb1d822c8e33085f1c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b371f35a383ffb1d822c8e33085f1c6">&#9670;&#160;</a></span>BSP_SX1272_getRSSIpacket()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int16_t BSP_SX1272_getRSSIpacket </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -691,40 +674,28 @@ Variables</h2></td></tr>
 <p>Get the current spreading factor (SF) setting. </p>
 <p>This function retrieves the current spreading factor (SF) setting from the SX1272 module. It reads the value from the REG_MODEM_CONFIG2 register and updates the <code>currentstate._spreadingFactor</code> variable accordingly.</p>
 <dl class="section return"><dt>Returns</dt><dd>0 if the spreading factor is successfully retrieved and valid, 1 if there was an error, or -1 if the device is in FSK mode where spreading factor is not applicable. </dd></dl>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_cgraph.png" border="0" usemap="#a_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_cgraph" id="a_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_cgraph">
+<area shape="rect" title="Get the current spreading factor (SF) setting." alt="" coords="5,5,147,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a0ba271766fea69ce3ae6582abc467945" title="Check if the given spreading factor (SF) is valid." alt="" coords="195,5,328,32"/>
+<area shape="poly" title=" " alt="" coords="147,16,180,16,180,21,147,21"/>
+</map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_icgraph.png" border="0" usemap="#a_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_icgraph" id="a_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_icgraph">
+<area shape="rect" title="Get the current spreading factor (SF) setting." alt="" coords="404,5,545,32"/>
+<area shape="rect" href="_s_x1272_8c.html#ae95979ddf558956d68a10d0d052c99a4" title="Set the bandwidth for SX1272 module." alt="" coords="210,5,356,32"/>
+<area shape="poly" title=" " alt="" coords="389,21,356,21,356,16,389,16"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,5,162,32"/>
+<area shape="poly" title=" " alt="" coords="195,21,162,21,162,16,195,16"/>
+</map>
 </div>
-<a id="afbcf844f00bdeaefdf767239089bb7d0" name="afbcf844f00bdeaefdf767239089bb7d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbcf844f00bdeaefdf767239089bb7d0">&#9670;&#160;</a></span>BSP_SX1272_getSNR()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int8_t BSP_SX1272_getSNR </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0c9ab298ced3d1d7ae2d14bd01bf1166" name="a0c9ab298ced3d1d7ae2d14bd01bf1166"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c9ab298ced3d1d7ae2d14bd01bf1166">&#9670;&#160;</a></span>BSP_SX1272_getTemp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_getTemp </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -753,24 +724,25 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if the bandwidth value is valid, 0 otherwise. </dd></dl>
-
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a_icgraph.png" border="0" usemap="#a_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a_icgraph" id="a_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a_icgraph">
+<area shape="rect" title="Check if the specified bandwidth value is valid." alt="" coords="608,56,747,83"/>
+<area shape="rect" href="_s_x1272_8c.html#a7aa32db83358df833ff68ddd5d619d4a" title="Get the current bandwidth setting." alt="" coords="409,5,555,32"/>
+<area shape="poly" title=" " alt="" coords="608,54,536,35,537,30,610,49"/>
+<area shape="rect" href="_s_x1272_8c.html#a547aa32b39ad3d33de177364e6d99f4b" title="Récupère le mode actuel du module SX1272." alt="" coords="404,56,560,83"/>
+<area shape="poly" title=" " alt="" coords="593,72,561,72,561,67,593,67"/>
+<area shape="rect" href="_s_x1272_8c.html#ae95979ddf558956d68a10d0d052c99a4" title="Set the bandwidth for SX1272 module." alt="" coords="210,81,356,108"/>
+<area shape="poly" title=" " alt="" coords="611,89,561,97,454,103,356,102,357,96,453,98,560,92,610,84"/>
+<area shape="rect" href="_s_x1272_8c.html#a1df24c596c26847f4bf1056c97b27a7b" title="Set the spreading factor (SF) for LoRa mode." alt="" coords="212,19,354,45"/>
+<area shape="poly" title=" " alt="" coords="394,27,354,30,353,25,394,22"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,56,162,83"/>
+<area shape="poly" title=" " alt="" coords="198,51,159,58,158,53,197,45"/>
+<area shape="poly" title=" " alt="" coords="195,86,162,82,163,77,195,81"/>
+</map>
 </div>
-</div>
-<a id="a256c77c623060387b0115ec9af433df9" name="a256c77c623060387b0115ec9af433df9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a256c77c623060387b0115ec9af433df9">&#9670;&#160;</a></span>BSP_SX1272_isChannel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_isChannel </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>ch</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -799,6 +771,22 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if the coding rate value is valid, 0 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790_icgraph.png" border="0" usemap="#a_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790_icgraph" id="a_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790_icgraph">
+<area shape="rect" title="Check if the coding rate value is valid." alt="" coords="414,56,548,83"/>
+<area shape="rect" href="_s_x1272_8c.html#a075ed4d128a5686a3e7160e1ef703c07" title="Get the current coding rate value." alt="" coords="217,5,359,32"/>
+<area shape="poly" title=" " alt="" coords="413,54,341,35,342,30,414,49"/>
+<area shape="rect" href="_s_x1272_8c.html#a547aa32b39ad3d33de177364e6d99f4b" title="Récupère le mode actuel du module SX1272." alt="" coords="210,56,366,83"/>
+<area shape="poly" title=" " alt="" coords="399,72,366,72,366,67,399,67"/>
+<area shape="rect" href="_s_x1272_8c.html#ac32a335af980f971d3acc103634723bc" title="Set the coding rate parameter for the SX1272 module." alt="" coords="217,107,359,133"/>
+<area shape="poly" title=" " alt="" coords="414,89,342,109,341,103,413,84"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,107,162,133"/>
+<area shape="poly" title=" " alt="" coords="202,123,162,123,162,117,202,117"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -827,6 +815,25 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if the spreading factor is valid, 0 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945_icgraph.png" border="0" usemap="#a_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945_icgraph" id="a_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945_icgraph">
+<area shape="rect" title="Check if the given spreading factor (SF) is valid." alt="" coords="608,56,742,83"/>
+<area shape="rect" href="_s_x1272_8c.html#a547aa32b39ad3d33de177364e6d99f4b" title="Récupère le mode actuel du module SX1272." alt="" coords="404,5,560,32"/>
+<area shape="poly" title=" " alt="" coords="606,54,535,35,536,30,608,49"/>
+<area shape="rect" href="_s_x1272_8c.html#a6751a3479b78944fe7effc446663dc8c" title="Get the current spreading factor (SF) setting." alt="" coords="412,56,553,83"/>
+<area shape="poly" title=" " alt="" coords="593,72,553,72,553,67,593,67"/>
+<area shape="rect" href="_s_x1272_8c.html#a1df24c596c26847f4bf1056c97b27a7b" title="Set the spreading factor (SF) for LoRa mode." alt="" coords="212,107,354,133"/>
+<area shape="poly" title=" " alt="" coords="604,89,561,97,452,111,354,119,353,113,452,105,560,92,603,84"/>
+<area shape="rect" href="_s_x1272_8c.html#ae95979ddf558956d68a10d0d052c99a4" title="Set the bandwidth for SX1272 module." alt="" coords="210,56,356,83"/>
+<area shape="poly" title=" " alt="" coords="397,72,356,72,356,67,397,67"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,81,162,108"/>
+<area shape="poly" title=" " alt="" coords="195,83,163,87,162,82,195,78"/>
+<area shape="poly" title=" " alt="" coords="197,112,162,107,163,102,197,106"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -854,7 +861,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que la fonction <a class="el" href="com_s_x1272_8h.html#a4757fe52dcee2269d4f4635416c70881" title="Écrit une valeur dans un registre spécifié du module SX1272.">BSP_SX1272_Write()</a> est disponible pour écrire dans les registres du module SX1272. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que la fonction BSP_SX1272_Write() est disponible pour écrire dans les registres du module SX1272. </dd></dl>
 
 </div>
 </div>
@@ -887,7 +894,19 @@ Variables</h2></td></tr>
 <li>1 : échec de l'activation.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que le module SX1272 est connecté et que les fonctions <a class="el" href="com_s_x1272_8h.html#a823387fc0ba3a232cd26c0e46165117d" title="Initialise la configuration de l&#39;interface SPI1.">BSP_SPI1_Init()</a> et <a class="el" href="delay_8h.html#adfc6cf5dbb78d0f390c250838bb51777">BSP_DELAY_ms()</a> sont disponibles. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que le module SX1272 est connecté et que les fonctions BSP_SPI1_Init() et BSP_DELAY_ms() sont disponibles. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d_cgraph.png" border="0" usemap="#a_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d_cgraph" id="a_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d_cgraph">
+<area shape="rect" title="Active le module SX1272." alt="" coords="5,31,131,57"/>
+<area shape="rect" href="_s_x1272_8c.html#aae304aeaa85480a39c3f8e20e5f9b09e" title="Configure le module SX1272 en mode FSK." alt="" coords="183,5,334,32"/>
+<area shape="poly" title=" " alt="" coords="131,33,168,28,169,33,132,38"/>
+<area shape="rect" href="_s_x1272_8c.html#a842904846734cb7ba7ca312f50dbe962" title="Configure le module SX1272 en mode LoRa." alt="" coords="179,56,338,83"/>
+<area shape="poly" title=" " alt="" coords="132,50,164,54,163,59,131,55"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -907,6 +926,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>LoRa mode</p>
 <p>FSK mode</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32_icgraph.png" border="0" usemap="#a_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32_icgraph" id="a_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32_icgraph">
+<area shape="rect" title=" " alt="" coords="215,5,361,32"/>
+<area shape="rect" href="_s_x1272_8c.html#adaf6a9e0c64c1614e0aa1a1bc93bace6" title=" " alt="" coords="5,5,167,32"/>
+<area shape="poly" title=" " alt="" coords="200,21,167,21,167,16,200,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -926,262 +955,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>FSK mode</p>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6_cgraph.png" border="0" usemap="#a_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6_cgraph" id="a_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,167,83"/>
+<area shape="rect" href="_s_x1272_8c.html#adc205f8a5e76a8f8036191c8ba4f218f" title=" " alt="" coords="215,31,380,57"/>
+<area shape="poly" title=" " alt="" coords="166,57,200,53,200,58,167,62"/>
+<area shape="rect" href="_s_x1272_8c.html#a3ad7f7b23c57eb6cc7e692e40cf83d32" title=" " alt="" coords="224,81,371,108"/>
+<area shape="poly" title=" " alt="" coords="167,76,209,81,209,87,166,82"/>
+<area shape="rect" href="_s_x1272_8c.html#a83ace0a080a4d7c8a76e6a9877b919b1" title="Efface les indicateurs de drapeaux du module SX1272." alt="" coords="428,5,594,32"/>
+<area shape="poly" title=" " alt="" coords="380,32,413,28,413,33,381,37"/>
+<area shape="rect" href="_s_x1272_8c.html#afbc662bca448dcf0f7182b2ae7e77f6e" title=" " alt="" coords="434,56,588,83"/>
+<area shape="poly" title=" " alt="" coords="381,51,420,56,419,61,380,56"/>
+</map>
 </div>
-</div>
-<a id="acff4ba7e35caadf9bdb8483f10dfedbf" name="acff4ba7e35caadf9bdb8483f10dfedbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acff4ba7e35caadf9bdb8483f10dfedbf">&#9670;&#160;</a></span>BSP_SX1272_receivePacketMAXTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_receivePacketMAXTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ace4b3356e9eec858d8a20e4e9bc9ccde" name="ace4b3356e9eec858d8a20e4e9bc9ccde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace4b3356e9eec858d8a20e4e9bc9ccde">&#9670;&#160;</a></span>BSP_SX1272_receivePacketTimeouACK()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_receivePacketTimeouACK </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>wait</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afb10b837208ffe656413c55fb9b06647" name="afb10b837208ffe656413c55fb9b06647"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb10b837208ffe656413c55fb9b06647">&#9670;&#160;</a></span>BSP_SX1272_receivePacketTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_receivePacketTimeout </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>wait</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aebc852eb4ab8a0a954961311432a1ede" name="aebc852eb4ab8a0a954961311432a1ede"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebc852eb4ab8a0a954961311432a1ede">&#9670;&#160;</a></span>BSP_SX1272_sendPacketMAXTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_sendPacketMAXTimeout </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>payload</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aff734df26dabf9e31c44645ac68df798" name="aff734df26dabf9e31c44645ac68df798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff734df26dabf9e31c44645ac68df798">&#9670;&#160;</a></span>BSP_SX1272_sendPacketMAXTimeoutACK()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_sendPacketMAXTimeoutACK </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>payload</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa8c06d342955ebc83597338dda59ffba" name="aa8c06d342955ebc83597338dda59ffba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8c06d342955ebc83597338dda59ffba">&#9670;&#160;</a></span>BSP_SX1272_sendPacketMAXTimeoutACKRetries()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_sendPacketMAXTimeoutACKRetries </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>payload</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a729b1cfbd077be21b68a98da7734d352" name="a729b1cfbd077be21b68a98da7734d352"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a729b1cfbd077be21b68a98da7734d352">&#9670;&#160;</a></span>BSP_SX1272_sendPacketTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_sendPacketTimeout </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>payload</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>wait</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abb6cb6942968fde251bf85806d596e70" name="abb6cb6942968fde251bf85806d596e70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb6cb6942968fde251bf85806d596e70">&#9670;&#160;</a></span>BSP_SX1272_sendPacketTimeoutACK()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_sendPacketTimeoutACK </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>payload</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>wait</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8431e866f89dd99e9956b370d1fbf4f4" name="a8431e866f89dd99e9956b370d1fbf4f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8431e866f89dd99e9956b370d1fbf4f4">&#9670;&#160;</a></span>BSP_SX1272_sendPacketTimeoutACKRetries()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_sendPacketTimeoutACKRetries </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>payload</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>wait</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab692c6542ea5675500df5be6d31596de" name="ab692c6542ea5675500df5be6d31596de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab692c6542ea5675500df5be6d31596de">&#9670;&#160;</a></span>BSP_SX1272_sendWithMAXTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_sendWithMAXTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1202,23 +991,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>LoRa mode</p>
 <p>FSK mode</p>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a85e68d224c715300295151e3eb25d818_cgraph.png" border="0" usemap="#a_s_x1272_8c_a85e68d224c715300295151e3eb25d818_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a85e68d224c715300295151e3eb25d818_cgraph" id="a_s_x1272_8c_a85e68d224c715300295151e3eb25d818_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,213,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a83ace0a080a4d7c8a76e6a9877b919b1" title="Efface les indicateurs de drapeaux du module SX1272." alt="" coords="261,5,427,32"/>
+<area shape="poly" title=" " alt="" coords="213,16,246,16,246,21,213,21"/>
+</map>
 </div>
-</div>
-<a id="a65d9807602541b563d6d4035665cec73" name="a65d9807602541b563d6d4035665cec73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65d9807602541b563d6d4035665cec73">&#9670;&#160;</a></span>BSP_SX1272_setACK()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_setACK </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1247,24 +1029,32 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if the bandwidth was successfully set, 1 if there was an error, or -1 if the bandwidth is not available in FSK mode. </dd></dl>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_cgraph.png" border="0" usemap="#a_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_cgraph" id="a_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_cgraph">
+<area shape="rect" title="Set the bandwidth for SX1272 module." alt="" coords="5,56,152,83"/>
+<area shape="rect" href="_s_x1272_8c.html#a6751a3479b78944fe7effc446663dc8c" title="Get the current spreading factor (SF) setting." alt="" coords="209,5,350,32"/>
+<area shape="poly" title=" " alt="" coords="134,53,209,34,210,39,135,58"/>
+<area shape="rect" href="_s_x1272_8c.html#a5901e53acaf3b4e01eef390fd865931a" title="Check if the specified bandwidth value is valid." alt="" coords="210,56,349,83"/>
+<area shape="poly" title=" " alt="" coords="152,67,195,67,195,72,152,72"/>
+<area shape="rect" href="_s_x1272_8c.html#a842904846734cb7ba7ca312f50dbe962" title="Configure le module SX1272 en mode LoRa." alt="" coords="200,107,359,133"/>
+<area shape="poly" title=" " alt="" coords="135,81,210,100,209,105,134,86"/>
+<area shape="rect" href="_s_x1272_8c.html#a0ba271766fea69ce3ae6582abc467945" title="Check if the given spreading factor (SF) is valid." alt="" coords="407,5,540,32"/>
+<area shape="poly" title=" " alt="" coords="350,16,392,16,392,21,350,21"/>
+</map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_icgraph.png" border="0" usemap="#a_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_icgraph" id="a_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_icgraph">
+<area shape="rect" title="Set the bandwidth for SX1272 module." alt="" coords="210,5,356,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,5,162,32"/>
+<area shape="poly" title=" " alt="" coords="195,21,162,21,162,16,195,16"/>
+</map>
 </div>
-<a id="af34d08b531e6f35f0b961e676b17800d" name="af34d08b531e6f35f0b961e676b17800d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af34d08b531e6f35f0b961e676b17800d">&#9670;&#160;</a></span>BSP_SX1272_setChannel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int8_t BSP_SX1272_setChannel </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>ch</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1293,6 +1083,28 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if the coding rate parameter is successfully set. 1 if there was an error while setting the coding rate parameter. 2 if the module is in FSK mode (FSK mode doesn't have a coding rate). </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_ac32a335af980f971d3acc103634723bc_cgraph.png" border="0" usemap="#a_s_x1272_8c_ac32a335af980f971d3acc103634723bc_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_ac32a335af980f971d3acc103634723bc_cgraph" id="a_s_x1272_8c_ac32a335af980f971d3acc103634723bc_cgraph">
+<area shape="rect" title="Set the coding rate parameter for the SX1272 module." alt="" coords="5,31,148,57"/>
+<area shape="rect" href="_s_x1272_8c.html#a95101467cb905ca8ad86a3e27b7ab790" title="Check if the coding rate value is valid." alt="" coords="208,5,343,32"/>
+<area shape="poly" title=" " alt="" coords="148,32,193,26,194,32,148,38"/>
+<area shape="rect" href="_s_x1272_8c.html#a842904846734cb7ba7ca312f50dbe962" title="Configure le module SX1272 en mode LoRa." alt="" coords="196,56,355,83"/>
+<area shape="poly" title=" " alt="" coords="148,50,181,55,181,60,148,56"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_ac32a335af980f971d3acc103634723bc_icgraph.png" border="0" usemap="#a_s_x1272_8c_ac32a335af980f971d3acc103634723bc_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_ac32a335af980f971d3acc103634723bc_icgraph" id="a_s_x1272_8c_ac32a335af980f971d3acc103634723bc_icgraph">
+<area shape="rect" title="Set the coding rate parameter for the SX1272 module." alt="" coords="210,5,352,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,5,162,32"/>
+<area shape="poly" title=" " alt="" coords="195,21,162,21,162,16,195,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1340,7 +1152,7 @@ Variables</h2></td></tr>
 <li>2 if an error occurred.</li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">uint8_t state = <a class="code hl_function" href="_s_x1272_8h.html#aa583c8c3ab80c8a2c3a71ed878695d7b">BSP_SX1272_setCRC_ON</a>();</div>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">uint8_t state = BSP_SX1272_setCRC_ON();</div>
 <div class="line"><span class="keywordflow">if</span> (state == 0) {</div>
 <div class="line">    <span class="comment">// CRC activated successfully</span></div>
 <div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span> (state == 1) {</div>
@@ -1348,26 +1160,7 @@ Variables</h2></td></tr>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">    <span class="comment">// Error occurred while setting CRC ON</span></div>
 <div class="line">}</div>
-<div class="ttc" id="a_s_x1272_8h_html_aa583c8c3ab80c8a2c3a71ed878695d7b"><div class="ttname"><a href="_s_x1272_8h.html#aa583c8c3ab80c8a2c3a71ed878695d7b">BSP_SX1272_setCRC_ON</a></div><div class="ttdeci">uint8_t BSP_SX1272_setCRC_ON()</div><div class="ttdoc">Enable CRC (Cyclic Redundancy Check) on the SX1272 module.</div><div class="ttdef"><b>Definition</b> SX1272.c:965</div></div>
 </div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="add2605afcabf2ba92cf3089de31b61ff" name="add2605afcabf2ba92cf3089de31b61ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add2605afcabf2ba92cf3089de31b61ff">&#9670;&#160;</a></span>BSP_SX1272_setDestination()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int8_t BSP_SX1272_setDestination </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dest</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1394,7 +1187,17 @@ Variables</h2></td></tr>
 <li>2 : Erreur (échec de configuration)</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que les fonctions <a class="el" href="com_s_x1272_8h.html#acb6882118570a3b39f905f6b5739e006" title="Lit une valeur à partir d&#39;un registre spécifié du module SX1272.">BSP_SX1272_Read()</a> et <a class="el" href="com_s_x1272_8h.html#a4757fe52dcee2269d4f4635416c70881" title="Écrit une valeur dans un registre spécifié du module SX1272.">BSP_SX1272_Write()</a> sont disponibles pour lire et écrire dans les registres du module SX1272. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que les fonctions BSP_SX1272_Read() et BSP_SX1272_Write() sont disponibles pour lire et écrire dans les registres du module SX1272. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_aae304aeaa85480a39c3f8e20e5f9b09e_icgraph.png" border="0" usemap="#a_s_x1272_8c_aae304aeaa85480a39c3f8e20e5f9b09e_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_aae304aeaa85480a39c3f8e20e5f9b09e_icgraph" id="a_s_x1272_8c_aae304aeaa85480a39c3f8e20e5f9b09e_icgraph">
+<area shape="rect" title="Configure le module SX1272 en mode FSK." alt="" coords="179,5,329,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a9d7faebf99dac4cfbb31d2681770373d" title="Active le module SX1272." alt="" coords="5,5,131,32"/>
+<area shape="poly" title=" " alt="" coords="164,21,131,21,131,16,164,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1421,7 +1224,7 @@ Variables</h2></td></tr>
 <li>-1 if an error occurred or the header is not available in FSK mode.</li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">int8_t state = <a class="code hl_function" href="_s_x1272_8h.html#a56dbd355a1ffaca74216f41b24b03589">BSP_SX1272_setHeaderOFF</a>();</div>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">int8_t state = BSP_SX1272_setHeaderOFF();</div>
 <div class="line"><span class="keywordflow">if</span> (state == 0) {</div>
 <div class="line">    <span class="comment">// Header deactivated successfully</span></div>
 <div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span> (state == 1) {</div>
@@ -1429,8 +1232,19 @@ Variables</h2></td></tr>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">    <span class="comment">// Error occurred or header not available in FSK mode</span></div>
 <div class="line">}</div>
-<div class="ttc" id="a_s_x1272_8h_html_a56dbd355a1ffaca74216f41b24b03589"><div class="ttname"><a href="_s_x1272_8h.html#a56dbd355a1ffaca74216f41b24b03589">BSP_SX1272_setHeaderOFF</a></div><div class="ttdeci">int8_t BSP_SX1272_setHeaderOFF()</div><div class="ttdoc">Disable explicit header mode on the SX1272 module.</div><div class="ttdef"><b>Definition</b> SX1272.c:798</div></div>
 </div><!-- fragment --> </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589_icgraph.png" border="0" usemap="#a_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589_icgraph" id="a_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589_icgraph">
+<area shape="rect" title="Disable explicit header mode on the SX1272 module." alt="" coords="399,5,590,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a1df24c596c26847f4bf1056c97b27a7b" title="Set the spreading factor (SF) for LoRa mode." alt="" coords="210,5,351,32"/>
+<area shape="poly" title=" " alt="" coords="384,21,352,21,352,16,384,16"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,5,162,32"/>
+<area shape="poly" title=" " alt="" coords="195,21,162,21,162,16,195,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1458,7 +1272,7 @@ Variables</h2></td></tr>
 </ul>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The header is mandatory to be off when the spreading factor (SF) is 6.</dd></dl>
-<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">int8_t state = <a class="code hl_function" href="_s_x1272_8h.html#a772a707eed75deec1aabacb35a917eee">BSP_SX1272_setHeaderON</a>();</div>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line">int8_t state = BSP_SX1272_setHeaderON();</div>
 <div class="line"><span class="keywordflow">if</span> (state == 0) {</div>
 <div class="line">    <span class="comment">// Header activated successfully</span></div>
 <div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span> (state == 1) {</div>
@@ -1466,7 +1280,6 @@ Variables</h2></td></tr>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">    <span class="comment">// Error occurred or header not available in FSK mode</span></div>
 <div class="line">}</div>
-<div class="ttc" id="a_s_x1272_8h_html_a772a707eed75deec1aabacb35a917eee"><div class="ttname"><a href="_s_x1272_8h.html#a772a707eed75deec1aabacb35a917eee">BSP_SX1272_setHeaderON</a></div><div class="ttdeci">int8_t BSP_SX1272_setHeaderON()</div><div class="ttdoc">Enable explicit header mode on the SX1272 module.</div><div class="ttdef"><b>Definition</b> SX1272.c:722</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1494,25 +1307,30 @@ Variables</h2></td></tr>
 <li>2 : Erreur (échec de configuration)</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que les fonctions <a class="el" href="com_s_x1272_8h.html#acb6882118570a3b39f905f6b5739e006" title="Lit une valeur à partir d&#39;un registre spécifié du module SX1272.">BSP_SX1272_Read()</a> et <a class="el" href="com_s_x1272_8h.html#a4757fe52dcee2269d4f4635416c70881" title="Écrit une valeur dans un registre spécifié du module SX1272.">BSP_SX1272_Write()</a> sont disponibles pour lire et écrire dans les registres du module SX1272. </dd></dl>
-
+<dl class="section note"><dt>Note</dt><dd>Cette fonction assume que les fonctions BSP_SX1272_Read() et BSP_SX1272_Write() sont disponibles pour lire et écrire dans les registres du module SX1272. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a842904846734cb7ba7ca312f50dbe962_icgraph.png" border="0" usemap="#a_s_x1272_8c_a842904846734cb7ba7ca312f50dbe962_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a842904846734cb7ba7ca312f50dbe962_icgraph" id="a_s_x1272_8c_a842904846734cb7ba7ca312f50dbe962_icgraph">
+<area shape="rect" title="Configure le module SX1272 en mode LoRa." alt="" coords="414,132,573,159"/>
+<area shape="rect" href="_s_x1272_8c.html#a547aa32b39ad3d33de177364e6d99f4b" title="Récupère le mode actuel du module SX1272." alt="" coords="210,5,366,32"/>
+<area shape="poly" title=" " alt="" coords="466,124,421,84,365,46,339,35,341,30,367,42,424,80,470,120"/>
+<area shape="rect" href="_s_x1272_8c.html#a9d7faebf99dac4cfbb31d2681770373d" title="Active le module SX1272." alt="" coords="225,56,351,83"/>
+<area shape="poly" title=" " alt="" coords="445,128,365,97,332,86,334,81,367,92,447,123"/>
+<area shape="rect" href="_s_x1272_8c.html#ae95979ddf558956d68a10d0d052c99a4" title="Set the bandwidth for SX1272 module." alt="" coords="215,107,361,133"/>
+<area shape="poly" title=" " alt="" coords="399,136,361,132,362,126,400,131"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,183,162,209"/>
+<area shape="poly" title=" " alt="" coords="400,160,162,189,162,184,399,154"/>
+<area shape="rect" href="_s_x1272_8c.html#ac32a335af980f971d3acc103634723bc" title="Set the coding rate parameter for the SX1272 module." alt="" coords="217,208,359,235"/>
+<area shape="poly" title=" " alt="" coords="442,167,327,210,326,205,441,162"/>
+<area shape="rect" href="_s_x1272_8c.html#a1df24c596c26847f4bf1056c97b27a7b" title="Set the spreading factor (SF) for LoRa mode." alt="" coords="217,259,359,285"/>
+<area shape="poly" title=" " alt="" coords="470,171,424,211,367,249,341,260,339,256,365,244,421,206,466,167"/>
+<area shape="poly" title=" " alt="" coords="237,142,123,185,121,180,235,137"/>
+<area shape="poly" title=" " alt="" coords="202,213,162,208,163,203,203,208"/>
+<area shape="poly" title=" " alt="" coords="228,256,209,249,116,212,118,207,211,244,229,251"/>
+</map>
 </div>
-</div>
-<a id="acd285f2b7da34b9e7d8c9a7ccc12b841" name="acd285f2b7da34b9e7d8c9a7ccc12b841"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd285f2b7da34b9e7d8c9a7ccc12b841">&#9670;&#160;</a></span>BSP_SX1272_setMaxCurrent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int8_t BSP_SX1272_setMaxCurrent </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>rate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1544,142 +1362,39 @@ Variables</h2></td></tr>
 <li>-1: The indicated mode doesn't exist. </li>
 </ul>
 </dd></dl>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a1cd5da9228870a8136f5b630f1ea3de7_cgraph.png" border="0" usemap="#a_s_x1272_8c_a1cd5da9228870a8136f5b630f1ea3de7_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a1cd5da9228870a8136f5b630f1ea3de7_cgraph" id="a_s_x1272_8c_a1cd5da9228870a8136f5b630f1ea3de7_cgraph">
+<area shape="rect" title="Set the mode of the SX1272 module." alt="" coords="5,132,162,159"/>
+<area shape="rect" href="_s_x1272_8c.html#ae95979ddf558956d68a10d0d052c99a4" title="Set the bandwidth for SX1272 module." alt="" coords="210,56,356,83"/>
+<area shape="poly" title=" " alt="" coords="120,129,231,86,233,91,122,134"/>
+<area shape="rect" href="_s_x1272_8c.html#a842904846734cb7ba7ca312f50dbe962" title="Configure le module SX1272 en mode LoRa." alt="" coords="420,107,579,133"/>
+<area shape="poly" title=" " alt="" coords="162,138,405,123,406,128,162,143"/>
+<area shape="rect" href="_s_x1272_8c.html#ac32a335af980f971d3acc103634723bc" title="Set the coding rate parameter for the SX1272 module." alt="" coords="212,157,354,184"/>
+<area shape="poly" title=" " alt="" coords="162,153,198,157,197,162,162,158"/>
+<area shape="rect" href="_s_x1272_8c.html#a1df24c596c26847f4bf1056c97b27a7b" title="Set the spreading factor (SF) for LoRa mode." alt="" coords="212,208,354,235"/>
+<area shape="poly" title=" " alt="" coords="119,157,211,194,228,200,226,205,209,198,117,162"/>
+<area shape="rect" href="_s_x1272_8c.html#a6751a3479b78944fe7effc446663dc8c" title="Get the current spreading factor (SF) setting." alt="" coords="429,5,570,32"/>
+<area shape="poly" title=" " alt="" coords="343,53,425,33,426,39,344,58"/>
+<area shape="rect" href="_s_x1272_8c.html#a5901e53acaf3b4e01eef390fd865931a" title="Check if the specified bandwidth value is valid." alt="" coords="643,157,782,184"/>
+<area shape="poly" title=" " alt="" coords="357,63,471,67,535,76,596,92,646,116,686,145,683,150,643,121,594,97,533,81,471,72,357,68"/>
+<area shape="poly" title=" " alt="" coords="344,81,426,100,425,105,343,86"/>
+<area shape="rect" href="_s_x1272_8c.html#a0ba271766fea69ce3ae6582abc467945" title="Check if the given spreading factor (SF) is valid." alt="" coords="646,56,779,83"/>
+<area shape="poly" title=" " alt="" coords="560,30,640,49,639,55,558,35"/>
+<area shape="poly" title=" " alt="" coords="343,154,425,135,426,140,344,159"/>
+<area shape="rect" href="_s_x1272_8c.html#a95101467cb905ca8ad86a3e27b7ab790" title="Check if the coding rate value is valid." alt="" coords="433,157,567,184"/>
+<area shape="poly" title=" " alt="" coords="354,168,418,168,418,173,354,173"/>
+<area shape="poly" title=" " alt="" coords="354,227,409,229,471,226,534,215,594,194,687,92,691,96,597,198,535,220,471,231,409,234,354,232"/>
+<area shape="poly" title=" " alt="" coords="332,205,355,194,369,181,378,169,387,156,403,143,415,137,417,142,405,148,391,159,382,172,373,185,357,198,335,210"/>
+<area shape="rect" href="_s_x1272_8c.html#a7aa32db83358df833ff68ddd5d619d4a" title="Get the current bandwidth setting." alt="" coords="427,259,573,285"/>
+<area shape="poly" title=" " alt="" coords="344,233,426,252,425,257,343,238"/>
+<area shape="rect" href="_s_x1272_8c.html#a56dbd355a1ffaca74216f41b24b03589" title="Disable explicit header mode on the SX1272 module." alt="" coords="404,309,595,336"/>
+<area shape="poly" title=" " alt="" coords="304,233,349,264,405,295,423,302,421,307,403,300,346,269,301,237"/>
+<area shape="poly" title=" " alt="" coords="547,256,594,238,639,214,678,190,681,195,641,219,596,242,549,261"/>
+</map>
 </div>
-</div>
-<a id="a6515cd7aa4584753aa2c66a6252a98cb" name="a6515cd7aa4584753aa2c66a6252a98cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6515cd7aa4584753aa2c66a6252a98cb">&#9670;&#160;</a></span>BSP_SX1272_setNodeAddress()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int8_t BSP_SX1272_setNodeAddress </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>addr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a75fdce4e584eaae30fe80f0f748450cc" name="a75fdce4e584eaae30fe80f0f748450cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75fdce4e584eaae30fe80f0f748450cc">&#9670;&#160;</a></span>BSP_SX1272_setPacket()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_setPacket </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>payload</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac5b9a439bfcdced9233e9eb8aff7304c" name="ac5b9a439bfcdced9233e9eb8aff7304c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5b9a439bfcdced9233e9eb8aff7304c">&#9670;&#160;</a></span>BSP_SX1272_setPacketLength()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int8_t BSP_SX1272_setPacketLength </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>l</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa0cbfcbc7b594579e5d0905d108801a3" name="aa0cbfcbc7b594579e5d0905d108801a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0cbfcbc7b594579e5d0905d108801a3">&#9670;&#160;</a></span>BSP_SX1272_setPayload()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_setPayload </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>payload</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5134902998e6100ba14add58d32dafab" name="a5134902998e6100ba14add58d32dafab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5134902998e6100ba14add58d32dafab">&#9670;&#160;</a></span>BSP_SX1272_setPower()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int8_t BSP_SX1272_setPower </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>pow</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1130a38eed7d8451a2993ab3b197f06a" name="a1130a38eed7d8451a2993ab3b197f06a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1130a38eed7d8451a2993ab3b197f06a">&#9670;&#160;</a></span>BSP_SX1272_setPreambleLength()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_setPreambleLength </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>l</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab42e954f6a0cb2c9106ee686487ca7b2" name="ab42e954f6a0cb2c9106ee686487ca7b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab42e954f6a0cb2c9106ee686487ca7b2">&#9670;&#160;</a></span>BSP_SX1272_setRetries()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_setRetries </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>ret</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1710,59 +1425,34 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>0 if the spreading factor is successfully set, 1 if there was an error, or -1 if the device is in FSK mode where spreading factor is not applicable. </dd></dl>
 <p>FSK mode</p>
 <p>LoRa mode</p>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_cgraph.png" border="0" usemap="#a_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_cgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_cgraph" id="a_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_cgraph">
+<area shape="rect" title="Set the spreading factor (SF) for LoRa mode." alt="" coords="5,81,147,108"/>
+<area shape="rect" href="_s_x1272_8c.html#a7aa32db83358df833ff68ddd5d619d4a" title="Get the current bandwidth setting." alt="" coords="217,5,364,32"/>
+<area shape="poly" title=" " alt="" coords="105,78,194,41,217,34,219,39,196,47,107,83"/>
+<area shape="rect" href="_s_x1272_8c.html#a0ba271766fea69ce3ae6582abc467945" title="Check if the given spreading factor (SF) is valid." alt="" coords="224,56,357,83"/>
+<area shape="poly" title=" " alt="" coords="147,84,208,76,209,82,148,89"/>
+<area shape="rect" href="_s_x1272_8c.html#a56dbd355a1ffaca74216f41b24b03589" title="Disable explicit header mode on the SX1272 module." alt="" coords="195,107,386,133"/>
+<area shape="poly" title=" " alt="" coords="148,100,180,104,179,110,147,106"/>
+<area shape="rect" href="_s_x1272_8c.html#a842904846734cb7ba7ca312f50dbe962" title="Configure le module SX1272 en mode LoRa." alt="" coords="211,157,370,184"/>
+<area shape="poly" title=" " alt="" coords="107,106,196,143,219,150,217,155,194,148,105,111"/>
+<area shape="rect" href="_s_x1272_8c.html#a5901e53acaf3b4e01eef390fd865931a" title="Check if the specified bandwidth value is valid." alt="" coords="434,5,572,32"/>
+<area shape="poly" title=" " alt="" coords="364,16,419,16,419,21,364,21"/>
+</map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_icgraph.png" border="0" usemap="#a_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_icgraph" id="a_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_icgraph">
+<area shape="rect" title="Set the spreading factor (SF) for LoRa mode." alt="" coords="210,5,351,32"/>
+<area shape="rect" href="_s_x1272_8c.html#a1cd5da9228870a8136f5b630f1ea3de7" title="Set the mode of the SX1272 module." alt="" coords="5,5,162,32"/>
+<area shape="poly" title=" " alt="" coords="195,21,162,21,162,16,195,16"/>
+</map>
 </div>
-<a id="a6d032d3d080e5622e8b76405eaecf7fb" name="a6d032d3d080e5622e8b76405eaecf7fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d032d3d080e5622e8b76405eaecf7fb">&#9670;&#160;</a></span>BSP_SX1272_setTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_setTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a41fb8596538c1f8e32fdc582e0cda788" name="a41fb8596538c1f8e32fdc582e0cda788"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41fb8596538c1f8e32fdc582e0cda788">&#9670;&#160;</a></span>BSP_SX1272_timeOnAir()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float BSP_SX1272_timeOnAir </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>payloadlength</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4268a6255ab4637f78205e4b9b51ae30" name="a4268a6255ab4637f78205e4b9b51ae30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4268a6255ab4637f78205e4b9b51ae30">&#9670;&#160;</a></span>BSP_SX1272_truncPayload()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BSP_SX1272_truncPayload </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>length16</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1792,23 +1482,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Find maximum between two numbers. </p>
-
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7_icgraph.png" border="0" usemap="#a_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7_icgraph" alt=""/></div>
+<map name="a_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7_icgraph" id="a_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7_icgraph">
+<area shape="rect" title=" " alt="" coords="123,31,169,57"/>
+<area shape="rect" href="group___c_m_s_i_s___core___instruction_interface.html#ga372c0535573dde3e37f0f08c774a3487" title="Signed Saturate." alt="" coords="5,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="108,38,74,30,76,24,109,33"/>
+<area shape="rect" href="group___c_m_s_i_s___core___instruction_interface.html#ga6562dbd8182d1571e22dbca7ebdfa9bc" title="Unsigned Saturate." alt="" coords="5,56,75,83"/>
+<area shape="poly" title=" " alt="" coords="109,55,76,64,74,58,108,50"/>
+</map>
 </div>
-</div>
-<a id="a940b7d59de47e1432c355fca01620ac3" name="a940b7d59de47e1432c355fca01620ac3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a940b7d59de47e1432c355fca01620ac3">&#9670;&#160;</a></span>millis()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int millis </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1826,7 +1511,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>État actuel du module SX1272. </p>
-<p>Cette variable globale externe est déclarée dans le fichier <a class="el" href="_s_x1272_8h.html">SX1272.h</a>. Elle est utilisée pour suivre l'état actuel du module SX1272. </p>
+<p>Cette variable globale externe est déclarée dans le fichier <a class="el" href="_s_x1272_8h_source.html">SX1272.h</a>. Elle est utilisée pour suivre l'état actuel du module SX1272. </p>
 
 </div>
 </div>

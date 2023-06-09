@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lora: STM32/cmsis/core/cmsis_compiler.h Source File</title>
+<title>Réseau par competition: C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/cmsis/core/cmsis_compiler.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="09_SE (1).jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Lora
+   <div id="projectname">Réseau par competition
    </div>
+   <div id="projectbrief">Projet étudiant visant à développer un réseau par compétition utilisant des communications Lora</div>
   </td>
  </tr>
  </tbody>
@@ -169,19 +171,19 @@ $(function() {
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">    #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))-&gt;v)</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT16_WRITE</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#ac962a9aa89cef6e5cde0fe6b067f7de3">T_UINT16_WRITE</a> { uint16_t v; };</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">    #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void*)(addr))-&gt;v) = (val))</span></div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT16_READ</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#a86899dc41c5b3b9ce6b8014ee0e852b9">T_UINT16_READ</a> { uint16_t v; };</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    __PACKED_STRUCT T_UINT16_READ { uint16_t v; };</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">    #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(addr))-&gt;v)</span></div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT32_WRITE</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#abbd193dec7cb45f1fbd05ff7e366ffe2">T_UINT32_WRITE</a> { uint32_t v; };</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">    #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-&gt;v) = (val))</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT32_READ</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#a9653a1cbf01ec418e8e940ee3996b8ca">T_UINT32_READ</a> { uint32_t v; };</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    __PACKED_STRUCT T_UINT32_READ { uint32_t v; };</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">    #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(addr))-&gt;v)</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">  #ifndef   __ALIGNED</span></div>
@@ -238,19 +240,19 @@ $(function() {
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">    #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))-&gt;v)</span></div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT16_WRITE</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#ac962a9aa89cef6e5cde0fe6b067f7de3">T_UINT16_WRITE</a> { uint16_t v; };</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">    #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-&gt;v) = (val))</span></div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT16_READ</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#a86899dc41c5b3b9ce6b8014ee0e852b9">T_UINT16_READ</a> { uint16_t v; };</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    __PACKED_STRUCT T_UINT16_READ { uint16_t v; };</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">    #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(addr))-&gt;v)</span></div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT32_WRITE</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#abbd193dec7cb45f1fbd05ff7e366ffe2">T_UINT32_WRITE</a> { uint32_t v; };</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">    #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-&gt;v) = (val))</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT32_READ</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#a9653a1cbf01ec418e8e940ee3996b8ca">T_UINT32_READ</a> { uint32_t v; };</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    __PACKED_STRUCT T_UINT32_READ { uint32_t v; };</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">    #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(addr))-&gt;v)</span></div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">  #ifndef   __ALIGNED</span></div>
@@ -305,19 +307,19 @@ $(function() {
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">    #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))-&gt;v)</span></div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT16_WRITE</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#ac962a9aa89cef6e5cde0fe6b067f7de3">T_UINT16_WRITE</a> { uint16_t v; };</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">    #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-&gt;v) = (val))</span></div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT16_READ</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#a86899dc41c5b3b9ce6b8014ee0e852b9">T_UINT16_READ</a> { uint16_t v; };</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    __PACKED_STRUCT T_UINT16_READ { uint16_t v; };</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="preprocessor">    #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(addr))-&gt;v)</span></div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT32_WRITE</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#abbd193dec7cb45f1fbd05ff7e366ffe2">T_UINT32_WRITE</a> { uint32_t v; };</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">    #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-&gt;v) = (val))</span></div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">  #ifndef   __UNALIGNED_UINT32_READ</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <a class="code hl_define" href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a> <a class="code hl_variable" href="cmsis__armclang_8h.html#a9653a1cbf01ec418e8e940ee3996b8ca">T_UINT32_READ</a> { uint32_t v; };</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    __PACKED_STRUCT T_UINT32_READ { uint32_t v; };</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="preprocessor">    #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(addr))-&gt;v)</span></div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">  #ifndef   __ALIGNED</span></div>
@@ -338,12 +340,7 @@ $(function() {
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="preprocessor">#endif </span><span class="comment">/* __CMSIS_COMPILER_H */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
 <div class="ttc" id="acmsis__armcc_8h_html"><div class="ttname"><a href="cmsis__armcc_8h.html">cmsis_armcc.h</a></div><div class="ttdoc">CMSIS compiler ARMCC (Arm Compiler 5) header file.</div></div>
-<div class="ttc" id="acmsis__armcc_8h_html_a4dbb70fab85207c27b581ecb6532b314"><div class="ttname"><a href="cmsis__armcc_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a></div><div class="ttdeci">#define __PACKED_STRUCT</div><div class="ttdef"><b>Definition</b> cmsis_armcc.h:77</div></div>
 <div class="ttc" id="acmsis__armclang_8h_html"><div class="ttname"><a href="cmsis__armclang_8h.html">cmsis_armclang.h</a></div><div class="ttdoc">CMSIS compiler armclang (Arm Compiler 6) header file.</div></div>
-<div class="ttc" id="acmsis__armclang_8h_html_a86899dc41c5b3b9ce6b8014ee0e852b9"><div class="ttname"><a href="cmsis__armclang_8h.html#a86899dc41c5b3b9ce6b8014ee0e852b9">T_UINT16_READ</a></div><div class="ttdeci">__PACKED_STRUCT T_UINT16_READ</div><div class="ttdef"><b>Definition</b> cmsis_armclang.h:87</div></div>
-<div class="ttc" id="acmsis__armclang_8h_html_a9653a1cbf01ec418e8e940ee3996b8ca"><div class="ttname"><a href="cmsis__armclang_8h.html#a9653a1cbf01ec418e8e940ee3996b8ca">T_UINT32_READ</a></div><div class="ttdeci">__PACKED_STRUCT T_UINT32_READ</div><div class="ttdef"><b>Definition</b> cmsis_armclang.h:103</div></div>
-<div class="ttc" id="acmsis__armclang_8h_html_abbd193dec7cb45f1fbd05ff7e366ffe2"><div class="ttname"><a href="cmsis__armclang_8h.html#abbd193dec7cb45f1fbd05ff7e366ffe2">T_UINT32_WRITE</a></div><div class="ttdeci">__PACKED_STRUCT T_UINT32_WRITE</div><div class="ttdef"><b>Definition</b> cmsis_armclang.h:95</div></div>
-<div class="ttc" id="acmsis__armclang_8h_html_ac962a9aa89cef6e5cde0fe6b067f7de3"><div class="ttname"><a href="cmsis__armclang_8h.html#ac962a9aa89cef6e5cde0fe6b067f7de3">T_UINT16_WRITE</a></div><div class="ttdeci">__PACKED_STRUCT T_UINT16_WRITE</div><div class="ttdef"><b>Definition</b> cmsis_armclang.h:79</div></div>
 <div class="ttc" id="acmsis__gcc_8h_html"><div class="ttname"><a href="cmsis__gcc_8h.html">cmsis_gcc.h</a></div><div class="ttdoc">CMSIS compiler GCC header file.</div></div>
 <div class="ttc" id="acmsis__iccarm_8h_html"><div class="ttname"><a href="cmsis__iccarm_8h.html">cmsis_iccarm.h</a></div><div class="ttdoc">CMSIS compiler ICCARM (IAR Compiler for Arm) header file.</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s___core___instruction_interface_html_gae84a2733711339c5eefeb0d899506b96"><div class="ttname"><a href="group___c_m_s_i_s___core___instruction_interface.html#gae84a2733711339c5eefeb0d899506b96">__attribute__</a></div><div class="ttdeci">__attribute__((section(&quot;.rev16_text&quot;))) __STATIC_INLINE __ASM uint32_t __REV16(uint32_t value)</div><div class="ttdoc">Reverse byte order (16 bit)</div><div class="ttdef"><b>Definition</b> cmsis_armcc.h:463</div></div>

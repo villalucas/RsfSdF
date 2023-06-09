@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lora: System Control Block (SCB)</title>
+<title>Réseau par competition: System Control Block (SCB)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="09_SE (1).jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Lora
+   <div id="projectname">Réseau par competition
    </div>
+   <div id="projectbrief">Projet étudiant visant à développer un réseau par compétition utilisant des communications Lora</div>
   </td>
  </tr>
  </tbody>
@@ -79,6 +81,17 @@ $(function() {
 
 <p>Type definitions for the System Control Block Registers.  
 <a href="#details">More...</a></p>
+<div class="dynheader">
+Collaboration diagram for System Control Block (SCB):</div>
+<div class="dyncontent">
+<div class="center"><img src="group___c_m_s_i_s___s_c_b.png" border="0" usemap="#agroup______c__m__s__i__s______s__c__b" alt=""/></div>
+<map name="agroup______c__m__s__i__s______s__c__b" id="agroup______c__m__s__i__s______s__c__b">
+<area shape="rect" href="group___c_m_s_i_s___n_v_i_c.html" title="Type definitions for the NVIC Registers." alt="" coords="5,39,175,81"/>
+<area shape="rect" title="Type definitions for the System Control Block Registers." alt="" coords="223,39,371,81"/>
+<area shape="rect" href="group___c_m_s_i_s___s_cn_s_c_b.html" title="Type definitions for the System Control and ID Register not in the SCB." alt="" coords="419,5,559,48"/>
+<area shape="rect" href="group___c_m_s_i_s___sys_tick.html" title="Type definitions for the System Timer Registers." alt="" coords="422,72,556,115"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Modules</h2></td></tr>
@@ -297,41 +310,59 @@ Macros</h2></td></tr>
 <tr class="separator:ga3eb88e444b678057db1b59272eebb1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5e5ed94cac1139165af161c008881805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga5e5ed94cac1139165af161c008881805">CoreDebug_DSCSR_SBRSELEN_Msk</a>&#160;&#160;&#160;(1UL /*&lt;&lt; <a class="el" href="group___c_m_s_i_s___s_c_b.html#ga3eb88e444b678057db1b59272eebb1ad">CoreDebug_DSCSR_SBRSELEN_Pos</a>*/)</td></tr>
 <tr class="separator:ga5e5ed94cac1139165af161c008881805"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabaa62910bf89acc186ae998c611e64ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gabaa62910bf89acc186ae998c611e64ab">FNC_RETURN</a>&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td></tr>
+<tr class="memitem:gabaa62910bf89acc186ae998c611e64ab"><td class="memItemLeft" align="right" valign="top"><a id="gabaa62910bf89acc186ae998c611e64ab" name="gabaa62910bf89acc186ae998c611e64ab"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FNC_RETURN</b>&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td></tr>
 <tr class="separator:gabaa62910bf89acc186ae998c611e64ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga99e0c1c19f050880a8bd827a7f420bec">EXC_RETURN_PREFIX</a>&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td></tr>
+<tr class="memitem:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memItemLeft" align="right" valign="top"><a id="ga99e0c1c19f050880a8bd827a7f420bec" name="ga99e0c1c19f050880a8bd827a7f420bec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_PREFIX</b>&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td></tr>
 <tr class="separator:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88711355d0196b1ffeb18c33e2c95360"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga88711355d0196b1ffeb18c33e2c95360">EXC_RETURN_S</a>&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td></tr>
+<tr class="memitem:ga88711355d0196b1ffeb18c33e2c95360"><td class="memItemLeft" align="right" valign="top"><a id="ga88711355d0196b1ffeb18c33e2c95360" name="ga88711355d0196b1ffeb18c33e2c95360"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_S</b>&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td></tr>
 <tr class="separator:ga88711355d0196b1ffeb18c33e2c95360"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga0a0f2c03b4aef2c02bdae044bda1324b">EXC_RETURN_DCRS</a>&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td></tr>
+<tr class="memitem:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memItemLeft" align="right" valign="top"><a id="ga0a0f2c03b4aef2c02bdae044bda1324b" name="ga0a0f2c03b4aef2c02bdae044bda1324b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_DCRS</b>&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td></tr>
 <tr class="separator:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga342b51c3eec59822bf206e24ef881a9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga342b51c3eec59822bf206e24ef881a9e">EXC_RETURN_FTYPE</a>&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td></tr>
+<tr class="memitem:ga342b51c3eec59822bf206e24ef881a9e"><td class="memItemLeft" align="right" valign="top"><a id="ga342b51c3eec59822bf206e24ef881a9e" name="ga342b51c3eec59822bf206e24ef881a9e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_FTYPE</b>&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td></tr>
 <tr class="separator:ga342b51c3eec59822bf206e24ef881a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb65f847769a7807395b2739cc9702d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gabb65f847769a7807395b2739cc9702d0">EXC_RETURN_MODE</a>&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td></tr>
+<tr class="memitem:gabb65f847769a7807395b2739cc9702d0"><td class="memItemLeft" align="right" valign="top"><a id="gabb65f847769a7807395b2739cc9702d0" name="gabb65f847769a7807395b2739cc9702d0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_MODE</b>&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td></tr>
 <tr class="separator:gabb65f847769a7807395b2739cc9702d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga686922b26c29eac540f53a6213627466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga686922b26c29eac540f53a6213627466">EXC_RETURN_SPSEL</a>&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td></tr>
+<tr class="memitem:ga686922b26c29eac540f53a6213627466"><td class="memItemLeft" align="right" valign="top"><a id="ga686922b26c29eac540f53a6213627466" name="ga686922b26c29eac540f53a6213627466"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_SPSEL</b>&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td></tr>
 <tr class="separator:ga686922b26c29eac540f53a6213627466"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac939dbf69d3063c76a28516a4ae84db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gac939dbf69d3063c76a28516a4ae84db7">EXC_RETURN_ES</a>&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td></tr>
+<tr class="memitem:gac939dbf69d3063c76a28516a4ae84db7"><td class="memItemLeft" align="right" valign="top"><a id="gac939dbf69d3063c76a28516a4ae84db7" name="gac939dbf69d3063c76a28516a4ae84db7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_ES</b>&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td></tr>
 <tr class="separator:gac939dbf69d3063c76a28516a4ae84db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga7d1b21b2d863ccd9e23a3295b3173155">EXC_INTEGRITY_SIGNATURE</a>&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td></tr>
+<tr class="memitem:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memItemLeft" align="right" valign="top"><a id="ga7d1b21b2d863ccd9e23a3295b3173155" name="ga7d1b21b2d863ccd9e23a3295b3173155"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_INTEGRITY_SIGNATURE</b>&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td></tr>
 <tr class="separator:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabaa62910bf89acc186ae998c611e64ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gabaa62910bf89acc186ae998c611e64ab">FNC_RETURN</a>&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td></tr>
+<tr class="memitem:gabaa62910bf89acc186ae998c611e64ab"><td class="memItemLeft" align="right" valign="top"><a id="gabaa62910bf89acc186ae998c611e64ab" name="gabaa62910bf89acc186ae998c611e64ab"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FNC_RETURN</b>&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td></tr>
 <tr class="separator:gabaa62910bf89acc186ae998c611e64ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga99e0c1c19f050880a8bd827a7f420bec">EXC_RETURN_PREFIX</a>&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td></tr>
+<tr class="memitem:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memItemLeft" align="right" valign="top"><a id="ga99e0c1c19f050880a8bd827a7f420bec" name="ga99e0c1c19f050880a8bd827a7f420bec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_PREFIX</b>&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td></tr>
 <tr class="separator:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88711355d0196b1ffeb18c33e2c95360"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga88711355d0196b1ffeb18c33e2c95360">EXC_RETURN_S</a>&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td></tr>
+<tr class="memitem:ga88711355d0196b1ffeb18c33e2c95360"><td class="memItemLeft" align="right" valign="top"><a id="ga88711355d0196b1ffeb18c33e2c95360" name="ga88711355d0196b1ffeb18c33e2c95360"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_S</b>&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td></tr>
 <tr class="separator:ga88711355d0196b1ffeb18c33e2c95360"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga0a0f2c03b4aef2c02bdae044bda1324b">EXC_RETURN_DCRS</a>&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td></tr>
+<tr class="memitem:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memItemLeft" align="right" valign="top"><a id="ga0a0f2c03b4aef2c02bdae044bda1324b" name="ga0a0f2c03b4aef2c02bdae044bda1324b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_DCRS</b>&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td></tr>
 <tr class="separator:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga342b51c3eec59822bf206e24ef881a9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga342b51c3eec59822bf206e24ef881a9e">EXC_RETURN_FTYPE</a>&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td></tr>
+<tr class="memitem:ga342b51c3eec59822bf206e24ef881a9e"><td class="memItemLeft" align="right" valign="top"><a id="ga342b51c3eec59822bf206e24ef881a9e" name="ga342b51c3eec59822bf206e24ef881a9e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_FTYPE</b>&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td></tr>
 <tr class="separator:ga342b51c3eec59822bf206e24ef881a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb65f847769a7807395b2739cc9702d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gabb65f847769a7807395b2739cc9702d0">EXC_RETURN_MODE</a>&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td></tr>
+<tr class="memitem:gabb65f847769a7807395b2739cc9702d0"><td class="memItemLeft" align="right" valign="top"><a id="gabb65f847769a7807395b2739cc9702d0" name="gabb65f847769a7807395b2739cc9702d0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_MODE</b>&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td></tr>
 <tr class="separator:gabb65f847769a7807395b2739cc9702d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga686922b26c29eac540f53a6213627466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga686922b26c29eac540f53a6213627466">EXC_RETURN_SPSEL</a>&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td></tr>
+<tr class="memitem:ga686922b26c29eac540f53a6213627466"><td class="memItemLeft" align="right" valign="top"><a id="ga686922b26c29eac540f53a6213627466" name="ga686922b26c29eac540f53a6213627466"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_SPSEL</b>&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td></tr>
 <tr class="separator:ga686922b26c29eac540f53a6213627466"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac939dbf69d3063c76a28516a4ae84db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gac939dbf69d3063c76a28516a4ae84db7">EXC_RETURN_ES</a>&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td></tr>
+<tr class="memitem:gac939dbf69d3063c76a28516a4ae84db7"><td class="memItemLeft" align="right" valign="top"><a id="gac939dbf69d3063c76a28516a4ae84db7" name="gac939dbf69d3063c76a28516a4ae84db7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_ES</b>&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td></tr>
 <tr class="separator:gac939dbf69d3063c76a28516a4ae84db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga7d1b21b2d863ccd9e23a3295b3173155">EXC_INTEGRITY_SIGNATURE</a>&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td></tr>
+<tr class="memitem:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memItemLeft" align="right" valign="top"><a id="ga7d1b21b2d863ccd9e23a3295b3173155" name="ga7d1b21b2d863ccd9e23a3295b3173155"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_INTEGRITY_SIGNATURE</b>&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td></tr>
 <tr class="separator:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga58686b88f94f789d4e6f429fe1ff58cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___c_o_r_e.html#ga58686b88f94f789d4e6f429fe1ff58cf">SCB_CPUID_IMPLEMENTER_Pos</a>&#160;&#160;&#160;24U</td></tr>
 <tr class="separator:ga58686b88f94f789d4e6f429fe1ff58cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3025,23 +3056,32 @@ Macros</h2></td></tr>
 <tr class="separator:ga3eb88e444b678057db1b59272eebb1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5e5ed94cac1139165af161c008881805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga5e5ed94cac1139165af161c008881805">CoreDebug_DSCSR_SBRSELEN_Msk</a>&#160;&#160;&#160;(1UL /*&lt;&lt; <a class="el" href="group___c_m_s_i_s___s_c_b.html#ga3eb88e444b678057db1b59272eebb1ad">CoreDebug_DSCSR_SBRSELEN_Pos</a>*/)</td></tr>
 <tr class="separator:ga5e5ed94cac1139165af161c008881805"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabaa62910bf89acc186ae998c611e64ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gabaa62910bf89acc186ae998c611e64ab">FNC_RETURN</a>&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td></tr>
+<tr class="memitem:gabaa62910bf89acc186ae998c611e64ab"><td class="memItemLeft" align="right" valign="top"><a id="gabaa62910bf89acc186ae998c611e64ab" name="gabaa62910bf89acc186ae998c611e64ab"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FNC_RETURN</b>&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td></tr>
 <tr class="separator:gabaa62910bf89acc186ae998c611e64ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga99e0c1c19f050880a8bd827a7f420bec">EXC_RETURN_PREFIX</a>&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td></tr>
+<tr class="memitem:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memItemLeft" align="right" valign="top"><a id="ga99e0c1c19f050880a8bd827a7f420bec" name="ga99e0c1c19f050880a8bd827a7f420bec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_PREFIX</b>&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td></tr>
 <tr class="separator:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88711355d0196b1ffeb18c33e2c95360"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga88711355d0196b1ffeb18c33e2c95360">EXC_RETURN_S</a>&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td></tr>
+<tr class="memitem:ga88711355d0196b1ffeb18c33e2c95360"><td class="memItemLeft" align="right" valign="top"><a id="ga88711355d0196b1ffeb18c33e2c95360" name="ga88711355d0196b1ffeb18c33e2c95360"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_S</b>&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td></tr>
 <tr class="separator:ga88711355d0196b1ffeb18c33e2c95360"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga0a0f2c03b4aef2c02bdae044bda1324b">EXC_RETURN_DCRS</a>&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td></tr>
+<tr class="memitem:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memItemLeft" align="right" valign="top"><a id="ga0a0f2c03b4aef2c02bdae044bda1324b" name="ga0a0f2c03b4aef2c02bdae044bda1324b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_DCRS</b>&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td></tr>
 <tr class="separator:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga342b51c3eec59822bf206e24ef881a9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga342b51c3eec59822bf206e24ef881a9e">EXC_RETURN_FTYPE</a>&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td></tr>
+<tr class="memitem:ga342b51c3eec59822bf206e24ef881a9e"><td class="memItemLeft" align="right" valign="top"><a id="ga342b51c3eec59822bf206e24ef881a9e" name="ga342b51c3eec59822bf206e24ef881a9e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_FTYPE</b>&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td></tr>
 <tr class="separator:ga342b51c3eec59822bf206e24ef881a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb65f847769a7807395b2739cc9702d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gabb65f847769a7807395b2739cc9702d0">EXC_RETURN_MODE</a>&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td></tr>
+<tr class="memitem:gabb65f847769a7807395b2739cc9702d0"><td class="memItemLeft" align="right" valign="top"><a id="gabb65f847769a7807395b2739cc9702d0" name="gabb65f847769a7807395b2739cc9702d0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_MODE</b>&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td></tr>
 <tr class="separator:gabb65f847769a7807395b2739cc9702d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga686922b26c29eac540f53a6213627466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga686922b26c29eac540f53a6213627466">EXC_RETURN_SPSEL</a>&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td></tr>
+<tr class="memitem:ga686922b26c29eac540f53a6213627466"><td class="memItemLeft" align="right" valign="top"><a id="ga686922b26c29eac540f53a6213627466" name="ga686922b26c29eac540f53a6213627466"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_SPSEL</b>&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td></tr>
 <tr class="separator:ga686922b26c29eac540f53a6213627466"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac939dbf69d3063c76a28516a4ae84db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gac939dbf69d3063c76a28516a4ae84db7">EXC_RETURN_ES</a>&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td></tr>
+<tr class="memitem:gac939dbf69d3063c76a28516a4ae84db7"><td class="memItemLeft" align="right" valign="top"><a id="gac939dbf69d3063c76a28516a4ae84db7" name="gac939dbf69d3063c76a28516a4ae84db7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_ES</b>&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td></tr>
 <tr class="separator:gac939dbf69d3063c76a28516a4ae84db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga7d1b21b2d863ccd9e23a3295b3173155">EXC_INTEGRITY_SIGNATURE</a>&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td></tr>
+<tr class="memitem:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memItemLeft" align="right" valign="top"><a id="ga7d1b21b2d863ccd9e23a3295b3173155" name="ga7d1b21b2d863ccd9e23a3295b3173155"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_INTEGRITY_SIGNATURE</b>&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td></tr>
 <tr class="separator:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae5dfe4049c2291e413f8713d7bd2bb1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gae5dfe4049c2291e413f8713d7bd2bb1b">DWT_FUNCTION_ID_Pos</a>&#160;&#160;&#160;27U</td></tr>
 <tr class="separator:gae5dfe4049c2291e413f8713d7bd2bb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3183,23 +3223,32 @@ Macros</h2></td></tr>
 <tr class="separator:ga3eb88e444b678057db1b59272eebb1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5e5ed94cac1139165af161c008881805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga5e5ed94cac1139165af161c008881805">CoreDebug_DSCSR_SBRSELEN_Msk</a>&#160;&#160;&#160;(1UL /*&lt;&lt; <a class="el" href="group___c_m_s_i_s___s_c_b.html#ga3eb88e444b678057db1b59272eebb1ad">CoreDebug_DSCSR_SBRSELEN_Pos</a>*/)</td></tr>
 <tr class="separator:ga5e5ed94cac1139165af161c008881805"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabaa62910bf89acc186ae998c611e64ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gabaa62910bf89acc186ae998c611e64ab">FNC_RETURN</a>&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td></tr>
+<tr class="memitem:gabaa62910bf89acc186ae998c611e64ab"><td class="memItemLeft" align="right" valign="top"><a id="gabaa62910bf89acc186ae998c611e64ab" name="gabaa62910bf89acc186ae998c611e64ab"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FNC_RETURN</b>&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td></tr>
 <tr class="separator:gabaa62910bf89acc186ae998c611e64ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga99e0c1c19f050880a8bd827a7f420bec">EXC_RETURN_PREFIX</a>&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td></tr>
+<tr class="memitem:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memItemLeft" align="right" valign="top"><a id="ga99e0c1c19f050880a8bd827a7f420bec" name="ga99e0c1c19f050880a8bd827a7f420bec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_PREFIX</b>&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td></tr>
 <tr class="separator:ga99e0c1c19f050880a8bd827a7f420bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88711355d0196b1ffeb18c33e2c95360"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga88711355d0196b1ffeb18c33e2c95360">EXC_RETURN_S</a>&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td></tr>
+<tr class="memitem:ga88711355d0196b1ffeb18c33e2c95360"><td class="memItemLeft" align="right" valign="top"><a id="ga88711355d0196b1ffeb18c33e2c95360" name="ga88711355d0196b1ffeb18c33e2c95360"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_S</b>&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td></tr>
 <tr class="separator:ga88711355d0196b1ffeb18c33e2c95360"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga0a0f2c03b4aef2c02bdae044bda1324b">EXC_RETURN_DCRS</a>&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td></tr>
+<tr class="memitem:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memItemLeft" align="right" valign="top"><a id="ga0a0f2c03b4aef2c02bdae044bda1324b" name="ga0a0f2c03b4aef2c02bdae044bda1324b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_DCRS</b>&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td></tr>
 <tr class="separator:ga0a0f2c03b4aef2c02bdae044bda1324b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga342b51c3eec59822bf206e24ef881a9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga342b51c3eec59822bf206e24ef881a9e">EXC_RETURN_FTYPE</a>&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td></tr>
+<tr class="memitem:ga342b51c3eec59822bf206e24ef881a9e"><td class="memItemLeft" align="right" valign="top"><a id="ga342b51c3eec59822bf206e24ef881a9e" name="ga342b51c3eec59822bf206e24ef881a9e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_FTYPE</b>&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td></tr>
 <tr class="separator:ga342b51c3eec59822bf206e24ef881a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb65f847769a7807395b2739cc9702d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gabb65f847769a7807395b2739cc9702d0">EXC_RETURN_MODE</a>&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td></tr>
+<tr class="memitem:gabb65f847769a7807395b2739cc9702d0"><td class="memItemLeft" align="right" valign="top"><a id="gabb65f847769a7807395b2739cc9702d0" name="gabb65f847769a7807395b2739cc9702d0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_MODE</b>&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td></tr>
 <tr class="separator:gabb65f847769a7807395b2739cc9702d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga686922b26c29eac540f53a6213627466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga686922b26c29eac540f53a6213627466">EXC_RETURN_SPSEL</a>&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td></tr>
+<tr class="memitem:ga686922b26c29eac540f53a6213627466"><td class="memItemLeft" align="right" valign="top"><a id="ga686922b26c29eac540f53a6213627466" name="ga686922b26c29eac540f53a6213627466"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_SPSEL</b>&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td></tr>
 <tr class="separator:ga686922b26c29eac540f53a6213627466"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac939dbf69d3063c76a28516a4ae84db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#gac939dbf69d3063c76a28516a4ae84db7">EXC_RETURN_ES</a>&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td></tr>
+<tr class="memitem:gac939dbf69d3063c76a28516a4ae84db7"><td class="memItemLeft" align="right" valign="top"><a id="gac939dbf69d3063c76a28516a4ae84db7" name="gac939dbf69d3063c76a28516a4ae84db7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_RETURN_ES</b>&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td></tr>
 <tr class="separator:gac939dbf69d3063c76a28516a4ae84db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga7d1b21b2d863ccd9e23a3295b3173155">EXC_INTEGRITY_SIGNATURE</a>&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td></tr>
+<tr class="memitem:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memItemLeft" align="right" valign="top"><a id="ga7d1b21b2d863ccd9e23a3295b3173155" name="ga7d1b21b2d863ccd9e23a3295b3173155"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXC_INTEGRITY_SIGNATURE</b>&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td></tr>
 <tr class="separator:ga7d1b21b2d863ccd9e23a3295b3173155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2a729c850e865d602bbf25852c7d44fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___s_c_b.html#ga2a729c850e865d602bbf25852c7d44fe">SCB_CCR_BP_Pos</a>&#160;&#160;&#160;18U</td></tr>
 <tr class="separator:ga2a729c850e865d602bbf25852c7d44fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5214,510 +5263,6 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>DWT FUNCTION: MATCH Position </p>
-
-</div>
-</div>
-<a id="ga7d1b21b2d863ccd9e23a3295b3173155" name="ga7d1b21b2d863ccd9e23a3295b3173155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7d1b21b2d863ccd9e23a3295b3173155">&#9670;&#160;</a></span>EXC_INTEGRITY_SIGNATURE <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_INTEGRITY_SIGNATURE&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga7d1b21b2d863ccd9e23a3295b3173155" name="ga7d1b21b2d863ccd9e23a3295b3173155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7d1b21b2d863ccd9e23a3295b3173155">&#9670;&#160;</a></span>EXC_INTEGRITY_SIGNATURE <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_INTEGRITY_SIGNATURE&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga7d1b21b2d863ccd9e23a3295b3173155" name="ga7d1b21b2d863ccd9e23a3295b3173155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7d1b21b2d863ccd9e23a3295b3173155">&#9670;&#160;</a></span>EXC_INTEGRITY_SIGNATURE <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_INTEGRITY_SIGNATURE&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga7d1b21b2d863ccd9e23a3295b3173155" name="ga7d1b21b2d863ccd9e23a3295b3173155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7d1b21b2d863ccd9e23a3295b3173155">&#9670;&#160;</a></span>EXC_INTEGRITY_SIGNATURE <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_INTEGRITY_SIGNATURE&#160;&#160;&#160;(0xFEFA125BUL)     /* Value for processors without floating-point extension                */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga0a0f2c03b4aef2c02bdae044bda1324b" name="ga0a0f2c03b4aef2c02bdae044bda1324b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0a0f2c03b4aef2c02bdae044bda1324b">&#9670;&#160;</a></span>EXC_RETURN_DCRS <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_DCRS&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga0a0f2c03b4aef2c02bdae044bda1324b" name="ga0a0f2c03b4aef2c02bdae044bda1324b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0a0f2c03b4aef2c02bdae044bda1324b">&#9670;&#160;</a></span>EXC_RETURN_DCRS <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_DCRS&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga0a0f2c03b4aef2c02bdae044bda1324b" name="ga0a0f2c03b4aef2c02bdae044bda1324b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0a0f2c03b4aef2c02bdae044bda1324b">&#9670;&#160;</a></span>EXC_RETURN_DCRS <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_DCRS&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga0a0f2c03b4aef2c02bdae044bda1324b" name="ga0a0f2c03b4aef2c02bdae044bda1324b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0a0f2c03b4aef2c02bdae044bda1324b">&#9670;&#160;</a></span>EXC_RETURN_DCRS <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_DCRS&#160;&#160;&#160;(0x00000020UL)     /* bit [5] stacking rules for called registers: 0=skipped 1=saved       */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gac939dbf69d3063c76a28516a4ae84db7" name="gac939dbf69d3063c76a28516a4ae84db7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac939dbf69d3063c76a28516a4ae84db7">&#9670;&#160;</a></span>EXC_RETURN_ES <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_ES&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gac939dbf69d3063c76a28516a4ae84db7" name="gac939dbf69d3063c76a28516a4ae84db7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac939dbf69d3063c76a28516a4ae84db7">&#9670;&#160;</a></span>EXC_RETURN_ES <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_ES&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gac939dbf69d3063c76a28516a4ae84db7" name="gac939dbf69d3063c76a28516a4ae84db7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac939dbf69d3063c76a28516a4ae84db7">&#9670;&#160;</a></span>EXC_RETURN_ES <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_ES&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gac939dbf69d3063c76a28516a4ae84db7" name="gac939dbf69d3063c76a28516a4ae84db7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac939dbf69d3063c76a28516a4ae84db7">&#9670;&#160;</a></span>EXC_RETURN_ES <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_ES&#160;&#160;&#160;(0x00000001UL)     /* bit [0] security state exception was taken to: 0=Non-secure 1=Secure */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga342b51c3eec59822bf206e24ef881a9e" name="ga342b51c3eec59822bf206e24ef881a9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga342b51c3eec59822bf206e24ef881a9e">&#9670;&#160;</a></span>EXC_RETURN_FTYPE <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_FTYPE&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga342b51c3eec59822bf206e24ef881a9e" name="ga342b51c3eec59822bf206e24ef881a9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga342b51c3eec59822bf206e24ef881a9e">&#9670;&#160;</a></span>EXC_RETURN_FTYPE <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_FTYPE&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga342b51c3eec59822bf206e24ef881a9e" name="ga342b51c3eec59822bf206e24ef881a9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga342b51c3eec59822bf206e24ef881a9e">&#9670;&#160;</a></span>EXC_RETURN_FTYPE <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_FTYPE&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga342b51c3eec59822bf206e24ef881a9e" name="ga342b51c3eec59822bf206e24ef881a9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga342b51c3eec59822bf206e24ef881a9e">&#9670;&#160;</a></span>EXC_RETURN_FTYPE <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_FTYPE&#160;&#160;&#160;(0x00000010UL)     /* bit [4] allocate stack for floating-point context: 0=done 1=skipped  */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabb65f847769a7807395b2739cc9702d0" name="gabb65f847769a7807395b2739cc9702d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabb65f847769a7807395b2739cc9702d0">&#9670;&#160;</a></span>EXC_RETURN_MODE <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_MODE&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabb65f847769a7807395b2739cc9702d0" name="gabb65f847769a7807395b2739cc9702d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabb65f847769a7807395b2739cc9702d0">&#9670;&#160;</a></span>EXC_RETURN_MODE <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_MODE&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabb65f847769a7807395b2739cc9702d0" name="gabb65f847769a7807395b2739cc9702d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabb65f847769a7807395b2739cc9702d0">&#9670;&#160;</a></span>EXC_RETURN_MODE <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_MODE&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabb65f847769a7807395b2739cc9702d0" name="gabb65f847769a7807395b2739cc9702d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabb65f847769a7807395b2739cc9702d0">&#9670;&#160;</a></span>EXC_RETURN_MODE <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_MODE&#160;&#160;&#160;(0x00000008UL)     /* bit [3] processor mode for return: 0=Handler mode 1=Thread mode      */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga99e0c1c19f050880a8bd827a7f420bec" name="ga99e0c1c19f050880a8bd827a7f420bec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga99e0c1c19f050880a8bd827a7f420bec">&#9670;&#160;</a></span>EXC_RETURN_PREFIX <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_PREFIX&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga99e0c1c19f050880a8bd827a7f420bec" name="ga99e0c1c19f050880a8bd827a7f420bec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga99e0c1c19f050880a8bd827a7f420bec">&#9670;&#160;</a></span>EXC_RETURN_PREFIX <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_PREFIX&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga99e0c1c19f050880a8bd827a7f420bec" name="ga99e0c1c19f050880a8bd827a7f420bec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga99e0c1c19f050880a8bd827a7f420bec">&#9670;&#160;</a></span>EXC_RETURN_PREFIX <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_PREFIX&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga99e0c1c19f050880a8bd827a7f420bec" name="ga99e0c1c19f050880a8bd827a7f420bec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga99e0c1c19f050880a8bd827a7f420bec">&#9670;&#160;</a></span>EXC_RETURN_PREFIX <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_PREFIX&#160;&#160;&#160;(0xFF000000UL)     /* bits [31:24] set to indicate an EXC_RETURN value                     */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga88711355d0196b1ffeb18c33e2c95360" name="ga88711355d0196b1ffeb18c33e2c95360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga88711355d0196b1ffeb18c33e2c95360">&#9670;&#160;</a></span>EXC_RETURN_S <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_S&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga88711355d0196b1ffeb18c33e2c95360" name="ga88711355d0196b1ffeb18c33e2c95360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga88711355d0196b1ffeb18c33e2c95360">&#9670;&#160;</a></span>EXC_RETURN_S <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_S&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga88711355d0196b1ffeb18c33e2c95360" name="ga88711355d0196b1ffeb18c33e2c95360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga88711355d0196b1ffeb18c33e2c95360">&#9670;&#160;</a></span>EXC_RETURN_S <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_S&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga88711355d0196b1ffeb18c33e2c95360" name="ga88711355d0196b1ffeb18c33e2c95360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga88711355d0196b1ffeb18c33e2c95360">&#9670;&#160;</a></span>EXC_RETURN_S <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_S&#160;&#160;&#160;(0x00000040UL)     /* bit [6] stack used to push registers: 0=Non-secure 1=Secure          */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga686922b26c29eac540f53a6213627466" name="ga686922b26c29eac540f53a6213627466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga686922b26c29eac540f53a6213627466">&#9670;&#160;</a></span>EXC_RETURN_SPSEL <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_SPSEL&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga686922b26c29eac540f53a6213627466" name="ga686922b26c29eac540f53a6213627466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga686922b26c29eac540f53a6213627466">&#9670;&#160;</a></span>EXC_RETURN_SPSEL <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_SPSEL&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga686922b26c29eac540f53a6213627466" name="ga686922b26c29eac540f53a6213627466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga686922b26c29eac540f53a6213627466">&#9670;&#160;</a></span>EXC_RETURN_SPSEL <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_SPSEL&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga686922b26c29eac540f53a6213627466" name="ga686922b26c29eac540f53a6213627466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga686922b26c29eac540f53a6213627466">&#9670;&#160;</a></span>EXC_RETURN_SPSEL <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXC_RETURN_SPSEL&#160;&#160;&#160;(0x00000002UL)     /* bit [1] stack pointer used to restore context: 0=MSP 1=PSP           */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabaa62910bf89acc186ae998c611e64ab" name="gabaa62910bf89acc186ae998c611e64ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabaa62910bf89acc186ae998c611e64ab">&#9670;&#160;</a></span>FNC_RETURN <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FNC_RETURN&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabaa62910bf89acc186ae998c611e64ab" name="gabaa62910bf89acc186ae998c611e64ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabaa62910bf89acc186ae998c611e64ab">&#9670;&#160;</a></span>FNC_RETURN <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FNC_RETURN&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabaa62910bf89acc186ae998c611e64ab" name="gabaa62910bf89acc186ae998c611e64ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabaa62910bf89acc186ae998c611e64ab">&#9670;&#160;</a></span>FNC_RETURN <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FNC_RETURN&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabaa62910bf89acc186ae998c611e64ab" name="gabaa62910bf89acc186ae998c611e64ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabaa62910bf89acc186ae998c611e64ab">&#9670;&#160;</a></span>FNC_RETURN <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FNC_RETURN&#160;&#160;&#160;(0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

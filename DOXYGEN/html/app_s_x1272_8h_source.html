@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lora: STM32/app/inc/appSX1272.h Source File</title>
+<title>Réseau par competition: C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/app/inc/appSX1272.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="09_SE (1).jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Lora
+   <div id="projectname">Réseau par competition
    </div>
+   <div id="projectbrief">Projet étudiant visant à développer un réseau par compétition utilisant des communications Lora</div>
   </td>
  </tr>
  </tbody>
@@ -76,7 +78,7 @@ $(function() {
   <div class="headertitle"><div class="title">appSX1272.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="app_s_x1272_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * appSX1272.h</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Created on: 25 ao�t 2020</span></div>
@@ -86,61 +88,55 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef APP_INC_APPSX1272_H_</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define APP_INC_APPSX1272_H_</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_s_x1272_8h.html">SX1272.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;SX1272.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// Configuration du module en mode LoRA ou FSK</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"></span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//Main parameters (to be changed)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#af2faf70a2a9bb902999155bd6efc5a31">   18</a></span><span class="preprocessor">#define TX_Addr BROADCAST_ADDR</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#af18ec3b2a4ab573d584ee95f6c6dd251">   19</a></span><span class="preprocessor">#define RX_Addr 8 </span><span class="comment">//address of the node</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define TX_Addr BROADCAST_ADDR</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define RX_Addr 8 </span><span class="comment">//address of the node</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a9bc8cbbc3a8ad9394c89b65011921e13">   21</a></span><span class="preprocessor">#define OutPower POW_14 </span><span class="comment">//min -1, max 14</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a3cf6c2b00cb6e0220f50dd1568b0af94">   22</a></span><span class="preprocessor">#define TypeModulation 0 </span><span class="comment">//0: LORA, 1:FSK</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a70af4275cfb9a567714fd399fe17072a">   23</a></span><span class="preprocessor">#define PeriodTransmission 5000 </span><span class="comment">//en ms</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define OutPower POW_14 </span><span class="comment">//min -1, max 14</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define TypeModulation 0 </span><span class="comment">//0: LORA, 1:FSK</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define PeriodTransmission 5000 </span><span class="comment">//en ms</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//LORA configuration (to be changed)</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a358d214ab11dbef669919b8747c1b695">   26</a></span><span class="preprocessor">#define paramBW BW_125 </span><span class="comment">//BW_125, BW_250 or BW_500</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#abf07cc63a17b1db11b8813bd6e3fb015">   27</a></span><span class="preprocessor">#define paramCR CR_5 </span><span class="comment">//CR_5</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#adb065ad7c8e22ada409eae12587e03b4">   28</a></span><span class="preprocessor">#define paramSF SF_12 </span><span class="comment">//SF_7 to SF_12</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define paramBW BW_125 </span><span class="comment">//BW_125, BW_250 or BW_500</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define paramCR CR_5 </span><span class="comment">//CR_5</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define paramSF SF_12 </span><span class="comment">//SF_7 to SF_12</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//FSK configuration (to be changed)</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#acfdf692e14e66e22bdbfd08a021b4358">   31</a></span><span class="preprocessor">#define BitRate BR1200bauds </span><span class="comment">//BR1200bauds or BR4800bauds</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a7f43c852d3736774f13b610dc3c130b0">   32</a></span><span class="preprocessor">#define Fdev FDA5kHz</span><span class="comment">//FDA5kHz</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define BitRate BR1200bauds </span><span class="comment">//BR1200bauds or BR4800bauds</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define Fdev FDA5kHz</span><span class="comment">//FDA5kHz</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//Other common parameters (do not change!!)</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#acb749eaaae454760c440dd9d757c0791">   35</a></span><span class="preprocessor">#define PreambLong 12</span><span class="comment">//12</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define PreambLong 12</span><span class="comment">//12</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a79c549c26377d60d4bc1bb6e806815af">   37</a></span><span class="preprocessor">#define MaxNbRetries 3</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a2e8c88641a4a66b129a79d68a40dc850">   38</a></span><span class="preprocessor">#define WaitTxMax 5000 </span><span class="comment">//en ms</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a1b3f08ee8da4ccaf97529bf89e1fd5df">   39</a></span><span class="preprocessor">#define WaitRxMax 10000 </span><span class="comment">//en ms</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define MaxNbRetries 3</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define WaitTxMax 5000 </span><span class="comment">//en ms</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define WaitRxMax 10000 </span><span class="comment">//en ms</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//Error Defines</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a1b04ea49ba90f304d90cb6d7d4d9480f">   42</a></span><span class="preprocessor">#define RECEIVE_NO_ERROR            0</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a8685dc000c826d6db1a8d0f5fa0dd362">   43</a></span><span class="preprocessor">#define RECEIVE_CRC_ERROR           1</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a1649bdf3b055656d7c7afe2f6f035079">   44</a></span><span class="preprocessor">#define RECEIVE_SOF_ERROR           2</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a7c0d033297e29e4fcd8187f26fc2716f">   45</a></span><span class="preprocessor">#define RECEIVE_WRONG_DESTINARY     3</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a603889af6ee54e50934aa0ec26100cb5">   46</a></span><span class="preprocessor">#define RECEIVE_ACK_RECEIVED        4</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#aa3dc57ac72defbf4d697182dffb5e75a">   47</a></span><span class="preprocessor">#define RECEIVE_MSG_RECEIVED        5</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#afc76de7914d8494c94bfef0596a4e98d">   48</a></span><span class="preprocessor">#define RECEIVE_ERROR_UNKNOWN_CASE  6</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define RECEIVE_NO_ERROR            0</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define RECEIVE_CRC_ERROR           1</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define RECEIVE_SOF_ERROR           2</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#define RECEIVE_WRONG_DESTINARY     3</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define RECEIVE_ACK_RECEIVED        4</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define RECEIVE_MSG_RECEIVED        5</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define RECEIVE_ERROR_UNKNOWN_CASE  6</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a5f10034539a0c4b7940e072958086fb8">   50</a></span><span class="preprocessor">#define TRANSMIT_NO_ERROR           0</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a42318a8006df87843319a62be8ba4432">   51</a></span><span class="preprocessor">#define TRANSMIT_ERROR              1</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#abb5f9731ff0ae81fcf72d570b8427454">   52</a></span><span class="preprocessor">#define TRANSMIT_TIMEOUT_ERROR      2</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="app_s_x1272_8h.html#a343365229dad18236b0d31c47529621b">   53</a></span><span class="preprocessor">#define TRANSMIT_ERROR_CONFIG       3</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define TRANSMIT_NO_ERROR           0</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define TRANSMIT_ERROR              1</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define TRANSMIT_TIMEOUT_ERROR      2</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define TRANSMIT_ERROR_CONFIG       3</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> <a class="code hl_function" href="app_s_x1272_8h.html#a5b7bec9d57e966f8115a9529ab0457ea">APP_SX1272_setup</a>(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>uint8_t <a class="code hl_function" href="app_s_x1272_8h.html#a78ca0636c4e6d6a89b8dd1198a76863c">APP_SX1272_runTransmitMsg</a>(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *message);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>uint8_t <a class="code hl_function" href="app_s_x1272_8h.html#aaa885af9ee8a008b08788d062ab26a8e">APP_SX1272_runTransmitAck</a>(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>uint8_t <a class="code hl_function" href="app_s_x1272_8h.html#a41a0c48d05f8f679b2652737097c9d9c">APP_SX1272_runReceive</a>(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *message_decode, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack_decode);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>uint8_t <a class="code hl_function" href="app_s_x1272_8h.html#a9a620ebeba05a011d6c66dfc411f3e3c">APP_SX1272_setFreq</a>(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> APP_SX1272_setup(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>uint8_t APP_SX1272_runTransmitMsg(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *message);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>uint8_t APP_SX1272_runTransmitAck(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>uint8_t APP_SX1272_runReceive(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *message_decode, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack_decode);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>uint8_t APP_SX1272_setFreq(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif </span><span class="comment">/* APP_INC_APPSX1272_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a_s_x1272_8h_html"><div class="ttname"><a href="_s_x1272_8h.html">SX1272.h</a></div></div>
-<div class="ttc" id="aapp_s_x1272_8h_html_a41a0c48d05f8f679b2652737097c9d9c"><div class="ttname"><a href="app_s_x1272_8h.html#a41a0c48d05f8f679b2652737097c9d9c">APP_SX1272_runReceive</a></div><div class="ttdeci">uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ack_frame_t *ack_decode)</div><div class="ttdoc">Fonction pour exécuter la réception de paquets SX1272.</div><div class="ttdef"><b>Definition</b> appSX1272.c:280</div></div>
-<div class="ttc" id="aapp_s_x1272_8h_html_a5b7bec9d57e966f8115a9529ab0457ea"><div class="ttname"><a href="app_s_x1272_8h.html#a5b7bec9d57e966f8115a9529ab0457ea">APP_SX1272_setup</a></div><div class="ttdeci">void APP_SX1272_setup(id_frame_t device)</div><div class="ttdoc">Fonction de configuration de l'application SX1272.</div><div class="ttdef"><b>Definition</b> appSX1272.c:60</div></div>
-<div class="ttc" id="aapp_s_x1272_8h_html_a78ca0636c4e6d6a89b8dd1198a76863c"><div class="ttname"><a href="app_s_x1272_8h.html#a78ca0636c4e6d6a89b8dd1198a76863c">APP_SX1272_runTransmitMsg</a></div><div class="ttdeci">uint8_t APP_SX1272_runTransmitMsg(id_frame_t device, msg_frame_t *message)</div><div class="ttdoc">Fonction pour exécuter la transmission de paquets SX1272.</div><div class="ttdef"><b>Definition</b> appSX1272.c:191</div></div>
-<div class="ttc" id="aapp_s_x1272_8h_html_a9a620ebeba05a011d6c66dfc411f3e3c"><div class="ttname"><a href="app_s_x1272_8h.html#a9a620ebeba05a011d6c66dfc411f3e3c">APP_SX1272_setFreq</a></div><div class="ttdeci">uint8_t APP_SX1272_setFreq(id_frame_t device)</div><div class="ttdef"><b>Definition</b> appSX1272.c:407</div></div>
-<div class="ttc" id="aapp_s_x1272_8h_html_aaa885af9ee8a008b08788d062ab26a8e"><div class="ttname"><a href="app_s_x1272_8h.html#aaa885af9ee8a008b08788d062ab26a8e">APP_SX1272_runTransmitAck</a></div><div class="ttdeci">uint8_t APP_SX1272_runTransmitAck(id_frame_t device, ack_frame_t *ack)</div><div class="ttdef"><b>Definition</b> appSX1272.c:234</div></div>
 <div class="ttc" id="astructack__frame__t_html"><div class="ttname"><a href="structack__frame__t.html">ack_frame_t</a></div><div class="ttdoc">Structure pour l'obget acquittement qui est définie par le protocole.</div><div class="ttdef"><b>Definition</b> frames.h:85</div></div>
 <div class="ttc" id="astructid__frame__t_html"><div class="ttname"><a href="structid__frame__t.html">id_frame_t</a></div><div class="ttdef"><b>Definition</b> frames.h:41</div></div>
 <div class="ttc" id="astructmsg__frame__t_html"><div class="ttname"><a href="structmsg__frame__t.html">msg_frame_t</a></div><div class="ttdoc">Structure pour l'obget message qui est définie par le protocole.</div><div class="ttdef"><b>Definition</b> frames.h:61</div></div>

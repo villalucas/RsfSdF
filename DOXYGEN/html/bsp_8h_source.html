@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lora: STM32/bsp/inc/bsp.h Source File</title>
+<title>Réseau par competition: C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/bsp/inc/bsp.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="09_SE (1).jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Lora
+   <div id="projectname">Réseau par competition
    </div>
+   <div id="projectbrief">Projet étudiant visant à développer un réseau par compétition utilisant des communications Lora</div>
   </td>
  </tr>
  </tbody>
@@ -76,7 +78,7 @@ $(function() {
   <div class="headertitle"><div class="title">bsp.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="bsp_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * bsp.h</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Created on: 23 ao�t 2020</span></div>
@@ -92,40 +94,30 @@ $(function() {
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * LED driver functions</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span>    <a class="code hl_function" href="bsp_8h.html#aacf5c2ba7f6873db627a6cf3f541511e">BSP_LED_Init</a>    (<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span>    <a class="code hl_function" href="bsp_8h.html#a1911daf80ad1c5d939dcfeadb2fe71c8">BSP_LED_On</a>  (<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span>    <a class="code hl_function" href="bsp_8h.html#aa6bbeb58e7323c105a5ed608d5c98945">BSP_LED_Off</a> (<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span>    <a class="code hl_function" href="bsp_8h.html#a17bffa4b23fef0f49f57fd1f92bc33d8">BSP_LED_Toggle</a>  (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span>    BSP_LED_Init    (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span>    BSP_LED_On  (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span>    BSP_LED_Off (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span>    BSP_LED_Toggle  (<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * Push-Button driver functions</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span>        <a class="code hl_function" href="bsp_8h.html#ab530db67e76337b1c0d2bc165077d7c9">BSP_PB_Init</a>     (<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>uint8_t <a class="code hl_function" href="bsp_8h.html#afbaf052e8171e4372ce9f6c12cb801f3">BSP_PB_GetState</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span>        BSP_PB_Init     (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>uint8_t BSP_PB_GetState (<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> <a class="code hl_function" href="bsp_8h.html#a2dd8224f037a571a3fcdcfa4f49029f3">BSP_TIMER_Timebase_Init</a>    (<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> <a class="code hl_function" href="bsp_8h.html#acf961cc06645c98cd1a045f0e641b096">BSP_NVIC_Init</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">int</span> <a class="code hl_function" href="bsp_8h.html#a4447a1e5485a99baa54491833508091d">BSP_millis</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> BSP_TIMER_Timebase_Init    (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> BSP_NVIC_Init();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">int</span> BSP_millis();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * USART driver functions</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span>    <a class="code hl_function" href="bsp_8h.html#ad46e589bff8e96a397291816b8142784">BSP_Console_Init</a>    (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span>    BSP_Console_Init    (<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">/* BSP_INC_BSP_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="absp_8h_html_a17bffa4b23fef0f49f57fd1f92bc33d8"><div class="ttname"><a href="bsp_8h.html#a17bffa4b23fef0f49f57fd1f92bc33d8">BSP_LED_Toggle</a></div><div class="ttdeci">void BSP_LED_Toggle(void)</div><div class="ttdef"><b>Definition</b> bsp.c:66</div></div>
-<div class="ttc" id="absp_8h_html_a1911daf80ad1c5d939dcfeadb2fe71c8"><div class="ttname"><a href="bsp_8h.html#a1911daf80ad1c5d939dcfeadb2fe71c8">BSP_LED_On</a></div><div class="ttdeci">void BSP_LED_On(void)</div><div class="ttdef"><b>Definition</b> bsp.c:46</div></div>
-<div class="ttc" id="absp_8h_html_a2dd8224f037a571a3fcdcfa4f49029f3"><div class="ttname"><a href="bsp_8h.html#a2dd8224f037a571a3fcdcfa4f49029f3">BSP_TIMER_Timebase_Init</a></div><div class="ttdeci">void BSP_TIMER_Timebase_Init(void)</div><div class="ttdef"><b>Definition</b> bsp.c:168</div></div>
-<div class="ttc" id="absp_8h_html_a4447a1e5485a99baa54491833508091d"><div class="ttname"><a href="bsp_8h.html#a4447a1e5485a99baa54491833508091d">BSP_millis</a></div><div class="ttdeci">int BSP_millis()</div><div class="ttdef"><b>Definition</b> bsp.c:214</div></div>
-<div class="ttc" id="absp_8h_html_aa6bbeb58e7323c105a5ed608d5c98945"><div class="ttname"><a href="bsp_8h.html#aa6bbeb58e7323c105a5ed608d5c98945">BSP_LED_Off</a></div><div class="ttdeci">void BSP_LED_Off(void)</div><div class="ttdef"><b>Definition</b> bsp.c:56</div></div>
-<div class="ttc" id="absp_8h_html_aacf5c2ba7f6873db627a6cf3f541511e"><div class="ttname"><a href="bsp_8h.html#aacf5c2ba7f6873db627a6cf3f541511e">BSP_LED_Init</a></div><div class="ttdeci">void BSP_LED_Init(void)</div><div class="ttdef"><b>Definition</b> bsp.c:18</div></div>
-<div class="ttc" id="absp_8h_html_ab530db67e76337b1c0d2bc165077d7c9"><div class="ttname"><a href="bsp_8h.html#ab530db67e76337b1c0d2bc165077d7c9">BSP_PB_Init</a></div><div class="ttdeci">void BSP_PB_Init(void)</div><div class="ttdef"><b>Definition</b> bsp.c:76</div></div>
-<div class="ttc" id="absp_8h_html_acf961cc06645c98cd1a045f0e641b096"><div class="ttname"><a href="bsp_8h.html#acf961cc06645c98cd1a045f0e641b096">BSP_NVIC_Init</a></div><div class="ttdeci">void BSP_NVIC_Init()</div><div class="ttdef"><b>Definition</b> bsp.c:199</div></div>
-<div class="ttc" id="absp_8h_html_ad46e589bff8e96a397291816b8142784"><div class="ttname"><a href="bsp_8h.html#ad46e589bff8e96a397291816b8142784">BSP_Console_Init</a></div><div class="ttdeci">void BSP_Console_Init(void)</div><div class="ttdef"><b>Definition</b> bsp.c:118</div></div>
-<div class="ttc" id="absp_8h_html_afbaf052e8171e4372ce9f6c12cb801f3"><div class="ttname"><a href="bsp_8h.html#afbaf052e8171e4372ce9f6c12cb801f3">BSP_PB_GetState</a></div><div class="ttdeci">uint8_t BSP_PB_GetState(void)</div><div class="ttdef"><b>Definition</b> bsp.c:94</div></div>
 <div class="ttc" id="astm32f0xx_8h_html"><div class="ttname"><a href="stm32f0xx_8h.html">stm32f0xx.h</a></div><div class="ttdoc">CMSIS STM32F0xx Device Peripheral Access Layer Header File.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

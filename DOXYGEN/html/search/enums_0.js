@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['errorstatus_0',['ErrorStatus',['../group___exported__types.html#ga8333b96c67f83cba354b3407fcbb6ee8',1,'stm32f0xx.h']]]
+  ['irqn_5ftype_0',['IRQn_Type',['../group___peripheral__interrupt__number__definition.html#ga7e1129cd8a196f4284d41db3e82ad5c8',1,'stm32f072xb.h']]]
 ];

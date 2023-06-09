@@ -1,5 +1,5 @@
 \doxysection{cmsis\+\_\+compiler.\+h}
-\hypertarget{cmsis__compiler_8h_source}{}\label{cmsis__compiler_8h_source}\index{STM32/cmsis/core/cmsis\_compiler.h@{STM32/cmsis/core/cmsis\_compiler.h}}
+\hypertarget{cmsis__compiler_8h_source}{}\label{cmsis__compiler_8h_source}\index{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/cmsis/core/cmsis\_compiler.h@{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/cmsis/core/cmsis\_compiler.h}}
 \mbox{\hyperlink{cmsis__compiler_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{/**************************************************************************/}}
@@ -95,19 +95,19 @@
 \DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((struct\ T\_UINT32\ *)(x))-\/>v)}}
 \DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT16\_WRITE}}
-\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_ac962a9aa89cef6e5cde0fe6b067f7de3}{T\_UINT16\_WRITE}}\ \{\ uint16\_t\ v;\ \};}
+\DoxyCodeLine{00099\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT16\_WRITE\ \{\ uint16\_t\ v;\ \};}
 \DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT16\_WRITE(addr,\ val)\ \ \ \ (void)((((struct\ T\_UINT16\_WRITE\ *)(void*)(addr))-\/>v)\ =\ (val))}}
 \DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT16\_READ}}
-\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_a86899dc41c5b3b9ce6b8014ee0e852b9}{T\_UINT16\_READ}}\ \{\ uint16\_t\ v;\ \};}
+\DoxyCodeLine{00103\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT16\_READ\ \{\ uint16\_t\ v;\ \};}
 \DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT16\_READ(addr)\ \ \ \ \ \ \ \ \ \ (((const\ struct\ T\_UINT16\_READ\ *)(const\ void\ *)(addr))-\/>v)}}
 \DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT32\_WRITE}}
-\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_abbd193dec7cb45f1fbd05ff7e366ffe2}{T\_UINT32\_WRITE}}\ \{\ uint32\_t\ v;\ \};}
+\DoxyCodeLine{00107\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT32\_WRITE\ \{\ uint32\_t\ v;\ \};}
 \DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32\_WRITE(addr,\ val)\ \ \ \ (void)((((struct\ T\_UINT32\_WRITE\ *)(void\ *)(addr))-\/>v)\ =\ (val))}}
 \DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00110\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT32\_READ}}
-\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_a9653a1cbf01ec418e8e940ee3996b8ca}{T\_UINT32\_READ}}\ \{\ uint32\_t\ v;\ \};}
+\DoxyCodeLine{00111\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT32\_READ\ \{\ uint32\_t\ v;\ \};}
 \DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32\_READ(addr)\ \ \ \ \ \ \ \ \ \ (((const\ struct\ T\_UINT32\_READ\ *)(const\ void\ *)(addr))-\/>v)}}
 \DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_ALIGNED}}
@@ -164,19 +164,19 @@
 \DoxyCodeLine{00165\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((struct\ T\_UINT32\ *)(x))-\/>v)}}
 \DoxyCodeLine{00166\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00167\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT16\_WRITE}}
-\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_ac962a9aa89cef6e5cde0fe6b067f7de3}{T\_UINT16\_WRITE}}\ \{\ uint16\_t\ v;\ \};}
+\DoxyCodeLine{00168\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT16\_WRITE\ \{\ uint16\_t\ v;\ \};}
 \DoxyCodeLine{00169\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT16\_WRITE(addr,\ val)\ \ \ \ (void)((((struct\ T\_UINT16\_WRITE\ *)(void\ *)(addr))-\/>v)\ =\ (val))}}
 \DoxyCodeLine{00170\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT16\_READ}}
-\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_a86899dc41c5b3b9ce6b8014ee0e852b9}{T\_UINT16\_READ}}\ \{\ uint16\_t\ v;\ \};}
+\DoxyCodeLine{00172\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT16\_READ\ \{\ uint16\_t\ v;\ \};}
 \DoxyCodeLine{00173\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT16\_READ(addr)\ \ \ \ \ \ \ \ \ \ (((const\ struct\ T\_UINT16\_READ\ *)(const\ void\ *)(addr))-\/>v)}}
 \DoxyCodeLine{00174\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00175\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT32\_WRITE}}
-\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_abbd193dec7cb45f1fbd05ff7e366ffe2}{T\_UINT32\_WRITE}}\ \{\ uint32\_t\ v;\ \};}
+\DoxyCodeLine{00176\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT32\_WRITE\ \{\ uint32\_t\ v;\ \};}
 \DoxyCodeLine{00177\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32\_WRITE(addr,\ val)\ \ \ \ (void)((((struct\ T\_UINT32\_WRITE\ *)(void\ *)(addr))-\/>v)\ =\ (val))}}
 \DoxyCodeLine{00178\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT32\_READ}}
-\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_a9653a1cbf01ec418e8e940ee3996b8ca}{T\_UINT32\_READ}}\ \{\ uint32\_t\ v;\ \};}
+\DoxyCodeLine{00180\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT32\_READ\ \{\ uint32\_t\ v;\ \};}
 \DoxyCodeLine{00181\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32\_READ(addr)\ \ \ \ \ \ \ \ \ \ (((const\ struct\ T\_UINT32\_READ\ *)(const\ void\ *)(addr))-\/>v)}}
 \DoxyCodeLine{00182\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00183\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_ALIGNED}}
@@ -231,19 +231,19 @@
 \DoxyCodeLine{00232\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((struct\ T\_UINT32\ *)(x))-\/>v)}}
 \DoxyCodeLine{00233\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00234\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT16\_WRITE}}
-\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_ac962a9aa89cef6e5cde0fe6b067f7de3}{T\_UINT16\_WRITE}}\ \{\ uint16\_t\ v;\ \};}
+\DoxyCodeLine{00235\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT16\_WRITE\ \{\ uint16\_t\ v;\ \};}
 \DoxyCodeLine{00236\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT16\_WRITE(addr,\ val)\ \ \ \ (void)((((struct\ T\_UINT16\_WRITE\ *)(void\ *)(addr))-\/>v)\ =\ (val))}}
 \DoxyCodeLine{00237\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00238\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT16\_READ}}
-\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_a86899dc41c5b3b9ce6b8014ee0e852b9}{T\_UINT16\_READ}}\ \{\ uint16\_t\ v;\ \};}
+\DoxyCodeLine{00239\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT16\_READ\ \{\ uint16\_t\ v;\ \};}
 \DoxyCodeLine{00240\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT16\_READ(addr)\ \ \ \ \ \ \ \ \ \ (((const\ struct\ T\_UINT16\_READ\ *)(const\ void\ *)(addr))-\/>v)}}
 \DoxyCodeLine{00241\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00242\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT32\_WRITE}}
-\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_abbd193dec7cb45f1fbd05ff7e366ffe2}{T\_UINT32\_WRITE}}\ \{\ uint32\_t\ v;\ \};}
+\DoxyCodeLine{00243\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT32\_WRITE\ \{\ uint32\_t\ v;\ \};}
 \DoxyCodeLine{00244\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32\_WRITE(addr,\ val)\ \ \ \ (void)((((struct\ T\_UINT32\_WRITE\ *)(void\ *)(addr))-\/>v)\ =\ (val))}}
 \DoxyCodeLine{00245\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00246\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_UNALIGNED\_UINT32\_READ}}
-\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{cmsis__armcc_8h_a4dbb70fab85207c27b581ecb6532b314}{\_\_PACKED\_STRUCT}}\ \mbox{\hyperlink{cmsis__armclang_8h_a9653a1cbf01ec418e8e940ee3996b8ca}{T\_UINT32\_READ}}\ \{\ uint32\_t\ v;\ \};}
+\DoxyCodeLine{00247\ \ \ \ \ \_\_PACKED\_STRUCT\ T\_UINT32\_READ\ \{\ uint32\_t\ v;\ \};}
 \DoxyCodeLine{00248\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_UNALIGNED\_UINT32\_READ(addr)\ \ \ \ \ \ \ \ \ \ (((const\ struct\ T\_UINT32\_READ\ *)(const\ void\ *)(addr))-\/>v)}}
 \DoxyCodeLine{00249\ \textcolor{preprocessor}{\ \ \#endif}}
 \DoxyCodeLine{00250\ \textcolor{preprocessor}{\ \ \#ifndef\ \ \ \_\_ALIGNED}}

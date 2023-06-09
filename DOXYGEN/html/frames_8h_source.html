@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lora: STM32/bsp/inc/frames.h Source File</title>
+<title>Réseau par competition: C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/bsp/inc/frames.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="09_SE (1).jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Lora
+   <div id="projectname">Réseau par competition
    </div>
+   <div id="projectbrief">Projet étudiant visant à développer un réseau par compétition utilisant des communications Lora</div>
   </td>
  </tr>
  </tbody>
@@ -76,92 +78,72 @@ $(function() {
   <div class="headertitle"><div class="title">frames.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="frames_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef APP_INC_FRAMES_H_</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define APP_INC_FRAMES_H_</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="frames_8h.html#adadce328e6d75dcaf598d1ff1a7d7cae">   13</a></span><span class="preprocessor">#define SIZE_MSG_MAX        15</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="frames_8h.html#ad552f157df6a804306d7e88455e4d01c">   14</a></span><span class="preprocessor">#define SIZEOF_ACK          6</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define SIZE_MSG_MAX        15</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define SIZEOF_ACK          6</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="frames_8h.html#ac844f8d84ba23bc6008f599c85844532">   16</a></span><span class="preprocessor">#define SOF_MSG_SYMBOL      &#39;S&#39;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="frames_8h.html#aedbce5e99447e5a8deeddea819382667">   17</a></span><span class="preprocessor">#define SOF_ACK_SYMBOL      &#39;A&#39;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="frames_8h.html#a71a47a78c8c528ea2cff019a56b74192">   18</a></span><span class="preprocessor">#define EOF_SYMBOL          &#39;E&#39;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define SOF_MSG_SYMBOL      &#39;S&#39;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define SOF_ACK_SYMBOL      &#39;A&#39;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define EOF_SYMBOL          &#39;E&#39;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="frames_8h.html#a8db2d430f13a12623069e2c7fc4f32f3">   20</a></span><span class="preprocessor">#define CHANNEL_SHIFT       6</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="frames_8h.html#abdc82187828bad70b8b370705f080c24">   21</a></span><span class="preprocessor">#define CHANNEL_MASK        0x03</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="frames_8h.html#a8115a0b9bd8f9ac9254fc78e524df10e">   22</a></span><span class="preprocessor">#define ADDRESS_MASK        0x3F</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="frames_8h.html#a5a0c0e57d2f4eec0234f3038db193e0e">   23</a></span><span class="preprocessor">#define CRC_SHIFT           8</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="frames_8h.html#ac21f2d275f975b7357d95a49567856c8">   24</a></span><span class="preprocessor">#define CRC_MASK            0xFF</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define CHANNEL_SHIFT       6</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define CHANNEL_MASK        0x03</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define ADDRESS_MASK        0x3F</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define CRC_SHIFT           8</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define CRC_MASK            0xFF</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// polynomial = X^16 + X^12 + X^5 + 1</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="frames_8h.html#aa0258f5956c5f797974b5e0e86a8ca49">   27</a></span><span class="preprocessor">#define POLYNOMIAL_CCITT    0x1021</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="frames_8h.html#a7b8cb189365e2cb58361537313d352e9">   28</a></span><span class="preprocessor">#define CRC_CCITT_SEED      0x1D0F</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define POLYNOMIAL_CCITT    0x1021</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define CRC_CCITT_SEED      0x1D0F</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//Error Defines</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="frames_8h.html#ac68b0c422de951ac26d02eaa29782e5a">   31</a></span><span class="preprocessor">#define CRC_NO_ERROR        0</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="frames_8h.html#a37a5010e25c0fdc1ff56c1582d065251">   32</a></span><span class="preprocessor">#define CRC_ERROR           1</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define CRC_NO_ERROR        0</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define CRC_ERROR           1</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structid__frame__t.html">   40</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structid__frame__t.html#acafdb929d3fd1893a70ee525818dea79">   42</a></span>    uint8_t <a class="code hl_variable" href="structid__frame__t.html#acafdb929d3fd1893a70ee525818dea79">channel</a>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structid__frame__t.html#a5455fd9930ccdc99733d60925e143e02">   43</a></span>    uint8_t <a class="code hl_variable" href="structid__frame__t.html#a5455fd9930ccdc99733d60925e143e02">address</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    uint8_t channel;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    uint8_t address;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structmsg__frame__t.html">   60</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structmsg__frame__t.html#a0572537810c9a27cae4baaac69ab3b91">   62</a></span>    uint8_t <a class="code hl_variable" href="structmsg__frame__t.html#a0572537810c9a27cae4baaac69ab3b91">sof</a>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structmsg__frame__t.html#a37d7c16116c83cf50545e18ca0aca63d">   63</a></span>    <a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> <a class="code hl_variable" href="structmsg__frame__t.html#a37d7c16116c83cf50545e18ca0aca63d">src</a>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structmsg__frame__t.html#a64c409a83e1c895a777b05cf7a728c34">   64</a></span>    <a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> <a class="code hl_variable" href="structmsg__frame__t.html#a64c409a83e1c895a777b05cf7a728c34">dest</a>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structmsg__frame__t.html#ab7109a6b14d3593206496a738515d676">   65</a></span>    uint8_t <a class="code hl_variable" href="structmsg__frame__t.html#ab7109a6b14d3593206496a738515d676">size</a>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structmsg__frame__t.html#a57b56326c704c8038fe28c02089e7004">   66</a></span>    uint8_t msg[<a class="code hl_define" href="frames_8h.html#adadce328e6d75dcaf598d1ff1a7d7cae">SIZE_MSG_MAX</a>];</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structmsg__frame__t.html#a49f456ee54dba6ec23691f63c56b138d">   67</a></span>    uint16_t <a class="code hl_variable" href="structmsg__frame__t.html#a49f456ee54dba6ec23691f63c56b138d">crc</a>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structmsg__frame__t.html#aea3679d5e69ace4b1196c2c1ed843790">   68</a></span>    uint8_t <a class="code hl_variable" href="structmsg__frame__t.html#aea3679d5e69ace4b1196c2c1ed843790">eof</a>;<span class="comment">//</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    uint8_t sof;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> src;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> dest;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    uint8_t size;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    uint8_t msg[SIZE_MSG_MAX];</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    uint16_t crc;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    uint8_t eof;<span class="comment">//</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}<a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a>;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structack__frame__t.html">   84</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structack__frame__t.html#aaaee621870ec0334f706f32f762fbf96">   86</a></span>    uint8_t <a class="code hl_variable" href="structack__frame__t.html#aaaee621870ec0334f706f32f762fbf96">sof</a>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structack__frame__t.html#a9ca1d60e79b1da9a665d755ca2f1166d">   87</a></span>    <a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> <a class="code hl_variable" href="structack__frame__t.html#a9ca1d60e79b1da9a665d755ca2f1166d">src</a>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structack__frame__t.html#a525a891f35b412ee959b3830edbf97ff">   88</a></span>    <a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> <a class="code hl_variable" href="structack__frame__t.html#a525a891f35b412ee959b3830edbf97ff">dest</a>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structack__frame__t.html#af32234ff437c1c24d0d4e9c7ef7d622d">   89</a></span>    uint16_t <a class="code hl_variable" href="structack__frame__t.html#af32234ff437c1c24d0d4e9c7ef7d622d">crc</a>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structack__frame__t.html#aafd521ff50ff5fa80ecac741616a8bda">   90</a></span>    uint8_t <a class="code hl_variable" href="structack__frame__t.html#aafd521ff50ff5fa80ecac741616a8bda">eof</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    uint8_t sof;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> src;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> dest;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    uint16_t crc;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    uint8_t eof;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}<a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a>;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">/* Function */</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>uint16_t <a class="code hl_function" href="frames_8h.html#a2fd64371f4340fae9130b3c1e6254c9f">BSP_FRAMES_computeCrc</a>(uint16_t crc, uint8_t data, uint16_t polynomial);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>uint16_t <a class="code hl_function" href="frames_8h.html#a897a62ac64f4e5324adaf1c7550141ee">BSP_FRAMES_packetComputeCrc</a>(uint8_t *data, uint8_t datalength);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>uint8_t <a class="code hl_function" href="frames_8h.html#aeda2654b0fd9c033a6182b423576e6e2">BSP_FRAMES_decodeMsgFrame</a>(uint8_t *payload, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *output_frame);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>uint8_t <a class="code hl_function" href="frames_8h.html#a3bd52fe21e75c7c4cff4e36349106125">BSP_FRAMES_decodeAckFrame</a>(uint8_t *payload, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *output_frame);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> <a class="code hl_function" href="frames_8h.html#ad06da90597db0c6b61a64067bddd5024">BSP_FRAMES_encodeAckFrame</a>(<a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack_to_encode, uint8_t *frame_encoded);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> <a class="code hl_function" href="frames_8h.html#a5ef7a9db5e429b17f31440735b27f82e">BSP_FRAMES_encodeMsgFrame</a>(<a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *msg_to_encode, uint8_t *frame_encoded);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>uint16_t BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *output_frame);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *output_frame);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> BSP_FRAMES_encodeAckFrame(<a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack_to_encode, uint8_t *frame_encoded);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> BSP_FRAMES_encodeMsgFrame(<a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *msg_to_encode, uint8_t *frame_encoded);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif </span><span class="comment">/* APP_INC_FRAMES_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aframes_8h_html_a2fd64371f4340fae9130b3c1e6254c9f"><div class="ttname"><a href="frames_8h.html#a2fd64371f4340fae9130b3c1e6254c9f">BSP_FRAMES_computeCrc</a></div><div class="ttdeci">uint16_t BSP_FRAMES_computeCrc(uint16_t crc, uint8_t data, uint16_t polynomial)</div><div class="ttdoc">Fonction de calcul du CRC.</div><div class="ttdef"><b>Definition</b> frames.c:22</div></div>
-<div class="ttc" id="aframes_8h_html_a3bd52fe21e75c7c4cff4e36349106125"><div class="ttname"><a href="frames_8h.html#a3bd52fe21e75c7c4cff4e36349106125">BSP_FRAMES_decodeAckFrame</a></div><div class="ttdeci">uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame)</div><div class="ttdoc">Fonction de décodage des messages reçus dans la payload (acknowledgment).</div><div class="ttdef"><b>Definition</b> frames.c:109</div></div>
-<div class="ttc" id="aframes_8h_html_a5ef7a9db5e429b17f31440735b27f82e"><div class="ttname"><a href="frames_8h.html#a5ef7a9db5e429b17f31440735b27f82e">BSP_FRAMES_encodeMsgFrame</a></div><div class="ttdeci">void BSP_FRAMES_encodeMsgFrame(msg_frame_t *msg_to_encode, uint8_t *frame_encoded)</div><div class="ttdef"><b>Definition</b> frames.c:166</div></div>
-<div class="ttc" id="aframes_8h_html_a897a62ac64f4e5324adaf1c7550141ee"><div class="ttname"><a href="frames_8h.html#a897a62ac64f4e5324adaf1c7550141ee">BSP_FRAMES_packetComputeCrc</a></div><div class="ttdeci">uint16_t BSP_FRAMES_packetComputeCrc(uint8_t *data, uint8_t datalength)</div><div class="ttdoc">Fonction de calcul du CRC pour l'ensemble de la frame.</div><div class="ttdef"><b>Definition</b> frames.c:47</div></div>
-<div class="ttc" id="aframes_8h_html_ad06da90597db0c6b61a64067bddd5024"><div class="ttname"><a href="frames_8h.html#ad06da90597db0c6b61a64067bddd5024">BSP_FRAMES_encodeAckFrame</a></div><div class="ttdeci">void BSP_FRAMES_encodeAckFrame(ack_frame_t *ack_to_encode, uint8_t *frame_encoded)</div><div class="ttdef"><b>Definition</b> frames.c:143</div></div>
-<div class="ttc" id="aframes_8h_html_adadce328e6d75dcaf598d1ff1a7d7cae"><div class="ttname"><a href="frames_8h.html#adadce328e6d75dcaf598d1ff1a7d7cae">SIZE_MSG_MAX</a></div><div class="ttdeci">#define SIZE_MSG_MAX</div><div class="ttdef"><b>Definition</b> frames.h:13</div></div>
-<div class="ttc" id="aframes_8h_html_aeda2654b0fd9c033a6182b423576e6e2"><div class="ttname"><a href="frames_8h.html#aeda2654b0fd9c033a6182b423576e6e2">BSP_FRAMES_decodeMsgFrame</a></div><div class="ttdeci">uint8_t BSP_FRAMES_decodeMsgFrame(uint8_t *payload, msg_frame_t *output_frame)</div><div class="ttdoc">Fonction de décodage des messages reçus dans la payload.</div><div class="ttdef"><b>Definition</b> frames.c:70</div></div>
 <div class="ttc" id="astructack__frame__t_html"><div class="ttname"><a href="structack__frame__t.html">ack_frame_t</a></div><div class="ttdoc">Structure pour l'obget acquittement qui est définie par le protocole.</div><div class="ttdef"><b>Definition</b> frames.h:85</div></div>
-<div class="ttc" id="astructack__frame__t_html_a525a891f35b412ee959b3830edbf97ff"><div class="ttname"><a href="structack__frame__t.html#a525a891f35b412ee959b3830edbf97ff">ack_frame_t::dest</a></div><div class="ttdeci">id_frame_t dest</div><div class="ttdef"><b>Definition</b> frames.h:88</div></div>
-<div class="ttc" id="astructack__frame__t_html_a9ca1d60e79b1da9a665d755ca2f1166d"><div class="ttname"><a href="structack__frame__t.html#a9ca1d60e79b1da9a665d755ca2f1166d">ack_frame_t::src</a></div><div class="ttdeci">id_frame_t src</div><div class="ttdef"><b>Definition</b> frames.h:87</div></div>
-<div class="ttc" id="astructack__frame__t_html_aaaee621870ec0334f706f32f762fbf96"><div class="ttname"><a href="structack__frame__t.html#aaaee621870ec0334f706f32f762fbf96">ack_frame_t::sof</a></div><div class="ttdeci">uint8_t sof</div><div class="ttdef"><b>Definition</b> frames.h:86</div></div>
-<div class="ttc" id="astructack__frame__t_html_aafd521ff50ff5fa80ecac741616a8bda"><div class="ttname"><a href="structack__frame__t.html#aafd521ff50ff5fa80ecac741616a8bda">ack_frame_t::eof</a></div><div class="ttdeci">uint8_t eof</div><div class="ttdef"><b>Definition</b> frames.h:90</div></div>
-<div class="ttc" id="astructack__frame__t_html_af32234ff437c1c24d0d4e9c7ef7d622d"><div class="ttname"><a href="structack__frame__t.html#af32234ff437c1c24d0d4e9c7ef7d622d">ack_frame_t::crc</a></div><div class="ttdeci">uint16_t crc</div><div class="ttdef"><b>Definition</b> frames.h:89</div></div>
 <div class="ttc" id="astructid__frame__t_html"><div class="ttname"><a href="structid__frame__t.html">id_frame_t</a></div><div class="ttdef"><b>Definition</b> frames.h:41</div></div>
-<div class="ttc" id="astructid__frame__t_html_a5455fd9930ccdc99733d60925e143e02"><div class="ttname"><a href="structid__frame__t.html#a5455fd9930ccdc99733d60925e143e02">id_frame_t::address</a></div><div class="ttdeci">uint8_t address</div><div class="ttdef"><b>Definition</b> frames.h:43</div></div>
-<div class="ttc" id="astructid__frame__t_html_acafdb929d3fd1893a70ee525818dea79"><div class="ttname"><a href="structid__frame__t.html#acafdb929d3fd1893a70ee525818dea79">id_frame_t::channel</a></div><div class="ttdeci">uint8_t channel</div><div class="ttdef"><b>Definition</b> frames.h:42</div></div>
 <div class="ttc" id="astructmsg__frame__t_html"><div class="ttname"><a href="structmsg__frame__t.html">msg_frame_t</a></div><div class="ttdoc">Structure pour l'obget message qui est définie par le protocole.</div><div class="ttdef"><b>Definition</b> frames.h:61</div></div>
-<div class="ttc" id="astructmsg__frame__t_html_a0572537810c9a27cae4baaac69ab3b91"><div class="ttname"><a href="structmsg__frame__t.html#a0572537810c9a27cae4baaac69ab3b91">msg_frame_t::sof</a></div><div class="ttdeci">uint8_t sof</div><div class="ttdef"><b>Definition</b> frames.h:62</div></div>
-<div class="ttc" id="astructmsg__frame__t_html_a37d7c16116c83cf50545e18ca0aca63d"><div class="ttname"><a href="structmsg__frame__t.html#a37d7c16116c83cf50545e18ca0aca63d">msg_frame_t::src</a></div><div class="ttdeci">id_frame_t src</div><div class="ttdef"><b>Definition</b> frames.h:63</div></div>
-<div class="ttc" id="astructmsg__frame__t_html_a49f456ee54dba6ec23691f63c56b138d"><div class="ttname"><a href="structmsg__frame__t.html#a49f456ee54dba6ec23691f63c56b138d">msg_frame_t::crc</a></div><div class="ttdeci">uint16_t crc</div><div class="ttdef"><b>Definition</b> frames.h:67</div></div>
-<div class="ttc" id="astructmsg__frame__t_html_a64c409a83e1c895a777b05cf7a728c34"><div class="ttname"><a href="structmsg__frame__t.html#a64c409a83e1c895a777b05cf7a728c34">msg_frame_t::dest</a></div><div class="ttdeci">id_frame_t dest</div><div class="ttdef"><b>Definition</b> frames.h:64</div></div>
-<div class="ttc" id="astructmsg__frame__t_html_ab7109a6b14d3593206496a738515d676"><div class="ttname"><a href="structmsg__frame__t.html#ab7109a6b14d3593206496a738515d676">msg_frame_t::size</a></div><div class="ttdeci">uint8_t size</div><div class="ttdef"><b>Definition</b> frames.h:65</div></div>
-<div class="ttc" id="astructmsg__frame__t_html_aea3679d5e69ace4b1196c2c1ed843790"><div class="ttname"><a href="structmsg__frame__t.html#aea3679d5e69ace4b1196c2c1ed843790">msg_frame_t::eof</a></div><div class="ttdeci">uint8_t eof</div><div class="ttdef"><b>Definition</b> frames.h:68</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

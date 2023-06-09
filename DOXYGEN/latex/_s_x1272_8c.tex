@@ -1,5 +1,5 @@
-\doxysection{STM32/bsp/src/\+SX1272.c File Reference}
-\hypertarget{_s_x1272_8c}{}\label{_s_x1272_8c}\index{STM32/bsp/src/SX1272.c@{STM32/bsp/src/SX1272.c}}
+\doxysection{C\+:/\+Users/lucas/\+One\+Drive/\+Documents/\+Git\+Hub/\+Rsf\+Sd\+F/\+STM32/bsp/src/\+SX1272.c File Reference}
+\hypertarget{_s_x1272_8c}{}\label{_s_x1272_8c}\index{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/bsp/src/SX1272.c@{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/bsp/src/SX1272.c}}
 
 
 Fichier source pour le module SX1272.  
@@ -13,10 +13,18 @@ Fichier source pour le module SX1272.
 {\ttfamily \#include \"{}math.\+h\"{}}\newline
 {\ttfamily \#include \"{}bsp.\+h\"{}}\newline
 {\ttfamily \#include \"{}main.\+h\"{}}\newline
+Include dependency graph for SX1272.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{_s_x1272_8c_a940b7d59de47e1432c355fca01620ac3}{millis}} ()
+\Hypertarget{_s_x1272_8c_a940b7d59de47e1432c355fca01620ac3}\label{_s_x1272_8c_a940b7d59de47e1432c355fca01620ac3} 
+int {\bfseries millis} ()
 \item 
 int \mbox{\hyperlink{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7}{max}} (float num1, float num2)
 \item 
@@ -64,93 +72,131 @@ int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07}{BSP\
 \begin{DoxyCompactList}\small\item\em Get the current coding rate value. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ac32a335af980f971d3acc103634723bc}{BSP\+\_\+\+SX1272\+\_\+set\+CR}} (uint8\+\_\+t cod)
 \begin{DoxyCompactList}\small\item\em Set the coding rate parameter for the SX1272 module. \end{DoxyCompactList}\item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a256c77c623060387b0115ec9af433df9}{BSP\+\_\+\+SX1272\+\_\+is\+Channel}} (uint32\+\_\+t ch)
+\Hypertarget{_s_x1272_8c_a256c77c623060387b0115ec9af433df9}\label{_s_x1272_8c_a256c77c623060387b0115ec9af433df9} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+is\+Channel} (uint32\+\_\+t ch)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a386b0526cd1a0f4809e1dcb4ea4f5253}{BSP\+\_\+\+SX1272\+\_\+get\+Channel}} ()
+\Hypertarget{_s_x1272_8c_a386b0526cd1a0f4809e1dcb4ea4f5253}\label{_s_x1272_8c_a386b0526cd1a0f4809e1dcb4ea4f5253} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Channel} ()
 \item 
-int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_af34d08b531e6f35f0b961e676b17800d}{BSP\+\_\+\+SX1272\+\_\+set\+Channel}} (uint32\+\_\+t ch)
+\Hypertarget{_s_x1272_8c_af34d08b531e6f35f0b961e676b17800d}\label{_s_x1272_8c_af34d08b531e6f35f0b961e676b17800d} 
+int8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Channel} (uint32\+\_\+t ch)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aeea4ea276d7069714603905479f67727}{BSP\+\_\+\+SX1272\+\_\+get\+Power}} ()
+\Hypertarget{_s_x1272_8c_aeea4ea276d7069714603905479f67727}\label{_s_x1272_8c_aeea4ea276d7069714603905479f67727} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Power} ()
 \item 
-int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a5134902998e6100ba14add58d32dafab}{BSP\+\_\+\+SX1272\+\_\+set\+Power}} (uint8\+\_\+t pow)
+\Hypertarget{_s_x1272_8c_a5134902998e6100ba14add58d32dafab}\label{_s_x1272_8c_a5134902998e6100ba14add58d32dafab} 
+int8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Power} (uint8\+\_\+t pow)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aa2d7333888bb79615493daa0b202e97e}{BSP\+\_\+\+SX1272\+\_\+get\+Preamble\+Length}} ()
+\Hypertarget{_s_x1272_8c_aa2d7333888bb79615493daa0b202e97e}\label{_s_x1272_8c_aa2d7333888bb79615493daa0b202e97e} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Preamble\+Length} ()
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a1130a38eed7d8451a2993ab3b197f06a}{BSP\+\_\+\+SX1272\+\_\+set\+Preamble\+Length}} (uint16\+\_\+t l)
+\Hypertarget{_s_x1272_8c_a1130a38eed7d8451a2993ab3b197f06a}\label{_s_x1272_8c_a1130a38eed7d8451a2993ab3b197f06a} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Preamble\+Length} (uint16\+\_\+t l)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a70e3dd40d4c27d71611ac4c46f77d231}{BSP\+\_\+\+SX1272\+\_\+get\+Payload\+Length}} ()
+\Hypertarget{_s_x1272_8c_a70e3dd40d4c27d71611ac4c46f77d231}\label{_s_x1272_8c_a70e3dd40d4c27d71611ac4c46f77d231} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Payload\+Length} ()
 \item 
-int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ac5b9a439bfcdced9233e9eb8aff7304c}{BSP\+\_\+\+SX1272\+\_\+set\+Packet\+Length}} (uint8\+\_\+t l)
+\Hypertarget{_s_x1272_8c_ac5b9a439bfcdced9233e9eb8aff7304c}\label{_s_x1272_8c_ac5b9a439bfcdced9233e9eb8aff7304c} 
+int8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Packet\+Length} (uint8\+\_\+t l)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_acd6b0c964badc990e57d88d54a73e795}{BSP\+\_\+\+SX1272\+\_\+get\+Node\+Address}} ()
+\Hypertarget{_s_x1272_8c_acd6b0c964badc990e57d88d54a73e795}\label{_s_x1272_8c_acd6b0c964badc990e57d88d54a73e795} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Node\+Address} ()
 \item 
-int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a6515cd7aa4584753aa2c66a6252a98cb}{BSP\+\_\+\+SX1272\+\_\+set\+Node\+Address}} (uint8\+\_\+t addr)
+\Hypertarget{_s_x1272_8c_a6515cd7aa4584753aa2c66a6252a98cb}\label{_s_x1272_8c_a6515cd7aa4584753aa2c66a6252a98cb} 
+int8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Node\+Address} (uint8\+\_\+t addr)
 \item 
-int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_afbcf844f00bdeaefdf767239089bb7d0}{BSP\+\_\+\+SX1272\+\_\+get\+SNR}} ()
+\Hypertarget{_s_x1272_8c_afbcf844f00bdeaefdf767239089bb7d0}\label{_s_x1272_8c_afbcf844f00bdeaefdf767239089bb7d0} 
+int8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+SNR} ()
 \item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_afbc662bca448dcf0f7182b2ae7e77f6e}{BSP\+\_\+\+SX1272\+\_\+get\+RSSI}} ()
 \item 
-int16\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a3b371f35a383ffb1d822c8e33085f1c6}{BSP\+\_\+\+SX1272\+\_\+get\+RSSIpacket}} ()
+\Hypertarget{_s_x1272_8c_a3b371f35a383ffb1d822c8e33085f1c6}\label{_s_x1272_8c_a3b371f35a383ffb1d822c8e33085f1c6} 
+int16\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+RSSIpacket} ()
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ab42e954f6a0cb2c9106ee686487ca7b2}{BSP\+\_\+\+SX1272\+\_\+set\+Retries}} (uint8\+\_\+t ret)
+\Hypertarget{_s_x1272_8c_ab42e954f6a0cb2c9106ee686487ca7b2}\label{_s_x1272_8c_ab42e954f6a0cb2c9106ee686487ca7b2} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Retries} (uint8\+\_\+t ret)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aa57086bba959d11b6c028aca5e8e04eb}{BSP\+\_\+\+SX1272\+\_\+get\+Max\+Current}} ()
+\Hypertarget{_s_x1272_8c_aa57086bba959d11b6c028aca5e8e04eb}\label{_s_x1272_8c_aa57086bba959d11b6c028aca5e8e04eb} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Max\+Current} ()
 \item 
-int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_acd285f2b7da34b9e7d8c9a7ccc12b841}{BSP\+\_\+\+SX1272\+\_\+set\+Max\+Current}} (uint8\+\_\+t rate)
+\Hypertarget{_s_x1272_8c_acd285f2b7da34b9e7d8c9a7ccc12b841}\label{_s_x1272_8c_acd285f2b7da34b9e7d8c9a7ccc12b841} 
+int8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Max\+Current} (uint8\+\_\+t rate)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a99544940866d0b8e841f6f04de0614fc}{BSP\+\_\+\+SX1272\+\_\+get\+Regs}} ()
+\Hypertarget{_s_x1272_8c_a99544940866d0b8e841f6f04de0614fc}\label{_s_x1272_8c_a99544940866d0b8e841f6f04de0614fc} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Regs} ()
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a4268a6255ab4637f78205e4b9b51ae30}{BSP\+\_\+\+SX1272\+\_\+trunc\+Payload}} (uint16\+\_\+t length16)
+\Hypertarget{_s_x1272_8c_a4268a6255ab4637f78205e4b9b51ae30}\label{_s_x1272_8c_a4268a6255ab4637f78205e4b9b51ae30} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+trunc\+Payload} (uint16\+\_\+t length16)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a65d9807602541b563d6d4035665cec73}{BSP\+\_\+\+SX1272\+\_\+set\+ACK}} ()
+\Hypertarget{_s_x1272_8c_a65d9807602541b563d6d4035665cec73}\label{_s_x1272_8c_a65d9807602541b563d6d4035665cec73} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+ACK} ()
 \item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32}{BSP\+\_\+\+SX1272\+\_\+receive}} ()
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_acff4ba7e35caadf9bdb8483f10dfedbf}{BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+MAXTimeout}} ()
+\Hypertarget{_s_x1272_8c_acff4ba7e35caadf9bdb8483f10dfedbf}\label{_s_x1272_8c_acff4ba7e35caadf9bdb8483f10dfedbf} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+MAXTimeout} ()
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_afb10b837208ffe656413c55fb9b06647}{BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeout}} (uint32\+\_\+t wait)
+\Hypertarget{_s_x1272_8c_afb10b837208ffe656413c55fb9b06647}\label{_s_x1272_8c_afb10b837208ffe656413c55fb9b06647} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeout} (uint32\+\_\+t wait)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ace4b3356e9eec858d8a20e4e9bc9ccde}{BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeou\+ACK}} (uint32\+\_\+t wait)
+\Hypertarget{_s_x1272_8c_ace4b3356e9eec858d8a20e4e9bc9ccde}\label{_s_x1272_8c_ace4b3356e9eec858d8a20e4e9bc9ccde} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeou\+ACK} (uint32\+\_\+t wait)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6}{BSP\+\_\+\+SX1272\+\_\+receive\+All}} (uint32\+\_\+t wait)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ab345c772a3f5a75b78c16760a8b6a028}{BSP\+\_\+\+SX1272\+\_\+available\+Data}} (uint32\+\_\+t wait)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_afb461e5a9bf35ff9c819cfdb157e3ae0}{BSP\+\_\+\+SX1272\+\_\+get\+Packet\+MAXTimeout}} ()
+\Hypertarget{_s_x1272_8c_afb461e5a9bf35ff9c819cfdb157e3ae0}\label{_s_x1272_8c_afb461e5a9bf35ff9c819cfdb157e3ae0} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Packet\+MAXTimeout} ()
 \item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f}{BSP\+\_\+\+SX1272\+\_\+get\+Packet}} (uint32\+\_\+t wait)
 \item 
-int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_add2605afcabf2ba92cf3089de31b61ff}{BSP\+\_\+\+SX1272\+\_\+set\+Destination}} (uint8\+\_\+t dest)
+\Hypertarget{_s_x1272_8c_add2605afcabf2ba92cf3089de31b61ff}\label{_s_x1272_8c_add2605afcabf2ba92cf3089de31b61ff} 
+int8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Destination} (uint8\+\_\+t dest)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a6d032d3d080e5622e8b76405eaecf7fb}{BSP\+\_\+\+SX1272\+\_\+set\+Timeout}} ()
+\Hypertarget{_s_x1272_8c_a6d032d3d080e5622e8b76405eaecf7fb}\label{_s_x1272_8c_a6d032d3d080e5622e8b76405eaecf7fb} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Timeout} ()
 \item 
-float \mbox{\hyperlink{_s_x1272_8c_a41fb8596538c1f8e32fdc582e0cda788}{BSP\+\_\+\+SX1272\+\_\+time\+On\+Air}} (uint16\+\_\+t payloadlength)
+\Hypertarget{_s_x1272_8c_a41fb8596538c1f8e32fdc582e0cda788}\label{_s_x1272_8c_a41fb8596538c1f8e32fdc582e0cda788} 
+float {\bfseries BSP\+\_\+\+SX1272\+\_\+time\+On\+Air} (uint16\+\_\+t payloadlength)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aa0cbfcbc7b594579e5d0905d108801a3}{BSP\+\_\+\+SX1272\+\_\+set\+Payload}} (char \texorpdfstring{$\ast$}{*}payload)
+\Hypertarget{_s_x1272_8c_aa0cbfcbc7b594579e5d0905d108801a3}\label{_s_x1272_8c_aa0cbfcbc7b594579e5d0905d108801a3} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Payload} (char \texorpdfstring{$\ast$}{*}payload)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a75fdce4e584eaae30fe80f0f748450cc}{BSP\+\_\+\+SX1272\+\_\+set\+Packet}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
+\Hypertarget{_s_x1272_8c_a75fdce4e584eaae30fe80f0f748450cc}\label{_s_x1272_8c_a75fdce4e584eaae30fe80f0f748450cc} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+set\+Packet} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ab692c6542ea5675500df5be6d31596de}{BSP\+\_\+\+SX1272\+\_\+send\+With\+MAXTimeout}} ()
+\Hypertarget{_s_x1272_8c_ab692c6542ea5675500df5be6d31596de}\label{_s_x1272_8c_ab692c6542ea5675500df5be6d31596de} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+send\+With\+MAXTimeout} ()
 \item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a85e68d224c715300295151e3eb25d818}{BSP\+\_\+\+SX1272\+\_\+send\+With\+Timeout}} (uint32\+\_\+t wait)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aebc852eb4ab8a0a954961311432a1ede}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
+\Hypertarget{_s_x1272_8c_aebc852eb4ab8a0a954961311432a1ede}\label{_s_x1272_8c_aebc852eb4ab8a0a954961311432a1ede} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a729b1cfbd077be21b68a98da7734d352}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
+\Hypertarget{_s_x1272_8c_a729b1cfbd077be21b68a98da7734d352}\label{_s_x1272_8c_a729b1cfbd077be21b68a98da7734d352} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aff734df26dabf9e31c44645ac68df798}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout\+ACK}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
+\Hypertarget{_s_x1272_8c_aff734df26dabf9e31c44645ac68df798}\label{_s_x1272_8c_aff734df26dabf9e31c44645ac68df798} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout\+ACK} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_abb6cb6942968fde251bf85806d596e70}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACK}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
+\Hypertarget{_s_x1272_8c_abb6cb6942968fde251bf85806d596e70}\label{_s_x1272_8c_abb6cb6942968fde251bf85806d596e70} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACK} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1}{BSP\+\_\+\+SX1272\+\_\+get\+ACK}} (uint32\+\_\+t wait)
+\Hypertarget{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1}\label{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+ACK} (uint32\+\_\+t wait)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aa8c06d342955ebc83597338dda59ffba}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout\+ACKRetries}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
+\Hypertarget{_s_x1272_8c_aa8c06d342955ebc83597338dda59ffba}\label{_s_x1272_8c_aa8c06d342955ebc83597338dda59ffba} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout\+ACKRetries} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a8431e866f89dd99e9956b370d1fbf4f4}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACKRetries}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
+\Hypertarget{_s_x1272_8c_a8431e866f89dd99e9956b370d1fbf4f4}\label{_s_x1272_8c_a8431e866f89dd99e9956b370d1fbf4f4} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACKRetries} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a0c9ab298ced3d1d7ae2d14bd01bf1166}{BSP\+\_\+\+SX1272\+\_\+get\+Temp}} ()
+\Hypertarget{_s_x1272_8c_a0c9ab298ced3d1d7ae2d14bd01bf1166}\label{_s_x1272_8c_a0c9ab298ced3d1d7ae2d14bd01bf1166} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+get\+Temp} ()
 \item 
-uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aa7177092cff951f46ff6afee93e98e69}{BSP\+\_\+\+SX1272\+\_\+cad\+Detected}} ()
+\Hypertarget{_s_x1272_8c_aa7177092cff951f46ff6afee93e98e69}\label{_s_x1272_8c_aa7177092cff951f46ff6afee93e98e69} 
+uint8\+\_\+t {\bfseries BSP\+\_\+\+SX1272\+\_\+cad\+Detected} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -180,13 +226,7 @@ Ce fichier est créé le 24 août 2020 par Arnaud.
 
 Lo\+Ra mode
 
-FSK mode\Hypertarget{_s_x1272_8c_aa7177092cff951f46ff6afee93e98e69}\label{_s_x1272_8c_aa7177092cff951f46ff6afee93e98e69} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_cadDetected@{BSP\_SX1272\_cadDetected}}
-\index{BSP\_SX1272\_cadDetected@{BSP\_SX1272\_cadDetected}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_cadDetected()}{BSP\_SX1272\_cadDetected()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+cad\+Detected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1}\label{_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1} 
+FSK mode\Hypertarget{_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1}\label{_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_clearFlags@{BSP\_SX1272\_clearFlags}}
 \index{BSP\_SX1272\_clearFlags@{BSP\_SX1272\_clearFlags}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_clearFlags()}{BSP\_SX1272\_clearFlags()}}
@@ -199,16 +239,17 @@ Efface les indicateurs de drapeaux du module SX1272.
 Cette fonction efface les indicateurs de drapeaux du module SX1272. Les drapeaux sont effacés en mettant le module en mode veille, en écrivant dans les registres appropriés, puis en restaurant le mode précédent.
 
 \begin{DoxyNote}{Note}
-Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+Cette fonction assume que les fonctions BSP\+\_\+\+SX1272\+\_\+\+Read() et BSP\+\_\+\+SX1272\+\_\+\+Write() sont disponibles pour lire et écrire dans les registres du module SX1272. 
 \end{DoxyNote}
 Lo\+Ra mode
 
-FSK mode\Hypertarget{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1}\label{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getACK@{BSP\_SX1272\_getACK}}
-\index{BSP\_SX1272\_getACK@{BSP\_SX1272\_getACK}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getACK()}{BSP\_SX1272\_getACK()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+ACK (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
-
+FSK modeHere is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a}\label{_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getBW@{BSP\_SX1272\_getBW}}
 \index{BSP\_SX1272\_getBW@{BSP\_SX1272\_getBW}!SX1272.c@{SX1272.c}}
@@ -224,12 +265,20 @@ This function retrieves the current bandwidth setting from the SX1272 module.
 \begin{DoxyReturn}{Returns}
 0 if the bandwidth value was successfully retrieved, 1 if there was an error, or -\/1 if the bandwidth is not available in FSK mode. 
 \end{DoxyReturn}
-\Hypertarget{_s_x1272_8c_a386b0526cd1a0f4809e1dcb4ea4f5253}\label{_s_x1272_8c_a386b0526cd1a0f4809e1dcb4ea4f5253} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getChannel@{BSP\_SX1272\_getChannel}}
-\index{BSP\_SX1272\_getChannel@{BSP\_SX1272\_getChannel}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getChannel()}{BSP\_SX1272\_getChannel()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Channel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07}\label{_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getCR@{BSP\_SX1272\_getCR}}
 \index{BSP\_SX1272\_getCR@{BSP\_SX1272\_getCR}!SX1272.c@{SX1272.c}}
@@ -245,6 +294,13 @@ This function retrieves the current coding rate value from the SX1272 module.
 \begin{DoxyReturn}{Returns}
 The current coding rate value. -\/1 if the module is in FSK mode (FSK mode doesn\textquotesingle{}t have a coding rate). 0 if the coding rate value is successfully retrieved. 1 if there was an error while getting the coding rate value. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a8fa565b989224342464c22c77f8c6e7d}\label{_s_x1272_8c_a8fa565b989224342464c22c77f8c6e7d} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getCRC@{BSP\_SX1272\_getCRC}}
 \index{BSP\_SX1272\_getCRC@{BSP\_SX1272\_getCRC}!SX1272.c@{SX1272.c}}
@@ -268,7 +324,7 @@ The state of the CRC configuration.
 \begin{DoxyParagraph}{Example}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a8fa565b989224342464c22c77f8c6e7d}{BSP\_SX1272\_getCRC}}();}
+\DoxyCodeLine{int8\_t\ state\ =\ BSP\_SX1272\_getCRC();}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ is\ deactivated}}
 \DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
@@ -301,7 +357,7 @@ In FSK mode, the header is not available.
 \begin{DoxyParagraph}{Example}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{uint8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_ae8a601b57791635b3417ffea72ee47c5}{BSP\_SX1272\_getHeader}}();}
+\DoxyCodeLine{uint8\_t\ state\ =\ BSP\_SX1272\_getHeader();}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ mode\ retrieved\ successfully}}
 \DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
@@ -311,12 +367,6 @@ In FSK mode, the header is not available.
 \end{DoxyCode}
  
 \end{DoxyParagraph}
-\Hypertarget{_s_x1272_8c_aa57086bba959d11b6c028aca5e8e04eb}\label{_s_x1272_8c_aa57086bba959d11b6c028aca5e8e04eb} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getMaxCurrent@{BSP\_SX1272\_getMaxCurrent}}
-\index{BSP\_SX1272\_getMaxCurrent@{BSP\_SX1272\_getMaxCurrent}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getMaxCurrent()}{BSP\_SX1272\_getMaxCurrent()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Max\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \Hypertarget{_s_x1272_8c_a547aa32b39ad3d33de177364e6d99f4b}\label{_s_x1272_8c_a547aa32b39ad3d33de177364e6d99f4b} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getMode@{BSP\_SX1272\_getMode}}
 \index{BSP\_SX1272\_getMode@{BSP\_SX1272\_getMode}!SX1272.c@{SX1272.c}}
@@ -338,14 +388,15 @@ Cette fonction récupère le mode actuel du module SX1272. Elle lit les registre
 \end{DoxyItemize}
 \end{DoxyReturn}
 \begin{DoxyNote}{Note}
-Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+Cette fonction assume que les fonctions BSP\+\_\+\+SX1272\+\_\+\+Read() et BSP\+\_\+\+SX1272\+\_\+\+Write() sont disponibles pour lire et écrire dans les registres du module SX1272. 
 \end{DoxyNote}
-\Hypertarget{_s_x1272_8c_acd6b0c964badc990e57d88d54a73e795}\label{_s_x1272_8c_acd6b0c964badc990e57d88d54a73e795} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getNodeAddress@{BSP\_SX1272\_getNodeAddress}}
-\index{BSP\_SX1272\_getNodeAddress@{BSP\_SX1272\_getNodeAddress}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getNodeAddress()}{BSP\_SX1272\_getNodeAddress()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Node\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a547aa32b39ad3d33de177364e6d99f4b_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f}\label{_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getPacket@{BSP\_SX1272\_getPacket}}
 \index{BSP\_SX1272\_getPacket@{BSP\_SX1272\_getPacket}!SX1272.c@{SX1272.c}}
@@ -358,36 +409,20 @@ FSK mode
 
 Lo\+Ra
 
-FSK\Hypertarget{_s_x1272_8c_afb461e5a9bf35ff9c819cfdb157e3ae0}\label{_s_x1272_8c_afb461e5a9bf35ff9c819cfdb157e3ae0} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getPacketMAXTimeout@{BSP\_SX1272\_getPacketMAXTimeout}}
-\index{BSP\_SX1272\_getPacketMAXTimeout@{BSP\_SX1272\_getPacketMAXTimeout}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPacketMAXTimeout()}{BSP\_SX1272\_getPacketMAXTimeout()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Packet\+MAXTimeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a70e3dd40d4c27d71611ac4c46f77d231}\label{_s_x1272_8c_a70e3dd40d4c27d71611ac4c46f77d231} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getPayloadLength@{BSP\_SX1272\_getPayloadLength}}
-\index{BSP\_SX1272\_getPayloadLength@{BSP\_SX1272\_getPayloadLength}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPayloadLength()}{BSP\_SX1272\_getPayloadLength()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Payload\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_aeea4ea276d7069714603905479f67727}\label{_s_x1272_8c_aeea4ea276d7069714603905479f67727} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getPower@{BSP\_SX1272\_getPower}}
-\index{BSP\_SX1272\_getPower@{BSP\_SX1272\_getPower}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPower()}{BSP\_SX1272\_getPower()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Power (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_aa2d7333888bb79615493daa0b202e97e}\label{_s_x1272_8c_aa2d7333888bb79615493daa0b202e97e} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getPreambleLength@{BSP\_SX1272\_getPreambleLength}}
-\index{BSP\_SX1272\_getPreambleLength@{BSP\_SX1272\_getPreambleLength}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPreambleLength()}{BSP\_SX1272\_getPreambleLength()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Preamble\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a99544940866d0b8e841f6f04de0614fc}\label{_s_x1272_8c_a99544940866d0b8e841f6f04de0614fc} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getRegs@{BSP\_SX1272\_getRegs}}
-\index{BSP\_SX1272\_getRegs@{BSP\_SX1272\_getRegs}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getRegs()}{BSP\_SX1272\_getRegs()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Regs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+FSKHere is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_adc205f8a5e76a8f8036191c8ba4f218f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_afbc662bca448dcf0f7182b2ae7e77f6e}\label{_s_x1272_8c_afbc662bca448dcf0f7182b2ae7e77f6e} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getRSSI@{BSP\_SX1272\_getRSSI}}
 \index{BSP\_SX1272\_getRSSI@{BSP\_SX1272\_getRSSI}!SX1272.c@{SX1272.c}}
@@ -396,12 +431,13 @@ FSK\Hypertarget{_s_x1272_8c_afb461e5a9bf35ff9c819cfdb157e3ae0}\label{_s_x1272_8c
 
 Lo\+Ra mode
 
-FSK mode\Hypertarget{_s_x1272_8c_a3b371f35a383ffb1d822c8e33085f1c6}\label{_s_x1272_8c_a3b371f35a383ffb1d822c8e33085f1c6} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getRSSIpacket@{BSP\_SX1272\_getRSSIpacket}}
-\index{BSP\_SX1272\_getRSSIpacket@{BSP\_SX1272\_getRSSIpacket}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getRSSIpacket()}{BSP\_SX1272\_getRSSIpacket()}}
-{\footnotesize\ttfamily int16\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+RSSIpacket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+FSK modeHere is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_afbc662bca448dcf0f7182b2ae7e77f6e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c}\label{_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getSF@{BSP\_SX1272\_getSF}}
 \index{BSP\_SX1272\_getSF@{BSP\_SX1272\_getSF}!SX1272.c@{SX1272.c}}
@@ -417,18 +453,20 @@ This function retrieves the current spreading factor (SF) setting from the SX127
 \begin{DoxyReturn}{Returns}
 0 if the spreading factor is successfully retrieved and valid, 1 if there was an error, or -\/1 if the device is in FSK mode where spreading factor is not applicable. 
 \end{DoxyReturn}
-\Hypertarget{_s_x1272_8c_afbcf844f00bdeaefdf767239089bb7d0}\label{_s_x1272_8c_afbcf844f00bdeaefdf767239089bb7d0} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getSNR@{BSP\_SX1272\_getSNR}}
-\index{BSP\_SX1272\_getSNR@{BSP\_SX1272\_getSNR}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getSNR()}{BSP\_SX1272\_getSNR()}}
-{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+SNR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a0c9ab298ced3d1d7ae2d14bd01bf1166}\label{_s_x1272_8c_a0c9ab298ced3d1d7ae2d14bd01bf1166} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getTemp@{BSP\_SX1272\_getTemp}}
-\index{BSP\_SX1272\_getTemp@{BSP\_SX1272\_getTemp}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getTemp()}{BSP\_SX1272\_getTemp()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a}\label{_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_isBW@{BSP\_SX1272\_isBW}}
 \index{BSP\_SX1272\_isBW@{BSP\_SX1272\_isBW}!SX1272.c@{SX1272.c}}
@@ -449,12 +487,13 @@ This function checks if the specified bandwidth value is valid for the SX1272 mo
 \begin{DoxyReturn}{Returns}
 1 if the bandwidth value is valid, 0 otherwise. 
 \end{DoxyReturn}
-\Hypertarget{_s_x1272_8c_a256c77c623060387b0115ec9af433df9}\label{_s_x1272_8c_a256c77c623060387b0115ec9af433df9} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_isChannel@{BSP\_SX1272\_isChannel}}
-\index{BSP\_SX1272\_isChannel@{BSP\_SX1272\_isChannel}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_isChannel()}{BSP\_SX1272\_isChannel()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+is\+Channel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ch }\end{DoxyParamCaption})}
-
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790}\label{_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_isCR@{BSP\_SX1272\_isCR}}
 \index{BSP\_SX1272\_isCR@{BSP\_SX1272\_isCR}!SX1272.c@{SX1272.c}}
@@ -475,6 +514,13 @@ This function checks if the coding rate value is valid based on the available va
 \begin{DoxyReturn}{Returns}
 1 if the coding rate value is valid, 0 otherwise. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945}\label{_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_isSF@{BSP\_SX1272\_isSF}}
 \index{BSP\_SX1272\_isSF@{BSP\_SX1272\_isSF}!SX1272.c@{SX1272.c}}
@@ -495,6 +541,13 @@ This function checks if the provided spreading factor (SF) value is valid. It co
 \begin{DoxyReturn}{Returns}
 1 if the spreading factor is valid, 0 otherwise. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a6d5d1889f6ae377b5a230f2d9443f13c}\label{_s_x1272_8c_a6d5d1889f6ae377b5a230f2d9443f13c} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_OFF@{BSP\_SX1272\_OFF}}
 \index{BSP\_SX1272\_OFF@{BSP\_SX1272\_OFF}!SX1272.c@{SX1272.c}}
@@ -513,7 +566,7 @@ Cette fonction désactive le module SX1272 en mettant le module en mode veille o
 \hline
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
-Cette fonction assume que la fonction \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} est disponible pour écrire dans les registres du module SX1272. 
+Cette fonction assume que la fonction BSP\+\_\+\+SX1272\+\_\+\+Write() est disponible pour écrire dans les registres du module SX1272. 
 \end{DoxyNote}
 \Hypertarget{_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d}\label{_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_ON@{BSP\_SX1272\_ON}}
@@ -540,8 +593,15 @@ L\textquotesingle{}état d\textquotesingle{}activation du module SX1272 \+:
 \end{DoxyItemize}
 \end{DoxyReturn}
 \begin{DoxyNote}{Note}
-Cette fonction assume que le module SX1272 est connecté et que les fonctions \doxylink{com_s_x1272_8h_a823387fc0ba3a232cd26c0e46165117d}{BSP\+\_\+\+SPI1\+\_\+\+Init()} et \doxylink{delay_8h_adfc6cf5dbb78d0f390c250838bb51777}{BSP\+\_\+\+DELAY\+\_\+ms()} sont disponibles. 
+Cette fonction assume que le module SX1272 est connecté et que les fonctions BSP\+\_\+\+SPI1\+\_\+\+Init() et BSP\+\_\+\+DELAY\+\_\+ms() sont disponibles. 
 \end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32}\label{_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_receive@{BSP\_SX1272\_receive}}
 \index{BSP\_SX1272\_receive@{BSP\_SX1272\_receive}!SX1272.c@{SX1272.c}}
@@ -550,72 +610,26 @@ Cette fonction assume que le module SX1272 est connecté et que les fonctions \d
 
 Lo\+Ra mode
 
-FSK mode\Hypertarget{_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6}\label{_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6} 
+FSK modeHere is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6}\label{_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_receiveAll@{BSP\_SX1272\_receiveAll}}
 \index{BSP\_SX1272\_receiveAll@{BSP\_SX1272\_receiveAll}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receiveAll()}{BSP\_SX1272\_receiveAll()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+All (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
 
-FSK mode\Hypertarget{_s_x1272_8c_acff4ba7e35caadf9bdb8483f10dfedbf}\label{_s_x1272_8c_acff4ba7e35caadf9bdb8483f10dfedbf} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_receivePacketMAXTimeout@{BSP\_SX1272\_receivePacketMAXTimeout}}
-\index{BSP\_SX1272\_receivePacketMAXTimeout@{BSP\_SX1272\_receivePacketMAXTimeout}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receivePacketMAXTimeout()}{BSP\_SX1272\_receivePacketMAXTimeout()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+MAXTimeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_ace4b3356e9eec858d8a20e4e9bc9ccde}\label{_s_x1272_8c_ace4b3356e9eec858d8a20e4e9bc9ccde} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_receivePacketTimeouACK@{BSP\_SX1272\_receivePacketTimeouACK}}
-\index{BSP\_SX1272\_receivePacketTimeouACK@{BSP\_SX1272\_receivePacketTimeouACK}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receivePacketTimeouACK()}{BSP\_SX1272\_receivePacketTimeouACK()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeou\+ACK (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_afb10b837208ffe656413c55fb9b06647}\label{_s_x1272_8c_afb10b837208ffe656413c55fb9b06647} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_receivePacketTimeout@{BSP\_SX1272\_receivePacketTimeout}}
-\index{BSP\_SX1272\_receivePacketTimeout@{BSP\_SX1272\_receivePacketTimeout}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receivePacketTimeout()}{BSP\_SX1272\_receivePacketTimeout()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeout (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_aebc852eb4ab8a0a954961311432a1ede}\label{_s_x1272_8c_aebc852eb4ab8a0a954961311432a1ede} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_sendPacketMAXTimeout@{BSP\_SX1272\_sendPacketMAXTimeout}}
-\index{BSP\_SX1272\_sendPacketMAXTimeout@{BSP\_SX1272\_sendPacketMAXTimeout}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketMAXTimeout()}{BSP\_SX1272\_sendPacketMAXTimeout()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_aff734df26dabf9e31c44645ac68df798}\label{_s_x1272_8c_aff734df26dabf9e31c44645ac68df798} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_sendPacketMAXTimeoutACK@{BSP\_SX1272\_sendPacketMAXTimeoutACK}}
-\index{BSP\_SX1272\_sendPacketMAXTimeoutACK@{BSP\_SX1272\_sendPacketMAXTimeoutACK}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketMAXTimeoutACK()}{BSP\_SX1272\_sendPacketMAXTimeoutACK()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout\+ACK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_aa8c06d342955ebc83597338dda59ffba}\label{_s_x1272_8c_aa8c06d342955ebc83597338dda59ffba} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_sendPacketMAXTimeoutACKRetries@{BSP\_SX1272\_sendPacketMAXTimeoutACKRetries}}
-\index{BSP\_SX1272\_sendPacketMAXTimeoutACKRetries@{BSP\_SX1272\_sendPacketMAXTimeoutACKRetries}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketMAXTimeoutACKRetries()}{BSP\_SX1272\_sendPacketMAXTimeoutACKRetries()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout\+ACKRetries (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a729b1cfbd077be21b68a98da7734d352}\label{_s_x1272_8c_a729b1cfbd077be21b68a98da7734d352} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_sendPacketTimeout@{BSP\_SX1272\_sendPacketTimeout}}
-\index{BSP\_SX1272\_sendPacketTimeout@{BSP\_SX1272\_sendPacketTimeout}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketTimeout()}{BSP\_SX1272\_sendPacketTimeout()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload,  }\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_abb6cb6942968fde251bf85806d596e70}\label{_s_x1272_8c_abb6cb6942968fde251bf85806d596e70} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_sendPacketTimeoutACK@{BSP\_SX1272\_sendPacketTimeoutACK}}
-\index{BSP\_SX1272\_sendPacketTimeoutACK@{BSP\_SX1272\_sendPacketTimeoutACK}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketTimeoutACK()}{BSP\_SX1272\_sendPacketTimeoutACK()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload,  }\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a8431e866f89dd99e9956b370d1fbf4f4}\label{_s_x1272_8c_a8431e866f89dd99e9956b370d1fbf4f4} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_sendPacketTimeoutACKRetries@{BSP\_SX1272\_sendPacketTimeoutACKRetries}}
-\index{BSP\_SX1272\_sendPacketTimeoutACKRetries@{BSP\_SX1272\_sendPacketTimeoutACKRetries}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketTimeoutACKRetries()}{BSP\_SX1272\_sendPacketTimeoutACKRetries()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACKRetries (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload,  }\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_ab692c6542ea5675500df5be6d31596de}\label{_s_x1272_8c_ab692c6542ea5675500df5be6d31596de} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_sendWithMAXTimeout@{BSP\_SX1272\_sendWithMAXTimeout}}
-\index{BSP\_SX1272\_sendWithMAXTimeout@{BSP\_SX1272\_sendWithMAXTimeout}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendWithMAXTimeout()}{BSP\_SX1272\_sendWithMAXTimeout()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+With\+MAXTimeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+FSK modeHere is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_adaf6a9e0c64c1614e0aa1a1bc93bace6_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a85e68d224c715300295151e3eb25d818}\label{_s_x1272_8c_a85e68d224c715300295151e3eb25d818} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_sendWithTimeout@{BSP\_SX1272\_sendWithTimeout}}
 \index{BSP\_SX1272\_sendWithTimeout@{BSP\_SX1272\_sendWithTimeout}!SX1272.c@{SX1272.c}}
@@ -624,12 +638,13 @@ FSK mode\Hypertarget{_s_x1272_8c_acff4ba7e35caadf9bdb8483f10dfedbf}\label{_s_x12
 
 Lo\+Ra mode
 
-FSK mode\Hypertarget{_s_x1272_8c_a65d9807602541b563d6d4035665cec73}\label{_s_x1272_8c_a65d9807602541b563d6d4035665cec73} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setACK@{BSP\_SX1272\_setACK}}
-\index{BSP\_SX1272\_setACK@{BSP\_SX1272\_setACK}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setACK()}{BSP\_SX1272\_setACK()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+ACK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+FSK modeHere is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a85e68d224c715300295151e3eb25d818_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4}\label{_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setBW@{BSP\_SX1272\_setBW}}
 \index{BSP\_SX1272\_setBW@{BSP\_SX1272\_setBW}!SX1272.c@{SX1272.c}}
@@ -650,12 +665,20 @@ This function sets the bandwidth parameter for the SX1272 module.
 \begin{DoxyReturn}{Returns}
 0 if the bandwidth was successfully set, 1 if there was an error, or -\/1 if the bandwidth is not available in FSK mode. 
 \end{DoxyReturn}
-\Hypertarget{_s_x1272_8c_af34d08b531e6f35f0b961e676b17800d}\label{_s_x1272_8c_af34d08b531e6f35f0b961e676b17800d} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setChannel@{BSP\_SX1272\_setChannel}}
-\index{BSP\_SX1272\_setChannel@{BSP\_SX1272\_setChannel}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setChannel()}{BSP\_SX1272\_setChannel()}}
-{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Channel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ch }\end{DoxyParamCaption})}
-
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_ac32a335af980f971d3acc103634723bc}\label{_s_x1272_8c_ac32a335af980f971d3acc103634723bc} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setCR@{BSP\_SX1272\_setCR}}
 \index{BSP\_SX1272\_setCR@{BSP\_SX1272\_setCR}!SX1272.c@{SX1272.c}}
@@ -676,6 +699,20 @@ This function sets the coding rate parameter for the SX1272 module.
 \begin{DoxyReturn}{Returns}
 0 if the coding rate parameter is successfully set. 1 if there was an error while setting the coding rate parameter. 2 if the module is in FSK mode (FSK mode doesn\textquotesingle{}t have a coding rate). 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{_s_x1272_8c_ac32a335af980f971d3acc103634723bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{_s_x1272_8c_ac32a335af980f971d3acc103634723bc_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a55bc531484f486ec00f39fe193de345e}\label{_s_x1272_8c_a55bc531484f486ec00f39fe193de345e} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setCRC\_OFF@{BSP\_SX1272\_setCRC\_OFF}}
 \index{BSP\_SX1272\_setCRC\_OFF@{BSP\_SX1272\_setCRC\_OFF}!SX1272.c@{SX1272.c}}
@@ -714,7 +751,7 @@ The state of the operation.
 \begin{DoxyParagraph}{Example}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{uint8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_aa583c8c3ab80c8a2c3a71ed878695d7b}{BSP\_SX1272\_setCRC\_ON}}();}
+\DoxyCodeLine{uint8\_t\ state\ =\ BSP\_SX1272\_setCRC\_ON();}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ activated\ successfully}}
 \DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
@@ -726,12 +763,6 @@ The state of the operation.
 \end{DoxyCode}
  
 \end{DoxyParagraph}
-\Hypertarget{_s_x1272_8c_add2605afcabf2ba92cf3089de31b61ff}\label{_s_x1272_8c_add2605afcabf2ba92cf3089de31b61ff} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setDestination@{BSP\_SX1272\_setDestination}}
-\index{BSP\_SX1272\_setDestination@{BSP\_SX1272\_setDestination}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setDestination()}{BSP\_SX1272\_setDestination()}}
-{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Destination (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest }\end{DoxyParamCaption})}
-
 \Hypertarget{_s_x1272_8c_aae304aeaa85480a39c3f8e20e5f9b09e}\label{_s_x1272_8c_aae304aeaa85480a39c3f8e20e5f9b09e} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setFSK@{BSP\_SX1272\_setFSK}}
 \index{BSP\_SX1272\_setFSK@{BSP\_SX1272\_setFSK}!SX1272.c@{SX1272.c}}
@@ -753,8 +784,15 @@ Cette fonction configure le module SX1272 en mode FSK. Elle met d\textquotesingl
 \end{DoxyItemize}
 \end{DoxyReturn}
 \begin{DoxyNote}{Note}
-Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+Cette fonction assume que les fonctions BSP\+\_\+\+SX1272\+\_\+\+Read() et BSP\+\_\+\+SX1272\+\_\+\+Write() sont disponibles pour lire et écrire dans les registres du module SX1272. 
 \end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{_s_x1272_8c_aae304aeaa85480a39c3f8e20e5f9b09e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589}\label{_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setHeaderOFF@{BSP\_SX1272\_setHeaderOFF}}
 \index{BSP\_SX1272\_setHeaderOFF@{BSP\_SX1272\_setHeaderOFF}!SX1272.c@{SX1272.c}}
@@ -778,7 +816,7 @@ The state of the operation.
 \begin{DoxyParagraph}{Example}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a56dbd355a1ffaca74216f41b24b03589}{BSP\_SX1272\_setHeaderOFF}}();}
+\DoxyCodeLine{int8\_t\ state\ =\ BSP\_SX1272\_setHeaderOFF();}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ deactivated\ successfully}}
 \DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
@@ -790,6 +828,13 @@ The state of the operation.
 \end{DoxyCode}
  
 \end{DoxyParagraph}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a772a707eed75deec1aabacb35a917eee}\label{_s_x1272_8c_a772a707eed75deec1aabacb35a917eee} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setHeaderON@{BSP\_SX1272\_setHeaderON}}
 \index{BSP\_SX1272\_setHeaderON@{BSP\_SX1272\_setHeaderON}!SX1272.c@{SX1272.c}}
@@ -816,7 +861,7 @@ The header is mandatory to be off when the spreading factor (SF) is 6.
 \begin{DoxyParagraph}{Example}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a772a707eed75deec1aabacb35a917eee}{BSP\_SX1272\_setHeaderON}}();}
+\DoxyCodeLine{int8\_t\ state\ =\ BSP\_SX1272\_setHeaderON();}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ activated\ successfully}}
 \DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
@@ -849,14 +894,15 @@ Cette fonction configure le module SX1272 en mode Lo\+Ra. Elle met d\textquotesi
 \end{DoxyItemize}
 \end{DoxyReturn}
 \begin{DoxyNote}{Note}
-Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+Cette fonction assume que les fonctions BSP\+\_\+\+SX1272\+\_\+\+Read() et BSP\+\_\+\+SX1272\+\_\+\+Write() sont disponibles pour lire et écrire dans les registres du module SX1272. 
 \end{DoxyNote}
-\Hypertarget{_s_x1272_8c_acd285f2b7da34b9e7d8c9a7ccc12b841}\label{_s_x1272_8c_acd285f2b7da34b9e7d8c9a7ccc12b841} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setMaxCurrent@{BSP\_SX1272\_setMaxCurrent}}
-\index{BSP\_SX1272\_setMaxCurrent@{BSP\_SX1272\_setMaxCurrent}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setMaxCurrent()}{BSP\_SX1272\_setMaxCurrent()}}
-{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Max\+Current (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{rate }\end{DoxyParamCaption})}
-
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a842904846734cb7ba7ca312f50dbe962_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a1cd5da9228870a8136f5b630f1ea3de7}\label{_s_x1272_8c_a1cd5da9228870a8136f5b630f1ea3de7} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setMode@{BSP\_SX1272\_setMode}}
 \index{BSP\_SX1272\_setMode@{BSP\_SX1272\_setMode}!SX1272.c@{SX1272.c}}
@@ -879,48 +925,13 @@ The state of the operation\+:
 \item -\/1\+: The indicated mode doesn\textquotesingle{}t exist. 
 \end{DoxyItemize}
 \end{DoxyReturn}
-\Hypertarget{_s_x1272_8c_a6515cd7aa4584753aa2c66a6252a98cb}\label{_s_x1272_8c_a6515cd7aa4584753aa2c66a6252a98cb} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setNodeAddress@{BSP\_SX1272\_setNodeAddress}}
-\index{BSP\_SX1272\_setNodeAddress@{BSP\_SX1272\_setNodeAddress}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setNodeAddress()}{BSP\_SX1272\_setNodeAddress()}}
-{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Node\+Address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a75fdce4e584eaae30fe80f0f748450cc}\label{_s_x1272_8c_a75fdce4e584eaae30fe80f0f748450cc} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setPacket@{BSP\_SX1272\_setPacket}}
-\index{BSP\_SX1272\_setPacket@{BSP\_SX1272\_setPacket}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPacket()}{BSP\_SX1272\_setPacket()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Packet (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_ac5b9a439bfcdced9233e9eb8aff7304c}\label{_s_x1272_8c_ac5b9a439bfcdced9233e9eb8aff7304c} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setPacketLength@{BSP\_SX1272\_setPacketLength}}
-\index{BSP\_SX1272\_setPacketLength@{BSP\_SX1272\_setPacketLength}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPacketLength()}{BSP\_SX1272\_setPacketLength()}}
-{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Packet\+Length (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{l }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_aa0cbfcbc7b594579e5d0905d108801a3}\label{_s_x1272_8c_aa0cbfcbc7b594579e5d0905d108801a3} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setPayload@{BSP\_SX1272\_setPayload}}
-\index{BSP\_SX1272\_setPayload@{BSP\_SX1272\_setPayload}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPayload()}{BSP\_SX1272\_setPayload()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Payload (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a5134902998e6100ba14add58d32dafab}\label{_s_x1272_8c_a5134902998e6100ba14add58d32dafab} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setPower@{BSP\_SX1272\_setPower}}
-\index{BSP\_SX1272\_setPower@{BSP\_SX1272\_setPower}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPower()}{BSP\_SX1272\_setPower()}}
-{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Power (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pow }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a1130a38eed7d8451a2993ab3b197f06a}\label{_s_x1272_8c_a1130a38eed7d8451a2993ab3b197f06a} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setPreambleLength@{BSP\_SX1272\_setPreambleLength}}
-\index{BSP\_SX1272\_setPreambleLength@{BSP\_SX1272\_setPreambleLength}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPreambleLength()}{BSP\_SX1272\_setPreambleLength()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Preamble\+Length (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{l }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_ab42e954f6a0cb2c9106ee686487ca7b2}\label{_s_x1272_8c_ab42e954f6a0cb2c9106ee686487ca7b2} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setRetries@{BSP\_SX1272\_setRetries}}
-\index{BSP\_SX1272\_setRetries@{BSP\_SX1272\_setRetries}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setRetries()}{BSP\_SX1272\_setRetries()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Retries (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ret }\end{DoxyParamCaption})}
-
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a1cd5da9228870a8136f5b630f1ea3de7_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b}\label{_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setSF@{BSP\_SX1272\_setSF}}
 \index{BSP\_SX1272\_setSF@{BSP\_SX1272\_setSF}!SX1272.c@{SX1272.c}}
@@ -943,36 +954,33 @@ This function sets the spreading factor (SF) for Lo\+Ra mode in the SX1272 modul
 \end{DoxyReturn}
 FSK mode
 
-Lo\+Ra mode\Hypertarget{_s_x1272_8c_a6d032d3d080e5622e8b76405eaecf7fb}\label{_s_x1272_8c_a6d032d3d080e5622e8b76405eaecf7fb} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setTimeout@{BSP\_SX1272\_setTimeout}}
-\index{BSP\_SX1272\_setTimeout@{BSP\_SX1272\_setTimeout}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setTimeout()}{BSP\_SX1272\_setTimeout()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a41fb8596538c1f8e32fdc582e0cda788}\label{_s_x1272_8c_a41fb8596538c1f8e32fdc582e0cda788} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_timeOnAir@{BSP\_SX1272\_timeOnAir}}
-\index{BSP\_SX1272\_timeOnAir@{BSP\_SX1272\_timeOnAir}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_timeOnAir()}{BSP\_SX1272\_timeOnAir()}}
-{\footnotesize\ttfamily float BSP\+\_\+\+SX1272\+\_\+time\+On\+Air (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{payloadlength }\end{DoxyParamCaption})}
-
-\Hypertarget{_s_x1272_8c_a4268a6255ab4637f78205e4b9b51ae30}\label{_s_x1272_8c_a4268a6255ab4637f78205e4b9b51ae30} 
-\index{SX1272.c@{SX1272.c}!BSP\_SX1272\_truncPayload@{BSP\_SX1272\_truncPayload}}
-\index{BSP\_SX1272\_truncPayload@{BSP\_SX1272\_truncPayload}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_truncPayload()}{BSP\_SX1272\_truncPayload()}}
-{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+trunc\+Payload (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{length16 }\end{DoxyParamCaption})}
-
+Lo\+Ra modeHere is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7}\label{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7} 
 \index{SX1272.c@{SX1272.c}!max@{max}}
 \index{max@{max}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{max()}{max()}}
 {\footnotesize\ttfamily int max (\begin{DoxyParamCaption}\item[{float}]{num1,  }\item[{float}]{num2 }\end{DoxyParamCaption})}
 
-Find maximum between two numbers. \Hypertarget{_s_x1272_8c_a940b7d59de47e1432c355fca01620ac3}\label{_s_x1272_8c_a940b7d59de47e1432c355fca01620ac3} 
-\index{SX1272.c@{SX1272.c}!millis@{millis}}
-\index{millis@{millis}!SX1272.c@{SX1272.c}}
-\doxysubsubsection{\texorpdfstring{millis()}{millis()}}
-{\footnotesize\ttfamily int millis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+Find maximum between two numbers. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Variable Documentation}
@@ -986,7 +994,7 @@ Find maximum between two numbers. \Hypertarget{_s_x1272_8c_a940b7d59de47e1432c35
 
 État actuel du module SX1272. 
 
-Cette variable globale externe est déclarée dans le fichier \doxylink{_s_x1272_8h}{SX1272.\+h}. Elle est utilisée pour suivre l\textquotesingle{}état actuel du module SX1272. \Hypertarget{_s_x1272_8c_a4ed83658015f7bd9d0efbcec4e8fe8d6}\label{_s_x1272_8c_a4ed83658015f7bd9d0efbcec4e8fe8d6} 
+Cette variable globale externe est déclarée dans le fichier \doxylink{_s_x1272_8h_source}{SX1272.\+h}. Elle est utilisée pour suivre l\textquotesingle{}état actuel du module SX1272. \Hypertarget{_s_x1272_8c_a4ed83658015f7bd9d0efbcec4e8fe8d6}\label{_s_x1272_8c_a4ed83658015f7bd9d0efbcec4e8fe8d6} 
 \index{SX1272.c@{SX1272.c}!SignalBwLog@{SignalBwLog}}
 \index{SignalBwLog@{SignalBwLog}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{SignalBwLog}{SignalBwLog}}
