@@ -6,6 +6,7 @@
  */
 
 #include "main.h"
+#include "config.h"
 #include "stm32f0xx.h"
 #include "bsp.h"
 #include "comSX1272.h"
@@ -13,8 +14,7 @@
 #include "appSX1272.h"
 #include "LED_control.h"
 #include "delay.h"
-
-
+#include "stdlib.h"
 
 
 #include "frames.h"
@@ -84,28 +84,12 @@ int main()
 		transmit_msg.msg[3] = 'E';
 		transmit_msg.msg[4] = 'N';
 		transmit_msg.msg[5] = 'D';
-		transmit_status = APP_SX1272_runTransmitMsg(device, &transmit_msg);
-		if (transmit_status == TRANSMIT_NO_ERROR){
-			my_printf("Main_Transmitter : Message sent\r\n");
-			timeout_init = BSP_millis();
-			do{
-				receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
-				if((BSP_millis()-timeout_init) > 5000 && receive_status != RECEIVE_ACK_RECEIVED){ //Second condition to avoid receive status being overwritten
-					receive_status = RECEIVE_ERROR_ACK_TIMEOUT;
-				}
-			}while(receive_status != RECEIVE_ACK_RECEIVED && receive_status != RECEIVE_ERROR_ACK_TIMEOUT);
 
-			if(receive_status == RECEIVE_ACK_RECEIVED){
-				my_printf("Main_Transmitter : ACK received\r\n");
-			}
-			else if(receive_status == RECEIVE_ERROR_ACK_TIMEOUT){
-				my_printf("Main_Transmitter : ACK timeout\r\n");
-			}
-		}
-		else
-		{
-			my_printf("Main_Transmitter : Message transmit ERROR\r\n");
-		}
+		transmit_status = APP_SX1272_SendMsg(device, &transmit_msg, 5);
+		my_printf("Transmit status : %d", transmit_status);
+
+
+
 #endif
 
 #ifdef RECEIVER

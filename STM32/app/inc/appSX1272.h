@@ -55,6 +55,8 @@
 #define	TRANSMIT_ERROR_CONFIG		3
 
 void APP_SX1272_setup(id_frame_t device);
+uint8_t APP_SX1272_SendMsg(id_frame_t device, msg_frame_t *message, uint8_t nbRetries);
+uint8_t APP_SX1272_trySendMsg(id_frame_t device, msg_frame_t *message);
 uint8_t APP_SX1272_runTransmitMsg(id_frame_t device, msg_frame_t *message);
 uint8_t APP_SX1272_runTransmitAck(id_frame_t device, ack_frame_t *ack);
 uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ack_frame_t *ack_decode);

@@ -13,6 +13,9 @@
 #include "string.h"
 #include "delay.h"
 #include "LED_control.h"
+#include "stdlib.h"
+#include "config.h"
+#include "bsp.h"
 
 /**
  * @brief État actuel du module SX1272.
@@ -181,6 +184,67 @@ void APP_SX1272_setup(id_frame_t device) {
 
 	BSP_DELAY_ms(1000);
 }
+
+uint8_t APP_SX1272_SendMsg(id_frame_t device, msg_frame_t *message, uint8_t nbRetries) {
+	uint8_t transmit_status;
+	transmit_status = APP_SX1272_trySendMsg(device, message);
+	if (transmit_status == TRANSMIT_ERROR){
+		return TRANSMIT_ERROR;
+	}
+	else if ( transmit_status == RECEIVE_ACK_RECEIVED){
+		return RECEIVE_ACK_RECEIVED;
+	}
+	else
+	{
+		uint8_t i = 0;
+		while(i < nbRetries && transmit_status != RECEIVE_ACK_RECEIVED){
+			uint32_t numrand =(uint32_t) ((rand()%(MSG_RETRY_DELAY_MAX-MSG_RETRY_DELAY_MIN))+MSG_RETRY_DELAY_MIN);
+			BSP_DELAY_ms(numrand);
+			APP_SX1272_trySendMsg(device, message);
+			i++;
+		}
+		return transmit_status;
+	}
+
+}
+
+
+uint8_t APP_SX1272_trySendMsg(id_frame_t device, msg_frame_t *message) {
+	uint8_t transmit_status, receive_status;
+	uint32_t timeout_init=0;
+	msg_frame_t received_msg;
+	ack_frame_t received_ack;
+
+	transmit_status = APP_SX1272_runTransmitMsg(device, message);
+	if (transmit_status == TRANSMIT_NO_ERROR) {
+		my_printf("Main_Transmitter : Message sent\r\n");
+		timeout_init = BSP_millis();
+		do {
+			receive_status = APP_SX1272_runReceive(device, &received_msg,&received_ack);
+			if ((BSP_millis() - timeout_init)> 5000 && receive_status != RECEIVE_ACK_RECEIVED) { //Second condition to avoid receive status being overwritten
+				receive_status = RECEIVE_ERROR_ACK_TIMEOUT;
+			}
+		}
+		while (receive_status != RECEIVE_ACK_RECEIVED && receive_status != RECEIVE_ERROR_ACK_TIMEOUT);
+		if (receive_status == RECEIVE_ACK_RECEIVED) {
+			my_printf("Main_Transmitter : ACK received\r\n");
+			return RECEIVE_ACK_RECEIVED;
+		}
+		else if (receive_status == RECEIVE_ERROR_ACK_TIMEOUT) {
+			my_printf("Main_Transmitter : ACK timeout\r\n");
+			return RECEIVE_ERROR_ACK_TIMEOUT;
+		}
+	}
+	else {
+		my_printf("Main_Transmitter : Message transmit ERROR\r\n");
+		return TRANSMIT_ERROR;
+	}
+	return	RECEIVE_ERROR_UNKNOWN_CASE;
+
+}
+
+
+
 
 
 /**
