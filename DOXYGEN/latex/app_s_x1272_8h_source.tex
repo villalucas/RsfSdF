@@ -40,11 +40,26 @@
 \DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ WaitTxMax\ 5000\ }\textcolor{comment}{//en\ ms}}
 \DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ WaitRxMax\ 10000\ }\textcolor{comment}{//en\ ms}}
 \DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_s_x1272_8h_a5b7bec9d57e966f8115a9529ab0457ea}{APP\_SX1272\_setup}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_s_x1272_8h_a1070573467908e8dcaa9ec60f6f1c947}{APP\_SX1272\_runTransmit}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_s_x1272_8h_a0239db6fd6d4c7b7dec055cacaced725}{APP\_SX1272\_runReceive}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
-\DoxyCodeLine{00044\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}{APP\_SX1272\_setFreq}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ APP\_INC\_APPSX1272\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//Error\ Defines}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ RECEIVE\_NO\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ RECEIVE\_CRC\_ERROR\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ RECEIVE\_SOF\_ERROR\ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ RECEIVE\_WRONG\_DESTINARY\ \ \ \ \ 3}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ RECEIVE\_ACK\_RECEIVED\ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ RECEIVE\_MSG\_RECEIVED\ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ RECEIVE\_ERROR\_UNKNOWN\_CASE\ \ 6}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ TRANSMIT\_NO\_ERROR\ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ TRANSMIT\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ TRANSMIT\_TIMEOUT\_ERROR\ \ \ \ \ \ 2}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ TRANSMIT\_ERROR\_CONFIG\ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_s_x1272_8h_a5b7bec9d57e966f8115a9529ab0457ea}{APP\_SX1272\_setup}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
+\DoxyCodeLine{00056\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_a78ca0636c4e6d6a89b8dd1198a76863c}{APP\_SX1272\_runTransmitMsg}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *message);}
+\DoxyCodeLine{00057\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_aaa885af9ee8a008b08788d062ab26a8e}{APP\_SX1272\_runTransmitAck}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack);}
+\DoxyCodeLine{00058\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_a41a0c48d05f8f679b2652737097c9d9c}{APP\_SX1272\_runReceive}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *message\_decode,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack\_decode);}
+\DoxyCodeLine{00059\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}{APP\_SX1272\_setFreq}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ APP\_INC\_APPSX1272\_H\_\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

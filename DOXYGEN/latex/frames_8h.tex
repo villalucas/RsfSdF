@@ -35,21 +35,25 @@ struct \mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}}
 \#define \mbox{\hyperlink{frames_8h_aa0258f5956c5f797974b5e0e86a8ca49}{POLYNOMIAL\+\_\+\+CCITT}}~0x1021
 \item 
 \#define \mbox{\hyperlink{frames_8h_a7b8cb189365e2cb58361537313d352e9}{CRC\+\_\+\+CCITT\+\_\+\+SEED}}~0x1\+D0F
+\item 
+\#define \mbox{\hyperlink{frames_8h_ac68b0c422de951ac26d02eaa29782e5a}{CRC\+\_\+\+NO\+\_\+\+ERROR}}~0
+\item 
+\#define \mbox{\hyperlink{frames_8h_a37a5010e25c0fdc1ff56c1582d065251}{CRC\+\_\+\+ERROR}}~1
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 uint16\+\_\+t \mbox{\hyperlink{frames_8h_a2fd64371f4340fae9130b3c1e6254c9f}{BSP\+\_\+\+FRAMES\+\_\+compute\+Crc}} (uint16\+\_\+t crc, uint8\+\_\+t data, uint16\+\_\+t polynomial)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction de calcul du CRC. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{frames_8h_a897a62ac64f4e5324adaf1c7550141ee}{BSP\+\_\+\+FRAMES\+\_\+packet\+Compute\+Crc}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t datalength)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction de calcul du CRC pour l\textquotesingle{}ensemble de la frame. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{frames_8h_aeda2654b0fd9c033a6182b423576e6e2}{BSP\+\_\+\+FRAMES\+\_\+decode\+Msg\+Frame}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}payload, \mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}output\+\_\+frame)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction de décodage des messages reçus dans la payload. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{frames_8h_a3bd52fe21e75c7c4cff4e36349106125}{BSP\+\_\+\+FRAMES\+\_\+decode\+Ack\+Frame}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}payload, \mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}output\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Fonction de décodage des messages reçus dans la payload (acknowledgment). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frames_8h_ad06da90597db0c6b61a64067bddd5024}{BSP\+\_\+\+FRAMES\+\_\+encode\+Ack\+Frame}} (\mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}ack\+\_\+to\+\_\+encode, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+encoded)
 \item 
-void \mbox{\hyperlink{frames_8h_a16ee4364231abe3947ca3b25fa261d32}{BSP\+\_\+\+FRAMES\+\_\+encode\+Ack\+Frame}} (\mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} ack\+\_\+to\+\_\+encode, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+encoded)
-\item 
-void \mbox{\hyperlink{frames_8h_a700945b1a5dd86e6ea8b11a09de4ffe8}{BSP\+\_\+\+FRAMES\+\_\+encode\+Msg\+Frame}} (\mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} msg\+\_\+to\+\_\+encode, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+encoded)
+void \mbox{\hyperlink{frames_8h_a5ef7a9db5e429b17f31440735b27f82e}{BSP\+\_\+\+FRAMES\+\_\+encode\+Msg\+Frame}} (\mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}msg\+\_\+to\+\_\+encode, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+encoded)
 \end{DoxyCompactItemize}
 
 
@@ -78,11 +82,23 @@ void \mbox{\hyperlink{frames_8h_a700945b1a5dd86e6ea8b11a09de4ffe8}{BSP\+\_\+\+FR
 \doxysubsubsection{\texorpdfstring{CRC\_CCITT\_SEED}{CRC\_CCITT\_SEED}}
 {\footnotesize\ttfamily \#define CRC\+\_\+\+CCITT\+\_\+\+SEED~0x1\+D0F}
 
+\Hypertarget{frames_8h_a37a5010e25c0fdc1ff56c1582d065251}\label{frames_8h_a37a5010e25c0fdc1ff56c1582d065251} 
+\index{frames.h@{frames.h}!CRC\_ERROR@{CRC\_ERROR}}
+\index{CRC\_ERROR@{CRC\_ERROR}!frames.h@{frames.h}}
+\doxysubsubsection{\texorpdfstring{CRC\_ERROR}{CRC\_ERROR}}
+{\footnotesize\ttfamily \#define CRC\+\_\+\+ERROR~1}
+
 \Hypertarget{frames_8h_ac21f2d275f975b7357d95a49567856c8}\label{frames_8h_ac21f2d275f975b7357d95a49567856c8} 
 \index{frames.h@{frames.h}!CRC\_MASK@{CRC\_MASK}}
 \index{CRC\_MASK@{CRC\_MASK}!frames.h@{frames.h}}
 \doxysubsubsection{\texorpdfstring{CRC\_MASK}{CRC\_MASK}}
 {\footnotesize\ttfamily \#define CRC\+\_\+\+MASK~0x\+FF}
+
+\Hypertarget{frames_8h_ac68b0c422de951ac26d02eaa29782e5a}\label{frames_8h_ac68b0c422de951ac26d02eaa29782e5a} 
+\index{frames.h@{frames.h}!CRC\_NO\_ERROR@{CRC\_NO\_ERROR}}
+\index{CRC\_NO\_ERROR@{CRC\_NO\_ERROR}!frames.h@{frames.h}}
+\doxysubsubsection{\texorpdfstring{CRC\_NO\_ERROR}{CRC\_NO\_ERROR}}
+{\footnotesize\ttfamily \#define CRC\+\_\+\+NO\+\_\+\+ERROR~0}
 
 \Hypertarget{frames_8h_a5a0c0e57d2f4eec0234f3038db193e0e}\label{frames_8h_a5a0c0e57d2f4eec0234f3038db193e0e} 
 \index{frames.h@{frames.h}!CRC\_SHIFT@{CRC\_SHIFT}}
@@ -135,29 +151,73 @@ void \mbox{\hyperlink{frames_8h_a700945b1a5dd86e6ea8b11a09de4ffe8}{BSP\+\_\+\+FR
 \doxysubsubsection{\texorpdfstring{BSP\_FRAMES\_computeCrc()}{BSP\_FRAMES\_computeCrc()}}
 {\footnotesize\ttfamily uint16\+\_\+t BSP\+\_\+\+FRAMES\+\_\+compute\+Crc (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{crc,  }\item[{uint8\+\_\+t}]{data,  }\item[{uint16\+\_\+t}]{polynomial }\end{DoxyParamCaption})}
 
+
+
+Fonction de calcul du CRC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crc} & Octet du CRC pour un octet de la donnée. \\
+\hline
+{\em data} & Octet de la donnée. \\
+\hline
+{\em polynomial} & Deux octets pour le polynôme utilisé par le calcul du CRC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t Valeur du CRC calculé. 
+\end{DoxyReturn}
 \Hypertarget{frames_8h_a3bd52fe21e75c7c4cff4e36349106125}\label{frames_8h_a3bd52fe21e75c7c4cff4e36349106125} 
 \index{frames.h@{frames.h}!BSP\_FRAMES\_decodeAckFrame@{BSP\_FRAMES\_decodeAckFrame}}
 \index{BSP\_FRAMES\_decodeAckFrame@{BSP\_FRAMES\_decodeAckFrame}!frames.h@{frames.h}}
 \doxysubsubsection{\texorpdfstring{BSP\_FRAMES\_decodeAckFrame()}{BSP\_FRAMES\_decodeAckFrame()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+FRAMES\+\_\+decode\+Ack\+Frame (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{payload,  }\item[{\mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{output\+\_\+frame }\end{DoxyParamCaption})}
 
+
+
+Fonction de décodage des messages reçus dans la payload (acknowledgment). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em payload} & Pointeur d\textquotesingle{}octets sur la base de la payload. \\
+\hline
+{\em output\+\_\+frame} & Pointeur de la structure d\textquotesingle{}objet \doxylink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t} qui est définie par le protocole. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si le CRC est identique, 1 sinon. 
+\end{DoxyReturn}
 \Hypertarget{frames_8h_aeda2654b0fd9c033a6182b423576e6e2}\label{frames_8h_aeda2654b0fd9c033a6182b423576e6e2} 
 \index{frames.h@{frames.h}!BSP\_FRAMES\_decodeMsgFrame@{BSP\_FRAMES\_decodeMsgFrame}}
 \index{BSP\_FRAMES\_decodeMsgFrame@{BSP\_FRAMES\_decodeMsgFrame}!frames.h@{frames.h}}
 \doxysubsubsection{\texorpdfstring{BSP\_FRAMES\_decodeMsgFrame()}{BSP\_FRAMES\_decodeMsgFrame()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+FRAMES\+\_\+decode\+Msg\+Frame (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{payload,  }\item[{\mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{output\+\_\+frame }\end{DoxyParamCaption})}
 
-\Hypertarget{frames_8h_a16ee4364231abe3947ca3b25fa261d32}\label{frames_8h_a16ee4364231abe3947ca3b25fa261d32} 
+
+
+Fonction de décodage des messages reçus dans la payload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em payload} & Pointeur d\textquotesingle{}octets sur la base de la payload. \\
+\hline
+{\em output\+\_\+frame} & Pointeur de la structure d\textquotesingle{}objet \doxylink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t} qui est définie par le protocole. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si le CRC est identique, 1 sinon. 
+\end{DoxyReturn}
+\Hypertarget{frames_8h_ad06da90597db0c6b61a64067bddd5024}\label{frames_8h_ad06da90597db0c6b61a64067bddd5024} 
 \index{frames.h@{frames.h}!BSP\_FRAMES\_encodeAckFrame@{BSP\_FRAMES\_encodeAckFrame}}
 \index{BSP\_FRAMES\_encodeAckFrame@{BSP\_FRAMES\_encodeAckFrame}!frames.h@{frames.h}}
 \doxysubsubsection{\texorpdfstring{BSP\_FRAMES\_encodeAckFrame()}{BSP\_FRAMES\_encodeAckFrame()}}
-{\footnotesize\ttfamily void BSP\+\_\+\+FRAMES\+\_\+encode\+Ack\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}}}]{ack\+\_\+to\+\_\+encode,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+\_\+encoded }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void BSP\+\_\+\+FRAMES\+\_\+encode\+Ack\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{ack\+\_\+to\+\_\+encode,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+\_\+encoded }\end{DoxyParamCaption})}
 
-\Hypertarget{frames_8h_a700945b1a5dd86e6ea8b11a09de4ffe8}\label{frames_8h_a700945b1a5dd86e6ea8b11a09de4ffe8} 
+\Hypertarget{frames_8h_a5ef7a9db5e429b17f31440735b27f82e}\label{frames_8h_a5ef7a9db5e429b17f31440735b27f82e} 
 \index{frames.h@{frames.h}!BSP\_FRAMES\_encodeMsgFrame@{BSP\_FRAMES\_encodeMsgFrame}}
 \index{BSP\_FRAMES\_encodeMsgFrame@{BSP\_FRAMES\_encodeMsgFrame}!frames.h@{frames.h}}
 \doxysubsubsection{\texorpdfstring{BSP\_FRAMES\_encodeMsgFrame()}{BSP\_FRAMES\_encodeMsgFrame()}}
-{\footnotesize\ttfamily void BSP\+\_\+\+FRAMES\+\_\+encode\+Msg\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}}}]{msg\+\_\+to\+\_\+encode,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+\_\+encoded }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void BSP\+\_\+\+FRAMES\+\_\+encode\+Msg\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg\+\_\+to\+\_\+encode,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+\_\+encoded }\end{DoxyParamCaption})}
 
 \Hypertarget{frames_8h_a897a62ac64f4e5324adaf1c7550141ee}\label{frames_8h_a897a62ac64f4e5324adaf1c7550141ee} 
 \index{frames.h@{frames.h}!BSP\_FRAMES\_packetComputeCrc@{BSP\_FRAMES\_packetComputeCrc}}
@@ -165,3 +225,17 @@ void \mbox{\hyperlink{frames_8h_a700945b1a5dd86e6ea8b11a09de4ffe8}{BSP\+\_\+\+FR
 \doxysubsubsection{\texorpdfstring{BSP\_FRAMES\_packetComputeCrc()}{BSP\_FRAMES\_packetComputeCrc()}}
 {\footnotesize\ttfamily uint16\+\_\+t BSP\+\_\+\+FRAMES\+\_\+packet\+Compute\+Crc (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint8\+\_\+t}]{datalength }\end{DoxyParamCaption})}
 
+
+
+Fonction de calcul du CRC pour l\textquotesingle{}ensemble de la frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointeur sur le tableau d\textquotesingle{}octets qui est la frame. \\
+\hline
+{\em datalength} & Taille du tableau. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t Valeur du CRC calculé. 
+\end{DoxyReturn}

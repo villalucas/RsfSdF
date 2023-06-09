@@ -85,10 +85,13 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a823387fc0ba3a232cd26c0e46165117d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="com_s_x1272_8h.html#a823387fc0ba3a232cd26c0e46165117d">BSP_SPI1_Init</a> ()</td></tr>
+<tr class="memdesc:a823387fc0ba3a232cd26c0e46165117d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la configuration de l'interface SPI1.  <br /></td></tr>
 <tr class="separator:a823387fc0ba3a232cd26c0e46165117d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb6882118570a3b39f905f6b5739e006"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="com_s_x1272_8h.html#acb6882118570a3b39f905f6b5739e006">BSP_SX1272_Read</a> (uint8_t register_address)</td></tr>
+<tr class="memdesc:acb6882118570a3b39f905f6b5739e006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit une valeur à partir d'un registre spécifié du module SX1272.  <br /></td></tr>
 <tr class="separator:acb6882118570a3b39f905f6b5739e006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4757fe52dcee2269d4f4635416c70881"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="com_s_x1272_8h.html#a4757fe52dcee2269d4f4635416c70881">BSP_SX1272_Write</a> (uint8_t register_address, uint8_t data)</td></tr>
+<tr class="memdesc:a4757fe52dcee2269d4f4635416c70881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écrit une valeur dans un registre spécifié du module SX1272.  <br /></td></tr>
 <tr class="separator:a4757fe52dcee2269d4f4635416c70881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -107,6 +110,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialise la configuration de l'interface SPI1. </p>
+<p>Cette fonction configure l'interface SPI1 ainsi que les broches associées pour l'utilisation du module SPI. Elle initialise les registres de configuration pour établir les paramètres suivants :</p><ul>
+<li>Utilisation de PB6 comme broche de sélection du périphérique (CS).</li>
+<li>Utilisation de PA5, PA6 et PA7 comme broches d'interface SPI1.</li>
+<li>Configuration des broches en mode alternatif (AF) pour l'utilisation de l'interface SPI.</li>
+<li>Configuration du SPI1 en mode maître avec une vitesse de transmission de 6 MHz.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>Cette fonction suppose que les registres RCC, GPIOB, et GPIOA ont déjà été initialisés correctement. </dd>
+<dd>
+Les détails spécifiques concernant les registres sont documentés dans le code source. </dd></dl>
+
 </div>
 </div>
 <a id="acb6882118570a3b39f905f6b5739e006" name="acb6882118570a3b39f905f6b5739e006"></a>
@@ -124,6 +138,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Lit une valeur à partir d'un registre spécifié du module SX1272. </p>
+<p>Cette fonction lit la valeur d'un registre spécifié du module SX1272 via l'interface SPI1. Elle configure le seuil FIFO sur 1 octet, sélectionne l'esclave en mettant la broche de sélection (CS) à l'état bas, envoie l'adresse du registre à lire, reçoit la valeur du registre via l'interface SPI, puis libère l'esclave en mettant la broche CS à l'état haut.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">register_address</td><td>L'adresse du registre à lire. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>La valeur lue à partir du registre spécifié.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Cette fonction suppose que les registres SPI1, GPIOB et GPIOA ont déjà été initialisés correctement. </dd>
+<dd>
+Les détails spécifiques concernant les registres sont documentés dans le code source. </dd></dl>
 
 </div>
 </div>
@@ -152,6 +179,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Écrit une valeur dans un registre spécifié du module SX1272. </p>
+<p>Cette fonction écrit une valeur spécifiée dans un registre spécifié du module SX1272 via l'interface SPI1. Elle configure le seuil FIFO sur 1 octet, sélectionne l'esclave en mettant la broche de sélection (CS) à l'état bas, envoie l'adresse du registre à écrire en lui ajoutant le bit d'écriture (0x80), envoie la donnée à écrire, puis libère l'esclave en mettant la broche CS à l'état haut.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">register_address</td><td>L'adresse du registre dans lequel écrire. </td></tr>
+    <tr><td class="paramname">data</td><td>La valeur à écrire dans le registre spécifié.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Cette fonction suppose que les registres SPI1, GPIOB et GPIOA ont déjà été initialisés correctement. </dd>
+<dd>
+Les détails spécifiques concernant les registres sont documentés dans le code source. </dd></dl>
 
 </div>
 </div>

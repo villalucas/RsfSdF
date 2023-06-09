@@ -23,43 +23,47 @@
 \DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ POLYNOMIAL\_CCITT\ \ \ \ 0x1021}}
 \DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ CRC\_CCITT\_SEED\ \ \ \ \ \ 0x1D0F}}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
-\DoxyCodeLine{00037\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structid__frame__t_acafdb929d3fd1893a70ee525818dea79}{channel}};}
-\DoxyCodeLine{00039\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structid__frame__t_a5455fd9930ccdc99733d60925e143e02}{address}};}
-\DoxyCodeLine{00040\ \}\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
-\DoxyCodeLine{00057\ \{}
-\DoxyCodeLine{00058\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structmsg__frame__t_a0572537810c9a27cae4baaac69ab3b91}{sof}};}
-\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ \mbox{\hyperlink{structmsg__frame__t_a37d7c16116c83cf50545e18ca0aca63d}{src}};}
-\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ \mbox{\hyperlink{structmsg__frame__t_a64c409a83e1c895a777b05cf7a728c34}{dest}};}
-\DoxyCodeLine{00061\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structmsg__frame__t_ab7109a6b14d3593206496a738515d676}{size}};}
-\DoxyCodeLine{00062\ \ \ \ \ uint8\_t\ msg[\mbox{\hyperlink{frames_8h_adadce328e6d75dcaf598d1ff1a7d7cae}{SIZE\_MSG\_MAX}}];}
-\DoxyCodeLine{00063\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structmsg__frame__t_a49f456ee54dba6ec23691f63c56b138d}{crc}};}
-\DoxyCodeLine{00064\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structmsg__frame__t_aea3679d5e69ace4b1196c2c1ed843790}{eof}};\textcolor{comment}{//}}
-\DoxyCodeLine{00065\ \}\mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}};}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00080\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
-\DoxyCodeLine{00081\ \{}
-\DoxyCodeLine{00082\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structack__frame__t_aaaee621870ec0334f706f32f762fbf96}{sof}};}
-\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ \mbox{\hyperlink{structack__frame__t_a9ca1d60e79b1da9a665d755ca2f1166d}{src}};}
-\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ \mbox{\hyperlink{structack__frame__t_a525a891f35b412ee959b3830edbf97ff}{dest}};}
-\DoxyCodeLine{00085\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structack__frame__t_af32234ff437c1c24d0d4e9c7ef7d622d}{crc}};}
-\DoxyCodeLine{00086\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structack__frame__t_aafd521ff50ff5fa80ecac741616a8bda}{eof}};}
-\DoxyCodeLine{00087\ \}\mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}};}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \textcolor{comment}{/*\ Function\ */}}
-\DoxyCodeLine{00091\ uint16\_t\ \mbox{\hyperlink{frames_8h_a2fd64371f4340fae9130b3c1e6254c9f}{BSP\_FRAMES\_computeCrc}}(uint16\_t\ crc,\ uint8\_t\ data,\ uint16\_t\ polynomial);}
-\DoxyCodeLine{00092\ uint16\_t\ \mbox{\hyperlink{frames_8h_a897a62ac64f4e5324adaf1c7550141ee}{BSP\_FRAMES\_packetComputeCrc}}(uint8\_t\ *data,\ uint8\_t\ datalength);}
-\DoxyCodeLine{00093\ uint8\_t\ \mbox{\hyperlink{frames_8h_aeda2654b0fd9c033a6182b423576e6e2}{BSP\_FRAMES\_decodeMsgFrame}}(uint8\_t\ *payload,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *output\_frame);}
-\DoxyCodeLine{00094\ uint8\_t\ \mbox{\hyperlink{frames_8h_a3bd52fe21e75c7c4cff4e36349106125}{BSP\_FRAMES\_decodeAckFrame}}(uint8\_t\ *payload,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *output\_frame);}
-\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{frames_8h_a16ee4364231abe3947ca3b25fa261d32}{BSP\_FRAMES\_encodeAckFrame}}(\mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ ack\_to\_encode,\ uint8\_t\ *frame\_encoded);}
-\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{frames_8h_a700945b1a5dd86e6ea8b11a09de4ffe8}{BSP\_FRAMES\_encodeMsgFrame}}(\mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ msg\_to\_encode,\ uint8\_t\ *frame\_encoded);}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ APP\_INC\_FRAMES\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//Error\ Defines}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ CRC\_NO\_ERROR\ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ CRC\_ERROR\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structid__frame__t_acafdb929d3fd1893a70ee525818dea79}{channel}};}
+\DoxyCodeLine{00043\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structid__frame__t_a5455fd9930ccdc99733d60925e143e02}{address}};}
+\DoxyCodeLine{00044\ \}\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structmsg__frame__t_a0572537810c9a27cae4baaac69ab3b91}{sof}};}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ \mbox{\hyperlink{structmsg__frame__t_a37d7c16116c83cf50545e18ca0aca63d}{src}};}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ \mbox{\hyperlink{structmsg__frame__t_a64c409a83e1c895a777b05cf7a728c34}{dest}};}
+\DoxyCodeLine{00065\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structmsg__frame__t_ab7109a6b14d3593206496a738515d676}{size}};}
+\DoxyCodeLine{00066\ \ \ \ \ uint8\_t\ msg[\mbox{\hyperlink{frames_8h_adadce328e6d75dcaf598d1ff1a7d7cae}{SIZE\_MSG\_MAX}}];}
+\DoxyCodeLine{00067\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structmsg__frame__t_a49f456ee54dba6ec23691f63c56b138d}{crc}};}
+\DoxyCodeLine{00068\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structmsg__frame__t_aea3679d5e69ace4b1196c2c1ed843790}{eof}};\textcolor{comment}{//}}
+\DoxyCodeLine{00069\ \}\mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structack__frame__t_aaaee621870ec0334f706f32f762fbf96}{sof}};}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ \mbox{\hyperlink{structack__frame__t_a9ca1d60e79b1da9a665d755ca2f1166d}{src}};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ \mbox{\hyperlink{structack__frame__t_a525a891f35b412ee959b3830edbf97ff}{dest}};}
+\DoxyCodeLine{00089\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structack__frame__t_af32234ff437c1c24d0d4e9c7ef7d622d}{crc}};}
+\DoxyCodeLine{00090\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structack__frame__t_aafd521ff50ff5fa80ecac741616a8bda}{eof}};}
+\DoxyCodeLine{00091\ \}\mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{comment}{/*\ Function\ */}}
+\DoxyCodeLine{00095\ uint16\_t\ \mbox{\hyperlink{frames_8h_a2fd64371f4340fae9130b3c1e6254c9f}{BSP\_FRAMES\_computeCrc}}(uint16\_t\ crc,\ uint8\_t\ data,\ uint16\_t\ polynomial);}
+\DoxyCodeLine{00096\ uint16\_t\ \mbox{\hyperlink{frames_8h_a897a62ac64f4e5324adaf1c7550141ee}{BSP\_FRAMES\_packetComputeCrc}}(uint8\_t\ *data,\ uint8\_t\ datalength);}
+\DoxyCodeLine{00097\ uint8\_t\ \mbox{\hyperlink{frames_8h_aeda2654b0fd9c033a6182b423576e6e2}{BSP\_FRAMES\_decodeMsgFrame}}(uint8\_t\ *payload,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *output\_frame);}
+\DoxyCodeLine{00098\ uint8\_t\ \mbox{\hyperlink{frames_8h_a3bd52fe21e75c7c4cff4e36349106125}{BSP\_FRAMES\_decodeAckFrame}}(uint8\_t\ *payload,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *output\_frame);}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{frames_8h_ad06da90597db0c6b61a64067bddd5024}{BSP\_FRAMES\_encodeAckFrame}}(\mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack\_to\_encode,\ uint8\_t\ *frame\_encoded);}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{frames_8h_a5ef7a9db5e429b17f31440735b27f82e}{BSP\_FRAMES\_encodeMsgFrame}}(\mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *msg\_to\_encode,\ uint8\_t\ *frame\_encoded);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ APP\_INC\_FRAMES\_H\_\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

@@ -31,16 +31,40 @@
 \#define \mbox{\hyperlink{app_s_x1272_8h_a2e8c88641a4a66b129a79d68a40dc850}{Wait\+Tx\+Max}}~5000
 \item 
 \#define \mbox{\hyperlink{app_s_x1272_8h_a1b3f08ee8da4ccaf97529bf89e1fd5df}{Wait\+Rx\+Max}}~10000
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a1b04ea49ba90f304d90cb6d7d4d9480f}{RECEIVE\+\_\+\+NO\+\_\+\+ERROR}}~0
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a8685dc000c826d6db1a8d0f5fa0dd362}{RECEIVE\+\_\+\+CRC\+\_\+\+ERROR}}~1
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a1649bdf3b055656d7c7afe2f6f035079}{RECEIVE\+\_\+\+SOF\+\_\+\+ERROR}}~2
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a7c0d033297e29e4fcd8187f26fc2716f}{RECEIVE\+\_\+\+WRONG\+\_\+\+DESTINARY}}~3
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a603889af6ee54e50934aa0ec26100cb5}{RECEIVE\+\_\+\+ACK\+\_\+\+RECEIVED}}~4
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_aa3dc57ac72defbf4d697182dffb5e75a}{RECEIVE\+\_\+\+MSG\+\_\+\+RECEIVED}}~5
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_afc76de7914d8494c94bfef0596a4e98d}{RECEIVE\+\_\+\+ERROR\+\_\+\+UNKNOWN\+\_\+\+CASE}}~6
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a5f10034539a0c4b7940e072958086fb8}{TRANSMIT\+\_\+\+NO\+\_\+\+ERROR}}~0
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a42318a8006df87843319a62be8ba4432}{TRANSMIT\+\_\+\+ERROR}}~1
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_abb5f9731ff0ae81fcf72d570b8427454}{TRANSMIT\+\_\+\+TIMEOUT\+\_\+\+ERROR}}~2
+\item 
+\#define \mbox{\hyperlink{app_s_x1272_8h_a343365229dad18236b0d31c47529621b}{TRANSMIT\+\_\+\+ERROR\+\_\+\+CONFIG}}~3
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{app_s_x1272_8h_a5b7bec9d57e966f8115a9529ab0457ea}{APP\+\_\+\+SX1272\+\_\+setup}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
+\begin{DoxyCompactList}\small\item\em Fonction de configuration de l\textquotesingle{}application SX1272. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8h_a78ca0636c4e6d6a89b8dd1198a76863c}{APP\+\_\+\+SX1272\+\_\+run\+Transmit\+Msg}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device, \mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Fonction pour exécuter la transmission de paquets SX1272. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8h_aaa885af9ee8a008b08788d062ab26a8e}{APP\+\_\+\+SX1272\+\_\+run\+Transmit\+Ack}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device, \mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}ack)
 \item 
-void \mbox{\hyperlink{app_s_x1272_8h_a1070573467908e8dcaa9ec60f6f1c947}{APP\+\_\+\+SX1272\+\_\+run\+Transmit}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
-\item 
-void \mbox{\hyperlink{app_s_x1272_8h_a0239db6fd6d4c7b7dec055cacaced725}{APP\+\_\+\+SX1272\+\_\+run\+Receive}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
-\item 
+uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8h_a41a0c48d05f8f679b2652737097c9d9c}{APP\+\_\+\+SX1272\+\_\+run\+Receive}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device, \mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}message\+\_\+decode, \mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}ack\+\_\+decode)
+\begin{DoxyCompactList}\small\item\em Fonction pour exécuter la réception de paquets SX1272. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}{APP\+\_\+\+SX1272\+\_\+set\+Freq}} (\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} device)
 \end{DoxyCompactItemize}
 
@@ -100,11 +124,77 @@ uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}{
 \doxysubsubsection{\texorpdfstring{PreambLong}{PreambLong}}
 {\footnotesize\ttfamily \#define Preamb\+Long~12}
 
+\Hypertarget{app_s_x1272_8h_a603889af6ee54e50934aa0ec26100cb5}\label{app_s_x1272_8h_a603889af6ee54e50934aa0ec26100cb5} 
+\index{appSX1272.h@{appSX1272.h}!RECEIVE\_ACK\_RECEIVED@{RECEIVE\_ACK\_RECEIVED}}
+\index{RECEIVE\_ACK\_RECEIVED@{RECEIVE\_ACK\_RECEIVED}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{RECEIVE\_ACK\_RECEIVED}{RECEIVE\_ACK\_RECEIVED}}
+{\footnotesize\ttfamily \#define RECEIVE\+\_\+\+ACK\+\_\+\+RECEIVED~4}
+
+\Hypertarget{app_s_x1272_8h_a8685dc000c826d6db1a8d0f5fa0dd362}\label{app_s_x1272_8h_a8685dc000c826d6db1a8d0f5fa0dd362} 
+\index{appSX1272.h@{appSX1272.h}!RECEIVE\_CRC\_ERROR@{RECEIVE\_CRC\_ERROR}}
+\index{RECEIVE\_CRC\_ERROR@{RECEIVE\_CRC\_ERROR}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{RECEIVE\_CRC\_ERROR}{RECEIVE\_CRC\_ERROR}}
+{\footnotesize\ttfamily \#define RECEIVE\+\_\+\+CRC\+\_\+\+ERROR~1}
+
+\Hypertarget{app_s_x1272_8h_afc76de7914d8494c94bfef0596a4e98d}\label{app_s_x1272_8h_afc76de7914d8494c94bfef0596a4e98d} 
+\index{appSX1272.h@{appSX1272.h}!RECEIVE\_ERROR\_UNKNOWN\_CASE@{RECEIVE\_ERROR\_UNKNOWN\_CASE}}
+\index{RECEIVE\_ERROR\_UNKNOWN\_CASE@{RECEIVE\_ERROR\_UNKNOWN\_CASE}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{RECEIVE\_ERROR\_UNKNOWN\_CASE}{RECEIVE\_ERROR\_UNKNOWN\_CASE}}
+{\footnotesize\ttfamily \#define RECEIVE\+\_\+\+ERROR\+\_\+\+UNKNOWN\+\_\+\+CASE~6}
+
+\Hypertarget{app_s_x1272_8h_aa3dc57ac72defbf4d697182dffb5e75a}\label{app_s_x1272_8h_aa3dc57ac72defbf4d697182dffb5e75a} 
+\index{appSX1272.h@{appSX1272.h}!RECEIVE\_MSG\_RECEIVED@{RECEIVE\_MSG\_RECEIVED}}
+\index{RECEIVE\_MSG\_RECEIVED@{RECEIVE\_MSG\_RECEIVED}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{RECEIVE\_MSG\_RECEIVED}{RECEIVE\_MSG\_RECEIVED}}
+{\footnotesize\ttfamily \#define RECEIVE\+\_\+\+MSG\+\_\+\+RECEIVED~5}
+
+\Hypertarget{app_s_x1272_8h_a1b04ea49ba90f304d90cb6d7d4d9480f}\label{app_s_x1272_8h_a1b04ea49ba90f304d90cb6d7d4d9480f} 
+\index{appSX1272.h@{appSX1272.h}!RECEIVE\_NO\_ERROR@{RECEIVE\_NO\_ERROR}}
+\index{RECEIVE\_NO\_ERROR@{RECEIVE\_NO\_ERROR}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{RECEIVE\_NO\_ERROR}{RECEIVE\_NO\_ERROR}}
+{\footnotesize\ttfamily \#define RECEIVE\+\_\+\+NO\+\_\+\+ERROR~0}
+
+\Hypertarget{app_s_x1272_8h_a1649bdf3b055656d7c7afe2f6f035079}\label{app_s_x1272_8h_a1649bdf3b055656d7c7afe2f6f035079} 
+\index{appSX1272.h@{appSX1272.h}!RECEIVE\_SOF\_ERROR@{RECEIVE\_SOF\_ERROR}}
+\index{RECEIVE\_SOF\_ERROR@{RECEIVE\_SOF\_ERROR}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{RECEIVE\_SOF\_ERROR}{RECEIVE\_SOF\_ERROR}}
+{\footnotesize\ttfamily \#define RECEIVE\+\_\+\+SOF\+\_\+\+ERROR~2}
+
+\Hypertarget{app_s_x1272_8h_a7c0d033297e29e4fcd8187f26fc2716f}\label{app_s_x1272_8h_a7c0d033297e29e4fcd8187f26fc2716f} 
+\index{appSX1272.h@{appSX1272.h}!RECEIVE\_WRONG\_DESTINARY@{RECEIVE\_WRONG\_DESTINARY}}
+\index{RECEIVE\_WRONG\_DESTINARY@{RECEIVE\_WRONG\_DESTINARY}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{RECEIVE\_WRONG\_DESTINARY}{RECEIVE\_WRONG\_DESTINARY}}
+{\footnotesize\ttfamily \#define RECEIVE\+\_\+\+WRONG\+\_\+\+DESTINARY~3}
+
 \Hypertarget{app_s_x1272_8h_af18ec3b2a4ab573d584ee95f6c6dd251}\label{app_s_x1272_8h_af18ec3b2a4ab573d584ee95f6c6dd251} 
 \index{appSX1272.h@{appSX1272.h}!RX\_Addr@{RX\_Addr}}
 \index{RX\_Addr@{RX\_Addr}!appSX1272.h@{appSX1272.h}}
 \doxysubsubsection{\texorpdfstring{RX\_Addr}{RX\_Addr}}
 {\footnotesize\ttfamily \#define RX\+\_\+\+Addr~8}
+
+\Hypertarget{app_s_x1272_8h_a42318a8006df87843319a62be8ba4432}\label{app_s_x1272_8h_a42318a8006df87843319a62be8ba4432} 
+\index{appSX1272.h@{appSX1272.h}!TRANSMIT\_ERROR@{TRANSMIT\_ERROR}}
+\index{TRANSMIT\_ERROR@{TRANSMIT\_ERROR}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{TRANSMIT\_ERROR}{TRANSMIT\_ERROR}}
+{\footnotesize\ttfamily \#define TRANSMIT\+\_\+\+ERROR~1}
+
+\Hypertarget{app_s_x1272_8h_a343365229dad18236b0d31c47529621b}\label{app_s_x1272_8h_a343365229dad18236b0d31c47529621b} 
+\index{appSX1272.h@{appSX1272.h}!TRANSMIT\_ERROR\_CONFIG@{TRANSMIT\_ERROR\_CONFIG}}
+\index{TRANSMIT\_ERROR\_CONFIG@{TRANSMIT\_ERROR\_CONFIG}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{TRANSMIT\_ERROR\_CONFIG}{TRANSMIT\_ERROR\_CONFIG}}
+{\footnotesize\ttfamily \#define TRANSMIT\+\_\+\+ERROR\+\_\+\+CONFIG~3}
+
+\Hypertarget{app_s_x1272_8h_a5f10034539a0c4b7940e072958086fb8}\label{app_s_x1272_8h_a5f10034539a0c4b7940e072958086fb8} 
+\index{appSX1272.h@{appSX1272.h}!TRANSMIT\_NO\_ERROR@{TRANSMIT\_NO\_ERROR}}
+\index{TRANSMIT\_NO\_ERROR@{TRANSMIT\_NO\_ERROR}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{TRANSMIT\_NO\_ERROR}{TRANSMIT\_NO\_ERROR}}
+{\footnotesize\ttfamily \#define TRANSMIT\+\_\+\+NO\+\_\+\+ERROR~0}
+
+\Hypertarget{app_s_x1272_8h_abb5f9731ff0ae81fcf72d570b8427454}\label{app_s_x1272_8h_abb5f9731ff0ae81fcf72d570b8427454} 
+\index{appSX1272.h@{appSX1272.h}!TRANSMIT\_TIMEOUT\_ERROR@{TRANSMIT\_TIMEOUT\_ERROR}}
+\index{TRANSMIT\_TIMEOUT\_ERROR@{TRANSMIT\_TIMEOUT\_ERROR}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{TRANSMIT\_TIMEOUT\_ERROR}{TRANSMIT\_TIMEOUT\_ERROR}}
+{\footnotesize\ttfamily \#define TRANSMIT\+\_\+\+TIMEOUT\+\_\+\+ERROR~2}
 
 \Hypertarget{app_s_x1272_8h_af2faf70a2a9bb902999155bd6efc5a31}\label{app_s_x1272_8h_af2faf70a2a9bb902999155bd6efc5a31} 
 \index{appSX1272.h@{appSX1272.h}!TX\_Addr@{TX\_Addr}}
@@ -133,18 +223,42 @@ uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}{
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{app_s_x1272_8h_a0239db6fd6d4c7b7dec055cacaced725}\label{app_s_x1272_8h_a0239db6fd6d4c7b7dec055cacaced725} 
+\Hypertarget{app_s_x1272_8h_a41a0c48d05f8f679b2652737097c9d9c}\label{app_s_x1272_8h_a41a0c48d05f8f679b2652737097c9d9c} 
 \index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_runReceive@{APP\_SX1272\_runReceive}}
 \index{APP\_SX1272\_runReceive@{APP\_SX1272\_runReceive}!appSX1272.h@{appSX1272.h}}
 \doxysubsubsection{\texorpdfstring{APP\_SX1272\_runReceive()}{APP\_SX1272\_runReceive()}}
-{\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+run\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily uint8\+\_\+t APP\+\_\+\+SX1272\+\_\+run\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device,  }\item[{\mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{message\+\_\+decode,  }\item[{\mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{ack\+\_\+decode }\end{DoxyParamCaption})}
 
-\Hypertarget{app_s_x1272_8h_a1070573467908e8dcaa9ec60f6f1c947}\label{app_s_x1272_8h_a1070573467908e8dcaa9ec60f6f1c947} 
-\index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_runTransmit@{APP\_SX1272\_runTransmit}}
-\index{APP\_SX1272\_runTransmit@{APP\_SX1272\_runTransmit}!appSX1272.h@{appSX1272.h}}
-\doxysubsubsection{\texorpdfstring{APP\_SX1272\_runTransmit()}{APP\_SX1272\_runTransmit()}}
-{\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+run\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
 
+
+Fonction pour exécuter la réception de paquets SX1272. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Structure contenant les informations du périphérique \\
+\hline
+\end{DoxyParams}
+\Hypertarget{app_s_x1272_8h_aaa885af9ee8a008b08788d062ab26a8e}\label{app_s_x1272_8h_aaa885af9ee8a008b08788d062ab26a8e} 
+\index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_runTransmitAck@{APP\_SX1272\_runTransmitAck}}
+\index{APP\_SX1272\_runTransmitAck@{APP\_SX1272\_runTransmitAck}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_runTransmitAck()}{APP\_SX1272\_runTransmitAck()}}
+{\footnotesize\ttfamily uint8\+\_\+t APP\+\_\+\+SX1272\+\_\+run\+Transmit\+Ack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device,  }\item[{\mbox{\hyperlink{structack__frame__t}{ack\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{ack }\end{DoxyParamCaption})}
+
+\Hypertarget{app_s_x1272_8h_a78ca0636c4e6d6a89b8dd1198a76863c}\label{app_s_x1272_8h_a78ca0636c4e6d6a89b8dd1198a76863c} 
+\index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_runTransmitMsg@{APP\_SX1272\_runTransmitMsg}}
+\index{APP\_SX1272\_runTransmitMsg@{APP\_SX1272\_runTransmitMsg}!appSX1272.h@{appSX1272.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SX1272\_runTransmitMsg()}{APP\_SX1272\_runTransmitMsg()}}
+{\footnotesize\ttfamily uint8\+\_\+t APP\+\_\+\+SX1272\+\_\+run\+Transmit\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device,  }\item[{\mbox{\hyperlink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+
+
+Fonction pour exécuter la transmission de paquets SX1272. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Structure contenant les informations du périphérique \\
+\hline
+\end{DoxyParams}
 \Hypertarget{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}\label{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c} 
 \index{appSX1272.h@{appSX1272.h}!APP\_SX1272\_setFreq@{APP\_SX1272\_setFreq}}
 \index{APP\_SX1272\_setFreq@{APP\_SX1272\_setFreq}!appSX1272.h@{appSX1272.h}}
@@ -157,3 +271,14 @@ uint8\+\_\+t \mbox{\hyperlink{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}{
 \doxysubsubsection{\texorpdfstring{APP\_SX1272\_setup()}{APP\_SX1272\_setup()}}
 {\footnotesize\ttfamily void APP\+\_\+\+SX1272\+\_\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}}}]{device }\end{DoxyParamCaption})}
 
+
+
+Fonction de configuration de l\textquotesingle{}application SX1272. 
+
+Cette fonction configure le module SX1272 en spécifiant la modulation, la fréquence, la puissance de sortie, etc.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Structure d\textquotesingle{}identification du périphérique. \\
+\hline
+\end{DoxyParams}
