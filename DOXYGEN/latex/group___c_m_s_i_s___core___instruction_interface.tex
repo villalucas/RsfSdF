@@ -1,5 +1,12 @@
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsection{CMSIS Core Instruction Interface}
 \hypertarget{group___c_m_s_i_s___core___instruction_interface}{}\label{group___c_m_s_i_s___core___instruction_interface}\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+Collaboration diagram for CMSIS Core Instruction Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___c_m_s_i_s___core___instruction_interface}
+\end{center}
+\end{figure}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection*{Modules}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,9 +37,11 @@
 \begin{DoxyCompactList}\small\item\em Breakpoint. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}{\+\_\+\+\_\+\+CLZ}}~\+\_\+\+\_\+clz
 \begin{DoxyCompactList}\small\item\em Count leading zeros. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}{\+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+OUT\+\_\+\+REG}}(r)~\"{}=r\"{} (r)
+\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}\label{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276} 
+\#define {\bfseries \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+OUT\+\_\+\+REG}(r)~\"{}=r\"{} (r)
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}{\+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+USE\+\_\+\+REG}}(r)~\"{}r\"{} (r)
+\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}\label{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97} 
+\#define {\bfseries \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+USE\+\_\+\+REG}(r)~\"{}r\"{} (r)
 \item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabd585ddc865fb9b7f2493af1eee1a572}{\+\_\+\+\_\+\+NOP}}~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+nop
 \begin{DoxyCompactList}\small\item\em No Operation. \end{DoxyCompactList}\item 
@@ -54,58 +63,61 @@
 \begin{DoxyCompactList}\small\item\em Reverse byte order (16 bit) \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gae580812686119c9c5cf3c11a7519a404}{\+\_\+\+\_\+\+REVSH}}(value)~(int16\+\_\+t)\+\_\+\+\_\+builtin\+\_\+bswap16(value)
 \begin{DoxyCompactList}\small\item\em Reverse byte order (16 bit) \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}{\+\_\+\+\_\+\+BKPT}}(value)~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}bkpt \"{}\#value)
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}{\+\_\+\+\_\+\+BKPT}}(value)~\+\_\+\+\_\+\+ASM volatile (\"{}bkpt \"{}\#value)
 \begin{DoxyCompactList}\small\item\em Breakpoint. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab83768933a612816fad669db5488366f}{\+\_\+\+\_\+\+RBIT}}~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+rbit
 \begin{DoxyCompactList}\small\item\em Reverse bit order of value. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}{\+\_\+\+\_\+\+CLZ}}~(uint8\+\_\+t)\+\_\+\+\_\+builtin\+\_\+clz
 \begin{DoxyCompactList}\small\item\em Count leading zeros. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}{\+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+OUT\+\_\+\+REG}}(r)~\"{}=r\"{} (r)
+\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}\label{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276} 
+\#define {\bfseries \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+OUT\+\_\+\+REG}(r)~\"{}=r\"{} (r)
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga03179f79efee45c226dddfb8d824ad83}{\+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+RW\+\_\+\+REG}}(r)~\"{}+r\"{} (r)
+\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga03179f79efee45c226dddfb8d824ad83}\label{group___c_m_s_i_s___core___instruction_interface_ga03179f79efee45c226dddfb8d824ad83} 
+\#define {\bfseries \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+RW\+\_\+\+REG}(r)~\"{}+r\"{} (r)
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}{\+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+USE\+\_\+\+REG}}(r)~\"{}r\"{} (r)
+\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}\label{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97} 
+\#define {\bfseries \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+USE\+\_\+\+REG}(r)~\"{}r\"{} (r)
 \item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga0b13f3617dd4af2cd2eb3a311073f717}{\+\_\+\+\_\+\+NOP}}()~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}nop\"{})
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga0b13f3617dd4af2cd2eb3a311073f717}{\+\_\+\+\_\+\+NOP}}()~\+\_\+\+\_\+\+ASM volatile (\"{}nop\"{})
 \begin{DoxyCompactList}\small\item\em No Operation. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab28e2b328c4cf23c917ab18a23194f8e}{\+\_\+\+\_\+\+WFI}}()~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}wfi\"{})
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab28e2b328c4cf23c917ab18a23194f8e}{\+\_\+\+\_\+\+WFI}}()~\+\_\+\+\_\+\+ASM volatile (\"{}wfi\"{})
 \begin{DoxyCompactList}\small\item\em Wait For Interrupt. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf0330712223f4cfb6091e4ab84775f73}{\+\_\+\+\_\+\+WFE}}()~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}wfe\"{})
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf0330712223f4cfb6091e4ab84775f73}{\+\_\+\+\_\+\+WFE}}()~\+\_\+\+\_\+\+ASM volatile (\"{}wfe\"{})
 \begin{DoxyCompactList}\small\item\em Wait For Event. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gafa58e60fcd2176ad58f96947466ea1fa}{\+\_\+\+\_\+\+SEV}}()~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}sev\"{})
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gafa58e60fcd2176ad58f96947466ea1fa}{\+\_\+\+\_\+\+SEV}}()~\+\_\+\+\_\+\+ASM volatile (\"{}sev\"{})
 \begin{DoxyCompactList}\small\item\em Send Event. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}{\+\_\+\+\_\+\+BKPT}}(value)~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}bkpt \"{}\#value)
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}{\+\_\+\+\_\+\+BKPT}}(value)~\+\_\+\+\_\+\+ASM volatile (\"{}bkpt \"{}\#value)
 \begin{DoxyCompactList}\small\item\em Breakpoint. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}{\+\_\+\+\_\+\+CLZ}}~(uint8\+\_\+t)\+\_\+\+\_\+builtin\+\_\+clz
 \begin{DoxyCompactList}\small\item\em Count leading zeros. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gae84a2733711339c5eefeb0d899506b96}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((section(\"{}.rev16\+\_\+text\"{}))) \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE}} \mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gad35497777af37e7809271b5e6f9510ba}{\+\_\+\+\_\+\+REV16}}(uint32\+\_\+t value)
+\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gae84a2733711339c5eefeb0d899506b96}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((section(\"{}.rev16\+\_\+text\"{}))) \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE \+\_\+\+\_\+\+ASM uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gad35497777af37e7809271b5e6f9510ba}{\+\_\+\+\_\+\+REV16}}(uint32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse byte order (16 bit) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabe2b619a40cc0a7ffa8f765249ccf682}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((section(\"{}.revsh\+\_\+text\"{}))) \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE}} \mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} int16\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gae580812686119c9c5cf3c11a7519a404}{\+\_\+\+\_\+\+REVSH}}(int16\+\_\+t value)
+\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabe2b619a40cc0a7ffa8f765249ccf682}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((section(\"{}.revsh\+\_\+text\"{}))) \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE \+\_\+\+\_\+\+ASM int16\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gae580812686119c9c5cf3c11a7519a404}{\+\_\+\+\_\+\+REVSH}}(int16\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse byte order (16 bit) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab926fe7178a379c3a7c0410b06fcb661}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((always\+\_\+inline)) \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE}} uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab83768933a612816fad669db5488366f}{\+\_\+\+\_\+\+RBIT}}(uint32\+\_\+t value)
+\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab926fe7178a379c3a7c0410b06fcb661}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((always\+\_\+inline)) \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab83768933a612816fad669db5488366f}{\+\_\+\+\_\+\+RBIT}}(uint32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse bit order of value. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab16acb6456176f1e87a4f2724c2b6028}{\+\_\+\+\_\+\+ROR}} (uint32\+\_\+t op1, uint32\+\_\+t op2)
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab16acb6456176f1e87a4f2724c2b6028}{\+\_\+\+\_\+\+ROR}} (uint32\+\_\+t op1, uint32\+\_\+t op2)
 \begin{DoxyCompactList}\small\item\em Rotate Right in unsigned value (32 bit) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} int32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga372c0535573dde3e37f0f08c774a3487}{\+\_\+\+\_\+\+SSAT}} (int32\+\_\+t val, uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaafcad33f86db3a8e1f55925989f9d2dc}{sat}})
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE int32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga372c0535573dde3e37f0f08c774a3487}{\+\_\+\+\_\+\+SSAT}} (int32\+\_\+t val, uint32\+\_\+t sat)
 \begin{DoxyCompactList}\small\item\em Signed Saturate. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga6562dbd8182d1571e22dbca7ebdfa9bc}{\+\_\+\+\_\+\+USAT}} (int32\+\_\+t val, uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaafcad33f86db3a8e1f55925989f9d2dc}{sat}})
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga6562dbd8182d1571e22dbca7ebdfa9bc}{\+\_\+\+\_\+\+USAT}} (int32\+\_\+t val, uint32\+\_\+t sat)
 \begin{DoxyCompactList}\small\item\em Unsigned Saturate. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} void \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gae26c2b3961e702aeabc24d4984ebd369}{\+\_\+\+\_\+\+ISB}} (void)
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE void \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gae26c2b3961e702aeabc24d4984ebd369}{\+\_\+\+\_\+\+ISB}} (void)
 \begin{DoxyCompactList}\small\item\em Instruction Synchronization Barrier. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} void \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga7fe277f5385d23b9c44b2cbda1577ce9}{\+\_\+\+\_\+\+DSB}} (void)
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE void \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga7fe277f5385d23b9c44b2cbda1577ce9}{\+\_\+\+\_\+\+DSB}} (void)
 \begin{DoxyCompactList}\small\item\em Data Synchronization Barrier. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} void \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab1ea24daaaaee9c828f90cbca330cb5e}{\+\_\+\+\_\+\+DMB}} (void)
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE void \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab1ea24daaaaee9c828f90cbca330cb5e}{\+\_\+\+\_\+\+DMB}} (void)
 \begin{DoxyCompactList}\small\item\em Data Memory Barrier. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gadb92679719950635fba8b1b954072695}{\+\_\+\+\_\+\+REV}} (uint32\+\_\+t value)
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gadb92679719950635fba8b1b954072695}{\+\_\+\+\_\+\+REV}} (uint32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse byte order (32 bit) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaa12aedd096506c9639c1581acd5c6a78}{\+\_\+\+\_\+\+REV16}} (uint32\+\_\+t value)
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaa12aedd096506c9639c1581acd5c6a78}{\+\_\+\+\_\+\+REV16}} (uint32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse byte order (16 bit) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} int16\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gacb695341318226a5f69ed508166622ac}{\+\_\+\+\_\+\+REVSH}} (int16\+\_\+t value)
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE int16\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gacb695341318226a5f69ed508166622ac}{\+\_\+\+\_\+\+REVSH}} (int16\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse byte order (16 bit) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf944a7b7d8fd70164cca27669316bcf7}{\+\_\+\+\_\+\+RBIT}} (uint32\+\_\+t value)
+\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf944a7b7d8fd70164cca27669316bcf7}{\+\_\+\+\_\+\+RBIT}} (uint32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse bit order of value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -137,7 +149,7 @@ Causes the processor to enter Debug state. Debug tools can use this to investiga
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_BKPT@{\_\_BKPT}}
 \index{\_\_BKPT@{\_\_BKPT}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_BKPT}{\_\_BKPT}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+BKPT(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}bkpt \"{}\#value)}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+BKPT(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~\+\_\+\+\_\+\+ASM volatile (\"{}bkpt \"{}\#value)}
 
 
 
@@ -152,7 +164,7 @@ Causes the processor to enter Debug state. Debug tools can use this to investiga
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_BKPT@{\_\_BKPT}}
 \index{\_\_BKPT@{\_\_BKPT}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_BKPT}{\_\_BKPT}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+BKPT(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}bkpt \"{}\#value)}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+BKPT(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~\+\_\+\+\_\+\+ASM volatile (\"{}bkpt \"{}\#value)}
 
 
 
@@ -217,36 +229,6 @@ Counts the number of leading zeros of a data value.
 \begin{DoxyReturn}{Returns}
 number of leading zeros in value 
 \end{DoxyReturn}
-\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}\label{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276} 
-\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_OUT\_REG@{\_\_CMSIS\_GCC\_OUT\_REG}}
-\index{\_\_CMSIS\_GCC\_OUT\_REG@{\_\_CMSIS\_GCC\_OUT\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
-\doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_OUT\_REG}{\_\_CMSIS\_GCC\_OUT\_REG}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+OUT\+\_\+\+REG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\"{}=r\"{} (r)}
-
-\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}\label{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276} 
-\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_OUT\_REG@{\_\_CMSIS\_GCC\_OUT\_REG}}
-\index{\_\_CMSIS\_GCC\_OUT\_REG@{\_\_CMSIS\_GCC\_OUT\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
-\doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_OUT\_REG}{\_\_CMSIS\_GCC\_OUT\_REG}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+OUT\+\_\+\+REG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\"{}=r\"{} (r)}
-
-\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga03179f79efee45c226dddfb8d824ad83}\label{group___c_m_s_i_s___core___instruction_interface_ga03179f79efee45c226dddfb8d824ad83} 
-\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_RW\_REG@{\_\_CMSIS\_GCC\_RW\_REG}}
-\index{\_\_CMSIS\_GCC\_RW\_REG@{\_\_CMSIS\_GCC\_RW\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
-\doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_RW\_REG}{\_\_CMSIS\_GCC\_RW\_REG}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+RW\+\_\+\+REG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\"{}+r\"{} (r)}
-
-\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}\label{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97} 
-\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_USE\_REG@{\_\_CMSIS\_GCC\_USE\_REG}}
-\index{\_\_CMSIS\_GCC\_USE\_REG@{\_\_CMSIS\_GCC\_USE\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
-\doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_USE\_REG}{\_\_CMSIS\_GCC\_USE\_REG}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+USE\+\_\+\+REG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\"{}r\"{} (r)}
-
-\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}\label{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97} 
-\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_USE\_REG@{\_\_CMSIS\_GCC\_USE\_REG}}
-\index{\_\_CMSIS\_GCC\_USE\_REG@{\_\_CMSIS\_GCC\_USE\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
-\doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_USE\_REG}{\_\_CMSIS\_GCC\_USE\_REG}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CMSIS\+\_\+\+GCC\+\_\+\+USE\+\_\+\+REG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\"{}r\"{} (r)}
-
 \Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga671101179b5943990785f36f8c1e2269}\label{group___c_m_s_i_s___core___instruction_interface_ga671101179b5943990785f36f8c1e2269} 
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_DMB@{\_\_DMB}}
 \index{\_\_DMB@{\_\_DMB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
@@ -358,7 +340,7 @@ No Operation does nothing. This instruction can be used for code alignment purpo
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_NOP@{\_\_NOP}}
 \index{\_\_NOP@{\_\_NOP}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_NOP}{\_\_NOP}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+NOP(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}nop\"{})}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+NOP(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+\+ASM volatile (\"{}nop\"{})}
 
 
 
@@ -498,7 +480,7 @@ Send Event is a hint instruction. It causes an event to be signaled to the CPU. 
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_SEV@{\_\_SEV}}
 \index{\_\_SEV@{\_\_SEV}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_SEV}{\_\_SEV}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SEV(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}sev\"{})}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SEV(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+\+ASM volatile (\"{}sev\"{})}
 
 
 
@@ -528,7 +510,7 @@ Wait For Event is a hint instruction that permits the processor to enter a low-\
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_WFE@{\_\_WFE}}
 \index{\_\_WFE@{\_\_WFE}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_WFE}{\_\_WFE}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+WFE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}wfe\"{})}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+WFE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+\+ASM volatile (\"{}wfe\"{})}
 
 
 
@@ -558,7 +540,7 @@ Wait For Interrupt is a hint instruction that suspends execution until one of a 
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_WFI@{\_\_WFI}}
 \index{\_\_WFI@{\_\_WFI}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_WFI}{\_\_WFI}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+WFI(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{cmsis__armcc_8h_a1378040bcf22428955c6e3ce9c2053cd}{\+\_\+\+\_\+\+ASM}} volatile (\"{}wfi\"{})}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+WFI(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+\+ASM volatile (\"{}wfi\"{})}
 
 
 
@@ -649,7 +631,7 @@ Reversed value
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_DMB@{\_\_DMB}}
 \index{\_\_DMB@{\_\_DMB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_DMB()}{\_\_DMB()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} void \+\_\+\+\_\+\+DMB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE void \+\_\+\+\_\+\+DMB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -659,7 +641,7 @@ Ensures the apparent order of the explicit memory operations before and after th
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_DSB@{\_\_DSB}}
 \index{\_\_DSB@{\_\_DSB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_DSB()}{\_\_DSB()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} void \+\_\+\+\_\+\+DSB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE void \+\_\+\+\_\+\+DSB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -669,7 +651,7 @@ Acts as a special kind of Data Memory Barrier. It completes when all explicit me
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_ISB@{\_\_ISB}}
 \index{\_\_ISB@{\_\_ISB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_ISB()}{\_\_ISB()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} void \+\_\+\+\_\+\+ISB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE void \+\_\+\+\_\+\+ISB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -679,7 +661,7 @@ Instruction Synchronization Barrier flushes the pipeline in the processor, so th
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_RBIT@{\_\_RBIT}}
 \index{\_\_RBIT@{\_\_RBIT}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_RBIT()}{\_\_RBIT()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \+\_\+\+\_\+\+RBIT (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \+\_\+\+\_\+\+RBIT (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -697,7 +679,7 @@ Reversed value
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_REV@{\_\_REV}}
 \index{\_\_REV@{\_\_REV}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_REV()}{\_\_REV()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \+\_\+\+\_\+\+REV (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \+\_\+\+\_\+\+REV (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -715,7 +697,7 @@ Reversed value
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_REV16@{\_\_REV16}}
 \index{\_\_REV16@{\_\_REV16}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_REV16()}{\_\_REV16()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \+\_\+\+\_\+\+REV16 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \+\_\+\+\_\+\+REV16 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -733,7 +715,7 @@ Reversed value
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_REVSH@{\_\_REVSH}}
 \index{\_\_REVSH@{\_\_REVSH}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_REVSH()}{\_\_REVSH()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} int16\+\_\+t \+\_\+\+\_\+\+REVSH (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE int16\+\_\+t \+\_\+\+\_\+\+REVSH (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -751,7 +733,7 @@ Reversed value
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_ROR@{\_\_ROR}}
 \index{\_\_ROR@{\_\_ROR}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_ROR()}{\_\_ROR()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \+\_\+\+\_\+\+ROR (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{op1,  }\item[{uint32\+\_\+t}]{op2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \+\_\+\+\_\+\+ROR (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{op1,  }\item[{uint32\+\_\+t}]{op2 }\end{DoxyParamCaption})}
 
 
 
@@ -771,7 +753,7 @@ Rotated value
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_SSAT@{\_\_SSAT}}
 \index{\_\_SSAT@{\_\_SSAT}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_SSAT()}{\_\_SSAT()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} int32\+\_\+t \+\_\+\+\_\+\+SSAT (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val,  }\item[{uint32\+\_\+t}]{sat }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE int32\+\_\+t \+\_\+\+\_\+\+SSAT (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val,  }\item[{uint32\+\_\+t}]{sat }\end{DoxyParamCaption})}
 
 
 
@@ -787,11 +769,18 @@ Saturates a signed value.
 \begin{DoxyReturn}{Returns}
 Saturated value 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{group___c_m_s_i_s___core___instruction_interface_ga372c0535573dde3e37f0f08c774a3487_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga6562dbd8182d1571e22dbca7ebdfa9bc}\label{group___c_m_s_i_s___core___instruction_interface_ga6562dbd8182d1571e22dbca7ebdfa9bc} 
 \index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_USAT@{\_\_USAT}}
 \index{\_\_USAT@{\_\_USAT}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsubsection{\texorpdfstring{\_\_USAT()}{\_\_USAT()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_ab904513442afdf77d4f8c74f23cbb040}{\+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE}} uint32\+\_\+t \+\_\+\+\_\+\+USAT (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val,  }\item[{uint32\+\_\+t}]{sat }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+FORCEINLINE uint32\+\_\+t \+\_\+\+\_\+\+USAT (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val,  }\item[{uint32\+\_\+t}]{sat }\end{DoxyParamCaption})}
 
 
 
@@ -807,6 +796,13 @@ Saturates an unsigned value.
 \begin{DoxyReturn}{Returns}
 Saturated value 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{group___c_m_s_i_s___core___instruction_interface_ga6562dbd8182d1571e22dbca7ebdfa9bc_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsubsubsubsubsubsubsubsubsubsubsubsubsection{Variable Documentation}
@@ -819,9 +815,9 @@ Saturated value
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaafcad33f86db3a8e1f55925989f9d2dc}{sat}}\ >=\ 1U)\ \&\&\ (\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaafcad33f86db3a8e1f55925989f9d2dc}{sat}}\ <=\ 32U))}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((sat\ >=\ 1U)\ \&\&\ (sat\ <=\ 32U))}
 \DoxyCodeLine{\ \ \{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ int32\_t\ \mbox{\hyperlink{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7}{max}}\ =\ (int32\_t)((1U\ <<\ (\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaafcad33f86db3a8e1f55925989f9d2dc}{sat}}\ -\/\ 1U))\ -\/\ 1U);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ int32\_t\ \mbox{\hyperlink{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7}{max}}\ =\ (int32\_t)((1U\ <<\ (sat\ -\/\ 1U))\ -\/\ 1U);}
 \DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ int32\_t\ min\ =\ -\/1\ -\/\ \mbox{\hyperlink{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7}{max}}\ ;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (val\ >\ \mbox{\hyperlink{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7}{max}})}
 \DoxyCodeLine{\ \ \ \ \{}

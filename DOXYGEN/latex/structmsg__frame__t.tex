@@ -9,22 +9,38 @@ Structure pour l\textquotesingle{}obget message qui est définie par le protocol
 
 {\ttfamily \#include $<$frames.\+h$>$}
 
+
+
+Collaboration diagram for msg\+\_\+frame\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{structmsg__frame__t__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structmsg__frame__t_a0572537810c9a27cae4baaac69ab3b91}{sof}}
+\Hypertarget{structmsg__frame__t_a0572537810c9a27cae4baaac69ab3b91}\label{structmsg__frame__t_a0572537810c9a27cae4baaac69ab3b91} 
+uint8\+\_\+t {\bfseries sof}
 \item 
-\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} \mbox{\hyperlink{structmsg__frame__t_a37d7c16116c83cf50545e18ca0aca63d}{src}}
+\Hypertarget{structmsg__frame__t_a37d7c16116c83cf50545e18ca0aca63d}\label{structmsg__frame__t_a37d7c16116c83cf50545e18ca0aca63d} 
+\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} {\bfseries src}
 \item 
-\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} \mbox{\hyperlink{structmsg__frame__t_a64c409a83e1c895a777b05cf7a728c34}{dest}}
+\Hypertarget{structmsg__frame__t_a64c409a83e1c895a777b05cf7a728c34}\label{structmsg__frame__t_a64c409a83e1c895a777b05cf7a728c34} 
+\mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} {\bfseries dest}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structmsg__frame__t_ab7109a6b14d3593206496a738515d676}{size}}
+\Hypertarget{structmsg__frame__t_ab7109a6b14d3593206496a738515d676}\label{structmsg__frame__t_ab7109a6b14d3593206496a738515d676} 
+uint8\+\_\+t {\bfseries size}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structmsg__frame__t_a57b56326c704c8038fe28c02089e7004}{msg}} \mbox{[}\mbox{\hyperlink{frames_8h_adadce328e6d75dcaf598d1ff1a7d7cae}{SIZE\+\_\+\+MSG\+\_\+\+MAX}}\mbox{]}
+\Hypertarget{structmsg__frame__t_a57b56326c704c8038fe28c02089e7004}\label{structmsg__frame__t_a57b56326c704c8038fe28c02089e7004} 
+uint8\+\_\+t {\bfseries msg} \mbox{[}SIZE\+\_\+\+MSG\+\_\+\+MAX\mbox{]}
 \item 
-uint16\+\_\+t \mbox{\hyperlink{structmsg__frame__t_a49f456ee54dba6ec23691f63c56b138d}{crc}}
+\Hypertarget{structmsg__frame__t_a49f456ee54dba6ec23691f63c56b138d}\label{structmsg__frame__t_a49f456ee54dba6ec23691f63c56b138d} 
+uint16\+\_\+t {\bfseries crc}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structmsg__frame__t_aea3679d5e69ace4b1196c2c1ed843790}{eof}}
+\Hypertarget{structmsg__frame__t_aea3679d5e69ace4b1196c2c1ed843790}\label{structmsg__frame__t_aea3679d5e69ace4b1196c2c1ed843790} 
+uint8\+\_\+t {\bfseries eof}
 \end{DoxyCompactItemize}
 
 
@@ -33,51 +49,6 @@ Structure pour l\textquotesingle{}obget message qui est définie par le protocol
 
 \doxylink{structmsg__frame__t}{msg\+\_\+frame\+\_\+t} contient \+: SOF (start of frame) ID src ID dest msg size msg CRC EOF (end of frame) 
 
-\doxysubsection{Member Data Documentation}
-\Hypertarget{structmsg__frame__t_a49f456ee54dba6ec23691f63c56b138d}\label{structmsg__frame__t_a49f456ee54dba6ec23691f63c56b138d} 
-\index{msg\_frame\_t@{msg\_frame\_t}!crc@{crc}}
-\index{crc@{crc}!msg\_frame\_t@{msg\_frame\_t}}
-\doxysubsubsection{\texorpdfstring{crc}{crc}}
-{\footnotesize\ttfamily uint16\+\_\+t msg\+\_\+frame\+\_\+t\+::crc}
-
-\Hypertarget{structmsg__frame__t_a64c409a83e1c895a777b05cf7a728c34}\label{structmsg__frame__t_a64c409a83e1c895a777b05cf7a728c34} 
-\index{msg\_frame\_t@{msg\_frame\_t}!dest@{dest}}
-\index{dest@{dest}!msg\_frame\_t@{msg\_frame\_t}}
-\doxysubsubsection{\texorpdfstring{dest}{dest}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} msg\+\_\+frame\+\_\+t\+::dest}
-
-\Hypertarget{structmsg__frame__t_aea3679d5e69ace4b1196c2c1ed843790}\label{structmsg__frame__t_aea3679d5e69ace4b1196c2c1ed843790} 
-\index{msg\_frame\_t@{msg\_frame\_t}!eof@{eof}}
-\index{eof@{eof}!msg\_frame\_t@{msg\_frame\_t}}
-\doxysubsubsection{\texorpdfstring{eof}{eof}}
-{\footnotesize\ttfamily uint8\+\_\+t msg\+\_\+frame\+\_\+t\+::eof}
-
-\Hypertarget{structmsg__frame__t_a57b56326c704c8038fe28c02089e7004}\label{structmsg__frame__t_a57b56326c704c8038fe28c02089e7004} 
-\index{msg\_frame\_t@{msg\_frame\_t}!msg@{msg}}
-\index{msg@{msg}!msg\_frame\_t@{msg\_frame\_t}}
-\doxysubsubsection{\texorpdfstring{msg}{msg}}
-{\footnotesize\ttfamily uint8\+\_\+t msg\+\_\+frame\+\_\+t\+::msg\mbox{[}\mbox{\hyperlink{frames_8h_adadce328e6d75dcaf598d1ff1a7d7cae}{SIZE\+\_\+\+MSG\+\_\+\+MAX}}\mbox{]}}
-
-\Hypertarget{structmsg__frame__t_ab7109a6b14d3593206496a738515d676}\label{structmsg__frame__t_ab7109a6b14d3593206496a738515d676} 
-\index{msg\_frame\_t@{msg\_frame\_t}!size@{size}}
-\index{size@{size}!msg\_frame\_t@{msg\_frame\_t}}
-\doxysubsubsection{\texorpdfstring{size}{size}}
-{\footnotesize\ttfamily uint8\+\_\+t msg\+\_\+frame\+\_\+t\+::size}
-
-\Hypertarget{structmsg__frame__t_a0572537810c9a27cae4baaac69ab3b91}\label{structmsg__frame__t_a0572537810c9a27cae4baaac69ab3b91} 
-\index{msg\_frame\_t@{msg\_frame\_t}!sof@{sof}}
-\index{sof@{sof}!msg\_frame\_t@{msg\_frame\_t}}
-\doxysubsubsection{\texorpdfstring{sof}{sof}}
-{\footnotesize\ttfamily uint8\+\_\+t msg\+\_\+frame\+\_\+t\+::sof}
-
-\Hypertarget{structmsg__frame__t_a37d7c16116c83cf50545e18ca0aca63d}\label{structmsg__frame__t_a37d7c16116c83cf50545e18ca0aca63d} 
-\index{msg\_frame\_t@{msg\_frame\_t}!src@{src}}
-\index{src@{src}!msg\_frame\_t@{msg\_frame\_t}}
-\doxysubsubsection{\texorpdfstring{src}{src}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structid__frame__t}{id\+\_\+frame\+\_\+t}} msg\+\_\+frame\+\_\+t\+::src}
-
-
-
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-STM32/bsp/inc/\mbox{\hyperlink{frames_8h}{frames.\+h}}\end{DoxyCompactItemize}
+C\+:/\+Users/lucas/\+One\+Drive/\+Documents/\+Git\+Hub/\+Rsf\+Sd\+F/\+STM32/bsp/inc/frames.\+h\end{DoxyCompactItemize}

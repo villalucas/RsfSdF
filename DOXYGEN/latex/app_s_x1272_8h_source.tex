@@ -1,6 +1,6 @@
 \doxysection{app\+SX1272.\+h}
-\hypertarget{app_s_x1272_8h_source}{}\label{app_s_x1272_8h_source}\index{STM32/app/inc/appSX1272.h@{STM32/app/inc/appSX1272.h}}
-\mbox{\hyperlink{app_s_x1272_8h}{Go to the documentation of this file.}}
+\hypertarget{app_s_x1272_8h_source}{}\label{app_s_x1272_8h_source}\index{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/app/inc/appSX1272.h@{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/app/inc/appSX1272.h}}
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{/*}}
 \DoxyCodeLine{00002\ \textcolor{comment}{\ *\ appSX1272.h}}
@@ -12,7 +12,7 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ APP\_INC\_APPSX1272\_H\_}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ APP\_INC\_APPSX1272\_H\_}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_x1272_8h}{SX1272.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}SX1272.h"{}}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00014\ \textcolor{comment}{//\ Configuration\ du\ module\ en\ mode\ LoRA\ ou\ FSK}}
 \DoxyCodeLine{00016\ \textcolor{comment}{}}
@@ -54,11 +54,11 @@
 \DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ TRANSMIT\_TIMEOUT\_ERROR\ \ \ \ \ \ 2}}
 \DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ TRANSMIT\_ERROR\_CONFIG\ \ \ \ \ \ \ 3}}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_s_x1272_8h_a5b7bec9d57e966f8115a9529ab0457ea}{APP\_SX1272\_setup}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
-\DoxyCodeLine{00056\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_a78ca0636c4e6d6a89b8dd1198a76863c}{APP\_SX1272\_runTransmitMsg}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *message);}
-\DoxyCodeLine{00057\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_aaa885af9ee8a008b08788d062ab26a8e}{APP\_SX1272\_runTransmitAck}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack);}
-\DoxyCodeLine{00058\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_a41a0c48d05f8f679b2652737097c9d9c}{APP\_SX1272\_runReceive}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *message\_decode,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack\_decode);}
-\DoxyCodeLine{00059\ uint8\_t\ \mbox{\hyperlink{app_s_x1272_8h_a9a620ebeba05a011d6c66dfc411f3e3c}{APP\_SX1272\_setFreq}}(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ APP\_SX1272\_setup(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
+\DoxyCodeLine{00056\ uint8\_t\ APP\_SX1272\_runTransmitMsg(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *message);}
+\DoxyCodeLine{00057\ uint8\_t\ APP\_SX1272\_runTransmitAck(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack);}
+\DoxyCodeLine{00058\ uint8\_t\ APP\_SX1272\_runReceive(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *message\_decode,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack\_decode);}
+\DoxyCodeLine{00059\ uint8\_t\ APP\_SX1272\_setFreq(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
 \DoxyCodeLine{00060\ }
 \DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ APP\_INC\_APPSX1272\_H\_\ */}\textcolor{preprocessor}{}}
 

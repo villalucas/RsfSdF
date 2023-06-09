@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lora: STM32/cmsis/core/cmsis_iccarm.h Source File</title>
+<title>Réseau par competition: C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/cmsis/core/cmsis_iccarm.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="09_SE (1).jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Lora
+   <div id="projectname">Réseau par competition
    </div>
+   <div id="projectbrief">Projet étudiant visant à développer un réseau par compétition utilisant des communications Lora</div>
   </td>
  </tr>
  </tbody>
@@ -104,12 +106,12 @@ $(function() {
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#pragma system_include</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">   35</a></span><span class="preprocessor">#define __IAR_FT _Pragma(&quot;inline=forced&quot;</span>) __intrinsic</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define __IAR_FT _Pragma(&quot;inline=forced&quot;</span>) __intrinsic</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#if (__VER__ &gt;= 8000000)</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">  #define __ICCARM_V8 1</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#ada3e360f585385631c8548f73fa59e09">   40</a></span><span class="preprocessor">  #define __ICCARM_V8 0</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">  #define __ICCARM_V8 0</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#ifndef __ALIGNED</span></div>
@@ -120,7 +122,7 @@ $(function() {
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">    #define __ALIGNED(x) __attribute__((aligned(x)))</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">  #else</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">    #warning No compiler specific solution for __ALIGNED.__ALIGNED is ignored.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#aa65ef8f7a5e8b7a6ea6c1d48b4c78e55">   51</a></span><span class="preprocessor">    #define __ALIGNED(x)</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">    #define __ALIGNED(x)</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
@@ -174,23 +176,23 @@ $(function() {
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#elif defined(__ARM_ARCH_8M_BASE__) &amp;&amp; __ARM_ARCH_8M_BASE__==1</span></div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">  #define __IAR_M0_FAMILY  1</span></div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a6c0c4e21065cda012c4275eeb205d18e">  105</a></span><span class="preprocessor">  #define __IAR_M0_FAMILY  0</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">  #define __IAR_M0_FAMILY  0</span></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#ifndef __ASM</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">  110</a></span><span class="preprocessor">  #define __ASM __asm</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">  #define __ASM __asm</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#ifndef __INLINE</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">  114</a></span><span class="preprocessor">  #define __INLINE inline</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">  #define __INLINE inline</span></div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#ifndef   __NO_RETURN</span></div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">  #if __ICCARM_V8</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">    #define __NO_RETURN __attribute__((__noreturn__))</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">  #else</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a153a4a31b276a9758959580538720a51">  121</a></span><span class="preprocessor">    #define __NO_RETURN _Pragma(&quot;object_attribute=__noreturn&quot;</span>)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">    #define __NO_RETURN _Pragma(&quot;object_attribute=__noreturn&quot;</span>)</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
@@ -199,7 +201,7 @@ $(function() {
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">    #define __PACKED __attribute__((packed, aligned(1)))</span></div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">  #else</span></div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">/* Needs IAR language extensions */</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#abe8996d3d985ee1529475443cc635bf1">  130</a></span><span class="preprocessor">    #define __PACKED __packed</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">    #define __PACKED __packed</span></div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
@@ -208,7 +210,7 @@ $(function() {
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">    #define __PACKED_STRUCT struct __attribute__((packed, aligned(1)))</span></div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">  #else</span></div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">/* Needs IAR language extensions */</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a4dbb70fab85207c27b581ecb6532b314">  139</a></span><span class="preprocessor">    #define __PACKED_STRUCT __packed struct</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">    #define __PACKED_STRUCT __packed struct</span></div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
@@ -217,84 +219,84 @@ $(function() {
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">    #define __PACKED_UNION union __attribute__((packed, aligned(1)))</span></div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">  #else</span></div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="comment">/* Needs IAR language extensions */</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a6fba34d08b0a526830b4231d2ea0b89a">  148</a></span><span class="preprocessor">    #define __PACKED_UNION __packed union</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">    #define __PACKED_UNION __packed union</span></div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">#ifndef   __RESTRICT</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a378ac21329d33f561f90265eef89f564">  153</a></span><span class="preprocessor">  #define __RESTRICT            __restrict</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">  #define __RESTRICT            __restrict</span></div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#ifndef   __STATIC_INLINE</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">  157</a></span><span class="preprocessor">  #define __STATIC_INLINE       static inline</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">  #define __STATIC_INLINE       static inline</span></div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#ifndef   __FORCEINLINE</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a2ecb43ce8e7aa73d32f50afa67b42c76">  161</a></span><span class="preprocessor">  #define __FORCEINLINE         _Pragma(&quot;inline=forced&quot;</span>)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">  #define __FORCEINLINE         _Pragma(&quot;inline=forced&quot;</span>)</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">#ifndef   __STATIC_FORCEINLINE</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#ab904513442afdf77d4f8c74f23cbb040">  165</a></span><span class="preprocessor">  #define __STATIC_FORCEINLINE  __FORCEINLINE __STATIC_INLINE</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">  #define __STATIC_FORCEINLINE  __FORCEINLINE __STATIC_INLINE</span></div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">#ifndef __UNALIGNED_UINT16_READ</span></div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">#pragma language=save</span></div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#pragma language=extended</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a1305dc7358478164e7ae459adad136d9">  171</a></span><a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint16_t <a class="code hl_function" href="cmsis__iccarm_8h.html#a1305dc7358478164e7ae459adad136d9">__iar_uint16_read</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> *ptr)</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>__IAR_FT uint16_t __iar_uint16_read(<span class="keywordtype">void</span> <span class="keyword">const</span> *ptr)</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>{</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordflow">return</span> *(__packed uint16_t*)(ptr);</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>}</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">#pragma language=restore</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#affc86c22f56e906edc36b79fc834ac54">  176</a></span><span class="preprocessor">#define __UNALIGNED_UINT16_READ(PTR) __iar_uint16_read(PTR)</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#define __UNALIGNED_UINT16_READ(PTR) __iar_uint16_read(PTR)</span></div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#ifndef __UNALIGNED_UINT16_WRITE</span></div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">#pragma language=save</span></div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">#pragma language=extended</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a68e7687068868fc26ad03774570131c6">  183</a></span><a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> <a class="code hl_function" href="cmsis__iccarm_8h.html#a68e7687068868fc26ad03774570131c6">__iar_uint16_write</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> *ptr, uint16_t val)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>__IAR_FT <span class="keywordtype">void</span> __iar_uint16_write(<span class="keywordtype">void</span> <span class="keyword">const</span> *ptr, uint16_t val)</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>{</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  *(__packed uint16_t*)(ptr) = val;;</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>}</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="preprocessor">#pragma language=restore</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a5020b449a1efa49e9acd6e1e4544ad77">  188</a></span><span class="preprocessor">#define __UNALIGNED_UINT16_WRITE(PTR,VAL) __iar_uint16_write(PTR,VAL)</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#define __UNALIGNED_UINT16_WRITE(PTR,VAL) __iar_uint16_write(PTR,VAL)</span></div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#ifndef __UNALIGNED_UINT32_READ</span></div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#pragma language=save</span></div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#pragma language=extended</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a3f6f0554c695fa3f5a9a7b62987378ba">  194</a></span><a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t <a class="code hl_function" href="cmsis__iccarm_8h.html#a3f6f0554c695fa3f5a9a7b62987378ba">__iar_uint32_read</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> *ptr)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>__IAR_FT uint32_t __iar_uint32_read(<span class="keywordtype">void</span> <span class="keyword">const</span> *ptr)</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>{</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keywordflow">return</span> *(__packed uint32_t*)(ptr);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="preprocessor">#pragma language=restore</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a9f1782e04d6a7d8fe1639383b5ca1bf9">  199</a></span><span class="preprocessor">#define __UNALIGNED_UINT32_READ(PTR) __iar_uint32_read(PTR)</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">#define __UNALIGNED_UINT32_READ(PTR) __iar_uint32_read(PTR)</span></div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">#ifndef __UNALIGNED_UINT32_WRITE</span></div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">#pragma language=save</span></div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">#pragma language=extended</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a9be6bc4e50ac50dca4005e28e648a675">  205</a></span><a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> <a class="code hl_function" href="cmsis__iccarm_8h.html#a9be6bc4e50ac50dca4005e28e648a675">__iar_uint32_write</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> *ptr, uint32_t val)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>__IAR_FT <span class="keywordtype">void</span> __iar_uint32_write(<span class="keywordtype">void</span> <span class="keyword">const</span> *ptr, uint32_t val)</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>{</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  *(__packed uint32_t*)(ptr) = val;;</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#pragma language=restore</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#af746f04ad965c639fdd4eb8d086e19dd">  210</a></span><span class="preprocessor">#define __UNALIGNED_UINT32_WRITE(PTR,VAL) __iar_uint32_write(PTR,VAL)</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">#define __UNALIGNED_UINT32_WRITE(PTR,VAL) __iar_uint32_write(PTR,VAL)</span></div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">#ifndef __UNALIGNED_UINT32   </span><span class="comment">/* deprecated */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="preprocessor">#pragma language=save</span></div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="preprocessor">#pragma language=extended</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="struct____iar__u32.html#af8b16b2c629a3f2264c1af078ef2578a">  216</a></span>__packed <span class="keyword">struct  </span><a class="code hl_struct" href="struct____iar__u32.html">__iar_u32</a> { uint32_t <a class="code hl_variable" href="struct____iar__u32.html#af8b16b2c629a3f2264c1af078ef2578a">v</a>; };</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="struct____iar__u32.html">  216</a></span>__packed <span class="keyword">struct  </span><a class="code hl_struct" href="struct____iar__u32.html">__iar_u32</a> { uint32_t v; };</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="preprocessor">#pragma language=restore</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a683ea97ff9463291187253f7861ebc56">  218</a></span><span class="preprocessor">#define __UNALIGNED_UINT32(PTR) (((struct __iar_u32 *)(PTR))-&gt;v)</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="preprocessor">#define __UNALIGNED_UINT32(PTR) (((struct __iar_u32 *)(PTR))-&gt;v)</span></div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="preprocessor">#ifndef   __USED</span></div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="preprocessor">  #if __ICCARM_V8</span></div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="preprocessor">    #define __USED __attribute__((used))</span></div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="preprocessor">  #else</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a3e40e4c553fc11588f7a4c2a19e789e0">  225</a></span><span class="preprocessor">    #define __USED _Pragma(&quot;__root&quot;</span>)</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">    #define __USED _Pragma(&quot;__root&quot;</span>)</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
@@ -302,13 +304,13 @@ $(function() {
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">  #if __ICCARM_V8</span></div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">    #define __WEAK __attribute__((weak))</span></div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">  #else</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#ac607bf387b29162be6a9b77fc7999539">  233</a></span><span class="preprocessor">    #define __WEAK _Pragma(&quot;__weak&quot;</span>)</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="preprocessor">    #define __WEAK _Pragma(&quot;__weak&quot;</span>)</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#ifndef __ICCARM_INTRINSICS_VERSION__</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a2cf5e66520f87c928ab4395d5787e4df">  239</a></span><span class="preprocessor">  #define __ICCARM_INTRINSICS_VERSION__  0</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">  #define __ICCARM_INTRINSICS_VERSION__  0</span></div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="preprocessor">#if __ICCARM_INTRINSICS_VERSION__ == 2</span></div>
@@ -443,7 +445,7 @@ $(function() {
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span><span class="preprocessor">  #define __REV     __iar_builtin_REV</span></div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="preprocessor">  #define __REV16   __iar_builtin_REV16</span></div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> int16_t <a class="code hl_define" href="group___c_m_s_i_s___core___instruction_interface.html#gae580812686119c9c5cf3c11a7519a404">__REVSH</a>(int16_t val)</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  __IAR_FT int16_t <a class="code hl_define" href="group___c_m_s_i_s___core___instruction_interface.html#gae580812686119c9c5cf3c11a7519a404">__REVSH</a>(int16_t val)</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  {</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    <span class="keywordflow">return</span> (int16_t) __iar_builtin_REVSH(val);</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  }</div>
@@ -547,8 +549,8 @@ $(function() {
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span> </div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span><span class="preprocessor">  #if (!((defined (__FPU_PRESENT) &amp;&amp; (__FPU_PRESENT == 1U)) &amp;&amp; \</span></div>
 <div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span><span class="preprocessor">         (defined (__FPU_USED   ) &amp;&amp; (__FPU_USED    == 1U))     ))</span></div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#af56e3c942846b8643cbf8f5208d6a63b">  478</a></span><span class="preprocessor">    #define __get_FPSCR __cmsis_iar_get_FPSR_not_active</span></div>
-<div class="line"><a id="l00479" name="l00479"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a63b3bbd6ccb6b92ed6c0bbc489529f0f">  479</a></span><span class="preprocessor">    #define __set_FPSCR __cmsis_iar_set_FPSR_not_active</span></div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span><span class="preprocessor">    #define __get_FPSCR __cmsis_iar_get_FPSR_not_active</span></div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span><span class="preprocessor">    #define __set_FPSCR __cmsis_iar_set_FPSR_not_active</span></div>
 <div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span> </div>
 <div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span><span class="preprocessor">  #ifdef __INTRINSICS_INCLUDED</span></div>
@@ -565,7 +567,7 @@ $(function() {
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span><span class="preprocessor">    #undef __RBIT</span></div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span><span class="preprocessor">    #undef __get_APSR</span></div>
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span> </div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint8_t <a class="code hl_define" href="group___c_m_s_i_s___core___instruction_interface.html#ga5d5bb1527e042be4a9fa5a33f65cc248">__CLZ</a>(uint32_t data)</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>    __STATIC_INLINE uint8_t <a class="code hl_define" href="group___c_m_s_i_s___core___instruction_interface.html#ga5d5bb1527e042be4a9fa5a33f65cc248">__CLZ</a>(uint32_t data)</div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>    {</div>
 <div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>      <span class="keywordflow">if</span> (data == 0U) { <span class="keywordflow">return</span> 32U; }</div>
 <div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span> </div>
@@ -580,7 +582,7 @@ $(function() {
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>      <span class="keywordflow">return</span> count;</div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>    }</div>
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span> </div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t <a class="code hl_define" href="group___c_m_s_i_s___core___instruction_interface.html#gab83768933a612816fad669db5488366f">__RBIT</a>(uint32_t v)</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    __STATIC_INLINE uint32_t <a class="code hl_define" href="group___c_m_s_i_s___core___instruction_interface.html#gab83768933a612816fad669db5488366f">__RBIT</a>(uint32_t v)</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    {</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>      uint8_t sc = 31U;</div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>      uint32_t r = v;</div>
@@ -593,7 +595,7 @@ $(function() {
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>      <span class="keywordflow">return</span> (r &lt;&lt; sc);</div>
 <div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>    }</div>
 <div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span> </div>
-<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a>  uint32_t <a class="code hl_function" href="group___c_m_s_i_s___core___reg_acc_functions.html#gadff4f1e599946e8ae96fba17b5245f04">__get_APSR</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>    __STATIC_INLINE  uint32_t <a class="code hl_function" href="group___c_m_s_i_s___core___reg_acc_functions.html#gadff4f1e599946e8ae96fba17b5245f04">__get_APSR</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    {</div>
 <div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>      uint32_t res;</div>
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>      __asm(<span class="stringliteral">&quot;MRS      %0,APSR&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
@@ -613,20 +615,20 @@ $(function() {
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span><span class="preprocessor">  #pragma diag_suppress=Pe940</span></div>
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span><span class="preprocessor">  #pragma diag_suppress=Pe177</span></div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span> </div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a6c141f2890d12b9c0f56eaed4e4846c8">  544</a></span><span class="preprocessor">  #define __enable_irq    __enable_interrupt</span></div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a6cb98c1adc8a28bc3b48649a3421195d">  545</a></span><span class="preprocessor">  #define __disable_irq   __disable_interrupt</span></div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#abd585ddc865fb9b7f2493af1eee1a572">  546</a></span><span class="preprocessor">  #define __NOP           __no_operation</span></div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span><span class="preprocessor">  #define __enable_irq    __enable_interrupt</span></div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span><span class="preprocessor">  #define __disable_irq   __disable_interrupt</span></div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span><span class="preprocessor">  #define __NOP           __no_operation</span></div>
 <div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#ad0fa4773e9c51500ee78bc4daa88341b">  548</a></span><span class="preprocessor">  #define __get_xPSR      __get_PSR</span></div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span><span class="preprocessor">  #define __get_xPSR      __get_PSR</span></div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span> </div>
 <div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span><span class="preprocessor">  #if (!defined(__ARM_ARCH_6M__) || __ARM_ARCH_6M__==0)</span></div>
 <div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span> </div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#afe7e42185902df89a66f328a9792690b">  552</a></span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t <a class="code hl_function" href="cmsis__iccarm_8h.html#afe7e42185902df89a66f328a9792690b">__LDREXW</a>(uint32_t <span class="keyword">volatile</span> *ptr)</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>    __IAR_FT uint32_t __LDREXW(uint32_t <span class="keyword">volatile</span> *ptr)</div>
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    {</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>      <span class="keywordflow">return</span> __LDREX((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *)ptr);</div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    }</div>
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span> </div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#ab861d5af605077b6e52ffc8e67a8f9c6">  557</a></span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t <a class="code hl_function" href="cmsis__iccarm_8h.html#ab861d5af605077b6e52ffc8e67a8f9c6">__STREXW</a>(uint32_t value, uint32_t <span class="keyword">volatile</span> *ptr)</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>    __IAR_FT uint32_t __STREXW(uint32_t value, uint32_t <span class="keyword">volatile</span> *ptr)</div>
 <div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>    {</div>
 <div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>      <span class="keywordflow">return</span> __STREX(value, (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *)ptr);</div>
 <div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    }</div>
@@ -636,14 +638,14 @@ $(function() {
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>  <span class="comment">/* __CORTEX_M is defined in core_cm0.h, core_cm3.h and core_cm4.h. */</span></div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span><span class="preprocessor">  #if (__CORTEX_M &gt;= 0x03)</span></div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span> </div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __RRX(uint32_t value)</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    __IAR_FT uint32_t __RRX(uint32_t value)</div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    {</div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>      uint32_t result;</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>      <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a>(<span class="stringliteral">&quot;RRX      %0, %1&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span>(result) : <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;cc&quot;</span>);</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>      __ASM(<span class="stringliteral">&quot;RRX      %0, %1&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span>(result) : <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;cc&quot;</span>);</div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>      <span class="keywordflow">return</span>(result);</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    }</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> __set_BASEPRI_MAX(uint32_t value)</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    __IAR_FT <span class="keywordtype">void</span> __set_BASEPRI_MAX(uint32_t value)</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    {</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      BASEPRI_MAX,%0&quot;</span>::<span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    }</div>
@@ -655,7 +657,7 @@ $(function() {
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span><span class="preprocessor">  #endif </span><span class="comment">/* (__CORTEX_M &gt;= 0x03) */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span> </div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a7105032649bf6158d4d2d5dc38a3f94c">  586</a></span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t <a class="code hl_define" href="group___c_m_s_i_s___core___instruction_interface.html#ga95b9bd281ddeda378b85afdb8f2ced86">__ROR</a>(uint32_t op1, uint32_t op2)</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>  __IAR_FT uint32_t <a class="code hl_define" href="group___c_m_s_i_s___core___instruction_interface.html#ga95b9bd281ddeda378b85afdb8f2ced86">__ROR</a>(uint32_t op1, uint32_t op2)</div>
 <div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>  {</div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    <span class="keywordflow">return</span> (op1 &gt;&gt; op2) | (op1 &lt;&lt; ((<span class="keyword">sizeof</span>(op1)*8)-op2));</div>
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>  }</div>
@@ -663,7 +665,7 @@ $(function() {
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span><span class="preprocessor">  #if ((defined (__ARM_ARCH_8M_MAIN__ ) &amp;&amp; (__ARM_ARCH_8M_MAIN__ == 1)) || \</span></div>
 <div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span><span class="preprocessor">       (defined (__ARM_ARCH_8M_BASE__ ) &amp;&amp; (__ARM_ARCH_8M_BASE__ == 1))    )</span></div>
 <div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>   <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __get_MSPLIM(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>   __IAR_FT uint32_t __get_MSPLIM(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    {</div>
 <div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>      uint32_t res;</div>
 <div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span><span class="preprocessor">    #if (!(defined (__ARM_ARCH_8M_MAIN__ ) &amp;&amp; (__ARM_ARCH_8M_MAIN__ == 1)) &amp;&amp; \</span></div>
@@ -676,7 +678,7 @@ $(function() {
 <div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    }</div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __set_MSPLIM(uint32_t value)</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    __IAR_FT <span class="keywordtype">void</span>   __set_MSPLIM(uint32_t value)</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>    {</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span><span class="preprocessor">    #if (!(defined (__ARM_ARCH_8M_MAIN__ ) &amp;&amp; (__ARM_ARCH_8M_MAIN__ == 1)) &amp;&amp; \</span></div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span><span class="preprocessor">         (!defined (__ARM_FEATURE_CMSE  ) || (__ARM_FEATURE_CMSE   &lt; 3)))</span></div>
@@ -687,7 +689,7 @@ $(function() {
 <div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="preprocessor">    #endif</span></div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    }</div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span> </div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __get_PSPLIM(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    __IAR_FT uint32_t __get_PSPLIM(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    {</div>
 <div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>      uint32_t res;</div>
 <div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span><span class="preprocessor">    #if (!(defined (__ARM_ARCH_8M_MAIN__ ) &amp;&amp; (__ARM_ARCH_8M_MAIN__ == 1)) &amp;&amp; \</span></div>
@@ -700,7 +702,7 @@ $(function() {
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    }</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __set_PSPLIM(uint32_t value)</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    __IAR_FT <span class="keywordtype">void</span>   __set_PSPLIM(uint32_t value)</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    {</div>
 <div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span><span class="preprocessor">    #if (!(defined (__ARM_ARCH_8M_MAIN__ ) &amp;&amp; (__ARM_ARCH_8M_MAIN__ == 1)) &amp;&amp; \</span></div>
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span><span class="preprocessor">         (!defined (__ARM_FEATURE_CMSE  ) || (__ARM_FEATURE_CMSE   &lt; 3)))</span></div>
@@ -711,90 +713,90 @@ $(function() {
 <div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span><span class="preprocessor">    #endif</span></div>
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>    }</div>
 <div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span> </div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __TZ_get_CONTROL_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>    __IAR_FT uint32_t __TZ_get_CONTROL_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    {</div>
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>      uint32_t res;</div>
 <div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MRS      %0,CONTROL_NS&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    }</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span> </div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_CONTROL_NS(uint32_t value)</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_CONTROL_NS(uint32_t value)</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    {</div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      CONTROL_NS,%0&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    }</div>
 <div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span> </div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t   __TZ_get_PSP_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    __IAR_FT uint32_t   __TZ_get_PSP_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>    {</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>      uint32_t res;</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MRS      %0,PSP_NS&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    }</div>
 <div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span> </div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_PSP_NS(uint32_t value)</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_PSP_NS(uint32_t value)</div>
 <div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    {</div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      PSP_NS,%0&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    }</div>
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span> </div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t   __TZ_get_MSP_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    __IAR_FT uint32_t   __TZ_get_MSP_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>    {</div>
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>      uint32_t res;</div>
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MRS      %0,MSP_NS&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    }</div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span> </div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_MSP_NS(uint32_t value)</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_MSP_NS(uint32_t value)</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    {</div>
 <div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      MSP_NS,%0&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>    }</div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span> </div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t   __TZ_get_SP_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    __IAR_FT uint32_t   __TZ_get_SP_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>    {</div>
 <div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>      uint32_t res;</div>
 <div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MRS      %0,SP_NS&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
 <div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    }</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_SP_NS(uint32_t value)</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_SP_NS(uint32_t value)</div>
 <div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>    {</div>
 <div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      SP_NS,%0&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>    }</div>
 <div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span> </div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t   __TZ_get_PRIMASK_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    __IAR_FT uint32_t   __TZ_get_PRIMASK_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>    {</div>
 <div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>      uint32_t res;</div>
 <div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MRS      %0,PRIMASK_NS&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
 <div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>    }</div>
 <div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span> </div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_PRIMASK_NS(uint32_t value)</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_PRIMASK_NS(uint32_t value)</div>
 <div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>    {</div>
 <div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      PRIMASK_NS,%0&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    }</div>
 <div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span> </div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t   __TZ_get_BASEPRI_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    __IAR_FT uint32_t   __TZ_get_BASEPRI_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    {</div>
 <div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>      uint32_t res;</div>
 <div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MRS      %0,BASEPRI_NS&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
 <div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>    }</div>
 <div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_BASEPRI_NS(uint32_t value)</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_BASEPRI_NS(uint32_t value)</div>
 <div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    {</div>
 <div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      BASEPRI_NS,%0&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>    }</div>
 <div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t   __TZ_get_FAULTMASK_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>    __IAR_FT uint32_t   __TZ_get_FAULTMASK_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>    {</div>
 <div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>      uint32_t res;</div>
 <div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MRS      %0,FAULTMASK_NS&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
 <div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>    }</div>
 <div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span> </div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_FAULTMASK_NS(uint32_t value)</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_FAULTMASK_NS(uint32_t value)</div>
 <div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>    {</div>
 <div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      FAULTMASK_NS,%0&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>    }</div>
 <div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span> </div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t   __TZ_get_PSPLIM_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    __IAR_FT uint32_t   __TZ_get_PSPLIM_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    {</div>
 <div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>      uint32_t res;</div>
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span><span class="preprocessor">    #if (!(defined (__ARM_ARCH_8M_MAIN__ ) &amp;&amp; (__ARM_ARCH_8M_MAIN__ == 1)) &amp;&amp; \</span></div>
@@ -807,7 +809,7 @@ $(function() {
 <div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>    }</div>
 <div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span> </div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_PSPLIM_NS(uint32_t value)</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_PSPLIM_NS(uint32_t value)</div>
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    {</div>
 <div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="preprocessor">    #if (!(defined (__ARM_ARCH_8M_MAIN__ ) &amp;&amp; (__ARM_ARCH_8M_MAIN__ == 1)) &amp;&amp; \</span></div>
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span><span class="preprocessor">         (!defined (__ARM_FEATURE_CMSE  ) || (__ARM_FEATURE_CMSE   &lt; 3)))</span></div>
@@ -818,14 +820,14 @@ $(function() {
 <div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span><span class="preprocessor">    #endif</span></div>
 <div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>    }</div>
 <div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span> </div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t   __TZ_get_MSPLIM_NS(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    __IAR_FT uint32_t   __TZ_get_MSPLIM_NS(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    {</div>
 <div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>      uint32_t res;</div>
 <div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MRS      %0,MSPLIM_NS&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res));</div>
 <div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>      <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>    }</div>
 <div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span> </div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span>   __TZ_set_MSPLIM_NS(uint32_t value)</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>    __IAR_FT <span class="keywordtype">void</span>   __TZ_set_MSPLIM_NS(uint32_t value)</div>
 <div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>    {</div>
 <div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>      __asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;MSR      MSPLIM_NS,%0&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (value));</div>
 <div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    }</div>
@@ -834,14 +836,14 @@ $(function() {
 <div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span> </div>
 <div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="preprocessor">#endif   </span><span class="comment">/* __ICCARM_INTRINSICS_VERSION__ == 2 */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span> </div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno"><a class="line" href="cmsis__iccarm_8h.html#a15ea6bd3c507d3e81c3b3a1258e46397">  765</a></span><span class="preprocessor">#define __BKPT(value)    __asm volatile (&quot;BKPT     %0&quot;</span> : : &quot;i&quot;(value))</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="preprocessor">#define __BKPT(value)    __asm volatile (&quot;BKPT     %0&quot;</span> : : &quot;i&quot;(value))</div>
 <div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span> </div>
 <div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="preprocessor">#if __IAR_M0_FAMILY</span></div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> int32_t <a class="code hl_function" href="group___c_m_s_i_s___core___instruction_interface.html#ga372c0535573dde3e37f0f08c774a3487">__SSAT</a>(int32_t val, uint32_t <a class="code hl_variable" href="group___c_m_s_i_s___core___instruction_interface.html#gaafcad33f86db3a8e1f55925989f9d2dc">sat</a>)</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>  __STATIC_INLINE int32_t <a class="code hl_function" href="group___c_m_s_i_s___core___instruction_interface.html#ga372c0535573dde3e37f0f08c774a3487">__SSAT</a>(int32_t val, uint32_t sat)</div>
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>  {</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    <span class="keywordflow">if</span> ((<a class="code hl_variable" href="group___c_m_s_i_s___core___instruction_interface.html#gaafcad33f86db3a8e1f55925989f9d2dc">sat</a> &gt;= 1U) &amp;&amp; (<a class="code hl_variable" href="group___c_m_s_i_s___core___instruction_interface.html#gaafcad33f86db3a8e1f55925989f9d2dc">sat</a> &lt;= 32U))</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    <span class="keywordflow">if</span> ((sat &gt;= 1U) &amp;&amp; (sat &lt;= 32U))</div>
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    {</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>      <span class="keyword">const</span> int32_t <a class="code hl_function" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a> = (int32_t)((1U &lt;&lt; (<a class="code hl_variable" href="group___c_m_s_i_s___core___instruction_interface.html#gaafcad33f86db3a8e1f55925989f9d2dc">sat</a> - 1U)) - 1U);</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>      <span class="keyword">const</span> int32_t <a class="code hl_function" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a> = (int32_t)((1U &lt;&lt; (sat - 1U)) - 1U);</div>
 <div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>      <span class="keyword">const</span> int32_t min = -1 - <a class="code hl_function" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a> ;</div>
 <div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>      <span class="keywordflow">if</span> (val &gt; <a class="code hl_function" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a>)</div>
 <div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>      {</div>
@@ -855,11 +857,11 @@ $(function() {
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>    <span class="keywordflow">return</span> val;</div>
 <div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>  }</div>
 <div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span> </div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t <a class="code hl_function" href="group___c_m_s_i_s___core___instruction_interface.html#ga6562dbd8182d1571e22dbca7ebdfa9bc">__USAT</a>(int32_t val, uint32_t <a class="code hl_variable" href="group___c_m_s_i_s___core___instruction_interface.html#gaafcad33f86db3a8e1f55925989f9d2dc">sat</a>)</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>  __STATIC_INLINE uint32_t <a class="code hl_function" href="group___c_m_s_i_s___core___instruction_interface.html#ga6562dbd8182d1571e22dbca7ebdfa9bc">__USAT</a>(int32_t val, uint32_t sat)</div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>  {</div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="group___c_m_s_i_s___core___instruction_interface.html#gaafcad33f86db3a8e1f55925989f9d2dc">sat</a> &lt;= 31U)</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    <span class="keywordflow">if</span> (sat &lt;= 31U)</div>
 <div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>    {</div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>      <span class="keyword">const</span> uint32_t <a class="code hl_function" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a> = ((1U &lt;&lt; <a class="code hl_variable" href="group___c_m_s_i_s___core___instruction_interface.html#gaafcad33f86db3a8e1f55925989f9d2dc">sat</a>) - 1U);</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>      <span class="keyword">const</span> uint32_t <a class="code hl_function" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a> = ((1U &lt;&lt; sat) - 1U);</div>
 <div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>      <span class="keywordflow">if</span> (val &gt; (int32_t)<a class="code hl_function" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a>)</div>
 <div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>      {</div>
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a>;</div>
@@ -875,40 +877,40 @@ $(function() {
 <div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span> </div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span><span class="preprocessor">#if (__CORTEX_M &gt;= 0x03)   </span><span class="comment">/* __CORTEX_M is defined in core_cm0.h, core_cm3.h and core_cm4.h. */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span> </div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint8_t __LDRBT(<span class="keyword">volatile</span> uint8_t *addr)</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>  __IAR_FT uint8_t __LDRBT(<span class="keyword">volatile</span> uint8_t *addr)</div>
 <div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>  {</div>
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>    uint32_t res;</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a>(<span class="stringliteral">&quot;LDRBT %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (addr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>    __ASM(<span class="stringliteral">&quot;LDRBT %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (addr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>    <span class="keywordflow">return</span> ((uint8_t)res);</div>
 <div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>  }</div>
 <div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span> </div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint16_t __LDRHT(<span class="keyword">volatile</span> uint16_t *addr)</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>  __IAR_FT uint16_t __LDRHT(<span class="keyword">volatile</span> uint16_t *addr)</div>
 <div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>  {</div>
 <div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>    uint32_t res;</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a>(<span class="stringliteral">&quot;LDRHT %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (addr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>    __ASM(<span class="stringliteral">&quot;LDRHT %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (addr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>    <span class="keywordflow">return</span> ((uint16_t)res);</div>
 <div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>  }</div>
 <div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span> </div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __LDRT(<span class="keyword">volatile</span> uint32_t *addr)</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>  __IAR_FT uint32_t __LDRT(<span class="keyword">volatile</span> uint32_t *addr)</div>
 <div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>  {</div>
 <div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>    uint32_t res;</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a>(<span class="stringliteral">&quot;LDRT %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (addr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>    __ASM(<span class="stringliteral">&quot;LDRT %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (addr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>  }</div>
 <div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span> </div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> __STRBT(uint8_t value, <span class="keyword">volatile</span> uint8_t *addr)</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>  __IAR_FT <span class="keywordtype">void</span> __STRBT(uint8_t value, <span class="keyword">volatile</span> uint8_t *addr)</div>
 <div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>  {</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a>(<span class="stringliteral">&quot;STRBT %1, [%0]&quot;</span> : : <span class="stringliteral">&quot;r&quot;</span> (addr), <span class="stringliteral">&quot;r&quot;</span> ((uint32_t)value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>    __ASM(<span class="stringliteral">&quot;STRBT %1, [%0]&quot;</span> : : <span class="stringliteral">&quot;r&quot;</span> (addr), <span class="stringliteral">&quot;r&quot;</span> ((uint32_t)value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>  }</div>
 <div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span> </div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> __STRHT(uint16_t value, <span class="keyword">volatile</span> uint16_t *addr)</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>  __IAR_FT <span class="keywordtype">void</span> __STRHT(uint16_t value, <span class="keyword">volatile</span> uint16_t *addr)</div>
 <div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>  {</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a>(<span class="stringliteral">&quot;STRHT %1, [%0]&quot;</span> : : <span class="stringliteral">&quot;r&quot;</span> (addr), <span class="stringliteral">&quot;r&quot;</span> ((uint32_t)value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>    __ASM(<span class="stringliteral">&quot;STRHT %1, [%0]&quot;</span> : : <span class="stringliteral">&quot;r&quot;</span> (addr), <span class="stringliteral">&quot;r&quot;</span> ((uint32_t)value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>  }</div>
 <div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span> </div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> __STRT(uint32_t value, <span class="keyword">volatile</span> uint32_t *addr)</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>  __IAR_FT <span class="keywordtype">void</span> __STRT(uint32_t value, <span class="keyword">volatile</span> uint32_t *addr)</div>
 <div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>  {</div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a>(<span class="stringliteral">&quot;STRT %1, [%0]&quot;</span> : : <span class="stringliteral">&quot;r&quot;</span> (addr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>    __ASM(<span class="stringliteral">&quot;STRT %1, [%0]&quot;</span> : : <span class="stringliteral">&quot;r&quot;</span> (addr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>  }</div>
 <div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span> </div>
 <div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span><span class="preprocessor">#endif </span><span class="comment">/* (__CORTEX_M &gt;= 0x03) */</span><span class="preprocessor"></span></div>
@@ -917,81 +919,81 @@ $(function() {
 <div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span><span class="preprocessor">     (defined (__ARM_ARCH_8M_BASE__ ) &amp;&amp; (__ARM_ARCH_8M_BASE__ == 1))    )</span></div>
 <div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span> </div>
 <div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span> </div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint8_t __LDAB(<span class="keyword">volatile</span> uint8_t *ptr)</div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>  __IAR_FT uint8_t __LDAB(<span class="keyword">volatile</span> uint8_t *ptr)</div>
 <div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>  {</div>
 <div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>    uint32_t res;</div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAB %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAB %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    <span class="keywordflow">return</span> ((uint8_t)res);</div>
 <div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>  }</div>
 <div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span> </div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint16_t __LDAH(<span class="keyword">volatile</span> uint16_t *ptr)</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>  __IAR_FT uint16_t __LDAH(<span class="keyword">volatile</span> uint16_t *ptr)</div>
 <div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>  {</div>
 <div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>    uint32_t res;</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAH %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAH %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>    <span class="keywordflow">return</span> ((uint16_t)res);</div>
 <div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>  }</div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span> </div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __LDA(<span class="keyword">volatile</span> uint32_t *ptr)</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>  __IAR_FT uint32_t __LDA(<span class="keyword">volatile</span> uint32_t *ptr)</div>
 <div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>  {</div>
 <div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>    uint32_t res;</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDA %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDA %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>  }</div>
 <div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span> </div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> __STLB(uint8_t value, <span class="keyword">volatile</span> uint8_t *ptr)</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>  __IAR_FT <span class="keywordtype">void</span> __STLB(uint8_t value, <span class="keyword">volatile</span> uint8_t *ptr)</div>
 <div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>  {</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLB %1, [%0]&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLB %1, [%0]&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>  }</div>
 <div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span> </div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> __STLH(uint16_t value, <span class="keyword">volatile</span> uint16_t *ptr)</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>  __IAR_FT <span class="keywordtype">void</span> __STLH(uint16_t value, <span class="keyword">volatile</span> uint16_t *ptr)</div>
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>  {</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLH %1, [%0]&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLH %1, [%0]&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>  }</div>
 <div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span> </div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> <span class="keywordtype">void</span> __STL(uint32_t value, <span class="keyword">volatile</span> uint32_t *ptr)</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>  __IAR_FT <span class="keywordtype">void</span> __STL(uint32_t value, <span class="keyword">volatile</span> uint32_t *ptr)</div>
 <div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  {</div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STL %1, [%0]&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STL %1, [%0]&quot;</span> :: <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>  }</div>
 <div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span> </div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint8_t __LDAEXB(<span class="keyword">volatile</span> uint8_t *ptr)</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>  __IAR_FT uint8_t __LDAEXB(<span class="keyword">volatile</span> uint8_t *ptr)</div>
 <div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>  {</div>
 <div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>    uint32_t res;</div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAEXB %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAEXB %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>    <span class="keywordflow">return</span> ((uint8_t)res);</div>
 <div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>  }</div>
 <div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span> </div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint16_t __LDAEXH(<span class="keyword">volatile</span> uint16_t *ptr)</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>  __IAR_FT uint16_t __LDAEXH(<span class="keyword">volatile</span> uint16_t *ptr)</div>
 <div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>  {</div>
 <div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>    uint32_t res;</div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAEXH %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAEXH %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>    <span class="keywordflow">return</span> ((uint16_t)res);</div>
 <div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  }</div>
 <div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span> </div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __LDAEX(<span class="keyword">volatile</span> uint32_t *ptr)</div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>  __IAR_FT uint32_t __LDAEX(<span class="keyword">volatile</span> uint32_t *ptr)</div>
 <div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>  {</div>
 <div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>    uint32_t res;</div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAEX %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;LDAEX %0, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>  }</div>
 <div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span> </div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __STLEXB(uint8_t value, <span class="keyword">volatile</span> uint8_t *ptr)</div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  __IAR_FT uint32_t __STLEXB(uint8_t value, <span class="keyword">volatile</span> uint8_t *ptr)</div>
 <div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>  {</div>
 <div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>    uint32_t res;</div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLEXB %0, %2, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLEXB %0, %2, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>  }</div>
 <div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span> </div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __STLEXH(uint16_t value, <span class="keyword">volatile</span> uint16_t *ptr)</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>  __IAR_FT uint32_t __STLEXH(uint16_t value, <span class="keyword">volatile</span> uint16_t *ptr)</div>
 <div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>  {</div>
 <div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>    uint32_t res;</div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLEXH %0, %2, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLEXH %0, %2, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>  }</div>
 <div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span> </div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>  <a class="code hl_define" href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a> uint32_t __STLEX(uint32_t value, <span class="keyword">volatile</span> uint32_t *ptr)</div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>  __IAR_FT uint32_t __STLEX(uint32_t value, <span class="keyword">volatile</span> uint32_t *ptr)</div>
 <div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>  {</div>
 <div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>    uint32_t res;</div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>    <a class="code hl_define" href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLEX %0, %2, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>    __ASM <span class="keyword">volatile</span> (<span class="stringliteral">&quot;STLEX %0, %2, [%1]&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (res) : <span class="stringliteral">&quot;r&quot;</span> (ptr), <span class="stringliteral">&quot;r&quot;</span> (value) : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>  }</div>
 <div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span> </div>
@@ -1006,25 +1008,14 @@ $(function() {
 <div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span> </div>
 <div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span><span class="preprocessor">#endif </span><span class="comment">/* __CMSIS_ICCARM_H__ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="a_s_x1272_8c_html_a814c87b3e5aaafaa7a1b680b9fcb8ca7"><div class="ttname"><a href="_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7">max</a></div><div class="ttdeci">int max(float num1, float num2)</div><div class="ttdef"><b>Definition</b> SX1272.c:50</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_a1305dc7358478164e7ae459adad136d9"><div class="ttname"><a href="cmsis__iccarm_8h.html#a1305dc7358478164e7ae459adad136d9">__iar_uint16_read</a></div><div class="ttdeci">__IAR_FT uint16_t __iar_uint16_read(void const *ptr)</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:171</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_a1378040bcf22428955c6e3ce9c2053cd"><div class="ttname"><a href="cmsis__iccarm_8h.html#a1378040bcf22428955c6e3ce9c2053cd">__ASM</a></div><div class="ttdeci">#define __ASM</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:110</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_a3e769b5b7bc4f5d17d8da74663073393"><div class="ttname"><a href="cmsis__iccarm_8h.html#a3e769b5b7bc4f5d17d8da74663073393">__IAR_FT</a></div><div class="ttdeci">#define __IAR_FT</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:35</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_a3f6f0554c695fa3f5a9a7b62987378ba"><div class="ttname"><a href="cmsis__iccarm_8h.html#a3f6f0554c695fa3f5a9a7b62987378ba">__iar_uint32_read</a></div><div class="ttdeci">__IAR_FT uint32_t __iar_uint32_read(void const *ptr)</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:194</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_a68e7687068868fc26ad03774570131c6"><div class="ttname"><a href="cmsis__iccarm_8h.html#a68e7687068868fc26ad03774570131c6">__iar_uint16_write</a></div><div class="ttdeci">__IAR_FT void __iar_uint16_write(void const *ptr, uint16_t val)</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:183</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_a9be6bc4e50ac50dca4005e28e648a675"><div class="ttname"><a href="cmsis__iccarm_8h.html#a9be6bc4e50ac50dca4005e28e648a675">__iar_uint32_write</a></div><div class="ttdeci">__IAR_FT void __iar_uint32_write(void const *ptr, uint32_t val)</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:205</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_ab861d5af605077b6e52ffc8e67a8f9c6"><div class="ttname"><a href="cmsis__iccarm_8h.html#ab861d5af605077b6e52ffc8e67a8f9c6">__STREXW</a></div><div class="ttdeci">__IAR_FT uint32_t __STREXW(uint32_t value, uint32_t volatile *ptr)</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:557</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_aba87361bfad2ae52cfe2f40c1a1dbf9c"><div class="ttname"><a href="cmsis__iccarm_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a></div><div class="ttdeci">#define __STATIC_INLINE</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:157</div></div>
-<div class="ttc" id="acmsis__iccarm_8h_html_afe7e42185902df89a66f328a9792690b"><div class="ttname"><a href="cmsis__iccarm_8h.html#afe7e42185902df89a66f328a9792690b">__LDREXW</a></div><div class="ttdeci">__IAR_FT uint32_t __LDREXW(uint32_t volatile *ptr)</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:552</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s___core___instruction_interface_html_ga372c0535573dde3e37f0f08c774a3487"><div class="ttname"><a href="group___c_m_s_i_s___core___instruction_interface.html#ga372c0535573dde3e37f0f08c774a3487">__SSAT</a></div><div class="ttdeci">__STATIC_FORCEINLINE int32_t __SSAT(int32_t val, uint32_t sat)</div><div class="ttdoc">Signed Saturate.</div><div class="ttdef"><b>Definition</b> cmsis_armclang.h:1121</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s___core___instruction_interface_html_ga5d5bb1527e042be4a9fa5a33f65cc248"><div class="ttname"><a href="group___c_m_s_i_s___core___instruction_interface.html#ga5d5bb1527e042be4a9fa5a33f65cc248">__CLZ</a></div><div class="ttdeci">#define __CLZ</div><div class="ttdoc">Count leading zeros.</div><div class="ttdef"><b>Definition</b> cmsis_armcc.h:540</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s___core___instruction_interface_html_ga6562dbd8182d1571e22dbca7ebdfa9bc"><div class="ttname"><a href="group___c_m_s_i_s___core___instruction_interface.html#ga6562dbd8182d1571e22dbca7ebdfa9bc">__USAT</a></div><div class="ttdeci">__STATIC_FORCEINLINE uint32_t __USAT(int32_t val, uint32_t sat)</div><div class="ttdoc">Unsigned Saturate.</div><div class="ttdef"><b>Definition</b> cmsis_armclang.h:1146</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s___core___instruction_interface_html_ga95b9bd281ddeda378b85afdb8f2ced86"><div class="ttname"><a href="group___c_m_s_i_s___core___instruction_interface.html#ga95b9bd281ddeda378b85afdb8f2ced86">__ROR</a></div><div class="ttdeci">#define __ROR</div><div class="ttdoc">Rotate Right in unsigned value (32 bit)</div><div class="ttdef"><b>Definition</b> cmsis_armcc.h:493</div></div>
-<div class="ttc" id="agroup___c_m_s_i_s___core___instruction_interface_html_gaafcad33f86db3a8e1f55925989f9d2dc"><div class="ttname"><a href="group___c_m_s_i_s___core___instruction_interface.html#gaafcad33f86db3a8e1f55925989f9d2dc">sat</a></div><div class="ttdeci">uint32_t sat</div><div class="ttdef"><b>Definition</b> cmsis_armcc.h:737</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s___core___instruction_interface_html_gab83768933a612816fad669db5488366f"><div class="ttname"><a href="group___c_m_s_i_s___core___instruction_interface.html#gab83768933a612816fad669db5488366f">__RBIT</a></div><div class="ttdeci">#define __RBIT</div><div class="ttdoc">Reverse bit order of value.</div><div class="ttdef"><b>Definition</b> cmsis_armclang.h:903</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s___core___instruction_interface_html_gae580812686119c9c5cf3c11a7519a404"><div class="ttname"><a href="group___c_m_s_i_s___core___instruction_interface.html#gae580812686119c9c5cf3c11a7519a404">__REVSH</a></div><div class="ttdeci">#define __REVSH(value)</div><div class="ttdoc">Reverse byte order (16 bit)</div><div class="ttdef"><b>Definition</b> cmsis_armclang.h:866</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s___core___reg_acc_functions_html_gadff4f1e599946e8ae96fba17b5245f04"><div class="ttname"><a href="group___c_m_s_i_s___core___reg_acc_functions.html#gadff4f1e599946e8ae96fba17b5245f04">__get_APSR</a></div><div class="ttdeci">__STATIC_INLINE uint32_t __get_APSR(void)</div><div class="ttdoc">Get APSR Register.</div><div class="ttdef"><b>Definition</b> cmsis_armcc.h:166</div></div>
 <div class="ttc" id="astruct____iar__u32_html"><div class="ttname"><a href="struct____iar__u32.html">__iar_u32</a></div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:216</div></div>
-<div class="ttc" id="astruct____iar__u32_html_af8b16b2c629a3f2264c1af078ef2578a"><div class="ttname"><a href="struct____iar__u32.html#af8b16b2c629a3f2264c1af078ef2578a">__iar_u32::v</a></div><div class="ttdeci">uint32_t v</div><div class="ttdef"><b>Definition</b> cmsis_iccarm.h:216</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

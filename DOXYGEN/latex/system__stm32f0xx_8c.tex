@@ -1,11 +1,18 @@
-\doxysection{STM32/cmsis/device/src/system\+\_\+stm32f0xx.c File Reference}
-\hypertarget{system__stm32f0xx_8c}{}\label{system__stm32f0xx_8c}\index{STM32/cmsis/device/src/system\_stm32f0xx.c@{STM32/cmsis/device/src/system\_stm32f0xx.c}}
+\doxysection{C\+:/\+Users/lucas/\+One\+Drive/\+Documents/\+Git\+Hub/\+Rsf\+Sd\+F/\+STM32/cmsis/device/src/system\+\_\+stm32f0xx.c File Reference}
+\hypertarget{system__stm32f0xx_8c}{}\label{system__stm32f0xx_8c}\index{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/cmsis/device/src/system\_stm32f0xx.c@{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/cmsis/device/src/system\_stm32f0xx.c}}
 
 
 CMSIS Cortex-\/\+M0 Device Peripheral Access Layer System Source File.  
 
 
 {\ttfamily \#include \"{}stm32f0xx.\+h\"{}}\newline
+Include dependency graph for system\+\_\+stm32f0xx.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{system__stm32f0xx_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,13 +55,13 @@ MCD Application Team
 \item \doxylink{group___s_t_m32_f0xx___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update()}\+: Updates the variable System\+Core\+Clock and must be called whenever the core clock is changed during program execution.
 \end{DoxyItemize}
 \item After each device reset the HSI (8 MHz) is used as system clock source. Then \doxylink{group___s_t_m32_f0xx___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init()} function is called, in \"{}startup\+\_\+stm32f0xx.\+s\"{} file, to configure the system clock before to branch to main program.
-\end{DoxyEnumerate}\hypertarget{system__stm32f0xx_8c_autotoc_md1}{}\doxysubsection{\texorpdfstring{3. This file configures the system clock as follows\+:}{3. This file configures the system clock as follows:}}\label{system__stm32f0xx_8c_autotoc_md1}
-\hypertarget{system__stm32f0xx_8c_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Supported STM32\+F0xx device}{Supported STM32F0xx device}}\label{system__stm32f0xx_8c_autotoc_md2}
-\hypertarget{system__stm32f0xx_8c_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{System Clock source                    \texorpdfstring{$\vert$}{|} HSI}{System Clock source                    | HSI}}\label{system__stm32f0xx_8c_autotoc_md3}
-\hypertarget{system__stm32f0xx_8c_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{SYSCLK(\+Hz)                             \texorpdfstring{$\vert$}{|} 8000000}{SYSCLK(Hz)                             | 8000000}}\label{system__stm32f0xx_8c_autotoc_md4}
-\hypertarget{system__stm32f0xx_8c_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{HCLK(\+Hz)                               \texorpdfstring{$\vert$}{|} 8000000}{HCLK(Hz)                               | 8000000}}\label{system__stm32f0xx_8c_autotoc_md5}
-\hypertarget{system__stm32f0xx_8c_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{AHB Prescaler                          \texorpdfstring{$\vert$}{|} 1}{AHB Prescaler                          | 1}}\label{system__stm32f0xx_8c_autotoc_md6}
-\hypertarget{system__stm32f0xx_8c_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{APB1 Prescaler                         \texorpdfstring{$\vert$}{|} 1}{APB1 Prescaler                         | 1}}\label{system__stm32f0xx_8c_autotoc_md7}
+\end{DoxyEnumerate}\hypertarget{system__stm32f0xx_8c_autotoc_md0}{}\doxysubsection{\texorpdfstring{3. This file configures the system clock as follows\+:}{3. This file configures the system clock as follows:}}\label{system__stm32f0xx_8c_autotoc_md0}
+\hypertarget{system__stm32f0xx_8c_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Supported STM32\+F0xx device}{Supported STM32F0xx device}}\label{system__stm32f0xx_8c_autotoc_md1}
+\hypertarget{system__stm32f0xx_8c_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{System Clock source                    \texorpdfstring{$\vert$}{|} HSI}{System Clock source                    | HSI}}\label{system__stm32f0xx_8c_autotoc_md2}
+\hypertarget{system__stm32f0xx_8c_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{SYSCLK(\+Hz)                             \texorpdfstring{$\vert$}{|} 8000000}{SYSCLK(Hz)                             | 8000000}}\label{system__stm32f0xx_8c_autotoc_md3}
+\hypertarget{system__stm32f0xx_8c_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{HCLK(\+Hz)                               \texorpdfstring{$\vert$}{|} 8000000}{HCLK(Hz)                               | 8000000}}\label{system__stm32f0xx_8c_autotoc_md4}
+\hypertarget{system__stm32f0xx_8c_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{AHB Prescaler                          \texorpdfstring{$\vert$}{|} 1}{AHB Prescaler                          | 1}}\label{system__stm32f0xx_8c_autotoc_md5}
+\hypertarget{system__stm32f0xx_8c_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{APB1 Prescaler                         \texorpdfstring{$\vert$}{|} 1}{APB1 Prescaler                         | 1}}\label{system__stm32f0xx_8c_autotoc_md6}
 =============================================================================
 
 \begin{DoxyAttention}{Attention}

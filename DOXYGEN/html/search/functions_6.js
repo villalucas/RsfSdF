@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['max_1',['max',['../_s_x1272_8c.html#a814c87b3e5aaafaa7a1b680b9fcb8ca7',1,'SX1272.c']]],
-  ['millis_2',['millis',['../_s_x1272_8c.html#a940b7d59de47e1432c355fca01620ac3',1,'SX1272.c']]],
-  ['my_5fprintf_3',['my_printf',['../main_8h.html#a8ed3cc79947555e7d13c91bbba84c558',1,'my_printf(const char *format,...):&#160;printf-stdarg.c'],['../printf-stdarg_8c.html#a8ed3cc79947555e7d13c91bbba84c558',1,'my_printf(const char *format,...):&#160;printf-stdarg.c']]],
-  ['my_5fsprintf_4',['my_sprintf',['../main_8h.html#aff21ef856f03068caae30647225956ac',1,'my_sprintf(char *out, const char *format,...):&#160;printf-stdarg.c'],['../printf-stdarg_8c.html#aff21ef856f03068caae30647225956ac',1,'my_sprintf(char *out, const char *format,...):&#160;printf-stdarg.c']]]
+  ['nmi_5fhandler_0',['NMI_Handler',['../group___templates.html#ga6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;stm32f0xx_it.c'],['../group___templates.html#ga6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;stm32f0xx_it.c']]],
+  ['nvic_5fdecodepriority_1',['NVIC_DecodePriority',['../group___c_m_s_i_s___core___n_v_i_c_functions.html#ga3387607fd8a1a32cccd77d2ac672dd96',1,'core_armv8mbl.h']]],
+  ['nvic_5fencodepriority_2',['NVIC_EncodePriority',['../group___c_m_s_i_s___core___n_v_i_c_functions.html#gadb94ac5d892b376e4f3555ae0418ebac',1,'core_armv8mbl.h']]]
 ];
