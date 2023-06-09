@@ -139,7 +139,6 @@ uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame){
  * @param ack_to_encode Pointeur de la structure d'objet ack_frame_t qui est définie par le protocole.
  * @param frame_encoded Pointeur vers le tableau d'octets dans lequel le frame encodé sera stocké.
  */
-
 void BSP_FRAMES_encodeAckFrame(ack_frame_t *ack_to_encode, uint8_t *frame_encoded){
 
 	frame_encoded[0]= SOF_ACK_SYMBOL;
@@ -162,8 +161,7 @@ void BSP_FRAMES_encodeAckFrame(ack_frame_t *ack_to_encode, uint8_t *frame_encode
  * @param msg_to_encode Pointeur de la structure d'objet msg_frame_t qui est définie par le protocole.
  * @param frame_encoded Pointeur vers le tableau d'octets dans lequel le frame encodé sera stocké.
  */
-
-void BSP_FRAMES_encodeMsgFrame(msg_frame_t* msg_to_encode, uint8_t *frame_encoded){
+void BSP_FRAMES_encodeMsgFrame(msg_frame_t *msg_to_encode, uint8_t *frame_encoded){
 	frame_encoded[0]= SOF_MSG_SYMBOL;
 	frame_encoded[1]= (msg_to_encode->src.channel << CHANNEL_SHIFT)
 					| (msg_to_encode->src.address & ADDRESS_MASK);
@@ -182,4 +180,10 @@ void BSP_FRAMES_encodeMsgFrame(msg_frame_t* msg_to_encode, uint8_t *frame_encode
 	frame_encoded[msg_to_encode->size+5]= (uint8_t)(crc & CRC_MASK); 	// second Byte LSB
 	frame_encoded[msg_to_encode->size+6]= EOF_SYMBOL;
 }
+
+
+void BSP_FRAMES_createMsgFrame(msg_frame_t *received_msg, char *msg, id_frame_t device){
+
+}
+
 

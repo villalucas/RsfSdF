@@ -30,6 +30,7 @@ int main()
 	msg_frame_t received_msg;
 	ack_frame_t received_ack;
 
+
 	// Initialize System clock to 48MHz from external clock
 	SystemClock_Config();
 	// Initialize timebase
@@ -55,6 +56,8 @@ int main()
 
 #ifdef TRANSMITTER
 	device.address = 1;
+	uint8_t		transmit_status;
+	msg_frame_t transmit_msg;
 #endif
 #ifdef RECEIVER
 	device.address = 2;
@@ -72,19 +75,48 @@ int main()
 		if((curtime%8000)==0)//send every 8000ms
 		{
 #ifdef TRANSMITTER
-			APP_SX1272_runTransmitMsg(device, &received_msg);
+			transmit_msg.src.address = device.address;
+			transmit_msg.src.channel = device.channel;
+			transmit_msg.dest.address = 2;
+			transmit_msg.dest.channel = device.channel;
+			transmit_msg.size = 6;
+			transmit_msg.msg[0] = 'V';
+			transmit_msg.msg[1] = '1';
+			transmit_msg.msg[2] = ' ';
+			transmit_msg.msg[3] = 'E';
+			transmit_msg.msg[4] = 'N';
+			transmit_msg.msg[5] = 'D';
+			transmit_status = APP_SX1272_runTransmitMsg(device, &transmit_msg);
+			if (transmit_status == TRANSMIT_NO_ERROR){
+				my_printf("Main_Transmitter : Message sent\r\n");
+				receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
+				if(receive_status == RECEIVE_ACK_RECEIVED){
+					my_printf("Main_Transmitter : ACK received\r\n");
+				}
+			}
+			else
+			{
+				my_printf("Main_Transmitter : Message transmit ERROR\r\n");
+			}
 #endif
+
 #ifdef RECEIVER
 			receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
-			if(receive_status == RECEIVE_MSG_RECEIVED){
-
+			if(receive_status == RECEIVE_MSG_RECEIVED_ACK_TRANSMIT){
+				my_printf("Main_Receiver : MSG for me received and ACK transmit\r\n");
+			}
+			else if(receive_status == RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMIT){
+				my_printf("Main_Receiver : MSG for me received and ACK not transmit\r\n");
+			}
+			else
+			{
+				my_printf("Main_Receiver : ERROR\r\n");
 			}
 #endif
 			i++;
 		}
 	}
 }
-
 /*
  * 	Clock configuration for the Nucleo STM32F072RB board
  * 	HSE input Bypass Mode 			-> 8MHz

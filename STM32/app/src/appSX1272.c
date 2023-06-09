@@ -282,6 +282,9 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 	char StatusRXMessage = '0';
 	uint8_t frame_type = 0;
 	uint8_t crc_check;
+	uint8_t	transmit_status;
+	ack_frame_t transmit_ack;
+
 	LedOn(LED_RX);	// TX LED On state for transmission
 	//////////////////////////////////////////////////////////////////////////////////
 	// Receive packets continuously
@@ -369,7 +372,24 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 		}
 		if(frame_type == SOF_MSG_SYMBOL){
 			if(message_decode->dest.address == device.address && message_decode->dest.channel == device.channel ){
-				return RECEIVE_MSG_RECEIVED;
+				transmit_ack.src.address = device.address;
+				transmit_ack.src.channel = device.channel;
+				transmit_ack.dest.address = message_decode->src.address;
+				transmit_ack.dest.channel = message_decode->src.channel;
+				transmit_status = APP_SX1272_runTransmitAck(device, &transmit_ack);
+				if (transmit_status == TRANSMIT_NO_ERROR){
+					return RECEIVE_MSG_RECEIVED_ACK_TRANSMIT;
+				}
+				else
+				{
+					/*uint8_t retries = 0;
+					do
+					{
+						transmit_status = APP_SX1272_runTransmitAck(device, &transmit_ack);
+						retries++;
+					}while(retries < 5 && transmit_status != TRANSMIT_NO_ERROR);*/
+					return RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMIT;
+				}
 			}
 			//The message wasn't for this device, abort. Not an error as everything is normal
 			else return RECEIVE_WRONG_DESTINARY;
