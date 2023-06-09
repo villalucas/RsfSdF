@@ -1,5 +1,10 @@
 \doxysection{STM32/bsp/src/\+SX1272.c File Reference}
 \hypertarget{_s_x1272_8c}{}\label{_s_x1272_8c}\index{STM32/bsp/src/SX1272.c@{STM32/bsp/src/SX1272.c}}
+
+
+Fichier source pour le module SX1272.  
+
+
 {\ttfamily \#include \"{}SX1272.\+h\"{}}\newline
 {\ttfamily \#include \"{}com\+SX1272.\+h\"{}}\newline
 {\ttfamily \#include \"{}delay.\+h\"{}}\newline
@@ -16,49 +21,49 @@ int \mbox{\hyperlink{_s_x1272_8c_a940b7d59de47e1432c355fca01620ac3}{millis}} ()
 int \mbox{\hyperlink{_s_x1272_8c_a814c87b3e5aaafaa7a1b680b9fcb8ca7}{max}} (float num1, float num2)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d}{BSP\+\_\+\+SX1272\+\_\+\+ON}} (int type\+\_\+mod)
-\item 
+\begin{DoxyCompactList}\small\item\em Active le module SX1272. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_s_x1272_8c_a6d5d1889f6ae377b5a230f2d9443f13c}{BSP\+\_\+\+SX1272\+\_\+\+OFF}} (int type\+\_\+mod)
-\item 
+\begin{DoxyCompactList}\small\item\em Désactive le module SX1272. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_s_x1272_8c_a83ace0a080a4d7c8a76e6a9877b919b1}{BSP\+\_\+\+SX1272\+\_\+clear\+Flags}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Efface les indicateurs de drapeaux du module SX1272. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a842904846734cb7ba7ca312f50dbe962}{BSP\+\_\+\+SX1272\+\_\+set\+LORA}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Configure le module SX1272 en mode Lo\+Ra. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aae304aeaa85480a39c3f8e20e5f9b09e}{BSP\+\_\+\+SX1272\+\_\+set\+FSK}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Configure le module SX1272 en mode FSK. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a547aa32b39ad3d33de177364e6d99f4b}{BSP\+\_\+\+SX1272\+\_\+get\+Mode}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Récupère le mode actuel du module SX1272. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a1cd5da9228870a8136f5b630f1ea3de7}{BSP\+\_\+\+SX1272\+\_\+set\+Mode}} (uint8\+\_\+t mode)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the mode of the SX1272 module. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ae8a601b57791635b3417ffea72ee47c5}{BSP\+\_\+\+SX1272\+\_\+get\+Header}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the header mode of the SX1272 module. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a772a707eed75deec1aabacb35a917eee}{BSP\+\_\+\+SX1272\+\_\+set\+Header\+ON}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Enable explicit header mode on the SX1272 module. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589}{BSP\+\_\+\+SX1272\+\_\+set\+Header\+OFF}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Disable explicit header mode on the SX1272 module. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a8fa565b989224342464c22c77f8c6e7d}{BSP\+\_\+\+SX1272\+\_\+get\+CRC}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the CRC configuration on the SX1272 module. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aa583c8c3ab80c8a2c3a71ed878695d7b}{BSP\+\_\+\+SX1272\+\_\+set\+CRC\+\_\+\+ON}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Enable CRC (Cyclic Redundancy Check) on the SX1272 module. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a55bc531484f486ec00f39fe193de345e}{BSP\+\_\+\+SX1272\+\_\+set\+CRC\+\_\+\+OFF}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Deactivate CRC (Cyclic Redundancy Check) on the SX1272 module. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945}{BSP\+\_\+\+SX1272\+\_\+is\+SF}} (uint8\+\_\+t spr)
-\item 
+\begin{DoxyCompactList}\small\item\em Check if the given spreading factor (SF) is valid. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a6751a3479b78944fe7effc446663dc8c}{BSP\+\_\+\+SX1272\+\_\+get\+SF}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the current spreading factor (SF) setting. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a1df24c596c26847f4bf1056c97b27a7b}{BSP\+\_\+\+SX1272\+\_\+set\+SF}} (uint8\+\_\+t spr)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the spreading factor (SF) for Lo\+Ra mode. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a}{BSP\+\_\+\+SX1272\+\_\+is\+BW}} (uint16\+\_\+t band)
-\item 
+\begin{DoxyCompactList}\small\item\em Check if the specified bandwidth value is valid. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a7aa32db83358df833ff68ddd5d619d4a}{BSP\+\_\+\+SX1272\+\_\+get\+BW}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the current bandwidth setting. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ae95979ddf558956d68a10d0d052c99a4}{BSP\+\_\+\+SX1272\+\_\+set\+BW}} (uint16\+\_\+t band)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the bandwidth for SX1272 module. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790}{BSP\+\_\+\+SX1272\+\_\+is\+CR}} (uint8\+\_\+t cod)
-\item 
+\begin{DoxyCompactList}\small\item\em Check if the coding rate value is valid. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a075ed4d128a5686a3e7160e1ef703c07}{BSP\+\_\+\+SX1272\+\_\+get\+CR}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the current coding rate value. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_ac32a335af980f971d3acc103634723bc}{BSP\+\_\+\+SX1272\+\_\+set\+CR}} (uint8\+\_\+t cod)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the coding rate parameter for the SX1272 module. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a256c77c623060387b0115ec9af433df9}{BSP\+\_\+\+SX1272\+\_\+is\+Channel}} (uint32\+\_\+t ch)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_a386b0526cd1a0f4809e1dcb4ea4f5253}{BSP\+\_\+\+SX1272\+\_\+get\+Channel}} ()
@@ -151,9 +156,19 @@ uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8c_aa7177092cff951f46ff6afee93e98e69}{BSP
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_s_x1272status}{SX1272status}} \mbox{\hyperlink{_s_x1272_8c_a1b23897a68158398f893c2a5768bc522}{currentstate}}
-\item 
-const double \mbox{\hyperlink{_s_x1272_8c_ac96e1e7bdcffe296d36ab75329aa2025}{Signal\+Bw\+Log}} \mbox{[}$\,$\mbox{]}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em État actuel du module SX1272. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{_s_x1272_8c_a4ed83658015f7bd9d0efbcec4e8fe8d6}{Signal\+Bw\+Log}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tableau contenant les valeurs de logarithme de la largeur de signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fichier source pour le module SX1272. 
+
+Ce fichier contient l\textquotesingle{}implémentation des fonctions pour le module SX1272. Il inclut les en-\/têtes nécessaires, tels que \"{}com\+SX1272.\+h\"{}, \"{}delay.\+h\"{}, \"{}stdlib.\+h\"{}, \"{}string.\+h\"{}, \"{}math.\+h\"{}, \"{}bsp.\+h\"{} et \"{}main.\+h\"{}. Il définit également la variable \"{}currentstate\"{} de type \"{}\+SX1272status\"{}.
+
+\begin{DoxyNote}{Note}
+Ce fichier est créé le 24 août 2020 par Arnaud. 
+\end{DoxyNote}
 
 
 \doxysubsection{Function Documentation}
@@ -177,6 +192,15 @@ FSK mode\Hypertarget{_s_x1272_8c_aa7177092cff951f46ff6afee93e98e69}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_clearFlags()}{BSP\_SX1272\_clearFlags()}}
 {\footnotesize\ttfamily void BSP\+\_\+\+SX1272\+\_\+clear\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Efface les indicateurs de drapeaux du module SX1272. 
+
+Cette fonction efface les indicateurs de drapeaux du module SX1272. Les drapeaux sont effacés en mettant le module en mode veille, en écrivant dans les registres appropriés, puis en restaurant le mode précédent.
+
+\begin{DoxyNote}{Note}
+Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+\end{DoxyNote}
 Lo\+Ra mode
 
 FSK mode\Hypertarget{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1}\label{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1} 
@@ -191,6 +215,15 @@ FSK mode\Hypertarget{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getBW()}{BSP\_SX1272\_getBW()}}
 {\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+BW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the current bandwidth setting. 
+
+This function retrieves the current bandwidth setting from the SX1272 module.
+
+\begin{DoxyReturn}{Returns}
+0 if the bandwidth value was successfully retrieved, 1 if there was an error, or -\/1 if the bandwidth is not available in FSK mode. 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_a386b0526cd1a0f4809e1dcb4ea4f5253}\label{_s_x1272_8c_a386b0526cd1a0f4809e1dcb4ea4f5253} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getChannel@{BSP\_SX1272\_getChannel}}
 \index{BSP\_SX1272\_getChannel@{BSP\_SX1272\_getChannel}!SX1272.c@{SX1272.c}}
@@ -203,18 +236,81 @@ FSK mode\Hypertarget{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getCR()}{BSP\_SX1272\_getCR()}}
 {\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+CR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the current coding rate value. 
+
+This function retrieves the current coding rate value from the SX1272 module.
+
+\begin{DoxyReturn}{Returns}
+The current coding rate value. -\/1 if the module is in FSK mode (FSK mode doesn\textquotesingle{}t have a coding rate). 0 if the coding rate value is successfully retrieved. 1 if there was an error while getting the coding rate value. 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_a8fa565b989224342464c22c77f8c6e7d}\label{_s_x1272_8c_a8fa565b989224342464c22c77f8c6e7d} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getCRC@{BSP\_SX1272\_getCRC}}
 \index{BSP\_SX1272\_getCRC@{BSP\_SX1272\_getCRC}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getCRC()}{BSP\_SX1272\_getCRC()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+CRC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the CRC configuration on the SX1272 module. 
+
+This function retrieves the CRC (Cyclic Redundancy Check) configuration on the SX1272 module. In Lo\+Ra mode, it checks if the CRC is activated or deactivated based on the value of the Rx\+Payload\+Crc\+On bit in REG\+\_\+\+MODEM\+\_\+\+CONFIG1. In FSK mode, it checks the value of the Crc\+On bit in REG\+\_\+\+PACKET\+\_\+\+CONFIG1.
+
+\begin{DoxyReturn}{Returns}
+The state of the CRC configuration.
+\begin{DoxyItemize}
+\item 0 if the CRC is deactivated.
+\item 1 if the CRC is activated.
+\item 2 if an error occurred.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a8fa565b989224342464c22c77f8c6e7d}{BSP\_SX1272\_getCRC}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ is\ deactivated}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ is\ activated}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ while\ getting\ the\ CRC\ configuration}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
 \Hypertarget{_s_x1272_8c_ae8a601b57791635b3417ffea72ee47c5}\label{_s_x1272_8c_ae8a601b57791635b3417ffea72ee47c5} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getHeader@{BSP\_SX1272\_getHeader}}
 \index{BSP\_SX1272\_getHeader@{BSP\_SX1272\_getHeader}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getHeader()}{BSP\_SX1272\_getHeader()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the header mode of the SX1272 module. 
+
+This function retrieves the header mode of the SX1272 module, which indicates whether the module operates in explicit header mode or implicit header mode.
+
+\begin{DoxyReturn}{Returns}
+The state of the operation. 0 if successful, -\/1 if there was an error.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+In FSK mode, the header is not available.
+\end{DoxyNote}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_ae8a601b57791635b3417ffea72ee47c5}{BSP\_SX1272\_getHeader}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ mode\ retrieved\ successfully}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ while\ retrieving\ header\ mode}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
 \Hypertarget{_s_x1272_8c_aa57086bba959d11b6c028aca5e8e04eb}\label{_s_x1272_8c_aa57086bba959d11b6c028aca5e8e04eb} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getMaxCurrent@{BSP\_SX1272\_getMaxCurrent}}
 \index{BSP\_SX1272\_getMaxCurrent@{BSP\_SX1272\_getMaxCurrent}!SX1272.c@{SX1272.c}}
@@ -227,6 +323,23 @@ FSK mode\Hypertarget{_s_x1272_8c_a5e10c3563cf5e2302058745c8208f5d1}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getMode()}{BSP\_SX1272\_getMode()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Récupère le mode actuel du module SX1272. 
+
+Cette fonction récupère le mode actuel du module SX1272. Elle lit les registres REG\+\_\+\+MODEM\+\_\+\+CONFIG1 et REG\+\_\+\+MODEM\+\_\+\+CONFIG2 pour obtenir les paramètres de configuration du mode. Les valeurs des paramètres sont ensuite stockées dans les variables correspondantes de la structure {\ttfamily currentstate}. La fonction vérifie également si les valeurs des paramètres sont valides en utilisant les fonctions \doxylink{_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a}{BSP\+\_\+\+SX1272\+\_\+is\+BW()}, \doxylink{_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790}{BSP\+\_\+\+SX1272\+\_\+is\+CR()} et \doxylink{_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945}{BSP\+\_\+\+SX1272\+\_\+is\+SF()}. Le résultat de la vérification est retourné.
+
+\begin{DoxyReturn}{Returns}
+État de récupération du mode \+:
+\begin{DoxyItemize}
+\item 0 \+: Succès (mode récupéré avec succès)
+\item 1 \+: Erreur (valeurs de paramètres invalides)
+\item 2 \+: Erreur (échec de récupération du mode)
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+\end{DoxyNote}
 \Hypertarget{_s_x1272_8c_acd6b0c964badc990e57d88d54a73e795}\label{_s_x1272_8c_acd6b0c964badc990e57d88d54a73e795} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getNodeAddress@{BSP\_SX1272\_getNodeAddress}}
 \index{BSP\_SX1272\_getNodeAddress@{BSP\_SX1272\_getNodeAddress}!SX1272.c@{SX1272.c}}
@@ -295,6 +408,15 @@ FSK mode\Hypertarget{_s_x1272_8c_a3b371f35a383ffb1d822c8e33085f1c6}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getSF()}{BSP\_SX1272\_getSF()}}
 {\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+SF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the current spreading factor (SF) setting. 
+
+This function retrieves the current spreading factor (SF) setting from the SX1272 module. It reads the value from the REG\+\_\+\+MODEM\+\_\+\+CONFIG2 register and updates the {\ttfamily currentstate.\+\_\+spreading\+Factor} variable accordingly.
+
+\begin{DoxyReturn}{Returns}
+0 if the spreading factor is successfully retrieved and valid, 1 if there was an error, or -\/1 if the device is in FSK mode where spreading factor is not applicable. 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_afbcf844f00bdeaefdf767239089bb7d0}\label{_s_x1272_8c_afbcf844f00bdeaefdf767239089bb7d0} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_getSNR@{BSP\_SX1272\_getSNR}}
 \index{BSP\_SX1272\_getSNR@{BSP\_SX1272\_getSNR}!SX1272.c@{SX1272.c}}
@@ -313,6 +435,20 @@ FSK mode\Hypertarget{_s_x1272_8c_a3b371f35a383ffb1d822c8e33085f1c6}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_isBW()}{BSP\_SX1272\_isBW()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+is\+BW (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{band }\end{DoxyParamCaption})}
 
+
+
+Check if the specified bandwidth value is valid. 
+
+This function checks if the specified bandwidth value is valid for the SX1272 module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em band} & The bandwidth value to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the bandwidth value is valid, 0 otherwise. 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_a256c77c623060387b0115ec9af433df9}\label{_s_x1272_8c_a256c77c623060387b0115ec9af433df9} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_isChannel@{BSP\_SX1272\_isChannel}}
 \index{BSP\_SX1272\_isChannel@{BSP\_SX1272\_isChannel}!SX1272.c@{SX1272.c}}
@@ -325,24 +461,87 @@ FSK mode\Hypertarget{_s_x1272_8c_a3b371f35a383ffb1d822c8e33085f1c6}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_isCR()}{BSP\_SX1272\_isCR()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+is\+CR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cod }\end{DoxyParamCaption})}
 
+
+
+Check if the coding rate value is valid. 
+
+This function checks if the coding rate value is valid based on the available values for currentstate.\+\_\+coding\+Rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod} & The coding rate value to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the coding rate value is valid, 0 otherwise. 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945}\label{_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_isSF@{BSP\_SX1272\_isSF}}
 \index{BSP\_SX1272\_isSF@{BSP\_SX1272\_isSF}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_isSF()}{BSP\_SX1272\_isSF()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+is\+SF (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{spr }\end{DoxyParamCaption})}
 
+
+
+Check if the given spreading factor (SF) is valid. 
+
+This function checks if the provided spreading factor (SF) value is valid. It compares the value against the available spreading factor options defined in the SX1272 module. Valid spreading factors are SF\+\_\+6, SF\+\_\+7, SF\+\_\+8, SF\+\_\+9, SF\+\_\+10, SF\+\_\+11, and SF\+\_\+12.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spr} & The spreading factor (SF) value to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the spreading factor is valid, 0 otherwise. 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_a6d5d1889f6ae377b5a230f2d9443f13c}\label{_s_x1272_8c_a6d5d1889f6ae377b5a230f2d9443f13c} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_OFF@{BSP\_SX1272\_OFF}}
 \index{BSP\_SX1272\_OFF@{BSP\_SX1272\_OFF}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_OFF()}{BSP\_SX1272\_OFF()}}
 {\footnotesize\ttfamily void BSP\+\_\+\+SX1272\+\_\+\+OFF (\begin{DoxyParamCaption}\item[{int}]{type\+\_\+mod }\end{DoxyParamCaption})}
 
+
+
+Désactive le module SX1272. 
+
+Cette fonction désactive le module SX1272 en mettant le module en mode veille ou en mode veille selon le type de modulation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+mod} & Le type de modulation utilisé \+: 0 pour Lo\+Ra, autre valeur pour FSK.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Cette fonction assume que la fonction \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} est disponible pour écrire dans les registres du module SX1272. 
+\end{DoxyNote}
 \Hypertarget{_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d}\label{_s_x1272_8c_a9d7faebf99dac4cfbb31d2681770373d} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_ON@{BSP\_SX1272\_ON}}
 \index{BSP\_SX1272\_ON@{BSP\_SX1272\_ON}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_ON()}{BSP\_SX1272\_ON()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+\+ON (\begin{DoxyParamCaption}\item[{int}]{type\+\_\+mod }\end{DoxyParamCaption})}
 
+
+
+Active le module SX1272. 
+
+Cette fonction active le module SX1272 en initialisant les variables internes et en configurant les paramètres par défaut.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+mod} & Le type de modulation à utiliser \+: 0 pour Lo\+Ra, autre valeur pour FSK. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}état d\textquotesingle{}activation du module SX1272 \+:
+\begin{DoxyItemize}
+\item 0 \+: activation réussie.
+\item 1 \+: échec de l\textquotesingle{}activation.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction assume que le module SX1272 est connecté et que les fonctions \doxylink{com_s_x1272_8h_a823387fc0ba3a232cd26c0e46165117d}{BSP\+\_\+\+SPI1\+\_\+\+Init()} et \doxylink{delay_8h_adfc6cf5dbb78d0f390c250838bb51777}{BSP\+\_\+\+DELAY\+\_\+ms()} sont disponibles. 
+\end{DoxyNote}
 \Hypertarget{_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32}\label{_s_x1272_8c_a3ad7f7b23c57eb6cc7e692e40cf83d32} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_receive@{BSP\_SX1272\_receive}}
 \index{BSP\_SX1272\_receive@{BSP\_SX1272\_receive}!SX1272.c@{SX1272.c}}
@@ -437,6 +636,20 @@ FSK mode\Hypertarget{_s_x1272_8c_a65d9807602541b563d6d4035665cec73}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setBW()}{BSP\_SX1272\_setBW()}}
 {\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+BW (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{band }\end{DoxyParamCaption})}
 
+
+
+Set the bandwidth for SX1272 module. 
+
+This function sets the bandwidth parameter for the SX1272 module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em band} & The bandwidth value to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the bandwidth was successfully set, 1 if there was an error, or -\/1 if the bandwidth is not available in FSK mode. 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_af34d08b531e6f35f0b961e676b17800d}\label{_s_x1272_8c_af34d08b531e6f35f0b961e676b17800d} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setChannel@{BSP\_SX1272\_setChannel}}
 \index{BSP\_SX1272\_setChannel@{BSP\_SX1272\_setChannel}!SX1272.c@{SX1272.c}}
@@ -449,18 +662,70 @@ FSK mode\Hypertarget{_s_x1272_8c_a65d9807602541b563d6d4035665cec73}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setCR()}{BSP\_SX1272\_setCR()}}
 {\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+CR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cod }\end{DoxyParamCaption})}
 
+
+
+Set the coding rate parameter for the SX1272 module. 
+
+This function sets the coding rate parameter for the SX1272 module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod} & The coding rate value to set. Possible values are CR\+\_\+5, CR\+\_\+6, CR\+\_\+7, CR\+\_\+8.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the coding rate parameter is successfully set. 1 if there was an error while setting the coding rate parameter. 2 if the module is in FSK mode (FSK mode doesn\textquotesingle{}t have a coding rate). 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_a55bc531484f486ec00f39fe193de345e}\label{_s_x1272_8c_a55bc531484f486ec00f39fe193de345e} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setCRC\_OFF@{BSP\_SX1272\_setCRC\_OFF}}
 \index{BSP\_SX1272\_setCRC\_OFF@{BSP\_SX1272\_setCRC\_OFF}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setCRC\_OFF()}{BSP\_SX1272\_setCRC\_OFF()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+CRC\+\_\+\+OFF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Deactivate CRC (Cyclic Redundancy Check) on the SX1272 module. 
+
+This function deactivates CRC on the SX1272 module. In Lo\+Ra mode, it clears the Rx\+Payload\+Crc\+On bit in REG\+\_\+\+MODEM\+\_\+\+CONFIG1 to disable CRC. In FSK mode, it clears the Crc\+On bit in REG\+\_\+\+PACKET\+\_\+\+CONFIG1 to disable CRC.
+
+\begin{DoxyReturn}{Returns}
+0 if CRC has been successfully deactivated, 1 if there was an error. 
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_aa583c8c3ab80c8a2c3a71ed878695d7b}\label{_s_x1272_8c_aa583c8c3ab80c8a2c3a71ed878695d7b} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setCRC\_ON@{BSP\_SX1272\_setCRC\_ON}}
 \index{BSP\_SX1272\_setCRC\_ON@{BSP\_SX1272\_setCRC\_ON}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setCRC\_ON()}{BSP\_SX1272\_setCRC\_ON()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+CRC\+\_\+\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Enable CRC (Cyclic Redundancy Check) on the SX1272 module. 
+
+This function enables CRC on the SX1272 module. In Lo\+Ra mode, it sets the Rx\+Payload\+Crc\+On bit in REG\+\_\+\+MODEM\+\_\+\+CONFIG1. In FSK mode, it sets the Crc\+On bit in REG\+\_\+\+PACKET\+\_\+\+CONFIG1.
+
+\begin{DoxyReturn}{Returns}
+The state of the operation.
+\begin{DoxyItemize}
+\item 0 if CRC has been activated successfully.
+\item 1 if the CRC activation was not confirmed.
+\item 2 if an error occurred.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_aa583c8c3ab80c8a2c3a71ed878695d7b}{BSP\_SX1272\_setCRC\_ON}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ activated\ successfully}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ activation\ not\ confirmed}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ while\ setting\ CRC\ ON}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
 \Hypertarget{_s_x1272_8c_add2605afcabf2ba92cf3089de31b61ff}\label{_s_x1272_8c_add2605afcabf2ba92cf3089de31b61ff} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setDestination@{BSP\_SX1272\_setDestination}}
 \index{BSP\_SX1272\_setDestination@{BSP\_SX1272\_setDestination}!SX1272.c@{SX1272.c}}
@@ -473,24 +738,119 @@ FSK mode\Hypertarget{_s_x1272_8c_a65d9807602541b563d6d4035665cec73}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setFSK()}{BSP\_SX1272\_setFSK()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+FSK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Configure le module SX1272 en mode FSK. 
+
+Cette fonction configure le module SX1272 en mode FSK. Elle met d\textquotesingle{}abord le module en mode sommeil Lo\+Ra, puis en mode sommeil FSK, et enfin en mode veille FSK. Elle configure également les registres REG\+\_\+\+PACKET\+\_\+\+CONFIG1, REG\+\_\+\+FIFO\+\_\+\+THRESH, REG\+\_\+\+SYNC\+\_\+\+CONFIG, REG\+\_\+\+FDEV\+\_\+\+MSB, REG\+\_\+\+FDEV\+\_\+\+LSB et REG\+\_\+\+PACKET\+\_\+\+CONFIG2 avec les valeurs appropriées pour le mode FSK.
+
+\begin{DoxyReturn}{Returns}
+État de configuration du mode FSK \+:
+\begin{DoxyItemize}
+\item 0 \+: Succès (mode FSK configuré)
+\item 1 \+: Erreur (mode Lo\+Ra actuel)
+\item 2 \+: Erreur (échec de configuration)
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+\end{DoxyNote}
 \Hypertarget{_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589}\label{_s_x1272_8c_a56dbd355a1ffaca74216f41b24b03589} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setHeaderOFF@{BSP\_SX1272\_setHeaderOFF}}
 \index{BSP\_SX1272\_setHeaderOFF@{BSP\_SX1272\_setHeaderOFF}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setHeaderOFF()}{BSP\_SX1272\_setHeaderOFF()}}
 {\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Header\+OFF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Disable explicit header mode on the SX1272 module. 
+
+This function disables the explicit header mode on the SX1272 module, allowing the module to operate without headers in Lo\+Ra mode. In FSK mode, the header is not available.
+
+\begin{DoxyReturn}{Returns}
+The state of the operation.
+\begin{DoxyItemize}
+\item 0 if the header has been deactivated successfully.
+\item 1 if the header deactivation was not confirmed.
+\item -\/1 if an error occurred or the header is not available in FSK mode.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a56dbd355a1ffaca74216f41b24b03589}{BSP\_SX1272\_setHeaderOFF}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ deactivated\ successfully}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ deactivation\ not\ confirmed}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ or\ header\ not\ available\ in\ FSK\ mode}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
 \Hypertarget{_s_x1272_8c_a772a707eed75deec1aabacb35a917eee}\label{_s_x1272_8c_a772a707eed75deec1aabacb35a917eee} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setHeaderON@{BSP\_SX1272\_setHeaderON}}
 \index{BSP\_SX1272\_setHeaderON@{BSP\_SX1272\_setHeaderON}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setHeaderON()}{BSP\_SX1272\_setHeaderON()}}
 {\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Header\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Enable explicit header mode on the SX1272 module. 
+
+This function enables the explicit header mode on the SX1272 module, allowing the module to operate with headers in Lo\+Ra mode. In FSK mode, the header is not available.
+
+\begin{DoxyReturn}{Returns}
+The state of the operation.
+\begin{DoxyItemize}
+\item 0 if the header has been activated successfully.
+\item 1 if the header activation was not confirmed.
+\item -\/1 if an error occurred or the header is not available in FSK mode.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The header is mandatory to be off when the spreading factor (SF) is 6.
+\end{DoxyNote}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a772a707eed75deec1aabacb35a917eee}{BSP\_SX1272\_setHeaderON}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ activated\ successfully}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ activation\ not\ confirmed}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ or\ header\ not\ available\ in\ FSK\ mode}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
 \Hypertarget{_s_x1272_8c_a842904846734cb7ba7ca312f50dbe962}\label{_s_x1272_8c_a842904846734cb7ba7ca312f50dbe962} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setLORA@{BSP\_SX1272\_setLORA}}
 \index{BSP\_SX1272\_setLORA@{BSP\_SX1272\_setLORA}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setLORA()}{BSP\_SX1272\_setLORA()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+LORA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Configure le module SX1272 en mode Lo\+Ra. 
+
+Cette fonction configure le module SX1272 en mode Lo\+Ra. Elle met d\textquotesingle{}abord le module en mode veille, puis en mode sommeil, et enfin en mode veille Lo\+Ra. Elle configure également les registres REG\+\_\+\+MAX\+\_\+\+PAYLOAD\+\_\+\+LENGTH, REG\+\_\+\+MODEM\+\_\+\+CONFIG1 et REG\+\_\+\+MODEM\+\_\+\+CONFIG2 avec les valeurs par défaut appropriées.
+
+\begin{DoxyReturn}{Returns}
+État de configuration du mode Lo\+Ra \+:
+\begin{DoxyItemize}
+\item 0 \+: Succès (mode Lo\+Ra configuré)
+\item 1 \+: Erreur (mode FSK actuel)
+\item 2 \+: Erreur (échec de configuration)
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+\end{DoxyNote}
 \Hypertarget{_s_x1272_8c_acd285f2b7da34b9e7d8c9a7ccc12b841}\label{_s_x1272_8c_acd285f2b7da34b9e7d8c9a7ccc12b841} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setMaxCurrent@{BSP\_SX1272\_setMaxCurrent}}
 \index{BSP\_SX1272\_setMaxCurrent@{BSP\_SX1272\_setMaxCurrent}!SX1272.c@{SX1272.c}}
@@ -503,6 +863,22 @@ FSK mode\Hypertarget{_s_x1272_8c_a65d9807602541b563d6d4035665cec73}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setMode()}{BSP\_SX1272\_setMode()}}
 {\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
 
+
+
+Set the mode of the SX1272 module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The mode to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The state of the operation\+:
+\begin{DoxyItemize}
+\item 0\+: Success.
+\item -\/1\+: The indicated mode doesn\textquotesingle{}t exist. 
+\end{DoxyItemize}
+\end{DoxyReturn}
 \Hypertarget{_s_x1272_8c_a6515cd7aa4584753aa2c66a6252a98cb}\label{_s_x1272_8c_a6515cd7aa4584753aa2c66a6252a98cb} 
 \index{SX1272.c@{SX1272.c}!BSP\_SX1272\_setNodeAddress@{BSP\_SX1272\_setNodeAddress}}
 \index{BSP\_SX1272\_setNodeAddress@{BSP\_SX1272\_setNodeAddress}!SX1272.c@{SX1272.c}}
@@ -551,6 +927,20 @@ FSK mode\Hypertarget{_s_x1272_8c_a65d9807602541b563d6d4035665cec73}\label{_s_x12
 \doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setSF()}{BSP\_SX1272\_setSF()}}
 {\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+SF (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{spr }\end{DoxyParamCaption})}
 
+
+
+Set the spreading factor (SF) for Lo\+Ra mode. 
+
+This function sets the spreading factor (SF) for Lo\+Ra mode in the SX1272 module. It configures the appropriate registers based on the specified spreading factor value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spr} & The spreading factor value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the spreading factor is successfully set, 1 if there was an error, or -\/1 if the device is in FSK mode where spreading factor is not applicable. 
+\end{DoxyReturn}
 FSK mode
 
 Lo\+Ra mode\Hypertarget{_s_x1272_8c_a6d032d3d080e5622e8b76405eaecf7fb}\label{_s_x1272_8c_a6d032d3d080e5622e8b76405eaecf7fb} 
@@ -592,11 +982,15 @@ Find maximum between two numbers. \Hypertarget{_s_x1272_8c_a940b7d59de47e1432c35
 \doxysubsubsection{\texorpdfstring{currentstate}{currentstate}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_s_x1272status}{SX1272status}} currentstate}
 
-\Hypertarget{_s_x1272_8c_ac96e1e7bdcffe296d36ab75329aa2025}\label{_s_x1272_8c_ac96e1e7bdcffe296d36ab75329aa2025} 
+
+
+État actuel du module SX1272. 
+
+Cette variable globale externe est déclarée dans le fichier \doxylink{_s_x1272_8h}{SX1272.\+h}. Elle est utilisée pour suivre l\textquotesingle{}état actuel du module SX1272. \Hypertarget{_s_x1272_8c_a4ed83658015f7bd9d0efbcec4e8fe8d6}\label{_s_x1272_8c_a4ed83658015f7bd9d0efbcec4e8fe8d6} 
 \index{SX1272.c@{SX1272.c}!SignalBwLog@{SignalBwLog}}
 \index{SignalBwLog@{SignalBwLog}!SX1272.c@{SX1272.c}}
 \doxysubsubsection{\texorpdfstring{SignalBwLog}{SignalBwLog}}
-{\footnotesize\ttfamily const double Signal\+Bw\+Log\mbox{[}$\,$\mbox{]}}
+{\footnotesize\ttfamily Signal\+Bw\+Log}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -608,3 +1002,17 @@ Find maximum between two numbers. \Hypertarget{_s_x1272_8c_a940b7d59de47e1432c35
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
+
+
+Tableau contenant les valeurs de logarithme de la largeur de signal. 
+
+Ce tableau contient les valeurs de logarithme de la largeur de signal. Les éléments du tableau représentent les valeurs suivantes \+:
+\begin{DoxyItemize}
+\item Signal\+Bw\+Log\mbox{[}0\mbox{]} \+: 5.\+0969100130080564143587833158265
+\item Signal\+Bw\+Log\mbox{[}1\mbox{]} \+: 5.\+397940008672037609572522210551
+\item Signal\+Bw\+Log\mbox{[}2\mbox{]} \+: 5.\+6989700043360188047862611052755
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Ce tableau est déclaré en tant que constante double. 
+\end{DoxyNote}

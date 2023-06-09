@@ -80,6 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">appSX1272.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contient les fonctions pour la gestion de l'application SX1272.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="app_s_x1272_8h_source.html">appSX1272.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_s_x1272_8h_source.html">SX1272.h</a>&quot;</code><br />
@@ -92,28 +95,37 @@ $(function() {
 Macros</h2></td></tr>
 <tr class="memitem:a05d1af42442c934b555896d3fe55c79e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a05d1af42442c934b555896d3fe55c79e">DEBUG_FLAG</a>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a05d1af42442c934b555896d3fe55c79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ccd7253423a2e1863e5312aa633b4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#ab8ccd7253423a2e1863e5312aa633b4e">SEND_MSG_ENCODED_FLAG</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:ab8ccd7253423a2e1863e5312aa633b4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#ab8ccd7253423a2e1863e5312aa633b4e">SEND_MSG_ENCODED_FLAG</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:ab8ccd7253423a2e1863e5312aa633b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0937510bc1cb132b8d44f887c5421505"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a0937510bc1cb132b8d44f887c5421505">SEND_ACK_ENCODED_FLAG</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a0937510bc1cb132b8d44f887c5421505"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a0937510bc1cb132b8d44f887c5421505">SEND_ACK_ENCODED_FLAG</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a0937510bc1cb132b8d44f887c5421505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5b7bec9d57e966f8115a9529ab0457ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a5b7bec9d57e966f8115a9529ab0457ea">APP_SX1272_setup</a> (<a class="el" href="structid__frame__t.html">id_frame_t</a> device)</td></tr>
+<tr class="memdesc:a5b7bec9d57e966f8115a9529ab0457ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de configuration de l'application SX1272.  <br /></td></tr>
 <tr class="separator:a5b7bec9d57e966f8115a9529ab0457ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1070573467908e8dcaa9ec60f6f1c947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a1070573467908e8dcaa9ec60f6f1c947">APP_SX1272_runTransmit</a> (<a class="el" href="structid__frame__t.html">id_frame_t</a> device)</td></tr>
-<tr class="separator:a1070573467908e8dcaa9ec60f6f1c947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0239db6fd6d4c7b7dec055cacaced725"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a0239db6fd6d4c7b7dec055cacaced725">APP_SX1272_runReceive</a> (<a class="el" href="structid__frame__t.html">id_frame_t</a> device)</td></tr>
-<tr class="separator:a0239db6fd6d4c7b7dec055cacaced725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ca0636c4e6d6a89b8dd1198a76863c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a78ca0636c4e6d6a89b8dd1198a76863c">APP_SX1272_runTransmitMsg</a> (<a class="el" href="structid__frame__t.html">id_frame_t</a> device, <a class="el" href="structmsg__frame__t.html">msg_frame_t</a> *message)</td></tr>
+<tr class="memdesc:a78ca0636c4e6d6a89b8dd1198a76863c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction pour exécuter la transmission de paquets SX1272.  <br /></td></tr>
+<tr class="separator:a78ca0636c4e6d6a89b8dd1198a76863c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa885af9ee8a008b08788d062ab26a8e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#aaa885af9ee8a008b08788d062ab26a8e">APP_SX1272_runTransmitAck</a> (<a class="el" href="structid__frame__t.html">id_frame_t</a> device, <a class="el" href="structack__frame__t.html">ack_frame_t</a> *ack)</td></tr>
+<tr class="separator:aaa885af9ee8a008b08788d062ab26a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a0c48d05f8f679b2652737097c9d9c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a41a0c48d05f8f679b2652737097c9d9c">APP_SX1272_runReceive</a> (<a class="el" href="structid__frame__t.html">id_frame_t</a> device, <a class="el" href="structmsg__frame__t.html">msg_frame_t</a> *message_decode, <a class="el" href="structack__frame__t.html">ack_frame_t</a> *ack_decode)</td></tr>
+<tr class="memdesc:a41a0c48d05f8f679b2652737097c9d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction pour exécuter la réception de paquets SX1272.  <br /></td></tr>
+<tr class="separator:a41a0c48d05f8f679b2652737097c9d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a620ebeba05a011d6c66dfc411f3e3c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a9a620ebeba05a011d6c66dfc411f3e3c">APP_SX1272_setFreq</a> (<a class="el" href="structid__frame__t.html">id_frame_t</a> device)</td></tr>
 <tr class="separator:a9a620ebeba05a011d6c66dfc411f3e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a1b23897a68158398f893c2a5768bc522"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_x1272status.html">SX1272status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app_s_x1272_8c.html#a1b23897a68158398f893c2a5768bc522">currentstate</a></td></tr>
+<tr class="memdesc:a1b23897a68158398f893c2a5768bc522"><td class="mdescLeft">&#160;</td><td class="mdescRight">État actuel du module SX1272.  <br /></td></tr>
 <tr class="separator:a1b23897a68158398f893c2a5768bc522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contient les fonctions pour la gestion de l'application SX1272. </p>
+<p>Le fichier <a class="el" href="app_s_x1272_8c.html" title="Contient les fonctions pour la gestion de l&#39;application SX1272.">appSX1272.c</a> contient les définitions des fonctions pour la configuration et l'exécution de l'application SX1272. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a05d1af42442c934b555896d3fe55c79e" name="a05d1af42442c934b555896d3fe55c79e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05d1af42442c934b555896d3fe55c79e">&#9670;&#160;</a></span>DEBUG_FLAG</h2>
 
@@ -135,7 +147,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SEND_ACK_ENCODED_FLAG&#160;&#160;&#160;1</td>
+          <td class="memname">#define SEND_ACK_ENCODED_FLAG&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -149,7 +161,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SEND_MSG_ENCODED_FLAG&#160;&#160;&#160;0</td>
+          <td class="memname">#define SEND_MSG_ENCODED_FLAG&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -157,39 +169,109 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0239db6fd6d4c7b7dec055cacaced725" name="a0239db6fd6d4c7b7dec055cacaced725"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0239db6fd6d4c7b7dec055cacaced725">&#9670;&#160;</a></span>APP_SX1272_runReceive()</h2>
+<a id="a41a0c48d05f8f679b2652737097c9d9c" name="a41a0c48d05f8f679b2652737097c9d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a0c48d05f8f679b2652737097c9d9c">&#9670;&#160;</a></span>APP_SX1272_runReceive()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void APP_SX1272_runReceive </td>
+          <td class="memname">uint8_t APP_SX1272_runReceive </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structid__frame__t.html">id_frame_t</a>&#160;</td>
-          <td class="paramname"><em>device</em></td><td>)</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structmsg__frame__t.html">msg_frame_t</a> *&#160;</td>
+          <td class="paramname"><em>message_decode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structack__frame__t.html">ack_frame_t</a> *&#160;</td>
+          <td class="paramname"><em>ack_decode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction pour exécuter la réception de paquets SX1272. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Structure contenant les informations du périphérique </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaa885af9ee8a008b08788d062ab26a8e" name="aaa885af9ee8a008b08788d062ab26a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa885af9ee8a008b08788d062ab26a8e">&#9670;&#160;</a></span>APP_SX1272_runTransmitAck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t APP_SX1272_runTransmitAck </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structid__frame__t.html">id_frame_t</a>&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structack__frame__t.html">ack_frame_t</a> *&#160;</td>
+          <td class="paramname"><em>ack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a1070573467908e8dcaa9ec60f6f1c947" name="a1070573467908e8dcaa9ec60f6f1c947"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1070573467908e8dcaa9ec60f6f1c947">&#9670;&#160;</a></span>APP_SX1272_runTransmit()</h2>
+<a id="a78ca0636c4e6d6a89b8dd1198a76863c" name="a78ca0636c4e6d6a89b8dd1198a76863c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78ca0636c4e6d6a89b8dd1198a76863c">&#9670;&#160;</a></span>APP_SX1272_runTransmitMsg()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void APP_SX1272_runTransmit </td>
+          <td class="memname">uint8_t APP_SX1272_runTransmitMsg </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structid__frame__t.html">id_frame_t</a>&#160;</td>
-          <td class="paramname"><em>device</em></td><td>)</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structmsg__frame__t.html">msg_frame_t</a> *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction pour exécuter la transmission de paquets SX1272. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Structure contenant les informations du périphérique </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -227,6 +309,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fonction de configuration de l'application SX1272. </p>
+<p>Cette fonction configure le module SX1272 en spécifiant la modulation, la fréquence, la puissance de sortie, etc.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>Structure d'identification du périphérique. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -249,6 +340,9 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>État actuel du module SX1272. </p>
+<p>Cette variable globale externe est déclarée dans le fichier <a class="el" href="_s_x1272_8h.html">SX1272.h</a>. Elle est utilisée pour suivre l'état actuel du module SX1272. </p>
 
 </div>
 </div>

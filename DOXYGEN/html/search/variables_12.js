@@ -10,7 +10,7 @@ var searchData=
   ['shiftr_7',['SHIFTR',['../struct_r_t_c___type_def.html#a6082856c9191f5003b6163c0d3afcaff',1,'RTC_TypeDef']]],
   ['shp_8',['SHP',['../group___c_m_s_i_s___core___sys_tick_functions.html#ga5c40d124f95a3f7f431a3d5409d6ad28',1,'SCB_Type::SHP'],['../group___c_m_s_i_s__core___debug_functions.html#ga9b05f74580fc93daa7fe2f0e1c9c5663',1,'SCB_Type::SHP']]],
   ['shpr_9',['SHPR',['../group___c_m_s_i_s___core___sys_tick_functions.html#gac6259676cd7892a1b62f3fa7c0930780',1,'SCB_Type::SHPR'],['../group___c_m_s_i_s__core___debug_functions.html#gafdab23abd301033bb318c7b188b377db',1,'SCB_Type::SHPR']]],
-  ['signalbwlog_10',['SignalBwLog',['../_s_x1272_8c.html#ac96e1e7bdcffe296d36ab75329aa2025',1,'SX1272.c']]],
+  ['signalbwlog_10',['SignalBwLog',['../_s_x1272_8c.html#a4ed83658015f7bd9d0efbcec4e8fe8d6',1,'SX1272.c']]],
   ['size_11',['size',['../structmsg__frame__t.html#ab7109a6b14d3593206496a738515d676',1,'msg_frame_t']]],
   ['sleepcnt_12',['SLEEPCNT',['../group___c_m_s_i_s__core___debug_functions.html#ga416a54e2084ce66e5ca74f152a5ecc70',1,'DWT_Type']]],
   ['smcr_13',['SMCR',['../struct_t_i_m___type_def.html#a67d30593bcb68b98186ebe5bc8dc34b1',1,'TIM_TypeDef']]],

@@ -120,21 +120,29 @@ Macros</h2></td></tr>
 <tr class="separator:aa0258f5956c5f797974b5e0e86a8ca49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b8cb189365e2cb58361537313d352e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#a7b8cb189365e2cb58361537313d352e9">CRC_CCITT_SEED</a>&#160;&#160;&#160;0x1D0F</td></tr>
 <tr class="separator:a7b8cb189365e2cb58361537313d352e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68b0c422de951ac26d02eaa29782e5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#ac68b0c422de951ac26d02eaa29782e5a">CRC_NO_ERROR</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ac68b0c422de951ac26d02eaa29782e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a5010e25c0fdc1ff56c1582d065251"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#a37a5010e25c0fdc1ff56c1582d065251">CRC_ERROR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a37a5010e25c0fdc1ff56c1582d065251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2fd64371f4340fae9130b3c1e6254c9f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#a2fd64371f4340fae9130b3c1e6254c9f">BSP_FRAMES_computeCrc</a> (uint16_t crc, uint8_t data, uint16_t polynomial)</td></tr>
+<tr class="memdesc:a2fd64371f4340fae9130b3c1e6254c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de calcul du CRC.  <br /></td></tr>
 <tr class="separator:a2fd64371f4340fae9130b3c1e6254c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a897a62ac64f4e5324adaf1c7550141ee"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#a897a62ac64f4e5324adaf1c7550141ee">BSP_FRAMES_packetComputeCrc</a> (uint8_t *data, uint8_t datalength)</td></tr>
+<tr class="memdesc:a897a62ac64f4e5324adaf1c7550141ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de calcul du CRC pour l'ensemble de la frame.  <br /></td></tr>
 <tr class="separator:a897a62ac64f4e5324adaf1c7550141ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda2654b0fd9c033a6182b423576e6e2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#aeda2654b0fd9c033a6182b423576e6e2">BSP_FRAMES_decodeMsgFrame</a> (uint8_t *payload, <a class="el" href="structmsg__frame__t.html">msg_frame_t</a> *output_frame)</td></tr>
+<tr class="memdesc:aeda2654b0fd9c033a6182b423576e6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de décodage des messages reçus dans la payload.  <br /></td></tr>
 <tr class="separator:aeda2654b0fd9c033a6182b423576e6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bd52fe21e75c7c4cff4e36349106125"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#a3bd52fe21e75c7c4cff4e36349106125">BSP_FRAMES_decodeAckFrame</a> (uint8_t *payload, <a class="el" href="structack__frame__t.html">ack_frame_t</a> *output_frame)</td></tr>
+<tr class="memdesc:a3bd52fe21e75c7c4cff4e36349106125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de décodage des messages reçus dans la payload (acknowledgment).  <br /></td></tr>
 <tr class="separator:a3bd52fe21e75c7c4cff4e36349106125"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16ee4364231abe3947ca3b25fa261d32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#a16ee4364231abe3947ca3b25fa261d32">BSP_FRAMES_encodeAckFrame</a> (<a class="el" href="structack__frame__t.html">ack_frame_t</a> ack_to_encode, uint8_t *frame_encoded)</td></tr>
-<tr class="separator:a16ee4364231abe3947ca3b25fa261d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700945b1a5dd86e6ea8b11a09de4ffe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#a700945b1a5dd86e6ea8b11a09de4ffe8">BSP_FRAMES_encodeMsgFrame</a> (<a class="el" href="structmsg__frame__t.html">msg_frame_t</a> msg_to_encode, uint8_t *frame_encoded)</td></tr>
-<tr class="separator:a700945b1a5dd86e6ea8b11a09de4ffe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad06da90597db0c6b61a64067bddd5024"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#ad06da90597db0c6b61a64067bddd5024">BSP_FRAMES_encodeAckFrame</a> (<a class="el" href="structack__frame__t.html">ack_frame_t</a> *ack_to_encode, uint8_t *frame_encoded)</td></tr>
+<tr class="separator:ad06da90597db0c6b61a64067bddd5024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef7a9db5e429b17f31440735b27f82e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frames_8h.html#a5ef7a9db5e429b17f31440735b27f82e">BSP_FRAMES_encodeMsgFrame</a> (<a class="el" href="structmsg__frame__t.html">msg_frame_t</a> *msg_to_encode, uint8_t *frame_encoded)</td></tr>
+<tr class="separator:a5ef7a9db5e429b17f31440735b27f82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a8115a0b9bd8f9ac9254fc78e524df10e" name="a8115a0b9bd8f9ac9254fc78e524df10e"></a>
@@ -193,6 +201,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a37a5010e25c0fdc1ff56c1582d065251" name="a37a5010e25c0fdc1ff56c1582d065251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a5010e25c0fdc1ff56c1582d065251">&#9670;&#160;</a></span>CRC_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CRC_ERROR&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac21f2d275f975b7357d95a49567856c8" name="ac21f2d275f975b7357d95a49567856c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac21f2d275f975b7357d95a49567856c8">&#9670;&#160;</a></span>CRC_MASK</h2>
 
@@ -201,6 +223,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define CRC_MASK&#160;&#160;&#160;0xFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac68b0c422de951ac26d02eaa29782e5a" name="ac68b0c422de951ac26d02eaa29782e5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac68b0c422de951ac26d02eaa29782e5a">&#9670;&#160;</a></span>CRC_NO_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CRC_NO_ERROR&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -338,6 +374,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fonction de calcul du CRC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">crc</td><td>Octet du CRC pour un octet de la donnée. </td></tr>
+    <tr><td class="paramname">data</td><td>Octet de la donnée. </td></tr>
+    <tr><td class="paramname">polynomial</td><td>Deux octets pour le polynôme utilisé par le calcul du CRC. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t Valeur du CRC calculé. </dd></dl>
+
 </div>
 </div>
 <a id="a3bd52fe21e75c7c4cff4e36349106125" name="a3bd52fe21e75c7c4cff4e36349106125"></a>
@@ -365,6 +412,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction de décodage des messages reçus dans la payload (acknowledgment). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Pointeur d'octets sur la base de la payload. </td></tr>
+    <tr><td class="paramname">output_frame</td><td>Pointeur de la structure d'objet <a class="el" href="structmsg__frame__t.html" title="Structure pour l&#39;obget message qui est définie par le protocole.">msg_frame_t</a> qui est définie par le protocole. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t 0 si le CRC est identique, 1 sinon. </dd></dl>
 
 </div>
 </div>
@@ -394,10 +451,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fonction de décodage des messages reçus dans la payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Pointeur d'octets sur la base de la payload. </td></tr>
+    <tr><td class="paramname">output_frame</td><td>Pointeur de la structure d'objet <a class="el" href="structmsg__frame__t.html" title="Structure pour l&#39;obget message qui est définie par le protocole.">msg_frame_t</a> qui est définie par le protocole. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t 0 si le CRC est identique, 1 sinon. </dd></dl>
+
 </div>
 </div>
-<a id="a16ee4364231abe3947ca3b25fa261d32" name="a16ee4364231abe3947ca3b25fa261d32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16ee4364231abe3947ca3b25fa261d32">&#9670;&#160;</a></span>BSP_FRAMES_encodeAckFrame()</h2>
+<a id="ad06da90597db0c6b61a64067bddd5024" name="ad06da90597db0c6b61a64067bddd5024"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad06da90597db0c6b61a64067bddd5024">&#9670;&#160;</a></span>BSP_FRAMES_encodeAckFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +472,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void BSP_FRAMES_encodeAckFrame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structack__frame__t.html">ack_frame_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structack__frame__t.html">ack_frame_t</a> *&#160;</td>
           <td class="paramname"><em>ack_to_encode</em>, </td>
         </tr>
         <tr>
@@ -424,8 +491,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a700945b1a5dd86e6ea8b11a09de4ffe8" name="a700945b1a5dd86e6ea8b11a09de4ffe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a700945b1a5dd86e6ea8b11a09de4ffe8">&#9670;&#160;</a></span>BSP_FRAMES_encodeMsgFrame()</h2>
+<a id="a5ef7a9db5e429b17f31440735b27f82e" name="a5ef7a9db5e429b17f31440735b27f82e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef7a9db5e429b17f31440735b27f82e">&#9670;&#160;</a></span>BSP_FRAMES_encodeMsgFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -433,7 +500,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void BSP_FRAMES_encodeMsgFrame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structmsg__frame__t.html">msg_frame_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structmsg__frame__t.html">msg_frame_t</a> *&#160;</td>
           <td class="paramname"><em>msg_to_encode</em>, </td>
         </tr>
         <tr>
@@ -477,6 +544,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction de calcul du CRC pour l'ensemble de la frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Pointeur sur le tableau d'octets qui est la frame. </td></tr>
+    <tr><td class="paramname">datalength</td><td>Taille du tableau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t Valeur du CRC calculé. </dd></dl>
 
 </div>
 </div>

@@ -1,6 +1,8 @@
 \doxysection{STM32/bsp/inc/\+LED\+\_\+control.h File Reference}
 \hypertarget{_l_e_d__control_8h}{}\label{_l_e_d__control_8h}\index{STM32/bsp/inc/LED\_control.h@{STM32/bsp/inc/LED\_control.h}}
 {\ttfamily \#include \"{}stm32f0xx.\+h\"{}}\newline
+{\ttfamily \#include \"{}delay.\+h\"{}}\newline
+{\ttfamily \#include \"{}app\+SX1272.\+h\"{}}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,6 +22,8 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_l_e_d__control_8h_a1d5b4eaf7f01ae9557ba620158ebdfd9}{Led\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_l_e_d__control_8h_a7b5c5c762092bf444f96162af3c9909c}{Led\+Channel\+Test}} (void)
 \item 
 void \mbox{\hyperlink{_l_e_d__control_8h_ab7fdb42f90bb92ccfc9813861736ba78}{Led\+On}} (uint8\+\_\+t led)
 \item 
@@ -69,6 +73,12 @@ void \mbox{\hyperlink{_l_e_d__control_8h_a465eefce4de8c2a730fa00d7ff4dba23}{Led\
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{_l_e_d__control_8h_a7b5c5c762092bf444f96162af3c9909c}\label{_l_e_d__control_8h_a7b5c5c762092bf444f96162af3c9909c} 
+\index{LED\_control.h@{LED\_control.h}!LedChannelTest@{LedChannelTest}}
+\index{LedChannelTest@{LedChannelTest}!LED\_control.h@{LED\_control.h}}
+\doxysubsubsection{\texorpdfstring{LedChannelTest()}{LedChannelTest()}}
+{\footnotesize\ttfamily void Led\+Channel\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 \Hypertarget{_l_e_d__control_8h_a1d5b4eaf7f01ae9557ba620158ebdfd9}\label{_l_e_d__control_8h_a1d5b4eaf7f01ae9557ba620158ebdfd9} 
 \index{LED\_control.h@{LED\_control.h}!LedInit@{LedInit}}
 \index{LedInit@{LedInit}!LED\_control.h@{LED\_control.h}}
