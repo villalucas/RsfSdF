@@ -117,26 +117,27 @@ $(function() {
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define WaitRxMax 10000 </span><span class="comment">//en ms</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//Error Defines</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define RECEIVE_NO_ERROR            0</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define RECEIVE_CRC_ERROR           1</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define RECEIVE_SOF_ERROR           2</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#define RECEIVE_WRONG_DESTINARY     3</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define RECEIVE_ACK_RECEIVED        4</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define RECEIVE_MSG_RECEIVED        5</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define RECEIVE_ERROR_UNKNOWN_CASE  6</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define TRANSMIT_NO_ERROR           0</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define TRANSMIT_ERROR              1</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define TRANSMIT_TIMEOUT_ERROR      2</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define TRANSMIT_ERROR_CONFIG       3</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> APP_SX1272_setup(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>uint8_t APP_SX1272_runTransmitMsg(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *message);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>uint8_t APP_SX1272_runTransmitAck(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>uint8_t APP_SX1272_runReceive(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *message_decode, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack_decode);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>uint8_t APP_SX1272_setFreq(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif </span><span class="comment">/* APP_INC_APPSX1272_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define RECEIVE_NO_ERROR                            0</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define RECEIVE_CRC_ERROR                           1</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define RECEIVE_SOF_ERROR                           2</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#define RECEIVE_WRONG_DESTINARY                     3</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define RECEIVE_ACK_RECEIVED                        4</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define RECEIVE_MSG_RECEIVED_ACK_TRANSMIT           5</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMIT       6</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define RECEIVE_ERROR_UNKNOWN_CASE                  7</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define TRANSMIT_NO_ERROR           0</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define TRANSMIT_ERROR              1</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define TRANSMIT_TIMEOUT_ERROR      2</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#define TRANSMIT_ERROR_CONFIG       3</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> APP_SX1272_setup(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>uint8_t APP_SX1272_runTransmitMsg(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *message);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>uint8_t APP_SX1272_runTransmitAck(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>uint8_t APP_SX1272_runReceive(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device, <a class="code hl_struct" href="structmsg__frame__t.html">msg_frame_t</a> *message_decode, <a class="code hl_struct" href="structack__frame__t.html">ack_frame_t</a> *ack_decode);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>uint8_t APP_SX1272_setFreq(<a class="code hl_struct" href="structid__frame__t.html">id_frame_t</a> device);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif </span><span class="comment">/* APP_INC_APPSX1272_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="astructack__frame__t_html"><div class="ttname"><a href="structack__frame__t.html">ack_frame_t</a></div><div class="ttdoc">Structure pour l'obget acquittement qui est définie par le protocole.</div><div class="ttdef"><b>Definition</b> frames.h:85</div></div>
 <div class="ttc" id="astructid__frame__t_html"><div class="ttname"><a href="structid__frame__t.html">id_frame_t</a></div><div class="ttdef"><b>Definition</b> frames.h:41</div></div>
 <div class="ttc" id="astructmsg__frame__t_html"><div class="ttname"><a href="structmsg__frame__t.html">msg_frame_t</a></div><div class="ttdoc">Structure pour l'obget message qui est définie par le protocole.</div><div class="ttdef"><b>Definition</b> frames.h:61</div></div>
