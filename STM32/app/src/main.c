@@ -24,6 +24,7 @@ static void SystemClock_Config();
 int main()
 {
 	uint32_t curtime=0;
+	uint32_t timeout_init=0;
 	uint32_t i=0;
 
 	uint8_t		receive_status;
@@ -71,50 +72,56 @@ int main()
 	while(1)
 	{
 		curtime=BSP_millis();
-
-		if((curtime%8000)==0)//send every 8000ms
-		{
 #ifdef TRANSMITTER
-			transmit_msg.src.address = device.address;
-			transmit_msg.src.channel = device.channel;
-			transmit_msg.dest.address = 2;
-			transmit_msg.dest.channel = device.channel;
-			transmit_msg.size = 6;
-			transmit_msg.msg[0] = 'V';
-			transmit_msg.msg[1] = '1';
-			transmit_msg.msg[2] = ' ';
-			transmit_msg.msg[3] = 'E';
-			transmit_msg.msg[4] = 'N';
-			transmit_msg.msg[5] = 'D';
-			transmit_status = APP_SX1272_runTransmitMsg(device, &transmit_msg);
-			if (transmit_status == TRANSMIT_NO_ERROR){
-				my_printf("Main_Transmitter : Message sent\r\n");
+		transmit_msg.src.address = device.address;
+		transmit_msg.src.channel = device.channel;
+		transmit_msg.dest.address = 2;
+		transmit_msg.dest.channel = device.channel;
+		transmit_msg.size = 6;
+		transmit_msg.msg[0] = 'V';
+		transmit_msg.msg[1] = '1';
+		transmit_msg.msg[2] = ' ';
+		transmit_msg.msg[3] = 'E';
+		transmit_msg.msg[4] = 'N';
+		transmit_msg.msg[5] = 'D';
+		transmit_status = APP_SX1272_runTransmitMsg(device, &transmit_msg);
+		if (transmit_status == TRANSMIT_NO_ERROR){
+			my_printf("Main_Transmitter : Message sent\r\n");
+			timeout_init = BSP_millis();
+			do{
 				receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
-				if(receive_status == RECEIVE_ACK_RECEIVED){
-					my_printf("Main_Transmitter : ACK received\r\n");
+				if((BSP_millis()-timeout_init) > 5000 && receive_status != RECEIVE_ACK_RECEIVED){ //Second condition to avoid receive status being overwritten
+					receive_status = RECEIVE_ERROR_ACK_TIMEOUT;
 				}
+			}while(receive_status != RECEIVE_ACK_RECEIVED && receive_status != RECEIVE_ERROR_ACK_TIMEOUT);
+
+			if(receive_status == RECEIVE_ACK_RECEIVED){
+				my_printf("Main_Transmitter : ACK received\r\n");
 			}
-			else
-			{
-				my_printf("Main_Transmitter : Message transmit ERROR\r\n");
+			else if(receive_status == RECEIVE_ERROR_ACK_TIMEOUT){
+				my_printf("Main_Transmitter : ACK timeout\r\n");
 			}
+		}
+		else
+		{
+			my_printf("Main_Transmitter : Message transmit ERROR\r\n");
+		}
 #endif
 
 #ifdef RECEIVER
-			receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
-			if(receive_status == RECEIVE_MSG_RECEIVED_ACK_TRANSMIT){
-				my_printf("Main_Receiver : MSG for me received and ACK transmit\r\n");
-			}
-			else if(receive_status == RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMIT){
-				my_printf("Main_Receiver : MSG for me received and ACK not transmit\r\n");
-			}
-			else
-			{
-				my_printf("Main_Receiver : ERROR\r\n");
-			}
-#endif
-			i++;
+		receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
+		if(receive_status == RECEIVE_MSG_RECEIVED_ACK_TRANSMITTED){
+			my_printf("Main_Receiver : MSG for me received and ACK transmitted\r\n");
 		}
+		else if(receive_status == RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMITTED){
+			my_printf("Main_Receiver : MSG for me received and ACK not transmitted\r\n");
+		}
+		else
+		{
+			my_printf("Main_Receiver : ERROR\r\n");
+		}
+#endif
+		i++;
 	}
 }
 /*

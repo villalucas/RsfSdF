@@ -275,8 +275,6 @@ uint8_t APP_SX1272_runTransmitAck(id_frame_t device, ack_frame_t *ack) {
  * @brief Fonction pour exécuter la réception de paquets SX1272
  * @param device Structure contenant les informations du périphérique
  */
-
-
 uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ack_frame_t *ack_decode) {
 
 	char StatusRXMessage = '0';
@@ -378,7 +376,7 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 				transmit_ack.dest.channel = message_decode->src.channel;
 				transmit_status = APP_SX1272_runTransmitAck(device, &transmit_ack);
 				if (transmit_status == TRANSMIT_NO_ERROR){
-					return RECEIVE_MSG_RECEIVED_ACK_TRANSMIT;
+					return RECEIVE_MSG_RECEIVED_ACK_TRANSMITTED;
 				}
 				else
 				{
@@ -388,7 +386,7 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 						transmit_status = APP_SX1272_runTransmitAck(device, &transmit_ack);
 						retries++;
 					}while(retries < 5 && transmit_status != TRANSMIT_NO_ERROR);*/
-					return RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMIT;
+					return RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMITTED;
 				}
 			}
 			//The message wasn't for this device, abort. Not an error as everything is normal
