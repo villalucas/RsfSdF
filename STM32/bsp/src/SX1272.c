@@ -3803,7 +3803,7 @@ float BSP_SX1272_timeOnAir( uint16_t payloadlength )
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_setPayload(char *payload)
+uint8_t BSP_SX1272_setPayload(char *payload, uint8_t size_payload)
 {
 	uint8_t state = 2;
 	uint8_t state_f = 2;
@@ -3815,7 +3815,7 @@ uint8_t BSP_SX1272_setPayload(char *payload)
 	#endif
 
 	state = 1;
-	length16 = (uint16_t)strlen(payload);
+	length16 = (uint16_t)size_payload;
 	state = BSP_SX1272_truncPayload(length16);
 	if( state == 0 )
 	{
@@ -3889,7 +3889,7 @@ uint8_t BSP_SX1272_setPayload(char *payload)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_setPacket(uint8_t dest, char *payload)
+uint8_t BSP_SX1272_setPacket(uint8_t dest, char *payload, uint8_t size_payload)
 {
 	int8_t state = 2;
 	uint8_t st0;
@@ -3915,7 +3915,7 @@ uint8_t BSP_SX1272_setPacket(uint8_t dest, char *payload)
 		state = BSP_SX1272_setDestination(dest);
 		if( state == 0 )
 		{
-			state = BSP_SX1272_setPayload(payload);
+			state = BSP_SX1272_setPayload(payload, size_payload);
 		}
 	}
 	else
@@ -4172,9 +4172,9 @@ uint8_t BSP_SX1272_sendWithTimeout(uint32_t wait)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketMAXTimeout(uint8_t dest, char *payload)
+uint8_t BSP_SX1272_sendPacketMAXTimeout(uint8_t dest, char *payload, uint8_t size_payload)
 {
-	return BSP_SX1272_sendPacketTimeout(dest, payload, MAX_TIMEOUT);
+	return BSP_SX1272_sendPacketTimeout(dest, payload, MAX_TIMEOUT, size_payload);
 }
 
 /*
@@ -4198,7 +4198,7 @@ uint8_t BSP_SX1272_sendPacketMAXTimeout(uint8_t dest, char *payload)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait)
+uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload)
 {
 	uint8_t state = 2;
 
@@ -4208,7 +4208,7 @@ uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait)
 		my_printf("Passe dans sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait)\r\n");
 	#endif
 
-	state = BSP_SX1272_setPacket(dest, payload);	// Setting a packet with 'dest' destination
+	state = BSP_SX1272_setPacket(dest, payload, size_payload);	// Setting a packet with 'dest' destination
 	if (state == 0)								// and writing it in FIFO.
 	{
 		state = BSP_SX1272_sendWithTimeout(wait);	// Sending the packet
@@ -4260,9 +4260,9 @@ uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketMAXTimeoutACK(uint8_t dest, char *payload)
+uint8_t BSP_SX1272_sendPacketMAXTimeoutACK(uint8_t dest, char *payload, uint8_t size_payload)
 {
-	return BSP_SX1272_sendPacketTimeoutACK(dest, payload, MAX_TIMEOUT);
+	return BSP_SX1272_sendPacketTimeoutACK(dest, payload, MAX_TIMEOUT, size_payload);
 }
 
 /*
@@ -4294,9 +4294,7 @@ uint8_t BSP_SX1272_sendPacketMAXTimeoutACK(uint8_t dest, char *payload)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketTimeoutACK(	uint8_t dest,
-											char *payload,
-											uint32_t wait)
+uint8_t BSP_SX1272_sendPacketTimeoutACK(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload)
 {
 	uint8_t state = 2;
 	uint8_t state_f = 2;
@@ -4306,7 +4304,7 @@ uint8_t BSP_SX1272_sendPacketTimeoutACK(	uint8_t dest,
 		my_printf("Starting 'sendPacketTimeouACK'\r\n");
 	#endif
 
-	state = BSP_SX1272_sendPacketTimeout(dest, payload, wait);	// Sending packet to 'dest' destination
+	state = BSP_SX1272_sendPacketTimeout(dest, payload, wait, size_payload);	// Sending packet to 'dest' destination
 	if( state == 0 )
 	{
 		state = BSP_SX1272_receive();	// Setting Rx mode to wait an currentstate.ACK
@@ -4559,10 +4557,9 @@ uint8_t BSP_SX1272_getACK(uint32_t wait)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketMAXTimeoutACKRetries(	uint8_t dest,
-													char  *payload)
+uint8_t BSP_SX1272_sendPacketMAXTimeoutACKRetries(uint8_t dest, char *payload, uint8_t size_payload)
 {
-	return BSP_SX1272_sendPacketTimeoutACKRetries(dest, payload, MAX_TIMEOUT);
+	return BSP_SX1272_sendPacketTimeoutACKRetries(dest, payload, MAX_TIMEOUT, size_payload);
 }
 
 /*
@@ -4595,9 +4592,7 @@ uint8_t BSP_SX1272_sendPacketMAXTimeoutACKRetries(	uint8_t dest,
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest,
-												char *payload,
-												uint32_t wait)
+uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload)
 {
 	uint8_t state = 2;
 
@@ -4610,7 +4605,7 @@ uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest,
 	state = 1;
 	while( (state != 0) && (currentstate._retries <= currentstate._maxRetries) )
 	{
-		state = BSP_SX1272_sendPacketTimeoutACK(dest, payload, wait);
+		state = BSP_SX1272_sendPacketTimeoutACK(dest, payload, wait, size_payload);
 		currentstate._retries++;
 	}
 	currentstate._retries = 0;

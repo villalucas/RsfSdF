@@ -16,6 +16,7 @@
 #define MSG_RETRY_DELAY_MIN			50
 #define MSG_RETRY_DELAY_MAX			500
 
+#define	FORCE_CRC_ERROR				0
 
 // TARGET Transmitter mode
 #ifdef TRANSMITTER

@@ -49,16 +49,18 @@
 #define RECEIVE_ERROR_UNKNOWN_CASE						7
 #define RECEIVE_ERROR_ACK_TIMEOUT						8
 
-#define TRANSMIT_NO_ERROR			0
-#define	TRANSMIT_ERROR				1
-#define	TRANSMIT_TIMEOUT_ERROR		2
-#define	TRANSMIT_ERROR_CONFIG		3
+#define TRANSMIT_NO_ERROR				0
+#define	TRANSMIT_ERROR					1
+#define	TRANSMIT_TIMEOUT_ERROR			2
+#define	TRANSMIT_ERROR_CONFIG			3
 
-#define SEND_MSG_ENCODED_FLAG 		1
-#define SEND_ACK_ENCODED_FLAG 		0
+#define SEND_MSG_ENCODED_FLAG 			1
+#define SEND_ACK_ENCODED_FLAG 			0
 
+#define OFFSET_MSG_PAYLOAD_SIZE	7
+#define OFFSET_ACK_PAYLOAD_SIZE	6
 // Defines debug
-#define DEBUG_FLAG 					1
+#define DEBUG_FLAG 		1
 
 // Functions
 void APP_SX1272_setup(id_frame_t device);
