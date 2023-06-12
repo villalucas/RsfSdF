@@ -12,7 +12,7 @@
 
 #include <stdint.h>
 
-#define SIZE_MSG_MAX		50
+#define SIZE_MSG_MAX		49
 #define SIZEOF_ACK			6
 
 #define SOF_MSG_SYMBOL		'S'
@@ -101,6 +101,8 @@ uint8_t BSP_FRAMES_decodeAckFrame(uint8_t *payload, ack_frame_t *output_frame);
 void BSP_FRAMES_encodeAckFrame(ack_frame_t *ack_to_encode, uint8_t *frame_encoded);
 void BSP_FRAMES_encodeMsgFrame(msg_frame_t *msg_to_encode, uint8_t *frame_encoded);
 void BSP_FRAMES_createMsgFrame(msg_frame_t *received_msg, char *msg, id_frame_t device);
+void BSP_FRAMES_printMSGFrame(msg_frame_t *received_msg);
+void BSP_FRAMES_printACKFrame(ack_frame_t *received_ack);
 
 
 #endif /* APP_INC_FRAMES_H_ */

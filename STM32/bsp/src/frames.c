@@ -185,4 +185,47 @@ void BSP_FRAMES_createMsgFrame(msg_frame_t *received_msg, char *msg, id_frame_t 
 
 }
 
+void BSP_FRAMES_printMSGFrame(msg_frame_t *received_msg){
+	/* MSG Frame struct :
+	uint8_t sof;
+	id_frame_t src;
+	id_frame_t dest;
+	uint8_t size;
+	uint8_t msg[SIZE_MSG_MAX];
+	uint16_t crc;
+	uint8_t eof;
+	 */
+
+	my_printf("SOF : %c \r\n", received_msg->sof);
+	my_printf("SRC : Channel %d , Address %d \r\n", received_msg->src.channel, received_msg->src.address);
+	my_printf("DEST : Channel %d , Address %d \r\n", received_msg->dest.channel, received_msg->dest.address);
+	my_printf("Size : %d \r\n", received_msg->size);
+	my_printf("Message : ");
+	for(int i =0; i<received_msg->size; i++){
+		my_printf("%c",received_msg->msg[i]);
+	}
+	my_printf("\r\n");
+	my_printf("CRC : 0x%x \r\n",received_msg->crc);
+	my_printf("EOF : %c \r\n",received_msg->eof);
+
+}
+
+void BSP_FRAMES_printACKFrame(ack_frame_t *received_ack){
+	/* ACK Frame struct :
+	uint8_t sof;
+	id_frame_t src;
+	id_frame_t dest;
+	uint16_t crc;
+	uint8_t eof;
+	 */
+
+	my_printf("SOF : %c \r\n", received_ack->sof);
+	my_printf("SRC : Channel %d , Address %d \r\n", received_ack->src.channel, received_ack->src.address);
+	my_printf("DEST : Channel %d , Address %d \r\n", received_ack->dest.channel, received_ack->dest.address);
+	my_printf("CRC : 0x%x \r\n",received_ack->crc);
+	my_printf("EOF : %c \r\n",received_ack->eof);
+
+}
+
+
 
