@@ -36,7 +36,7 @@
 
 #define MaxNbRetries 3
 #define WaitTxMax 3000 //en ms
-#define WaitRxMax 30000 //en ms
+#define WaitRxMax 3000 //en ms
 
 //Error Defines
 #define RECEIVE_NO_ERROR								0
