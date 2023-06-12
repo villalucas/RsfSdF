@@ -10,7 +10,9 @@
 #ifndef APP_INC_FRAMES_H_
 #define APP_INC_FRAMES_H_
 
-#define SIZE_MSG_MAX		15
+#include <stdint.h>
+
+#define SIZE_MSG_MAX		50
 #define SIZEOF_ACK			6
 
 #define SOF_MSG_SYMBOL		'S'

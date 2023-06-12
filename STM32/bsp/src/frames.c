@@ -5,7 +5,6 @@
  * @version 0.1
  * @date 17 mai 2023
  */
-#include <stdint.h>
 #include "frames.h"
 #include "main.h"
 

@@ -15,17 +15,20 @@
 #include "LED_control.h"
 #include "delay.h"
 #include "stdlib.h"
-
-
-#include "frames.h"
+#include "device.h"
 
 static void SystemClock_Config();
 
 int main()
 {
-	uint32_t curtime=0;
-	uint32_t timeout_init=0;
-	uint32_t i=0;
+	uint32_t curtime = 0;
+	uint32_t timeout_init = 0;
+	uint32_t i = 0;
+
+	id_frame_t device;
+
+	uint8_t		transmit_status;
+	msg_frame_t transmit_msg;
 
 	uint8_t		receive_status;
 	msg_frame_t received_msg;
@@ -42,30 +45,18 @@ int main()
 	BSP_SPI1_Init();
 	// Initialize Debug Console
 	BSP_Console_Init();
+	my_printf("\nMain : Console ready!\r\n");
+
 	// Initialize LEDs
-	LedInit();
+	BSP_LED_CONTROL_ledInit();
+	my_printf("Main : Leds ready!\r\n");
+
+	APP_DEVICE_init(&device);
+	my_printf("Main : devide init!\r\n");
 
 	// Channels LED test
-	LedChannelTest();
-
-	my_printf("Console ready!\r\n");
-
-	///////////////////////////////////////////
-	//setup SX1272 on channel 1
-	id_frame_t device;
-
-
-#ifdef TRANSMITTER
-	device.address = 1;
-	uint8_t		transmit_status;
-	msg_frame_t transmit_msg;
-#endif
-#ifdef RECEIVER
-	device.address = 2;
-#endif
-
-	device.channel = 1;
-
+	BSP_LED_CONTROL_ledChannelTest();
+	my_printf("Main: Leds test channel\r\n");
 
 	APP_SX1272_setup(device);
 
@@ -87,10 +78,7 @@ int main()
 
 		transmit_status = APP_SX1272_SendMsg(device, &transmit_msg, 5);
 		my_printf("Transmit status : %d", transmit_status);
-
-
-
-#endif
+		#endif
 
 #ifdef RECEIVER
 		receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
@@ -104,7 +92,7 @@ int main()
 		{
 			my_printf("Main_Receiver : ERROR\r\n");
 		}
-#endif
+		#endif
 		i++;
 	}
 }

@@ -35,8 +35,8 @@
 #define PreambLong 12//12
 
 #define MaxNbRetries 3
-#define WaitTxMax 5000 //en ms
-#define WaitRxMax 10000 //en ms
+#define WaitTxMax 3000 //en ms
+#define WaitRxMax 30000 //en ms
 
 //Error Defines
 #define RECEIVE_NO_ERROR								0
@@ -54,6 +54,13 @@
 #define	TRANSMIT_TIMEOUT_ERROR		2
 #define	TRANSMIT_ERROR_CONFIG		3
 
+#define SEND_MSG_ENCODED_FLAG 		1
+#define SEND_ACK_ENCODED_FLAG 		0
+
+// Defines debug
+#define DEBUG_FLAG 					1
+
+// Functions
 void APP_SX1272_setup(id_frame_t device);
 uint8_t APP_SX1272_SendMsg(id_frame_t device, msg_frame_t *message, uint8_t nbRetries);
 uint8_t APP_SX1272_trySendMsg(id_frame_t device, msg_frame_t *message);
