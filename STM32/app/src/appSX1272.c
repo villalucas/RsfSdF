@@ -408,8 +408,8 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 		my_printf("%d", currentstate.packet_received.length);
 		my_printf(" ;\n\r");
 		#endif
-#if DEBUG_FLAG > 0
-		my_printf("DATA : ");
+#if DEBUG_FLAG > 2
+		my_printf("\n\rDATA : ");
 		for (uint8_t i = 0;	i < currentstate.packet_received.length - OFFSET_PAYLOADLENGTH;	i++) {
 			my_printf("%c", currentstate.packet_received.data[i]);
 			my_printf(" ");

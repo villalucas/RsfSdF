@@ -16,24 +16,26 @@
 #include "delay.h"
 #include "stdlib.h"
 #include "device.h"
+#include <string.h>
 
 static void SystemClock_Config();
 
 int main()
 {
-	uint32_t curtime = 0;
-	uint32_t timeout_init = 0;
 	uint32_t i = 0;
-
 	id_frame_t device;
 
+#ifdef TRANSMITTER
+	char msg_to_send[] = "Evan";
 	uint8_t		transmit_status;
 	msg_frame_t transmit_msg;
+	#endif
 
+#ifdef RECEIVER
 	uint8_t		receive_status;
 	msg_frame_t received_msg;
 	ack_frame_t received_ack;
-
+	#endif
 
 	// Initialize System clock to 48MHz from external clock
 	SystemClock_Config();
@@ -60,24 +62,20 @@ int main()
 
 	APP_SX1272_setup(device);
 
+
+
 	while(1)
 	{
-		curtime=BSP_millis();
 #ifdef TRANSMITTER
 		transmit_msg.src.address = device.address;
 		transmit_msg.src.channel = device.channel;
 		transmit_msg.dest.address = 2;
 		transmit_msg.dest.channel = device.channel;
-		transmit_msg.size = 6;
-		transmit_msg.msg[0] = 'V';
-		transmit_msg.msg[1] = '1';
-		transmit_msg.msg[2] = ' ';
-		transmit_msg.msg[3] = 'E';
-		transmit_msg.msg[4] = 'N';
-		transmit_msg.msg[5] = 'D';
+		strcpy((char*)transmit_msg.msg, msg_to_send);
+		transmit_msg.size = strlen(msg_to_send);
 
 		transmit_status = APP_SX1272_SendMsg(device, &transmit_msg, 5);
-		my_printf("Transmit status : %d", transmit_status);
+		my_printf("Transmit status : %d\r\n", transmit_status);
 		#endif
 
 #ifdef RECEIVER

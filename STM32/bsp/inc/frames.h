@@ -12,7 +12,7 @@
 
 #include <stdint.h>
 
-#define SIZE_MSG_MAX		50
+#define SIZE_MSG_MAX		249
 #define SIZEOF_ACK			6
 
 #define SOF_MSG_SYMBOL		'S'
