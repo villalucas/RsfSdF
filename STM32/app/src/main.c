@@ -54,7 +54,7 @@ int main()
 	my_printf("Main : Leds ready!\r\n");
 
 	APP_DEVICE_init(&device);
-	my_printf("Main : devide init!\r\n");
+	my_printf("Main : Device init!\r\n");
 
 	// Channels LED test
 	BSP_LED_CONTROL_ledChannelTest();

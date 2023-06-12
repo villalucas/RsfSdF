@@ -424,10 +424,16 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 		case SOF_MSG_SYMBOL :
 			frame_type = SOF_MSG_SYMBOL;
 			crc_check = BSP_FRAMES_decodeMsgFrame(currentstate.packet_received.data, message_decode);
+#if	DEBUG_FLAG > 0
+			BSP_FRAMES_printMSGFrame(message_decode);
+#endif
 			break;
 		case SOF_ACK_SYMBOL :
 			frame_type = SOF_ACK_SYMBOL;
 			crc_check = BSP_FRAMES_decodeAckFrame(currentstate.packet_received.data, ack_decode);
+#if	DEBUG_FLAG > 0
+			BSP_FRAMES_printACKFrame(ack_decode);
+#endif
 			break;
 		default :
 			return RECEIVE_SOF_ERROR;
