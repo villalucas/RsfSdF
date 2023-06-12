@@ -71,9 +71,14 @@ int main()
 		transmit_msg.src.channel = device.channel;
 		transmit_msg.dest.address = 2;
 		transmit_msg.dest.channel = device.channel;
-		strcpy((char*)transmit_msg.msg, msg_to_send);
-		transmit_msg.size = strlen(msg_to_send);
-
+		if(strlen(msg_to_send) <= SIZE_MSG_MAX) {
+			strcpy((char*)transmit_msg.msg, msg_to_send);
+			transmit_msg.size = strlen(msg_to_send);
+		}
+		else {
+			strcpy((char*)transmit_msg.msg, "TEST");
+			transmit_msg.size = strlen("TEST");
+		}
 		transmit_status = APP_SX1272_SendMsg(device, &transmit_msg, 5);
 		my_printf("Transmit status : %d\r\n", transmit_status);
 		#endif
