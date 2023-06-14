@@ -62,7 +62,7 @@ void APP_SX1272_setup(id_frame_t device) {
 		#endif
 	} else {
 #if DEBUG_FLAG > 2
-		my_printfln(F("SX1272 setup : Problem of activation of SX1272 Module !"));
+		my_printf("SX1272 setup : Problem of activation of SX1272 Module !\r\n");
 		#endif
 		ConfigOK = 0;
 	}
