@@ -63,7 +63,7 @@
 #define        REG_RX_BW		    			0x12
 #define        REG_IRQ_FLAGS	    			0x12
 #define        REG_AFC_BW		    			0x13
-#define        REG_RX_NB_uint8_tS	    			0x13
+#define        REG_RX_NB_uint8_tS	    		0x13
 #define        REG_OOK_PEAK	    				0x14
 #define        REG_RX_HEADER_CNT_VALUE_MSB  	0x14
 #define        REG_OOK_FIX	    				0x15
@@ -406,6 +406,9 @@ int _temp;
 
 // Variable : current timeout to send a packet.
 uint16_t _sendTime;
+
+// Variable : last read of the IrqFlags register.
+uint8_t _irqFlags;
 
 }SX1272status;
 
@@ -947,13 +950,7 @@ uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest, char *payload, uint
 /* It stores in global '_temp' variable the module temperature.
 \return '0' on success, '1' otherwise */
 uint8_t BSP_SX1272_getTemp();
+uint8_t BSP_SX1272_cadDetected(unsigned long timeout);
 
-
-/*
-Function: It sets the CAD mode to search Channel Activity Detection
-Returns: Integer that determines if there has been any error
-state = true   --> Channel Activity Detected
-state = false  --> Channel Activity NOT Detected*/
-uint8_t BSP_SX1272_cadDetected();
 
 #endif /* BSP_INC_SX1272_H_ */

@@ -3195,14 +3195,10 @@ uint8_t	BSP_SX1272_availableData(uint32_t wait)
 	if( currentstate._modem == LORA )
 	{
 		/// LoRa mode
-		// read REG_IRQ_FLAGS
-		value = BSP_SX1272_Read(REG_IRQ_FLAGS);
-
 		// Wait to ValidHeader interrupt in REG_IRQ_FLAGS
-		while( (bitRead(value, 4) == 0) && (millis()-previous < (unsigned long)wait) )
-		{
+		while((bitRead(currentstate._irqFlags, 4) == 0) && (millis()-previous < (unsigned long)wait)){
 			// read REG_IRQ_FLAGS
-			value = BSP_SX1272_Read(REG_IRQ_FLAGS);
+			currentstate._irqFlags = BSP_SX1272_Read(REG_IRQ_FLAGS);
 
 			// Condition to avoid an overflow (DO NOT REMOVE)
 			if( millis() < previous )
@@ -3212,13 +3208,13 @@ uint8_t	BSP_SX1272_availableData(uint32_t wait)
 		}
 
 		// Check if ValidHeader was received
-		if( bitRead(value, 4) == 1 )
+		if( bitRead(currentstate._irqFlags, 4) == 1 )
 		{
 			#if (SX1272_debug_mode > 0)
 				my_printf("## Valid Header received in LoRa mode ##\r\n");
 			#endif
 			currentstate._hreceived = 1;
-			while( (header == 0) && (millis()-previous < (unsigned long)wait) )
+			/*while( (header == 0) && (millis()-previous < (unsigned long)wait) )
 			{
 				// Wait for the increment of the RX buffer pointer
 				header = BSP_SX1272_Read(REG_FIFO_RX_BASE_ADDR);
@@ -3234,7 +3230,8 @@ uint8_t	BSP_SX1272_availableData(uint32_t wait)
 			if( header != 0 )
 			{
 				currentstate._destination = BSP_SX1272_Read(REG_FIFO);
-			}
+			}*/
+			currentstate._destination = BSP_SX1272_Read(REG_FIFO);
 		}
 		else
 		{
@@ -3400,14 +3397,8 @@ int8_t BSP_SX1272_getPacket(uint32_t wait)
 	if( currentstate._modem == LORA )
 	{
 		/// LoRa mode
-		// read REG_IRQ_FLAGS
-		value = BSP_SX1272_Read(REG_IRQ_FLAGS);
-
-		// Wait until the packet is received (RxDone flag) or the timeout expires
-		while( (bitRead(value, 6) == 0) && (millis()-previous < (unsigned long)wait) )
-		{
-			value = BSP_SX1272_Read(REG_IRQ_FLAGS);
-
+		while( (bitRead(currentstate._irqFlags, 6) == 0) && (millis()-previous < (unsigned long)wait) ) {
+			currentstate._irqFlags = BSP_SX1272_Read(REG_IRQ_FLAGS);
 			// Condition to avoid an overflow (DO NOT REMOVE)
 			if( millis() < previous )
 			{
@@ -3416,8 +3407,7 @@ int8_t BSP_SX1272_getPacket(uint32_t wait)
 		}
 
 		// Check if 'RxDone' is 1 and 'PayloadCrcError' is correct
-		if( (bitRead(value, 6) == 1) && (bitRead(value, 5) == 0) )
-		{
+		if( (bitRead(currentstate._irqFlags, 6) == 1) && (bitRead(currentstate._irqFlags, 5) == 0) ) {
 			// packet received & CRC correct
 			p_received = 1;	// packet correctly received
 			currentstate._reception = CORRECT_PACKET;
@@ -3427,8 +3417,7 @@ int8_t BSP_SX1272_getPacket(uint32_t wait)
 		}
 		else
 		{
-			if( bitRead(value, 6) != 1 )
-			{
+			if( bitRead(currentstate._irqFlags, 6) != 1 ) {
 				#if (SX1272_debug_mode > 0)
 					my_printf("NOT 'RxDone' flag\r\n");
 				#endif
@@ -3441,8 +3430,7 @@ int8_t BSP_SX1272_getPacket(uint32_t wait)
 				#endif
 			}
 
-			if( (bitRead(value, 5) == 0) && (currentstate._CRC == CRC_ON) )
-			{
+			if( (bitRead(currentstate._irqFlags, 5) == 0) && (currentstate._CRC == CRC_ON) ) {
 				// CRC is correct
 				currentstate._reception = CORRECT_PACKET;
 			}
@@ -4712,9 +4700,9 @@ uint8_t BSP_SX1272_getTemp()
    state = 1   --> Channel Activity Detected
    state = 0  --> Channel Activity NOT Detected
 */
-uint8_t BSP_SX1272_cadDetected()
+uint8_t BSP_SX1272_cadDetected(unsigned long timeout)
 {
-	uint8_t val = 0;
+	uint8_t state = 2;
 
 	// get actual time
 	unsigned long time = millis();
@@ -4727,7 +4715,7 @@ uint8_t BSP_SX1272_cadDetected()
 
 	#if (SX1272_debug_mode > 1)
 		my_printf("Inside CAD DETECTION -> RSSI: ");
-		my_printf("%d",currentstate._RSSI);
+		my_printf("%d\n\r",currentstate._RSSI);
 	#endif
 
 	if( currentstate._modem == LORA )
@@ -4737,31 +4725,31 @@ uint8_t BSP_SX1272_cadDetected()
 		#endif
 
 		// Setting LoRa CAD mode
-		BSP_SX1272_Write(REG_OP_MODE,0x87);
+		BSP_SX1272_Write(REG_OP_MODE,0x87); //8 = 1000 = Lora ; 7 = 0111 = CAD
 	}
 
 	// Wait for IRQ CadDone
-    val = BSP_SX1272_Read(REG_IRQ_FLAGS);
-    while((bitRead(val,2) == 0) && (millis()-time)<10000 )
+    do
     {
-      val = BSP_SX1272_Read(REG_IRQ_FLAGS);
-    }
+    	currentstate._irqFlags = BSP_SX1272_Read(REG_IRQ_FLAGS);
+    }while((bitRead(currentstate._irqFlags,2) == 0) && ((millis()-time) < timeout));
+
 
 	// After waiting or detecting CadDone
 	// check 'CadDetected' bit in 'RegIrqFlags' register
-    if(bitRead(val,0) == 1)
+    if(bitRead(currentstate._irqFlags,0) == 1)
     {
+    	state = 1;
 		#if (SX1272_debug_mode > 1)
-			my_printf("CAD 1\r\n");
+			my_printf("CAD 1 : %d\r\n", currentstate._irqFlags);
 		#endif
-		return 1;
 	}
-
-	#if (SX1272_debug_mode > 1)
-		my_printf("CAD 0\r\n");
-	#endif
-	return 0;
-
+    else
+    {
+    	state = 0;
+		#if (SX1272_debug_mode > 1)
+			my_printf("CAD 0 : %d\r\n", currentstate._irqFlags);
+		#endif
+    }
+	return state;
 }
-
-
