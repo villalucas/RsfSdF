@@ -278,14 +278,14 @@ uint8_t APP_SX1272_runTransmitMsg(id_frame_t device, msg_frame_t *message) {
 	#endif
 
 	uint8_t dest_address = TX_Addr;
-
+	uint8_t size_payload = message->size + OFFSET_MSG_PAYLOAD_SIZE; // Msg size + 7 Bytes used by the protocol
 	// Transmit a packet continuously with a pause of "waitPeriod"
 	if (ConfigOK == 1) {
 			BSP_LED_CONTROL_ledOn(LED_TX);	// TX LED On state for transmission
 
 			uint8_t message_encoded[SIZE_MSG_MAX+7];
 			BSP_FRAMES_encodeMsgFrame(message, message_encoded);
-			e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)message_encoded,WaitTxMax);
+			e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)message_encoded, WaitTxMax, size_payload);
 
 			BSP_LED_CONTROL_ledOff(LED_TX);
 		if (type_modulation) {
@@ -326,8 +326,10 @@ uint8_t APP_SX1272_runTransmitAck(id_frame_t device, ack_frame_t *ack) {
 			BSP_LED_CONTROL_ledOn(LED_TX);	// TX LED On state for transmission
 
 			uint8_t ack_encoded[SIZE_MSG_MAX+7];
+			uint8_t size_payload = OFFSET_ACK_PAYLOAD_SIZE;
+
 			BSP_FRAMES_encodeAckFrame(ack, ack_encoded);
-			e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)ack_encoded,WaitTxMax);
+			e = BSP_SX1272_sendPacketTimeout(dest_address, (char*)ack_encoded,WaitTxMax, size_payload);
 
 			BSP_LED_CONTROL_ledOff(LED_TX);
 		if (type_modulation) {

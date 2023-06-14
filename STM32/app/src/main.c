@@ -26,7 +26,7 @@ int main()
 	id_frame_t device;
 
 #ifdef TRANSMITTER
-	char msg_to_send[] = "Evan";
+	char msg_to_send[] = "Evan test";
 	uint8_t		transmit_status;
 	msg_frame_t transmit_msg;
 	#endif
@@ -58,7 +58,7 @@ int main()
 
 	// Channels LED test
 	BSP_LED_CONTROL_ledChannelTest();
-	my_printf("Main: Leds test channel\r\n");
+	my_printf("Main : Leds test channel\r\n");
 
 	APP_SX1272_setup(device);
 
