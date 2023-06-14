@@ -89,7 +89,7 @@ int main()
 		}
 #endif
 
-		#endif
+#endif
 
 #ifdef RECEIVER
 
@@ -107,8 +107,8 @@ int main()
 			{
 				my_printf("Main_Receiver : ERROR\r\n");
 			}
-			#endif
 		}
+			#endif
 		i++;
 	}
 }
