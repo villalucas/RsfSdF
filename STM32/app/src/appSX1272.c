@@ -453,14 +453,14 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
 
 		//Check if payload is meant for this device
 		if(frame_type == SOF_ACK_SYMBOL){
-			if(ack_decode->dest.address == device.address && ack_decode->dest.channel == device.channel ){
+			if(ack_decode->dest.address == device.address){
 				return RECEIVE_ACK_RECEIVED;
 			}
 			//The message wasn't for this device, abort and return WRONG_DESTINARY
 			else return RECEIVE_WRONG_DESTINARY;
 		}
 		if(frame_type == SOF_MSG_SYMBOL){
-			if(message_decode->dest.address == device.address && message_decode->dest.channel == device.channel ){
+			if(message_decode->dest.address == device.address){
 				transmit_ack.src.address = device.address;
 				transmit_ack.src.channel = device.channel;
 				transmit_ack.dest.address = message_decode->src.address;
@@ -512,6 +512,8 @@ uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ac
    - 0 : La commande a été exécutée sans erreur
 */
 uint8_t APP_SX1272_setFreq(id_frame_t device) {
+
+
 #if DEBUG_FLAG > 1
 	my_printf("SX1272 setFreq : start\r\n");
 	#endif
@@ -561,4 +563,76 @@ uint8_t APP_SX1272_setFreq(id_frame_t device) {
 		return 1;
     	}
 	return 2;
+}
+
+/**
+ * @brief Fonction pour ecouter sur chaque cannaux pour l apparition du preambule aec le module SX1272
+ * @param device Structure contenant les informations du périphérique.
+ * @param *message_decode Structure contenant message a recevoir dans le format du protocol.
+ * @param *ack_decode Structure contenant l acquittement a recevoir dans le format du protocol.
+ */
+	uint8_t APP_SX1272_pollingCAD(id_frame_t *device, unsigned long timeoutCH0, unsigned long timeoutCH1, unsigned long timeoutCH2)
+{
+	uint8_t state=0;
+	device->channel = 0;
+	do
+	{
+		switch(state){
+			case 0 :
+#if (DEBUG_FLAG > 1)
+					my_printf("CH0 !\r\n");
+				#endif
+				if(APP_SX1272_setFreq(*device) == 0) //set specific channel frequency before CAD
+				{
+					if (BSP_SX1272_cadDetected(timeoutCH0) == 1)
+					{
+						return CAD_MSG_DETECTED_CH0;
+					}
+					else
+					{
+						device->channel = 1;
+						state=1;
+					}
+				}
+				break;
+			case 1 :
+#if (DEBUG_FLAG > 1)
+					my_printf("CH1 !\r\n");
+				#endif
+				if(APP_SX1272_setFreq(*device) == 0) //set specific channel frequency before CAD
+				{
+					if (BSP_SX1272_cadDetected(timeoutCH1) == 1)
+					{
+						return CAD_MSG_DETECTED_CH1;
+					}
+					else
+					{
+						device->channel = 2;
+						state=2;
+					}
+				}
+				break;
+			case 2 :
+#if (DEBUG_FLAG > 1)
+					my_printf("CH2 !\r\n");
+				#endif
+				if(APP_SX1272_setFreq(*device) == 0) //set specific channel frequency before CAD
+				{
+					if (BSP_SX1272_cadDetected(timeoutCH2) == 1)
+					{
+						return CAD_MSG_DETECTED_CH2;
+					}
+					else
+					{
+						state=3;
+					}
+				}
+				break;
+			default :
+				return CAD_ERROR_UNKNOWN_CASE;
+				break;
+		}
+	}while(state != 3);
+
+	return CAD_MSG_NOT_DETECTED;
 }

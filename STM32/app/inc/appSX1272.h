@@ -57,6 +57,12 @@
 #define SEND_MSG_ENCODED_FLAG 			1
 #define SEND_ACK_ENCODED_FLAG 			0
 
+#define CAD_MSG_DETECTED_CH0			0
+#define CAD_MSG_DETECTED_CH1			1
+#define CAD_MSG_DETECTED_CH2			2
+#define CAD_MSG_NOT_DETECTED			3
+#define CAD_ERROR_UNKNOWN_CASE			4
+
 #define OFFSET_MSG_PAYLOAD_SIZE	7
 #define OFFSET_ACK_PAYLOAD_SIZE	6
 // Defines debug
@@ -70,5 +76,6 @@ uint8_t APP_SX1272_runTransmitMsg(id_frame_t device, msg_frame_t *message);
 uint8_t APP_SX1272_runTransmitAck(id_frame_t device, ack_frame_t *ack);
 uint8_t APP_SX1272_runReceive(id_frame_t device, msg_frame_t *message_decode, ack_frame_t *ack_decode);
 uint8_t APP_SX1272_setFreq(id_frame_t device);
+uint8_t APP_SX1272_pollingCAD(id_frame_t *device, unsigned long timeoutCH0, unsigned long timeoutCH1, unsigned long timeoutCH2);
 
 #endif /* APP_INC_APPSX1272_H_ */
