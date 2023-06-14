@@ -13,8 +13,8 @@
 
 
 //Defines
-#define MSG_RETRY_DELAY_MIN			50
-#define MSG_RETRY_DELAY_MAX			500
+#define MSG_RETRY_DELAY_MIN			200
+#define MSG_RETRY_DELAY_MAX			1500
 
 #define	FORCE_CRC_ERROR				0
 
