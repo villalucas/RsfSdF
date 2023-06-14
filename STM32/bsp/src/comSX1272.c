@@ -1,7 +1,7 @@
 /*
  * comSX1272.c
  *
- *  Created on: 24 août 2020
+ *  Created on: 24 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -64,8 +64,8 @@ void BSP_SPI1_Init()
 	SPI1->CR1 = 0x0000;
 	SPI1->CR2 = 0x0000;
 
-	// Set the baudrate to 48MHz /128 = 375kHz (slow, but easy to debug)
-	SPI1->CR1 |= 0x06 <<SPI_CR1_BR_Pos;
+	// Set the baudrate to 48MHz /8 = 6MHz
+	SPI1->CR1 |= 0x02 <<SPI_CR1_BR_Pos;
 
 	// Set data size to 8-bit
 	SPI1->CR2 |= 0x07 <<SPI_CR2_DS_Pos;

@@ -42,9 +42,8 @@
 #define WaitRxMax 10000 //en ms
 
 void APP_SX1272_setup();
-uint8_t APP_SX1272_pollingCAD(uint32_t freq); //setup with specific frequency
+uint8_t APP_SX1272_pollingCAD(unsigned long timeoutCH1, unsigned long timeoutCH3, unsigned long timeoutCH5);  //setup with specific frequency
 void APP_SX1272_runTransmit();
 void APP_SX1272_runReceive();
-uint8_t APP_SX1272_pollingCAD(uint32_t freq);
 
 #endif /* APP_INC_APPSX1272_H_ */

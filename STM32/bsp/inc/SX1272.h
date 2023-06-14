@@ -21,7 +21,7 @@
  * Definitions & Declarations
  *****************************************************************************/
 
-#define SX1272_debug_mode 0 //define debug_mode = 2 for debug
+#define SX1272_debug_mode 2 //define debug_mode = 2 for debug
 
 // pins used for SS and Reset signals of Arduino MEGA 2560 board (reset signal is optional)
 #define SX1272_RST  A0
@@ -405,6 +405,9 @@ int _temp;
 
 // Variable : current timeout to send a packet.
 uint16_t _sendTime;
+
+// Variable : last read of the IrqFlags register.
+uint8_t _irqFlags;
 
 }SX1272status;
 
