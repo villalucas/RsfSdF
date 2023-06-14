@@ -7,6 +7,7 @@
  */
 #include "frames.h"
 #include "main.h"
+#include "config.h"
 
 
 /**
@@ -177,6 +178,10 @@ void BSP_FRAMES_encodeMsgFrame(msg_frame_t *msg_to_encode, uint8_t *frame_encode
 	crc = BSP_FRAMES_packetComputeCrc(frame_encoded, msg_to_encode->size+4);
 	frame_encoded[msg_to_encode->size+4]= (uint8_t)(crc >> CRC_SHIFT); 	// fisrt Byte MSB
 	frame_encoded[msg_to_encode->size+5]= (uint8_t)(crc & CRC_MASK); 	// second Byte LSB
+#if FORCE_CRC_ERROR == 1
+	frame_encoded[msg_to_encode->size+4]+=1;
+	frame_encoded[msg_to_encode->size+5]+=1;
+#endif
 	frame_encoded[msg_to_encode->size+6]= EOF_SYMBOL;
 }
 
