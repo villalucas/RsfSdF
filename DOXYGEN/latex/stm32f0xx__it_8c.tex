@@ -1,0 +1,43 @@
+\doxysection{STM32/app/src/stm32f0xx\+\_\+it.c File Reference}
+\hypertarget{stm32f0xx__it_8c}{}\label{stm32f0xx__it_8c}\index{STM32/app/src/stm32f0xx\_it.c@{STM32/app/src/stm32f0xx\_it.c}}
+{\ttfamily \#include \"{}main.\+h\"{}}\newline
+{\ttfamily \#include \"{}stm32f0xx\+\_\+it.\+h\"{}}\newline
+{\ttfamily \#include \"{}stm32f0xx.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___templates_ga6ad7a5e3ee69cb6db6a6b9111ba898bc}{NMI\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles NMI exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___templates_ga2bffc10d5bd4106753b7c30e86903bea}{Hard\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Hard Fault exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___templates_ga3e5ddb3df0d62f2dc357e64a3f04a6ce}{SVC\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles SVCall exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___templates_ga6303e1f258cbdc1f970ce579cc015623}{Pend\+SV\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Pend\+SVC exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___templates_gab5e09814056d617c521549e542639b7e}{Sys\+Tick\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Sys\+Tick Handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32f0xx__it_8c_a9495a3e62ae7a6d724b9e9c0ca5e48f0}{TIM6\+\_\+\+DAC\+\_\+\+IRQHandler}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{stm32f0xx__it_8c_a54e5658daaca01a8fe5c04b420786be2}{timebase\+\_\+tick\+\_\+ms}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{stm32f0xx__it_8c_a9495a3e62ae7a6d724b9e9c0ca5e48f0}\label{stm32f0xx__it_8c_a9495a3e62ae7a6d724b9e9c0ca5e48f0} 
+\index{stm32f0xx\_it.c@{stm32f0xx\_it.c}!TIM6\_DAC\_IRQHandler@{TIM6\_DAC\_IRQHandler}}
+\index{TIM6\_DAC\_IRQHandler@{TIM6\_DAC\_IRQHandler}!stm32f0xx\_it.c@{stm32f0xx\_it.c}}
+\doxysubsubsection{\texorpdfstring{TIM6\_DAC\_IRQHandler()}{TIM6\_DAC\_IRQHandler()}}
+{\footnotesize\ttfamily void TIM6\+\_\+\+DAC\+\_\+\+IRQHandler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{stm32f0xx__it_8c_a54e5658daaca01a8fe5c04b420786be2}\label{stm32f0xx__it_8c_a54e5658daaca01a8fe5c04b420786be2} 
+\index{stm32f0xx\_it.c@{stm32f0xx\_it.c}!timebase\_tick\_ms@{timebase\_tick\_ms}}
+\index{timebase\_tick\_ms@{timebase\_tick\_ms}!stm32f0xx\_it.c@{stm32f0xx\_it.c}}
+\doxysubsubsection{\texorpdfstring{timebase\_tick\_ms}{timebase\_tick\_ms}}
+{\footnotesize\ttfamily uint32\+\_\+t timebase\+\_\+tick\+\_\+ms\hspace{0.3cm}{\ttfamily [extern]}}
+

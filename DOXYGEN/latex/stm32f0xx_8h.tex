@@ -1,0 +1,93 @@
+\doxysection{C\+:/\+Users/lucas/\+One\+Drive/\+Documents/\+Git\+Hub/\+Rsf\+Sd\+F/\+STM32/cmsis/device/inc/stm32f0xx.h File Reference}
+\hypertarget{stm32f0xx_8h}{}\label{stm32f0xx_8h}\index{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/cmsis/device/inc/stm32f0xx.h@{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/cmsis/device/inc/stm32f0xx.h}}
+
+
+CMSIS STM32\+F0xx Device Peripheral Access Layer Header File. ~\newline
+  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f0xx_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries STM32\+F0}
+\begin{DoxyCompactList}\small\item\em STM32 Family. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga66dd4a5456033130cc762ae237487dbb}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+MAIN}}~(0x02)
+\begin{DoxyCompactList}\small\item\em Comment the line below if you will not use the peripherals drivers. In this case, these drivers will not be included and the application code will be based on direct access to peripherals registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga27cda80c27dab2457fbd235e998db878}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB1}}~(0x03)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_gae421b39741c9fd5aa0f7d4ccf6b6b253}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB2}}~(0x04)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga745d01d9751b23c2157e1a6710d75235}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+RC}}~(0x00)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_gabdc7a0a890fd222cbd0c09e25a1cf438}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION}}
+\item 
+\#define {\bfseries IS\+\_\+\+FUNCTIONAL\+\_\+\+STATE}(STATE)~(((STATE) == DISABLE) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((STATE) == ENABLE))
+\item 
+\#define {\bfseries SET\+\_\+\+BIT}(REG,  BIT)~((REG) \texorpdfstring{$\vert$}{|}= (BIT))
+\item 
+\#define {\bfseries CLEAR\+\_\+\+BIT}(REG,  BIT)~((REG) \&= \texorpdfstring{$\sim$}{\string~}(BIT))
+\item 
+\#define {\bfseries READ\+\_\+\+BIT}(REG,  BIT)~((REG) \& (BIT))
+\item 
+\#define {\bfseries CLEAR\+\_\+\+REG}(REG)~((REG) = (0x0))
+\item 
+\#define {\bfseries WRITE\+\_\+\+REG}(REG,  VAL)~((REG) = (VAL))
+\item 
+\#define {\bfseries READ\+\_\+\+REG}(REG)~((REG))
+\item 
+\#define {\bfseries MODIFY\+\_\+\+REG}(REG,  CLEARMASK,  SETMASK)~WRITE\+\_\+\+REG((REG), (((READ\+\_\+\+REG(REG)) \& (\texorpdfstring{$\sim$}{\string~}(CLEARMASK))) \texorpdfstring{$\vert$}{|} (SETMASK)))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum Flag\+Status {\bfseries ITStatus}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___exported__types_ga89136caac2e14c55151f527ac02daaff}\label{group___exported__types_ga89136caac2e14c55151f527ac02daaff} 
+enum {\bfseries Flag\+Status} \{ {\bfseries RESET} = 0U
+, {\bfseries SET} = !\+RESET
+ \}
+\item 
+\Hypertarget{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}\label{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1} 
+enum {\bfseries Functional\+State} \{ {\bfseries DISABLE} = 0U
+, {\bfseries ENABLE} = !\+DISABLE
+ \}
+\item 
+\Hypertarget{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}\label{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8} 
+enum {\bfseries Error\+Status} \{ {\bfseries SUCCESS} = 0U
+, {\bfseries ERROR} = !\+SUCCESS
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CMSIS STM32\+F0xx Device Peripheral Access Layer Header File. ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team \begin{DoxyVerb}     The file is the unique include file that the application programmer
+     is using in the C source code, usually in main.c. This file contains:
+      - Configuration section that allows to select:
+         - The STM32F0xx device used in the target application
+         - To use or not the peripheral’s drivers in application code(i.e. 
+           code will be based on direct access to peripheral’s registers 
+           rather than drivers API), this option is controlled by 
+           "#define USE_HAL_DRIVER"
+\end{DoxyVerb}
+
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2016 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \"{}\+License\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 

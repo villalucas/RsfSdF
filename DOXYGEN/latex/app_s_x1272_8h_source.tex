@@ -1,0 +1,66 @@
+\doxysection{app\+SX1272.\+h}
+\hypertarget{app_s_x1272_8h_source}{}\label{app_s_x1272_8h_source}\index{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/app/inc/appSX1272.h@{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/app/inc/appSX1272.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ appSX1272.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ 25\ ao{\ucr}t\ 2020}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Arnaud}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ APP\_INC\_APPSX1272\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ APP\_INC\_APPSX1272\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}SX1272.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Configuration\ du\ module\ en\ mode\ LoRA\ ou\ FSK}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//Main\ parameters\ (to\ be\ changed)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ TX\_Addr\ BROADCAST\_ADDR}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ RX\_Addr\ 8\ }\textcolor{comment}{//address\ of\ the\ node}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ OutPower\ POW\_14\ }\textcolor{comment}{//min\ -\/1,\ max\ 14}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ TypeModulation\ 0\ }\textcolor{comment}{//0:\ LORA,\ 1:FSK}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ PeriodTransmission\ 5000\ }\textcolor{comment}{//en\ ms}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//LORA\ configuration\ (to\ be\ changed)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ paramBW\ BW\_125\ }\textcolor{comment}{//BW\_125,\ BW\_250\ or\ BW\_500}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ paramCR\ CR\_5\ }\textcolor{comment}{//CR\_5}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ paramSF\ SF\_12\ }\textcolor{comment}{//SF\_7\ to\ SF\_12}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//FSK\ configuration\ (to\ be\ changed)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ BitRate\ BR1200bauds\ }\textcolor{comment}{//BR1200bauds\ or\ BR4800bauds}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ Fdev\ FDA5kHz}\textcolor{comment}{//FDA5kHz}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//Other\ common\ parameters\ (do\ not\ change!!)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ PreambLong\ 12}\textcolor{comment}{//12}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ MaxNbRetries\ 3}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ WaitTxMax\ 5000\ }\textcolor{comment}{//en\ ms}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ WaitRxMax\ 10000\ }\textcolor{comment}{//en\ ms}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//Error\ Defines}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ RECEIVE\_NO\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ RECEIVE\_CRC\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ RECEIVE\_SOF\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ RECEIVE\_WRONG\_DESTINARY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ RECEIVE\_ACK\_RECEIVED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ RECEIVE\_MSG\_RECEIVED\_ACK\_TRANSMIT\ \ \ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ RECEIVE\_MSG\_RECEIVED\_ACK\_NOT\_TRANSMIT\ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ RECEIVE\_ERROR\_UNKNOWN\_CASE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ TRANSMIT\_NO\_ERROR\ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ TRANSMIT\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ TRANSMIT\_TIMEOUT\_ERROR\ \ \ \ \ \ 2}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ TRANSMIT\_ERROR\_CONFIG\ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ APP\_SX1272\_setup(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
+\DoxyCodeLine{00057\ uint8\_t\ APP\_SX1272\_runTransmitMsg(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *message);}
+\DoxyCodeLine{00058\ uint8\_t\ APP\_SX1272\_runTransmitAck(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack);}
+\DoxyCodeLine{00059\ uint8\_t\ APP\_SX1272\_runReceive(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device,\ \mbox{\hyperlink{structmsg__frame__t}{msg\_frame\_t}}\ *message\_decode,\ \mbox{\hyperlink{structack__frame__t}{ack\_frame\_t}}\ *ack\_decode);}
+\DoxyCodeLine{00060\ uint8\_t\ APP\_SX1272\_setFreq(\mbox{\hyperlink{structid__frame__t}{id\_frame\_t}}\ device);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ APP\_INC\_APPSX1272\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

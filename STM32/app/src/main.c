@@ -1,23 +1,41 @@
 /*
  * main.c
  *
- *  Created on: 23 août 2020
+ *  Created on: 23 aoï¿½t 2020
  *      Author: Arnaud
  */
 
 #include "main.h"
+#include "config.h"
 #include "stm32f0xx.h"
 #include "bsp.h"
 #include "comSX1272.h"
 #include "SX1272.h"
 #include "appSX1272.h"
+#include "LED_control.h"
+#include "delay.h"
+#include "stdlib.h"
+#include "device.h"
+#include <string.h>
 
 static void SystemClock_Config();
 
 int main()
 {
-	uint32_t curtime=0;
-	uint32_t i=0;
+	uint32_t i = 0;
+	id_frame_t device;
+
+#ifdef TRANSMITTER
+	char msg_to_send[] = "Evan test";
+	uint8_t		transmit_status;
+	msg_frame_t transmit_msg;
+	#endif
+
+#ifdef RECEIVER
+	uint8_t		receive_status;
+	msg_frame_t received_msg;
+	ack_frame_t received_ack;
+	#endif
 
 	// Initialize System clock to 48MHz from external clock
 	SystemClock_Config();
@@ -29,26 +47,58 @@ int main()
 	BSP_SPI1_Init();
 	// Initialize Debug Console
 	BSP_Console_Init();
+	my_printf("\nMain : Console ready!\r\n");
 
-	my_printf("Console ready!\r\n");
+	// Initialize LEDs
+	BSP_LED_CONTROL_ledInit();
+	my_printf("Main : Leds ready!\r\n");
 
-	///////////////////////////////////////////
-	//setup SX1272
-	APP_SX1272_setup();
+	APP_DEVICE_init(&device);
+	my_printf("Main : Device init!\r\n");
+
+	// Channels LED test
+	BSP_LED_CONTROL_ledChannelTest();
+	my_printf("Main : Leds test channel\r\n");
+
+	APP_SX1272_setup(device);
+
+
 
 	while(1)
 	{
-		curtime=BSP_millis();
-
-		if((curtime%1000)==0)//send every 1000ms
-		{
-			APP_SX1272_runTransmit();
-			//APP_SX1272_runReceive();
-			i++;
+#ifdef TRANSMITTER
+		transmit_msg.src.address = device.address;
+		transmit_msg.src.channel = device.channel;
+		transmit_msg.dest.address = 2;
+		transmit_msg.dest.channel = device.channel;
+		if(strlen(msg_to_send) <= SIZE_MSG_MAX) {
+			strcpy((char*)transmit_msg.msg, msg_to_send);
+			transmit_msg.size = strlen(msg_to_send);
 		}
+		else {
+			strcpy((char*)transmit_msg.msg, "TEST");
+			transmit_msg.size = strlen("TEST");
+		}
+		transmit_status = APP_SX1272_SendMsg(device, &transmit_msg, 5);
+		my_printf("Transmit status : %d\r\n", transmit_status);
+		#endif
+
+#ifdef RECEIVER
+		receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
+		if(receive_status == RECEIVE_MSG_RECEIVED_ACK_TRANSMITTED){
+			my_printf("Main_Receiver : MSG for me received and ACK transmitted\r\n");
+		}
+		else if(receive_status == RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMITTED){
+			my_printf("Main_Receiver : MSG for me received and ACK not transmitted\r\n");
+		}
+		else
+		{
+			my_printf("Main_Receiver : ERROR\r\n");
+		}
+		#endif
+		i++;
 	}
 }
-
 /*
  * 	Clock configuration for the Nucleo STM32F072RB board
  * 	HSE input Bypass Mode 			-> 8MHz
@@ -57,7 +107,6 @@ int main()
  *
  *  Laurent Latorre - 05/08/2017
  */
-
 static void SystemClock_Config()
 {
 	uint32_t	HSE_Status;

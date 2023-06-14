@@ -1,7 +1,7 @@
 /*
  * SX1272.h
  *
- *  Created on: 24 août 2020
+ *  Created on: 24 aoï¿½t 2020
  *      Author: Arnaud
  */
 
@@ -9,6 +9,7 @@
 #define BSP_INC_SX1272_H_
 
 #include "stm32f0xx.h"
+#include "frames.h"
 #include <stdlib.h>
 #include <stdint.h>
 
@@ -697,7 +698,7 @@ uint8_t	BSP_SX1272_availableData(uint32_t wait);
 /* \param uint8_t dest : packet destination.
 \param char *payload : packet payload.
 \return '0' on success, '1' otherwise */
-uint8_t BSP_SX1272_setPacket(uint8_t dest, char *payload);
+uint8_t BSP_SX1272_setPacket(uint8_t dest, char *payload, uint8_t size_payload);
 
 // It writes a packet in FIFO in order to send it.
 /* \param uint8_t dest : packet destination.
@@ -734,7 +735,7 @@ uint8_t BSP_SX1272_sendWithTimeout(uint32_t wait);
 /* \param uint8_t dest : packet destination.
 \param char *payload : packet payload.
 \return '0' on success, '1' otherwise */
-uint8_t BSP_SX1272_sendPacketMAXTimeout(	uint8_t dest,char *payload);
+uint8_t BSP_SX1272_sendPacketMAXTimeout(uint8_t dest, char *payload, uint8_t size_payload);
 
 // It tries to send the packet which payload is a parameter before ending
 // MAX_TIMEOUT.
@@ -762,9 +763,8 @@ uint8_t BSP_SX1272_sendPacketMAXTimeout(	uint8_t dest,char *payload);
 \param char *payload : packet payload.
 \param uint32_t wait : time to wait.
 \return '0' on success, '1' otherwise */
-uint8_t BSP_SX1272_sendPacketTimeout(	uint8_t dest,
-							char *payload,
-							uint32_t wait);
+uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload);
+
 
 // It sends the packet which payload is a parameter before ending 'wait'
 // time.
@@ -848,9 +848,8 @@ uint8_t sendPacketMAXTimeoutACK(uint8_t dest,
 		'2'  --> The ACK has not been received
 		'1'  --> not used (reserved)
 		'0'  --> The ACK has been received with no errors */
-uint8_t BSP_SX1272_sendPacketTimeoutACK(	uint8_t dest,
-								char *payload,
-								uint32_t wait);
+uint8_t BSP_SX1272_sendPacketTimeoutACK(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload);
+
 
 // It sends the packet which payload is a parameter before 'wait' time,
 // and replies with ACK.
@@ -892,7 +891,6 @@ float BSP_SX1272_timeOnAir( uint16_t payloadlength );
 // It sets the payload of the packet that is going to be sent.
 /* \param char *payload : packet payload.
 \return '0' on success, '1' otherwise */
-uint8_t BSP_SX1272_setPayload(char *payload);
 
 // It sets the payload of the packet that is going to be sent.
 /*\param uint8_t payload: packet payload.
@@ -930,9 +928,8 @@ uint8_t BSP_SX1272_getACK(uint32_t wait);
 \param char *payload : packet payload.
 \param uint32_t wait : time to wait while trying to send the packet.
 \return '0' on success, '1' otherwise */
-uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest,
-									char *payload,
-									uint32_t wait);
+uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload);
+
 
 // It sends a packet, waits to receive an ACK and updates the _retries
 // value, before ending 'wait' time.

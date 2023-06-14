@@ -1,8 +1,12 @@
-/*
- * SX1272.c
+/**
+ * @file SX1272.c
+ * @brief Fichier source pour le module SX1272.
  *
- *  Created on: 24 ao�t 2020
- *      Author: Arnaud
+ * Ce fichier contient l'implémentation des fonctions pour le module SX1272.
+ * Il inclut les en-têtes nécessaires, tels que "comSX1272.h", "delay.h", "stdlib.h", "string.h", "math.h", "bsp.h" et "main.h".
+ * Il définit également la variable "currentstate" de type "SX1272status".
+ *
+ * @note Ce fichier est créé le 24 août 2020 par Arnaud.
  */
 
 #include "SX1272.h"
@@ -16,6 +20,18 @@
 
 SX1272status currentstate;
 
+/**
+ * @var SignalBwLog
+ * @brief Tableau contenant les valeurs de logarithme de la largeur de signal.
+ *
+ * Ce tableau contient les valeurs de logarithme de la largeur de signal.
+ * Les éléments du tableau représentent les valeurs suivantes :
+ * - SignalBwLog[0] : 5.0969100130080564143587833158265
+ * - SignalBwLog[1] : 5.397940008672037609572522210551
+ * - SignalBwLog[2] : 5.6989700043360188047862611052755
+ *
+ * @note Ce tableau est déclaré en tant que constante double.
+ */
 const double SignalBwLog[] =
 {
     5.0969100130080564143587833158265,
@@ -36,13 +52,19 @@ int max(float num1, float num2)
     return (num1 > num2 ) ? num1 : num2;
 }
 
-/*
- Function: Sets the module ON.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-*/
+/**
+ * @fn uint8_t BSP_SX1272_ON(int type_mod)
+ * @brief Active le module SX1272.
+ *
+ * Cette fonction active le module SX1272 en initialisant les variables internes et en configurant les paramètres par défaut.
+ *
+ * @param type_mod Le type de modulation à utiliser : 0 pour LoRa, autre valeur pour FSK.
+ * @return L'état d'activation du module SX1272 :
+ *         - 0 : activation réussie.
+ *         - 1 : échec de l'activation.
+ *
+ * @note Cette fonction assume que le module SX1272 est connecté et que les fonctions BSP_SPI1_Init() et BSP_DELAY_ms() sont disponibles.
+ */
 uint8_t BSP_SX1272_ON(int type_mod)
 {
 	uint8_t state = 2;
@@ -93,10 +115,16 @@ uint8_t BSP_SX1272_ON(int type_mod)
 	return state;
 }
 
-/*
- Function: Sets the module OFF.
- Returns: 0
-*/
+/**
+ * @fn void BSP_SX1272_OFF(int type_mod)
+ * @brief Désactive le module SX1272.
+ *
+ * Cette fonction désactive le module SX1272 en mettant le module en mode veille ou en mode veille selon le type de modulation.
+ *
+ * @param type_mod Le type de modulation utilisé : 0 pour LoRa, autre valeur pour FSK.
+ *
+ * @note Cette fonction assume que la fonction BSP_SX1272_Write() est disponible pour écrire dans les registres du module SX1272.
+ */
 void BSP_SX1272_OFF(int type_mod)
 {
 	if(type_mod==0)
@@ -111,15 +139,14 @@ void BSP_SX1272_OFF(int type_mod)
 	}
 }
 
-/*
- * Function: Clears the interruption flags
+/**
+ * @fn void BSP_SX1272_clearFlags()
+ * @brief Efface les indicateurs de drapeaux du module SX1272.
  *
- * LoRa Configuration registers are accessed through the SPI interface.
- * Registers are readable in all device mode including Sleep. However, they
- * should be written only in Sleep and Stand-by modes.
+ * Cette fonction efface les indicateurs de drapeaux du module SX1272. Les drapeaux sont effacés en mettant le module en mode veille, en écrivant dans les registres appropriés, puis en restaurant le mode précédent.
  *
- * Returns: Nothing
-*/
+ * @note Cette fonction assume que les fonctions BSP_SX1272_Read() et BSP_SX1272_Write() sont disponibles pour lire et écrire dans les registres du module SX1272.
+ */
 void BSP_SX1272_clearFlags()
 {
     uint8_t st0;
@@ -159,13 +186,19 @@ void BSP_SX1272_clearFlags()
 	}
 }
 
-/*
- Function: Sets the module in LoRa mode.
- Returns:  Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-*/
+/**
+ * @fn uint8_t BSP_SX1272_setLORA()
+ * @brief Configure le module SX1272 en mode LoRa.
+ *
+ * Cette fonction configure le module SX1272 en mode LoRa. Elle met d'abord le module en mode veille, puis en mode sommeil, et enfin en mode veille LoRa. Elle configure également les registres REG_MAX_PAYLOAD_LENGTH, REG_MODEM_CONFIG1 et REG_MODEM_CONFIG2 avec les valeurs par défaut appropriées.
+ *
+ * @return État de configuration du mode LoRa :
+ *     - 0 : Succès (mode LoRa configuré)
+ *     - 1 : Erreur (mode FSK actuel)
+ *     - 2 : Erreur (échec de configuration)
+ *
+ * @note Cette fonction assume que les fonctions BSP_SX1272_Read() et BSP_SX1272_Write() sont disponibles pour lire et écrire dans les registres du module SX1272.
+ */
 uint8_t BSP_SX1272_setLORA()
 {
     uint8_t state = 2;
@@ -211,13 +244,19 @@ uint8_t BSP_SX1272_setLORA()
 	return state;
 }
 
-/*
- Function: Sets the module in FSK mode.
- Returns:   Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-*/
+/**
+ * @fn uint8_t BSP_SX1272_setFSK()
+ * @brief Configure le module SX1272 en mode FSK.
+ *
+ * Cette fonction configure le module SX1272 en mode FSK. Elle met d'abord le module en mode sommeil LoRa, puis en mode sommeil FSK, et enfin en mode veille FSK. Elle configure également les registres REG_PACKET_CONFIG1, REG_FIFO_THRESH, REG_SYNC_CONFIG, REG_FDEV_MSB, REG_FDEV_LSB et REG_PACKET_CONFIG2 avec les valeurs appropriées pour le mode FSK.
+ *
+ * @return État de configuration du mode FSK :
+ *     - 0 : Succès (mode FSK configuré)
+ *     - 1 : Erreur (mode LoRa actuel)
+ *     - 2 : Erreur (échec de configuration)
+ *
+ * @note Cette fonction assume que les fonctions BSP_SX1272_Read() et BSP_SX1272_Write() sont disponibles pour lire et écrire dans les registres du module SX1272.
+ */
 uint8_t BSP_SX1272_setFSK()
 {
 	uint8_t state = 2;
@@ -284,13 +323,19 @@ uint8_t BSP_SX1272_setFSK()
 	return state;
 }
 
-/*
- Function: Gets the bandwidth, coding rate and spreading factor of the LoRa modulation.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-*/
+/**
+ * @fn uint8_t BSP_SX1272_getMode()
+ * @brief Récupère le mode actuel du module SX1272.
+ *
+ * Cette fonction récupère le mode actuel du module SX1272. Elle lit les registres REG_MODEM_CONFIG1 et REG_MODEM_CONFIG2 pour obtenir les paramètres de configuration du mode. Les valeurs des paramètres sont ensuite stockées dans les variables correspondantes de la structure `currentstate`. La fonction vérifie également si les valeurs des paramètres sont valides en utilisant les fonctions BSP_SX1272_isBW(), BSP_SX1272_isCR() et BSP_SX1272_isSF(). Le résultat de la vérification est retourné.
+ *
+ * @return État de récupération du mode :
+ *     - 0 : Succès (mode récupéré avec succès)
+ *     - 1 : Erreur (valeurs de paramètres invalides)
+ *     - 2 : Erreur (échec de récupération du mode)
+ *
+ * @note Cette fonction assume que les fonctions BSP_SX1272_Read() et BSP_SX1272_Write() sont disponibles pour lire et écrire dans les registres du module SX1272.
+ */
 uint8_t BSP_SX1272_getMode()
 {
 	uint8_t st0;
@@ -345,16 +390,14 @@ uint8_t BSP_SX1272_getMode()
 	return state;
 }
 
-/*
- Function: Sets the bandwidth, coding rate and spreading factor of the LoRa modulation.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-   state = -1 --> Forbidden command for this protocol
- Parameters:
-   mode: mode number to set the required BW, SF and CR of LoRa modem.
-*/
+/**
+ * @brief Set the mode of the SX1272 module.
+ *
+ * @param mode The mode to set.
+ * @return The state of the operation:
+ *         - 0: Success.
+ *         - -1: The indicated mode doesn't exist.
+ */
 int8_t BSP_SX1272_setMode(uint8_t mode)
 {
 	int8_t state = 2;
@@ -585,13 +628,25 @@ int8_t BSP_SX1272_setMode(uint8_t mode)
 	return state;
 }
 
-/*
- Function: Indicates if module is configured in implicit or explicit header mode.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-*/
+/**
+ * @brief Get the header mode of the SX1272 module.
+ *
+ * This function retrieves the header mode of the SX1272 module, which indicates whether the module operates in explicit header mode or implicit header mode.
+ *
+ * @return The state of the operation. 0 if successful, -1 if there was an error.
+ *
+ * @note In FSK mode, the header is not available.
+ *
+ * @par Example
+ * @code
+ * uint8_t state = BSP_SX1272_getHeader();
+ * if (state == 0) {
+ *     // Header mode retrieved successfully
+ * } else {
+ *     // Error occurred while retrieving header mode
+ * }
+ * @endcode
+ */
 uint8_t	BSP_SX1272_getHeader()
 {
 	int8_t state = 2;
@@ -640,14 +695,30 @@ uint8_t	BSP_SX1272_getHeader()
 	return state;
 }
 
-/*
- Function: Sets the module in explicit header mode (header is sent).
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-   state = -1 --> Forbidden command for this protocol
-*/
+/**
+ * @brief Enable explicit header mode on the SX1272 module.
+ *
+ * This function enables the explicit header mode on the SX1272 module, allowing the module to operate with headers in LoRa mode. In FSK mode, the header is not available.
+ *
+ * @return The state of the operation.
+ *         - 0 if the header has been activated successfully.
+ *         - 1 if the header activation was not confirmed.
+ *         - -1 if an error occurred or the header is not available in FSK mode.
+ *
+ * @note The header is mandatory to be off when the spreading factor (SF) is 6.
+ *
+ * @par Example
+ * @code
+ * int8_t state = BSP_SX1272_setHeaderON();
+ * if (state == 0) {
+ *     // Header activated successfully
+ * } else if (state == 1) {
+ *     // Header activation not confirmed
+ * } else {
+ *     // Error occurred or header not available in FSK mode
+ * }
+ * @endcode
+ */
 int8_t	BSP_SX1272_setHeaderON()
 {
   int8_t state = 2;
@@ -702,14 +773,28 @@ int8_t	BSP_SX1272_setHeaderON()
   return state;
 }
 
-/*
- Function: Sets the module in implicit header mode (header is not sent).
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-   state = -1 --> Forbidden command for this protocol
-*/
+/**
+ * @brief Disable explicit header mode on the SX1272 module.
+ *
+ * This function disables the explicit header mode on the SX1272 module, allowing the module to operate without headers in LoRa mode. In FSK mode, the header is not available.
+ *
+ * @return The state of the operation.
+ *         - 0 if the header has been deactivated successfully.
+ *         - 1 if the header deactivation was not confirmed.
+ *         - -1 if an error occurred or the header is not available in FSK mode.
+ *
+ * @par Example
+ * @code
+ * int8_t state = BSP_SX1272_setHeaderOFF();
+ * if (state == 0) {
+ *     // Header deactivated successfully
+ * } else if (state == 1) {
+ *     // Header deactivation not confirmed
+ * } else {
+ *     // Error occurred or header not available in FSK mode
+ * }
+ * @endcode
+ */
 int8_t	BSP_SX1272_setHeaderOFF()
 {
 	uint8_t state = 2;
@@ -764,13 +849,28 @@ int8_t	BSP_SX1272_setHeaderOFF()
 	return state;
 }
 
-/*
- Function: Indicates if module is configured with or without checking CRC.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-*/
+/**
+ * @brief Get the CRC configuration on the SX1272 module.
+ *
+ * This function retrieves the CRC (Cyclic Redundancy Check) configuration on the SX1272 module. In LoRa mode, it checks if the CRC is activated or deactivated based on the value of the RxPayloadCrcOn bit in REG_MODEM_CONFIG1. In FSK mode, it checks the value of the CrcOn bit in REG_PACKET_CONFIG1.
+ *
+ * @return The state of the CRC configuration.
+ *         - 0 if the CRC is deactivated.
+ *         - 1 if the CRC is activated.
+ *         - 2 if an error occurred.
+ *
+ * @par Example
+ * @code
+ * int8_t state = BSP_SX1272_getCRC();
+ * if (state == 0) {
+ *     // CRC is deactivated
+ * } else if (state == 1) {
+ *     // CRC is activated
+ * } else {
+ *     // Error occurred while getting the CRC configuration
+ * }
+ * @endcode
+ */
 uint8_t	BSP_SX1272_getCRC()
 {
 	int8_t state = 2;
@@ -840,13 +940,28 @@ uint8_t	BSP_SX1272_getCRC()
 	return state;
 }
 
-/*
- Function: Sets the module with CRC on.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-*/
+/**
+ * @brief Enable CRC (Cyclic Redundancy Check) on the SX1272 module.
+ *
+ * This function enables CRC on the SX1272 module. In LoRa mode, it sets the RxPayloadCrcOn bit in REG_MODEM_CONFIG1. In FSK mode, it sets the CrcOn bit in REG_PACKET_CONFIG1.
+ *
+ * @return The state of the operation.
+ *         - 0 if CRC has been activated successfully.
+ *         - 1 if the CRC activation was not confirmed.
+ *         - 2 if an error occurred.
+ *
+ * @par Example
+ * @code
+ * uint8_t state = BSP_SX1272_setCRC_ON();
+ * if (state == 0) {
+ *     // CRC activated successfully
+ * } else if (state == 1) {
+ *     // CRC activation not confirmed
+ * } else {
+ *     // Error occurred while setting CRC ON
+ * }
+ * @endcode
+ */
 uint8_t	BSP_SX1272_setCRC_ON()
 {
   uint8_t state = 2;
@@ -906,13 +1021,13 @@ uint8_t	BSP_SX1272_setCRC_ON()
   return state;
 }
 
-/*
- Function: Sets the module with CRC off.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-*/
+/**
+ * @brief Deactivate CRC (Cyclic Redundancy Check) on the SX1272 module.
+ *
+ * This function deactivates CRC on the SX1272 module. In LoRa mode, it clears the RxPayloadCrcOn bit in REG_MODEM_CONFIG1 to disable CRC. In FSK mode, it clears the CrcOn bit in REG_PACKET_CONFIG1 to disable CRC.
+ *
+ * @return 0 if CRC has been successfully deactivated, 1 if there was an error.
+ */
 uint8_t	BSP_SX1272_setCRC_OFF()
 {
   int8_t state = 2;
@@ -968,13 +1083,14 @@ uint8_t	BSP_SX1272_setCRC_OFF()
   return state;
 }
 
-/*
- Function: Checks if SF is a valid value.
- Returns: uint8_t that's '1' if the SF value exists and
-		  it's '0' if the SF value does not exist.
- Parameters:
-   spr: spreading factor value to check.
-*/
+/**
+ * @brief Check if the given spreading factor (SF) is valid.
+ *
+ * This function checks if the provided spreading factor (SF) value is valid. It compares the value against the available spreading factor options defined in the SX1272 module. Valid spreading factors are SF_6, SF_7, SF_8, SF_9, SF_10, SF_11, and SF_12.
+ *
+ * @param spr The spreading factor (SF) value to check.
+ * @return 1 if the spreading factor is valid, 0 otherwise.
+ */
 uint8_t	BSP_SX1272_isSF(uint8_t spr)
 {
   #if (SX1272_debug_mode > 1)
@@ -1002,14 +1118,13 @@ uint8_t	BSP_SX1272_isSF(uint8_t spr)
   #endif
 }
 
-/*
- Function: Gets the SF within the module is configured.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-   state = -1 --> Forbidden command for this protocol
-*/
+/**
+ * @brief Get the current spreading factor (SF) setting.
+ *
+ * This function retrieves the current spreading factor (SF) setting from the SX1272 module. It reads the value from the REG_MODEM_CONFIG2 register and updates the `currentstate._spreadingFactor` variable accordingly.
+ *
+ * @return 0 if the spreading factor is successfully retrieved and valid, 1 if there was an error, or -1 if the device is in FSK mode where spreading factor is not applicable.
+ */
 int8_t	BSP_SX1272_getSF()
 {
   int8_t state = 2;
@@ -1049,15 +1164,14 @@ int8_t	BSP_SX1272_getSF()
   return state;
 }
 
-/*
- Function: Sets the indicated SF in the module.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
- Parameters:
-   spr: spreading factor value to set in LoRa modem configuration.
-*/
+/**
+ * @brief Set the spreading factor (SF) for LoRa mode.
+ *
+ * This function sets the spreading factor (SF) for LoRa mode in the SX1272 module. It configures the appropriate registers based on the specified spreading factor value.
+ *
+ * @param spr The spreading factor value to set.
+ * @return 0 if the spreading factor is successfully set, 1 if there was an error, or -1 if the device is in FSK mode where spreading factor is not applicable.
+ */
 uint8_t	BSP_SX1272_setSF(uint8_t spr)
 {
 	uint8_t st0;
@@ -1249,13 +1363,14 @@ uint8_t	BSP_SX1272_setSF(uint8_t spr)
   return state;
 }
 
-/*
- Function: Checks if BW is a valid value.
- Returns: uint8_t that's '1' if the BW value exists and
-		  it's '0' if the BW value does not exist.
- Parameters:
-   band: bandwidth value to check.
-*/
+/**
+ * @brief Check if the specified bandwidth value is valid.
+ *
+ * This function checks if the specified bandwidth value is valid for the SX1272 module.
+ *
+ * @param band The bandwidth value to check.
+ * @return 1 if the bandwidth value is valid, 0 otherwise.
+ */
 uint8_t	BSP_SX1272_isBW(uint16_t band)
 {
   #if (SX1272_debug_mode > 1)
@@ -1279,14 +1394,13 @@ uint8_t	BSP_SX1272_isBW(uint16_t band)
   #endif
 }
 
-/*
- Function: Gets the BW within the module is configured.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-   state = -1 --> Forbidden command for this protocol
-*/
+/**
+ * @brief Get the current bandwidth setting.
+ *
+ * This function retrieves the current bandwidth setting from the SX1272 module.
+ *
+ * @return 0 if the bandwidth value was successfully retrieved, 1 if there was an error, or -1 if the bandwidth is not available in FSK mode.
+ */
 int8_t	BSP_SX1272_getBW()
 {
   uint8_t state = 2;
@@ -1333,15 +1447,14 @@ int8_t	BSP_SX1272_getBW()
   return state;
 }
 
-/*
- Function: Sets the indicated BW in the module.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
- Parameters:
-   band: bandwith value to set in LoRa modem configuration.
-*/
+/**
+ * @brief Set the bandwidth for SX1272 module.
+ *
+ * This function sets the bandwidth parameter for the SX1272 module.
+ *
+ * @param band The bandwidth value to be set.
+ * @return 0 if the bandwidth was successfully set, 1 if there was an error, or -1 if the bandwidth is not available in FSK mode.
+ */
 int8_t	BSP_SX1272_setBW(uint16_t band)
 {
   uint8_t st0;
@@ -1454,13 +1567,14 @@ int8_t	BSP_SX1272_setBW(uint16_t band)
   return state;
 }
 
-/*
- Function: Checks if CR is a valid value.
- Returns: uint8_t that's '1' if the CR value exists and
-		  it's '0' if the CR value does not exist.
- Parameters:
-   cod: coding rate value to check.
-*/
+/**
+ * @brief Check if the coding rate value is valid.
+ *
+ * This function checks if the coding rate value is valid based on the available values for currentstate._codingRate.
+ *
+ * @param cod The coding rate value to be checked.
+ * @return 1 if the coding rate value is valid, 0 otherwise.
+ */
 uint8_t	BSP_SX1272_isCR(uint8_t cod)
 {
   #if (SX1272_debug_mode > 1)
@@ -1485,14 +1599,16 @@ uint8_t	BSP_SX1272_isCR(uint8_t cod)
   #endif
 }
 
-/*
- Function: Indicates the CR within the module is configured.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-   state = -1 --> Forbidden command for this protocol
-*/
+/**
+ * @brief Get the current coding rate value.
+ *
+ * This function retrieves the current coding rate value from the SX1272 module.
+ *
+ * @return The current coding rate value.
+ *         -1 if the module is in FSK mode (FSK mode doesn't have a coding rate).
+ *          0 if the coding rate value is successfully retrieved.
+ *          1 if there was an error while getting the coding rate value.
+ */
 int8_t	BSP_SX1272_getCR()
 {
   int8_t state = 2;
@@ -1533,16 +1649,18 @@ int8_t	BSP_SX1272_getCR()
   return state;
 }
 
-/*
- Function: Sets the indicated CR in the module.
- Returns: Integer that determines if there has been any error
-   state = 2  --> The command has not been executed
-   state = 1  --> There has been an error while executing the command
-   state = 0  --> The command has been executed with no errors
-   state = -1 --> Forbidden command for this protocol
- Parameters:
-   cod: coding rate value to set in LoRa modem configuration.
-*/
+/**
+ * @brief Set the coding rate parameter for the SX1272 module.
+ *
+ * This function sets the coding rate parameter for the SX1272 module.
+ *
+ * @param cod The coding rate value to set.
+ *            Possible values are CR_5, CR_6, CR_7, CR_8.
+ *
+ * @return  0 if the coding rate parameter is successfully set.
+ *          1 if there was an error while setting the coding rate parameter.
+ *          2 if the module is in FSK mode (FSK mode doesn't have a coding rate).
+ */
 int8_t	BSP_SX1272_setCR(uint8_t cod)
 {
   uint8_t st0;
@@ -3685,7 +3803,7 @@ float BSP_SX1272_timeOnAir( uint16_t payloadlength )
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_setPayload(char *payload)
+uint8_t BSP_SX1272_setPayload(char *payload, uint8_t size_payload)
 {
 	uint8_t state = 2;
 	uint8_t state_f = 2;
@@ -3697,7 +3815,7 @@ uint8_t BSP_SX1272_setPayload(char *payload)
 	#endif
 
 	state = 1;
-	length16 = (uint16_t)strlen(payload);
+	length16 = (uint16_t)size_payload;
 	state = BSP_SX1272_truncPayload(length16);
 	if( state == 0 )
 	{
@@ -3771,7 +3889,7 @@ uint8_t BSP_SX1272_setPayload(char *payload)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_setPacket(uint8_t dest, char *payload)
+uint8_t BSP_SX1272_setPacket(uint8_t dest, char *payload, uint8_t size_payload)
 {
 	int8_t state = 2;
 	uint8_t st0;
@@ -3797,7 +3915,7 @@ uint8_t BSP_SX1272_setPacket(uint8_t dest, char *payload)
 		state = BSP_SX1272_setDestination(dest);
 		if( state == 0 )
 		{
-			state = BSP_SX1272_setPayload(payload);
+			state = BSP_SX1272_setPayload(payload, size_payload);
 		}
 	}
 	else
@@ -4054,9 +4172,9 @@ uint8_t BSP_SX1272_sendWithTimeout(uint32_t wait)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketMAXTimeout(uint8_t dest, char *payload)
+uint8_t BSP_SX1272_sendPacketMAXTimeout(uint8_t dest, char *payload, uint8_t size_payload)
 {
-	return BSP_SX1272_sendPacketTimeout(dest, payload, MAX_TIMEOUT);
+	return BSP_SX1272_sendPacketTimeout(dest, payload, MAX_TIMEOUT, size_payload);
 }
 
 /*
@@ -4080,7 +4198,7 @@ uint8_t BSP_SX1272_sendPacketMAXTimeout(uint8_t dest, char *payload)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait)
+uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload)
 {
 	uint8_t state = 2;
 
@@ -4090,7 +4208,7 @@ uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait)
 		my_printf("Passe dans sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait)\r\n");
 	#endif
 
-	state = BSP_SX1272_setPacket(dest, payload);	// Setting a packet with 'dest' destination
+	state = BSP_SX1272_setPacket(dest, payload, size_payload);	// Setting a packet with 'dest' destination
 	if (state == 0)								// and writing it in FIFO.
 	{
 		state = BSP_SX1272_sendWithTimeout(wait);	// Sending the packet
@@ -4142,9 +4260,9 @@ uint8_t BSP_SX1272_sendPacketTimeout(uint8_t dest, char *payload, uint32_t wait)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketMAXTimeoutACK(uint8_t dest, char *payload)
+uint8_t BSP_SX1272_sendPacketMAXTimeoutACK(uint8_t dest, char *payload, uint8_t size_payload)
 {
-	return BSP_SX1272_sendPacketTimeoutACK(dest, payload, MAX_TIMEOUT);
+	return BSP_SX1272_sendPacketTimeoutACK(dest, payload, MAX_TIMEOUT, size_payload);
 }
 
 /*
@@ -4176,9 +4294,7 @@ uint8_t BSP_SX1272_sendPacketMAXTimeoutACK(uint8_t dest, char *payload)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketTimeoutACK(	uint8_t dest,
-											char *payload,
-											uint32_t wait)
+uint8_t BSP_SX1272_sendPacketTimeoutACK(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload)
 {
 	uint8_t state = 2;
 	uint8_t state_f = 2;
@@ -4188,7 +4304,7 @@ uint8_t BSP_SX1272_sendPacketTimeoutACK(	uint8_t dest,
 		my_printf("Starting 'sendPacketTimeouACK'\r\n");
 	#endif
 
-	state = BSP_SX1272_sendPacketTimeout(dest, payload, wait);	// Sending packet to 'dest' destination
+	state = BSP_SX1272_sendPacketTimeout(dest, payload, wait, size_payload);	// Sending packet to 'dest' destination
 	if( state == 0 )
 	{
 		state = BSP_SX1272_receive();	// Setting Rx mode to wait an currentstate.ACK
@@ -4441,10 +4557,9 @@ uint8_t BSP_SX1272_getACK(uint32_t wait)
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketMAXTimeoutACKRetries(	uint8_t dest,
-													char  *payload)
+uint8_t BSP_SX1272_sendPacketMAXTimeoutACKRetries(uint8_t dest, char *payload, uint8_t size_payload)
 {
-	return BSP_SX1272_sendPacketTimeoutACKRetries(dest, payload, MAX_TIMEOUT);
+	return BSP_SX1272_sendPacketTimeoutACKRetries(dest, payload, MAX_TIMEOUT, size_payload);
 }
 
 /*
@@ -4477,9 +4592,7 @@ uint8_t BSP_SX1272_sendPacketMAXTimeoutACKRetries(	uint8_t dest,
    state = 1  --> There has been an error while executing the command
    state = 0  --> The command has been executed with no errors
 */
-uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest,
-												char *payload,
-												uint32_t wait)
+uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest, char *payload, uint32_t wait, uint8_t size_payload)
 {
 	uint8_t state = 2;
 
@@ -4492,7 +4605,7 @@ uint8_t BSP_SX1272_sendPacketTimeoutACKRetries(uint8_t dest,
 	state = 1;
 	while( (state != 0) && (currentstate._retries <= currentstate._maxRetries) )
 	{
-		state = BSP_SX1272_sendPacketTimeoutACK(dest, payload, wait);
+		state = BSP_SX1272_sendPacketTimeoutACK(dest, payload, wait, size_payload);
 		currentstate._retries++;
 	}
 	currentstate._retries = 0;

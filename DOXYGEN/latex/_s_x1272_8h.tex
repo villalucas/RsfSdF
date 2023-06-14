@@ -1,0 +1,2571 @@
+\doxysection{STM32/bsp/inc/\+SX1272.h File Reference}
+\hypertarget{_s_x1272_8h}{}\label{_s_x1272_8h}\index{STM32/bsp/inc/SX1272.h@{STM32/bsp/inc/SX1272.h}}
+{\ttfamily \#include \"{}stm32f0xx.\+h\"{}}\newline
+{\ttfamily \#include \"{}frames.\+h\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpack}{pack}}
+\item 
+struct \mbox{\hyperlink{struct_s_x1272status}{SX1272status}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af8ae7b279812be3c5dd17adb4c471dc3}{SX1272\+\_\+debug\+\_\+mode}}~0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8a04baf8adb61a2260eb09998a217d7d}{SX1272\+\_\+\+RST}}~A0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a80255ad88e4606788693612243d4e911}{SX1272\+\_\+\+SS}}~10
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aff20d8c0a05ad3043afa2e4ad9ebe768}{bit\+Read}}(value,  bit)~(((value) $>$$>$ (bit)) \& 0x01)
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a6a8195c0e930f86c6af03ba6af8b41dd}{bit\+Set}}(value,  bit)~((value) \texorpdfstring{$\vert$}{|}= (1UL $<$$<$ (bit)))
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_abbe843c0521806a4ab2e7cffe44769e2}{bit\+Clear}}(value,  bit)~((value) \&= \texorpdfstring{$\sim$}{\string~}(1UL $<$$<$ (bit)))
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8ed1afe4fdc88a0f2626d9ee783e06e5}{REG\+\_\+\+FIFO}}~0x00
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a250bcedd7826aa7c25f80654368d0a72}{REG\+\_\+\+OP\+\_\+\+MODE}}~0x01
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ab983a8fa7f3aa4125eb94b9a01da2dd6}{REG\+\_\+\+BITRATE\+\_\+\+MSB}}~0x02
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aecb6f7c36f6ac07aad1ac7d894742d52}{REG\+\_\+\+BITRATE\+\_\+\+LSB}}~0x03
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af327ae128e28edc811cf37f91555b205}{REG\+\_\+\+FDEV\+\_\+\+MSB}}~0x04
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a7dd3c86f4d1d600e557e01d718829cc7}{REG\+\_\+\+FDEV\+\_\+\+LSB}}~0x05
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa9e79eeafee89809ae618e8c1442e24b}{REG\+\_\+\+FRF\+\_\+\+MSB}}~0x06
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ae2f8700ed3931e4e487e7918c9827571}{REG\+\_\+\+FRF\+\_\+\+MID}}~0x07
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad221a315f543118438b59b8ee37f8b09}{REG\+\_\+\+FRF\+\_\+\+LSB}}~0x08
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af32e257d44b43bf90a535379a12cab17}{REG\+\_\+\+PA\+\_\+\+CONFIG}}~0x09
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa56853d3a8ded8552f2a9ebe453b4117}{REG\+\_\+\+PA\+\_\+\+RAMP}}~0x0A
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a4e0e13619868140039378bb218aa5a3b}{REG\+\_\+\+OCP}}~0x0B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ab08aa4c56ad75b3e715a1115330109ca}{REG\+\_\+\+LNA}}~0x0C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a2f81ffefaab5211d9b4538126bc25ba4}{REG\+\_\+\+RX\+\_\+\+CONFIG}}~0x0D
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af5e9aa6c1a6e12df72f48a896f6f67b3}{REG\+\_\+\+FIFO\+\_\+\+ADDR\+\_\+\+PTR}}~0x0D
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a374fa104e6866ac04338ecfe9f57a049}{REG\+\_\+\+RSSI\+\_\+\+CONFIG}}~0x0E
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a01b72f38b82bc5936f8b264324c507d8}{REG\+\_\+\+FIFO\+\_\+\+TX\+\_\+\+BASE\+\_\+\+ADDR}}~0x0E
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3d9e799addae2f940511eed337fa3116}{REG\+\_\+\+RSSI\+\_\+\+COLLISION}}~0x0F
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa267251c81841a1d7b9da58f0d28b89c}{REG\+\_\+\+FIFO\+\_\+\+RX\+\_\+\+BASE\+\_\+\+ADDR}}~0x0F
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a0ded1b6c2474f779737c5cae8ddc7b88}{REG\+\_\+\+RSSI\+\_\+\+THRESH}}~0x10
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a5e931712eaa4377c0ea89af339147cd4}{REG\+\_\+\+FIFO\+\_\+\+RX\+\_\+\+CURRENT\+\_\+\+ADDR}}~0x10
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a07f6ef9e460b054f66ec1e314a9c6b11}{REG\+\_\+\+RSSI\+\_\+\+VALUE\+\_\+\+FSK}}~0x11
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a959ae2060853369767eb7af463c78efe}{REG\+\_\+\+IRQ\+\_\+\+FLAGS\+\_\+\+MASK}}~0x11
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ab9cc032eac120ed0ea85588d0ac38839}{REG\+\_\+\+RX\+\_\+\+BW}}~0x12
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a098e2376499ff1140b6cdac8f022295c}{REG\+\_\+\+IRQ\+\_\+\+FLAGS}}~0x12
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a264d6bb861dfe25baaa63f3ff646a6d8}{REG\+\_\+\+AFC\+\_\+\+BW}}~0x13
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a6677e72d852d0ff6293c05752fdf811b}{REG\+\_\+\+RX\+\_\+\+NB\+\_\+uint8\+\_\+tS}}~0x13
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac14a51b64a6da6ef9e8853ab5831322b}{REG\+\_\+\+OOK\+\_\+\+PEAK}}~0x14
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3f9cd1b51b54d7d0ee3fa332ff52b5cf}{REG\+\_\+\+RX\+\_\+\+HEADER\+\_\+\+CNT\+\_\+\+VALUE\+\_\+\+MSB}}~0x14
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a6bb99e592b2048cc882f6a49e70d8c99}{REG\+\_\+\+OOK\+\_\+\+FIX}}~0x15
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad3a4b72b2227118860ee73dc6ceaa5fb}{REG\+\_\+\+RX\+\_\+\+HEADER\+\_\+\+CNT\+\_\+\+VALUE\+\_\+\+LSB}}~0x15
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a820c8a583e0e795bb4fc161bec3a33e0}{REG\+\_\+\+OOK\+\_\+\+AVG}}~0x16
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac4d4ba325842028813b9de9927ca0e25}{REG\+\_\+\+RX\+\_\+\+PACKET\+\_\+\+CNT\+\_\+\+VALUE\+\_\+\+MSB}}~0x16
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a0c9db3e8c49db8b555b055829d59693c}{REG\+\_\+\+RX\+\_\+\+PACKET\+\_\+\+CNT\+\_\+\+VALUE\+\_\+\+LSB}}~0x17
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af7211249b5c260cb877827f67c988f4f}{REG\+\_\+\+MODEM\+\_\+\+STAT}}~0x18
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac09e4b4587ebc50f818bbeadc961190b}{REG\+\_\+\+PKT\+\_\+\+SNR\+\_\+\+VALUE}}~0x19
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a12434a2eead060d2fcdf97a3b9870eea}{REG\+\_\+\+AFC\+\_\+\+FEI}}~0x1A
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a4367979bf8684518aaa2919d47f633ce}{REG\+\_\+\+PKT\+\_\+\+RSSI\+\_\+\+VALUE}}~0x1A
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1fa942208f5955768c989a775a5c330d}{REG\+\_\+\+AFC\+\_\+\+MSB}}~0x1B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1fafd1d22fbd3d35818364820c8fc804}{REG\+\_\+\+RSSI\+\_\+\+VALUE\+\_\+\+LORA}}~0x1B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a5ff918e0e2d76951a99dde76219b3b3b}{REG\+\_\+\+AFC\+\_\+\+LSB}}~0x1C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a29198ea03f6491213ea4b0d1537e879a}{REG\+\_\+\+HOP\+\_\+\+CHANNEL}}~0x1C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a9b05b7208be8648b0f8883f25a8e27db}{REG\+\_\+\+FEI\+\_\+\+MSB}}~0x1D
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a11debf0f9759ec35e7c5214fa21a8038}{REG\+\_\+\+MODEM\+\_\+\+CONFIG1}}~0x1D
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_acd56e8b3aeb4df021dfea2fd4e0847c1}{REG\+\_\+\+FEI\+\_\+\+LSB}}~0x1E
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a25ec2854a4adf78872907280fdb803a8}{REG\+\_\+\+MODEM\+\_\+\+CONFIG2}}~0x1E
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af9413ea103b4e4f650e0a579fff90035}{REG\+\_\+\+PREAMBLE\+\_\+\+DETECT}}~0x1F
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a106fc1e09dcf39da871a9b9272d0d471}{REG\+\_\+\+SYMB\+\_\+\+TIMEOUT\+\_\+\+LSB}}~0x1F
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a9f97a6e87b6f960b2d2e59fe4c703aaf}{REG\+\_\+\+RX\+\_\+\+TIMEOUT1}}~0x20
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a7f30bbce34a3473ea19ecb581ff429d7}{REG\+\_\+\+PREAMBLE\+\_\+\+MSB\+\_\+\+LORA}}~0x20
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a4030abc3074d569afb1294f6346d0bdb}{REG\+\_\+\+RX\+\_\+\+TIMEOUT2}}~0x21
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a409f691d0f896ece556cd8f3b033be7a}{REG\+\_\+\+PREAMBLE\+\_\+\+LSB\+\_\+\+LORA}}~0x21
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a6e6447f2c506046b106f42dafcd3f577}{REG\+\_\+\+RX\+\_\+\+TIMEOUT3}}~0x22
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aabb521e7a71885e3cfd8f9ea21730578}{REG\+\_\+\+PAYLOAD\+\_\+\+LENGTH\+\_\+\+LORA}}~0x22
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a04dfed9fcb45c1566baedc7ca5ff7873}{REG\+\_\+\+RX\+\_\+\+DELAY}}~0x23
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_adb39d7025ab2535d4ab93881c85b998b}{REG\+\_\+\+MAX\+\_\+\+PAYLOAD\+\_\+\+LENGTH}}~0x23
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1edb093ed684495473ecd2e97e3a49c2}{REG\+\_\+\+OSC}}~0x24
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ae59811c30eb07858b8ef8c83f756f538}{REG\+\_\+\+HOP\+\_\+\+PERIOD}}~0x24
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ae255330d921b20f47a59227e5c502c45}{REG\+\_\+\+PREAMBLE\+\_\+\+MSB\+\_\+\+FSK}}~0x25
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_acc6faf212ddce5fd5b77d2ced862b21a}{REG\+\_\+\+FIFO\+\_\+\+RX\+\_\+uint8\+\_\+t\+\_\+\+ADDR}}~0x25
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a5e3ec8d7601fb76cc73359ecb3242ab6}{REG\+\_\+\+PREAMBLE\+\_\+\+LSB\+\_\+\+FSK}}~0x26
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ab42309e78c15cc77848e75f15d91d18a}{REG\+\_\+\+SYNC\+\_\+\+CONFIG}}~0x27
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a4584f343400d43b64208a88389b83fad}{REG\+\_\+\+SYNC\+\_\+\+VALUE1}}~0x28
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_abf83f5f3af0ea670ab0af50ad73a4510}{REG\+\_\+\+SYNC\+\_\+\+VALUE2}}~0x29
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8266b875f9d380d846c312ae2d22fb18}{REG\+\_\+\+SYNC\+\_\+\+VALUE3}}~0x2A
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1e3eeed3368e09a63560155b80582676}{REG\+\_\+\+SYNC\+\_\+\+VALUE4}}~0x2B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a0f7f7522cdb9d45f9b2c06cd97cb5be0}{REG\+\_\+\+SYNC\+\_\+\+VALUE5}}~0x2C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1472eabace24f5b9343b206110b6bed8}{REG\+\_\+\+SYNC\+\_\+\+VALUE6}}~0x2D
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8833ec401ec64d212f50d3f00ec274cc}{REG\+\_\+\+SYNC\+\_\+\+VALUE7}}~0x2E
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a0180654d81fce859b49a8da7f9a9c2ad}{REG\+\_\+\+SYNC\+\_\+\+VALUE8}}~0x2F
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a007c186b0362cf733f9d7d886e908dad}{REG\+\_\+\+PACKET\+\_\+\+CONFIG1}}~0x30
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a0e59ea63d6b6112b72f345aa6b19ee26}{REG\+\_\+\+PACKET\+\_\+\+CONFIG2}}~0x31
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a5e67dadbb462f680ce1423aff1afa225}{REG\+\_\+\+DETECT\+\_\+\+OPTIMIZE}}~0x31
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_acdda22c524c4a0f2c702ba1deb85fba5}{REG\+\_\+\+PAYLOAD\+\_\+\+LENGTH\+\_\+\+FSK}}~0x32
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a2c0efac2a866020cba87a8ad3d139299}{REG\+\_\+\+NODE\+\_\+\+ADRS}}~0x33
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a2a998da1b51a9b953bb0275dd8422539}{REG\+\_\+\+BROADCAST\+\_\+\+ADRS}}~0x34
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af69544093563e88a75ef0975b150a9ae}{REG\+\_\+\+FIFO\+\_\+\+THRESH}}~0x35
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aef19c5475213023f2d6843f97617c618}{REG\+\_\+\+SEQ\+\_\+\+CONFIG1}}~0x36
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a28cea61e40ee83d277fb0dfd63e88ee4}{REG\+\_\+\+SEQ\+\_\+\+CONFIG2}}~0x37
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3c142b7e485eac98190fce78583eccd6}{REG\+\_\+\+DETECTION\+\_\+\+THRESHOLD}}~0x37
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ade258385f1fa5bfb4aa151342f03310b}{REG\+\_\+\+TIMER\+\_\+\+RESOL}}~0x38
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a454743c6c5d09b38bb75d53f9908ae2f}{REG\+\_\+\+TIMER1\+\_\+\+COEF}}~0x39
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3715c95235a9dcdd6b335ff7019c1fec}{REG\+\_\+\+TIMER2\+\_\+\+COEF}}~0x3A
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3597b547a2bc2dfe43faf4ff5c877d90}{REG\+\_\+\+IMAGE\+\_\+\+CAL}}~0x3B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad3b0b6d8d5d3de58e5d56ce84e667b20}{REG\+\_\+\+TEMP}}~0x3C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a525a156e8e4a269cd7ecd05162e67e58}{REG\+\_\+\+LOW\+\_\+\+BAT}}~0x3D
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3e21c7197c70ea8be71fbdee5ff84663}{REG\+\_\+\+IRQ\+\_\+\+FLAGS1}}~0x3E
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a86dfc62446be10f58dc8d9dbaa5a7b97}{REG\+\_\+\+IRQ\+\_\+\+FLAGS2}}~0x3F
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a2e06b21810b5db8374a18e678be2396d}{REG\+\_\+\+DIO\+\_\+\+MAPPING1}}~0x40
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa3f9fa77785b2eb54772d705768649ea}{REG\+\_\+\+DIO\+\_\+\+MAPPING2}}~0x41
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa7075c0ae73420685bb4278ee580f3fa}{REG\+\_\+\+VERSION}}~0x42
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a635be5ab2fdc9ff25450a36be4b69d9e}{REG\+\_\+\+AGC\+\_\+\+REF}}~0x43
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a0d81da015528b717e7ba72b183566583}{REG\+\_\+\+AGC\+\_\+\+THRESH1}}~0x44
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aafd87b6a7d3f2a8bd9483a49b00e9ea7}{REG\+\_\+\+AGC\+\_\+\+THRESH2}}~0x45
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a01137d67b38ec73e7a914bf800523939}{REG\+\_\+\+AGC\+\_\+\+THRESH3}}~0x46
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af600b201e15df5c030585cce1f5b4d50}{REG\+\_\+\+PLL\+\_\+\+HOP}}~0x4B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a57f595889f6a6af755ecc9b3bb5b4c3d}{REG\+\_\+\+TCXO}}~0x58
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a9f8d15d83023df8b754745cff0050220}{REG\+\_\+\+PA\+\_\+\+DAC}}~0x5A
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa5110ddd4aaa720908be259b5a4af489}{REG\+\_\+\+PLL}}~0x5C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ab4c410977d3741bd62f5ba05f8c746dc}{REG\+\_\+\+PLL\+\_\+\+LOW\+\_\+\+PN}}~0x5E
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a6dea0ff06cc33cf1ec925215ab004a88}{REG\+\_\+\+FORMER\+\_\+\+TEMP}}~0x6C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad04358f6a1b710519b7422029625a10d}{REG\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+FRAC}}~0x70
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_abc022a2dd354de84cd2d987ae4eaf32e}{CH\+\_\+868v1}}~0x\+D90666
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a752b2bf33c889a7ab2e1687b7c251b64}{CH\+\_\+868v3}}~0x\+D91333
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a33b2ae805780c7d6e96f574eec617c6a}{CH\+\_\+868v5}}~0x\+D92000
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a7c49627172c70ac85503a862de63fbef}{CH\+\_\+10\+\_\+868}}~0x\+D84\+CCC
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a693af0c45aed1948ccc94fd2d361ee44}{CH\+\_\+11\+\_\+868}}~0x\+D86000
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac1d4c750a3b360f21dea1f81fe3a51c5}{CH\+\_\+12\+\_\+868}}~0x\+D87333
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a325fcf04311001a810019cd9f426cdc3}{CH\+\_\+13\+\_\+868}}~0x\+D88666
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a834a95ab1d070e781741f0200483e603}{CH\+\_\+14\+\_\+868}}~0x\+D89999
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a31c7b86008149eeca6e4f4f8295247c2}{CH\+\_\+15\+\_\+868}}~0x\+D8\+ACCC
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a4de1d28457add9fea4be2f4a910da52a}{CH\+\_\+16\+\_\+868}}~0x\+D8\+C000
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ae85e1b63468cbb15a62a98080ef32037}{CH\+\_\+17\+\_\+868}}~0x\+D90000
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3cfc038370c70dc26b669e9771a4215b}{CH\+\_\+00\+\_\+900}}~0x\+E1\+C51E
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1ee9090186d6024196c813da40e8215a}{CH\+\_\+01\+\_\+900}}~0x\+E24\+F5C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a55b1ed447a96fda2a532206b3c491da0}{CH\+\_\+02\+\_\+900}}~0x\+E2\+D999
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a061b7bf0bcd8e124d678d7140486ae67}{CH\+\_\+03\+\_\+900}}~0x\+E363\+D7
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_adef88607c60956591095351bfe8fde92}{CH\+\_\+04\+\_\+900}}~0x\+E3\+EE14
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3d49ee3bad1666ac99dbdce70f091a75}{CH\+\_\+05\+\_\+900}}~0x\+E47851
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a2c14245a1e7d732fd599a4e5c2d1c0eb}{CH\+\_\+06\+\_\+900}}~0x\+E5028F
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a67458ebe52f77a2be63e3d2baee6e0de}{CH\+\_\+07\+\_\+900}}~0x\+E58\+CCC
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad0e4c668f1aa57d8da0ac118f36d8f31}{CH\+\_\+08\+\_\+900}}~0x\+E6170A
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a73d0327f3778a2db06bc45f55a4b1ed9}{CH\+\_\+09\+\_\+900}}~0x\+E6\+A147
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a5147edb1fce603d2cc6b0e63a7c7a35d}{CH\+\_\+10\+\_\+900}}~0x\+E72\+B85
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af5158ed61ed5d2f651c1899c8db87a65}{CH\+\_\+11\+\_\+900}}~0x\+E7\+B5\+C2
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8cfd5c4a05104d5982c4fa0279ac097a}{CH\+\_\+12\+\_\+900}}~0x\+E4\+C000
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a9c7018c2c66c9127856162c2738f1b9a}{BW\+\_\+125}}~0x00
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a52518116c09dd823bd6ec30b81c8a66a}{BW\+\_\+250}}~0x01
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a2be93cfc90de642371fca73648db5446}{BW\+\_\+500}}~0x02
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8ae86f77eb3811fc661b47fea8489fa6}{CR\+\_\+5}}~0x01
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa3b3445c41e234cb60f32d1216aea6b2}{CR\+\_\+6}}~0x02
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_acfd2ac7556aadc6ca2120ee97e238ad4}{CR\+\_\+7}}~0x03
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1a921c3ab7f041a2433b0300cd12e327}{CR\+\_\+8}}~0x04
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad992ccf7c9616b23f254959c71bb5d32}{SF\+\_\+6}}~0x06
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a035db07d1db23b4c99a68555aec93a40}{SF\+\_\+7}}~0x07
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a65182710e163740b8fa6920ba839558e}{SF\+\_\+8}}~0x08
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a71e86559e9ed9076f377c1a5c7749730}{SF\+\_\+9}}~0x09
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a25f6cd8abcf9c6eca9cc2030e60b6bce}{SF\+\_\+10}}~0x0A
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1a0de9ed8644310c5fd0e115ad267dfd}{SF\+\_\+11}}~0x0B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a433d4989c423e022a95f6d0dd7b6432b}{SF\+\_\+12}}~0x0C
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad85fe6f3b0f3962014781445cfeb48ca}{POW\+\_\+m1}}~0x0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aef2e294e11cc0b628cb9863c8ee0b946}{POW\+\_\+0}}~0x1
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad15c6b2795fd1b39ac74b27e8d7bafe0}{POW\+\_\+1}}~0x2
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8d9cfb536a353b7a62ebf324a813067b}{POW\+\_\+2}}~0x3
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa14a134897f59cff32340acb368bb144}{POW\+\_\+3}}~0x4
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac024602b279d7ad0d8cb70b26aeee51e}{POW\+\_\+4}}~0x5
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a901b652643ed84da095791afcf3228a0}{POW\+\_\+5}}~0x6
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa170a02a40cfaba2ecceb04b19537a03}{POW\+\_\+6}}~0x7
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a34dad6b349ba6791a3f2a7bedbcad4b6}{POW\+\_\+7}}~0x8
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad7e69ed4b4c3672e9456e165ad12bb5d}{POW\+\_\+8}}~0x9
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aaf8da5f5b3ca80311e8ad7152f11b2c1}{POW\+\_\+9}}~0xA
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a2911cb6e49d87105c3e1efda3754dbe6}{POW\+\_\+10}}~0xB
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8d50dd344536327632a4123633b255bc}{POW\+\_\+11}}~0xC
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ab4bd3de1b835ace7c305fd93535e8be5}{POW\+\_\+12}}~0xD
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac88a666494fc4492d2f7eafa7decca6e}{POW\+\_\+13}}~0xE
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a39c05c560d9952fc50dd02d0f6467af4}{POW\+\_\+14}}~0xF
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aeb39432364ed6b0af10f17c8a18d14ac}{LORA\+\_\+\+SLEEP\+\_\+\+MODE}}~0x80
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a50064e058781b827de3287a411a11451}{LORA\+\_\+\+STANDBY\+\_\+\+MODE}}~0x81
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a7b475e6bd05a1f80cb6dd9b322bfcba7}{LORA\+\_\+\+TX\+\_\+\+MODE}}~0x83
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3a9e1ce8ecd50e77931dc36431e60c85}{LORA\+\_\+\+RX\+\_\+\+MODE}}~0x85
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aba6d216aab125849a14b5e04ed48deb0}{LORA\+\_\+\+STANDBY\+\_\+\+FSK\+\_\+\+REGS\+\_\+\+MODE}}~0x\+C1
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa6ab37a2d0c98ebda93b7c33afec20f6}{FSK\+\_\+\+SLEEP\+\_\+\+MODE}}~0x00
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a74f7710d8068fe05282d0d6f9c4a04f2}{FSK\+\_\+\+STANDBY\+\_\+\+MODE}}~0x01
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a91f6d6edc4a1b57b9f4282b971eb2d2f}{FSK\+\_\+\+TX\+\_\+\+MODE}}~0x03
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a85e91446cc9f7c8e4031324bcc9327bf}{FSK\+\_\+\+RX\+\_\+\+MODE}}~0x05
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a5d45a377b8e8b0f18f931ab659dbdc37}{st\+\_\+\+SD\+\_\+\+ON}}~1
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a639b6b7d6462bd34cd7837a422850e15}{st\+\_\+\+SD\+\_\+\+OFF}}~0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a633acf7c8ed401bd03aa3c51cdcf840a}{HEADER\+\_\+\+ON}}~0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ad7637ee00b0adac08c1396164b4f93c8}{HEADER\+\_\+\+OFF}}~1
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_acdced4951ae2ec782cee547106db0d9f}{CRC\+\_\+\+ON}}~1
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a69ba89379f548a7b3c5217bb4f9c830c}{CRC\+\_\+\+OFF}}~0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a474186d0190baa1170e017233f0fa870}{LORA}}~1
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aac78d98bed794339d6bb0ccdb7490776}{FSK}}~0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a854bdc5fcfa9cb6ae1359e42297ab388}{BROADCAST\+\_\+0}}~0x00
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a7a9a231e30b47bc0345749c8bd1e5077}{MAX\+\_\+\+LENGTH}}~255
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aa7a7521abb3a3664218d8dc0e3759f0f}{MAX\+\_\+\+PAYLOAD}}~251
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a4c527ad0241e223fc345fe227ec188d0}{MAX\+\_\+\+LENGTH\+\_\+\+FSK}}~64
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac1d0c910064a4e72708b61209035dfa3}{MAX\+\_\+\+PAYLOAD\+\_\+\+FSK}}~60
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a69de7b8253f21cfeffae028cb21a788c}{ACK\+\_\+\+LENGTH}}~5
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a93df0945e64d2e3176b7ed64bc68dabf}{OFFSET\+\_\+\+PAYLOADLENGTH}}~5
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a56182ce5d498bef91f89353782a74092}{OFFSET\+\_\+\+RSSI}}~137
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a7c09299cd29a4b35d53910f0b61c0ffc}{NOISE\+\_\+\+FIGURE}}~6.\+0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af5dd2b2c58b49468ace8c6b3e175c3b5}{NOISE\+\_\+\+ABSOLUTE\+\_\+\+ZERO}}~174.\+0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a85fda3522e69a1bf85f7dcd97b6023a1}{MAX\+\_\+\+TIMEOUT}}~10000
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a41b0180f12af925ed6e81a3566c0e448}{MAX\+\_\+\+WAIT}}~12000
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a895642c8d7ff694a2684b86a99d68d52}{MESH\+\_\+\+TIMEOUT}}~3600000
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_aecf13b8dc783db2202ca5c34fe117fc3}{MAX\+\_\+\+RETRIES}}~5
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a3d913bff01bcd29af2b1aa40ab6c8ee1}{CORRECT\+\_\+\+PACKET}}~0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac17b5a4cfff77e47c2b982095d35ff68}{INCORRECT\+\_\+\+PACKET}}~1
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a8450d5398907cd2b9ab0466daf027d73}{BROADCAST\+\_\+\+ADDR}}~0
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a46a0519c8e0423893eca66b1bde2ec26}{FDA5k\+Hz}}~0x52
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a41cce292fe258d10d7f7fc7813b3f2d3}{FDA40k\+Hz}}~0x28F
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a1126683da851226bacb9ff386b28f071}{FDA125k\+Hz}}~0x7\+FF
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ac67b43d173806824f20e40e464eaba8f}{BR1200bauds}}~0x682B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_af922bf9fc8b7eadadba2074ea1dc4563}{BR4800bauds}}~0x1\+A0B
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_ae87632363846adf31e9d9b2b5c5ef265}{BR38p4kbauds}}~0x30D
+\item 
+\#define \mbox{\hyperlink{_s_x1272_8h_a96078523bbf24c8e66b1019b066d6e96}{BR62p5kbauds}}~0x200
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a9d7faebf99dac4cfbb31d2681770373d}{BSP\+\_\+\+SX1272\+\_\+\+ON}} (int type\+\_\+mod)
+\begin{DoxyCompactList}\small\item\em Active le module SX1272. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_x1272_8h_a6d5d1889f6ae377b5a230f2d9443f13c}{BSP\+\_\+\+SX1272\+\_\+\+OFF}} (int type\+\_\+mod)
+\begin{DoxyCompactList}\small\item\em Désactive le module SX1272. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_x1272_8h_a83ace0a080a4d7c8a76e6a9877b919b1}{BSP\+\_\+\+SX1272\+\_\+clear\+Flags}} ()
+\begin{DoxyCompactList}\small\item\em Efface les indicateurs de drapeaux du module SX1272. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a842904846734cb7ba7ca312f50dbe962}{BSP\+\_\+\+SX1272\+\_\+set\+LORA}} ()
+\begin{DoxyCompactList}\small\item\em Configure le module SX1272 en mode Lo\+Ra. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_aae304aeaa85480a39c3f8e20e5f9b09e}{BSP\+\_\+\+SX1272\+\_\+set\+FSK}} ()
+\begin{DoxyCompactList}\small\item\em Configure le module SX1272 en mode FSK. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a547aa32b39ad3d33de177364e6d99f4b}{BSP\+\_\+\+SX1272\+\_\+get\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Récupère le mode actuel du module SX1272. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a1cd5da9228870a8136f5b630f1ea3de7}{BSP\+\_\+\+SX1272\+\_\+set\+Mode}} (uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Set the mode of the SX1272 module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_ae8a601b57791635b3417ffea72ee47c5}{BSP\+\_\+\+SX1272\+\_\+get\+Header}} ()
+\begin{DoxyCompactList}\small\item\em Get the header mode of the SX1272 module. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a772a707eed75deec1aabacb35a917eee}{BSP\+\_\+\+SX1272\+\_\+set\+Header\+ON}} ()
+\begin{DoxyCompactList}\small\item\em Enable explicit header mode on the SX1272 module. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a56dbd355a1ffaca74216f41b24b03589}{BSP\+\_\+\+SX1272\+\_\+set\+Header\+OFF}} ()
+\begin{DoxyCompactList}\small\item\em Disable explicit header mode on the SX1272 module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a8fa565b989224342464c22c77f8c6e7d}{BSP\+\_\+\+SX1272\+\_\+get\+CRC}} ()
+\begin{DoxyCompactList}\small\item\em Get the CRC configuration on the SX1272 module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_aa583c8c3ab80c8a2c3a71ed878695d7b}{BSP\+\_\+\+SX1272\+\_\+set\+CRC\+\_\+\+ON}} ()
+\begin{DoxyCompactList}\small\item\em Enable CRC (Cyclic Redundancy Check) on the SX1272 module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a55bc531484f486ec00f39fe193de345e}{BSP\+\_\+\+SX1272\+\_\+set\+CRC\+\_\+\+OFF}} ()
+\begin{DoxyCompactList}\small\item\em Deactivate CRC (Cyclic Redundancy Check) on the SX1272 module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a0ba271766fea69ce3ae6582abc467945}{BSP\+\_\+\+SX1272\+\_\+is\+SF}} (uint8\+\_\+t spr)
+\begin{DoxyCompactList}\small\item\em Check if the given spreading factor (SF) is valid. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a6751a3479b78944fe7effc446663dc8c}{BSP\+\_\+\+SX1272\+\_\+get\+SF}} ()
+\begin{DoxyCompactList}\small\item\em Get the current spreading factor (SF) setting. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a1df24c596c26847f4bf1056c97b27a7b}{BSP\+\_\+\+SX1272\+\_\+set\+SF}} (uint8\+\_\+t spr)
+\begin{DoxyCompactList}\small\item\em Set the spreading factor (SF) for Lo\+Ra mode. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a5901e53acaf3b4e01eef390fd865931a}{BSP\+\_\+\+SX1272\+\_\+is\+BW}} (uint16\+\_\+t band)
+\begin{DoxyCompactList}\small\item\em Check if the specified bandwidth value is valid. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a7aa32db83358df833ff68ddd5d619d4a}{BSP\+\_\+\+SX1272\+\_\+get\+BW}} ()
+\begin{DoxyCompactList}\small\item\em Get the current bandwidth setting. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_ae95979ddf558956d68a10d0d052c99a4}{BSP\+\_\+\+SX1272\+\_\+set\+BW}} (uint16\+\_\+t band)
+\begin{DoxyCompactList}\small\item\em Set the bandwidth for SX1272 module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a95101467cb905ca8ad86a3e27b7ab790}{BSP\+\_\+\+SX1272\+\_\+is\+CR}} (uint8\+\_\+t cod)
+\begin{DoxyCompactList}\small\item\em Check if the coding rate value is valid. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a075ed4d128a5686a3e7160e1ef703c07}{BSP\+\_\+\+SX1272\+\_\+get\+CR}} ()
+\begin{DoxyCompactList}\small\item\em Get the current coding rate value. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_ac32a335af980f971d3acc103634723bc}{BSP\+\_\+\+SX1272\+\_\+set\+CR}} (uint8\+\_\+t cod)
+\begin{DoxyCompactList}\small\item\em Set the coding rate parameter for the SX1272 module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a256c77c623060387b0115ec9af433df9}{BSP\+\_\+\+SX1272\+\_\+is\+Channel}} (uint32\+\_\+t ch)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a386b0526cd1a0f4809e1dcb4ea4f5253}{BSP\+\_\+\+SX1272\+\_\+get\+Channel}} ()
+\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_af34d08b531e6f35f0b961e676b17800d}{BSP\+\_\+\+SX1272\+\_\+set\+Channel}} (uint32\+\_\+t ch)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_aeea4ea276d7069714603905479f67727}{BSP\+\_\+\+SX1272\+\_\+get\+Power}} ()
+\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a5134902998e6100ba14add58d32dafab}{BSP\+\_\+\+SX1272\+\_\+set\+Power}} (uint8\+\_\+t pow)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_aa2d7333888bb79615493daa0b202e97e}{BSP\+\_\+\+SX1272\+\_\+get\+Preamble\+Length}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a1130a38eed7d8451a2993ab3b197f06a}{BSP\+\_\+\+SX1272\+\_\+set\+Preamble\+Length}} (uint16\+\_\+t l)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a70e3dd40d4c27d71611ac4c46f77d231}{BSP\+\_\+\+SX1272\+\_\+get\+Payload\+Length}} ()
+\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_ac5b9a439bfcdced9233e9eb8aff7304c}{BSP\+\_\+\+SX1272\+\_\+set\+Packet\+Length}} (uint8\+\_\+t l)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_acd6b0c964badc990e57d88d54a73e795}{BSP\+\_\+\+SX1272\+\_\+get\+Node\+Address}} ()
+\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a6515cd7aa4584753aa2c66a6252a98cb}{BSP\+\_\+\+SX1272\+\_\+set\+Node\+Address}} (uint8\+\_\+t addr)
+\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_afbcf844f00bdeaefdf767239089bb7d0}{BSP\+\_\+\+SX1272\+\_\+get\+SNR}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_afbc662bca448dcf0f7182b2ae7e77f6e}{BSP\+\_\+\+SX1272\+\_\+get\+RSSI}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a3b371f35a383ffb1d822c8e33085f1c6}{BSP\+\_\+\+SX1272\+\_\+get\+RSSIpacket}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_ab42e954f6a0cb2c9106ee686487ca7b2}{BSP\+\_\+\+SX1272\+\_\+set\+Retries}} (uint8\+\_\+t ret)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_aa57086bba959d11b6c028aca5e8e04eb}{BSP\+\_\+\+SX1272\+\_\+get\+Max\+Current}} ()
+\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_acd285f2b7da34b9e7d8c9a7ccc12b841}{BSP\+\_\+\+SX1272\+\_\+set\+Max\+Current}} (uint8\+\_\+t rate)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a99544940866d0b8e841f6f04de0614fc}{BSP\+\_\+\+SX1272\+\_\+get\+Regs}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a4268a6255ab4637f78205e4b9b51ae30}{BSP\+\_\+\+SX1272\+\_\+trunc\+Payload}} (uint16\+\_\+t length16)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a65d9807602541b563d6d4035665cec73}{BSP\+\_\+\+SX1272\+\_\+set\+ACK}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a3ad7f7b23c57eb6cc7e692e40cf83d32}{BSP\+\_\+\+SX1272\+\_\+receive}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_acff4ba7e35caadf9bdb8483f10dfedbf}{BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+MAXTimeout}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_afb10b837208ffe656413c55fb9b06647}{BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeout}} (uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_afef8f31780646daf8aadabf5c9fc8788}{BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+MAXTimeout\+ACK}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a3a2ced710eeb055f6acce9ab2041e0b0}{BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeout\+ACK}} (uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_adaf6a9e0c64c1614e0aa1a1bc93bace6}{BSP\+\_\+\+SX1272\+\_\+receive\+All}} (uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_ab345c772a3f5a75b78c16760a8b6a028}{BSP\+\_\+\+SX1272\+\_\+available\+Data}} (uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a75fdce4e584eaae30fe80f0f748450cc}{BSP\+\_\+\+SX1272\+\_\+set\+Packet}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_afb461e5a9bf35ff9c819cfdb157e3ae0}{BSP\+\_\+\+SX1272\+\_\+get\+Packet\+MAXTimeout}} ()
+\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_adc205f8a5e76a8f8036191c8ba4f218f}{BSP\+\_\+\+SX1272\+\_\+get\+Packet}} (uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_ab692c6542ea5675500df5be6d31596de}{BSP\+\_\+\+SX1272\+\_\+send\+With\+MAXTimeout}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a85e68d224c715300295151e3eb25d818}{BSP\+\_\+\+SX1272\+\_\+send\+With\+Timeout}} (uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_aebc852eb4ab8a0a954961311432a1ede}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a729b1cfbd077be21b68a98da7734d352}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a0db874b9dd485e6db343eaba3277fbe1}{send\+Packet\+MAXTimeout\+ACK}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_abb6cb6942968fde251bf85806d596e70}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACK}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
+\item 
+int8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_add2605afcabf2ba92cf3089de31b61ff}{BSP\+\_\+\+SX1272\+\_\+set\+Destination}} (uint8\+\_\+t dest)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a6d032d3d080e5622e8b76405eaecf7fb}{BSP\+\_\+\+SX1272\+\_\+set\+Timeout}} ()
+\item 
+float \mbox{\hyperlink{_s_x1272_8h_a41fb8596538c1f8e32fdc582e0cda788}{BSP\+\_\+\+SX1272\+\_\+time\+On\+Air}} (uint16\+\_\+t payloadlength)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_aa0cbfcbc7b594579e5d0905d108801a3}{BSP\+\_\+\+SX1272\+\_\+set\+Payload}} (char \texorpdfstring{$\ast$}{*}payload)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a5e10c3563cf5e2302058745c8208f5d1}{BSP\+\_\+\+SX1272\+\_\+get\+ACK}} (uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a8431e866f89dd99e9956b370d1fbf4f4}{BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACKRetries}} (uint8\+\_\+t dest, char \texorpdfstring{$\ast$}{*}payload, uint32\+\_\+t wait)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_a0c9ab298ced3d1d7ae2d14bd01bf1166}{BSP\+\_\+\+SX1272\+\_\+get\+Temp}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_s_x1272_8h_aa7177092cff951f46ff6afee93e98e69}{BSP\+\_\+\+SX1272\+\_\+cad\+Detected}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_s_x1272_8h_a69de7b8253f21cfeffae028cb21a788c}\label{_s_x1272_8h_a69de7b8253f21cfeffae028cb21a788c} 
+\index{SX1272.h@{SX1272.h}!ACK\_LENGTH@{ACK\_LENGTH}}
+\index{ACK\_LENGTH@{ACK\_LENGTH}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{ACK\_LENGTH}{ACK\_LENGTH}}
+{\footnotesize\ttfamily \#define ACK\+\_\+\+LENGTH~5}
+
+\Hypertarget{_s_x1272_8h_abbe843c0521806a4ab2e7cffe44769e2}\label{_s_x1272_8h_abbe843c0521806a4ab2e7cffe44769e2} 
+\index{SX1272.h@{SX1272.h}!bitClear@{bitClear}}
+\index{bitClear@{bitClear}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{bitClear}{bitClear}}
+{\footnotesize\ttfamily \#define bit\+Clear(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit }\end{DoxyParamCaption})~((value) \&= \texorpdfstring{$\sim$}{\string~}(1UL $<$$<$ (bit)))}
+
+\Hypertarget{_s_x1272_8h_aff20d8c0a05ad3043afa2e4ad9ebe768}\label{_s_x1272_8h_aff20d8c0a05ad3043afa2e4ad9ebe768} 
+\index{SX1272.h@{SX1272.h}!bitRead@{bitRead}}
+\index{bitRead@{bitRead}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{bitRead}{bitRead}}
+{\footnotesize\ttfamily \#define bit\+Read(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit }\end{DoxyParamCaption})~(((value) $>$$>$ (bit)) \& 0x01)}
+
+\Hypertarget{_s_x1272_8h_a6a8195c0e930f86c6af03ba6af8b41dd}\label{_s_x1272_8h_a6a8195c0e930f86c6af03ba6af8b41dd} 
+\index{SX1272.h@{SX1272.h}!bitSet@{bitSet}}
+\index{bitSet@{bitSet}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{bitSet}{bitSet}}
+{\footnotesize\ttfamily \#define bit\+Set(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit }\end{DoxyParamCaption})~((value) \texorpdfstring{$\vert$}{|}= (1UL $<$$<$ (bit)))}
+
+\Hypertarget{_s_x1272_8h_ac67b43d173806824f20e40e464eaba8f}\label{_s_x1272_8h_ac67b43d173806824f20e40e464eaba8f} 
+\index{SX1272.h@{SX1272.h}!BR1200bauds@{BR1200bauds}}
+\index{BR1200bauds@{BR1200bauds}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BR1200bauds}{BR1200bauds}}
+{\footnotesize\ttfamily \#define BR1200bauds~0x682B}
+
+\Hypertarget{_s_x1272_8h_ae87632363846adf31e9d9b2b5c5ef265}\label{_s_x1272_8h_ae87632363846adf31e9d9b2b5c5ef265} 
+\index{SX1272.h@{SX1272.h}!BR38p4kbauds@{BR38p4kbauds}}
+\index{BR38p4kbauds@{BR38p4kbauds}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BR38p4kbauds}{BR38p4kbauds}}
+{\footnotesize\ttfamily \#define BR38p4kbauds~0x30D}
+
+\Hypertarget{_s_x1272_8h_af922bf9fc8b7eadadba2074ea1dc4563}\label{_s_x1272_8h_af922bf9fc8b7eadadba2074ea1dc4563} 
+\index{SX1272.h@{SX1272.h}!BR4800bauds@{BR4800bauds}}
+\index{BR4800bauds@{BR4800bauds}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BR4800bauds}{BR4800bauds}}
+{\footnotesize\ttfamily \#define BR4800bauds~0x1\+A0B}
+
+\Hypertarget{_s_x1272_8h_a96078523bbf24c8e66b1019b066d6e96}\label{_s_x1272_8h_a96078523bbf24c8e66b1019b066d6e96} 
+\index{SX1272.h@{SX1272.h}!BR62p5kbauds@{BR62p5kbauds}}
+\index{BR62p5kbauds@{BR62p5kbauds}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BR62p5kbauds}{BR62p5kbauds}}
+{\footnotesize\ttfamily \#define BR62p5kbauds~0x200}
+
+\Hypertarget{_s_x1272_8h_a854bdc5fcfa9cb6ae1359e42297ab388}\label{_s_x1272_8h_a854bdc5fcfa9cb6ae1359e42297ab388} 
+\index{SX1272.h@{SX1272.h}!BROADCAST\_0@{BROADCAST\_0}}
+\index{BROADCAST\_0@{BROADCAST\_0}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BROADCAST\_0}{BROADCAST\_0}}
+{\footnotesize\ttfamily \#define BROADCAST\+\_\+0~0x00}
+
+\Hypertarget{_s_x1272_8h_a8450d5398907cd2b9ab0466daf027d73}\label{_s_x1272_8h_a8450d5398907cd2b9ab0466daf027d73} 
+\index{SX1272.h@{SX1272.h}!BROADCAST\_ADDR@{BROADCAST\_ADDR}}
+\index{BROADCAST\_ADDR@{BROADCAST\_ADDR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BROADCAST\_ADDR}{BROADCAST\_ADDR}}
+{\footnotesize\ttfamily \#define BROADCAST\+\_\+\+ADDR~0}
+
+\Hypertarget{_s_x1272_8h_a9c7018c2c66c9127856162c2738f1b9a}\label{_s_x1272_8h_a9c7018c2c66c9127856162c2738f1b9a} 
+\index{SX1272.h@{SX1272.h}!BW\_125@{BW\_125}}
+\index{BW\_125@{BW\_125}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BW\_125}{BW\_125}}
+{\footnotesize\ttfamily \#define BW\+\_\+125~0x00}
+
+\Hypertarget{_s_x1272_8h_a52518116c09dd823bd6ec30b81c8a66a}\label{_s_x1272_8h_a52518116c09dd823bd6ec30b81c8a66a} 
+\index{SX1272.h@{SX1272.h}!BW\_250@{BW\_250}}
+\index{BW\_250@{BW\_250}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BW\_250}{BW\_250}}
+{\footnotesize\ttfamily \#define BW\+\_\+250~0x01}
+
+\Hypertarget{_s_x1272_8h_a2be93cfc90de642371fca73648db5446}\label{_s_x1272_8h_a2be93cfc90de642371fca73648db5446} 
+\index{SX1272.h@{SX1272.h}!BW\_500@{BW\_500}}
+\index{BW\_500@{BW\_500}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BW\_500}{BW\_500}}
+{\footnotesize\ttfamily \#define BW\+\_\+500~0x02}
+
+\Hypertarget{_s_x1272_8h_a3cfc038370c70dc26b669e9771a4215b}\label{_s_x1272_8h_a3cfc038370c70dc26b669e9771a4215b} 
+\index{SX1272.h@{SX1272.h}!CH\_00\_900@{CH\_00\_900}}
+\index{CH\_00\_900@{CH\_00\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_00\_900}{CH\_00\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+00\+\_\+900~0x\+E1\+C51E}
+
+\Hypertarget{_s_x1272_8h_a1ee9090186d6024196c813da40e8215a}\label{_s_x1272_8h_a1ee9090186d6024196c813da40e8215a} 
+\index{SX1272.h@{SX1272.h}!CH\_01\_900@{CH\_01\_900}}
+\index{CH\_01\_900@{CH\_01\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_01\_900}{CH\_01\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+01\+\_\+900~0x\+E24\+F5C}
+
+\Hypertarget{_s_x1272_8h_a55b1ed447a96fda2a532206b3c491da0}\label{_s_x1272_8h_a55b1ed447a96fda2a532206b3c491da0} 
+\index{SX1272.h@{SX1272.h}!CH\_02\_900@{CH\_02\_900}}
+\index{CH\_02\_900@{CH\_02\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_02\_900}{CH\_02\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+02\+\_\+900~0x\+E2\+D999}
+
+\Hypertarget{_s_x1272_8h_a061b7bf0bcd8e124d678d7140486ae67}\label{_s_x1272_8h_a061b7bf0bcd8e124d678d7140486ae67} 
+\index{SX1272.h@{SX1272.h}!CH\_03\_900@{CH\_03\_900}}
+\index{CH\_03\_900@{CH\_03\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_03\_900}{CH\_03\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+03\+\_\+900~0x\+E363\+D7}
+
+\Hypertarget{_s_x1272_8h_adef88607c60956591095351bfe8fde92}\label{_s_x1272_8h_adef88607c60956591095351bfe8fde92} 
+\index{SX1272.h@{SX1272.h}!CH\_04\_900@{CH\_04\_900}}
+\index{CH\_04\_900@{CH\_04\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_04\_900}{CH\_04\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+04\+\_\+900~0x\+E3\+EE14}
+
+\Hypertarget{_s_x1272_8h_a3d49ee3bad1666ac99dbdce70f091a75}\label{_s_x1272_8h_a3d49ee3bad1666ac99dbdce70f091a75} 
+\index{SX1272.h@{SX1272.h}!CH\_05\_900@{CH\_05\_900}}
+\index{CH\_05\_900@{CH\_05\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_05\_900}{CH\_05\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+05\+\_\+900~0x\+E47851}
+
+\Hypertarget{_s_x1272_8h_a2c14245a1e7d732fd599a4e5c2d1c0eb}\label{_s_x1272_8h_a2c14245a1e7d732fd599a4e5c2d1c0eb} 
+\index{SX1272.h@{SX1272.h}!CH\_06\_900@{CH\_06\_900}}
+\index{CH\_06\_900@{CH\_06\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_06\_900}{CH\_06\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+06\+\_\+900~0x\+E5028F}
+
+\Hypertarget{_s_x1272_8h_a67458ebe52f77a2be63e3d2baee6e0de}\label{_s_x1272_8h_a67458ebe52f77a2be63e3d2baee6e0de} 
+\index{SX1272.h@{SX1272.h}!CH\_07\_900@{CH\_07\_900}}
+\index{CH\_07\_900@{CH\_07\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_07\_900}{CH\_07\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+07\+\_\+900~0x\+E58\+CCC}
+
+\Hypertarget{_s_x1272_8h_ad0e4c668f1aa57d8da0ac118f36d8f31}\label{_s_x1272_8h_ad0e4c668f1aa57d8da0ac118f36d8f31} 
+\index{SX1272.h@{SX1272.h}!CH\_08\_900@{CH\_08\_900}}
+\index{CH\_08\_900@{CH\_08\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_08\_900}{CH\_08\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+08\+\_\+900~0x\+E6170A}
+
+\Hypertarget{_s_x1272_8h_a73d0327f3778a2db06bc45f55a4b1ed9}\label{_s_x1272_8h_a73d0327f3778a2db06bc45f55a4b1ed9} 
+\index{SX1272.h@{SX1272.h}!CH\_09\_900@{CH\_09\_900}}
+\index{CH\_09\_900@{CH\_09\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_09\_900}{CH\_09\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+09\+\_\+900~0x\+E6\+A147}
+
+\Hypertarget{_s_x1272_8h_a7c49627172c70ac85503a862de63fbef}\label{_s_x1272_8h_a7c49627172c70ac85503a862de63fbef} 
+\index{SX1272.h@{SX1272.h}!CH\_10\_868@{CH\_10\_868}}
+\index{CH\_10\_868@{CH\_10\_868}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_10\_868}{CH\_10\_868}}
+{\footnotesize\ttfamily \#define CH\+\_\+10\+\_\+868~0x\+D84\+CCC}
+
+\Hypertarget{_s_x1272_8h_a5147edb1fce603d2cc6b0e63a7c7a35d}\label{_s_x1272_8h_a5147edb1fce603d2cc6b0e63a7c7a35d} 
+\index{SX1272.h@{SX1272.h}!CH\_10\_900@{CH\_10\_900}}
+\index{CH\_10\_900@{CH\_10\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_10\_900}{CH\_10\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+10\+\_\+900~0x\+E72\+B85}
+
+\Hypertarget{_s_x1272_8h_a693af0c45aed1948ccc94fd2d361ee44}\label{_s_x1272_8h_a693af0c45aed1948ccc94fd2d361ee44} 
+\index{SX1272.h@{SX1272.h}!CH\_11\_868@{CH\_11\_868}}
+\index{CH\_11\_868@{CH\_11\_868}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_11\_868}{CH\_11\_868}}
+{\footnotesize\ttfamily \#define CH\+\_\+11\+\_\+868~0x\+D86000}
+
+\Hypertarget{_s_x1272_8h_af5158ed61ed5d2f651c1899c8db87a65}\label{_s_x1272_8h_af5158ed61ed5d2f651c1899c8db87a65} 
+\index{SX1272.h@{SX1272.h}!CH\_11\_900@{CH\_11\_900}}
+\index{CH\_11\_900@{CH\_11\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_11\_900}{CH\_11\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+11\+\_\+900~0x\+E7\+B5\+C2}
+
+\Hypertarget{_s_x1272_8h_ac1d4c750a3b360f21dea1f81fe3a51c5}\label{_s_x1272_8h_ac1d4c750a3b360f21dea1f81fe3a51c5} 
+\index{SX1272.h@{SX1272.h}!CH\_12\_868@{CH\_12\_868}}
+\index{CH\_12\_868@{CH\_12\_868}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_12\_868}{CH\_12\_868}}
+{\footnotesize\ttfamily \#define CH\+\_\+12\+\_\+868~0x\+D87333}
+
+\Hypertarget{_s_x1272_8h_a8cfd5c4a05104d5982c4fa0279ac097a}\label{_s_x1272_8h_a8cfd5c4a05104d5982c4fa0279ac097a} 
+\index{SX1272.h@{SX1272.h}!CH\_12\_900@{CH\_12\_900}}
+\index{CH\_12\_900@{CH\_12\_900}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_12\_900}{CH\_12\_900}}
+{\footnotesize\ttfamily \#define CH\+\_\+12\+\_\+900~0x\+E4\+C000}
+
+\Hypertarget{_s_x1272_8h_a325fcf04311001a810019cd9f426cdc3}\label{_s_x1272_8h_a325fcf04311001a810019cd9f426cdc3} 
+\index{SX1272.h@{SX1272.h}!CH\_13\_868@{CH\_13\_868}}
+\index{CH\_13\_868@{CH\_13\_868}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_13\_868}{CH\_13\_868}}
+{\footnotesize\ttfamily \#define CH\+\_\+13\+\_\+868~0x\+D88666}
+
+\Hypertarget{_s_x1272_8h_a834a95ab1d070e781741f0200483e603}\label{_s_x1272_8h_a834a95ab1d070e781741f0200483e603} 
+\index{SX1272.h@{SX1272.h}!CH\_14\_868@{CH\_14\_868}}
+\index{CH\_14\_868@{CH\_14\_868}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_14\_868}{CH\_14\_868}}
+{\footnotesize\ttfamily \#define CH\+\_\+14\+\_\+868~0x\+D89999}
+
+\Hypertarget{_s_x1272_8h_a31c7b86008149eeca6e4f4f8295247c2}\label{_s_x1272_8h_a31c7b86008149eeca6e4f4f8295247c2} 
+\index{SX1272.h@{SX1272.h}!CH\_15\_868@{CH\_15\_868}}
+\index{CH\_15\_868@{CH\_15\_868}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_15\_868}{CH\_15\_868}}
+{\footnotesize\ttfamily \#define CH\+\_\+15\+\_\+868~0x\+D8\+ACCC}
+
+\Hypertarget{_s_x1272_8h_a4de1d28457add9fea4be2f4a910da52a}\label{_s_x1272_8h_a4de1d28457add9fea4be2f4a910da52a} 
+\index{SX1272.h@{SX1272.h}!CH\_16\_868@{CH\_16\_868}}
+\index{CH\_16\_868@{CH\_16\_868}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_16\_868}{CH\_16\_868}}
+{\footnotesize\ttfamily \#define CH\+\_\+16\+\_\+868~0x\+D8\+C000}
+
+\Hypertarget{_s_x1272_8h_ae85e1b63468cbb15a62a98080ef32037}\label{_s_x1272_8h_ae85e1b63468cbb15a62a98080ef32037} 
+\index{SX1272.h@{SX1272.h}!CH\_17\_868@{CH\_17\_868}}
+\index{CH\_17\_868@{CH\_17\_868}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_17\_868}{CH\_17\_868}}
+{\footnotesize\ttfamily \#define CH\+\_\+17\+\_\+868~0x\+D90000}
+
+\Hypertarget{_s_x1272_8h_abc022a2dd354de84cd2d987ae4eaf32e}\label{_s_x1272_8h_abc022a2dd354de84cd2d987ae4eaf32e} 
+\index{SX1272.h@{SX1272.h}!CH\_868v1@{CH\_868v1}}
+\index{CH\_868v1@{CH\_868v1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_868v1}{CH\_868v1}}
+{\footnotesize\ttfamily \#define CH\+\_\+868v1~0x\+D90666}
+
+\Hypertarget{_s_x1272_8h_a752b2bf33c889a7ab2e1687b7c251b64}\label{_s_x1272_8h_a752b2bf33c889a7ab2e1687b7c251b64} 
+\index{SX1272.h@{SX1272.h}!CH\_868v3@{CH\_868v3}}
+\index{CH\_868v3@{CH\_868v3}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_868v3}{CH\_868v3}}
+{\footnotesize\ttfamily \#define CH\+\_\+868v3~0x\+D91333}
+
+\Hypertarget{_s_x1272_8h_a33b2ae805780c7d6e96f574eec617c6a}\label{_s_x1272_8h_a33b2ae805780c7d6e96f574eec617c6a} 
+\index{SX1272.h@{SX1272.h}!CH\_868v5@{CH\_868v5}}
+\index{CH\_868v5@{CH\_868v5}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CH\_868v5}{CH\_868v5}}
+{\footnotesize\ttfamily \#define CH\+\_\+868v5~0x\+D92000}
+
+\Hypertarget{_s_x1272_8h_a3d913bff01bcd29af2b1aa40ab6c8ee1}\label{_s_x1272_8h_a3d913bff01bcd29af2b1aa40ab6c8ee1} 
+\index{SX1272.h@{SX1272.h}!CORRECT\_PACKET@{CORRECT\_PACKET}}
+\index{CORRECT\_PACKET@{CORRECT\_PACKET}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CORRECT\_PACKET}{CORRECT\_PACKET}}
+{\footnotesize\ttfamily \#define CORRECT\+\_\+\+PACKET~0}
+
+\Hypertarget{_s_x1272_8h_a8ae86f77eb3811fc661b47fea8489fa6}\label{_s_x1272_8h_a8ae86f77eb3811fc661b47fea8489fa6} 
+\index{SX1272.h@{SX1272.h}!CR\_5@{CR\_5}}
+\index{CR\_5@{CR\_5}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CR\_5}{CR\_5}}
+{\footnotesize\ttfamily \#define CR\+\_\+5~0x01}
+
+\Hypertarget{_s_x1272_8h_aa3b3445c41e234cb60f32d1216aea6b2}\label{_s_x1272_8h_aa3b3445c41e234cb60f32d1216aea6b2} 
+\index{SX1272.h@{SX1272.h}!CR\_6@{CR\_6}}
+\index{CR\_6@{CR\_6}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CR\_6}{CR\_6}}
+{\footnotesize\ttfamily \#define CR\+\_\+6~0x02}
+
+\Hypertarget{_s_x1272_8h_acfd2ac7556aadc6ca2120ee97e238ad4}\label{_s_x1272_8h_acfd2ac7556aadc6ca2120ee97e238ad4} 
+\index{SX1272.h@{SX1272.h}!CR\_7@{CR\_7}}
+\index{CR\_7@{CR\_7}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CR\_7}{CR\_7}}
+{\footnotesize\ttfamily \#define CR\+\_\+7~0x03}
+
+\Hypertarget{_s_x1272_8h_a1a921c3ab7f041a2433b0300cd12e327}\label{_s_x1272_8h_a1a921c3ab7f041a2433b0300cd12e327} 
+\index{SX1272.h@{SX1272.h}!CR\_8@{CR\_8}}
+\index{CR\_8@{CR\_8}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CR\_8}{CR\_8}}
+{\footnotesize\ttfamily \#define CR\+\_\+8~0x04}
+
+\Hypertarget{_s_x1272_8h_a69ba89379f548a7b3c5217bb4f9c830c}\label{_s_x1272_8h_a69ba89379f548a7b3c5217bb4f9c830c} 
+\index{SX1272.h@{SX1272.h}!CRC\_OFF@{CRC\_OFF}}
+\index{CRC\_OFF@{CRC\_OFF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CRC\_OFF}{CRC\_OFF}}
+{\footnotesize\ttfamily \#define CRC\+\_\+\+OFF~0}
+
+\Hypertarget{_s_x1272_8h_acdced4951ae2ec782cee547106db0d9f}\label{_s_x1272_8h_acdced4951ae2ec782cee547106db0d9f} 
+\index{SX1272.h@{SX1272.h}!CRC\_ON@{CRC\_ON}}
+\index{CRC\_ON@{CRC\_ON}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{CRC\_ON}{CRC\_ON}}
+{\footnotesize\ttfamily \#define CRC\+\_\+\+ON~1}
+
+\Hypertarget{_s_x1272_8h_a1126683da851226bacb9ff386b28f071}\label{_s_x1272_8h_a1126683da851226bacb9ff386b28f071} 
+\index{SX1272.h@{SX1272.h}!FDA125kHz@{FDA125kHz}}
+\index{FDA125kHz@{FDA125kHz}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{FDA125kHz}{FDA125kHz}}
+{\footnotesize\ttfamily \#define FDA125k\+Hz~0x7\+FF}
+
+\Hypertarget{_s_x1272_8h_a41cce292fe258d10d7f7fc7813b3f2d3}\label{_s_x1272_8h_a41cce292fe258d10d7f7fc7813b3f2d3} 
+\index{SX1272.h@{SX1272.h}!FDA40kHz@{FDA40kHz}}
+\index{FDA40kHz@{FDA40kHz}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{FDA40kHz}{FDA40kHz}}
+{\footnotesize\ttfamily \#define FDA40k\+Hz~0x28F}
+
+\Hypertarget{_s_x1272_8h_a46a0519c8e0423893eca66b1bde2ec26}\label{_s_x1272_8h_a46a0519c8e0423893eca66b1bde2ec26} 
+\index{SX1272.h@{SX1272.h}!FDA5kHz@{FDA5kHz}}
+\index{FDA5kHz@{FDA5kHz}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{FDA5kHz}{FDA5kHz}}
+{\footnotesize\ttfamily \#define FDA5k\+Hz~0x52}
+
+\Hypertarget{_s_x1272_8h_aac78d98bed794339d6bb0ccdb7490776}\label{_s_x1272_8h_aac78d98bed794339d6bb0ccdb7490776} 
+\index{SX1272.h@{SX1272.h}!FSK@{FSK}}
+\index{FSK@{FSK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{FSK}{FSK}}
+{\footnotesize\ttfamily \#define FSK~0}
+
+\Hypertarget{_s_x1272_8h_a85e91446cc9f7c8e4031324bcc9327bf}\label{_s_x1272_8h_a85e91446cc9f7c8e4031324bcc9327bf} 
+\index{SX1272.h@{SX1272.h}!FSK\_RX\_MODE@{FSK\_RX\_MODE}}
+\index{FSK\_RX\_MODE@{FSK\_RX\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{FSK\_RX\_MODE}{FSK\_RX\_MODE}}
+{\footnotesize\ttfamily \#define FSK\+\_\+\+RX\+\_\+\+MODE~0x05}
+
+\Hypertarget{_s_x1272_8h_aa6ab37a2d0c98ebda93b7c33afec20f6}\label{_s_x1272_8h_aa6ab37a2d0c98ebda93b7c33afec20f6} 
+\index{SX1272.h@{SX1272.h}!FSK\_SLEEP\_MODE@{FSK\_SLEEP\_MODE}}
+\index{FSK\_SLEEP\_MODE@{FSK\_SLEEP\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{FSK\_SLEEP\_MODE}{FSK\_SLEEP\_MODE}}
+{\footnotesize\ttfamily \#define FSK\+\_\+\+SLEEP\+\_\+\+MODE~0x00}
+
+\Hypertarget{_s_x1272_8h_a74f7710d8068fe05282d0d6f9c4a04f2}\label{_s_x1272_8h_a74f7710d8068fe05282d0d6f9c4a04f2} 
+\index{SX1272.h@{SX1272.h}!FSK\_STANDBY\_MODE@{FSK\_STANDBY\_MODE}}
+\index{FSK\_STANDBY\_MODE@{FSK\_STANDBY\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{FSK\_STANDBY\_MODE}{FSK\_STANDBY\_MODE}}
+{\footnotesize\ttfamily \#define FSK\+\_\+\+STANDBY\+\_\+\+MODE~0x01}
+
+\Hypertarget{_s_x1272_8h_a91f6d6edc4a1b57b9f4282b971eb2d2f}\label{_s_x1272_8h_a91f6d6edc4a1b57b9f4282b971eb2d2f} 
+\index{SX1272.h@{SX1272.h}!FSK\_TX\_MODE@{FSK\_TX\_MODE}}
+\index{FSK\_TX\_MODE@{FSK\_TX\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{FSK\_TX\_MODE}{FSK\_TX\_MODE}}
+{\footnotesize\ttfamily \#define FSK\+\_\+\+TX\+\_\+\+MODE~0x03}
+
+\Hypertarget{_s_x1272_8h_ad7637ee00b0adac08c1396164b4f93c8}\label{_s_x1272_8h_ad7637ee00b0adac08c1396164b4f93c8} 
+\index{SX1272.h@{SX1272.h}!HEADER\_OFF@{HEADER\_OFF}}
+\index{HEADER\_OFF@{HEADER\_OFF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{HEADER\_OFF}{HEADER\_OFF}}
+{\footnotesize\ttfamily \#define HEADER\+\_\+\+OFF~1}
+
+\Hypertarget{_s_x1272_8h_a633acf7c8ed401bd03aa3c51cdcf840a}\label{_s_x1272_8h_a633acf7c8ed401bd03aa3c51cdcf840a} 
+\index{SX1272.h@{SX1272.h}!HEADER\_ON@{HEADER\_ON}}
+\index{HEADER\_ON@{HEADER\_ON}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{HEADER\_ON}{HEADER\_ON}}
+{\footnotesize\ttfamily \#define HEADER\+\_\+\+ON~0}
+
+\Hypertarget{_s_x1272_8h_ac17b5a4cfff77e47c2b982095d35ff68}\label{_s_x1272_8h_ac17b5a4cfff77e47c2b982095d35ff68} 
+\index{SX1272.h@{SX1272.h}!INCORRECT\_PACKET@{INCORRECT\_PACKET}}
+\index{INCORRECT\_PACKET@{INCORRECT\_PACKET}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{INCORRECT\_PACKET}{INCORRECT\_PACKET}}
+{\footnotesize\ttfamily \#define INCORRECT\+\_\+\+PACKET~1}
+
+\Hypertarget{_s_x1272_8h_a474186d0190baa1170e017233f0fa870}\label{_s_x1272_8h_a474186d0190baa1170e017233f0fa870} 
+\index{SX1272.h@{SX1272.h}!LORA@{LORA}}
+\index{LORA@{LORA}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{LORA}{LORA}}
+{\footnotesize\ttfamily \#define LORA~1}
+
+\Hypertarget{_s_x1272_8h_a3a9e1ce8ecd50e77931dc36431e60c85}\label{_s_x1272_8h_a3a9e1ce8ecd50e77931dc36431e60c85} 
+\index{SX1272.h@{SX1272.h}!LORA\_RX\_MODE@{LORA\_RX\_MODE}}
+\index{LORA\_RX\_MODE@{LORA\_RX\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{LORA\_RX\_MODE}{LORA\_RX\_MODE}}
+{\footnotesize\ttfamily \#define LORA\+\_\+\+RX\+\_\+\+MODE~0x85}
+
+\Hypertarget{_s_x1272_8h_aeb39432364ed6b0af10f17c8a18d14ac}\label{_s_x1272_8h_aeb39432364ed6b0af10f17c8a18d14ac} 
+\index{SX1272.h@{SX1272.h}!LORA\_SLEEP\_MODE@{LORA\_SLEEP\_MODE}}
+\index{LORA\_SLEEP\_MODE@{LORA\_SLEEP\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{LORA\_SLEEP\_MODE}{LORA\_SLEEP\_MODE}}
+{\footnotesize\ttfamily \#define LORA\+\_\+\+SLEEP\+\_\+\+MODE~0x80}
+
+\Hypertarget{_s_x1272_8h_aba6d216aab125849a14b5e04ed48deb0}\label{_s_x1272_8h_aba6d216aab125849a14b5e04ed48deb0} 
+\index{SX1272.h@{SX1272.h}!LORA\_STANDBY\_FSK\_REGS\_MODE@{LORA\_STANDBY\_FSK\_REGS\_MODE}}
+\index{LORA\_STANDBY\_FSK\_REGS\_MODE@{LORA\_STANDBY\_FSK\_REGS\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{LORA\_STANDBY\_FSK\_REGS\_MODE}{LORA\_STANDBY\_FSK\_REGS\_MODE}}
+{\footnotesize\ttfamily \#define LORA\+\_\+\+STANDBY\+\_\+\+FSK\+\_\+\+REGS\+\_\+\+MODE~0x\+C1}
+
+\Hypertarget{_s_x1272_8h_a50064e058781b827de3287a411a11451}\label{_s_x1272_8h_a50064e058781b827de3287a411a11451} 
+\index{SX1272.h@{SX1272.h}!LORA\_STANDBY\_MODE@{LORA\_STANDBY\_MODE}}
+\index{LORA\_STANDBY\_MODE@{LORA\_STANDBY\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{LORA\_STANDBY\_MODE}{LORA\_STANDBY\_MODE}}
+{\footnotesize\ttfamily \#define LORA\+\_\+\+STANDBY\+\_\+\+MODE~0x81}
+
+\Hypertarget{_s_x1272_8h_a7b475e6bd05a1f80cb6dd9b322bfcba7}\label{_s_x1272_8h_a7b475e6bd05a1f80cb6dd9b322bfcba7} 
+\index{SX1272.h@{SX1272.h}!LORA\_TX\_MODE@{LORA\_TX\_MODE}}
+\index{LORA\_TX\_MODE@{LORA\_TX\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{LORA\_TX\_MODE}{LORA\_TX\_MODE}}
+{\footnotesize\ttfamily \#define LORA\+\_\+\+TX\+\_\+\+MODE~0x83}
+
+\Hypertarget{_s_x1272_8h_a7a9a231e30b47bc0345749c8bd1e5077}\label{_s_x1272_8h_a7a9a231e30b47bc0345749c8bd1e5077} 
+\index{SX1272.h@{SX1272.h}!MAX\_LENGTH@{MAX\_LENGTH}}
+\index{MAX\_LENGTH@{MAX\_LENGTH}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_LENGTH}{MAX\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+LENGTH~255}
+
+\Hypertarget{_s_x1272_8h_a4c527ad0241e223fc345fe227ec188d0}\label{_s_x1272_8h_a4c527ad0241e223fc345fe227ec188d0} 
+\index{SX1272.h@{SX1272.h}!MAX\_LENGTH\_FSK@{MAX\_LENGTH\_FSK}}
+\index{MAX\_LENGTH\_FSK@{MAX\_LENGTH\_FSK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_LENGTH\_FSK}{MAX\_LENGTH\_FSK}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+LENGTH\+\_\+\+FSK~64}
+
+\Hypertarget{_s_x1272_8h_aa7a7521abb3a3664218d8dc0e3759f0f}\label{_s_x1272_8h_aa7a7521abb3a3664218d8dc0e3759f0f} 
+\index{SX1272.h@{SX1272.h}!MAX\_PAYLOAD@{MAX\_PAYLOAD}}
+\index{MAX\_PAYLOAD@{MAX\_PAYLOAD}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_PAYLOAD}{MAX\_PAYLOAD}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PAYLOAD~251}
+
+\Hypertarget{_s_x1272_8h_ac1d0c910064a4e72708b61209035dfa3}\label{_s_x1272_8h_ac1d0c910064a4e72708b61209035dfa3} 
+\index{SX1272.h@{SX1272.h}!MAX\_PAYLOAD\_FSK@{MAX\_PAYLOAD\_FSK}}
+\index{MAX\_PAYLOAD\_FSK@{MAX\_PAYLOAD\_FSK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_PAYLOAD\_FSK}{MAX\_PAYLOAD\_FSK}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PAYLOAD\+\_\+\+FSK~60}
+
+\Hypertarget{_s_x1272_8h_aecf13b8dc783db2202ca5c34fe117fc3}\label{_s_x1272_8h_aecf13b8dc783db2202ca5c34fe117fc3} 
+\index{SX1272.h@{SX1272.h}!MAX\_RETRIES@{MAX\_RETRIES}}
+\index{MAX\_RETRIES@{MAX\_RETRIES}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_RETRIES}{MAX\_RETRIES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+RETRIES~5}
+
+\Hypertarget{_s_x1272_8h_a85fda3522e69a1bf85f7dcd97b6023a1}\label{_s_x1272_8h_a85fda3522e69a1bf85f7dcd97b6023a1} 
+\index{SX1272.h@{SX1272.h}!MAX\_TIMEOUT@{MAX\_TIMEOUT}}
+\index{MAX\_TIMEOUT@{MAX\_TIMEOUT}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_TIMEOUT}{MAX\_TIMEOUT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+TIMEOUT~10000}
+
+\Hypertarget{_s_x1272_8h_a41b0180f12af925ed6e81a3566c0e448}\label{_s_x1272_8h_a41b0180f12af925ed6e81a3566c0e448} 
+\index{SX1272.h@{SX1272.h}!MAX\_WAIT@{MAX\_WAIT}}
+\index{MAX\_WAIT@{MAX\_WAIT}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WAIT}{MAX\_WAIT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WAIT~12000}
+
+\Hypertarget{_s_x1272_8h_a895642c8d7ff694a2684b86a99d68d52}\label{_s_x1272_8h_a895642c8d7ff694a2684b86a99d68d52} 
+\index{SX1272.h@{SX1272.h}!MESH\_TIMEOUT@{MESH\_TIMEOUT}}
+\index{MESH\_TIMEOUT@{MESH\_TIMEOUT}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{MESH\_TIMEOUT}{MESH\_TIMEOUT}}
+{\footnotesize\ttfamily \#define MESH\+\_\+\+TIMEOUT~3600000}
+
+\Hypertarget{_s_x1272_8h_af5dd2b2c58b49468ace8c6b3e175c3b5}\label{_s_x1272_8h_af5dd2b2c58b49468ace8c6b3e175c3b5} 
+\index{SX1272.h@{SX1272.h}!NOISE\_ABSOLUTE\_ZERO@{NOISE\_ABSOLUTE\_ZERO}}
+\index{NOISE\_ABSOLUTE\_ZERO@{NOISE\_ABSOLUTE\_ZERO}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{NOISE\_ABSOLUTE\_ZERO}{NOISE\_ABSOLUTE\_ZERO}}
+{\footnotesize\ttfamily \#define NOISE\+\_\+\+ABSOLUTE\+\_\+\+ZERO~174.\+0}
+
+\Hypertarget{_s_x1272_8h_a7c09299cd29a4b35d53910f0b61c0ffc}\label{_s_x1272_8h_a7c09299cd29a4b35d53910f0b61c0ffc} 
+\index{SX1272.h@{SX1272.h}!NOISE\_FIGURE@{NOISE\_FIGURE}}
+\index{NOISE\_FIGURE@{NOISE\_FIGURE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{NOISE\_FIGURE}{NOISE\_FIGURE}}
+{\footnotesize\ttfamily \#define NOISE\+\_\+\+FIGURE~6.\+0}
+
+\Hypertarget{_s_x1272_8h_a93df0945e64d2e3176b7ed64bc68dabf}\label{_s_x1272_8h_a93df0945e64d2e3176b7ed64bc68dabf} 
+\index{SX1272.h@{SX1272.h}!OFFSET\_PAYLOADLENGTH@{OFFSET\_PAYLOADLENGTH}}
+\index{OFFSET\_PAYLOADLENGTH@{OFFSET\_PAYLOADLENGTH}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{OFFSET\_PAYLOADLENGTH}{OFFSET\_PAYLOADLENGTH}}
+{\footnotesize\ttfamily \#define OFFSET\+\_\+\+PAYLOADLENGTH~5}
+
+\Hypertarget{_s_x1272_8h_a56182ce5d498bef91f89353782a74092}\label{_s_x1272_8h_a56182ce5d498bef91f89353782a74092} 
+\index{SX1272.h@{SX1272.h}!OFFSET\_RSSI@{OFFSET\_RSSI}}
+\index{OFFSET\_RSSI@{OFFSET\_RSSI}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{OFFSET\_RSSI}{OFFSET\_RSSI}}
+{\footnotesize\ttfamily \#define OFFSET\+\_\+\+RSSI~137}
+
+\Hypertarget{_s_x1272_8h_aef2e294e11cc0b628cb9863c8ee0b946}\label{_s_x1272_8h_aef2e294e11cc0b628cb9863c8ee0b946} 
+\index{SX1272.h@{SX1272.h}!POW\_0@{POW\_0}}
+\index{POW\_0@{POW\_0}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_0}{POW\_0}}
+{\footnotesize\ttfamily \#define POW\+\_\+0~0x1}
+
+\Hypertarget{_s_x1272_8h_ad15c6b2795fd1b39ac74b27e8d7bafe0}\label{_s_x1272_8h_ad15c6b2795fd1b39ac74b27e8d7bafe0} 
+\index{SX1272.h@{SX1272.h}!POW\_1@{POW\_1}}
+\index{POW\_1@{POW\_1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_1}{POW\_1}}
+{\footnotesize\ttfamily \#define POW\+\_\+1~0x2}
+
+\Hypertarget{_s_x1272_8h_a2911cb6e49d87105c3e1efda3754dbe6}\label{_s_x1272_8h_a2911cb6e49d87105c3e1efda3754dbe6} 
+\index{SX1272.h@{SX1272.h}!POW\_10@{POW\_10}}
+\index{POW\_10@{POW\_10}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_10}{POW\_10}}
+{\footnotesize\ttfamily \#define POW\+\_\+10~0xB}
+
+\Hypertarget{_s_x1272_8h_a8d50dd344536327632a4123633b255bc}\label{_s_x1272_8h_a8d50dd344536327632a4123633b255bc} 
+\index{SX1272.h@{SX1272.h}!POW\_11@{POW\_11}}
+\index{POW\_11@{POW\_11}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_11}{POW\_11}}
+{\footnotesize\ttfamily \#define POW\+\_\+11~0xC}
+
+\Hypertarget{_s_x1272_8h_ab4bd3de1b835ace7c305fd93535e8be5}\label{_s_x1272_8h_ab4bd3de1b835ace7c305fd93535e8be5} 
+\index{SX1272.h@{SX1272.h}!POW\_12@{POW\_12}}
+\index{POW\_12@{POW\_12}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_12}{POW\_12}}
+{\footnotesize\ttfamily \#define POW\+\_\+12~0xD}
+
+\Hypertarget{_s_x1272_8h_ac88a666494fc4492d2f7eafa7decca6e}\label{_s_x1272_8h_ac88a666494fc4492d2f7eafa7decca6e} 
+\index{SX1272.h@{SX1272.h}!POW\_13@{POW\_13}}
+\index{POW\_13@{POW\_13}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_13}{POW\_13}}
+{\footnotesize\ttfamily \#define POW\+\_\+13~0xE}
+
+\Hypertarget{_s_x1272_8h_a39c05c560d9952fc50dd02d0f6467af4}\label{_s_x1272_8h_a39c05c560d9952fc50dd02d0f6467af4} 
+\index{SX1272.h@{SX1272.h}!POW\_14@{POW\_14}}
+\index{POW\_14@{POW\_14}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_14}{POW\_14}}
+{\footnotesize\ttfamily \#define POW\+\_\+14~0xF}
+
+\Hypertarget{_s_x1272_8h_a8d9cfb536a353b7a62ebf324a813067b}\label{_s_x1272_8h_a8d9cfb536a353b7a62ebf324a813067b} 
+\index{SX1272.h@{SX1272.h}!POW\_2@{POW\_2}}
+\index{POW\_2@{POW\_2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_2}{POW\_2}}
+{\footnotesize\ttfamily \#define POW\+\_\+2~0x3}
+
+\Hypertarget{_s_x1272_8h_aa14a134897f59cff32340acb368bb144}\label{_s_x1272_8h_aa14a134897f59cff32340acb368bb144} 
+\index{SX1272.h@{SX1272.h}!POW\_3@{POW\_3}}
+\index{POW\_3@{POW\_3}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_3}{POW\_3}}
+{\footnotesize\ttfamily \#define POW\+\_\+3~0x4}
+
+\Hypertarget{_s_x1272_8h_ac024602b279d7ad0d8cb70b26aeee51e}\label{_s_x1272_8h_ac024602b279d7ad0d8cb70b26aeee51e} 
+\index{SX1272.h@{SX1272.h}!POW\_4@{POW\_4}}
+\index{POW\_4@{POW\_4}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_4}{POW\_4}}
+{\footnotesize\ttfamily \#define POW\+\_\+4~0x5}
+
+\Hypertarget{_s_x1272_8h_a901b652643ed84da095791afcf3228a0}\label{_s_x1272_8h_a901b652643ed84da095791afcf3228a0} 
+\index{SX1272.h@{SX1272.h}!POW\_5@{POW\_5}}
+\index{POW\_5@{POW\_5}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_5}{POW\_5}}
+{\footnotesize\ttfamily \#define POW\+\_\+5~0x6}
+
+\Hypertarget{_s_x1272_8h_aa170a02a40cfaba2ecceb04b19537a03}\label{_s_x1272_8h_aa170a02a40cfaba2ecceb04b19537a03} 
+\index{SX1272.h@{SX1272.h}!POW\_6@{POW\_6}}
+\index{POW\_6@{POW\_6}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_6}{POW\_6}}
+{\footnotesize\ttfamily \#define POW\+\_\+6~0x7}
+
+\Hypertarget{_s_x1272_8h_a34dad6b349ba6791a3f2a7bedbcad4b6}\label{_s_x1272_8h_a34dad6b349ba6791a3f2a7bedbcad4b6} 
+\index{SX1272.h@{SX1272.h}!POW\_7@{POW\_7}}
+\index{POW\_7@{POW\_7}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_7}{POW\_7}}
+{\footnotesize\ttfamily \#define POW\+\_\+7~0x8}
+
+\Hypertarget{_s_x1272_8h_ad7e69ed4b4c3672e9456e165ad12bb5d}\label{_s_x1272_8h_ad7e69ed4b4c3672e9456e165ad12bb5d} 
+\index{SX1272.h@{SX1272.h}!POW\_8@{POW\_8}}
+\index{POW\_8@{POW\_8}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_8}{POW\_8}}
+{\footnotesize\ttfamily \#define POW\+\_\+8~0x9}
+
+\Hypertarget{_s_x1272_8h_aaf8da5f5b3ca80311e8ad7152f11b2c1}\label{_s_x1272_8h_aaf8da5f5b3ca80311e8ad7152f11b2c1} 
+\index{SX1272.h@{SX1272.h}!POW\_9@{POW\_9}}
+\index{POW\_9@{POW\_9}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_9}{POW\_9}}
+{\footnotesize\ttfamily \#define POW\+\_\+9~0xA}
+
+\Hypertarget{_s_x1272_8h_ad85fe6f3b0f3962014781445cfeb48ca}\label{_s_x1272_8h_ad85fe6f3b0f3962014781445cfeb48ca} 
+\index{SX1272.h@{SX1272.h}!POW\_m1@{POW\_m1}}
+\index{POW\_m1@{POW\_m1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{POW\_m1}{POW\_m1}}
+{\footnotesize\ttfamily \#define POW\+\_\+m1~0x0}
+
+\Hypertarget{_s_x1272_8h_a264d6bb861dfe25baaa63f3ff646a6d8}\label{_s_x1272_8h_a264d6bb861dfe25baaa63f3ff646a6d8} 
+\index{SX1272.h@{SX1272.h}!REG\_AFC\_BW@{REG\_AFC\_BW}}
+\index{REG\_AFC\_BW@{REG\_AFC\_BW}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_AFC\_BW}{REG\_AFC\_BW}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+AFC\+\_\+\+BW~0x13}
+
+\Hypertarget{_s_x1272_8h_a12434a2eead060d2fcdf97a3b9870eea}\label{_s_x1272_8h_a12434a2eead060d2fcdf97a3b9870eea} 
+\index{SX1272.h@{SX1272.h}!REG\_AFC\_FEI@{REG\_AFC\_FEI}}
+\index{REG\_AFC\_FEI@{REG\_AFC\_FEI}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_AFC\_FEI}{REG\_AFC\_FEI}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+AFC\+\_\+\+FEI~0x1A}
+
+\Hypertarget{_s_x1272_8h_a5ff918e0e2d76951a99dde76219b3b3b}\label{_s_x1272_8h_a5ff918e0e2d76951a99dde76219b3b3b} 
+\index{SX1272.h@{SX1272.h}!REG\_AFC\_LSB@{REG\_AFC\_LSB}}
+\index{REG\_AFC\_LSB@{REG\_AFC\_LSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_AFC\_LSB}{REG\_AFC\_LSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+AFC\+\_\+\+LSB~0x1C}
+
+\Hypertarget{_s_x1272_8h_a1fa942208f5955768c989a775a5c330d}\label{_s_x1272_8h_a1fa942208f5955768c989a775a5c330d} 
+\index{SX1272.h@{SX1272.h}!REG\_AFC\_MSB@{REG\_AFC\_MSB}}
+\index{REG\_AFC\_MSB@{REG\_AFC\_MSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_AFC\_MSB}{REG\_AFC\_MSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+AFC\+\_\+\+MSB~0x1B}
+
+\Hypertarget{_s_x1272_8h_a635be5ab2fdc9ff25450a36be4b69d9e}\label{_s_x1272_8h_a635be5ab2fdc9ff25450a36be4b69d9e} 
+\index{SX1272.h@{SX1272.h}!REG\_AGC\_REF@{REG\_AGC\_REF}}
+\index{REG\_AGC\_REF@{REG\_AGC\_REF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_AGC\_REF}{REG\_AGC\_REF}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+AGC\+\_\+\+REF~0x43}
+
+\Hypertarget{_s_x1272_8h_a0d81da015528b717e7ba72b183566583}\label{_s_x1272_8h_a0d81da015528b717e7ba72b183566583} 
+\index{SX1272.h@{SX1272.h}!REG\_AGC\_THRESH1@{REG\_AGC\_THRESH1}}
+\index{REG\_AGC\_THRESH1@{REG\_AGC\_THRESH1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_AGC\_THRESH1}{REG\_AGC\_THRESH1}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+AGC\+\_\+\+THRESH1~0x44}
+
+\Hypertarget{_s_x1272_8h_aafd87b6a7d3f2a8bd9483a49b00e9ea7}\label{_s_x1272_8h_aafd87b6a7d3f2a8bd9483a49b00e9ea7} 
+\index{SX1272.h@{SX1272.h}!REG\_AGC\_THRESH2@{REG\_AGC\_THRESH2}}
+\index{REG\_AGC\_THRESH2@{REG\_AGC\_THRESH2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_AGC\_THRESH2}{REG\_AGC\_THRESH2}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+AGC\+\_\+\+THRESH2~0x45}
+
+\Hypertarget{_s_x1272_8h_a01137d67b38ec73e7a914bf800523939}\label{_s_x1272_8h_a01137d67b38ec73e7a914bf800523939} 
+\index{SX1272.h@{SX1272.h}!REG\_AGC\_THRESH3@{REG\_AGC\_THRESH3}}
+\index{REG\_AGC\_THRESH3@{REG\_AGC\_THRESH3}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_AGC\_THRESH3}{REG\_AGC\_THRESH3}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+AGC\+\_\+\+THRESH3~0x46}
+
+\Hypertarget{_s_x1272_8h_ad04358f6a1b710519b7422029625a10d}\label{_s_x1272_8h_ad04358f6a1b710519b7422029625a10d} 
+\index{SX1272.h@{SX1272.h}!REG\_BIT\_RATE\_FRAC@{REG\_BIT\_RATE\_FRAC}}
+\index{REG\_BIT\_RATE\_FRAC@{REG\_BIT\_RATE\_FRAC}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_BIT\_RATE\_FRAC}{REG\_BIT\_RATE\_FRAC}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+FRAC~0x70}
+
+\Hypertarget{_s_x1272_8h_aecb6f7c36f6ac07aad1ac7d894742d52}\label{_s_x1272_8h_aecb6f7c36f6ac07aad1ac7d894742d52} 
+\index{SX1272.h@{SX1272.h}!REG\_BITRATE\_LSB@{REG\_BITRATE\_LSB}}
+\index{REG\_BITRATE\_LSB@{REG\_BITRATE\_LSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_BITRATE\_LSB}{REG\_BITRATE\_LSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+BITRATE\+\_\+\+LSB~0x03}
+
+\Hypertarget{_s_x1272_8h_ab983a8fa7f3aa4125eb94b9a01da2dd6}\label{_s_x1272_8h_ab983a8fa7f3aa4125eb94b9a01da2dd6} 
+\index{SX1272.h@{SX1272.h}!REG\_BITRATE\_MSB@{REG\_BITRATE\_MSB}}
+\index{REG\_BITRATE\_MSB@{REG\_BITRATE\_MSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_BITRATE\_MSB}{REG\_BITRATE\_MSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+BITRATE\+\_\+\+MSB~0x02}
+
+\Hypertarget{_s_x1272_8h_a2a998da1b51a9b953bb0275dd8422539}\label{_s_x1272_8h_a2a998da1b51a9b953bb0275dd8422539} 
+\index{SX1272.h@{SX1272.h}!REG\_BROADCAST\_ADRS@{REG\_BROADCAST\_ADRS}}
+\index{REG\_BROADCAST\_ADRS@{REG\_BROADCAST\_ADRS}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_BROADCAST\_ADRS}{REG\_BROADCAST\_ADRS}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+BROADCAST\+\_\+\+ADRS~0x34}
+
+\Hypertarget{_s_x1272_8h_a5e67dadbb462f680ce1423aff1afa225}\label{_s_x1272_8h_a5e67dadbb462f680ce1423aff1afa225} 
+\index{SX1272.h@{SX1272.h}!REG\_DETECT\_OPTIMIZE@{REG\_DETECT\_OPTIMIZE}}
+\index{REG\_DETECT\_OPTIMIZE@{REG\_DETECT\_OPTIMIZE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_DETECT\_OPTIMIZE}{REG\_DETECT\_OPTIMIZE}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+DETECT\+\_\+\+OPTIMIZE~0x31}
+
+\Hypertarget{_s_x1272_8h_a3c142b7e485eac98190fce78583eccd6}\label{_s_x1272_8h_a3c142b7e485eac98190fce78583eccd6} 
+\index{SX1272.h@{SX1272.h}!REG\_DETECTION\_THRESHOLD@{REG\_DETECTION\_THRESHOLD}}
+\index{REG\_DETECTION\_THRESHOLD@{REG\_DETECTION\_THRESHOLD}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_DETECTION\_THRESHOLD}{REG\_DETECTION\_THRESHOLD}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+DETECTION\+\_\+\+THRESHOLD~0x37}
+
+\Hypertarget{_s_x1272_8h_a2e06b21810b5db8374a18e678be2396d}\label{_s_x1272_8h_a2e06b21810b5db8374a18e678be2396d} 
+\index{SX1272.h@{SX1272.h}!REG\_DIO\_MAPPING1@{REG\_DIO\_MAPPING1}}
+\index{REG\_DIO\_MAPPING1@{REG\_DIO\_MAPPING1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_DIO\_MAPPING1}{REG\_DIO\_MAPPING1}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+DIO\+\_\+\+MAPPING1~0x40}
+
+\Hypertarget{_s_x1272_8h_aa3f9fa77785b2eb54772d705768649ea}\label{_s_x1272_8h_aa3f9fa77785b2eb54772d705768649ea} 
+\index{SX1272.h@{SX1272.h}!REG\_DIO\_MAPPING2@{REG\_DIO\_MAPPING2}}
+\index{REG\_DIO\_MAPPING2@{REG\_DIO\_MAPPING2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_DIO\_MAPPING2}{REG\_DIO\_MAPPING2}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+DIO\+\_\+\+MAPPING2~0x41}
+
+\Hypertarget{_s_x1272_8h_a7dd3c86f4d1d600e557e01d718829cc7}\label{_s_x1272_8h_a7dd3c86f4d1d600e557e01d718829cc7} 
+\index{SX1272.h@{SX1272.h}!REG\_FDEV\_LSB@{REG\_FDEV\_LSB}}
+\index{REG\_FDEV\_LSB@{REG\_FDEV\_LSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FDEV\_LSB}{REG\_FDEV\_LSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FDEV\+\_\+\+LSB~0x05}
+
+\Hypertarget{_s_x1272_8h_af327ae128e28edc811cf37f91555b205}\label{_s_x1272_8h_af327ae128e28edc811cf37f91555b205} 
+\index{SX1272.h@{SX1272.h}!REG\_FDEV\_MSB@{REG\_FDEV\_MSB}}
+\index{REG\_FDEV\_MSB@{REG\_FDEV\_MSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FDEV\_MSB}{REG\_FDEV\_MSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FDEV\+\_\+\+MSB~0x04}
+
+\Hypertarget{_s_x1272_8h_acd56e8b3aeb4df021dfea2fd4e0847c1}\label{_s_x1272_8h_acd56e8b3aeb4df021dfea2fd4e0847c1} 
+\index{SX1272.h@{SX1272.h}!REG\_FEI\_LSB@{REG\_FEI\_LSB}}
+\index{REG\_FEI\_LSB@{REG\_FEI\_LSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FEI\_LSB}{REG\_FEI\_LSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FEI\+\_\+\+LSB~0x1E}
+
+\Hypertarget{_s_x1272_8h_a9b05b7208be8648b0f8883f25a8e27db}\label{_s_x1272_8h_a9b05b7208be8648b0f8883f25a8e27db} 
+\index{SX1272.h@{SX1272.h}!REG\_FEI\_MSB@{REG\_FEI\_MSB}}
+\index{REG\_FEI\_MSB@{REG\_FEI\_MSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FEI\_MSB}{REG\_FEI\_MSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FEI\+\_\+\+MSB~0x1D}
+
+\Hypertarget{_s_x1272_8h_a8ed1afe4fdc88a0f2626d9ee783e06e5}\label{_s_x1272_8h_a8ed1afe4fdc88a0f2626d9ee783e06e5} 
+\index{SX1272.h@{SX1272.h}!REG\_FIFO@{REG\_FIFO}}
+\index{REG\_FIFO@{REG\_FIFO}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FIFO}{REG\_FIFO}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FIFO~0x00}
+
+\Hypertarget{_s_x1272_8h_af5e9aa6c1a6e12df72f48a896f6f67b3}\label{_s_x1272_8h_af5e9aa6c1a6e12df72f48a896f6f67b3} 
+\index{SX1272.h@{SX1272.h}!REG\_FIFO\_ADDR\_PTR@{REG\_FIFO\_ADDR\_PTR}}
+\index{REG\_FIFO\_ADDR\_PTR@{REG\_FIFO\_ADDR\_PTR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FIFO\_ADDR\_PTR}{REG\_FIFO\_ADDR\_PTR}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FIFO\+\_\+\+ADDR\+\_\+\+PTR~0x0D}
+
+\Hypertarget{_s_x1272_8h_aa267251c81841a1d7b9da58f0d28b89c}\label{_s_x1272_8h_aa267251c81841a1d7b9da58f0d28b89c} 
+\index{SX1272.h@{SX1272.h}!REG\_FIFO\_RX\_BASE\_ADDR@{REG\_FIFO\_RX\_BASE\_ADDR}}
+\index{REG\_FIFO\_RX\_BASE\_ADDR@{REG\_FIFO\_RX\_BASE\_ADDR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FIFO\_RX\_BASE\_ADDR}{REG\_FIFO\_RX\_BASE\_ADDR}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FIFO\+\_\+\+RX\+\_\+\+BASE\+\_\+\+ADDR~0x0F}
+
+\Hypertarget{_s_x1272_8h_a5e931712eaa4377c0ea89af339147cd4}\label{_s_x1272_8h_a5e931712eaa4377c0ea89af339147cd4} 
+\index{SX1272.h@{SX1272.h}!REG\_FIFO\_RX\_CURRENT\_ADDR@{REG\_FIFO\_RX\_CURRENT\_ADDR}}
+\index{REG\_FIFO\_RX\_CURRENT\_ADDR@{REG\_FIFO\_RX\_CURRENT\_ADDR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FIFO\_RX\_CURRENT\_ADDR}{REG\_FIFO\_RX\_CURRENT\_ADDR}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FIFO\+\_\+\+RX\+\_\+\+CURRENT\+\_\+\+ADDR~0x10}
+
+\Hypertarget{_s_x1272_8h_acc6faf212ddce5fd5b77d2ced862b21a}\label{_s_x1272_8h_acc6faf212ddce5fd5b77d2ced862b21a} 
+\index{SX1272.h@{SX1272.h}!REG\_FIFO\_RX\_uint8\_t\_ADDR@{REG\_FIFO\_RX\_uint8\_t\_ADDR}}
+\index{REG\_FIFO\_RX\_uint8\_t\_ADDR@{REG\_FIFO\_RX\_uint8\_t\_ADDR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FIFO\_RX\_uint8\_t\_ADDR}{REG\_FIFO\_RX\_uint8\_t\_ADDR}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FIFO\+\_\+\+RX\+\_\+uint8\+\_\+t\+\_\+\+ADDR~0x25}
+
+\Hypertarget{_s_x1272_8h_af69544093563e88a75ef0975b150a9ae}\label{_s_x1272_8h_af69544093563e88a75ef0975b150a9ae} 
+\index{SX1272.h@{SX1272.h}!REG\_FIFO\_THRESH@{REG\_FIFO\_THRESH}}
+\index{REG\_FIFO\_THRESH@{REG\_FIFO\_THRESH}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FIFO\_THRESH}{REG\_FIFO\_THRESH}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FIFO\+\_\+\+THRESH~0x35}
+
+\Hypertarget{_s_x1272_8h_a01b72f38b82bc5936f8b264324c507d8}\label{_s_x1272_8h_a01b72f38b82bc5936f8b264324c507d8} 
+\index{SX1272.h@{SX1272.h}!REG\_FIFO\_TX\_BASE\_ADDR@{REG\_FIFO\_TX\_BASE\_ADDR}}
+\index{REG\_FIFO\_TX\_BASE\_ADDR@{REG\_FIFO\_TX\_BASE\_ADDR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FIFO\_TX\_BASE\_ADDR}{REG\_FIFO\_TX\_BASE\_ADDR}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FIFO\+\_\+\+TX\+\_\+\+BASE\+\_\+\+ADDR~0x0E}
+
+\Hypertarget{_s_x1272_8h_a6dea0ff06cc33cf1ec925215ab004a88}\label{_s_x1272_8h_a6dea0ff06cc33cf1ec925215ab004a88} 
+\index{SX1272.h@{SX1272.h}!REG\_FORMER\_TEMP@{REG\_FORMER\_TEMP}}
+\index{REG\_FORMER\_TEMP@{REG\_FORMER\_TEMP}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FORMER\_TEMP}{REG\_FORMER\_TEMP}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FORMER\+\_\+\+TEMP~0x6C}
+
+\Hypertarget{_s_x1272_8h_ad221a315f543118438b59b8ee37f8b09}\label{_s_x1272_8h_ad221a315f543118438b59b8ee37f8b09} 
+\index{SX1272.h@{SX1272.h}!REG\_FRF\_LSB@{REG\_FRF\_LSB}}
+\index{REG\_FRF\_LSB@{REG\_FRF\_LSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FRF\_LSB}{REG\_FRF\_LSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FRF\+\_\+\+LSB~0x08}
+
+\Hypertarget{_s_x1272_8h_ae2f8700ed3931e4e487e7918c9827571}\label{_s_x1272_8h_ae2f8700ed3931e4e487e7918c9827571} 
+\index{SX1272.h@{SX1272.h}!REG\_FRF\_MID@{REG\_FRF\_MID}}
+\index{REG\_FRF\_MID@{REG\_FRF\_MID}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FRF\_MID}{REG\_FRF\_MID}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FRF\+\_\+\+MID~0x07}
+
+\Hypertarget{_s_x1272_8h_aa9e79eeafee89809ae618e8c1442e24b}\label{_s_x1272_8h_aa9e79eeafee89809ae618e8c1442e24b} 
+\index{SX1272.h@{SX1272.h}!REG\_FRF\_MSB@{REG\_FRF\_MSB}}
+\index{REG\_FRF\_MSB@{REG\_FRF\_MSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_FRF\_MSB}{REG\_FRF\_MSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+FRF\+\_\+\+MSB~0x06}
+
+\Hypertarget{_s_x1272_8h_a29198ea03f6491213ea4b0d1537e879a}\label{_s_x1272_8h_a29198ea03f6491213ea4b0d1537e879a} 
+\index{SX1272.h@{SX1272.h}!REG\_HOP\_CHANNEL@{REG\_HOP\_CHANNEL}}
+\index{REG\_HOP\_CHANNEL@{REG\_HOP\_CHANNEL}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_HOP\_CHANNEL}{REG\_HOP\_CHANNEL}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+HOP\+\_\+\+CHANNEL~0x1C}
+
+\Hypertarget{_s_x1272_8h_ae59811c30eb07858b8ef8c83f756f538}\label{_s_x1272_8h_ae59811c30eb07858b8ef8c83f756f538} 
+\index{SX1272.h@{SX1272.h}!REG\_HOP\_PERIOD@{REG\_HOP\_PERIOD}}
+\index{REG\_HOP\_PERIOD@{REG\_HOP\_PERIOD}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_HOP\_PERIOD}{REG\_HOP\_PERIOD}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+HOP\+\_\+\+PERIOD~0x24}
+
+\Hypertarget{_s_x1272_8h_a3597b547a2bc2dfe43faf4ff5c877d90}\label{_s_x1272_8h_a3597b547a2bc2dfe43faf4ff5c877d90} 
+\index{SX1272.h@{SX1272.h}!REG\_IMAGE\_CAL@{REG\_IMAGE\_CAL}}
+\index{REG\_IMAGE\_CAL@{REG\_IMAGE\_CAL}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_IMAGE\_CAL}{REG\_IMAGE\_CAL}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+IMAGE\+\_\+\+CAL~0x3B}
+
+\Hypertarget{_s_x1272_8h_a098e2376499ff1140b6cdac8f022295c}\label{_s_x1272_8h_a098e2376499ff1140b6cdac8f022295c} 
+\index{SX1272.h@{SX1272.h}!REG\_IRQ\_FLAGS@{REG\_IRQ\_FLAGS}}
+\index{REG\_IRQ\_FLAGS@{REG\_IRQ\_FLAGS}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_IRQ\_FLAGS}{REG\_IRQ\_FLAGS}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+IRQ\+\_\+\+FLAGS~0x12}
+
+\Hypertarget{_s_x1272_8h_a3e21c7197c70ea8be71fbdee5ff84663}\label{_s_x1272_8h_a3e21c7197c70ea8be71fbdee5ff84663} 
+\index{SX1272.h@{SX1272.h}!REG\_IRQ\_FLAGS1@{REG\_IRQ\_FLAGS1}}
+\index{REG\_IRQ\_FLAGS1@{REG\_IRQ\_FLAGS1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_IRQ\_FLAGS1}{REG\_IRQ\_FLAGS1}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+IRQ\+\_\+\+FLAGS1~0x3E}
+
+\Hypertarget{_s_x1272_8h_a86dfc62446be10f58dc8d9dbaa5a7b97}\label{_s_x1272_8h_a86dfc62446be10f58dc8d9dbaa5a7b97} 
+\index{SX1272.h@{SX1272.h}!REG\_IRQ\_FLAGS2@{REG\_IRQ\_FLAGS2}}
+\index{REG\_IRQ\_FLAGS2@{REG\_IRQ\_FLAGS2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_IRQ\_FLAGS2}{REG\_IRQ\_FLAGS2}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+IRQ\+\_\+\+FLAGS2~0x3F}
+
+\Hypertarget{_s_x1272_8h_a959ae2060853369767eb7af463c78efe}\label{_s_x1272_8h_a959ae2060853369767eb7af463c78efe} 
+\index{SX1272.h@{SX1272.h}!REG\_IRQ\_FLAGS\_MASK@{REG\_IRQ\_FLAGS\_MASK}}
+\index{REG\_IRQ\_FLAGS\_MASK@{REG\_IRQ\_FLAGS\_MASK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_IRQ\_FLAGS\_MASK}{REG\_IRQ\_FLAGS\_MASK}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+IRQ\+\_\+\+FLAGS\+\_\+\+MASK~0x11}
+
+\Hypertarget{_s_x1272_8h_ab08aa4c56ad75b3e715a1115330109ca}\label{_s_x1272_8h_ab08aa4c56ad75b3e715a1115330109ca} 
+\index{SX1272.h@{SX1272.h}!REG\_LNA@{REG\_LNA}}
+\index{REG\_LNA@{REG\_LNA}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_LNA}{REG\_LNA}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+LNA~0x0C}
+
+\Hypertarget{_s_x1272_8h_a525a156e8e4a269cd7ecd05162e67e58}\label{_s_x1272_8h_a525a156e8e4a269cd7ecd05162e67e58} 
+\index{SX1272.h@{SX1272.h}!REG\_LOW\_BAT@{REG\_LOW\_BAT}}
+\index{REG\_LOW\_BAT@{REG\_LOW\_BAT}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_LOW\_BAT}{REG\_LOW\_BAT}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+LOW\+\_\+\+BAT~0x3D}
+
+\Hypertarget{_s_x1272_8h_adb39d7025ab2535d4ab93881c85b998b}\label{_s_x1272_8h_adb39d7025ab2535d4ab93881c85b998b} 
+\index{SX1272.h@{SX1272.h}!REG\_MAX\_PAYLOAD\_LENGTH@{REG\_MAX\_PAYLOAD\_LENGTH}}
+\index{REG\_MAX\_PAYLOAD\_LENGTH@{REG\_MAX\_PAYLOAD\_LENGTH}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_MAX\_PAYLOAD\_LENGTH}{REG\_MAX\_PAYLOAD\_LENGTH}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+MAX\+\_\+\+PAYLOAD\+\_\+\+LENGTH~0x23}
+
+\Hypertarget{_s_x1272_8h_a11debf0f9759ec35e7c5214fa21a8038}\label{_s_x1272_8h_a11debf0f9759ec35e7c5214fa21a8038} 
+\index{SX1272.h@{SX1272.h}!REG\_MODEM\_CONFIG1@{REG\_MODEM\_CONFIG1}}
+\index{REG\_MODEM\_CONFIG1@{REG\_MODEM\_CONFIG1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_MODEM\_CONFIG1}{REG\_MODEM\_CONFIG1}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+MODEM\+\_\+\+CONFIG1~0x1D}
+
+\Hypertarget{_s_x1272_8h_a25ec2854a4adf78872907280fdb803a8}\label{_s_x1272_8h_a25ec2854a4adf78872907280fdb803a8} 
+\index{SX1272.h@{SX1272.h}!REG\_MODEM\_CONFIG2@{REG\_MODEM\_CONFIG2}}
+\index{REG\_MODEM\_CONFIG2@{REG\_MODEM\_CONFIG2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_MODEM\_CONFIG2}{REG\_MODEM\_CONFIG2}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+MODEM\+\_\+\+CONFIG2~0x1E}
+
+\Hypertarget{_s_x1272_8h_af7211249b5c260cb877827f67c988f4f}\label{_s_x1272_8h_af7211249b5c260cb877827f67c988f4f} 
+\index{SX1272.h@{SX1272.h}!REG\_MODEM\_STAT@{REG\_MODEM\_STAT}}
+\index{REG\_MODEM\_STAT@{REG\_MODEM\_STAT}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_MODEM\_STAT}{REG\_MODEM\_STAT}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+MODEM\+\_\+\+STAT~0x18}
+
+\Hypertarget{_s_x1272_8h_a2c0efac2a866020cba87a8ad3d139299}\label{_s_x1272_8h_a2c0efac2a866020cba87a8ad3d139299} 
+\index{SX1272.h@{SX1272.h}!REG\_NODE\_ADRS@{REG\_NODE\_ADRS}}
+\index{REG\_NODE\_ADRS@{REG\_NODE\_ADRS}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_NODE\_ADRS}{REG\_NODE\_ADRS}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+NODE\+\_\+\+ADRS~0x33}
+
+\Hypertarget{_s_x1272_8h_a4e0e13619868140039378bb218aa5a3b}\label{_s_x1272_8h_a4e0e13619868140039378bb218aa5a3b} 
+\index{SX1272.h@{SX1272.h}!REG\_OCP@{REG\_OCP}}
+\index{REG\_OCP@{REG\_OCP}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_OCP}{REG\_OCP}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+OCP~0x0B}
+
+\Hypertarget{_s_x1272_8h_a820c8a583e0e795bb4fc161bec3a33e0}\label{_s_x1272_8h_a820c8a583e0e795bb4fc161bec3a33e0} 
+\index{SX1272.h@{SX1272.h}!REG\_OOK\_AVG@{REG\_OOK\_AVG}}
+\index{REG\_OOK\_AVG@{REG\_OOK\_AVG}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_OOK\_AVG}{REG\_OOK\_AVG}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+OOK\+\_\+\+AVG~0x16}
+
+\Hypertarget{_s_x1272_8h_a6bb99e592b2048cc882f6a49e70d8c99}\label{_s_x1272_8h_a6bb99e592b2048cc882f6a49e70d8c99} 
+\index{SX1272.h@{SX1272.h}!REG\_OOK\_FIX@{REG\_OOK\_FIX}}
+\index{REG\_OOK\_FIX@{REG\_OOK\_FIX}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_OOK\_FIX}{REG\_OOK\_FIX}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+OOK\+\_\+\+FIX~0x15}
+
+\Hypertarget{_s_x1272_8h_ac14a51b64a6da6ef9e8853ab5831322b}\label{_s_x1272_8h_ac14a51b64a6da6ef9e8853ab5831322b} 
+\index{SX1272.h@{SX1272.h}!REG\_OOK\_PEAK@{REG\_OOK\_PEAK}}
+\index{REG\_OOK\_PEAK@{REG\_OOK\_PEAK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_OOK\_PEAK}{REG\_OOK\_PEAK}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+OOK\+\_\+\+PEAK~0x14}
+
+\Hypertarget{_s_x1272_8h_a250bcedd7826aa7c25f80654368d0a72}\label{_s_x1272_8h_a250bcedd7826aa7c25f80654368d0a72} 
+\index{SX1272.h@{SX1272.h}!REG\_OP\_MODE@{REG\_OP\_MODE}}
+\index{REG\_OP\_MODE@{REG\_OP\_MODE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_OP\_MODE}{REG\_OP\_MODE}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+OP\+\_\+\+MODE~0x01}
+
+\Hypertarget{_s_x1272_8h_a1edb093ed684495473ecd2e97e3a49c2}\label{_s_x1272_8h_a1edb093ed684495473ecd2e97e3a49c2} 
+\index{SX1272.h@{SX1272.h}!REG\_OSC@{REG\_OSC}}
+\index{REG\_OSC@{REG\_OSC}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_OSC}{REG\_OSC}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+OSC~0x24}
+
+\Hypertarget{_s_x1272_8h_af32e257d44b43bf90a535379a12cab17}\label{_s_x1272_8h_af32e257d44b43bf90a535379a12cab17} 
+\index{SX1272.h@{SX1272.h}!REG\_PA\_CONFIG@{REG\_PA\_CONFIG}}
+\index{REG\_PA\_CONFIG@{REG\_PA\_CONFIG}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PA\_CONFIG}{REG\_PA\_CONFIG}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PA\+\_\+\+CONFIG~0x09}
+
+\Hypertarget{_s_x1272_8h_a9f8d15d83023df8b754745cff0050220}\label{_s_x1272_8h_a9f8d15d83023df8b754745cff0050220} 
+\index{SX1272.h@{SX1272.h}!REG\_PA\_DAC@{REG\_PA\_DAC}}
+\index{REG\_PA\_DAC@{REG\_PA\_DAC}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PA\_DAC}{REG\_PA\_DAC}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PA\+\_\+\+DAC~0x5A}
+
+\Hypertarget{_s_x1272_8h_aa56853d3a8ded8552f2a9ebe453b4117}\label{_s_x1272_8h_aa56853d3a8ded8552f2a9ebe453b4117} 
+\index{SX1272.h@{SX1272.h}!REG\_PA\_RAMP@{REG\_PA\_RAMP}}
+\index{REG\_PA\_RAMP@{REG\_PA\_RAMP}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PA\_RAMP}{REG\_PA\_RAMP}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PA\+\_\+\+RAMP~0x0A}
+
+\Hypertarget{_s_x1272_8h_a007c186b0362cf733f9d7d886e908dad}\label{_s_x1272_8h_a007c186b0362cf733f9d7d886e908dad} 
+\index{SX1272.h@{SX1272.h}!REG\_PACKET\_CONFIG1@{REG\_PACKET\_CONFIG1}}
+\index{REG\_PACKET\_CONFIG1@{REG\_PACKET\_CONFIG1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PACKET\_CONFIG1}{REG\_PACKET\_CONFIG1}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PACKET\+\_\+\+CONFIG1~0x30}
+
+\Hypertarget{_s_x1272_8h_a0e59ea63d6b6112b72f345aa6b19ee26}\label{_s_x1272_8h_a0e59ea63d6b6112b72f345aa6b19ee26} 
+\index{SX1272.h@{SX1272.h}!REG\_PACKET\_CONFIG2@{REG\_PACKET\_CONFIG2}}
+\index{REG\_PACKET\_CONFIG2@{REG\_PACKET\_CONFIG2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PACKET\_CONFIG2}{REG\_PACKET\_CONFIG2}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PACKET\+\_\+\+CONFIG2~0x31}
+
+\Hypertarget{_s_x1272_8h_acdda22c524c4a0f2c702ba1deb85fba5}\label{_s_x1272_8h_acdda22c524c4a0f2c702ba1deb85fba5} 
+\index{SX1272.h@{SX1272.h}!REG\_PAYLOAD\_LENGTH\_FSK@{REG\_PAYLOAD\_LENGTH\_FSK}}
+\index{REG\_PAYLOAD\_LENGTH\_FSK@{REG\_PAYLOAD\_LENGTH\_FSK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PAYLOAD\_LENGTH\_FSK}{REG\_PAYLOAD\_LENGTH\_FSK}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PAYLOAD\+\_\+\+LENGTH\+\_\+\+FSK~0x32}
+
+\Hypertarget{_s_x1272_8h_aabb521e7a71885e3cfd8f9ea21730578}\label{_s_x1272_8h_aabb521e7a71885e3cfd8f9ea21730578} 
+\index{SX1272.h@{SX1272.h}!REG\_PAYLOAD\_LENGTH\_LORA@{REG\_PAYLOAD\_LENGTH\_LORA}}
+\index{REG\_PAYLOAD\_LENGTH\_LORA@{REG\_PAYLOAD\_LENGTH\_LORA}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PAYLOAD\_LENGTH\_LORA}{REG\_PAYLOAD\_LENGTH\_LORA}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PAYLOAD\+\_\+\+LENGTH\+\_\+\+LORA~0x22}
+
+\Hypertarget{_s_x1272_8h_a4367979bf8684518aaa2919d47f633ce}\label{_s_x1272_8h_a4367979bf8684518aaa2919d47f633ce} 
+\index{SX1272.h@{SX1272.h}!REG\_PKT\_RSSI\_VALUE@{REG\_PKT\_RSSI\_VALUE}}
+\index{REG\_PKT\_RSSI\_VALUE@{REG\_PKT\_RSSI\_VALUE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PKT\_RSSI\_VALUE}{REG\_PKT\_RSSI\_VALUE}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PKT\+\_\+\+RSSI\+\_\+\+VALUE~0x1A}
+
+\Hypertarget{_s_x1272_8h_ac09e4b4587ebc50f818bbeadc961190b}\label{_s_x1272_8h_ac09e4b4587ebc50f818bbeadc961190b} 
+\index{SX1272.h@{SX1272.h}!REG\_PKT\_SNR\_VALUE@{REG\_PKT\_SNR\_VALUE}}
+\index{REG\_PKT\_SNR\_VALUE@{REG\_PKT\_SNR\_VALUE}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PKT\_SNR\_VALUE}{REG\_PKT\_SNR\_VALUE}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PKT\+\_\+\+SNR\+\_\+\+VALUE~0x19}
+
+\Hypertarget{_s_x1272_8h_aa5110ddd4aaa720908be259b5a4af489}\label{_s_x1272_8h_aa5110ddd4aaa720908be259b5a4af489} 
+\index{SX1272.h@{SX1272.h}!REG\_PLL@{REG\_PLL}}
+\index{REG\_PLL@{REG\_PLL}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PLL}{REG\_PLL}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PLL~0x5C}
+
+\Hypertarget{_s_x1272_8h_af600b201e15df5c030585cce1f5b4d50}\label{_s_x1272_8h_af600b201e15df5c030585cce1f5b4d50} 
+\index{SX1272.h@{SX1272.h}!REG\_PLL\_HOP@{REG\_PLL\_HOP}}
+\index{REG\_PLL\_HOP@{REG\_PLL\_HOP}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PLL\_HOP}{REG\_PLL\_HOP}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PLL\+\_\+\+HOP~0x4B}
+
+\Hypertarget{_s_x1272_8h_ab4c410977d3741bd62f5ba05f8c746dc}\label{_s_x1272_8h_ab4c410977d3741bd62f5ba05f8c746dc} 
+\index{SX1272.h@{SX1272.h}!REG\_PLL\_LOW\_PN@{REG\_PLL\_LOW\_PN}}
+\index{REG\_PLL\_LOW\_PN@{REG\_PLL\_LOW\_PN}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PLL\_LOW\_PN}{REG\_PLL\_LOW\_PN}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PLL\+\_\+\+LOW\+\_\+\+PN~0x5E}
+
+\Hypertarget{_s_x1272_8h_af9413ea103b4e4f650e0a579fff90035}\label{_s_x1272_8h_af9413ea103b4e4f650e0a579fff90035} 
+\index{SX1272.h@{SX1272.h}!REG\_PREAMBLE\_DETECT@{REG\_PREAMBLE\_DETECT}}
+\index{REG\_PREAMBLE\_DETECT@{REG\_PREAMBLE\_DETECT}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PREAMBLE\_DETECT}{REG\_PREAMBLE\_DETECT}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PREAMBLE\+\_\+\+DETECT~0x1F}
+
+\Hypertarget{_s_x1272_8h_a5e3ec8d7601fb76cc73359ecb3242ab6}\label{_s_x1272_8h_a5e3ec8d7601fb76cc73359ecb3242ab6} 
+\index{SX1272.h@{SX1272.h}!REG\_PREAMBLE\_LSB\_FSK@{REG\_PREAMBLE\_LSB\_FSK}}
+\index{REG\_PREAMBLE\_LSB\_FSK@{REG\_PREAMBLE\_LSB\_FSK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PREAMBLE\_LSB\_FSK}{REG\_PREAMBLE\_LSB\_FSK}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PREAMBLE\+\_\+\+LSB\+\_\+\+FSK~0x26}
+
+\Hypertarget{_s_x1272_8h_a409f691d0f896ece556cd8f3b033be7a}\label{_s_x1272_8h_a409f691d0f896ece556cd8f3b033be7a} 
+\index{SX1272.h@{SX1272.h}!REG\_PREAMBLE\_LSB\_LORA@{REG\_PREAMBLE\_LSB\_LORA}}
+\index{REG\_PREAMBLE\_LSB\_LORA@{REG\_PREAMBLE\_LSB\_LORA}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PREAMBLE\_LSB\_LORA}{REG\_PREAMBLE\_LSB\_LORA}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PREAMBLE\+\_\+\+LSB\+\_\+\+LORA~0x21}
+
+\Hypertarget{_s_x1272_8h_ae255330d921b20f47a59227e5c502c45}\label{_s_x1272_8h_ae255330d921b20f47a59227e5c502c45} 
+\index{SX1272.h@{SX1272.h}!REG\_PREAMBLE\_MSB\_FSK@{REG\_PREAMBLE\_MSB\_FSK}}
+\index{REG\_PREAMBLE\_MSB\_FSK@{REG\_PREAMBLE\_MSB\_FSK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PREAMBLE\_MSB\_FSK}{REG\_PREAMBLE\_MSB\_FSK}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PREAMBLE\+\_\+\+MSB\+\_\+\+FSK~0x25}
+
+\Hypertarget{_s_x1272_8h_a7f30bbce34a3473ea19ecb581ff429d7}\label{_s_x1272_8h_a7f30bbce34a3473ea19ecb581ff429d7} 
+\index{SX1272.h@{SX1272.h}!REG\_PREAMBLE\_MSB\_LORA@{REG\_PREAMBLE\_MSB\_LORA}}
+\index{REG\_PREAMBLE\_MSB\_LORA@{REG\_PREAMBLE\_MSB\_LORA}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_PREAMBLE\_MSB\_LORA}{REG\_PREAMBLE\_MSB\_LORA}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+PREAMBLE\+\_\+\+MSB\+\_\+\+LORA~0x20}
+
+\Hypertarget{_s_x1272_8h_a3d9e799addae2f940511eed337fa3116}\label{_s_x1272_8h_a3d9e799addae2f940511eed337fa3116} 
+\index{SX1272.h@{SX1272.h}!REG\_RSSI\_COLLISION@{REG\_RSSI\_COLLISION}}
+\index{REG\_RSSI\_COLLISION@{REG\_RSSI\_COLLISION}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RSSI\_COLLISION}{REG\_RSSI\_COLLISION}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RSSI\+\_\+\+COLLISION~0x0F}
+
+\Hypertarget{_s_x1272_8h_a374fa104e6866ac04338ecfe9f57a049}\label{_s_x1272_8h_a374fa104e6866ac04338ecfe9f57a049} 
+\index{SX1272.h@{SX1272.h}!REG\_RSSI\_CONFIG@{REG\_RSSI\_CONFIG}}
+\index{REG\_RSSI\_CONFIG@{REG\_RSSI\_CONFIG}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RSSI\_CONFIG}{REG\_RSSI\_CONFIG}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RSSI\+\_\+\+CONFIG~0x0E}
+
+\Hypertarget{_s_x1272_8h_a0ded1b6c2474f779737c5cae8ddc7b88}\label{_s_x1272_8h_a0ded1b6c2474f779737c5cae8ddc7b88} 
+\index{SX1272.h@{SX1272.h}!REG\_RSSI\_THRESH@{REG\_RSSI\_THRESH}}
+\index{REG\_RSSI\_THRESH@{REG\_RSSI\_THRESH}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RSSI\_THRESH}{REG\_RSSI\_THRESH}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RSSI\+\_\+\+THRESH~0x10}
+
+\Hypertarget{_s_x1272_8h_a07f6ef9e460b054f66ec1e314a9c6b11}\label{_s_x1272_8h_a07f6ef9e460b054f66ec1e314a9c6b11} 
+\index{SX1272.h@{SX1272.h}!REG\_RSSI\_VALUE\_FSK@{REG\_RSSI\_VALUE\_FSK}}
+\index{REG\_RSSI\_VALUE\_FSK@{REG\_RSSI\_VALUE\_FSK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RSSI\_VALUE\_FSK}{REG\_RSSI\_VALUE\_FSK}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RSSI\+\_\+\+VALUE\+\_\+\+FSK~0x11}
+
+\Hypertarget{_s_x1272_8h_a1fafd1d22fbd3d35818364820c8fc804}\label{_s_x1272_8h_a1fafd1d22fbd3d35818364820c8fc804} 
+\index{SX1272.h@{SX1272.h}!REG\_RSSI\_VALUE\_LORA@{REG\_RSSI\_VALUE\_LORA}}
+\index{REG\_RSSI\_VALUE\_LORA@{REG\_RSSI\_VALUE\_LORA}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RSSI\_VALUE\_LORA}{REG\_RSSI\_VALUE\_LORA}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RSSI\+\_\+\+VALUE\+\_\+\+LORA~0x1B}
+
+\Hypertarget{_s_x1272_8h_ab9cc032eac120ed0ea85588d0ac38839}\label{_s_x1272_8h_ab9cc032eac120ed0ea85588d0ac38839} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_BW@{REG\_RX\_BW}}
+\index{REG\_RX\_BW@{REG\_RX\_BW}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_BW}{REG\_RX\_BW}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+BW~0x12}
+
+\Hypertarget{_s_x1272_8h_a2f81ffefaab5211d9b4538126bc25ba4}\label{_s_x1272_8h_a2f81ffefaab5211d9b4538126bc25ba4} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_CONFIG@{REG\_RX\_CONFIG}}
+\index{REG\_RX\_CONFIG@{REG\_RX\_CONFIG}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_CONFIG}{REG\_RX\_CONFIG}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+CONFIG~0x0D}
+
+\Hypertarget{_s_x1272_8h_a04dfed9fcb45c1566baedc7ca5ff7873}\label{_s_x1272_8h_a04dfed9fcb45c1566baedc7ca5ff7873} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_DELAY@{REG\_RX\_DELAY}}
+\index{REG\_RX\_DELAY@{REG\_RX\_DELAY}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_DELAY}{REG\_RX\_DELAY}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+DELAY~0x23}
+
+\Hypertarget{_s_x1272_8h_ad3a4b72b2227118860ee73dc6ceaa5fb}\label{_s_x1272_8h_ad3a4b72b2227118860ee73dc6ceaa5fb} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_HEADER\_CNT\_VALUE\_LSB@{REG\_RX\_HEADER\_CNT\_VALUE\_LSB}}
+\index{REG\_RX\_HEADER\_CNT\_VALUE\_LSB@{REG\_RX\_HEADER\_CNT\_VALUE\_LSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_HEADER\_CNT\_VALUE\_LSB}{REG\_RX\_HEADER\_CNT\_VALUE\_LSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+HEADER\+\_\+\+CNT\+\_\+\+VALUE\+\_\+\+LSB~0x15}
+
+\Hypertarget{_s_x1272_8h_a3f9cd1b51b54d7d0ee3fa332ff52b5cf}\label{_s_x1272_8h_a3f9cd1b51b54d7d0ee3fa332ff52b5cf} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_HEADER\_CNT\_VALUE\_MSB@{REG\_RX\_HEADER\_CNT\_VALUE\_MSB}}
+\index{REG\_RX\_HEADER\_CNT\_VALUE\_MSB@{REG\_RX\_HEADER\_CNT\_VALUE\_MSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_HEADER\_CNT\_VALUE\_MSB}{REG\_RX\_HEADER\_CNT\_VALUE\_MSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+HEADER\+\_\+\+CNT\+\_\+\+VALUE\+\_\+\+MSB~0x14}
+
+\Hypertarget{_s_x1272_8h_a6677e72d852d0ff6293c05752fdf811b}\label{_s_x1272_8h_a6677e72d852d0ff6293c05752fdf811b} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_NB\_uint8\_tS@{REG\_RX\_NB\_uint8\_tS}}
+\index{REG\_RX\_NB\_uint8\_tS@{REG\_RX\_NB\_uint8\_tS}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_NB\_uint8\_tS}{REG\_RX\_NB\_uint8\_tS}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+NB\+\_\+uint8\+\_\+tS~0x13}
+
+\Hypertarget{_s_x1272_8h_a0c9db3e8c49db8b555b055829d59693c}\label{_s_x1272_8h_a0c9db3e8c49db8b555b055829d59693c} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_PACKET\_CNT\_VALUE\_LSB@{REG\_RX\_PACKET\_CNT\_VALUE\_LSB}}
+\index{REG\_RX\_PACKET\_CNT\_VALUE\_LSB@{REG\_RX\_PACKET\_CNT\_VALUE\_LSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_PACKET\_CNT\_VALUE\_LSB}{REG\_RX\_PACKET\_CNT\_VALUE\_LSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+PACKET\+\_\+\+CNT\+\_\+\+VALUE\+\_\+\+LSB~0x17}
+
+\Hypertarget{_s_x1272_8h_ac4d4ba325842028813b9de9927ca0e25}\label{_s_x1272_8h_ac4d4ba325842028813b9de9927ca0e25} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_PACKET\_CNT\_VALUE\_MSB@{REG\_RX\_PACKET\_CNT\_VALUE\_MSB}}
+\index{REG\_RX\_PACKET\_CNT\_VALUE\_MSB@{REG\_RX\_PACKET\_CNT\_VALUE\_MSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_PACKET\_CNT\_VALUE\_MSB}{REG\_RX\_PACKET\_CNT\_VALUE\_MSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+PACKET\+\_\+\+CNT\+\_\+\+VALUE\+\_\+\+MSB~0x16}
+
+\Hypertarget{_s_x1272_8h_a9f97a6e87b6f960b2d2e59fe4c703aaf}\label{_s_x1272_8h_a9f97a6e87b6f960b2d2e59fe4c703aaf} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_TIMEOUT1@{REG\_RX\_TIMEOUT1}}
+\index{REG\_RX\_TIMEOUT1@{REG\_RX\_TIMEOUT1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_TIMEOUT1}{REG\_RX\_TIMEOUT1}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+TIMEOUT1~0x20}
+
+\Hypertarget{_s_x1272_8h_a4030abc3074d569afb1294f6346d0bdb}\label{_s_x1272_8h_a4030abc3074d569afb1294f6346d0bdb} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_TIMEOUT2@{REG\_RX\_TIMEOUT2}}
+\index{REG\_RX\_TIMEOUT2@{REG\_RX\_TIMEOUT2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_TIMEOUT2}{REG\_RX\_TIMEOUT2}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+TIMEOUT2~0x21}
+
+\Hypertarget{_s_x1272_8h_a6e6447f2c506046b106f42dafcd3f577}\label{_s_x1272_8h_a6e6447f2c506046b106f42dafcd3f577} 
+\index{SX1272.h@{SX1272.h}!REG\_RX\_TIMEOUT3@{REG\_RX\_TIMEOUT3}}
+\index{REG\_RX\_TIMEOUT3@{REG\_RX\_TIMEOUT3}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RX\_TIMEOUT3}{REG\_RX\_TIMEOUT3}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+RX\+\_\+\+TIMEOUT3~0x22}
+
+\Hypertarget{_s_x1272_8h_aef19c5475213023f2d6843f97617c618}\label{_s_x1272_8h_aef19c5475213023f2d6843f97617c618} 
+\index{SX1272.h@{SX1272.h}!REG\_SEQ\_CONFIG1@{REG\_SEQ\_CONFIG1}}
+\index{REG\_SEQ\_CONFIG1@{REG\_SEQ\_CONFIG1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SEQ\_CONFIG1}{REG\_SEQ\_CONFIG1}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SEQ\+\_\+\+CONFIG1~0x36}
+
+\Hypertarget{_s_x1272_8h_a28cea61e40ee83d277fb0dfd63e88ee4}\label{_s_x1272_8h_a28cea61e40ee83d277fb0dfd63e88ee4} 
+\index{SX1272.h@{SX1272.h}!REG\_SEQ\_CONFIG2@{REG\_SEQ\_CONFIG2}}
+\index{REG\_SEQ\_CONFIG2@{REG\_SEQ\_CONFIG2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SEQ\_CONFIG2}{REG\_SEQ\_CONFIG2}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SEQ\+\_\+\+CONFIG2~0x37}
+
+\Hypertarget{_s_x1272_8h_a106fc1e09dcf39da871a9b9272d0d471}\label{_s_x1272_8h_a106fc1e09dcf39da871a9b9272d0d471} 
+\index{SX1272.h@{SX1272.h}!REG\_SYMB\_TIMEOUT\_LSB@{REG\_SYMB\_TIMEOUT\_LSB}}
+\index{REG\_SYMB\_TIMEOUT\_LSB@{REG\_SYMB\_TIMEOUT\_LSB}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYMB\_TIMEOUT\_LSB}{REG\_SYMB\_TIMEOUT\_LSB}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYMB\+\_\+\+TIMEOUT\+\_\+\+LSB~0x1F}
+
+\Hypertarget{_s_x1272_8h_ab42309e78c15cc77848e75f15d91d18a}\label{_s_x1272_8h_ab42309e78c15cc77848e75f15d91d18a} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_CONFIG@{REG\_SYNC\_CONFIG}}
+\index{REG\_SYNC\_CONFIG@{REG\_SYNC\_CONFIG}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_CONFIG}{REG\_SYNC\_CONFIG}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+CONFIG~0x27}
+
+\Hypertarget{_s_x1272_8h_a4584f343400d43b64208a88389b83fad}\label{_s_x1272_8h_a4584f343400d43b64208a88389b83fad} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_VALUE1@{REG\_SYNC\_VALUE1}}
+\index{REG\_SYNC\_VALUE1@{REG\_SYNC\_VALUE1}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_VALUE1}{REG\_SYNC\_VALUE1}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+VALUE1~0x28}
+
+\Hypertarget{_s_x1272_8h_abf83f5f3af0ea670ab0af50ad73a4510}\label{_s_x1272_8h_abf83f5f3af0ea670ab0af50ad73a4510} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_VALUE2@{REG\_SYNC\_VALUE2}}
+\index{REG\_SYNC\_VALUE2@{REG\_SYNC\_VALUE2}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_VALUE2}{REG\_SYNC\_VALUE2}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+VALUE2~0x29}
+
+\Hypertarget{_s_x1272_8h_a8266b875f9d380d846c312ae2d22fb18}\label{_s_x1272_8h_a8266b875f9d380d846c312ae2d22fb18} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_VALUE3@{REG\_SYNC\_VALUE3}}
+\index{REG\_SYNC\_VALUE3@{REG\_SYNC\_VALUE3}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_VALUE3}{REG\_SYNC\_VALUE3}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+VALUE3~0x2A}
+
+\Hypertarget{_s_x1272_8h_a1e3eeed3368e09a63560155b80582676}\label{_s_x1272_8h_a1e3eeed3368e09a63560155b80582676} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_VALUE4@{REG\_SYNC\_VALUE4}}
+\index{REG\_SYNC\_VALUE4@{REG\_SYNC\_VALUE4}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_VALUE4}{REG\_SYNC\_VALUE4}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+VALUE4~0x2B}
+
+\Hypertarget{_s_x1272_8h_a0f7f7522cdb9d45f9b2c06cd97cb5be0}\label{_s_x1272_8h_a0f7f7522cdb9d45f9b2c06cd97cb5be0} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_VALUE5@{REG\_SYNC\_VALUE5}}
+\index{REG\_SYNC\_VALUE5@{REG\_SYNC\_VALUE5}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_VALUE5}{REG\_SYNC\_VALUE5}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+VALUE5~0x2C}
+
+\Hypertarget{_s_x1272_8h_a1472eabace24f5b9343b206110b6bed8}\label{_s_x1272_8h_a1472eabace24f5b9343b206110b6bed8} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_VALUE6@{REG\_SYNC\_VALUE6}}
+\index{REG\_SYNC\_VALUE6@{REG\_SYNC\_VALUE6}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_VALUE6}{REG\_SYNC\_VALUE6}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+VALUE6~0x2D}
+
+\Hypertarget{_s_x1272_8h_a8833ec401ec64d212f50d3f00ec274cc}\label{_s_x1272_8h_a8833ec401ec64d212f50d3f00ec274cc} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_VALUE7@{REG\_SYNC\_VALUE7}}
+\index{REG\_SYNC\_VALUE7@{REG\_SYNC\_VALUE7}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_VALUE7}{REG\_SYNC\_VALUE7}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+VALUE7~0x2E}
+
+\Hypertarget{_s_x1272_8h_a0180654d81fce859b49a8da7f9a9c2ad}\label{_s_x1272_8h_a0180654d81fce859b49a8da7f9a9c2ad} 
+\index{SX1272.h@{SX1272.h}!REG\_SYNC\_VALUE8@{REG\_SYNC\_VALUE8}}
+\index{REG\_SYNC\_VALUE8@{REG\_SYNC\_VALUE8}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_SYNC\_VALUE8}{REG\_SYNC\_VALUE8}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+SYNC\+\_\+\+VALUE8~0x2F}
+
+\Hypertarget{_s_x1272_8h_a57f595889f6a6af755ecc9b3bb5b4c3d}\label{_s_x1272_8h_a57f595889f6a6af755ecc9b3bb5b4c3d} 
+\index{SX1272.h@{SX1272.h}!REG\_TCXO@{REG\_TCXO}}
+\index{REG\_TCXO@{REG\_TCXO}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_TCXO}{REG\_TCXO}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+TCXO~0x58}
+
+\Hypertarget{_s_x1272_8h_ad3b0b6d8d5d3de58e5d56ce84e667b20}\label{_s_x1272_8h_ad3b0b6d8d5d3de58e5d56ce84e667b20} 
+\index{SX1272.h@{SX1272.h}!REG\_TEMP@{REG\_TEMP}}
+\index{REG\_TEMP@{REG\_TEMP}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_TEMP}{REG\_TEMP}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+TEMP~0x3C}
+
+\Hypertarget{_s_x1272_8h_a454743c6c5d09b38bb75d53f9908ae2f}\label{_s_x1272_8h_a454743c6c5d09b38bb75d53f9908ae2f} 
+\index{SX1272.h@{SX1272.h}!REG\_TIMER1\_COEF@{REG\_TIMER1\_COEF}}
+\index{REG\_TIMER1\_COEF@{REG\_TIMER1\_COEF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_TIMER1\_COEF}{REG\_TIMER1\_COEF}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+TIMER1\+\_\+\+COEF~0x39}
+
+\Hypertarget{_s_x1272_8h_a3715c95235a9dcdd6b335ff7019c1fec}\label{_s_x1272_8h_a3715c95235a9dcdd6b335ff7019c1fec} 
+\index{SX1272.h@{SX1272.h}!REG\_TIMER2\_COEF@{REG\_TIMER2\_COEF}}
+\index{REG\_TIMER2\_COEF@{REG\_TIMER2\_COEF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_TIMER2\_COEF}{REG\_TIMER2\_COEF}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+TIMER2\+\_\+\+COEF~0x3A}
+
+\Hypertarget{_s_x1272_8h_ade258385f1fa5bfb4aa151342f03310b}\label{_s_x1272_8h_ade258385f1fa5bfb4aa151342f03310b} 
+\index{SX1272.h@{SX1272.h}!REG\_TIMER\_RESOL@{REG\_TIMER\_RESOL}}
+\index{REG\_TIMER\_RESOL@{REG\_TIMER\_RESOL}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_TIMER\_RESOL}{REG\_TIMER\_RESOL}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+TIMER\+\_\+\+RESOL~0x38}
+
+\Hypertarget{_s_x1272_8h_aa7075c0ae73420685bb4278ee580f3fa}\label{_s_x1272_8h_aa7075c0ae73420685bb4278ee580f3fa} 
+\index{SX1272.h@{SX1272.h}!REG\_VERSION@{REG\_VERSION}}
+\index{REG\_VERSION@{REG\_VERSION}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{REG\_VERSION}{REG\_VERSION}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+VERSION~0x42}
+
+\Hypertarget{_s_x1272_8h_a25f6cd8abcf9c6eca9cc2030e60b6bce}\label{_s_x1272_8h_a25f6cd8abcf9c6eca9cc2030e60b6bce} 
+\index{SX1272.h@{SX1272.h}!SF\_10@{SF\_10}}
+\index{SF\_10@{SF\_10}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SF\_10}{SF\_10}}
+{\footnotesize\ttfamily \#define SF\+\_\+10~0x0A}
+
+\Hypertarget{_s_x1272_8h_a1a0de9ed8644310c5fd0e115ad267dfd}\label{_s_x1272_8h_a1a0de9ed8644310c5fd0e115ad267dfd} 
+\index{SX1272.h@{SX1272.h}!SF\_11@{SF\_11}}
+\index{SF\_11@{SF\_11}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SF\_11}{SF\_11}}
+{\footnotesize\ttfamily \#define SF\+\_\+11~0x0B}
+
+\Hypertarget{_s_x1272_8h_a433d4989c423e022a95f6d0dd7b6432b}\label{_s_x1272_8h_a433d4989c423e022a95f6d0dd7b6432b} 
+\index{SX1272.h@{SX1272.h}!SF\_12@{SF\_12}}
+\index{SF\_12@{SF\_12}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SF\_12}{SF\_12}}
+{\footnotesize\ttfamily \#define SF\+\_\+12~0x0C}
+
+\Hypertarget{_s_x1272_8h_ad992ccf7c9616b23f254959c71bb5d32}\label{_s_x1272_8h_ad992ccf7c9616b23f254959c71bb5d32} 
+\index{SX1272.h@{SX1272.h}!SF\_6@{SF\_6}}
+\index{SF\_6@{SF\_6}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SF\_6}{SF\_6}}
+{\footnotesize\ttfamily \#define SF\+\_\+6~0x06}
+
+\Hypertarget{_s_x1272_8h_a035db07d1db23b4c99a68555aec93a40}\label{_s_x1272_8h_a035db07d1db23b4c99a68555aec93a40} 
+\index{SX1272.h@{SX1272.h}!SF\_7@{SF\_7}}
+\index{SF\_7@{SF\_7}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SF\_7}{SF\_7}}
+{\footnotesize\ttfamily \#define SF\+\_\+7~0x07}
+
+\Hypertarget{_s_x1272_8h_a65182710e163740b8fa6920ba839558e}\label{_s_x1272_8h_a65182710e163740b8fa6920ba839558e} 
+\index{SX1272.h@{SX1272.h}!SF\_8@{SF\_8}}
+\index{SF\_8@{SF\_8}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SF\_8}{SF\_8}}
+{\footnotesize\ttfamily \#define SF\+\_\+8~0x08}
+
+\Hypertarget{_s_x1272_8h_a71e86559e9ed9076f377c1a5c7749730}\label{_s_x1272_8h_a71e86559e9ed9076f377c1a5c7749730} 
+\index{SX1272.h@{SX1272.h}!SF\_9@{SF\_9}}
+\index{SF\_9@{SF\_9}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SF\_9}{SF\_9}}
+{\footnotesize\ttfamily \#define SF\+\_\+9~0x09}
+
+\Hypertarget{_s_x1272_8h_a639b6b7d6462bd34cd7837a422850e15}\label{_s_x1272_8h_a639b6b7d6462bd34cd7837a422850e15} 
+\index{SX1272.h@{SX1272.h}!st\_SD\_OFF@{st\_SD\_OFF}}
+\index{st\_SD\_OFF@{st\_SD\_OFF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{st\_SD\_OFF}{st\_SD\_OFF}}
+{\footnotesize\ttfamily \#define st\+\_\+\+SD\+\_\+\+OFF~0}
+
+\Hypertarget{_s_x1272_8h_a5d45a377b8e8b0f18f931ab659dbdc37}\label{_s_x1272_8h_a5d45a377b8e8b0f18f931ab659dbdc37} 
+\index{SX1272.h@{SX1272.h}!st\_SD\_ON@{st\_SD\_ON}}
+\index{st\_SD\_ON@{st\_SD\_ON}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{st\_SD\_ON}{st\_SD\_ON}}
+{\footnotesize\ttfamily \#define st\+\_\+\+SD\+\_\+\+ON~1}
+
+\Hypertarget{_s_x1272_8h_af8ae7b279812be3c5dd17adb4c471dc3}\label{_s_x1272_8h_af8ae7b279812be3c5dd17adb4c471dc3} 
+\index{SX1272.h@{SX1272.h}!SX1272\_debug\_mode@{SX1272\_debug\_mode}}
+\index{SX1272\_debug\_mode@{SX1272\_debug\_mode}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SX1272\_debug\_mode}{SX1272\_debug\_mode}}
+{\footnotesize\ttfamily \#define SX1272\+\_\+debug\+\_\+mode~0}
+
+\Hypertarget{_s_x1272_8h_a8a04baf8adb61a2260eb09998a217d7d}\label{_s_x1272_8h_a8a04baf8adb61a2260eb09998a217d7d} 
+\index{SX1272.h@{SX1272.h}!SX1272\_RST@{SX1272\_RST}}
+\index{SX1272\_RST@{SX1272\_RST}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SX1272\_RST}{SX1272\_RST}}
+{\footnotesize\ttfamily \#define SX1272\+\_\+\+RST~A0}
+
+\Hypertarget{_s_x1272_8h_a80255ad88e4606788693612243d4e911}\label{_s_x1272_8h_a80255ad88e4606788693612243d4e911} 
+\index{SX1272.h@{SX1272.h}!SX1272\_SS@{SX1272\_SS}}
+\index{SX1272\_SS@{SX1272\_SS}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{SX1272\_SS}{SX1272\_SS}}
+{\footnotesize\ttfamily \#define SX1272\+\_\+\+SS~10}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_x1272_8h_ab345c772a3f5a75b78c16760a8b6a028}\label{_s_x1272_8h_ab345c772a3f5a75b78c16760a8b6a028} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_availableData@{BSP\_SX1272\_availableData}}
+\index{BSP\_SX1272\_availableData@{BSP\_SX1272\_availableData}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_availableData()}{BSP\_SX1272\_availableData()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+available\+Data (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+Lo\+Ra mode
+
+FSK mode\Hypertarget{_s_x1272_8h_aa7177092cff951f46ff6afee93e98e69}\label{_s_x1272_8h_aa7177092cff951f46ff6afee93e98e69} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_cadDetected@{BSP\_SX1272\_cadDetected}}
+\index{BSP\_SX1272\_cadDetected@{BSP\_SX1272\_cadDetected}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_cadDetected()}{BSP\_SX1272\_cadDetected()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+cad\+Detected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a83ace0a080a4d7c8a76e6a9877b919b1}\label{_s_x1272_8h_a83ace0a080a4d7c8a76e6a9877b919b1} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_clearFlags@{BSP\_SX1272\_clearFlags}}
+\index{BSP\_SX1272\_clearFlags@{BSP\_SX1272\_clearFlags}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_clearFlags()}{BSP\_SX1272\_clearFlags()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+SX1272\+\_\+clear\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Efface les indicateurs de drapeaux du module SX1272. 
+
+Cette fonction efface les indicateurs de drapeaux du module SX1272. Les drapeaux sont effacés en mettant le module en mode veille, en écrivant dans les registres appropriés, puis en restaurant le mode précédent.
+
+\begin{DoxyNote}{Note}
+Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+\end{DoxyNote}
+Lo\+Ra mode
+
+FSK mode\Hypertarget{_s_x1272_8h_a5e10c3563cf5e2302058745c8208f5d1}\label{_s_x1272_8h_a5e10c3563cf5e2302058745c8208f5d1} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getACK@{BSP\_SX1272\_getACK}}
+\index{BSP\_SX1272\_getACK@{BSP\_SX1272\_getACK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getACK()}{BSP\_SX1272\_getACK()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+ACK (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a7aa32db83358df833ff68ddd5d619d4a}\label{_s_x1272_8h_a7aa32db83358df833ff68ddd5d619d4a} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getBW@{BSP\_SX1272\_getBW}}
+\index{BSP\_SX1272\_getBW@{BSP\_SX1272\_getBW}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getBW()}{BSP\_SX1272\_getBW()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+BW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current bandwidth setting. 
+
+This function retrieves the current bandwidth setting from the SX1272 module.
+
+\begin{DoxyReturn}{Returns}
+0 if the bandwidth value was successfully retrieved, 1 if there was an error, or -\/1 if the bandwidth is not available in FSK mode. 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_a386b0526cd1a0f4809e1dcb4ea4f5253}\label{_s_x1272_8h_a386b0526cd1a0f4809e1dcb4ea4f5253} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getChannel@{BSP\_SX1272\_getChannel}}
+\index{BSP\_SX1272\_getChannel@{BSP\_SX1272\_getChannel}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getChannel()}{BSP\_SX1272\_getChannel()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Channel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a075ed4d128a5686a3e7160e1ef703c07}\label{_s_x1272_8h_a075ed4d128a5686a3e7160e1ef703c07} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getCR@{BSP\_SX1272\_getCR}}
+\index{BSP\_SX1272\_getCR@{BSP\_SX1272\_getCR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getCR()}{BSP\_SX1272\_getCR()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+CR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current coding rate value. 
+
+This function retrieves the current coding rate value from the SX1272 module.
+
+\begin{DoxyReturn}{Returns}
+The current coding rate value. -\/1 if the module is in FSK mode (FSK mode doesn\textquotesingle{}t have a coding rate). 0 if the coding rate value is successfully retrieved. 1 if there was an error while getting the coding rate value. 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_a8fa565b989224342464c22c77f8c6e7d}\label{_s_x1272_8h_a8fa565b989224342464c22c77f8c6e7d} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getCRC@{BSP\_SX1272\_getCRC}}
+\index{BSP\_SX1272\_getCRC@{BSP\_SX1272\_getCRC}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getCRC()}{BSP\_SX1272\_getCRC()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+CRC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the CRC configuration on the SX1272 module. 
+
+This function retrieves the CRC (Cyclic Redundancy Check) configuration on the SX1272 module. In Lo\+Ra mode, it checks if the CRC is activated or deactivated based on the value of the Rx\+Payload\+Crc\+On bit in REG\+\_\+\+MODEM\+\_\+\+CONFIG1. In FSK mode, it checks the value of the Crc\+On bit in REG\+\_\+\+PACKET\+\_\+\+CONFIG1.
+
+\begin{DoxyReturn}{Returns}
+The state of the CRC configuration.
+\begin{DoxyItemize}
+\item 0 if the CRC is deactivated.
+\item 1 if the CRC is activated.
+\item 2 if an error occurred.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a8fa565b989224342464c22c77f8c6e7d}{BSP\_SX1272\_getCRC}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ is\ deactivated}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ is\ activated}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ while\ getting\ the\ CRC\ configuration}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{_s_x1272_8h_ae8a601b57791635b3417ffea72ee47c5}\label{_s_x1272_8h_ae8a601b57791635b3417ffea72ee47c5} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getHeader@{BSP\_SX1272\_getHeader}}
+\index{BSP\_SX1272\_getHeader@{BSP\_SX1272\_getHeader}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getHeader()}{BSP\_SX1272\_getHeader()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the header mode of the SX1272 module. 
+
+This function retrieves the header mode of the SX1272 module, which indicates whether the module operates in explicit header mode or implicit header mode.
+
+\begin{DoxyReturn}{Returns}
+The state of the operation. 0 if successful, -\/1 if there was an error.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+In FSK mode, the header is not available.
+\end{DoxyNote}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_ae8a601b57791635b3417ffea72ee47c5}{BSP\_SX1272\_getHeader}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ mode\ retrieved\ successfully}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ while\ retrieving\ header\ mode}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{_s_x1272_8h_aa57086bba959d11b6c028aca5e8e04eb}\label{_s_x1272_8h_aa57086bba959d11b6c028aca5e8e04eb} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getMaxCurrent@{BSP\_SX1272\_getMaxCurrent}}
+\index{BSP\_SX1272\_getMaxCurrent@{BSP\_SX1272\_getMaxCurrent}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getMaxCurrent()}{BSP\_SX1272\_getMaxCurrent()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Max\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a547aa32b39ad3d33de177364e6d99f4b}\label{_s_x1272_8h_a547aa32b39ad3d33de177364e6d99f4b} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getMode@{BSP\_SX1272\_getMode}}
+\index{BSP\_SX1272\_getMode@{BSP\_SX1272\_getMode}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getMode()}{BSP\_SX1272\_getMode()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Récupère le mode actuel du module SX1272. 
+
+Cette fonction récupère le mode actuel du module SX1272. Elle lit les registres REG\+\_\+\+MODEM\+\_\+\+CONFIG1 et REG\+\_\+\+MODEM\+\_\+\+CONFIG2 pour obtenir les paramètres de configuration du mode. Les valeurs des paramètres sont ensuite stockées dans les variables correspondantes de la structure {\ttfamily currentstate}. La fonction vérifie également si les valeurs des paramètres sont valides en utilisant les fonctions \doxylink{_s_x1272_8c_a5901e53acaf3b4e01eef390fd865931a}{BSP\+\_\+\+SX1272\+\_\+is\+BW()}, \doxylink{_s_x1272_8c_a95101467cb905ca8ad86a3e27b7ab790}{BSP\+\_\+\+SX1272\+\_\+is\+CR()} et \doxylink{_s_x1272_8c_a0ba271766fea69ce3ae6582abc467945}{BSP\+\_\+\+SX1272\+\_\+is\+SF()}. Le résultat de la vérification est retourné.
+
+\begin{DoxyReturn}{Returns}
+État de récupération du mode \+:
+\begin{DoxyItemize}
+\item 0 \+: Succès (mode récupéré avec succès)
+\item 1 \+: Erreur (valeurs de paramètres invalides)
+\item 2 \+: Erreur (échec de récupération du mode)
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+\end{DoxyNote}
+\Hypertarget{_s_x1272_8h_acd6b0c964badc990e57d88d54a73e795}\label{_s_x1272_8h_acd6b0c964badc990e57d88d54a73e795} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getNodeAddress@{BSP\_SX1272\_getNodeAddress}}
+\index{BSP\_SX1272\_getNodeAddress@{BSP\_SX1272\_getNodeAddress}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getNodeAddress()}{BSP\_SX1272\_getNodeAddress()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Node\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_adc205f8a5e76a8f8036191c8ba4f218f}\label{_s_x1272_8h_adc205f8a5e76a8f8036191c8ba4f218f} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getPacket@{BSP\_SX1272\_getPacket}}
+\index{BSP\_SX1272\_getPacket@{BSP\_SX1272\_getPacket}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPacket()}{BSP\_SX1272\_getPacket()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Packet (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+Lo\+Ra mode
+
+FSK mode
+
+Lo\+Ra
+
+FSK\Hypertarget{_s_x1272_8h_afb461e5a9bf35ff9c819cfdb157e3ae0}\label{_s_x1272_8h_afb461e5a9bf35ff9c819cfdb157e3ae0} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getPacketMAXTimeout@{BSP\_SX1272\_getPacketMAXTimeout}}
+\index{BSP\_SX1272\_getPacketMAXTimeout@{BSP\_SX1272\_getPacketMAXTimeout}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPacketMAXTimeout()}{BSP\_SX1272\_getPacketMAXTimeout()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Packet\+MAXTimeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a70e3dd40d4c27d71611ac4c46f77d231}\label{_s_x1272_8h_a70e3dd40d4c27d71611ac4c46f77d231} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getPayloadLength@{BSP\_SX1272\_getPayloadLength}}
+\index{BSP\_SX1272\_getPayloadLength@{BSP\_SX1272\_getPayloadLength}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPayloadLength()}{BSP\_SX1272\_getPayloadLength()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Payload\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_aeea4ea276d7069714603905479f67727}\label{_s_x1272_8h_aeea4ea276d7069714603905479f67727} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getPower@{BSP\_SX1272\_getPower}}
+\index{BSP\_SX1272\_getPower@{BSP\_SX1272\_getPower}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPower()}{BSP\_SX1272\_getPower()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Power (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_aa2d7333888bb79615493daa0b202e97e}\label{_s_x1272_8h_aa2d7333888bb79615493daa0b202e97e} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getPreambleLength@{BSP\_SX1272\_getPreambleLength}}
+\index{BSP\_SX1272\_getPreambleLength@{BSP\_SX1272\_getPreambleLength}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getPreambleLength()}{BSP\_SX1272\_getPreambleLength()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Preamble\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a99544940866d0b8e841f6f04de0614fc}\label{_s_x1272_8h_a99544940866d0b8e841f6f04de0614fc} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getRegs@{BSP\_SX1272\_getRegs}}
+\index{BSP\_SX1272\_getRegs@{BSP\_SX1272\_getRegs}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getRegs()}{BSP\_SX1272\_getRegs()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Regs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_afbc662bca448dcf0f7182b2ae7e77f6e}\label{_s_x1272_8h_afbc662bca448dcf0f7182b2ae7e77f6e} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getRSSI@{BSP\_SX1272\_getRSSI}}
+\index{BSP\_SX1272\_getRSSI@{BSP\_SX1272\_getRSSI}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getRSSI()}{BSP\_SX1272\_getRSSI()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+RSSI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Lo\+Ra mode
+
+FSK mode\Hypertarget{_s_x1272_8h_a3b371f35a383ffb1d822c8e33085f1c6}\label{_s_x1272_8h_a3b371f35a383ffb1d822c8e33085f1c6} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getRSSIpacket@{BSP\_SX1272\_getRSSIpacket}}
+\index{BSP\_SX1272\_getRSSIpacket@{BSP\_SX1272\_getRSSIpacket}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getRSSIpacket()}{BSP\_SX1272\_getRSSIpacket()}}
+{\footnotesize\ttfamily int16\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+RSSIpacket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a6751a3479b78944fe7effc446663dc8c}\label{_s_x1272_8h_a6751a3479b78944fe7effc446663dc8c} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getSF@{BSP\_SX1272\_getSF}}
+\index{BSP\_SX1272\_getSF@{BSP\_SX1272\_getSF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getSF()}{BSP\_SX1272\_getSF()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+SF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current spreading factor (SF) setting. 
+
+This function retrieves the current spreading factor (SF) setting from the SX1272 module. It reads the value from the REG\+\_\+\+MODEM\+\_\+\+CONFIG2 register and updates the {\ttfamily currentstate.\+\_\+spreading\+Factor} variable accordingly.
+
+\begin{DoxyReturn}{Returns}
+0 if the spreading factor is successfully retrieved and valid, 1 if there was an error, or -\/1 if the device is in FSK mode where spreading factor is not applicable. 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_afbcf844f00bdeaefdf767239089bb7d0}\label{_s_x1272_8h_afbcf844f00bdeaefdf767239089bb7d0} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getSNR@{BSP\_SX1272\_getSNR}}
+\index{BSP\_SX1272\_getSNR@{BSP\_SX1272\_getSNR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getSNR()}{BSP\_SX1272\_getSNR()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+SNR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a0c9ab298ced3d1d7ae2d14bd01bf1166}\label{_s_x1272_8h_a0c9ab298ced3d1d7ae2d14bd01bf1166} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_getTemp@{BSP\_SX1272\_getTemp}}
+\index{BSP\_SX1272\_getTemp@{BSP\_SX1272\_getTemp}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_getTemp()}{BSP\_SX1272\_getTemp()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+get\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a5901e53acaf3b4e01eef390fd865931a}\label{_s_x1272_8h_a5901e53acaf3b4e01eef390fd865931a} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_isBW@{BSP\_SX1272\_isBW}}
+\index{BSP\_SX1272\_isBW@{BSP\_SX1272\_isBW}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_isBW()}{BSP\_SX1272\_isBW()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+is\+BW (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{band }\end{DoxyParamCaption})}
+
+
+
+Check if the specified bandwidth value is valid. 
+
+This function checks if the specified bandwidth value is valid for the SX1272 module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em band} & The bandwidth value to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the bandwidth value is valid, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_a256c77c623060387b0115ec9af433df9}\label{_s_x1272_8h_a256c77c623060387b0115ec9af433df9} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_isChannel@{BSP\_SX1272\_isChannel}}
+\index{BSP\_SX1272\_isChannel@{BSP\_SX1272\_isChannel}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_isChannel()}{BSP\_SX1272\_isChannel()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+is\+Channel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ch }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a95101467cb905ca8ad86a3e27b7ab790}\label{_s_x1272_8h_a95101467cb905ca8ad86a3e27b7ab790} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_isCR@{BSP\_SX1272\_isCR}}
+\index{BSP\_SX1272\_isCR@{BSP\_SX1272\_isCR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_isCR()}{BSP\_SX1272\_isCR()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+is\+CR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cod }\end{DoxyParamCaption})}
+
+
+
+Check if the coding rate value is valid. 
+
+This function checks if the coding rate value is valid based on the available values for currentstate.\+\_\+coding\+Rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod} & The coding rate value to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the coding rate value is valid, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_a0ba271766fea69ce3ae6582abc467945}\label{_s_x1272_8h_a0ba271766fea69ce3ae6582abc467945} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_isSF@{BSP\_SX1272\_isSF}}
+\index{BSP\_SX1272\_isSF@{BSP\_SX1272\_isSF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_isSF()}{BSP\_SX1272\_isSF()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+is\+SF (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{spr }\end{DoxyParamCaption})}
+
+
+
+Check if the given spreading factor (SF) is valid. 
+
+This function checks if the provided spreading factor (SF) value is valid. It compares the value against the available spreading factor options defined in the SX1272 module. Valid spreading factors are SF\+\_\+6, SF\+\_\+7, SF\+\_\+8, SF\+\_\+9, SF\+\_\+10, SF\+\_\+11, and SF\+\_\+12.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spr} & The spreading factor (SF) value to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the spreading factor is valid, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_a6d5d1889f6ae377b5a230f2d9443f13c}\label{_s_x1272_8h_a6d5d1889f6ae377b5a230f2d9443f13c} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_OFF@{BSP\_SX1272\_OFF}}
+\index{BSP\_SX1272\_OFF@{BSP\_SX1272\_OFF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_OFF()}{BSP\_SX1272\_OFF()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+SX1272\+\_\+\+OFF (\begin{DoxyParamCaption}\item[{int}]{type\+\_\+mod }\end{DoxyParamCaption})}
+
+
+
+Désactive le module SX1272. 
+
+Cette fonction désactive le module SX1272 en mettant le module en mode veille ou en mode veille selon le type de modulation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+mod} & Le type de modulation utilisé \+: 0 pour Lo\+Ra, autre valeur pour FSK.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Cette fonction assume que la fonction \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} est disponible pour écrire dans les registres du module SX1272. 
+\end{DoxyNote}
+\Hypertarget{_s_x1272_8h_a9d7faebf99dac4cfbb31d2681770373d}\label{_s_x1272_8h_a9d7faebf99dac4cfbb31d2681770373d} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_ON@{BSP\_SX1272\_ON}}
+\index{BSP\_SX1272\_ON@{BSP\_SX1272\_ON}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_ON()}{BSP\_SX1272\_ON()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+\+ON (\begin{DoxyParamCaption}\item[{int}]{type\+\_\+mod }\end{DoxyParamCaption})}
+
+
+
+Active le module SX1272. 
+
+Cette fonction active le module SX1272 en initialisant les variables internes et en configurant les paramètres par défaut.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+mod} & Le type de modulation à utiliser \+: 0 pour Lo\+Ra, autre valeur pour FSK. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}état d\textquotesingle{}activation du module SX1272 \+:
+\begin{DoxyItemize}
+\item 0 \+: activation réussie.
+\item 1 \+: échec de l\textquotesingle{}activation.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction assume que le module SX1272 est connecté et que les fonctions \doxylink{com_s_x1272_8h_a823387fc0ba3a232cd26c0e46165117d}{BSP\+\_\+\+SPI1\+\_\+\+Init()} et \doxylink{delay_8h_adfc6cf5dbb78d0f390c250838bb51777}{BSP\+\_\+\+DELAY\+\_\+ms()} sont disponibles. 
+\end{DoxyNote}
+\Hypertarget{_s_x1272_8h_a3ad7f7b23c57eb6cc7e692e40cf83d32}\label{_s_x1272_8h_a3ad7f7b23c57eb6cc7e692e40cf83d32} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_receive@{BSP\_SX1272\_receive}}
+\index{BSP\_SX1272\_receive@{BSP\_SX1272\_receive}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receive()}{BSP\_SX1272\_receive()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Lo\+Ra mode
+
+FSK mode\Hypertarget{_s_x1272_8h_adaf6a9e0c64c1614e0aa1a1bc93bace6}\label{_s_x1272_8h_adaf6a9e0c64c1614e0aa1a1bc93bace6} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_receiveAll@{BSP\_SX1272\_receiveAll}}
+\index{BSP\_SX1272\_receiveAll@{BSP\_SX1272\_receiveAll}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receiveAll()}{BSP\_SX1272\_receiveAll()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+All (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+FSK mode\Hypertarget{_s_x1272_8h_acff4ba7e35caadf9bdb8483f10dfedbf}\label{_s_x1272_8h_acff4ba7e35caadf9bdb8483f10dfedbf} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_receivePacketMAXTimeout@{BSP\_SX1272\_receivePacketMAXTimeout}}
+\index{BSP\_SX1272\_receivePacketMAXTimeout@{BSP\_SX1272\_receivePacketMAXTimeout}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receivePacketMAXTimeout()}{BSP\_SX1272\_receivePacketMAXTimeout()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+MAXTimeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_afef8f31780646daf8aadabf5c9fc8788}\label{_s_x1272_8h_afef8f31780646daf8aadabf5c9fc8788} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_receivePacketMAXTimeoutACK@{BSP\_SX1272\_receivePacketMAXTimeoutACK}}
+\index{BSP\_SX1272\_receivePacketMAXTimeoutACK@{BSP\_SX1272\_receivePacketMAXTimeoutACK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receivePacketMAXTimeoutACK()}{BSP\_SX1272\_receivePacketMAXTimeoutACK()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+MAXTimeout\+ACK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_afb10b837208ffe656413c55fb9b06647}\label{_s_x1272_8h_afb10b837208ffe656413c55fb9b06647} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_receivePacketTimeout@{BSP\_SX1272\_receivePacketTimeout}}
+\index{BSP\_SX1272\_receivePacketTimeout@{BSP\_SX1272\_receivePacketTimeout}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receivePacketTimeout()}{BSP\_SX1272\_receivePacketTimeout()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeout (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a3a2ced710eeb055f6acce9ab2041e0b0}\label{_s_x1272_8h_a3a2ced710eeb055f6acce9ab2041e0b0} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_receivePacketTimeoutACK@{BSP\_SX1272\_receivePacketTimeoutACK}}
+\index{BSP\_SX1272\_receivePacketTimeoutACK@{BSP\_SX1272\_receivePacketTimeoutACK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_receivePacketTimeoutACK()}{BSP\_SX1272\_receivePacketTimeoutACK()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+receive\+Packet\+Timeout\+ACK (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_aebc852eb4ab8a0a954961311432a1ede}\label{_s_x1272_8h_aebc852eb4ab8a0a954961311432a1ede} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_sendPacketMAXTimeout@{BSP\_SX1272\_sendPacketMAXTimeout}}
+\index{BSP\_SX1272\_sendPacketMAXTimeout@{BSP\_SX1272\_sendPacketMAXTimeout}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketMAXTimeout()}{BSP\_SX1272\_sendPacketMAXTimeout()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+MAXTimeout (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a729b1cfbd077be21b68a98da7734d352}\label{_s_x1272_8h_a729b1cfbd077be21b68a98da7734d352} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_sendPacketTimeout@{BSP\_SX1272\_sendPacketTimeout}}
+\index{BSP\_SX1272\_sendPacketTimeout@{BSP\_SX1272\_sendPacketTimeout}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketTimeout()}{BSP\_SX1272\_sendPacketTimeout()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload,  }\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_abb6cb6942968fde251bf85806d596e70}\label{_s_x1272_8h_abb6cb6942968fde251bf85806d596e70} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_sendPacketTimeoutACK@{BSP\_SX1272\_sendPacketTimeoutACK}}
+\index{BSP\_SX1272\_sendPacketTimeoutACK@{BSP\_SX1272\_sendPacketTimeoutACK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketTimeoutACK()}{BSP\_SX1272\_sendPacketTimeoutACK()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload,  }\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a8431e866f89dd99e9956b370d1fbf4f4}\label{_s_x1272_8h_a8431e866f89dd99e9956b370d1fbf4f4} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_sendPacketTimeoutACKRetries@{BSP\_SX1272\_sendPacketTimeoutACKRetries}}
+\index{BSP\_SX1272\_sendPacketTimeoutACKRetries@{BSP\_SX1272\_sendPacketTimeoutACKRetries}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendPacketTimeoutACKRetries()}{BSP\_SX1272\_sendPacketTimeoutACKRetries()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+Packet\+Timeout\+ACKRetries (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload,  }\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_ab692c6542ea5675500df5be6d31596de}\label{_s_x1272_8h_ab692c6542ea5675500df5be6d31596de} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_sendWithMAXTimeout@{BSP\_SX1272\_sendWithMAXTimeout}}
+\index{BSP\_SX1272\_sendWithMAXTimeout@{BSP\_SX1272\_sendWithMAXTimeout}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendWithMAXTimeout()}{BSP\_SX1272\_sendWithMAXTimeout()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+With\+MAXTimeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a85e68d224c715300295151e3eb25d818}\label{_s_x1272_8h_a85e68d224c715300295151e3eb25d818} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_sendWithTimeout@{BSP\_SX1272\_sendWithTimeout}}
+\index{BSP\_SX1272\_sendWithTimeout@{BSP\_SX1272\_sendWithTimeout}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_sendWithTimeout()}{BSP\_SX1272\_sendWithTimeout()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+send\+With\+Timeout (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{wait }\end{DoxyParamCaption})}
+
+Lo\+Ra mode
+
+FSK mode\Hypertarget{_s_x1272_8h_a65d9807602541b563d6d4035665cec73}\label{_s_x1272_8h_a65d9807602541b563d6d4035665cec73} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setACK@{BSP\_SX1272\_setACK}}
+\index{BSP\_SX1272\_setACK@{BSP\_SX1272\_setACK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setACK()}{BSP\_SX1272\_setACK()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+ACK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_ae95979ddf558956d68a10d0d052c99a4}\label{_s_x1272_8h_ae95979ddf558956d68a10d0d052c99a4} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setBW@{BSP\_SX1272\_setBW}}
+\index{BSP\_SX1272\_setBW@{BSP\_SX1272\_setBW}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setBW()}{BSP\_SX1272\_setBW()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+BW (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{band }\end{DoxyParamCaption})}
+
+
+
+Set the bandwidth for SX1272 module. 
+
+This function sets the bandwidth parameter for the SX1272 module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em band} & The bandwidth value to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the bandwidth was successfully set, 1 if there was an error, or -\/1 if the bandwidth is not available in FSK mode. 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_af34d08b531e6f35f0b961e676b17800d}\label{_s_x1272_8h_af34d08b531e6f35f0b961e676b17800d} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setChannel@{BSP\_SX1272\_setChannel}}
+\index{BSP\_SX1272\_setChannel@{BSP\_SX1272\_setChannel}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setChannel()}{BSP\_SX1272\_setChannel()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Channel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ch }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_ac32a335af980f971d3acc103634723bc}\label{_s_x1272_8h_ac32a335af980f971d3acc103634723bc} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setCR@{BSP\_SX1272\_setCR}}
+\index{BSP\_SX1272\_setCR@{BSP\_SX1272\_setCR}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setCR()}{BSP\_SX1272\_setCR()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+CR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cod }\end{DoxyParamCaption})}
+
+
+
+Set the coding rate parameter for the SX1272 module. 
+
+This function sets the coding rate parameter for the SX1272 module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod} & The coding rate value to set. Possible values are CR\+\_\+5, CR\+\_\+6, CR\+\_\+7, CR\+\_\+8.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the coding rate parameter is successfully set. 1 if there was an error while setting the coding rate parameter. 2 if the module is in FSK mode (FSK mode doesn\textquotesingle{}t have a coding rate). 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_a55bc531484f486ec00f39fe193de345e}\label{_s_x1272_8h_a55bc531484f486ec00f39fe193de345e} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setCRC\_OFF@{BSP\_SX1272\_setCRC\_OFF}}
+\index{BSP\_SX1272\_setCRC\_OFF@{BSP\_SX1272\_setCRC\_OFF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setCRC\_OFF()}{BSP\_SX1272\_setCRC\_OFF()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+CRC\+\_\+\+OFF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deactivate CRC (Cyclic Redundancy Check) on the SX1272 module. 
+
+This function deactivates CRC on the SX1272 module. In Lo\+Ra mode, it clears the Rx\+Payload\+Crc\+On bit in REG\+\_\+\+MODEM\+\_\+\+CONFIG1 to disable CRC. In FSK mode, it clears the Crc\+On bit in REG\+\_\+\+PACKET\+\_\+\+CONFIG1 to disable CRC.
+
+\begin{DoxyReturn}{Returns}
+0 if CRC has been successfully deactivated, 1 if there was an error. 
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_aa583c8c3ab80c8a2c3a71ed878695d7b}\label{_s_x1272_8h_aa583c8c3ab80c8a2c3a71ed878695d7b} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setCRC\_ON@{BSP\_SX1272\_setCRC\_ON}}
+\index{BSP\_SX1272\_setCRC\_ON@{BSP\_SX1272\_setCRC\_ON}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setCRC\_ON()}{BSP\_SX1272\_setCRC\_ON()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+CRC\+\_\+\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enable CRC (Cyclic Redundancy Check) on the SX1272 module. 
+
+This function enables CRC on the SX1272 module. In Lo\+Ra mode, it sets the Rx\+Payload\+Crc\+On bit in REG\+\_\+\+MODEM\+\_\+\+CONFIG1. In FSK mode, it sets the Crc\+On bit in REG\+\_\+\+PACKET\+\_\+\+CONFIG1.
+
+\begin{DoxyReturn}{Returns}
+The state of the operation.
+\begin{DoxyItemize}
+\item 0 if CRC has been activated successfully.
+\item 1 if the CRC activation was not confirmed.
+\item 2 if an error occurred.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_aa583c8c3ab80c8a2c3a71ed878695d7b}{BSP\_SX1272\_setCRC\_ON}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ activated\ successfully}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ CRC\ activation\ not\ confirmed}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ while\ setting\ CRC\ ON}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{_s_x1272_8h_add2605afcabf2ba92cf3089de31b61ff}\label{_s_x1272_8h_add2605afcabf2ba92cf3089de31b61ff} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setDestination@{BSP\_SX1272\_setDestination}}
+\index{BSP\_SX1272\_setDestination@{BSP\_SX1272\_setDestination}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setDestination()}{BSP\_SX1272\_setDestination()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Destination (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_aae304aeaa85480a39c3f8e20e5f9b09e}\label{_s_x1272_8h_aae304aeaa85480a39c3f8e20e5f9b09e} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setFSK@{BSP\_SX1272\_setFSK}}
+\index{BSP\_SX1272\_setFSK@{BSP\_SX1272\_setFSK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setFSK()}{BSP\_SX1272\_setFSK()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+FSK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configure le module SX1272 en mode FSK. 
+
+Cette fonction configure le module SX1272 en mode FSK. Elle met d\textquotesingle{}abord le module en mode sommeil Lo\+Ra, puis en mode sommeil FSK, et enfin en mode veille FSK. Elle configure également les registres REG\+\_\+\+PACKET\+\_\+\+CONFIG1, REG\+\_\+\+FIFO\+\_\+\+THRESH, REG\+\_\+\+SYNC\+\_\+\+CONFIG, REG\+\_\+\+FDEV\+\_\+\+MSB, REG\+\_\+\+FDEV\+\_\+\+LSB et REG\+\_\+\+PACKET\+\_\+\+CONFIG2 avec les valeurs appropriées pour le mode FSK.
+
+\begin{DoxyReturn}{Returns}
+État de configuration du mode FSK \+:
+\begin{DoxyItemize}
+\item 0 \+: Succès (mode FSK configuré)
+\item 1 \+: Erreur (mode Lo\+Ra actuel)
+\item 2 \+: Erreur (échec de configuration)
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+\end{DoxyNote}
+\Hypertarget{_s_x1272_8h_a56dbd355a1ffaca74216f41b24b03589}\label{_s_x1272_8h_a56dbd355a1ffaca74216f41b24b03589} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setHeaderOFF@{BSP\_SX1272\_setHeaderOFF}}
+\index{BSP\_SX1272\_setHeaderOFF@{BSP\_SX1272\_setHeaderOFF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setHeaderOFF()}{BSP\_SX1272\_setHeaderOFF()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Header\+OFF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disable explicit header mode on the SX1272 module. 
+
+This function disables the explicit header mode on the SX1272 module, allowing the module to operate without headers in Lo\+Ra mode. In FSK mode, the header is not available.
+
+\begin{DoxyReturn}{Returns}
+The state of the operation.
+\begin{DoxyItemize}
+\item 0 if the header has been deactivated successfully.
+\item 1 if the header deactivation was not confirmed.
+\item -\/1 if an error occurred or the header is not available in FSK mode.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a56dbd355a1ffaca74216f41b24b03589}{BSP\_SX1272\_setHeaderOFF}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ deactivated\ successfully}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ deactivation\ not\ confirmed}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ or\ header\ not\ available\ in\ FSK\ mode}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{_s_x1272_8h_a772a707eed75deec1aabacb35a917eee}\label{_s_x1272_8h_a772a707eed75deec1aabacb35a917eee} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setHeaderON@{BSP\_SX1272\_setHeaderON}}
+\index{BSP\_SX1272\_setHeaderON@{BSP\_SX1272\_setHeaderON}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setHeaderON()}{BSP\_SX1272\_setHeaderON()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Header\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enable explicit header mode on the SX1272 module. 
+
+This function enables the explicit header mode on the SX1272 module, allowing the module to operate with headers in Lo\+Ra mode. In FSK mode, the header is not available.
+
+\begin{DoxyReturn}{Returns}
+The state of the operation.
+\begin{DoxyItemize}
+\item 0 if the header has been activated successfully.
+\item 1 if the header activation was not confirmed.
+\item -\/1 if an error occurred or the header is not available in FSK mode.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The header is mandatory to be off when the spreading factor (SF) is 6.
+\end{DoxyNote}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int8\_t\ state\ =\ \mbox{\hyperlink{_s_x1272_8h_a772a707eed75deec1aabacb35a917eee}{BSP\_SX1272\_setHeaderON}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (state\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ activated\ successfully}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Header\ activation\ not\ confirmed}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Error\ occurred\ or\ header\ not\ available\ in\ FSK\ mode}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{_s_x1272_8h_a842904846734cb7ba7ca312f50dbe962}\label{_s_x1272_8h_a842904846734cb7ba7ca312f50dbe962} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setLORA@{BSP\_SX1272\_setLORA}}
+\index{BSP\_SX1272\_setLORA@{BSP\_SX1272\_setLORA}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setLORA()}{BSP\_SX1272\_setLORA()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+LORA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configure le module SX1272 en mode Lo\+Ra. 
+
+Cette fonction configure le module SX1272 en mode Lo\+Ra. Elle met d\textquotesingle{}abord le module en mode veille, puis en mode sommeil, et enfin en mode veille Lo\+Ra. Elle configure également les registres REG\+\_\+\+MAX\+\_\+\+PAYLOAD\+\_\+\+LENGTH, REG\+\_\+\+MODEM\+\_\+\+CONFIG1 et REG\+\_\+\+MODEM\+\_\+\+CONFIG2 avec les valeurs par défaut appropriées.
+
+\begin{DoxyReturn}{Returns}
+État de configuration du mode Lo\+Ra \+:
+\begin{DoxyItemize}
+\item 0 \+: Succès (mode Lo\+Ra configuré)
+\item 1 \+: Erreur (mode FSK actuel)
+\item 2 \+: Erreur (échec de configuration)
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction assume que les fonctions \doxylink{com_s_x1272_8h_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read()} et \doxylink{com_s_x1272_8h_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write()} sont disponibles pour lire et écrire dans les registres du module SX1272. 
+\end{DoxyNote}
+\Hypertarget{_s_x1272_8h_acd285f2b7da34b9e7d8c9a7ccc12b841}\label{_s_x1272_8h_acd285f2b7da34b9e7d8c9a7ccc12b841} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setMaxCurrent@{BSP\_SX1272\_setMaxCurrent}}
+\index{BSP\_SX1272\_setMaxCurrent@{BSP\_SX1272\_setMaxCurrent}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setMaxCurrent()}{BSP\_SX1272\_setMaxCurrent()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Max\+Current (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{rate }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a1cd5da9228870a8136f5b630f1ea3de7}\label{_s_x1272_8h_a1cd5da9228870a8136f5b630f1ea3de7} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setMode@{BSP\_SX1272\_setMode}}
+\index{BSP\_SX1272\_setMode@{BSP\_SX1272\_setMode}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setMode()}{BSP\_SX1272\_setMode()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Set the mode of the SX1272 module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The mode to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The state of the operation\+:
+\begin{DoxyItemize}
+\item 0\+: Success.
+\item -\/1\+: The indicated mode doesn\textquotesingle{}t exist. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\Hypertarget{_s_x1272_8h_a6515cd7aa4584753aa2c66a6252a98cb}\label{_s_x1272_8h_a6515cd7aa4584753aa2c66a6252a98cb} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setNodeAddress@{BSP\_SX1272\_setNodeAddress}}
+\index{BSP\_SX1272\_setNodeAddress@{BSP\_SX1272\_setNodeAddress}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setNodeAddress()}{BSP\_SX1272\_setNodeAddress()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Node\+Address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a75fdce4e584eaae30fe80f0f748450cc}\label{_s_x1272_8h_a75fdce4e584eaae30fe80f0f748450cc} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setPacket@{BSP\_SX1272\_setPacket}}
+\index{BSP\_SX1272\_setPacket@{BSP\_SX1272\_setPacket}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPacket()}{BSP\_SX1272\_setPacket()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Packet (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_ac5b9a439bfcdced9233e9eb8aff7304c}\label{_s_x1272_8h_ac5b9a439bfcdced9233e9eb8aff7304c} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setPacketLength@{BSP\_SX1272\_setPacketLength}}
+\index{BSP\_SX1272\_setPacketLength@{BSP\_SX1272\_setPacketLength}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPacketLength()}{BSP\_SX1272\_setPacketLength()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Packet\+Length (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{l }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_aa0cbfcbc7b594579e5d0905d108801a3}\label{_s_x1272_8h_aa0cbfcbc7b594579e5d0905d108801a3} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setPayload@{BSP\_SX1272\_setPayload}}
+\index{BSP\_SX1272\_setPayload@{BSP\_SX1272\_setPayload}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPayload()}{BSP\_SX1272\_setPayload()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Payload (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a5134902998e6100ba14add58d32dafab}\label{_s_x1272_8h_a5134902998e6100ba14add58d32dafab} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setPower@{BSP\_SX1272\_setPower}}
+\index{BSP\_SX1272\_setPower@{BSP\_SX1272\_setPower}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPower()}{BSP\_SX1272\_setPower()}}
+{\footnotesize\ttfamily int8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Power (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pow }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a1130a38eed7d8451a2993ab3b197f06a}\label{_s_x1272_8h_a1130a38eed7d8451a2993ab3b197f06a} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setPreambleLength@{BSP\_SX1272\_setPreambleLength}}
+\index{BSP\_SX1272\_setPreambleLength@{BSP\_SX1272\_setPreambleLength}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setPreambleLength()}{BSP\_SX1272\_setPreambleLength()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Preamble\+Length (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{l }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_ab42e954f6a0cb2c9106ee686487ca7b2}\label{_s_x1272_8h_ab42e954f6a0cb2c9106ee686487ca7b2} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setRetries@{BSP\_SX1272\_setRetries}}
+\index{BSP\_SX1272\_setRetries@{BSP\_SX1272\_setRetries}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setRetries()}{BSP\_SX1272\_setRetries()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Retries (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ret }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a1df24c596c26847f4bf1056c97b27a7b}\label{_s_x1272_8h_a1df24c596c26847f4bf1056c97b27a7b} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setSF@{BSP\_SX1272\_setSF}}
+\index{BSP\_SX1272\_setSF@{BSP\_SX1272\_setSF}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setSF()}{BSP\_SX1272\_setSF()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+SF (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{spr }\end{DoxyParamCaption})}
+
+
+
+Set the spreading factor (SF) for Lo\+Ra mode. 
+
+This function sets the spreading factor (SF) for Lo\+Ra mode in the SX1272 module. It configures the appropriate registers based on the specified spreading factor value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spr} & The spreading factor value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the spreading factor is successfully set, 1 if there was an error, or -\/1 if the device is in FSK mode where spreading factor is not applicable. 
+\end{DoxyReturn}
+FSK mode
+
+Lo\+Ra mode\Hypertarget{_s_x1272_8h_a6d032d3d080e5622e8b76405eaecf7fb}\label{_s_x1272_8h_a6d032d3d080e5622e8b76405eaecf7fb} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_setTimeout@{BSP\_SX1272\_setTimeout}}
+\index{BSP\_SX1272\_setTimeout@{BSP\_SX1272\_setTimeout}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_setTimeout()}{BSP\_SX1272\_setTimeout()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+set\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a41fb8596538c1f8e32fdc582e0cda788}\label{_s_x1272_8h_a41fb8596538c1f8e32fdc582e0cda788} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_timeOnAir@{BSP\_SX1272\_timeOnAir}}
+\index{BSP\_SX1272\_timeOnAir@{BSP\_SX1272\_timeOnAir}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_timeOnAir()}{BSP\_SX1272\_timeOnAir()}}
+{\footnotesize\ttfamily float BSP\+\_\+\+SX1272\+\_\+time\+On\+Air (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{payloadlength }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a4268a6255ab4637f78205e4b9b51ae30}\label{_s_x1272_8h_a4268a6255ab4637f78205e4b9b51ae30} 
+\index{SX1272.h@{SX1272.h}!BSP\_SX1272\_truncPayload@{BSP\_SX1272\_truncPayload}}
+\index{BSP\_SX1272\_truncPayload@{BSP\_SX1272\_truncPayload}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_truncPayload()}{BSP\_SX1272\_truncPayload()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+trunc\+Payload (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{length16 }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_x1272_8h_a0db874b9dd485e6db343eaba3277fbe1}\label{_s_x1272_8h_a0db874b9dd485e6db343eaba3277fbe1} 
+\index{SX1272.h@{SX1272.h}!sendPacketMAXTimeoutACK@{sendPacketMAXTimeoutACK}}
+\index{sendPacketMAXTimeoutACK@{sendPacketMAXTimeoutACK}!SX1272.h@{SX1272.h}}
+\doxysubsubsection{\texorpdfstring{sendPacketMAXTimeoutACK()}{sendPacketMAXTimeoutACK()}}
+{\footnotesize\ttfamily uint8\+\_\+t send\+Packet\+MAXTimeout\+ACK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
+

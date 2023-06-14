@@ -1,0 +1,112 @@
+\doxysection{C\+:/\+Users/lucas/\+One\+Drive/\+Documents/\+Git\+Hub/\+Rsf\+Sd\+F/\+STM32/bsp/src/com\+SX1272.c File Reference}
+\hypertarget{com_s_x1272_8c}{}\label{com_s_x1272_8c}\index{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/bsp/src/comSX1272.c@{C:/Users/lucas/OneDrive/Documents/GitHub/RsfSdF/STM32/bsp/src/comSX1272.c}}
+
+
+Fonctions de communication avec le module SX1272.  
+
+
+{\ttfamily \#include \"{}com\+SX1272.\+h\"{}}\newline
+Include dependency graph for com\+SX1272.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{com_s_x1272_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{com_s_x1272_8c_a823387fc0ba3a232cd26c0e46165117d}{BSP\+\_\+\+SPI1\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialise la configuration de l\textquotesingle{}interface SPI1. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{com_s_x1272_8c_acb6882118570a3b39f905f6b5739e006}{BSP\+\_\+\+SX1272\+\_\+\+Read}} (uint8\+\_\+t register\+\_\+address)
+\begin{DoxyCompactList}\small\item\em Lit une valeur à partir d\textquotesingle{}un registre spécifié du module SX1272. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{com_s_x1272_8c_a4757fe52dcee2269d4f4635416c70881}{BSP\+\_\+\+SX1272\+\_\+\+Write}} (uint8\+\_\+t register\+\_\+address, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Écrit une valeur dans un registre spécifié du module SX1272. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fonctions de communication avec le module SX1272. 
+
+Ce fichier contient les définitions des fonctions permettant la communication avec le module SX1272. Ces fonctions sont spécifiques à l\textquotesingle{}application et peuvent varier en fonction des besoins.
+
+\begin{DoxyDate}{Date}
+24 août 2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Arnaud 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{com_s_x1272_8c_a823387fc0ba3a232cd26c0e46165117d}\label{com_s_x1272_8c_a823387fc0ba3a232cd26c0e46165117d} 
+\index{comSX1272.c@{comSX1272.c}!BSP\_SPI1\_Init@{BSP\_SPI1\_Init}}
+\index{BSP\_SPI1\_Init@{BSP\_SPI1\_Init}!comSX1272.c@{comSX1272.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_SPI1\_Init()}{BSP\_SPI1\_Init()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+SPI1\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise la configuration de l\textquotesingle{}interface SPI1. 
+
+Cette fonction configure l\textquotesingle{}interface SPI1 ainsi que les broches associées pour l\textquotesingle{}utilisation du module SPI. Elle initialise les registres de configuration pour établir les paramètres suivants \+:
+\begin{DoxyItemize}
+\item Utilisation de PB6 comme broche de sélection du périphérique (CS).
+\item Utilisation de PA5, PA6 et PA7 comme broches d\textquotesingle{}interface SPI1.
+\item Configuration des broches en mode alternatif (AF) pour l\textquotesingle{}utilisation de l\textquotesingle{}interface SPI.
+\item Configuration du SPI1 en mode maître avec une vitesse de transmission de 6 MHz.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Cette fonction suppose que les registres RCC, GPIOB, et GPIOA ont déjà été initialisés correctement. 
+
+Les détails spécifiques concernant les registres sont documentés dans le code source. 
+\end{DoxyNote}
+\Hypertarget{com_s_x1272_8c_acb6882118570a3b39f905f6b5739e006}\label{com_s_x1272_8c_acb6882118570a3b39f905f6b5739e006} 
+\index{comSX1272.c@{comSX1272.c}!BSP\_SX1272\_Read@{BSP\_SX1272\_Read}}
+\index{BSP\_SX1272\_Read@{BSP\_SX1272\_Read}!comSX1272.c@{comSX1272.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_Read()}{BSP\_SX1272\_Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+SX1272\+\_\+\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+\_\+address }\end{DoxyParamCaption})}
+
+
+
+Lit une valeur à partir d\textquotesingle{}un registre spécifié du module SX1272. 
+
+Cette fonction lit la valeur d\textquotesingle{}un registre spécifié du module SX1272 via l\textquotesingle{}interface SPI1. Elle configure le seuil FIFO sur 1 octet, sélectionne l\textquotesingle{}esclave en mettant la broche de sélection (CS) à l\textquotesingle{}état bas, envoie l\textquotesingle{}adresse du registre à lire, reçoit la valeur du registre via l\textquotesingle{}interface SPI, puis libère l\textquotesingle{}esclave en mettant la broche CS à l\textquotesingle{}état haut.
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+\_\+address} & L\textquotesingle{}adresse du registre à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La valeur lue à partir du registre spécifié.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction suppose que les registres SPI1, GPIOB et GPIOA ont déjà été initialisés correctement. 
+
+Les détails spécifiques concernant les registres sont documentés dans le code source. 
+\end{DoxyNote}
+\Hypertarget{com_s_x1272_8c_a4757fe52dcee2269d4f4635416c70881}\label{com_s_x1272_8c_a4757fe52dcee2269d4f4635416c70881} 
+\index{comSX1272.c@{comSX1272.c}!BSP\_SX1272\_Write@{BSP\_SX1272\_Write}}
+\index{BSP\_SX1272\_Write@{BSP\_SX1272\_Write}!comSX1272.c@{comSX1272.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_SX1272\_Write()}{BSP\_SX1272\_Write()}}
+{\footnotesize\ttfamily void BSP\+\_\+\+SX1272\+\_\+\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+\_\+address,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Écrit une valeur dans un registre spécifié du module SX1272. 
+
+Cette fonction écrit une valeur spécifiée dans un registre spécifié du module SX1272 via l\textquotesingle{}interface SPI1. Elle configure le seuil FIFO sur 1 octet, sélectionne l\textquotesingle{}esclave en mettant la broche de sélection (CS) à l\textquotesingle{}état bas, envoie l\textquotesingle{}adresse du registre à écrire en lui ajoutant le bit d\textquotesingle{}écriture (0x80), envoie la donnée à écrire, puis libère l\textquotesingle{}esclave en mettant la broche CS à l\textquotesingle{}état haut.
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+\_\+address} & L\textquotesingle{}adresse du registre dans lequel écrire. \\
+\hline
+{\em data} & La valeur à écrire dans le registre spécifié.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Cette fonction suppose que les registres SPI1, GPIOB et GPIOA ont déjà été initialisés correctement. 
+
+Les détails spécifiques concernant les registres sont documentés dans le code source. 
+\end{DoxyNote}
