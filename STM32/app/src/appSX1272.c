@@ -69,30 +69,30 @@ void APP_SX1272_setup(id_frame_t device) {
 	// Select frequency channel
 	switch (device.channel) {
 	case 0:
-		e = BSP_SX1272_setChannel(CH_868v1);
+		e = BSP_SX1272_setChannel(CHANNEL_0_FREQUENCY);
 #if DEBUG_FLAG > 2
 		my_printf("SX1272 setup : Frequency channel ");
-		my_printf("%d\n\r",CH_868v1);
+		my_printf("%d\n\r",CHANNEL_0_FREQUENCY);
 		#endif
 		BSP_LED_CONTROL_ledOn(LED_CH0);
 		BSP_LED_CONTROL_ledOff(LED_CH1);
 		BSP_LED_CONTROL_ledOff(LED_CH2);
 		break;
 	case 1:
-		e = BSP_SX1272_setChannel(CH_868v3);
+		e = BSP_SX1272_setChannel(CHANNEL_1_FREQUENCY);
 #if DEBUG_FLAG > 2
 		my_printf("SX1272 setup : Frequency channel ");
-		my_printf("%d\n\r",CH_868v3);
+		my_printf("%d\n\r",CHANNEL_1_FREQUENCY);
 		#endif
 		BSP_LED_CONTROL_ledOn(LED_CH1);
 		BSP_LED_CONTROL_ledOff(LED_CH0);
 		BSP_LED_CONTROL_ledOff(LED_CH2);
 		break;
 	case 2:
-		e = BSP_SX1272_setChannel(CH_868v5);
+		e = BSP_SX1272_setChannel(CHANNEL_2_FREQUENCY);
 #if DEBUG_FLAG > 2
 		my_printf("SX1272 setup : Frequency channel ");
-		my_printf("%d\n\r",CH_868v5);
+		my_printf("%d\n\r",CHANNEL_2_FREQUENCY);
 		#endif
 		BSP_LED_CONTROL_ledOn(LED_CH2);
 		BSP_LED_CONTROL_ledOff(LED_CH0);
@@ -520,19 +520,19 @@ uint8_t APP_SX1272_setFreq(id_frame_t device) {
     uint32_t freq;
     switch (device.channel) {
 	case 0:
-		freq = CH_868v1;
+		freq = CHANNEL_0_FREQUENCY;
 		BSP_LED_CONTROL_ledOff(LED_CH1);
 		BSP_LED_CONTROL_ledOff(LED_CH2);
 		BSP_LED_CONTROL_ledOn(LED_CH0);
 		break;
 	case 1:
-		freq = CH_868v3;
+		freq = CHANNEL_1_FREQUENCY;
 		BSP_LED_CONTROL_ledOff(LED_CH0);
 		BSP_LED_CONTROL_ledOff(LED_CH2);
 		BSP_LED_CONTROL_ledOn(LED_CH1);
 		break;
 	case 2:
-		freq = CH_868v5;
+		freq = CHANNEL_2_FREQUENCY;
 		BSP_LED_CONTROL_ledOff(LED_CH0);
 		BSP_LED_CONTROL_ledOff(LED_CH2);
 		BSP_LED_CONTROL_ledOn(LED_CH2);

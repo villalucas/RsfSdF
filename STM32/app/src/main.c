@@ -81,6 +81,13 @@ int main()
 		}
 		transmit_status = APP_SX1272_SendMsg(device, &transmit_msg, 5);
 		my_printf("Transmit status : %d\r\n", transmit_status);
+#if CYCLE_CHANNELS == 1
+		if (transmit_status == RECEIVE_ACK_RECEIVED){
+			device.channel = (device.channel+1)%3;
+			my_printf("--Switched to channel %d\r\n",device.channel);
+		}
+#endif
+
 		#endif
 
 #ifdef RECEIVER
