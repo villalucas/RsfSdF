@@ -66,7 +66,7 @@
 #define OFFSET_MSG_PAYLOAD_SIZE	7
 #define OFFSET_ACK_PAYLOAD_SIZE	6
 // Defines debug
-#define DEBUG_FLAG 		1
+#define DEBUG_FLAG 		2
 
 // Functions
 void APP_SX1272_setup(id_frame_t device);

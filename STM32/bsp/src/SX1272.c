@@ -4091,9 +4091,9 @@ uint8_t BSP_SX1272_sendWithTimeout(uint32_t wait)
 		value = BSP_SX1272_Read(REG_IRQ_FLAGS);
 
 		// Wait until the packet is sent (TX Done flag) or the timeout expires
-		while ((bitRead(value, 3) == 0) && (millis() - previous < wait))
+		while ((bitRead(currentstate._irqFlags, 3) == 0) && (millis() - previous < wait))
 		{
-			value = BSP_SX1272_Read(REG_IRQ_FLAGS);
+			currentstate._irqFlags = BSP_SX1272_Read(REG_IRQ_FLAGS);
 			// Condition to avoid an overflow (DO NOT REMOVE)
 			if( millis() < previous )
 			{
@@ -4108,12 +4108,10 @@ uint8_t BSP_SX1272_sendWithTimeout(uint32_t wait)
 		/// FSK mode
 		BSP_SX1272_Write(REG_OP_MODE, FSK_TX_MODE);  // FSK mode - Tx
 
-		value = BSP_SX1272_Read(REG_IRQ_FLAGS2);
 		// Wait until the packet is sent (Packet Sent flag) or the timeout expires
-		while ((bitRead(value, 3) == 0) && (millis() - previous < wait))
+		while ((bitRead(currentstate._irqFlags, 3) == 0) && (millis() - previous < wait))
 		{
-			value = BSP_SX1272_Read(REG_IRQ_FLAGS2);
-
+			currentstate._irqFlags = BSP_SX1272_Read(REG_IRQ_FLAGS2);
 			// Condition to avoid an overflow (DO NOT REMOVE)
 			if( millis() < previous )
 			{
@@ -4406,17 +4404,16 @@ uint8_t BSP_SX1272_getACK(uint32_t wait)
 
 	if( currentstate._modem == LORA )
 	{ // LoRa mode
-	    value = BSP_SX1272_Read(REG_IRQ_FLAGS);
 		// Wait until the currentstate.ACK is received (RxDone flag) or the timeout expires
-		while ((bitRead(value, 6) == 0) && (millis() - previous < wait))
+		while ((bitRead(currentstate._irqFlags, 6) == 0) && (millis() - previous < (unsigned long)wait))
 		{
-			value = BSP_SX1272_Read(REG_IRQ_FLAGS);
+			currentstate._irqFlags = BSP_SX1272_Read(REG_IRQ_FLAGS);
 			if( millis() < previous )
 			{
 				previous = millis();
 			}
 		}
-		if( bitRead(value, 6) == 1 )
+		if( bitRead(currentstate._irqFlags, 6) == 1 )
 		{ // currentstate.ACK received
 			a_received = 1;
 		}
@@ -4424,18 +4421,16 @@ uint8_t BSP_SX1272_getACK(uint32_t wait)
 		BSP_SX1272_Write(REG_OP_MODE, LORA_STANDBY_MODE);	// Setting standby LoRa mode
 	}
 	else
-	{ // FSK mode
-		value = BSP_SX1272_Read(REG_IRQ_FLAGS2);
-		// Wait until the packet is received (RxDone flag) or the timeout expires
-		while ((bitRead(value, 2) == 0) && (millis() - previous < wait))
+	{ // FSK mode		// Wait until the packet is received (RxDone flag) or the timeout expires
+		while ((bitRead(currentstate._irqFlags, 2) == 0) && (millis() - previous < wait))
 		{
-			value = BSP_SX1272_Read(REG_IRQ_FLAGS2);
+			currentstate._irqFlags = BSP_SX1272_Read(REG_IRQ_FLAGS2);
 			if( millis() < previous )
 			{
 				previous = millis();
 			}
 		}
-		if( bitRead(value, 2) == 1 )
+		if( bitRead(currentstate._irqFlags, 2) == 1 )
 		{ // currentstate.ACK received
 			a_received = 1;
 		}

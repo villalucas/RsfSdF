@@ -93,12 +93,13 @@ int main()
 
 #ifdef RECEIVER
 
-		cad_status = APP_SX1272_pollingCAD(&device, 80, 80, 80);
+		cad_status = APP_SX1272_pollingCAD(&device, 500, 500, 500);
 		if(cad_status != CAD_ERROR_UNKNOWN_CASE && cad_status != CAD_MSG_NOT_DETECTED) {
 			my_printf("Main_Receiver : MSG channel %d\r\n", cad_status);
 			receive_status = APP_SX1272_runReceive(device, &received_msg, &received_ack);
 			if(receive_status == RECEIVE_MSG_RECEIVED_ACK_TRANSMITTED){
 				my_printf("Main_Receiver : MSG for me received and ACK transmitted\r\n");
+				BSP_DELAY_ms(100);
 			}
 			else if(receive_status == RECEIVE_MSG_RECEIVED_ACK_NOT_TRANSMITTED){
 				my_printf("Main_Receiver : MSG for me received and ACK not transmitted\r\n");
