@@ -4088,7 +4088,6 @@ uint8_t BSP_SX1272_sendWithTimeout(uint32_t wait)
 		// LORA mode - Tx
 		BSP_SX1272_Write(REG_OP_MODE, LORA_TX_MODE);
 
-		currentstate._irqFlags = BSP_SX1272_Read(REG_IRQ_FLAGS);
 		// Wait until the packet is sent (TX Done flag) or the timeout expires
 		while ((bitRead(currentstate._irqFlags, 3) == 0) && (millis() - previous < wait))
 		{
